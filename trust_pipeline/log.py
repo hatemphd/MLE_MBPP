@@ -78,7 +78,7 @@ def banner(title, description="", step=None, total=None, **settings):
     lines = [f"==== {prefix}{title} " + "=" * max(4, 70 - len(prefix) - len(title))]
     if description:
         lines.append(description)
-    lines += [f"  {k.replace('_', ' ')}: {v}" for k, v in settings.items()]
+    lines += [f"  {k.replace('_', ' ')}: {v}" for k, v in settings.items() if v != ""]
     logger.info("\n".join(lines))
 
 

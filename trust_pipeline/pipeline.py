@@ -15,7 +15,7 @@ import numpy as np
 import pandas as pd
 
 from . import data, features, generation, human_review, log, plots, report, training
-from .config import Config
+from .config import TRAINING_ONLY_PROVENANCE, Config
 from .execution import Executor
 from .recommendation import (TrustRecommender, choose_thresholds, conformal_coverage,
                              conformal_decision, conformal_quantile, decision_report, trust_decision)
@@ -131,7 +131,12 @@ def stage_generate(cfg, paths, problems=None):
     problems = _load_problems(paths, problems)
     _banner("generate", "Ask each model config for candidate solutions (visible test shown in the prompt).",
             problems=len(problems), model_configs=_describe_models(cfg),
+            prompt_styles="not used in SMOKE_TEST" if cfg.smoke_test else ", ".join(cfg.resolved_prompt_styles()),
             samples_per_config=1 if cfg.smoke_test else cfg.samples_per_config,
+            expected_candidates="" if cfg.smoke_test else
+            f"{len(problems)} problems x {len(cfg.resolved_model_configs())} model configs x "
+            f"{len(cfg.resolved_prompt_styles())} prompt styles x {cfg.samples_per_config} samples = "
+            f"{len(problems) * len(cfg.resolved_model_configs()) * len(cfg.resolved_prompt_styles()) * cfg.samples_per_config}",
             mutant_augmentation=cfg.use_mutant_augmentation,
             cache=paths.generations if not cfg.smoke_test else "not used in SMOKE_TEST")
     report.ensure(paths, cfg, "generate")
@@ -178,6 +183,13 @@ def stage_label(cfg, paths, problems=None, candidates=None, executor=None):
             log.warning("labels are very imbalanced; mix in weaker/stronger configs or temperatures.")
         stats = report.execution_stats(labeled, cfg, report.section(paths, "generation"))
         report.update(paths, "execution", stats)
+        if len(stats["per_config"]) > 1:
+            for label, block in stats["per_config"].items():
+                log.info(f"  {label:<34} {block['rows']:>5} rows, trustworthy {block['trustworthy_rate']:.0%}, "
+                         f"visible pass {block['visible_pass_rate']:.0%}, hidden pass {block['hidden_pass_rate']:.0%}")
+        coverage = stats["failure_modes"]["all"]
+        log.info("Failure-mode coverage: " + " | ".join(
+            f"{m.replace('_', ' ')} {coverage[m]}" for m in report.FAILURE_MODES))
         rate_vh = stats["overall"]["visible_vs_hidden"]["hidden_fail_given_visible_pass"]
         if rate_vh is not None:
             log.info(f"Key number: {rate_vh:.0%} of candidates that pass the visible test fail a hidden test.")
@@ -195,6 +207,9 @@ def stage_features(cfg, paths, problems=None, labeled=None):
     with _timed(paths, "features"):
         by_id = data.problems_by_id(problems)
         log.info("Computing self-consistency (agreement of outputs on probe inputs across siblings)...")
+        if not cfg.smoke_test and labeled["provenance"].isin(TRAINING_ONLY_PROVENANCE).any():
+            log.info("  Sibling pool = natural samples only; mutants / injected samples are scored "
+                     "against it but never added to it.")
         dataset = features.add_consistency_features(labeled, all_in_pool=cfg.smoke_test)
         log.info("Computing code-structure features (AST, complexity, prompt words)...")
         dataset = features.add_code_features(dataset, by_id, cfg.model_names)
@@ -203,7 +218,8 @@ def stage_features(cfg, paths, problems=None, labeled=None):
         _write_json({"feature_columns": feature_columns, "dropped_uninformative": dropped}, paths.feature_columns)
         log.info(f"{len(feature_columns)} features -> {paths.dataset}")
         if dropped:
-            log.info(f"Dropped as uninformative (constant): {', '.join(dropped)}")
+            log.info(f"Not used (constant in this run, or comment features when injected samples are "
+                     f"present): {', '.join(dropped)}")
         log.debug("Features: " + ", ".join(feature_columns))
     return dataset, feature_columns
 
@@ -268,6 +284,12 @@ def stage_train(cfg, paths, dataset=None, feature_columns=None, make_plots=True)
         raise RuntimeError("Training data has a single class; increase --num-problems or vary model configs.")
     split_table = training.split_summary(splits)
     log.block("Split:", split_table.to_string())
+    if not cfg.smoke_test:
+        held_out = dataset[dataset["task_id"].isin(set(calib["task_id"]) | set(test["task_id"]))]
+        n_removed = int(held_out["provenance"].isin(TRAINING_ONLY_PROVENANCE).sum())
+        if n_removed:
+            log.info(f"Removed {n_removed} training-only rows (mutants / injected bugs) from calibration "
+                     "and test; those splits contain natural samples only.")
     report.update(paths, "dataset", report.dataset_stats(dataset, splits, LABEL))
 
     models = training.build_models(cfg.seed)
@@ -293,6 +315,11 @@ def stage_train(cfg, paths, dataset=None, feature_columns=None, make_plots=True)
     log.info(f"Bootstrapping 95% confidence intervals ({cfg.bootstrap_samples} resamples of the "
              f"{test['task_id'].nunique()} test problems)...")
     ci = report.bootstrap_ci(y_test, test_proba, test["task_id"], cfg.bootstrap_samples, cfg.seed)
+    by_style = report.metrics_by_prompt_style(test, test_proba[calibrated_name])
+    if len(by_style) > 1:
+        for style, row in by_style.items():
+            log.info(f"  test by prompt style {style:<15} {row['rows']:>4} rows  "
+                     + (f"ROC AUC {row['roc_auc']:.3f}  F1 {row['f1']:.3f}" if "roc_auc" in row else row["note"]))
     lo, hi = ci[calibrated_name]["roc_auc"]
     if lo is not None:
         log.info(f"{calibrated_name}: test ROC AUC {comparison.loc[calibrated_name, 'roc_auc']:.3f} "
@@ -346,7 +373,9 @@ def stage_train(cfg, paths, dataset=None, feature_columns=None, make_plots=True)
     )
     recommender.save(paths.model)
 
-    predictions = test[["candidate_id", "task_id", "model_name", "provenance", "exec_status",
+    predictions = test[["candidate_id", "task_id", "model_name"]
+                       + [c for c in ("temperature", "prompt_style") if c in test]
+                       + ["provenance", "exec_status",
                         "visible_pass", "behavior_agreement", LABEL, "generated_code"]].copy()
     predictions["p_trustworthy"] = p_test
     predictions["decision"] = threshold_decisions
@@ -389,7 +418,8 @@ def stage_train(cfg, paths, dataset=None, feature_columns=None, make_plots=True)
         cv_table, best_name, calibrated_name, calibration_method, comparison, ci, cfg.bootstrap_samples,
         thresholds={**metrics["thresholds"], "approve_enabled": bool(np.isfinite(t_high)),
                     "reject_enabled": bool(np.isfinite(t_low)), "min_decision_support": cfg.min_decision_support},
-        decisions=decisions, conformal=metrics["conformal"], baselines=training.BASELINES))
+        decisions=decisions, conformal=metrics["conformal"], baselines=training.BASELINES,
+        by_prompt_style=by_style))
     seconds = time.time() - stage_start
     log.info(f"Stage 'decide' finished in {log.format_seconds(seconds)}")
     report.record_stage(paths, "decide", seconds)
@@ -491,6 +521,10 @@ def add_common_args(parser):
     parser.add_argument("--target-precision", type=float,
                         help="target precision for both APPROVED and REJECTED (default 0.95)")
     parser.add_argument("--max-workers", type=int, help="parallel execution workers")
+    parser.add_argument("--prompt-styles",
+                        help="optional extra: comma list of prompt styles crossed with every model config "
+                             f"({', '.join(generation.PROMPT_STYLES)}), or a preset: 'natural' (all but "
+                             "inject_bug) or 'all'. Default: standard")
     parser.add_argument("--seed", type=int)
     parser.add_argument("--bootstrap-samples", type=int,
                         help="bootstrap resamples (by problem) for test-metric 95%% CIs (default 1000)")
@@ -525,6 +559,8 @@ def config_from_args(args):
             setattr(cfg, key, value)
     if args.all_problems:
         cfg.num_problems = None
+    if args.prompt_styles:
+        cfg.prompt_styles = generation.resolve_prompt_styles(args.prompt_styles)
     if args.human_feedback:
         cfg.human_added_feedback = args.human_feedback == "simulated"
     if args.target_precision is not None:

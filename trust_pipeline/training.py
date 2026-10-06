@@ -16,12 +16,15 @@ from sklearn.model_selection import GroupKFold, GroupShuffleSplit, cross_validat
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
+from .config import TRAINING_ONLY_PROVENANCE
+
 BASELINES = {"majority", "visible_test_only"}
 LABEL = "label_trustworthy"
 
 
 def grouped_split(df, seed=42, smoke_test=False):
-    """60/20/20 train/calibration/test split by task_id. Mutants stay in train (except smoke test)."""
+    """60/20/20 train/calibration/test split by task_id. Training-only rows (mutants, injected-bug
+    samples) are removed from calibration and test, except in the smoke test (which has only mutants)."""
     groups = df["task_id"].values
     outer = GroupShuffleSplit(n_splits=1, test_size=0.2, random_state=seed)
     trainval_idx, test_idx = next(outer.split(df, groups=groups))
@@ -31,8 +34,8 @@ def grouped_split(df, seed=42, smoke_test=False):
     calib = df.iloc[trainval_idx[cal_rel]]
     test = df.iloc[test_idx]
     if not smoke_test:
-        calib = calib[calib["provenance"] != "mutant"]
-        test = test[test["provenance"] != "mutant"]
+        calib = calib[~calib["provenance"].isin(TRAINING_ONLY_PROVENANCE)]
+        test = test[~test["provenance"].isin(TRAINING_ONLY_PROVENANCE)]
     assert not set(train.task_id) & set(test.task_id)
     assert not set(train.task_id) & set(calib.task_id)
     return {"train": train, "calibration": calib, "test": test}

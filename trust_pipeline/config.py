@@ -5,6 +5,10 @@ import os
 from dataclasses import asdict, dataclass, field, fields
 from typing import Optional
 
+# Rows that never enter calibration/test splits or the sibling-agreement pool (outside SMOKE_TEST):
+# mutated reference solutions and LLM samples that were asked to contain a bug.
+TRAINING_ONLY_PROVENANCE = {"mutant", "injected"}
+
 
 def default_model_configs(use_local_hf=True, use_openai=False, use_anthropic=False):
     """Model/setting combos. Sampling (temperature > 0) is required for self-consistency features."""
@@ -67,6 +71,9 @@ class Config:
     use_anthropic: bool = False
     max_new_tokens: int = 512
     model_configs: list = field(default_factory=list)   # empty -> default_model_configs(...)
+    # Optional extra: prompt styles crossed with every model config (see generation.PROMPT_STYLES).
+    # ["standard"] is the core design; "inject_bug" samples are training-only.
+    prompt_styles: list = field(default_factory=lambda: ["standard"])
 
     output_dir: str = "artifacts"
 
@@ -80,6 +87,10 @@ class Config:
         if self.model_configs:
             return self.model_configs
         return default_model_configs(self.use_local_hf, self.use_openai, self.use_anthropic)
+
+    def resolved_prompt_styles(self):
+        from .generation import resolve_prompt_styles
+        return resolve_prompt_styles(self.prompt_styles)
 
     @property
     def model_names(self):

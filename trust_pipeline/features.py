@@ -13,6 +13,7 @@ import numpy as np
 import pandas as pd
 
 from .astutils import parse_quietly
+from .config import TRAINING_ONLY_PROVENANCE
 from .execution import hidden_outcome
 from .static_analysis import STATIC_COLUMNS
 
@@ -31,9 +32,15 @@ CONSISTENCY_FEATURES = ["behavior_agreement", "behavior_agreement_visible", "pro
 STATIC_FEATURES = list(STATIC_COLUMNS)
 GENERATION_FEATURES = ["gen_mean_logprob", "gen_min_logprob", "gen_num_tokens"]
 
-LEAKY_COLUMNS = {"exec_status", "hidden_pass_frac", "hidden_results", "exec_error", "label_trustworthy"}
+LEAKY_COLUMNS = {"exec_status", "hidden_pass_frac", "hidden_results", "exec_error", "label_trustworthy",
+                 # How a row was produced: `injected` / `mutant` almost always means "buggy".
+                 "provenance", "mutation_type", "prompt_style"}
+# Injected samples have their comments and docstrings stripped, so with them in the training data
+# these features would mostly detect "was injected" rather than "is buggy".
+INJECTION_SENSITIVE_FEATURES = ["comment_lines", "has_docstring"]
 TEXT_COLUMNS = ["generated_code", "gen_error", "mutation_type", "problem_text", "probe_outputs",
-                "hidden_results", "exec_error", "def_status", "exec_status"]
+                "hidden_results", "exec_error", "def_status", "exec_status", "model", "prompt_style",
+                "provenance"]
 
 
 # ---------------------------------------------------------------- execution ----------------------
@@ -88,12 +95,14 @@ def _is_probe_error(x):
 def add_consistency_features(frame, all_in_pool=False):
     """Behaviour agreement of each candidate with its siblings on the probe inputs.
 
-    Mutant rows are scored against the pool but never added to it (unless `all_in_pool`), so
-    training-only augmentation cannot change the features of evaluation rows. Signatures where
-    every probe errored agree with nobody.
+    The pool is the NATURAL samples of the problem (all models and prompt styles). Training-only rows
+    (mutants, injected-bug samples) are scored against the pool but never added to it (unless
+    `all_in_pool`, used by the smoke test), so they cannot change the features of evaluation rows.
+    Signatures where every probe errored agree with nobody.
     """
     frame = frame.copy()
-    in_pool = pd.Series(True, index=frame.index) if all_in_pool else frame["provenance"] != "mutant"
+    in_pool = (pd.Series(True, index=frame.index) if all_in_pool
+               else ~frame["provenance"].isin(TRAINING_ONLY_PROVENANCE))
     agree, agree_vis, err_frac = {}, {}, {}
     for _, g in frame.groupby("task_id"):
         pool = g[in_pool.loc[g.index]]
@@ -208,16 +217,19 @@ def all_feature_columns(model_names):
 def select_feature_columns(frame, model_names):
     """Explicit feature list minus columns with no information in this run; guards against leakage."""
     candidates = all_feature_columns(model_names)
+    if "provenance" in frame and (frame["provenance"] == "injected").any():
+        candidates = [c for c in candidates if c not in INJECTION_SENSITIVE_FEATURES]
     selected = [c for c in candidates
                 if c in frame and frame[c].notna().any() and frame[c].nunique(dropna=True) > 1]
     check_no_leakage(selected)
-    return selected, sorted(set(candidates) - set(selected))
+    return selected, sorted(set(all_feature_columns(model_names)) - set(selected))
 
 
 def check_no_leakage(feature_columns):
     leaked = LEAKY_COLUMNS & set(feature_columns)
-    if leaked or any(c.startswith("hidden") for c in feature_columns):
-        raise ValueError(f"hidden-test / label information leaked into the features: {sorted(leaked)}")
+    if leaked or any(c.startswith(("hidden", "prompt_style", "provenance")) for c in feature_columns):
+        raise ValueError(f"hidden-test / label / provenance information leaked into the features: "
+                         f"{sorted(leaked)}")
 
 
 def read_frame(path):
