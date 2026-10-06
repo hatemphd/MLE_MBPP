@@ -1,0 +1,19 @@
+# Environments
+.venv/
+.venv*/
+
+# Pipeline outputs
+artifacts*/
+generations.jsonl
+
+# Caches
+__pycache__/
+*.py[cod]
+.ruff_cache/
+.pytest_cache/
+.ipynb_checkpoints/
+.hf_cache*/
+.cache/
+*.egg-info/
+build/
+dist/
