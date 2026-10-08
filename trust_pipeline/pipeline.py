@@ -560,7 +560,10 @@ def config_from_args(args):
     if args.all_problems:
         cfg.num_problems = None
     if args.prompt_styles:
-        cfg.prompt_styles = generation.resolve_prompt_styles(args.prompt_styles)
+        try:
+            cfg.prompt_styles = generation.resolve_prompt_styles(args.prompt_styles)
+        except ValueError as e:
+            raise SystemExit(f"error: --prompt-styles: {e}") from None
     if args.human_feedback:
         cfg.human_added_feedback = args.human_feedback == "simulated"
     if args.target_precision is not None:

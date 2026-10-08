@@ -253,6 +253,8 @@ agreement score as well as a failed visible test.
 - More siblings make the signal more reliable: 2–3 at minimum, 5 or more is better.
 - If every sibling makes the same mistake, they agree on the wrong answer. That's why agreement is only
   one feature among several.
+- Only **natural** samples count as siblings. Samples that were asked to contain a bug (`inject_bug`,
+  section 5) and mutants still get an agreement score, but they never count as siblings for anyone else.
 
 ## 4. Worked examples
 
@@ -268,3 +270,30 @@ These are smoke-test (reference + mutant) numbers that demonstrate the tool, not
 smoke-data artifact matters for siblings: in that data, agreement with siblings is a *negative* signal,
 because siblings are mostly mutants. That's the opposite of what this section describes for real LLM
 samples. The examples README explains it.
+
+## 5. Optional: prompt variations
+
+By default, each model is given the **standard** prompt: the problem plus the visible test.
+`--prompt-styles` adds more ways of asking, and each style is used with every model setting:
+
+| Style | What the model is given | Provenance |
+| --- | --- | --- |
+| `standard` (default) | Problem plus the visible test | `natural` |
+| `signature_only` | Problem plus a signature built from the test call, such as `def remove_Occ(arg1, arg2):`. No test in the prompt; the visible test is still run afterwards as a feature | `natural` |
+| `step_by_step` | Reason briefly, then give the final code in a ```` ```python ```` block (the last block is used) | `natural` |
+| `constrained` | Concise, standard library only, no comments, docstrings or prints | `natural` |
+| `inject_bug` | Write a plausible solution with one subtle, realistic bug, and don't reveal it | `injected` |
+
+Injected samples are still labelled by running them; some "bugs" turn out to be harmless. To keep the
+evaluation honest:
+
+- Injected samples are used for training only, never for calibration or testing.
+- Their comments and docstrings are stripped, so nothing gives the bug away. While they are present,
+  the comment-count and docstring features are switched off.
+- They never count as siblings.
+- `prompt_style` and `provenance` are never used as features. Provenance would leak the label.
+  The natural prompt style would be legitimate (an agent knows how it asked), but leaving it out keeps
+  the model general across prompts.
+
+Example: `uv run trust-pipeline --num-problems 20 --prompt-styles natural`. The run report then shows
+failure-mode coverage and test metrics for each prompt style.

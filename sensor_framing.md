@@ -35,7 +35,8 @@ We use the standard prompt (problem description plus one example test) and never
 Variety comes from:
 
 - **Model:** weak, medium and strong.
-- **Temperature:** 0.2, 0.8 and 1.2 (more randomness, more mistakes).
+- **Temperature:** low to high (more randomness, more mistakes). The built-in settings are 0.3 and 1.0
+  for the 0.5B model and 0.6 for the 1.5B model.
 
 All code is labelled by running it. We always evaluate on this naturally generated code, because it's
 what AI agents really produce.
@@ -62,18 +63,20 @@ Optional, off by default, switched on with `--prompt-styles`.
 | `standard` (default) | Description plus example test | The core design |
 | `signature_only` | Description plus function signature, no example | More misunderstandings |
 | `step_by_step` | Asked to reason first, then write the function | Different kinds of mistakes |
-| `constrained` | Asked for a concise solution (no imports, no comments) | Different coding style |
+| `constrained` | Asked for a concise solution (standard library only, no comments) | Different coding style |
 | `inject_bug` | Asked to include one subtle, realistic bug | More of the rare failure types |
 
 Rules for injected bugs:
 
 - Used for training only, never for testing.
-- Comments are removed so the bug isn't given away.
-- Not used for sibling agreement.
+- Comments are removed so the bug isn't given away (and comment-based features are switched off).
+- Never counted as a sibling when measuring agreement.
 
 ```bash
 uv run trust-pipeline --num-problems 20 --samples-per-config 5 --prompt-styles standard,signature_only,step_by_step,constrained,inject_bug
 ```
+
+Shortcuts: `--prompt-styles natural` (all but `inject_bug`) or `--prompt-styles all`.
 
 Each extra style multiplies the dataset size: candidates = problems × model settings × prompt styles ×
 attempts.

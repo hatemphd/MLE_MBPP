@@ -159,7 +159,9 @@ write-up. Section 15 of the notebook displays the run report.
 | Comparison across runs (pilot / medium / full, different model mixes) | `runs_history.csv` in the parent of the output folder (or `--history-file`) |
 | Run settings, versions, GPU, commands used | "Run" section of `run_report.md` |
 | Time per stage; tokens, seconds per sample and cache reuse per model | "Stage timings" and "Generation" sections |
-| Outcomes per model, pass@k, visible-pass-but-hidden-fail rate, lint/security shares | "Execution outcomes and labels" section |
+| Outcomes per model and prompt style, pass@k, visible-pass-but-hidden-fail rate, lint/security shares | "Execution outcomes and labels" section |
+| Which failure types the dataset covers, by prompt style and provenance | "Failure-mode coverage" table |
+| Test metrics per prompt style (natural samples only) | "Test metrics ... by prompt style" table (shown when several styles are used) |
 | Split sizes and class balance | "Dataset and splits" section |
 | CV mean ± std; test metrics with 95% CIs (bootstrap by problem) vs baselines | "Model selection" and "Test-set metrics" sections |
 | Approve / reject / review shares and precision | "Three-way decisions" section |
@@ -196,13 +198,43 @@ attempts per problem.
 
 ### How big it gets
 
-Candidates = problems × model settings × attempts per setting.
+Candidates = problems × model settings × prompt styles × attempts per setting. With the default
+`standard` prompt only, the prompt-styles factor is 1.
 
 | Setup | Candidates |
 | --- | --- |
 | 970 × 3 settings × 5 attempts | about 14,500 |
 | 970 × 4 settings × 5 attempts | about 19,400 |
 | 970 × 4 settings × 10 attempts | about 38,800 |
+| 20 × 3 settings × 5 prompt styles × 5 attempts (pilot with every style) | 1,500 |
+| 300 × 3 settings × 5 prompt styles × 5 attempts | 22,500 |
+
+Generation time grows by the same factor, so try extra styles on a pilot first.
+
+### Optional extra: prompt variations
+
+The core design is models × temperatures with the standard prompt. If the pilot's
+**failure-mode coverage** table in `run_report.md` is thin (for example, very few "visible pass, hidden
+fail" cases), add prompt styles:
+
+```bash
+uv run trust-pipeline --num-problems 20 --samples-per-config 5 --output-dir artifacts_pilot \
+  --prompt-styles standard,signature_only,step_by_step,constrained,inject_bug
+```
+
+In Colab, write `!trust-pipeline ...` with the same flags. `--prompt-styles natural` is every style
+except `inject_bug`, and `--prompt-styles all` is every style.
+
+How the styles are handled:
+
+- **Natural styles** (`signature_only`, `step_by_step`, `constrained`) are realistic agent prompts. Their
+  samples are treated like standard ones: they can land in any split and count as siblings.
+- **`inject_bug`** samples (`provenance = injected`) are training-only. They are never in the
+  calibration or test splits, and they never count as siblings for agreement. Their comments and
+  docstrings are stripped, and the comment features are switched off while they are present.
+- The report breaks generation, outcomes, pass@k, failure modes and test metrics down by prompt style.
+- You can reuse the same output folder: standard-prompt samples already in the cache are reused, and only
+  the new styles are generated.
 
 ### Suggested plan
 

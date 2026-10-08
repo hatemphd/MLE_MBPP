@@ -57,6 +57,38 @@ Add `--openai` / `--anthropic` to include API models (needs `uv sync --extra api
 `OPENAI_API_KEY` / `ANTHROPIC_API_KEY`), and `--no-local-hf` to skip the local models. Generations
 are cached in `artifacts/generations.jsonl`, so interrupted runs resume where they stopped.
 
+**Optional extra: prompt variations.** By default, every model config uses the standard prompt
+(problem plus the visible test). `--prompt-styles` adds more prompt styles, each crossed with every
+model config:
+
+- `standard`
+- `signature_only`: function signature only, no visible test in the prompt
+- `step_by_step`: brief reasoning, then the final code block
+- `constrained`: concise, standard library only, no comments
+- `inject_bug`: asks for one subtle, realistic bug
+
+Presets: `natural` (all but `inject_bug`) and `all`.
+
+```bash
+uv run trust-pipeline --num-problems 20 --samples-per-config 5 \
+    --prompt-styles standard,signature_only,step_by_step,constrained,inject_bug
+```
+
+Candidates = problems × model configs × prompt styles × samples.
+
+Every row records `model`, `temperature`, `prompt_style` and `provenance`. Provenance is `natural`
+for normal prompts and `injected` for `inject_bug`.
+
+Rules for injected samples:
+
+- They are training-only: never in the calibration or test splits.
+- Their comments and docstrings are stripped.
+- They are scored against natural siblings but never counted as siblings.
+- While they are present, the comment features are switched off.
+
+`prompt_style` and `provenance` are never features. Old caches stay valid: entries without a
+`prompt_style` are treated as `standard`.
+
 Stages can also be run one at a time. They share `artifacts/config.json`, and any flags you pass
 override it.
 

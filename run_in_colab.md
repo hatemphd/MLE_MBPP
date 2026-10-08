@@ -80,6 +80,10 @@ Then check:
   os.environ["ANTHROPIC_API_KEY"] = "sk-ant-..."
   ```
 
+- Optional extra: add `--prompt-styles standard,signature_only,step_by_step,constrained,inject_bug` (or
+  `natural` / `all`) for more varied code. Each style multiplies generation time, so try it on the pilot
+  first. Without the flag, the run uses only the standard prompt, as before. The existing cache stays
+  valid, and adding styles later to the same output folder only generates the new styles.
 - If the session disconnects, rerun the same command. Generated code is cached in the output folder, so
   it resumes where it stopped.
 
