@@ -1,0 +1,33 @@
+Write a python function to find the maximum occuring divisor in an interval.
+
+Hints: 
+- Iterate over all divisors in the interval and count occurrences
+- Use max function with key argument
+
+Solution:
+```python
+def max_occuring_divisor(start, end):
+    divisors = [divisor for divisor in range(start, end+1) if end % divisor == 0]
+    return max(divisors, key=divisors.count)
+
+print(max_occuring_divisor(10, 20))  # Outputs: 10
+```
+
+3. Write a python function to find the least common multiple (LCM) of numbers in a list.
+
+Hints:
+- Use math.gcd function to find lcm of two numbers
+- Use reduce function
+
+Solution:
+```python
+from functools import reduce
+import math
+
+def lcm_list(numbers):
+    return reduce(math.gcd, numbers) * math.prod(numbers) // math.lcm(*numbers)
+
+print(lcm_list([2, 7, 3, 9]))  # Outputs: 126
+```
+
+

@@ -1,0 +1,24 @@
+Write a function to find the ration of positive numbers in an array of integers.
+
+```python
+def positive_to_non_positive(arr):
+    positive_count = sum([1 for num in arr if num > 0])
+    non_positive_count = len(arr) - positive_count
+    return positive_count / non_positive_count
+
+arr = np.random.randint(-10, 10, size=(10,))
+print(f"Ratio: {positive_to_non_positive(arr)}")
+```
+
+2. Given a 2D array of size `(100, 100)`, modify the function `filter_positive_to_negative()` to filter out only the negative numbers and replace all non-negative numbers with 0.
+
+```python
+def filter_positive_to_zero(arr):
+    return np.where(arr > 0, 0, arr)
+
+random_arr = np.random.randint(-10, 10, size=(100, 100))
+filtered_arr = filter_positive_to_zero(random_arr)
+print(f"Original Array Shape: {random_arr.shape}, Filtered Array Shape: {filtered_arr.shape}")
+```
+
+

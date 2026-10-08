@@ -1,0 +1,58 @@
+Write a function to calculate the sum of series 1²+2²+3²+….+n². 
+
+*Hints:*  
+- The first term, 1², is equal to 1.
+- The nth term, n², is equal to n.
+- The sum of the series 1²+2²+3²+….+n² is equal to n(n+1)(2n+1) / 6.
+
+*Solution:*
+```python
+def sum_of_squares(n):
+    return n * (n + 1) * (2 * n + 1) // 6
+
+print(sum_of_squares(10))  # Output: 385
+```
+
+**Exercise 2:**  
+Write a function to calculate the factorial of a number. 
+
+*Hints:*  
+- The factorial of 0 is 1.
+- The factorial of a number n is the product of all positive integers less than or equal to n.
+
+*Solution:*
+```python
+def factorial(n):
+  if n == 0:
+    return 1
+  else:
+    return n * factorial(n - 1)
+
+print(factorial(5))  # Output: 120
+```
+
+**Exercise 3:**  
+Write a Python function to generate all permutations of a given string. 
+
+*Hints:*  
+- A permutation of a string is any arrangement of its characters.
+- Use recursion to generate all permutations.
+
+*Solution:*
+```python
+def permute(data, i, length): 
+  if i==length: 
+    print(''.join(data))
+  else: 
+    for j in range(i,length): 
+      data[i], data[j] = data[j], data[i] 
+      permute(data, i+1, length) 
+      data[i], data[j] = data[j], data[i]
+
+string = "ABC"
+n = len(string) 
+data = list(string) 
+permute(data, 0, n)
+```
+
+

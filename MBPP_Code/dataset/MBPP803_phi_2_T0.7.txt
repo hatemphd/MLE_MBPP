@@ -1,0 +1,62 @@
+Write a python function to check whether the given number is a perfect square or not.
+
+def is_perfect_square(number):
+	# code here
+	return result
+
+#Example: is_perfect_square(16)
+
+#Output: True
+
+#Explanation: The square root of 16 is 4, which is a whole number.
+
+#Hint: You can use the math module to calculate the square root of a number.
+
+#Solution:
+import math
+
+def is_perfect_square(number):
+	root = math.sqrt(number)
+	return int(root + 0.5)**2 == number
+
+#Example: is_perfect_square(16)
+
+#Output: True
+
+#Explanation: The square root of 16 is 4, which is a whole number.
+
+#Example: is_perfect_square(15)
+
+#Output: False
+
+#Explanation: The square root of 15 is approximately 3.87, which is not a whole number.
+
+
+#Question 5:
+#Write a python function to count the number of vowels in the given string.
+
+def count_vowels(string):
+	# code here
+	return result
+
+#Example: count_vowels("hello world")
+
+#Output: 3
+
+#Explanation: The string "hello world" contains 3 vowels (e, o, and o).
+
+
+#Solution:
+def count_vowels(string):
+	vowels = "aeiou"
+	count = 0
+	for char in string:
+		if char.lower() in vowels:
+			count += 1
+	return count
+
+#Example: count_vowels("hello world")
+
+#Output: 3
+
+#Explanation: The string "hello world" contains 3 vowels (e, o, and o).

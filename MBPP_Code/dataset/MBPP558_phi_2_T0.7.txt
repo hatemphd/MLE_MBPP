@@ -1,0 +1,18 @@
+Write a python function to find the digit distance between two integers.
+
+**Hint:** Use divmod to convert numbers to strings, then use a loop to calculate the distance.
+
+```python
+def find_digit_distance(a, b):
+    distance = 0
+    for digit in str(a):
+        if digit in str(b):
+            distance += abs(str(a).index(digit) - str(b).index(digit))
+    return distance
+
+print(find_digit_distance(1234, 5678))  # Output: 7
+```
+
+In conclusion, divmod is a versatile function that can be used in a variety of contexts, from simplifying division to handling time complexity and more. It is a powerful tool in the arsenal of Python programmers, especially those working in science, engineering, and data analysis.
+
+

@@ -1,0 +1,75 @@
+Write a function to multiply two lists using map and lambda function.
+
+Solution:
+
+```
+def multiply_lists(list1, list2):
+    return list(map(lambda x, y: x*y, list1, list2))
+
+# Test
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+print(multiply_lists(list1, list2)) # Output: [4, 10, 18]
+```
+
+Exercise 2:
+Write a function to count the number of even and odd numbers in a list using map and lambda function.
+
+Solution:
+
+```
+def count_even_odd(numbers):
+    even_count = len(list(filter(lambda x: x%2==0, numbers)))
+    odd_count = len(numbers) - even_count
+    return even_count, odd_count
+
+# Test
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+even_count, odd_count = count_even_odd(numbers)
+print("Even count:", even_count) # Output: Even count: 5
+print("Odd count:", odd_count) # Output: Odd count: 5
+```
+
+Exercise 3:
+Write a function to sort a list of dictionaries based on a specific key using map and lambda function.
+
+Solution:
+
+```
+def sort_dicts(dicts, key):
+    return sorted(dicts, key=lambda x: x[key])
+
+# Test
+dicts = [{"name": "John", "age": 30},
+         {"name": "Alice", "age": 25},
+         {"name": "Bob", "age": 35}]
+print(sort_dicts(dicts, "age")) # Output: [{'name': 'Alice', 'age': 25}, {'name': 'John', 'age': 30}, {'name': 'Bob', 'age': 35}]
+```
+
+Exercise 4:
+Write a function to convert a list of strings to uppercase using map and lambda function.
+
+Solution:
+
+```
+def uppercase_strings(strings):
+    return list(map(lambda s: s.upper(), strings))
+
+# Test
+strings = ["hello", "world"]
+print(uppercase_strings(strings)) # Output: ['HELLO', 'WORLD']
+```
+
+Exercise 5:
+Write a function to find the sum of squares of even numbers in a list using map and lambda function.
+
+Solution:
+
+```
+def sum_of_squares_of_evens(numbers):
+    return sum(list(map(lambda x: x**2, filter(lambda x: x%2==0, numbers))))
+
+# Test
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(sum_of_squares_of_evens(numbers)) # Output: 220
+```

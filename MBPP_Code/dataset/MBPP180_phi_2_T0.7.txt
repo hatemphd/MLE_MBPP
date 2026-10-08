@@ -1,0 +1,35 @@
+Write a function to calculate distance between two points using latitude and longitude.
+
+```python
+from scipy.spatial import distance
+
+# Define two points
+point1 = (40.7128, -74.0060)
+point2 = (34.0522, -118.2437)
+
+# Calculate distance between the points
+dist = distance.euclidean(point1, point2)
+
+print(f"The distance between {point1} and {point2} is {dist}")
+```
+
+#### Exercise 5
+
+Given a list of coordinates, find the closest one to a given point (latitude and longitude).
+
+```python
+from scipy.spatial import distance
+
+# Define the point
+point = (40.7128, -74.0060)
+
+# Define a list of coordinates
+coordinates = [(40.7128, -74.0060), (34.0522, -118.2437), (51.5074, -0.1278)]
+
+# Find the closest coordinate to the point
+distances = [distance.euclidean(point, coord) for coord in coordinates]
+closest_coord = coordinates[distances.index(min(distances))]
+
+print(f"The closest coordinate to {point} is {closest_coord}")
+```
+

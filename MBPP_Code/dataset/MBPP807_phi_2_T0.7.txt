@@ -1,0 +1,25 @@
+Write a python function to find the first odd number in a given list of numbers.
+
+Example:
+```python
+def find_first_odd(lst):
+    for num in lst:
+        if num % 2 == 1:
+            return num
+    return None
+
+lst = [2, 4, 6, 8, 9, 10]
+print(find_first_odd(lst))
+```
+
+5. Write a python function to find the sum of squares of a given list of numbers.
+
+Example:
+```python
+def sum_of_squares(lst):
+    return sum([num**2 for num in lst])
+
+lst = [1, 2, 3, 4, 5]
+print(sum_of_squares(lst))
+```
+

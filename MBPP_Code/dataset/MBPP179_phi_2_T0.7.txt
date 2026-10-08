@@ -1,0 +1,40 @@
+Write a function to find if the given number is a keith number or not.
+
+A Keith number is a positive integer which has the following property:
+
+The sum of the factorial of digits of the number is equal to number.
+
+Example 1:
+
+Input: 32
+Output: True
+Explanation:
+3! + 2! = 6 + 2 = 8
+8 = 32
+Example 2:
+
+Input: 145
+Output: True
+Explanation:
+1! + 4! + 5! = 1 + 24 + 120 = 145
+
+Note:
+You may assume that the input is always a positive integer.
+
+"""
+
+"""
+We can iterate through the digits of the number and use the modulo operator to find the factorial of the digit, then add it to a running sum, while the number is greater than 0. We then divide the number by 10 as we iterate
+"""
+
+class Solution:
+    def is_keith_number(self, num: int) -> bool:
+        sum = 0
+        while num:
+            digit = num % 10
+            fact = 1
+            while digit:
+                digit, fact = digit // 10, fact * (digit % 10)
+            sum += fact
+            num //= 10
+        return sum == num

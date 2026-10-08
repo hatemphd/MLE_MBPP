@@ -1,0 +1,42 @@
+Write a python function to interchange the first and last elements in a list.
+
+Hint: Use list indexing to access elements.
+
+```python
+def interchange_elements(arr):
+    arr[0], arr[-1] = arr[-1], arr[0]
+    return arr
+
+print(interchange_elements([1, 2, 3, 4, 5]))  # Output: [5, 2, 3, 4, 1]
+```
+
+2. Write a python function to sort a list of tuples using Lambda function.
+
+Hint: Use the `sorted()` function and pass a lambda function as the key.
+
+```python
+def sort_tuples(arr):
+    return sorted(arr, key=lambda x: x[1])
+
+print(sort_tuples([('apple', 5), ('banana', 2), ('cherry', 10)]))  # Output: [('banana', 2), ('apple', 5), ('cherry', 10)]
+```
+
+3. Write a python function to implement a bubble sort algorithm on a list of integers.
+
+Hint: Bubble sort repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted.
+
+```python
+def bubble_sort(arr):
+    n = len(arr)
+
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1] :
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+
+    return arr
+
+print(bubble_sort([64, 34, 25, 12, 22, 11, 90]))  # Output: [11, 12, 22, 25, 34, 64, 90]
+```
+
+

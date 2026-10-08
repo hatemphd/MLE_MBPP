@@ -1,0 +1,31 @@
+Write a function to remove leading zeroes from an ip address.
+#Input: ip = "001010010"
+#Output: "10.10.10.1"
+class Solution:
+    def removeZeroCells(self, ip: str) -> str:
+        # 暴力解法，时间复杂度为O(n)
+        def removeZero(s):
+            res = ''
+            for i in s:
+                if i != '0':
+                    res += i
+            return res
+        
+        for i in range(len(ip)):
+            if ip[i] == '0':
+                if i+1 == len(ip):
+                    return '0.0.0.0'
+                else:
+                    return removeZero(ip[:i] + ip[i+1:])
+
+
+class Solution2:
+    def removeZeroCells(self, ip: str) -> str:
+        # 一行一行求通过改变的位置，优化为O(1)
+        for i in range(len(ip)):
+            if ip[i] == '0':
+                if i+1 == len(ip):
+                    return '0.0.0.0'
+                else:
+                    return ip[:i] + ip[i+1:]
+        return ip

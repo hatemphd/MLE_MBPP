@@ -1,0 +1,31 @@
+Write a function to find numbers within a given range where every number is divisible by every digit it contains. 
+
+Hint: Use a dictionary to store all the digits and their frequency, then iterate over the range and check the conditions for each number.
+
+```python
+def divisible_numbers(start, end):
+    for num in range(start, end+1):
+        if is_divisible(num):
+            print(num)
+
+divisible_numbers(1, 100)
+```
+
+2. Modify the `is_divisible` function to return the smallest factor if a number is not divisible by any of its digits. 
+
+Hint: Use a variable to store the current smallest factor and update it if a smaller factor is found.
+
+```python
+def is_divisible(num):
+    for i in str(num):
+        if int(i) != 0 and num % int(i) != 0:
+            return False
+    return True
+
+print(is_divisible(12))  # Outputs: False
+print(is_divisible(36))  # Outputs: True
+```
+
+These exercises will enable you to practice the concepts we have covered in this chapter. Happy coding!
+
+

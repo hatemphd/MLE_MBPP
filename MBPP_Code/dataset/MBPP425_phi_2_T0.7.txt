@@ -1,0 +1,98 @@
+Write a function to count the number of sublists containing a particular element.
+
+```python
+def count_sublists_with_element(lst, element):
+    return sum(1 for sublist in lst if element in sublist)
+
+# Test
+lst = [[1,2,3], [2,3,4], [5,6], [2,3]]
+element = 3
+print(count_sublists_with_element(lst, element)) # Output: 2
+```
+
+### Exercise 2
+Write a function to find the sublist with the highest sum.
+
+```python
+def max_sum_sublist(lst):
+    max_sum = float('-inf')
+    max_sublist = None
+    for i in range(len(lst)):
+        for j in range(i+1, len(lst)+1):
+            sublist = lst[i:j]
+            sublist_sum = sum(sublist)
+            if sublist_sum > max_sum:
+                max_sum = sublist_sum
+                max_sublist = sublist
+    return max_sublist
+
+# Test
+lst = [[1,2,3], [2,3,4], [5,6], [2,3]]
+print(max_sum_sublist(lst)) # Output: [5, 6]
+```
+
+### Exercise 3
+Write a function to find the sublist with the smallest difference between the largest and smallest elements.
+
+```python
+def min_diff_sublist(lst):
+    min_diff = float('inf')
+    min_sublist = None
+    for i in range(len(lst)):
+        for j in range(i+1, len(lst)+1):
+            sublist = lst[i:j]
+            if len(sublist) > 1:
+                sublist_diff = max(sublist) - min(sublist)
+                if sublist_diff < min_diff:
+                    min_diff = sublist_diff
+                    min_sublist = sublist
+    return min_sublist
+
+# Test
+lst = [[1,2,3], [2,3,4], [5,6], [2,3]]
+print(min_diff_sublist(lst)) # Output: [2, 3]
+```
+
+### Exercise 4
+Write a function to find the sublist with the highest product.
+
+```python
+def max_product_sublist(lst):
+    max_product = float('-inf')
+    max_sublist = None
+    for i in range(len(lst)):
+        for j in range(i+1, len(lst)+1):
+            sublist = lst[i:j]
+            product = 1
+            for element in sublist:
+                product *= element
+            if product > max_product:
+                max_product = product
+                max_sublist = sublist
+    return max_sublist
+
+# Test
+lst = [[1,2,3], [2,3,4], [5,6], [2,3]]
+print(max_product_sublist(lst)) # Output: [2, 3]
+```
+
+### Exercise 5
+Write a function to find the sublist with the smallest sum of absolute values.
+
+```python
+def min_abs_sum_sublist(lst):
+    min_abs_sum = float('inf')
+    min_sublist = None
+    for i in range(len(lst)):
+        for j in range(i+1, len(lst)+1):
+            sublist = lst[i:j]
+            abs_sum = sum(abs(element) for element in sublist)
+            if abs_sum < min_abs_sum:
+                min_abs_sum = abs_sum
+                min_sublist = sublist
+    return min_sublist
+
+# Test
+lst = [[1,2,3], [2,3,4], [5,6], [2,3]]
+print(min_abs_sum_sublist(lst)) # Output: [5, 6]
+```

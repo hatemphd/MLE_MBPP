@@ -1,0 +1,21 @@
+Write a function to re-arrange the given tuples based on the given ordered list.
+
+```python
+#Example 
+original_list = [1, 3, 4, 2]
+tuples = [(2, 5, 10), (4, 2, 4), (10, 1, 5), (1, 3, 4)]
+new_list = re_order_tuples(original_list, tuples)
+print(new_list)
+```
+
+## Exercise 5
+
+Write a function to sort the given tuples based on the given ordering list and then re-arrange the tuples based on the given ordered list.
+
+```python
+#Example 
+original_list = [1, 3, 4, 2]
+tuples = [(2, 5, 10), (4, 2, 4), (10, 1, 5), (1, 3, 4)]
+new_list = sort_then_rearrange(original_list, tuples)
+print(new_list)
+```

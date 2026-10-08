@@ -1,0 +1,63 @@
+Write a function to convert tuple into list by adding the given string after every element.
+
+```python
+my_tuple = (1, 2, 3, 4, 5)
+my_list = ["a", "b", "c"]
+```
+
+##### Ideas
+- Use a for loop to iterate through the tuple and add the given string after every element
+- Use a list comprehension to iterate through the tuple and add the given string after every element
+
+##### Solution
+```python
+my_tuple = (1, 2, 3, 4, 5)
+my_list = ["a", "b", "c"]
+new_list = [str(element) + " " + my_list[0] for element in my_tuple]
+print(new_list)
+```
+
+### Exercise 4:
+Write a function to convert list into tuple by removing the given element.
+
+```python
+my_list = [1, 2, 3, 4, 5]
+remove_element = 4
+```
+
+##### Ideas
+- Use a for loop to iterate through the list and remove the given element
+- Use a list comprehension to iterate through the list and remove the given element
+
+##### Solution
+```python
+my_list = [1, 2, 3, 4, 5]
+remove_element = 4
+new_list = tuple([element for element in my_list if element != remove_element])
+print(new_list)
+```
+
+### Exercise 5:
+Write a function to convert tuple into list by replacing the given element.
+
+```python
+my_tuple = (1, 2, 3, 4, 5)
+replace_element = 3
+new_element = 6
+```
+
+##### Ideas
+- Use a for loop to iterate through the tuple and replace the given element
+- Use a list comprehension to iterate through the tuple and replace the given element
+
+##### Solution
+```python
+my_tuple = (1, 2, 3, 4, 5)
+replace_element = 3
+new_element = 6
+new_list = [new_element if element == replace_element else element for element in my_tuple]
+print(new_list)
+```
+
+### Congratulations! You have completed the section on Applications of Loop Tuples for Business Intelligence Analyst.
+

@@ -1,0 +1,69 @@
+Write a function to find maximum run of uppercase characters in the given string. For example in the string "aAaBbBbCcCc", the maximum run of uppercase characters is 3 (in string `"AaBbB"`).
+
+**Ideas**
+- You can use `isupper` function to check if a character is uppercase
+- You can keep a counter to count the length of the current run of uppercase characters
+- You can keep another variable to store the maximum run of uppercase characters.
+
+**Solution**
+```python
+def max_run(string):
+    max_count = 0
+    count = 0
+    for char in string:
+        if char.isupper():
+            count += 1
+            if count > max_count:
+                max_count = count
+        else:
+            count = 0
+    return max_count
+
+print(max_run("aAaBbBbCcCc")) # 3
+```
+
+**Exercise 2**
+
+Write a function to count the frequency of each uppercase character in the given string. For example in the string "aAaBbBbCcCc", the frequency of each uppercase character is `{'A': 1, 'B': 2, 'C': 2}`.
+
+**Ideas**
+- You can use `isupper` function to check if a character is uppercase
+- You can use a dictionary to store the frequency of each uppercase character
+- You can loop through each character in the string
+- You can use the `get` method of a dictionary to add 1 to the frequency of the current character or set it to 1 if it is not present.
+
+**Solution**
+```python
+def frequency(string):
+    freq = {}
+    for char in string:
+        if char.isupper():
+            freq[char] = freq.get(char, 0) + 1
+    return freq
+
+print(frequency("aAaBbBbCcCc")) # {'A': 1, 'B': 2, 'C': 2}
+```
+
+**Exercise 3**
+
+Write a function to check if a given string is a palindrome considering only uppercase characters. For example, "Able was I ere I saw Elba" is a palindrome while "Able was I ere I saw Elba" is not a palindrome.
+
+**Ideas**
+- You can use `isupper` function to check if a character is uppercase
+- You can use a loop to reverse the string
+- You can compare the reversed string with the original string
+
+**Solution**
+```python
+def is_palindrome(string):
+    reversed_string = ""
+    for char in string:
+        if char.isupper():
+            reversed_string = char + reversed_string
+    return string == reversed_string
+
+print(is_palindrome("Able was I ere I saw Elba")) # True
+print(is_palindrome("Able was I ere I saw Elba")) # False
+```
+
+

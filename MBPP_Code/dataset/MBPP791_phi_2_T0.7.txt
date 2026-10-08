@@ -1,0 +1,38 @@
+Write a function to remove the nested record from the given tuple.
+    
+    Idea: You can use the index method to locate the nested record, then use the index method again to locate the index of the last nested record. Then slice the tuple to remove the nested record.
+    
+    Solution:
+    ```python
+    def remove_nested_record(t: tuple, id: int) -> tuple:
+        idx_first = t.index(id)
+        idx_last = t.index(id) + 1
+        return t[:idx_first] + t[idx_last:]
+
+    t = ("1", "2", 3, ("4", "5"), "6", 7)
+    id = 3
+    print(remove_nested_record(t, id))
+    # Output: ('1', 2, '4', '5', '6', 7)
+    ```
+
+2. Write a function to update the nested record in the given tuple.
+    
+    Idea: You can convert the tuple to a list, update the nested record, then convert the list back to a tuple.
+    
+    Solution:
+    ```python
+    def update_nested_record(t: tuple, id: int, new_id: int) -> tuple:
+        l = list(t)
+        idx_first = l.index(id)
+        idx_last = idx_first + 1
+        l[idx_last] = new_id
+        return tuple(l)
+
+    t = ("1", "2", 3, ("4", "5"), "6", 7)
+    id = 3
+    new_id = 9
+    print(update_nested_record(t, id, new_id))
+    # Output: ('1', 2, 3, 9, '6', 7)
+    ```
+
+

@@ -1,0 +1,28 @@
+Write a function to check the given decimal with a precision of 2 by using regex.
+
+```python
+import re
+
+def check_decimal(decimal):
+    pattern = r'^\d+(\.\d{2})?$'
+    return bool(re.match(pattern, decimal))
+
+print(check_decimal('20'))   # Output: True
+print(check_decimal('20.01'))   # Output: True
+print(check_decimal('20a'))   # Output: False
+print(check_decimal('20'))   # Output: False
+```
+
+### Exercise 5
+Write a function to replace all occurrences of a decimal with a specified precision by using regex.
+
+```python
+import re
+
+def replace_decimal(decimal, precision):
+    pattern = r'^\d+(\.\d{{{}}})?$'.format(precision)
+    return re.sub(pattern, '{:.{}}'.format(decimal, precision), decimal)
+
+print(replace_decimal('20', 2))   # Output: 20.00
+print(replace_decimal('20.01', 3))   # Output: 20.010
+```

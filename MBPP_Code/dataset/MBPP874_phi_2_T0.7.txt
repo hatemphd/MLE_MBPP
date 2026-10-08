@@ -1,0 +1,70 @@
+Write a python function to check if the string is a concatenation of another string.
+
+_Ideas: You can try to find substrings that repeat themselves._
+
+```python
+def is_subsequence(s, t):
+    if s == "":
+        return True
+    if t == "":
+        return False
+    if s[0] == t[0]:
+        return is_subsequence(s[1:], t[1:])
+    return is_subsequence(s, t[1:])
+
+def is_concatenation(s, t):
+    return is_subsequence(s, t) and is_subsequence(s[::-1], t)
+
+print(is_concatenation("abc", "abcabc"))  # True
+print(is_concatenation("abc", "abcd"))  # False
+```
+
+2. Write a python function to convert a string of words into a single string that is the concatenation of each word and a space.
+
+```python
+def words_to_string(words):
+    return " ".join(words)
+
+print(words_to_string(["Hello", "Python", "World"]))  # Hello Python World
+```
+
+3. Write a python function to generate a string where every letter is replaced by its corresponding position in the alphabet.
+
+_Ideas: Create a dictionary that maps each letter to its position in the alphabet and use it to map each character._
+
+```python
+def map_to_alphabet(s):
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    return ''.join([str((alphabet.index(c) + 1)) for c in s.lower()])
+
+print(map_to_alphabet("Hello World"))  # 8 5 12 12 15 23 15 18 12 4
+```
+
+4. Write a python function to check if a string is in uppercase, lowercase, or neither.
+
+```python
+def check_case(s):
+    if s.isupper():
+        return "Uppercase"
+    elif s.islower():
+        return "Lowercase"
+    else:
+        return "Neither"
+
+print(check_case("HELLO"))  # Uppercase
+print(check_case("hello"))  # Lowercase
+print(check_case("Hello"))  # Neither
+```
+
+5. Write a python function to remove duplicate characters from a string and return the result as a string.
+
+_Ideas: You can use a set to remove duplicates._
+
+```python
+def remove_duplicates(s):
+    return ''.join(set(s))
+
+print(remove_duplicates("Hello World"))  # HeloWrld
+```
+
+

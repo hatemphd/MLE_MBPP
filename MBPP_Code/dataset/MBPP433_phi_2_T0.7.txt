@@ -1,0 +1,17 @@
+Write a function to check whether the entered number is greater than the elements of the given array.
+
+```python
+def check_greater_array(n, arr):
+    return all(n > i for i in arr)
+
+print(check_greater_array(5, [1, 2, 3, 4, 5]))
+```
+
+5. Write a function to check whether all elements in the given list are strings.
+
+```python
+def check_strings(lst):
+    return all(isinstance(i, str) for i in lst)
+
+print(check_strings(['apple', 'banana', 'cherry']))
+```

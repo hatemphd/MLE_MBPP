@@ -1,0 +1,18 @@
+Write a function to count unique keys for each value present in the tuple.
+
+```python
+# Solution
+def count_unique_keys(my_tuple):
+    count_dict = {}
+    for key, value in my_tuple:
+        if value not in count_dict:
+            count_dict[value] = [key]
+        else:
+            count_dict[value].append(key)
+    return count_dict
+
+my_tuple = (("John", "Doe", "Python"), ("John", "Doe", "Java"), ("Jane", "Doe", "Python"))
+print(count_unique_keys(my_tuple))
+```
+
+

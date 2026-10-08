@@ -1,0 +1,36 @@
+Write a function to find sum and average of first n natural numbers.
+
+Constraints:
+0 <= n <= 10^6
+
+Time complexity should be O(1).
+
+Sample Input:
+1
+Sample Output:
+1
+1.0
+
+Sample Input:
+5
+Sample Output:
+15
+3.0
+
+Sample Input:
+10
+Sample Output:
+55
+5.5
+'''
+
+
+def sum_of_first_n_natural_numbers(n):
+    return (n * (n + 1)) / 2
+
+def average_of_first_n_natural_numbers(n):
+    return sum_of_first_n_natural_numbers(n) / n
+
+n = int(input())
+print(sum_of_first_n_natural_numbers(n))
+print(average_of_first_n_natural_numbers(n))

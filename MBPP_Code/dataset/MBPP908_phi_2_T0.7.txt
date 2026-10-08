@@ -1,0 +1,94 @@
+Write a function to find the fixed point in the given array. A fixed point is an element which is equal to its index.
+
+```python
+def find_fixed_point(array):
+    for i in range(len(array)):
+        if array[i] == i:
+            return i
+    return -1
+
+print(find_fixed_point([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]))
+```
+
+The `find_fixed_point` function traverses the array and checks if an element's value is equal to its index. If it finds a match, it returns the index, else it returns -1.
+
+## Finding the Index of Maximum Element
+
+A common task in array manipulation is finding the index of the maximum element.
+
+```python
+def find_max_index(array):
+    max_val = max(array)
+    max_index = array.index(max_val)
+    return max_index
+
+print(find_max_index([3, 5, 1, 8, 2]))
+```
+
+The `find_max_index` function first identifies the maximum value in the array using the `max` function. It then finds the index of this maximum value using the `index` method.
+
+## Finding the Index of Minimum Element
+
+Similarly, we can find the index of the minimum element in the array.
+
+```python
+def find_min_index(array):
+    min_val = min(array)
+    min_index = array.index(min_val)
+    return min_index
+
+print(find_min_index([3, 5, 1, 8, 2]))
+```
+
+The `find_min_index` function works similarly to `find_max_index`. It identifies the minimum value in the array and finds its index.
+
+## Exercise 1: Finding the Fixed Point in a 2D Array
+
+Modify the `find_fixed_point` function to work with 2D arrays.
+
+**Hints:**
+- Remember that the indexing in a 2D array is done using a comma-separated tuple.
+- You may need to iterate through the rows and columns of the 2D array separately.
+
+**Solution:**
+
+```python
+def find_fixed_point_2D(array):
+    for row in array:
+        for i in range(len(row)):
+            if row[i] == i:
+                return (array.index(row), i)
+    return -1
+
+print(find_fixed_point_2D([[0, 1, 2],[3, 4, 5],[6, 7, 8]]))
+```
+
+The `find_fixed_point_2D` function iterates over each row in the 2D array, then over each element in the row. It checks if the element's value is equal to its index. If it finds a match, it returns a tuple of the row index and the element index. If no match is found, it returns -1.
+
+## Exercise 2: Finding the Index of the Maximum and Minimum Elements in a 2D Array
+
+Modify the `find_max_index` and `find_min_index` functions to work with 2D arrays.
+
+**Hints:**
+- You will need to keep track of the indices of the maximum and minimum values across all rows.
+- The `max` and `min` functions can take a key argument to specify how to calculate the maximum value.
+
+**Solution:**
+
+```python
+def find_max_index_2D(array):
+    max_val = max(array, key=lambda row: max(row))
+    max_index = array.index(max_val)
+    return (max_index, array[max_index].index(max(max_val)))
+
+def find_min_index_2D(array):
+    min_val = min(array, key=lambda row: min(row))
+    min_index = array.index(min_val)
+    return (min_index, array[min_index].index(min(min_val)))
+
+array = [[3, 5, 1],[8, 2, 0],[7, 6, 4]]
+print(find_max_index_2D(array))
+print(find_min_index_2D(array))
+```
+
+The `find_max_index_2D` function first identifies the row with the maximum value by applying the `max

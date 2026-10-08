@@ -1,0 +1,26 @@
+Write a function to add two numbers and print number of digits of sum.
+
+"""
+
+def add(x, y):
+    return int(str(x + y))
+    
+def print_digits(num):
+    digits = len(str(num))
+    for i in range(digits-1, -1, -1):
+        print(num % 10, end='')
+        num = num // 10
+    print('')
+
+def main():
+    num1 = int(input('Enter first number: '))
+    num2 = int(input('Enter second number: '))
+    result = add(num1, num2)
+    print('Result:', result)
+    print('Number of digits in result:', print_digits(result))
+    
+if __name__ == '__main__':
+    main()
+```
+
+

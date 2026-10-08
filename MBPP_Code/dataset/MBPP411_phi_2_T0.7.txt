@@ -1,0 +1,12 @@
+Write a function to convert the given snake case string to camel case string by using regex.
+
+```python
+import re
+
+def snake_case_to_camel_case(s):
+    return re.sub('_([a-z])', lambda x: x.group(1).upper(), s)
+
+snake_case = "hello_world_python"
+camel_case = snake_case_to_camel_case(snake_case)
+print(camel_case) # Output: helloWorldPython
+```

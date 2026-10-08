@@ -1,0 +1,80 @@
+Write a function to check if the given tuples contain the k or not.
+
+Example:
+```python
+# Sample tuple
+t1 = (1, 2, 3)
+
+# Check if 2 is in t1
+print(2 in t1)  # Output: True
+```
+
+## Use Cases of Tuples in Systems Engineering
+
+Tuples are used in systems engineering for structuring data in a way that is both flexible and efficient. They are used in tasks like parsing log files, handling data from network packets, or representing the configuration parameters of a system.
+
+Example:
+```python
+# Sample system configuration parameters
+config = ('192.168.1.1', 'admin', 'password123')
+
+# Unpack the tuple
+ip, username, password = config
+
+# Use the unpacked values
+print(f"IP: {ip}, Username: {username}, Password: {password}")
+```
+
+---
+
+## Exercises
+
+1. Create a tuple with the numbers from 1 to 10 and print its fifth element.
+
+Idea: You can use the indexing feature of tuples to access the elements.
+
+```python
+# Solution
+t = tuple(range(1, 11))
+print(t[4])  # Output: 5
+```
+
+2. Write a function that takes two tuples and checks if they contain the same elements.
+
+Idea: You can use the in keyword to check if an element is in a tuple.
+
+```python
+# Solution
+def are_same(*args):
+    for item in args[0]:
+        if item not in args[1]:
+            return False
+    return True
+
+t1 = (1, 2, 3)
+t2 = (3, 2, 1)
+
+print(are_same(t1, t2))  # Output: True
+```
+
+3. Write a function that takes a tuple of tuples and returns a flattened tuple.
+
+Idea: You can use nested for loops to iterate over the elements of the tuple.
+
+```python
+# Solution
+def flatten_tuple(t):
+    result = ()
+    for item in t:
+        if isinstance(item, tuple):
+            result += flatten_tuple(item)
+        else:
+            result += (item,)
+    return result
+
+t = ((1, 2), (3, 4, 5), (6,), (7, 8, 9, 10))
+
+print(flatten_tuple(t))  # Output: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+```
+
+

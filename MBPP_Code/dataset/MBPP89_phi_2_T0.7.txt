@@ -1,0 +1,84 @@
+Write a function to find the closest smaller number than n.
+
+n = 13
+
+# Solution
+def closestSmaller(n):
+    stack = []
+    for i in str(n):
+        stack.append(int(i))
+    while len(stack) > 1:
+        top = stack.pop()
+        if top < stack[-1]:
+            while stack and top < stack[-1]:
+                top = stack.pop()
+            stack.append(top)
+        else:
+            stack.append(top)
+    if len(stack) > 0:
+        return stack[0]
+    return -1
+
+print(closestSmaller(n)) # Output: 12
+
+# Example 5: Reverse a Stack
+
+# Write a function to reverse a stack.
+
+n = [1, 2, 3, 4, 5]
+
+# Solution
+def reverseStack(stack):
+    newStack = []
+    while stack:
+        newStack.append(stack.pop())
+    return newStack
+
+print(reverseStack(n)) # Output: [5, 4, 3, 2, 1]
+
+
+# Exercises
+
+# Exercise 1: Write a function to check if a stack is empty.
+
+# Solution
+def isEmpty(stack):
+    if len(stack) == 0:
+        return True
+    return False
+
+# Exercise 2: Write a function to find the largest number in a stack.
+
+# Solution
+def largestNumber(stack):
+    maxNum = stack[-1]
+    for num in stack:
+        if num > maxNum:
+            maxNum = num
+    return maxNum
+
+# Exercise 3: Write a function to find the second largest number in a stack.
+
+# Solution
+def secondLargestNumber(stack):
+    maxNum = stack[-1]
+    secondMaxNum = -1
+    for num in stack:
+        if num > maxNum and num < secondMaxNum:
+            secondMaxNum = num
+    return secondMaxNum
+
+# Exercise 4: Write a function to reverse a stack using recursion.
+
+# Solution
+def reverseStackRecursive(stack):
+    if len(stack) <= 1:
+        return stack
+    else:
+        return reverseStackRecursive(stack[1:]) + [stack[0]]
+
+# Exercise 5: Write a function to find the length of a stack.
+
+# Solution
+def stackLength(stack):
+    return len(stack)

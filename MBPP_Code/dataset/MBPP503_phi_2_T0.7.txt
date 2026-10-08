@@ -1,0 +1,53 @@
+Write a function to add consecutive numbers of a given list.
+
+```python
+def sum_of_consecutive(numbers):
+    return sum(numbers)
+
+# Test
+print(sum_of_consecutive([1, 2, 3, 4, 5]))  # Output: 15
+```
+
+2. Write a function to calculate the sum of the squares of all numbers in a list.
+
+```python
+def sum_of_squares(numbers):
+    return sum(i**2 for i in numbers)
+
+# Test
+print(sum_of_squares([1, 2, 3, 4, 5]))  # Output: 55
+```
+
+3. Write a function to calculate the sum of the numbers in a list using recursion.
+
+```python
+def sum_recursive(numbers):
+    if not numbers:
+        return 0
+    else:
+        return numbers[0] + sum_recursive(numbers[1:])
+
+# Test
+print(sum_recursive([1, 2, 3, 4, 5]))  # Output: 15
+```
+
+4. Write a function to add two lists element-wise.
+
+```python
+def add_lists(a, b):
+    return [x + y for x, y in zip(a, b)]
+
+# Test
+print(add_lists([1, 2, 3], [4, 5, 6]))  # Output: [5, 7, 9]
+```
+
+5. Write a function to add a list of numbers to a given number.
+
+```python
+def add_to_number(number, numbers):
+    return number + sum(numbers)
+
+# Test
+print(add_to_number(5, [1, 2, 3, 4, 5]))  # Output: 20
+```
+

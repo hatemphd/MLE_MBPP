@@ -1,0 +1,11 @@
+Write a function to remove empty lists from a given list of lists.
+
+```python
+def remove_empty_lists(lst):
+    return [sublist for sublist in lst if sublist]
+
+# Example usage
+lst = [[1, 2], [], [3, 4, 5], [], []]
+print(remove_empty_lists(lst))
+# Output: [[1, 2], [3, 4, 5], []]
+```

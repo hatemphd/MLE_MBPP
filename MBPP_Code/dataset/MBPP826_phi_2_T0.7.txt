@@ -1,0 +1,65 @@
+Write a python function to find the type of triangle from the given sides.
+
+```python
+def triangle_type(a, b, c):
+    if a + b <= c or a + c <= b or b + c <= a:
+        return "Not a triangle"
+    elif a == b == c:
+        return "Equilateral Triangle"
+    elif a == b or b == c or a == c:
+        return "Isosceles Triangle"
+    else:
+        return "Scalene Triangle"
+
+print(triangle_type(5,5,5)) # Equilateral Triangle
+print(triangle_type(5,5,6)) # Isosceles Triangle
+print(triangle_type(5,6,7)) # Scalene Triangle
+print(triangle_type(2,4,9)) # Not a triangle
+```
+
+2. Write a python function to find if a point is inside a triangle.
+
+```python
+def point_in_triangle(triangle, point):
+    (x1, y1), (x2, y2), (x3, y3) = triangle
+    a = abs((x2-x1)*(point[1]-y1) - (x1-x2)*(point[0]-y2)) / ((x2-x1)*(y3-y2) - (y2-y1)*(x3-x2))
+    b = abs((x3-x2)*(point[1]-y2) - (x2-x3)*(point[0]-y3)) / ((x2-x1)*(y3-y2) - (y2-y1)*(x3-x2))
+    c = abs((x1-x3)*(point[1]-y3) - (x3-x1)*(point[0]-y1)) / ((x2-x1)*(y3-y2) - (y2-y1)*(x3-x2))
+    return 0 <= a <= 1 and 0 <= b <= 1 and 0 <= c <= 1
+
+triangle = ((0,0),(0,3),(3,0))
+point = (1,1)
+print(point_in_triangle(triangle, point)) # True
+```
+
+3. Write a python function to find the midpoint of a line segment.
+
+```python
+def midpoint(point1, point2):
+    return ((point1[0]+point2[0])/2, (point1[1]+point2[1])/2)
+
+point1 = (0,0)
+point2 = (4,4)
+print(midpoint(point1, point2)) # (2.0, 2.0)
+```
+
+4. Write a python function to find the area of a triangle.
+
+```python
+def triangle_area(a, b, c):
+    s = (a + b + c)/2
+    return (s*(s-a)*(s-b)*(s-c))**0.5
+
+print(triangle_area(5,5,6)) # 9.921567416492215
+```
+
+5. Write a python function to find the distance between two points.
+
+```python
+def distance(point1, point2):
+    return ((point1[0]-point2[0])**2 + (point1[1]-point2[1])**2)**0.5
+
+point1 = (0,0)
+point2 = (4,4)
+print(distance(point1, point2)) # 5.0
+```

@@ -1,0 +1,57 @@
+Write a python function to find sum of odd factors of a number.
+
+# Solution
+def sum_of_odd_factors(num):
+    factors = factors_of_num(num)
+    odd_factors_sum = 0
+    for factor in factors:
+        if factor % 2 != 0:
+            odd_factors_sum += factor
+    return odd_factors_sum
+```
+
+2. Write a python function to find sum of even factors of a number.
+
+# Solution
+``` python
+def sum_of_even_factors(num):
+    factors = factors_of_num(num)
+    even_factors_sum = 0
+    for factor in factors:
+        if factor % 2 == 0:
+            even_factors_sum += factor
+    return even_factors_sum
+```
+
+3. Write a python function to find the greatest common divisor (gcd) of two numbers using Euclid's algorithm.
+
+# Solution
+``` python
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+```
+
+4. Write a python function to find the least common multiple (lcm) of two numbers using gcd.
+
+# Solution
+``` python
+def lcm(a, b):
+    return abs(a*b) // gcd(a, b)
+```
+
+5. Write a python program to find the sum of all prime numbers less than n.
+
+# Solution
+``` python
+def is_prime(num):
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def sum_of_primes(n):
+    primes = [i for i in range(2, n) if is_prime(i)]
+    return sum(primes)
+```

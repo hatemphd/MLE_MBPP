@@ -1,0 +1,56 @@
+Write a function to find sequences of one upper case letter followed by lower case letters in the given string by using regex.
+
+**Idea:**
+The regex pattern for one upper case letter followed by lower case letters is `[A-Z][a-z]+`
+
+**Solution:**
+```python
+def find_lower_case_after_upper(s):
+    return re.findall(r'[A-Z][a-z]+', s)
+
+print(find_lower_case_after_upper('HelloPythonWorld'))  # Output: ['Hello', 'World']
+```
+
+**Exercise 3:**
+Write a function to find sequences of one upper case letter followed by a digit in the given string by using regex.
+
+**Idea:**
+The regex pattern for one upper case letter followed by a digit is `[A-Z][0-9]+`
+
+**Solution:**
+```python
+def find_upper_digit_after_upper(s):
+    return re.findall(r'[A-Z][0-9]+', s)
+
+print(find_upper_digit_after_upper('Hello123World456'))  # Output: ['World456']
+```
+
+**Exercise 4:**
+Write a function to find sequences of one upper case letter, one lower case letter, and one digit in the given string by using regex.
+
+**Idea:**
+The regex pattern for one upper case letter, one lower case letter, and one digit is `[A-Z][a-z][0-9]+`
+
+**Solution:**
+```python
+def find_upper_lower_digit_after_upper(s):
+    return re.findall(r'[A-Z][a-z][0-9]+', s)
+
+print(find_upper_lower_digit_after_upper('Hello123World456'))  # Output: ['World456']
+```
+
+**Exercise 5:**
+Write a function to find sequences of one upper case letter, one lower case letter, and one decimal digit in the given string by using regex.
+
+**Idea:**
+The regex pattern for one upper case letter, one lower case letter, and one decimal digit is `[A-Z][a-z][0-9]+\.`
+
+**Solution:**
+```python
+def find_upper_lower_digit_decimal_after_upper(s):
+    return re.findall(r'[A-Z][a-z][0-9]+\.', s)
+
+print(find_upper_lower_digit_decimal_after_upper('Hello123World456.789'))  # Output: ['World456.789']
+```
+
+

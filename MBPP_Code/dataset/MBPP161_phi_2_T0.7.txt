@@ -1,0 +1,45 @@
+Write a function to remove all elements from a given list present in another list.
+
+```python
+# Solution
+def remove_common_elements(list1, list2):
+    return [item for item in list1 if item not in list2]
+
+# Test your function
+print(remove_common_elements([1, 2, 3, 4, 5], [4, 5, 6, 7, 8]))
+# Output: [1, 2, 3]
+```
+
+2. Implement a function that sorts a list of lists based on the sum of each individual list's elements.
+
+```python
+# Solution
+def sort_by_sum(lists):
+    return sorted(lists, key=lambda x: sum(x))
+
+# Test your function
+print(sort_by_sum([[3, 2, 1], [6, 5, 4], [9, 8, 7]]))
+# Output: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+```
+
+3. Develop a function to merge two lists in a way that the resulting list alternates between elements of the two original lists.
+
+```python
+# Solution
+def merge_alternating(list1, list2):
+    result = []
+    for i in range(max(len(list1), len(list2))):
+        if i < len(list1):
+            result.append(list1[i])
+        if i < len(list2):
+            result.append(list2[i])
+    return result
+
+# Test your function
+print(merge_alternating([1, 2, 3], ['a', 'b', 'c', 'd']))
+# Output: [1, 'a', 2, 'b', 3, 'c', 'd']
+```
+
+In conclusion, Python lists offer a versatile data structure that can be used in a wide range of applications. With the knowledge of list manipulation techniques presented in this chapter, you can efficiently handle a vast array of real-world data processing tasks.
+
+

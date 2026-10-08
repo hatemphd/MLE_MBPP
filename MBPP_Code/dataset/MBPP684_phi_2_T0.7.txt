@@ -1,0 +1,43 @@
+Write a python function to count occurences of a character in a repeated string.
+
+```python
+def char_occurrence(char, string):
+    return string.count(char)
+
+print(char_occurrence('a', 'aaa'))  # Expected output: 3
+```
+
+## Exercise 2
+
+Write a function to return the first non-repeating character in a string. 
+
+```python
+def first_non_repeating_char(string):
+    char_count = {}
+    for char in string:
+        if char in char_count:
+            char_count[char] += 1
+        else:
+            char_count[char] = 1
+
+    for char in string:
+        if char_count[char] == 1:
+            return char
+
+    return '-'
+
+print(first_non_repeating_char('aabcc'))  # Expected output: 'b'
+```
+
+## Exercise 3
+
+Write a function to convert a string to title case (capitalizes the first letter of each word).
+
+```python
+def to_title_case(string):
+    return string.title()
+
+print(to_title_case('hello world'))  # Expected output: 'Hello World'
+```
+
+

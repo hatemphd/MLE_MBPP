@@ -1,0 +1,62 @@
+Write a python function to find the nth digit in the proper fraction of two given numbers.
+
+```python
+def nth_digit_proper_fraction(a, b, n):
+    numerator = a * b ** (n-1)
+    denominator = (b * b + a) * (b + a)
+    return numerator // denominator % 10
+```
+
+The function `nth_digit_proper_fraction` computes the numerator and the denominator of the proper fraction of the given numbers. It then computes the remainder of the numerator divided by the denominator to find the nth digit.
+
+## Exercise 2:
+
+Write a python function to find the nth digit in the proper fraction of two given numbers.
+
+```python
+def nth_digit_proper_fraction(a, b, n):
+    numerator = a * b ** (n-1)
+    denominator = (b * b + a) * (b + a)
+    return numerator // denominator % 10
+```
+
+The function `nth_digit_proper_fraction` computes the numerator and the denominator of the proper fraction of the given numbers. It then computes the remainder of the numerator divided by the denominator to find the nth digit.
+
+## Exercise 3:
+
+Write a python function to check if the nth digit of the proper fraction is odd or even.
+
+```python
+def nth_digit_odd_even(a, b, n):
+    numerator = a * b ** (n-1)
+    denominator = (b * b + a) * (b + a)
+    return n % 2 == (numerator // denominator) % 2
+```
+
+The function `nth_digit_odd_even` computes the numerator and the denominator of the proper fraction of the given numbers. It then checks whether the remainder of the numerator divided by the denominator is odd or even to determine if the nth digit is odd or even.
+
+## Exercise 4:
+
+Write a python function that finds the nth digit of the proper fraction of two given numbers, and returns the smallest digit.
+
+```python
+def nth_digit_proper_fraction(a, b, n):
+    numerator = a * b ** (n-1)
+    denominator = (b * b + a) * (b + a)
+    return min([numerator // denominator % 10, a % 10, b % 10])
+```
+
+The function `nth_digit_proper_fraction` computes the numerator and the denominator of the proper fraction of the given numbers. It then finds the remainder of the numerator divided by the denominator to determine the nth digit. Finally, it finds the smallest digit among the nth digit, the last digit of a, and the last digit of b.
+
+## Exercise 5:
+
+Write a python function that finds the nth digit of the proper fraction of two given numbers, and returns the largest digit.
+
+```python
+def nth_digit_proper_fraction(a, b, n):
+    numerator = a * b ** (n-1)
+    denominator = (b * b + a) * (b + a)
+    return max([numerator // denominator % 10, a % 10, b % 10])
+```
+
+The function `nth_digit_proper_fraction` computes the numerator and the denominator of the proper fraction of the given numbers. It then finds the remainder of the numerator divided by the denominator to determine the nth digit. Finally, it finds the largest digit among the nth digit, the last digit of a, and the last digit of b.

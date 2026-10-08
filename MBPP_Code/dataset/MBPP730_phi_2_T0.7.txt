@@ -1,0 +1,13 @@
+Write a function to remove consecutive duplicates of a given list.
+    def remove_consecutive_duplicates(lst: list) -> list:
+        return [lst[i] for i in range(len(lst)) if i == 0 or lst[i] != lst[i-1]]
+    
+    # Example usage:
+    lst = [1, 1, 2, 2, 2, 3, 4, 4, 5, 5, 5, 5]
+    print(remove_consecutive_duplicates(lst))
+    # Output: [1, 2, 3, 4, 5]
+    
+    # Explanation:
+    # This implementation uses list comprehension to iterate through the original list and 
+    # append only the elements that are not equal to the previous element to a new list.
+    # This effectively removes consecutive duplicates of the original list.

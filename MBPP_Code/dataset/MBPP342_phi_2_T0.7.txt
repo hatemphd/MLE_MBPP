@@ -1,0 +1,49 @@
+Write a function to find the smallest range that includes at-least one element from each of the given arrays. The ranges can overlap.
+
+```python
+# Hint: Utilize a similar approach to the previous problem. 
+# Instead of finding the maximum and minimum elements, you need to find elements with the minimum and maximum frequency. 
+```
+
+#### Solution:
+
+```python
+def smallest_range(arrays):
+    from collections import Counter
+    from heapq import heappush, heappop
+
+    min_freqs = Counter()
+    max_freqs = Counter()
+
+    for array in arrays:
+        for num, freq in Counter(array).items():
+            min_freqs[num] = min(min_freqs[num], freq)
+            max_freqs[num] = max(max_freqs[num], freq)
+
+    heap = []
+    for num, freq in max_freqs.items():
+        heappush(heap, [-freq, num])
+
+    smallest_range = float('inf')
+    while heap:
+        freq, num = heappop(heap)
+        smallest_range = min(smallest_range, max_freqs[num] - min_freqs[num] + 1)
+        min_freqs[num] += 1
+        while heap and -heap[0][0] == min_freqs[num]:
+            freq, num = heappop(heap)
+            if heap and -heap[0][0] == max_freqs[num]:
+                min_freqs[num] += 1
+                heappush(heap, [-freq, num])
+                break
+
+    return [min_freqs[num], max_freqs[num]]
+
+arrays = [[1, 2, 2], [2, 2, 2], [3, 3, 3, 3, 3, 3]]
+print(smallest_range(arrays))  # [1, 3]
+```
+
+This solution first initializes three counters for the minimum, maximum, and total frequencies. Then, it iterates through each array, updating the minimum and maximum frequencies accordingly. The heap stores the maximum frequency of each number, and the while loop ensures that there is at least one of each number in the resulting range.
+
+This chapter has equipped you with the necessary tools to find the smallest range in Python, which are fundamental techniques to solve complex problems. Continue practicing and exploring different scenarios to strengthen your understanding.
+
+

@@ -1,0 +1,43 @@
+Write a python function to count the number of squares in a rectangle.
+
+Hint: Use a loop to iterate through each cell in the rectangle. If the cell is a square (i.e., a 2x2 square of asterisks), increase the count.
+```python
+def count_squares(rectangle):
+    count = 0
+    for i in range(len(rectangle) - 1):
+        for j in range(len(rectangle[i]) - 1):
+            if rectangle[i][j] == rectangle[i][j+1] == rectangle[i+1][j] == rectangle[i+1][j+1] == '*':
+                count += 1
+    return count
+
+print(count_squares(['***', '* *', '***']))  # output: 1
+```
+
+4. Write a python function to find the longest common prefix of a set of strings.
+
+Hint: Use a loop to compare the characters at each position of the strings. If all strings have the same character at that position, update the prefix. If not, return the prefix.
+```python
+def longest_common_prefix(strings):
+    prefix = ""
+    for i in range(min(len(s) for s in strings)):
+        if not all(s[i] == strings[0][i] for s in strings):
+            return prefix
+        prefix += strings[0][i]
+    return prefix
+
+print(longest_common_prefix(["flower", "flow", "flight"]))  # output: "fl"
+```
+
+5. Write a python function to convert a binary string to its decimal equivalent.
+
+Hint: Use a loop to iterate through each bit of the binary string and compute the corresponding decimal value.
+```python
+def binary_to_decimal(binary):
+    decimal = 0
+    for i in range(len(binary)):
+        decimal += int(binary[i]) * (2 ** (len(binary) - i - 1))
+    return decimal
+
+print(binary_to_decimal("1010"))  # output: 10
+```
+

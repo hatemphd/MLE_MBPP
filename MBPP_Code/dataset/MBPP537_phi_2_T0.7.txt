@@ -1,0 +1,76 @@
+Write a python function to find the first repeated word in a given string.
+
+Hint: Use a dictionary to keep track of the words encountered so far.
+
+```python
+def find_first_repeated_word(s):
+    word_dict = {}
+    for word in s.split():
+        if word in word_dict:
+            return word
+        word_dict[word] = True
+    return None
+
+print(find_first_repeated_word("This is a test string with test string."))
+# Output: 'test'
+```
+
+### Exercise 2:
+
+Write a python function to reverse a string using recursion.
+
+Hint: Use a base case when the string is empty.
+
+```python
+def reverse_string(s):
+    if len(s) == 0:
+        return s
+    else:
+        return reverse_string(s[1:]) + s[0]
+
+print(reverse_string("PYTHON"))
+# Output: 'NOHTYP'
+```
+
+### Exercise 3:
+
+Write a python function to check if a given string is a palindrome.
+
+Hint: Use string slicing to reverse the string and compare it with the original string.
+
+```python
+def is_palindrome(s):
+    return s == s[::-1]
+
+print(is_palindrome("racecar"))
+# Output: True
+```
+
+### Exercise 4:
+
+Write a python function to convert a string to title case.
+
+Hint: Use the `title` string method.
+
+```python
+def to_title_case(s):
+    return s.title()
+
+print(to_title_case("this is a test string."))
+# Output: 'This Is A Test String.'
+```
+
+### Exercise 5:
+
+Write a python function to remove all whitespace from a string.
+
+Hint: Use the `replace` string method.
+
+```python
+def remove_whitespace(s):
+    return s.replace(" ", "")
+
+print(remove_whitespace("This is a test string."))
+# Output: 'Thisisateststring.'
+```
+

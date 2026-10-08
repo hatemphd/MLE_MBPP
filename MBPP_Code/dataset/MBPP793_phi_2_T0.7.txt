@@ -1,0 +1,74 @@
+Write a python function to find the last position of an element in a sorted array.
+
+**Ideas:** Use the binary search but with a slight modification. Instead of returning the mid index, return the mid index as long as the value is the same. Otherwise, return -1.
+
+```python
+def last_position(arr, low, high, key):
+    if high >= low:
+        mid = low + (high - low) // 2
+        if (mid == 0 or key > arr[mid - 1]) and key == arr[mid]:
+            return mid
+        elif key > arr[mid]:
+            return last_position(arr, (mid + 1), high, key)
+        else:
+            return last_position(arr, low, (mid - 1), key)
+    else:
+        return -1
+
+print(last_position([1, 2, 2, 2, 2, 3, 4, 5], 0, len(arr)-1, 2))  # Output: 5
+```
+
+## Exercise 2: Search a 2D Matrix
+
+Write a python function to search a target number in a 2D matrix.
+
+**Ideas:** Implement a modified version of binary search. Instead of iterating through one dimension, iterate through two dimensions.
+
+```python
+def search_matrix(matrix, target):
+    rows, columns = len(matrix), len(matrix[0])
+    low = 0
+    high = rows * columns - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+        mid_value = matrix[mid // columns][mid % columns]
+        if mid_value == target:
+            return True
+        elif mid_value < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return False
+
+print(search_matrix([[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]], 5))  # Output: True
+```
+
+## Exercise 3: Search a 3D Matrix
+
+Write a python function to search a target number in a 3D matrix.
+
+**Ideas:** Similar to 2D matrix, iterate through two dimensions (rows and columns). However, in this case, you need to iterate through two more dimensions (z-axis).
+
+```python
+def search_3d_matrix(matrix, target):
+    rows, columns = len(matrix), len(matrix[0])
+    z_values = len(matrix[0][0])
+
+    while low <= high:
+        mid = (low + high) // 2
+        mid_value = matrix[mid // rows // columns][mid // rows % columns][mid % columns]
+        if mid_value == target:
+            return True
+        elif mid_value < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return False
+
+print(search_3d_matrix([[[1,4,7],[11,15,19]],[[2,5,8],[12,16,20]],[[3,6,9],[14,17,22]]], 5))  # Output: True
+```
+
+We hope you found this chapter on Binary Search in Python helpful. Continue practicing with different types of arrays and matrices to gain a solid understanding of this powerful searching technique.
+
+

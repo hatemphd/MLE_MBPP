@@ -1,0 +1,49 @@
+Write a function to find the median of three specific numbers.
+
+Hint: You can use numpy's median function for this.
+
+```python
+def median_of_three(a, b, c):
+    return np.median([a, b, c])
+
+print(median_of_three(1, 5, 9))
+```
+
+3. Write a function to calculate the median of a 2D list using list comprehension and numpy.
+
+Hint: You can flatten the 2D list using list comprehension and then calculate the median.
+
+```python
+def median_2d(lst):
+    flat_list = [num for sublist in lst for num in sublist]
+    return np.median(flat_list)
+
+print(median_2d([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))
+```
+
+4. Generate a list of ten random numbers between -50 and 50. Write a function to calculate the median of this list.
+
+Hint: Use np.random.uniform to generate random numbers.
+
+```python
+def calculate_median(data):
+    return np.median(data)
+
+data = np.random.uniform(-50, 50, 10)
+print(data)
+print(calculate_median(data))
+```
+
+5. Write a Python function to calculate the median of an array of numbers.
+
+Hint: You can use numpy's median function for this.
+
+```python
+def calculate_median(data):
+    return np.median(data)
+
+data = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+print(calculate_median(data))
+```
+
+

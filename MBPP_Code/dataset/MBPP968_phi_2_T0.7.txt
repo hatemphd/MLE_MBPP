@@ -1,0 +1,42 @@
+Write a python function to find maximum possible value for the given periodic function.
+
+```python
+def max_periodic(a, b, c):
+    return find_max_value(a, b, c)
+
+print(max_periodic(1, 2, 3))
+```
+
+**Solution:**
+
+```python
+def max_periodic(a, b, c):
+    return find_max_value(a, b, c)
+
+print(max_periodic(1, 2, 3))  # Outputs: 3
+```
+
+**Exercise 2**: Modify the `find_max_value` function to find maximum possible value for a function with more than one variable.
+
+**Hints:**
+
+- This will require a more complex function.
+- The function should take a list of lists as an argument.
+- Each inner list will represent a different variable.
+
+**Solution:**
+
+```python
+def find_max_value_multi(values):
+    max_val = float('-inf')
+    for v in values:
+        max_val = max(max_val, min(v))
+    return max_val
+
+values = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print(find_max_value_multi(values))  # Outputs: 9
+```
+
+We hope you find these exercises helpful. Keep practicing and experimenting with different functions and scenarios to gain a better understanding of Python functions and their applications.
+
+

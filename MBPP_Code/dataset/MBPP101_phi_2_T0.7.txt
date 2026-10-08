@@ -1,0 +1,4 @@
+Write a function to find the kth element in the given array. 
+A: def find_kth_element(arr, k):
+    arr.sort()
+    return arr[k-1]

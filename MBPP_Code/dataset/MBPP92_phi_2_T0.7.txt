@@ -1,0 +1,55 @@
+Write a function to check whether the given number is undulating or not. The number is said to be undulating if it has at least 3 digits and is the same after reversing its digits.
+
+For example:
+
+Input: 45
+Output: 1
+
+Input: 121
+Output: 0
+
+Input: 12321
+Output: 1
+
+Example solution:
+# line 1
+def check_undulating(num):
+# line 2
+    if num < 100:
+# line 3
+        return 0
+# line 4
+    else:
+        rev = 0
+        while num > 0:
+# line 5
+            rev = rev * 10 + num % 10
+# line 6
+            num = num // 10
+# line 7
+        return (1 if num == rev else 0)
+# line 8
+
+# line 1
+def main():
+# line 2
+    print(check_undulating(45))
+# line 3
+    print(check_undulating(121))
+# line 4
+    print(check_undulating(12321))
+# line 5
+    print(check_undulating(12))
+# line 6
+    print(check_undulating(456))
+# line 7
+    print(check_undulating(122))
+# line 8
+    print(check_undulating(111))
+
+# line 1
+if __name__ == '__main__':
+# line 2
+    main()
+
+# line 3

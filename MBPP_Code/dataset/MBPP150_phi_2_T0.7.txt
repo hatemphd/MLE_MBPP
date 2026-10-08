@@ -1,0 +1,20 @@
+Write a python function to find whether the given number is present in the infinite sequence or not.
+
+```python
+def is_present(n):
+    a = 2
+    b = 5
+    while True:
+        a, b = b, a + b
+        if n == a:
+            return True
+        elif n > a:
+            return False
+
+print(is_present(25))
+print(is_present(28))
+```
+
+The solution is to modify the function to return True when the given number is equal to 'a' and False otherwise.
+
+

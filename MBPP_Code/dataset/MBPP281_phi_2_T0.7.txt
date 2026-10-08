@@ -1,0 +1,24 @@
+Write a python function to check if the elements of a given list are unique or not.
+
+```python
+def check_unique(arr):
+    return len(arr) == len(set(arr))
+
+print(check_unique(arr))  # Output: True
+print(check_unique([1, 2, 3, 3]))  # Output: False
+```
+
+In this solution, we first convert the given list to a set using the built-in `set()` function. As sets only contain unique elements, if the length of the list and the set are the same, then all the elements are unique.
+
+Exercise 3: Write a python function to sort a given list in descending order.
+
+```python
+def sort_desc(arr):
+    return sorted(arr, reverse=True)
+
+print(sort_desc(arr))  # Output: [7, 5, 3, 2, 1]
+```
+
+In this solution, we use the built-in `sorted()` function with the parameter `reverse=True` to sort the array in descending order.
+
+

@@ -1,0 +1,65 @@
+Write a python function to check whether two given lines are parallel or not. Use conditional statements to check the slopes of the lines.
+
+Solution:
+```python
+def is_parallel(line1, line2):
+    slope1 = (line1[3] - line1[1])/(line1[2] - line1[0])
+    slope2 = (line2[3] - line2[1])/(line2[2] - line2[0])
+    if slope1 == slope2:
+        return True
+    else:
+        return False
+```
+
+Exercise 2:
+Write a python function to check whether two given lines are perpendicular or not. Use conditional statements to check the slopes of the lines.
+
+Solution:
+```python
+def is_perpendicular(line1, line2):
+    slope1 = (line1[3] - line1[1])/(line1[2] - line1[0])
+    slope2 = (line2[3] - line2[1])/(line2[2] - line2[0])
+    if slope1*slope2 == -1:
+        return True
+    else:
+        return False
+```
+
+Exercise 3:
+Write a python function to find the point of intersection of two given lines. Use conditional statements to check the slopes of the lines.
+
+Solution:
+```python
+def find_intersection(line1, line2):
+    x1 = (line2[3] - line2[1] + line1[2]*line2[1] - line1[3]*line1[1])/(line1[2] - line2[2])
+    y1 = (line1[3] - line1[1] + line2[2]*line1[1] - line1[3]*line1[1])/(line1[2] - line2[2])
+    return (x1, y1)
+```
+
+Exercise 4:
+Write a python function to check whether two given lines are coincident or not. Use conditional statements to check the ratios of the coordinates of the lines.
+
+Solution:
+```python
+def is_coincident(line1, line2):
+    ratio1 = (line1[3] - line1[1])/(line1[2] - line1[0])
+    ratio2 = (line2[3] - line2[1])/(line2[2] - line2[0])
+    if ratio1 == ratio2:
+        return True
+    else:
+        return False
+```
+
+Exercise 5:
+Write a python function to find the distance between two given points. Use conditional statements to check for errors.
+
+Solution:
+```python
+def find_distance(point1, point2):
+    if type(point1) != tuple or type(point2) != tuple:
+        return "Error: Both points must be tuples."
+    x1, y1 = point1
+    x2, y2 = point2
+    distance = ((x2 - x1)**2 + (y2 - y1)**2)**0.5
+    return distance
+```

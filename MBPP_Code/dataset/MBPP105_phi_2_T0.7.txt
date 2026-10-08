@@ -1,0 +1,78 @@
+Write a python function to count true booleans in the given list. 
+
+Hints: 
+* Use a loop to iterate over the list.
+* Use an if statement to check if the value is True. 
+* Use a counter to count the True values. 
+
+```python
+def count_true_booleans(bool_list):
+    count = 0
+    for d in bool_list:
+        if d:
+            count += 1
+    return count
+
+print(count_true_booleans([True, False, True, True, False, False, True]))
+# Output: 4
+```
+
+3. Write a python function to check if all the values in the given list are True. 
+
+Hints: 
+* Use a loop to iterate over the list.
+* Use an if statement to check if the value is True. 
+* Use a boolean variable to keep track of whether all values are True or not. 
+
+```python
+def are_all_true(bool_list):
+    all_true = True
+    for d in bool_list:
+        if not d:
+            all_true = False
+            break
+    return all_true
+
+print(are_all_true([True, True, True, False, True]))
+# Output: False
+```
+
+4. Write a python function to find the index of the first True value in the given list. 
+
+Hints: 
+* Use a loop to iterate over the list.
+* Use an if statement to check if the value is True. 
+* Use the `enumerate()` function to get the index of the value. 
+
+```python
+def find_first_true_index(bool_list):
+    for i, d in enumerate(bool_list):
+        if d:
+            return i
+    return -1
+
+print(find_first_true_index([False, True, False, True, False]))
+# Output: 1
+```
+
+5. Write a python function to replace all the True values in the given list with a specified value. 
+
+Hints: 
+* Use a loop to iterate over the list.
+* Use an if statement to check if the value is True. 
+* Use the `append()` method to add the new value to a new list. 
+
+```python
+def replace_true_values(bool_list, new_value):
+    new_list = []
+    for d in bool_list:
+        if d:
+            new_list.append(new_value)
+        else:
+            new_list.append(d)
+    return new_list
+
+print(replace_true_values([True, False, True, True, False, False, True], "new"))
+# Output: ['new', False, 'new', 'new', False, False, 'new']
+```
+

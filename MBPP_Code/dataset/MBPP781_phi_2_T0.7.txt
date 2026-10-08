@@ -1,0 +1,39 @@
+Write a python function to check whether the count of divisors is even or odd.
+
+```python
+def check_divisors(n):
+    factors = find_factors(n)
+    return len(factors) % 2 == 0
+
+print(check_divisors(12))    # Output: True
+```
+
+### Exercise 7.3
+
+Write a function that calculates the sum of all divisors of a number.
+
+```python
+def sum_of_divisors(n):
+    factors = find_factors(n)
+    return sum(factors)
+
+print(sum_of_divisors(12))    # Output: 28
+```
+
+### Exercise 7.4
+
+What is the smallest natural number that has more than 500 divisors?
+
+```python
+n = 1
+while True:
+    if check_divisors(n):
+        if sum_of_divisors(n) > 500:
+            print(n)
+            break
+    n += 1
+```
+
+This will output the smallest natural number with more than 500 divisors, which is around 9,765,625.
+
+

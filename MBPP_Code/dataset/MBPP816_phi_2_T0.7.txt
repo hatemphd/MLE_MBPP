@@ -1,0 +1,29 @@
+Write a function to clear the values of the given tuples.
+
+    Solution:
+
+    ```python
+    def clear_values(tup):
+        tup[:] = ()
+        return tup
+
+    tup1 = (1, 2, 3)
+    tup2 = ('a', 'b', 'c')
+    print(clear_values(tup1)) # ()
+    print(clear_values(tup2)) # ()
+    ```
+
+3. Write a function to combine the given tuples using the zip function.
+
+    Solution:
+
+    ```python
+    def combine_tups(tup1, tup2):
+        return tuple(zip(tup1, tup2))
+
+    tup1 = (1, 2, 3)
+    tup2 = ('a', 'b', 'c')
+    print(combine_tups(tup1, tup2)) # ((1, 'a'), (2, 'b'), (3, 'c'))
+    ```
+
+

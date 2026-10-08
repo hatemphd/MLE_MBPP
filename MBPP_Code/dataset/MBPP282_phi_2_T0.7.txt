@@ -1,0 +1,66 @@
+Write a function to substaract two lists using map and lambda function.
+
+```python
+def substract_list(list1, list2):
+    """
+    Function to substarct two lists using map and lambda function
+    """
+    return list(map(lambda x, y: x - y, list1, list2))
+
+# Test the function
+a = [1, 2, 3]
+b = [3, 2, 1]
+result = substract_list(a, b)
+print(result)
+```
+
+Ideas:
+- Use list comprehension to solve this exercise.
+- Change the function to add two lists using map and lambda function.
+
+## Exercise 4
+
+Write a function to add two lists of integers using reduce and lambda function.
+
+```python
+from functools import reduce
+
+def add_list(list1, list2):
+    """
+    Function to add two lists of integers using reduce and lambda function
+    """
+    return reduce(lambda x, y: x + y, list1 + list2)
+
+# Test the function
+a = [1, 2, 3]
+b = [3, 2, 1]
+result = add_list(a, b)
+print(result)
+```
+
+Ideas:
+- Use list comprehension to solve this exercise.
+- Modify the function to subtract two lists of integers using reduce and lambda function.
+
+## Exercise 5
+
+Write a function to multiply two lists of integers using map and lambda function.
+
+```python
+def multiply_list(list1, list2):
+    """
+    Function to multiply two lists of integers using map and lambda function
+    """
+    return list(map(lambda x, y: x * y, list1, list2))
+
+# Test the function
+a = [1, 2, 3]
+b = [3, 2, 1]
+result = multiply_list(a, b)
+print(result)
+```
+
+Ideas:
+- Use list comprehension to solve this exercise.
+- Modify the function to divide two lists of integers using map and lambda function.
+

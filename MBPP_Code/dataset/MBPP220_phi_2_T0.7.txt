@@ -1,0 +1,15 @@
+Write a function to replace maximum n occurrences of spaces, commas, or dots with a colon.
+
+**Hint:** Use `re.sub` function with a `re.DOTALL` flag.
+
+```python
+def replace_max_occurrences(string, char, max_occurrences):
+    pattern = f'(?=([{char}]{{{max_occurrences},}}))'
+    return re.sub(pattern, ':', string, flags=re.DOTALL)
+
+print(replace_max_occurrences("abc, def, ghi", ',', 2))
+```
+
+In this solution, we define a pattern that matches a maximum of `max_occurrences` occurrences of `char`. This pattern is then used to replace matched characters with a colon.
+
+

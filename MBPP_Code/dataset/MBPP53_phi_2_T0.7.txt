@@ -1,0 +1,44 @@
+Write a python function to check whether the first and last characters of a given string are equal or not. If the characters are equal, the function should return True, otherwise it should return False.
+
+```python
+def check_string(s):
+    if len(s) < 2:
+        return False
+    return s[0] == s[-1]
+
+s = "banana"
+print(check_string(s))  # True
+s = "apple"
+print(check_string(s))  # False
+```
+
+## Exercise 4
+
+Write a python function to check whether a given string is a palindrome or not. If the string is a palindrome, the function should return True, otherwise it should return False.
+
+```python
+def check_palindrome(s):
+    s = s.lower()
+    s = s.replace(" ", "")
+    return s == s[::-1]
+
+s = "racecar"
+print(check_palindrome(s))  # True
+s = "hello"
+print(check_palindrome(s))  # False
+```
+
+## Exercise 5
+
+Write a python function to check whether a given string is a valid email address or not. Assume that a valid email address should have the format `username@domain.extension`, where `username`, `domain`, and `extension` are alphanumeric strings separated by periods.
+
+```python
+def check_email(s):
+    pattern = r"^\w+@\w+\.\w+$"
+    return bool(re.match(pattern, s))
+
+s = "jane.doe@example.com"
+print(check_email(s))  # True
+s = "invalid.email"
+print(check_email(s))  # False
+```

@@ -1,0 +1,64 @@
+Write a function to find all three, four, five characters long words in the given string by using regex.
+
+Hint: You can use the `\b` metacharacter to match word boundaries.
+
+```python
+# Exercise 2 Solution
+def find_word_lengths(string):
+    pattern = r'\b\w{3,5}\b'
+    matches = re.findall(pattern, string)
+    return matches
+
+# Test the function
+print(find_word_lengths("The quick brown fox jumps over the lazy dog"))
+# Output: ['The', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog']
+```
+
+**Exercise 3:** Write a function to validate email addresses using regular expressions.
+
+Hint: An email address usually contains '@' and '.' characters.
+
+```python
+# Exercise 3 Solution
+def validate_email(email):
+    pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+    if re.fullmatch(pattern, email):
+        return True
+    return False
+
+# Test the function
+print(validate_email("test@example.com"))
+# Output: True
+```
+
+**Exercise 4:** Write a function to extract all phone numbers from a given string using regular expressions.
+
+Hint: A simple pattern for a phone number is '\d{3}-\d{3}-\d{4}'.
+
+```python
+# Exercise 4 Solution
+def extract_phone_numbers(string):
+    pattern = r'\b\d{3}-\d{3}-\d{4}\b'
+    matches = re.findall(pattern, string)
+    return matches
+
+# Test the function
+print(extract_phone_numbers("My phone numbers are 123-456-7890 and 987-654-3210"))
+# Output: ['123-456-7890', '987-654-3210']
+```
+
+**Exercise 5:** Write a function to replace all occurrences of a word in the given string with another word.
+
+Hint: You can use the `sub` function in the `re` module.
+
+```python
+# Exercise 5 Solution
+def replace_word(string, old_word, new_word):
+    return re.sub(old_word, new_word, string)
+
+# Test the function
+print(replace_word("The quick brown fox jumps over the lazy dog", "fox", "cat"))
+# Output: 'The quick brown cat jumps over the lazy dog'
+```
+
+

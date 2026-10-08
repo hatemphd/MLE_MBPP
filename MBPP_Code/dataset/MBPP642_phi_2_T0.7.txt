@@ -1,0 +1,47 @@
+Write a function to remove similar rows from the given tuple matrix.
+
+```python
+def remove_similar_rows(matrix: tuple) -> tuple:
+    """
+    Remove similar rows from a tuple matrix using tuples.
+    """
+    similar_rows = {}
+    for i, row in enumerate(matrix):
+        if tuple(row) in similar_rows:
+            similar_rows[tuple(row)] += 1
+            matrix[i] = None
+        else:
+            similar_rows[tuple(row)] = 1
+    return tuple(filter(lambda x: x is not None, matrix))
+
+# Test the function
+matrix = ((1, 2, 3), (4, 2, 3), (1, 2, 2), (7, 8, 9))
+print(remove_similar_rows(matrix))
+```
+
+Output:
+```
+((1, 2, 3), (4, 2, 3), (7, 8, 9))
+```
+
+### Exercise 5
+
+Write a function to sort a given tuple matrix by the sum of each row.
+
+```python
+def sort_rows(matrix: tuple) -> tuple:
+    """
+    Sort a tuple matrix by the sum of each row using tuples.
+    """
+    return tuple(sorted(matrix, key=lambda row: sum(row)))
+
+# Test the function
+matrix = ((1, 2, 3), (4, 2, 3), (1, 2, 2), (7, 8, 9))
+print(sort_rows(matrix))
+```
+
+Output:
+```
+((1, 2, 3), (1, 2, 2), (4, 2, 3), (7, 8, 9))
+```
+

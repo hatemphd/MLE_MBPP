@@ -1,0 +1,23 @@
+Write a python function to find the last digit in factorial of a given number.
+
+```python
+def last_digit_of_factorial(n):
+    last_digit_n_factorial = n
+    
+    while last_digit_n_factorial % 5 == 0:
+        last_digit_n_factorial //= 5
+        
+    if n < 0:
+        return None
+    
+    for _ in range(2, n):
+        last_digit_n_factorial = (last_digit_n_factorial * (n - 1)) % 10
+    
+    return last_digit_n_factorial
+
+print(last_digit_of_factorial(5))  # Output: 0
+```
+
+In this example, we first find the last digit of the input number n! by dividing it by 5 and taking the remainder. If n is negative, this returns None. Then, we iterate over all numbers from 2 to n-1, and at each step, we multiply the current value of `last_digit_n_factorial` by (n-1) and take the remainder when divided by 10.
+
+

@@ -1,0 +1,48 @@
+Write a function to find the maximum of similar indices in two lists of tuples.
+
+```python
+def max_similar_indices(list1, list2):
+    """Find the maximum of similar indices in two lists of tuples"""
+    max_val = float('-inf')
+    max_index = None
+    for i in range(len(list1)):
+        if list1[i] == list2[i] and list1[i][1] > max_val:
+            max_val = list1[i][1]
+            max_index = i
+    return max_index
+```
+
+3. Write a function to compare two lists of tuples and return a new list that contains only the tuples that are present in both lists.
+
+```python
+def common_tuples(list1, list2):
+    """Compare two lists of tuples and return a new list with common tuples"""
+    common_tuples = []
+    for tup in list1:
+        if tup in list2:
+            common_tuples.append(tup)
+    return common_tuples
+```
+
+4. Write a function to find the minimum value of a specific index in a list of tuples.
+
+```python
+def min_val_index(lst, index):
+    """Find the minimum value of a specific index in a list of tuples"""
+    min_val = float('inf')
+    min_index = None
+    for i in range(len(lst)):
+        if lst[i][index] < min_val:
+            min_val = lst[i][index]
+            min_index = i
+    return min_index
+```
+
+5. Write a function to merge two lists of tuples into a single list of tuples.
+
+```python
+def merge_lists(list1, list2):
+    """Merge two lists of tuples into a single list of tuples"""
+    merged_list = list1 + list2
+    return merged_list
+```

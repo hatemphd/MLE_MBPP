@@ -1,0 +1,23 @@
+Write a python function to find the sum of squares of first n even natural numbers.
+
+```python
+def sum_of_squares(n):
+    sum_of_squares = 0
+    for i in range(2, 2*n+1, 2):
+        sum_of_squares += i**2
+    return sum_of_squares
+    
+print(sum_of_squares(5)) # Output: 110
+```
+
+## Exercise 5:
+Write a python function to find the greatest common divisor (GCD) of two numbers using the Euclidean algorithm.
+
+```python
+def gcd(a, b):
+    while(b != 0):
+        a, b = b, a % b
+    return a
+    
+print(gcd(36, 48)) # Output: 12
+```

@@ -1,0 +1,87 @@
+Write a function to check if a binary tree is balanced or not. A balanced binary tree is defined as a tree in which the heights of the two subtrees of every node never differ by more than one.
+
+```python
+# A balanced binary tree
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+root = Node(1)
+root.left = Node(2)
+root.right = Node(3)
+root.left.left = Node(4)
+root.left.right = Node(5)
+root.right.left = Node(6)
+root.right.right = Node(7)
+
+print(is_balanced(root))  # It will return True
+```
+
+## Exercises
+
+1. Write a function to find the maximum product of two nodes in a binary tree.
+
+```python
+# A binary tree
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+root = Node(1)
+root.left = Node(2)
+root.right = Node(3)
+root.left.left = Node(4)
+root.left.right = Node(5)
+root.right.left = Node(6)
+root.right.right = Node(7)
+
+print(max_product(root))  # It will return 42 (7 * 6)
+```
+
+2. Write a function to find the maximum sum of a path in a binary tree.
+
+```python
+# A binary tree
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+root = Node(1)
+root.left = Node(2)
+root.right = Node(3)
+root.left.left = Node(4)
+root.left.right = Node(5)
+root.right.left = Node(6)
+root.right.right = Node(7)
+
+print(max_sum(root))  # It will return 18 (1 + 2 + 3 + 6)
+```
+
+3. Write a function to find the minimum depth of a binary tree.
+
+```python
+# A binary tree
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+root = Node(1)
+root.left = Node(2)
+root.right = Node(3)
+root.left.left = Node(4)
+root.left.right = Node(5)
+root.right.left = Node(6)
+root.right.right = Node(7)
+
+print(min_depth(root))  # It will return 3 (1, 2, 3)
+```
+
+

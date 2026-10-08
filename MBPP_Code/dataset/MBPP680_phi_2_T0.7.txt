@@ -1,0 +1,35 @@
+Write a python function to check whether a sequence of numbers has an increasing trend or not.
+
+```python
+def check_increasing_trend(lst):
+    for i in range(len(lst) - 1):
+        if lst[i] >= lst[i+1]:
+            return False
+    return True
+
+print(check_increasing_trend([1,2,3,4,5]))  # returns True
+print(check_increasing_trend([1,2,1,4,5]))  # returns False
+```
+
+### Exercise 5:
+Write a python function to find the mode of a list of numbers.
+
+```python
+def find_mode(lst):
+    count_dict = {}
+    for i in lst:
+        if i in count_dict:
+            count_dict[i] += 1
+        else:
+            count_dict[i] = 1
+    mode_list = []
+    max_count = max(count_dict.values())
+    for k, v in count_dict.items():
+        if v == max_count:
+            mode_list.append(k)
+    return mode_list
+
+print(find_mode([1,2,2,3,3,3,4,4,4,4]))  # returns [4]
+print(find_mode([1,2,3,4,5]))  # returns [1,2,3,4,5]
+```
+

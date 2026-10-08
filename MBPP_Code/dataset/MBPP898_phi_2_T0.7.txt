@@ -1,0 +1,37 @@
+Write a function to extract specified number of elements from a given list, which follow each other continuously.
+The function should be called "get_elements" and should accept two parameters: a list of elements and a number n.
+
+Example:
+
+get_elements([1, 2, 3, 2, 1, 4, 2, 5], 5)
+
+Output:
+[1, 2, 3, 2, 1]
+
+Hints:
+- Use the "len" function to get the length of the list.
+- Use a loop to iterate over the list.
+- Use the "if" statement to check if the current index is greater than n.
+- If yes, then break the loop and return the extracted elements.
+
+```python
+def get_elements(lst, n):
+    # get the length of the list
+    length = len(lst)
+    # iterate over the list
+    for i in range(length):
+        # check if the current index is greater than n
+        if i > n:
+            break
+        # append the current element to the result
+        result.append(lst[i])
+    # return the result
+    return result
+
+# test the function
+print(get_elements([1, 2, 3, 2, 1, 4, 2, 5], 5))
+```
+
+This code will output the list of elements that follow each other continuously, which are [1, 2, 3, 2, 1].
+
+

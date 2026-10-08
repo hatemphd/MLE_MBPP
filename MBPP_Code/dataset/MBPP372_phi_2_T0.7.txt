@@ -1,0 +1,32 @@
+Write a function to sort a given list of elements in ascending order using heap queue algorithm.
+
+```python
+import heapq
+
+def sort_list(elements):
+    heapq.heapify(elements)
+    return [heapq.heappop(elements) for i in range(len(elements))]
+
+elements = [4, 2, 7, 1, 9, 3]
+sorted_list = sort_list(elements)
+print(sorted_list) # Output: [1, 2, 3, 4, 7, 9]
+```
+
+Exercise 5:
+Write a function to find the kth smallest element in a given list using heap queue algorithm.
+
+```python
+import heapq
+
+def find_kth_smallest(elements, k):
+    heapq.heapify(elements[:k])
+    for i in range(k, len(elements)):
+        if elements[i] < heapq.heappop(elements):
+            heapq.heappush(elements, elements.pop(i))
+    return heapq.heappop(elements)
+
+elements = [4, 2, 7, 1, 9, 3]
+k = 3
+result = find_kth_smallest(elements, k)
+print(result) # Output: 3
+```

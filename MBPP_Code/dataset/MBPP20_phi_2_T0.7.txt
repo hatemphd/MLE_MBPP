@@ -1,0 +1,25 @@
+Write a function to check if the given number is woodball or not. A woodball is a number that is divisible by 3, 5, and 7.
+
+Example 1:
+
+Input: 21
+Output: true
+Example 2:
+
+Input: 28
+Output: false
+  
+Constraints:
+
+1 <= n <= 106'''
+
+class Solution:
+    def isWoodBall(self, n: int) -> bool:
+        def check(n):
+            if n == 0:
+                return False
+            if n % 3 == 0 and n % 5 == 0 and n % 7 == 0:
+                return True
+            return check(n - 1)
+        return check(n)
+        

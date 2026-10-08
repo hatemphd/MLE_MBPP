@@ -1,0 +1,70 @@
+Write a python function to find the sublist having minimum length.
+
+Idea: Use the function we wrote earlier.
+
+```python
+def min_sublist(arr):
+    min_len = len(arr)
+    ans = arr
+    for i in range(0, len(arr)):
+        for j in range(i+1, len(arr)):
+            if len(arr[i:j]) < min_len:
+                min_len = len(arr[i:j])
+                ans = arr[i:j]
+    return ans
+
+print(min_sublist(arr))
+```
+
+2. Write a python function to find the sublist having maximum sum.
+
+Idea: Use the same logic as we used in finding minimum length sublist.
+
+```python
+def max_sublist(arr):
+    max_sum = sum(arr)
+    ans = arr
+    for i in range(0, len(arr)):
+        for j in range(i+1, len(arr)):
+            if sum(arr[i:j]) > max_sum:
+                max_sum = sum(arr[i:j])
+                ans = arr[i:j]
+    return ans
+
+print(max_sublist(arr))
+```
+
+3. Write a python function to find the sublist of a given string with maximum length.
+
+Idea: Convert the string to a list and use the functions we wrote earlier.
+
+```python
+def max_substring(s):
+    arr = list(s)
+    return max_sublist(arr)
+
+print(max_substring("Hello World"))
+```
+
+4. Write a python function to find the sublist having maximum product.
+
+Idea: Use the same logic as we used in finding minimum length sublist.
+
+```python
+def max_sublist(arr):
+    max_product = 1
+    ans = arr
+    for i in range(0, len(arr)):
+        for j in range(i+1, len(arr)):
+            product = 1
+            for k in range(i, j+1):
+                product *= arr[k]
+            if product > max_product:
+                max_product = product
+                ans = arr[i:j+1]
+    return ans
+
+print(max_sublist(arr))
+```
+
+

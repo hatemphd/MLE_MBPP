@@ -1,0 +1,75 @@
+Write a function to determine if there is a subset of the given set with sum equal to the given sum.
+
+```python
+# Example:
+# Input: nums = [2, 3, 7, 1, 8, 3], target = 7
+# Output: True, because the subset [7] has sum 7
+
+# Hint: Use Dynamic Programming to solve this problem.
+# Initialize a list dp with boolean values, where dp[i] is True if there is a subset of nums[0:i] with sum equal to the given sum.
+# Fill in the dp list using the following rule: dp[i] = dp[i-1] or dp[i-1] and nums[i] <= target
+
+def subset_sum(nums, target):
+    dp = [False] * (target + 1)
+    dp[0] = True
+    for num in nums:
+        for i in range(target, num-1, -1):
+            dp[i] = dp[i] or dp[i-num]
+    return dp[target]
+```
+
+Exercise 3:
+Write a function to find the longest common prefix of a list of strings.
+
+```python
+# Example:
+# Input: strs = ["flower", "flow", "flight"]
+# Output: "fl"
+
+# Hint: Use Dynamic Programming to solve this problem.
+# Initialize a list lcp with the first string, and then iterate over the remaining strings.
+# For each character i, check if the corresponding character is the same in all strings.
+# If not, the longest common prefix is truncated from i-1.
+
+def longest_common_prefix(strs):
+    if len(strs) == 0:
+        return ""
+    lcp = strs[0]
+    for i in range(1, len(strs)):
+        j = 0
+        while j < len(lcp) and j < len(strs[i]) and lcp[j] == strs[i][j]:
+            j += 1
+        lcp = lcp[:j]
+    return lcp
+```
+
+Exercise 4:
+Write a function to find the length of the longest increasing subsequence of a list of integers.
+
+```python
+# Example:
+# Input: nums = [10, 9, 2, 5, 3, 7, 101, 18]
+# Output: 4, because the longest increasing subsequence is [2, 3, 7, 101] with length 4
+
+# Hint: Use Dynamic Programming to solve this problem.
+# Initialize a list lis with length equal to the length of nums, where lis[i] is the length of the longest increasing subsequence ending at nums[i].
+# Fill in the lis list using the following rule: for each num in nums[1:], if num is greater than nums[i-1], set lis[i] = max(lis[i], lis[j-1]+1) for j in range(i), where lis[j-1] is the length of the longest increasing subsequence ending at nums[j].
+
+def longest_increasing_subsequence(nums):
+    if len(nums) == 0:
+        return 0
+    lis = [1] * len(nums)
+    for i in range(1, len(nums)):
+        for j in range(i):
+            if nums[i] > nums[j]:
+                lis[i] = max(lis[i], lis[j]+1)
+    return max(lis)
+```
+
+Exercise 5:
+Write a function to count the number of non-negative integers that are less than or equal to a given non-negative integer n and have only even digits.
+
+```python
+# Example:
+# Input: n = 132468
+# Output: 6, because the non-negative integers that are less than or equal to 132468 and have only even digits are: 0, 2, 4, 6, 8, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 102, 104, 106,

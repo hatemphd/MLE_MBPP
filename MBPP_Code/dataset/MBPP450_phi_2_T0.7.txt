@@ -1,0 +1,59 @@
+Write a function to extract specified size of strings from a give list of string values.
+    @param data A list of strings.
+    @param size The size of the string you want to extract.
+    @return A list of strings containing the specified size of string.
+    """
+    return [value for value in data if len(value)==size]
+
+list = ["abc", "efg", "hi", "jkl", "mno"]
+res = get_strings_by_size(list, 3)
+print(res)
+
+# ['abc', 'efg']
+```
+
+4. Write a program to join given list of strings with a separator and convert the list to a string.
+    @param data A list of strings.
+    @param sep The separator you want to join the strings.
+    @return A string with the specified separator between the strings.
+    
+```python
+def join_strings(data, sep):
+    """
+    Join a given list of string with a separator.
+    @param data A list of strings.
+    @param sep The separator you want to join the strings.
+    @return A string with the specified separator between the strings.
+    """
+    return sep.join(data)
+
+list = ["abc", "efg", "hi", "jkl", "mno"]
+res = join_strings(list, ",")
+print(res)
+
+# abc,efg,hi,jkl,mno
+```
+
+5. Write a function that takes two strings, s1 and s2, and returns True if s1 is a substring of s2.
+    @param s1 The string to check if it is a substring of s2.
+    @param s2 The string to check if it contains s1.
+    @return True if s1 is a substring of s2, otherwise False.
+    
+```python
+def find_substring(s1, s2):
+    """
+    Check if s1 is a substring of s2.
+    @param s1 The string to check if it is a substring of s2.
+    @param s2 The string to check if it contains s1.
+    @return True if s1 is a substring of s2, otherwise False.
+    """
+    return s1 in s2
+
+s1 = "ab"
+s2 = "abcdefghij"
+res = find_substring(s1, s2)
+print(res)
+
+# True
+
+

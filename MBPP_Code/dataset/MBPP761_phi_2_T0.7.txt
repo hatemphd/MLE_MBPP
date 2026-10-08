@@ -1,0 +1,111 @@
+Write a function to caluclate arc length of an angle.
+    """
+    def __init__(self, angle):
+        """
+        :param angle: angle in radians
+        """
+        self.angle = angle
+        
+    def arc_length(self, radius):
+        """
+        :param radius: radius
+        :return: arc length
+        """
+        return radius * self.angle
+    
+class Polygon:
+    """
+    A class representing a polygon.
+    """
+    def __init__(self, num_sides, side_length):
+        """
+        :param num_sides: number of sides
+        :param side_length: length of sides
+        """
+        self.num_sides = num_sides
+        self.side_length = side_length
+        self.angles = [2 * math.pi * i / num_sides for i in range(num_sides)]
+        self.arcs = [Arc(angle) for angle in self.angles]
+        self.sides = [Side(self.side_length) for i in range(self.num_sides)]
+    
+    def area(self):
+        """
+        :return: area of the polygon
+        """
+        return 0.25 * self.num_sides * self.side_length**2 * math.cos(math.pi / self.num_sides)
+    
+    def perimeter(self):
+        """
+        :return: perimeter of the polygon
+        """
+        return sum([side.length for side in self.sides])
+    
+    def longest_side(self):
+        """
+        :return: length of the longest side
+        """
+        return max([side.length for side in self.sides])
+    
+    def longest_arc(self):
+        """
+        :return: length of the longest arc
+        """
+        return max([arc.arc_length(self.longest_side()) for arc in self.arcs])
+
+# Example usage
+s = Side(5)
+a = Arc(math.pi/2)
+p = Polygon(5, s.length)
+print(p.area()) # should print 10.83185307179586
+print(p.perimeter()) # should print 25
+print(p.longest_side()) # should print 5
+print(p.longest_arc()) # should print 10.83185307179586
+
+
+Exercise 5:
+Write a function to find the intersection points of two circles in 3D space.
+
+Python Code Solution with List Comprehension:
+
+"""
+Finding the intersection points of two circles in 3D space
+"""
+
+class Circle:
+    """
+    A class representing a circle in 3D space.
+    """
+    def __init__(self, center, radius):
+        """
+        :param center: center of the circle as a tuple (x, y, z)
+        :param radius: radius of the circle
+        """
+        self.center = center
+        self.radius = radius
+        
+    def distance(self, other):
+        """
+        :param other: another circle object
+        :return: distance between the centers of the circles
+        """
+        x1, y1, z1 = self.center
+        x2, y2, z2 = other.center
+        return math.sqrt((x2-x1)**2 + (y2-y1)**2 + (z2-z1)**2)
+    
+    def intersects(self, other):
+        """
+        :param other: another circle object
+        :return: True if the circles intersect, False otherwise
+        """
+        return self.distance(other) <= self.radius + other.radius
+    
+    def intersection_points(self, other):
+        """
+        :param other: another circle object
+        :return: a list of intersection points as tuples (x, y, z)
+        """
+        d = self.distance(other)
+        a = (self.radius**2 - other.radius**2 + d**2) / (2*d)
+        h = math.sqrt(self.radius**2 - a**2)
+        x2 = self.center[0] + a * (other.center[0] - self.center[0]) / d
+        y2 = self.center[1] + a * (other.center[1] - self.center

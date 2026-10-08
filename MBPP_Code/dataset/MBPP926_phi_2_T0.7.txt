@@ -1,0 +1,50 @@
+Write a function to find n-th rencontres number.
+
+Solution:
+```python
+import sys
+def nth_rencontre(n):
+    sys.setrecursionlimit(10**5)
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    return (n-1)*nth_rencontre(n-1) + nth_rencontre(n-2)
+
+print(nth_rencontre(10))
+```
+
+**Exercise 2:** Write a Python program to create a class to represent a tree node.
+
+Hint: A tree node can have a value and a list of its children nodes.
+
+Solution:
+```python
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.children = []
+```
+
+**Exercise 3:** Write a Python program to calculate the maximum depth of a tree using recursion.
+
+Hint: The maximum depth of a tree is one plus the maximum depth of the tree's children.
+
+Solution:
+```python
+def tree_depth(node):
+    if node is None:
+        return 0
+    else:
+        return 1 + max(tree_depth(child) for child in node.children)
+
+root = Node(1)
+root.children = [Node(2), Node(3), Node(4)]
+root.children[0].children = [Node(5), Node(6)]
+
+print(tree_depth(root))  # Prints 3
+```
+
+Practice these exercises and apply the concepts learned in this chapter to solve complex problems related to trees and recursion. The more you practice, the more proficient you will become.
+
+

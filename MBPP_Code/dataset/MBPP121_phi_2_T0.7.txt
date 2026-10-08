@@ -1,0 +1,51 @@
+Write a function to find the triplet with sum of the given array elements that is closest to the target.
+
+Hint:
+Use the same approach as in previous examples, but instead of keeping track of the closest pair, keep track of the closest triplet.
+
+```python
+def closest_triplet(array, target):
+    array.sort()
+    closest = float('inf')
+    for i in range(len(array) - 2):
+        left, right = i + 1, len(array) - 1
+        while left < right:
+            triplet_sum = array[i] + array[left] + array[right]
+            if abs(triplet_sum - target) < abs(closest - target):
+                closest = triplet_sum
+            if triplet_sum < target:
+                left += 1
+            else:
+                right -= 1
+    return closest
+```
+
+2. Write a function to find all unique triplets in an array that has a sum closest to a given target.
+
+Hint:
+Instead of keeping track of the closest pair or triplet, keep track of all the triplets with the closest sum.
+
+```python
+def all_closest_triplets(array, target):
+    array.sort()
+    triplets = []
+    closest_sum = float('inf')
+    for i in range(len(array) - 2):
+        left, right = i + 1, len(array) - 1
+        while left < right:
+            triplet_sum = array[i] + array[left] + array[right]
+            if abs(triplet_sum - target) < abs(closest_sum - target):
+                closest_sum = triplet_sum
+                triplets = [[array[i], array[left], array[right]]]
+            elif abs(triplet_sum - target) == abs(closest_sum - target):
+                triplets.append([array[i], array[left], array[right]])
+            if triplet_sum < target:
+                left += 1
+            else:
+                right -= 1
+    return triplets
+```
+
+These exercises will help you gain a deeper understanding of the concepts discussed in this chapter.
+
+

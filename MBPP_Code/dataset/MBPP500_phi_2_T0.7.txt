@@ -1,0 +1,47 @@
+Write a function to concatenate all elements of the given list into a string.
+
+    Idea: Use the join() method to concatenate all elements of the list.
+
+    Solution:
+    ```python
+    def concatenate_list(lst):
+        return "".join(lst)
+    print(concatenate_list(['Hello', ' ', 'World', '!']))  # Output: Hello World !
+    ```
+
+3. Write a function to check if a given string is a palindrome.
+
+    Idea: Reverse the string and compare it with the original.
+
+    Solution:
+    ```python
+    def is_palindrome(s):
+        return s == s[::-1]
+    print(is_palindrome('radar'))  # Output: True
+    ```
+
+4. Write a function to reverse the words in a string.
+
+    Idea: Split the string into words, reverse the list, and join the words back into a string.
+
+    Solution:
+    ```python
+    def reverse_words(s):
+        words = s.split()
+        words.reverse()
+        return " ".join(words)
+    print(reverse_words('Hello World!'))  # Output: World! Hello
+    ```
+
+5. Write a function to remove all leading and trailing whitespaces from a string.
+
+    Idea: Use the strip() method to remove leading and trailing whitespaces.
+
+    Solution:
+    ```python
+    def remove_spaces(s):
+        return s.strip()
+    print(remove_spaces('    Hello World!    '))  # Output: Hello World!
+    ```
+
+

@@ -1,0 +1,37 @@
+Write a python function to count unequal element pairs from the given array.
+
+```python
+def count_unequal(arr):
+    count = 0
+    for i in range(0, len(arr)):
+        for j in range(i+1, len(arr)):
+            if arr[i] != arr[j]:
+                count += 1
+    return count
+
+print(count_unequal([1, 1, 2, 2, 3, 3]))
+# Output: 6
+```
+
+In this solution, we increment the count every time we encounter unequal elements.
+
+## Exercise 2
+
+Write a python function that accepts two arrays and checks if they have an element in common.
+
+```python
+def common_element(arr1, arr2):
+    for i in arr1:
+        if i in arr2:
+            return True
+    return False
+
+print(common_element([1, 2, 3], [4, 5, 6]))
+# Output: False
+print(common_element([1, 2, 3], [3, 4, 5]))
+# Output: True
+```
+
+In this solution, we loop over the first array and check if each element is in the second array. If we find a common element, we return True. If we finish the loop without finding any common element, we return False.
+
+

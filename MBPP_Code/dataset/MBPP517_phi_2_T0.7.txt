@@ -1,0 +1,35 @@
+Write a python function to find the largest postive number from the given list.
+```python
+def largest_positive_number(numbers):
+    positive_numbers = [number for number in numbers if number > 0]
+    return max(positive_numbers)
+
+print(largest_positive_number([-2, -1, 0, 1, 2, 3])) # Outputs: 3
+```
+
+3. Write a python function to find the length of the longest word in the given list.
+```python
+def longest_word_length(words):
+    word_lengths = [len(word) for word in words]
+    return max(word_lengths)
+
+print(longest_word_length(['apple', 'banana', 'grapefruit'])) # Outputs: 10
+```
+
+4. Write a python function to find the smallest negative number from the given list.
+```python
+def smallest_negative_number(numbers):
+    negative_numbers = [number for number in numbers if number < 0]
+    return min(negative_numbers)
+
+print(smallest_negative_number([-2, -1, 0, 1, 2, 3])) # Outputs: -2
+```
+
+5. Write a python function to find the smallest even number from the given list.
+```python
+def smallest_even_number(numbers):
+    even_numbers = [number for number in numbers if number % 2 == 0]
+    return min(even_numbers)
+
+print(smallest_even_number([-2, -1, 0, 1, 2, 3])) # Outputs: -2
+```

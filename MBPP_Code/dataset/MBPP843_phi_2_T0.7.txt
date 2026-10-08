@@ -1,0 +1,79 @@
+Write a function to find the nth super ugly number from a given prime list of size k using heap queue algorithm. First, initialize a heap from the prime list. Then, for each number up to n, pop out the smallest number from the heap and push its smallest multiple onto the heap. The smallest number of the heap at the end will be the nth super ugly number.
+
+```python
+def nth_super_ugly_number(n, primes):
+    heap = [(p, 0) for p in primes]
+    heapq.heapify(heap)
+
+    result = [0] * n
+    result[0] = primes[0]
+
+    for i in range(1, n):
+        val, idx = heapq.heappop(heap)
+        result[i] = val
+        for p in primes:
+            if p*val > heap[0][0]:
+                heapq.heappush(heap, (p*val, idx))
+
+    return result[-1]
+
+print(nth_super_ugly_number(10, [2, 7, 13, 19]))
+```
+
+In this example, `nth_super_ugly_number` returns the 10th super ugly number, which is `16`.
+
+## Exercises
+
+### Exercise 1
+
+Write a function to find the nth super ugly number from a given prime list of size k, but this time the function should return the list of the first n super ugly numbers.
+
+**Hint**: Modify the function so that it returns a list of the first n super ugly numbers instead of a single number.
+
+```python
+def nth_super_ugly_numbers(n, primes):
+    heap = [(p, 0) for p in primes]
+    heapq.heapify(heap)
+
+    result = [0] * n
+
+    for i in range(1, n):
+        val, idx = heapq.heappop(heap)
+        result[i] = val
+        for p in primes:
+            if p*val > heap[0][0]:
+                heapq.heappush(heap, (p*val, idx))
+
+    return result
+
+print(nth_super_ugly_numbers(10, [2, 7, 13, 19]))
+```
+
+## Exercise 2
+
+Write a function to find the nth super ugly number from a given prime list of size k, but this time the function should return the list of the first n super ugly numbers only, but in reverse order.
+
+**Hint**: Use Python's list slicing to reverse the list.
+
+```python
+def nth_super_ugly_numbers_reverse(n, primes):
+    heap = [(p, 0) for p in primes]
+    heapq.heapify(heap)
+
+    result = [0] * n
+
+    for i in range(1, n):
+        val, idx = heapq.heappop(heap)
+        result[i] = val
+        for p in primes:
+            if p*val > heap[0][0]:
+                heapq.heappush(heap, (p*val, idx))
+
+    return result[::-1]
+
+print(nth_super_ugly_numbers_reverse(10, [2, 7, 13, 19]))
+```
+
+In this example, `nth_super_ugly_numbers_reverse` returns the list of the first 10 super ugly numbers in reverse order.
+
+

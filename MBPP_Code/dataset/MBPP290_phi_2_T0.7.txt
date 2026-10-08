@@ -1,0 +1,53 @@
+Write a function to find the list of lists with maximum length.
+
+```python
+def max_length(lists):
+    max_length = 0
+    for lst in lists:
+        if len(lst) > max_length:
+            max_length = len(lst)
+    return max_length
+
+# Example usage
+lists = [[1, 2, 3], [4, 5], [6, 7, 8, 9], [10, 11, 12]]
+print(max_length(lists))  # Output: 4
+```
+
+3. Write a function to find the list with the minimum sum of its elements.
+
+```python
+def min_sum(lists):
+    min_sum_lst = min(lists, key=sum)
+    return min_sum_lst
+
+# Example usage
+lists = [[1, 2, 3], [4, 5], [6, 7, 8, 9], [10, 11, 12]]
+print(min_sum(lists))  # Output: [4, 5]
+```
+
+4. Write a function to find the list of lists with the minimum length.
+
+```python
+def min_length(lists):
+    min_length = float('inf')
+    for lst in lists:
+        if len(lst) < min_length:
+            min_length = len(lst)
+    return min_length
+
+# Example usage
+lists = [[1, 2, 3], [4, 5], [6, 7, 8, 9], [10, 11, 12]]
+print(min_length(lists))  # Output: 2
+```
+
+5. Write a function to find the list with the minimum sum of its elements, excluding the first and last element.
+
+```python
+def min_sum_exclude(lists):
+    min_sum_lst = min((lst[1:-1] for lst in lists), key=sum)
+    return min_sum_lst
+
+# Example usage
+lists = [[1, 2, 3], [4, 5], [6, 7, 8, 9], [10, 11, 12]]
+print(min_sum_exclude(lists))  # Output: [2, 3]
+```

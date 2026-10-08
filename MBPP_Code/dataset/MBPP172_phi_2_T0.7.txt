@@ -1,0 +1,44 @@
+Write a function to find the occurence of characters 'std' in the given string 1. list item 1. list item 1. list item 2. list item 2. list item 2. list item 3. list item 3. list item 4. list item 4. list item 4. list item 5. list item 5. list item 5. list item 6. list item 6. list item 6. list item 6. list item 6. list item 6. list item 6. list item 6. list item 7. list item 7. list item 7. list item 7. list item 7
+
+A:
+
+1.
+def count_std(s):
+    return s.count('std')
+
+2.
+def count_std(s):
+    return sum(1 for _ in re.finditer(r'(?=std)', s))
+
+3.
+def count_std(s):
+    return len(re.findall(r'(?=std)', s))
+
+A:
+
+You can use the re.findall function:
+import re
+
+def find_std(s):
+    return len(re.findall('std', s))
+
+print(find_std('std1,std2,std3'))
+
+A:
+
+Using Counter
+from collections import Counter
+s = "std1,std2,std3"
+freq_dict = Counter(s.split(','))
+print(freq_dict['std'])
+
+Output:
+3
+
+A:
+
+One more way,
+s = "std1,std2,std3"
+
+print(s.count('std'))
+

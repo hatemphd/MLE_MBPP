@@ -1,0 +1,36 @@
+Write a function to count the number of elements in a list which are within a specific range.
+
+   _Hint: Use list comprehension to filter out the elements in the specific range and then use `len()` to count them._
+
+```python
+def count_in_range(lst, low, high):
+    return len([i for i in lst if low <= i <= high])
+
+lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(count_in_range(lst, 3, 8))  # Output: 5
+```
+
+4. Write a function to count the number of different elements in a list.
+
+   _Hint: Use a set to remove duplicates from the list and then use `len()` to count the number of elements._
+
+```python
+def count_unique(lst):
+    return len(set(lst))
+
+lst = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5]
+print(count_unique(lst))  # Output: 5
+```
+5. Write a function to calculate the average length of words in a list of strings.
+
+   _Hint: Use list comprehension to get the length of each string in the list and then calculate the average._
+
+```python
+def average_word_length(lst):
+    return sum([len(word) for word in lst]) / len(lst)
+
+lst = ['Python', 'is', 'fun', 'and', 'powerful']
+print(average_word_length(lst))  # Output: 3.6
+```
+
+

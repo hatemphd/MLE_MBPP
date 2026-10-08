@@ -1,0 +1,69 @@
+Write a python function to count equal element pairs from the given array.
+
+**Hints**:
+- Use a dictionary to count the frequency of each element.
+- Use a for loop to iterate through the dictionary.
+
+```python
+def count_equal_pairs(arr):
+    # Count the frequency of each element
+    frequency = {}
+    for i in arr:
+        if i in frequency:
+            frequency[i] += 1
+        else:
+            frequency[i] = 1
+
+    # Count the number of equal pairs
+    count = 0
+    for key in frequency:
+        if frequency[key] > 1:
+            count += (frequency[key] * (frequency[key] - 1)) // 2
+
+    return count
+
+print(count_equal_pairs([1, 1, 2, 2, 3, 3]))  # Output: 4
+```
+
+2. Write a python function to count equal element triplets from the given array.
+
+**Hints**:
+- Similar to the previous exercise, use a dictionary to count the frequency of each element.
+- Use a for loop to iterate through the dictionary.
+
+```python
+def count_equal_triplets(arr):
+    # Count the frequency of each element
+    frequency = {}
+    for i in arr:
+        if i in frequency:
+            frequency[i] += 1
+        else:
+            frequency[i] = 1
+
+    # Count the number of equal triplets
+    count = 0
+    for key in frequency:
+        if frequency[key] > 2:
+            count += (frequency[key] * (frequency[key] - 1) * (frequency[key] - 2)) // 6
+
+    return count
+
+print(count_equal_triplets([1, 1, 1, 2, 2, 3, 3, 3]))  # Output: 3
+```
+
+3. Write a python function to count equal elements in a 2D array.
+
+**Hints**:
+- Flatten the 2D array into a 1D array.
+- Use the same function developed in the first exercise to count the frequency of each element.
+
+```python
+def count_equal_elements_2D(arr):
+    flat_arr = [item for sublist in arr for item in sublist]
+    return count_equal_pairs(flat_arr)
+
+print(count_equal_elements_2D([[1, 1], [2, 2], [3, 3]]))  # Output: 4
+```
+
+

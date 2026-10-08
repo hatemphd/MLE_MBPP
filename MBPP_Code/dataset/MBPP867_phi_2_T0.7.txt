@@ -1,0 +1,35 @@
+Write a python function to add a minimum number such that the sum of array becomes even.
+
+Example 1:
+
+Input: [1, 2, 3]
+Output: 2
+Explanation: Adding 2 makes the sum of the array even though all the numbers in the array are odd.
+Example 2:
+
+Input: [0, 1, 1]
+Output: 0
+Explanation: Adding 0 makes the sum of the array even.
+Note:
+The array will have a length in the range [1, 104].
+Every element in the array will be an integer in the range [-231, 231 - 1].
+"""
+
+class Solution:
+    def make_even(self,nums):
+        # do not modify nums, copy into another array
+        new = nums.copy()
+        sum_nums = sum(nums)
+        if sum_nums%2==0:
+            return new
+        else:
+            for i in range(len(nums)):
+                new[i]+=1
+                if sum(new)%2==0:
+                    return new
+                else:
+                    new[i] -=2
+                    if sum(new)%2==0:
+                        return new
+        return new
+            

@@ -1,0 +1,18 @@
+Write a function to exchange the position of every n-th value with (n+1)th value and (n+1)th value with n-th value in a given list.
+
+##### Tips:
+- You will need to iterate through each element in the list.
+- Use list indexing to access each element and swap it with its next element.
+
+##### Solution:
+```python
+def exchange_position(lst, n):
+    for i in range(0, len(lst)-1, 2):
+        lst[i], lst[i+1] = lst[i+1], lst[i]
+    return lst
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8]
+print(exchange_position(numbers, 3))  # Output: [1, 4, 3, 6, 5, 8, 7, 2]
+```
+
+

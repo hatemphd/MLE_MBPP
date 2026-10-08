@@ -1,0 +1,29 @@
+Write a python function to find the sum of non-repeated elements in a given array. 
+
+Hint: An efficient way to solve this problem is by using a dictionary to store elements and their counts.
+
+```python
+def sum_non_repeated(array):
+    # Initialize a dictionary to store elements and their counts
+    counter = {}
+    for element in array:
+        counter[element] = counter.get(element, 0) + 1
+    
+    # Initialize a variable to hold the sum
+    sum_non_repeat = 0
+    
+    # Iterate over the dictionary and add elements with a count of 1
+    for element, count in counter.items():
+        if count == 1:
+            sum_non_repeat += element
+    
+    return sum_non_repeat
+
+# Test the function
+print(sum_non_repeated([1, 2, 2, 3, 3, 3]))  # Outputs: 6
+```
+In this solution, we iterate over the array using a for loop, and for each element, we increase its count in the dictionary. Then, we iterate over the dictionary again to find the elements with a count of 1 and add them to the sum.
+
+The exercises above provide a comprehensive understanding of the concepts discussed in this chapter. Solving these problems will help you grasp the intricacies of array manipulation, iteration, and dictionary usage in Python.
+
+

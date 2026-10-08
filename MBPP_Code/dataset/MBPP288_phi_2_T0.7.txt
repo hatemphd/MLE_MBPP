@@ -1,0 +1,38 @@
+Write a function to count array elements having modular inverse under given prime number p equal to itself.
+
+Hint: Modular inverse of a number x modulo p is the number y such that (x*y) % p = 1.
+
+```python
+def count_inverse(arr, p):
+    count = 0
+    for num in arr:
+        if pow(num, p-2, p) == 1:
+            count += 1
+    return count
+
+# Test function
+print(count_inverse([3, 1, 6, 4, 7], 5))  # Output: 5
+```
+
+## Exercise 2:
+Modify the function from Exercise 1 to count array elements having modular inverse under given prime number p not equal to itself.
+
+Hint: The modular inverse of a number x modulo p is the number y such that (x*y) % p = 1. For this, you need to check that (x*y) % p = 1 for all values of y.
+
+```python
+def count_not_inverse(arr, p):
+    count = 0
+    for i in range(1, p):  # loop over possible values for y
+        for num in arr:
+            if (num*i) % p == 1:
+                count += 1
+                break  # found a match, move to next num
+    return count
+
+# Test function
+print(count_not_inverse([3, 1, 6, 4, 7], 5))  # Output: 4
+```
+
+In the next chapter, we will delve deeper into more advanced mathematical topics in Python.
+
+

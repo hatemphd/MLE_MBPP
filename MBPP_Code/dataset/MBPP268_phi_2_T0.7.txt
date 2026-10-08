@@ -1,0 +1,46 @@
+Write a function to find the n'th star number.
+
+A star number is a number whose all prime factors are 3, 5, or 7.
+
+For example, 1 is a star number, since 1 = 7^0, 2 is a star number since 2 = 5^1, 3 is a star number since 3 = 3^1, and 4 is a star number since 4 = 7^0 * 3^0.
+
+Note that 6 is not a star number since it is divisible by 2.
+
+Note that any number greater than 7 is not a star number for N > 7.
+
+Example 1:
+
+Input: n = 3
+Output: 23
+Explanation: The first three star numbers are 1, 2, 3.
+Example 2:
+
+Input: n = 9
+Output: 60
+ 
+
+Constraints:
+
+1 <= n <= 10^5
+"""
+
+def starNum(n):
+    if n < 2:
+        return n
+    
+    primes = [2, 3, 5, 7]
+    i = 0
+    while True:
+        if n % primes[i] == 0:
+            n //= primes[i]
+            continue
+        if n == 1:
+            return n
+        if n < 1:
+            return "No"
+        i += 1
+
+assert starNum(3) == 23
+assert starNum(9) == 60
+assert starNum(11) == "No"
+assert starNum(12) == "No"

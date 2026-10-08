@@ -1,0 +1,45 @@
+Write a function to find the volume of a sphere.
+
+```python
+import math
+
+def sphere_volume(r):
+    return (4/3) * math.pi * (r ** 3)
+
+print(sphere_volume(5))
+```
+
+3. Implement the cosine function using the math library.
+
+```python
+import math
+
+def cosine(x):
+    return math.cos(x)
+
+print(cosine(math.pi/2))
+```
+
+4. Create a Python script that calculates and prints the hypotenuse of a right triangle using the math library.
+
+```python
+import math
+
+def calculate_hypotenuse(a, b):
+    return math.sqrt(a**2 + b**2)
+
+print(calculate_hypotenuse(3, 4))
+```
+
+5. Write a function to calculate the factorial of a number using the math library.
+
+```python
+import math
+
+def factorial(n):
+    return math.factorial(n)
+
+print(factorial(5))
+```
+
+

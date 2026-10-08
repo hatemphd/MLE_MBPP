@@ -1,0 +1,17 @@
+Write a function to find the product of first even and odd number of a given list.
+
+```python
+import numpy as np
+
+def product(arr):
+    even_indices = np.where(arr % 2 == 0)[0]
+    odd_indices = np.where(arr % 2 == 1)[0]
+    even_product = np.prod(arr[even_indices])
+    odd_product = np.prod(arr[odd_indices])
+    return even_product, odd_product
+
+arr = np.array([1, 2, 3, 4, 5, 6])
+print(product(arr))
+# Output: (48, 15)
+```
+

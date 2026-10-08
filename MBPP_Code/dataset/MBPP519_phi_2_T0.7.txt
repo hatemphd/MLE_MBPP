@@ -1,0 +1,10 @@
+Write a function to calculate volume of a tetrahedron.
+    
+    Args:
+    - side_length: a float representing the length of one side of the tetrahedron
+    
+    Returns:
+    - a float representing the volume of the tetrahedron
+    """
+    return (1/3) * (side_length ** 3)
+

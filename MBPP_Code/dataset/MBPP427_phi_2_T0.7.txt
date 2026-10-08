@@ -1,0 +1,12 @@
+Write a function to convert a date of yyyy-mm-dd format to dd-mm-yyyy format by using regex.
+
+```python
+import re
+
+def convert_date_format(date):
+    pattern = r'(\d{4})-(\d{2})-(\d{2})'
+    match = re.match(pattern, date)
+    return f'{match.group(2)}-{match.group(1)}-{match.group(3)}'
+
+print(convert_date_format('2021-07-15')) # Output: '15-07-2021'
+```

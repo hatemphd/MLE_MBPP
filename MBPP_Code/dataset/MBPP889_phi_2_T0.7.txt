@@ -1,0 +1,13 @@
+Write a function to reverse each list in a given list of lists.
+
+**Hint:** Use list comprehension to iterate over each list.
+
+```python
+def reverse_lists(list_of_lists):
+    return [list(reversed(sublist)) for sublist in list_of_lists]
+
+print(reverse_lists([[1, 2, 3], [4, 5], [6, 7, 8, 9]]))
+# Output: [[3, 2, 1], [5, 4], [9, 8, 7, 6]]
+```
+
+

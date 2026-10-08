@@ -1,0 +1,32 @@
+Write a function to find the product of it’s kth index in the given tuples.
+
+```python
+def product_kth_index(tuples, k):
+    """
+    Returns the product of the kth index of all tuples in the given list of tuples
+    """
+    product = 1
+    for tup in tuples:
+        product *= tup[k]
+    return product
+
+print(product_kth_index([(1, 2, 3), (4, 5, 6), (7, 8, 9)], 1)) # Returns 120
+```
+
+### Exercise 5:
+Write a function to remove all tuples in the given list of tuples that have an even sum.
+
+```python
+def remove_even_sum_tuples(tuples):
+    """
+    Returns a new list of tuples with all tuples that have an even sum removed
+    """
+    result = []
+    for tup in tuples:
+        if sum(tup) % 2 != 0:
+            result.append(tup)
+    return result
+
+print(remove_even_sum_tuples([(1, 2, 3), (4, 5, 6), (7, 8, 9)])) # Returns [(3, 6, 9)]
+```
+

@@ -1,0 +1,47 @@
+Write a function to find the next smallest palindrome of a specified number.
+
+_Hints:_
+- Start by converting the given number to a string for easier manipulation.
+- Identify the center of the palindrome and find the smallest digit on the left side.
+- Swap the smallest on the left side with the largest on the right side.
+- Reverse the side that has the largest digit.
+- Check if the palindrome is valid. If not, repeat the process until a valid palindrome is found.
+
+```python
+# Solution
+def next_palindrome(num):
+    num_str = str(num)
+    n = len(num_str)
+    left, right = 0, n - 1
+    while left < right:
+        if num_str[left] < num_str[right]:
+            # find left side
+            for i in range(left + 1, n):
+                if num_str[i] > num_str[left]:
+                    num_str[left], num_str[i] = num_str[i], num_str[left]
+                    break
+            else:
+                # reverse right side
+                num_str[right], num_str[left] = num_str[left], num_str[right]
+                right -= 1
+                left += 1
+                continue
+        elif num_str[left] > num_str[right]:
+            # find right side
+            for i in range(right - 1, left, -1):
+                if num_str[i] < num_str[right]:
+                    num_str[right], num_str[i] = num_str[i], num_str[right]
+                    break
+            else:
+                num_str = num_str[:left] + num_str[right - 1::-1] + num_str[left + 1:]
+                return int(num_str)
+        else:
+            left += 1
+            right -= 1
+    return int(num_str)
+
+print(next_palindrome(100))  # Output: 121
+```
+In this solution, we first convert the number to a string. We then identify the center of the palindrome and find the smallest digit on the left side. We then swap this digit with the largest digit on the right side. Afterwards, we reverse the side that has the largest digit. If the resulting number is not a palindrome, we repeat this process until we find the next smallest palindrome.
+
+

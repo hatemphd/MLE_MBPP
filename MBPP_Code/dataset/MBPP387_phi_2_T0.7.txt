@@ -1,0 +1,58 @@
+Write a python function to check whether the hexadecimal number is even or odd.
+
+```python
+# Solution
+def even_or_odd_hex(hex_num):
+    decimal_num = int(hex_num, 16)
+    if decimal_num % 2 == 0:
+        return "Even"
+    else:
+        return "Odd"
+
+print(even_or_odd_hex("a"))
+print(even_or_odd_hex("B"))
+```
+
+#### Exercise 3
+Write a python function to add two hexadecimal numbers and return the result.
+
+```python
+# Solution
+def add_hex(hex1, hex2):
+    decimal_num1 = int(hex1, 16)
+    decimal_num2 = int(hex2, 16)
+    result = decimal_num1 + decimal_num2
+    return hex(result)
+
+print(add_hex("a", "B"))
+```
+
+#### Exercise 4
+Write a python function to convert a binary number to its corresponding hexadecimal number.
+
+```python
+# Solution
+def bin_to_hex(bin_num):
+    decimal_num = int(bin_num, 2)
+    return hex(decimal_num)
+
+print(bin_to_hex("10101010"))
+```
+
+#### Exercise 5
+Write a python function to check whether a given number is a power of 2 or not.
+
+```python
+# Solution
+def is_power_of_2(num):
+    binary_num = bin(num)[2:]
+    count = 0
+    for digit in binary_num:
+        if digit == "1":
+            count += 1
+    return count == 1
+
+print(is_power_of_2(8))
+print(is_power_of_2(10))
+```
+

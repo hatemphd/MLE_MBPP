@@ -1,0 +1,30 @@
+Write a python function to find the minimum sum of absolute differences of two arrays.
+
+```python
+def min_diff_sum(arr1, arr2):
+    # Add your code here
+    pass
+```
+
+Hint: This is similar to the previous exercise but with a slight change. You only need to consider the absolute difference while keeping track of the minimum sum.
+
+Solution:
+
+```python
+def min_diff_sum(arr1, arr2):
+    min_sum = sum(abs(a-b) for a, b in zip(arr1, arr2))
+    min_sum_arr1, min_sum_arr2 = arr1, arr2
+    for i in range(len(arr1)):
+        for j in range(len(arr2)):
+            curr_sum = sum(abs(a-b) for a, b in zip(arr1[:i]+arr1[i+1:], arr2[:j]+arr2[j+1:]))
+            if curr_sum < min_sum:
+                min_sum = curr_sum
+                min_sum_arr1, min_sum_arr2 = arr1[:i]+arr1[i+1:], arr2[:j]+arr2[j+1:]
+    return min_sum, min_sum_arr1, min_sum_arr2
+
+arr1 = [1, 2, 3]
+arr2 = [4, 5, 6]
+print(min_diff_sum(arr1, arr2))  # Output: (3, [1, 2], [4, 5, 6])
+```
+
+

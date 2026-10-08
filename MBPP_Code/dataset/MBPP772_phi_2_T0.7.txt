@@ -1,0 +1,36 @@
+Write a function to remove all the words with k length in the given string. You don't need to return anything, modify the given string in place.
+
+Example 1:
+
+Input: "Hello World!", k = 3
+Output: "Hlo"
+Explanation: Your function should modify the input string in-place such that it contains only "H", "e", "l", "o" and "!".
+Example 2:
+
+Input: "aa", k = 1
+Output: ""
+Explanation: After calling your function, the string should be empty.
+Note:
+
+The length of the given string will not exceed 10,000.
+The string contains only lowercase English letters a-z.
+"""
+
+
+class Solution(object):
+    def removeKdigits(self, num, k):
+        """
+        :type num: str
+        :type k: int
+        :rtype: str
+        """
+        stack = []
+        for digit in num:
+            while stack and k and stack[-1] > digit:
+                stack.pop()
+                k -= 1
+            stack.append(digit)
+        stack = stack[:-k] if k else stack
+        while stack and stack[-1] == '0':
+            stack.pop()
+        return ''.join(stack)

@@ -1,0 +1,54 @@
+Write a function to count the same pair in three given lists.
+
+Idea: Use a counter to track the same pair across all three lists.
+
+Solution:
+```python
+def count_same_pair(list1, list2, list3):
+    counter = Counter()
+    for item in list1:
+        counter[item] += 1
+    for item in list2:
+        counter[item] += 1
+    for item in list3:
+        counter[item] += 1
+    return sum(1 for _, count in counter.items() if count > 1)
+
+print(count_same_pair(list1, list2, list3)) # Output: 1
+```
+
+2. Write a function to check if a list contains exactly two same pairs.
+
+Idea: Use a counter to track the same pair and return True if there are exactly two.
+
+Solution:
+```python
+def has_two_same_pairs(list):
+    counter = Counter()
+    for item in list:
+        counter[item] += 1
+    return sum(1 for _, count in counter.items() if count > 1) == 2
+
+print(has_two_same_pairs(list1)) # Output: False
+```
+
+3. Modify the count_same_pair function to ignore case when comparing items.
+
+Idea: Convert all items to lower case before comparing.
+
+Solution:
+```python
+def count_same_pair_case_insensitive(list1, list2, list3):
+    counter = Counter()
+    for item in list1:
+        counter[item.lower()] += 1
+    for item in list2:
+        counter[item.lower()] += 1
+    for item in list3:
+        counter[item.lower()] += 1
+    return sum(1 for _, count in counter.items() if count > 1)
+
+print(count_same_pair_case_insensitive(list1, list2, list3)) # Output: 2
+```
+
+

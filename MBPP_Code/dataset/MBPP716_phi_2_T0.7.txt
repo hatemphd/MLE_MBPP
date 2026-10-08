@@ -1,0 +1,17 @@
+Write a function to find the perimeter of a rombus.
+    The perimeter is defined as the sum of all sides of the rombus.
+"""
+
+
+def perimeter_of_romb(side1: float, side2: float, angle_between_sides: float) -> float:
+    """Computes the perimeter of a romb.
+
+    Args:
+        side1 (float): Length of the first side.
+        side2 (float): Length of the second side.
+        angle_between_sides (float): Angle between the first and the second side.
+
+    Returns:
+        float: Perimeter of the romb.
+    """
+    return side1 + side2 + side2 * sin(angle_between_sides * pi / 180)

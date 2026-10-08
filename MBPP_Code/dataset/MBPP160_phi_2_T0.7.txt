@@ -1,0 +1,26 @@
+Write a function to find x and y that satisfies ax + by = n.
+
+A. x = n/a, y = n/b
+B. x = n/a, y = a
+C. x = n/b, y = b
+D. x = n/a, y = 2a
+
+Solution 0: The correct option is A. x = n/a, y = n/b
+
+To solve for x and y, we need to express one of them in terms of the other and the value of n. We can use any method we like, such as substitution, elimination, or cross-multiplication. Here, we will use the cross-multiplication method.
+
+Cross-multiplication means multiplying the numerator of one fraction by the denominator of the other and setting them equal. For example, we have:
+
+(a/b) * (n/b) = n
+
+This simplifies to:
+
+an = n
+
+This means that x = n/a, since a is the coefficient of x. Similarly, we can write:
+
+by = n
+
+This means that y = n/b, since b is the coefficient of y. Therefore, the solution is x = n/a, y = n/b.
+
+

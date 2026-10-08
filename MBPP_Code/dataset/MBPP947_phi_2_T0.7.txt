@@ -1,0 +1,30 @@
+Write a python function to find the length of the shortest word.
+
+```python
+def shortest_word_length(word_list):
+    return min(len(word) for word in word_list)
+
+words = ["Python", "is", "an", "awesome", "language"]
+print(shortest_word_length(words))  # Output: 1
+```
+
+4. Write a python function to find the smallest number in a list that is a multiple of 5.
+
+```python
+def smallest_multiple_of_five(num_list):
+    return min(num for num in num_list if num % 5 == 0)
+
+numbers = [2, 3, 5, 10, 15, 20, 25]
+print(smallest_multiple_of_five(numbers))  # Output: 5
+```
+
+5. Write a python function to find the smallest number in a list that is not a multiple of 3.
+
+```python
+def smallest_not_multiple_of_three(num_list):
+    return min(num for num in num_list if num % 3 != 0)
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(smallest_not_multiple_of_three(numbers))  # Output: 1
+```
+

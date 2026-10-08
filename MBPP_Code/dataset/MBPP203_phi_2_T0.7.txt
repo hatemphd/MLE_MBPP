@@ -1,0 +1,32 @@
+Write a python function to find the hamming distance between given two integers.
+
+``` python
+# Solution
+def hamming_distance(a:int, b:int):
+    binary_a = bin(a)[2:]
+    binary_b = bin(b)[2:]
+    length = max(len(binary_a), len(binary_b))
+    binary_a = binary_a.zfill(length)
+    binary_b = binary_b.zfill(length)
+    distance = 0
+    for i in range(length):
+        if binary_a[i] != binary_b[i]:
+            distance += 1
+    return distance
+```
+
+This function takes two integers as input and returns the hamming distance between them. First, we convert the integers to binary strings using the `bin` function. Then we find the length of the binary string with the largest length using the `max` function. We use the `zfill` method to pad the binary strings with leading zeros to make them of equal length. Then, we iterate over the binary strings and count the number of positions in which the characters are different.
+
+3. Write a python function to find the largest number that can be formed by concatenating the bits in the binary representation of an integer in reverse order.
+
+``` python
+# Solution
+def largest_binary_number(n:int):
+    binary_n = bin(n)[2:]
+    binary_n = binary_n[::-1]
+    return int(binary_n, 2)
+```
+
+This function takes an integer as input and returns the largest number that can be formed by concatenating the bits in the binary representation of the integer in reverse order. First, we convert the integer to a binary string using the `bin` function. Then we reverse the binary string using slicing `[::-1]`. Finally, we convert the reversed binary string to an integer using the `int` function with base 2.
+
+

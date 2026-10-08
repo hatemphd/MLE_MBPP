@@ -1,0 +1,78 @@
+Write a function to extract the index minimum value record from the given tuples.
+
+```python
+# Exercise 2
+def min_index_record(records):
+    """
+    return the index of the tuple with the smallest value in the last field of records
+    """
+    min_index = 0
+    for record in records:
+        if record[-1] < records[min_index][-1]:
+            min_index = records.index(record)
+    return min_index
+
+records = [(1, 2, 3), (4, 5, 6), (7, 8, 1)]
+print(min_index_record(records)) # 2
+```
+
+#### Exercise 3
+
+Write a function to count the number of records with values greater than a given value in the last field of the given tuples.
+
+```python
+# Exercise 3
+def count_greater(records, value):
+    """
+    return the number of tuple with value greater than the given value in the last field of records
+    """
+    count = 0
+    for record in records:
+        if record[-1] > value:
+            count += 1
+    return count
+
+records = [(1, 2, 3), (4, 5, 6), (7, 8, 1)]
+print(count_greater(records, 5)) # 2
+```
+
+#### Exercise 4
+
+Write a function to find the maximum value record in the given tuples.
+
+```python
+# Exercise 4
+def max_record(records):
+    """
+    return the tuple with the maximum value in the last field of records
+    """
+    max_record = records[0]
+    for record in records:
+        if record[-1] > max_record[-1]:
+            max_record = record
+    return max_record
+
+records = [(1, 2, 3), (4, 5, 6), (7, 8, 1)]
+print(max_record(records)) # (4, 5, 6)
+```
+
+#### Exercise 5
+
+Write a function to find the average value of the last field of the given tuples.
+
+```python
+# Exercise 5
+def avg_last(records):
+    """
+    return the average value of the last field of records
+    """
+    total = 0
+    for record in records:
+        total += record[-1]
+    avg = total / len(records)
+    return avg
+
+records = [(1, 2, 3), (4, 5, 6), (7, 8, 1)]
+print(avg_last(records)) # 4.0
+```
+

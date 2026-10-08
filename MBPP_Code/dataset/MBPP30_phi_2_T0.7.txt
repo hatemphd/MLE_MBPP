@@ -1,0 +1,35 @@
+Write a python function to count all the substrings starting and ending with same characters.
+
+**Hint:** You can use nested loops to iterate over the string and compare each character with the character on the other end.
+
+```python
+def count_substrings(s):
+    count = 0
+    for i in range(len(s)):
+        for j in range(i, len(s)):
+            if s[i] == s[j]:
+                count += 1
+    return count
+
+print(count_substrings('abcabc')) # Output: 7
+```
+
+**Exercise 2:** Write a python function to count all the substrings with no repeated characters.
+
+**Hint:** You can use the set data structure to keep track of unique characters in the substring.
+
+```python
+def count_substrings(s):
+    count = 0
+    for i in range(len(s)):
+        for j in range(i, len(s)):
+            if len(set(s[i:j+1])) == j-i+1:
+                count += 1
+    return count
+
+print(count_substrings('abcabc')) # Output: 6
+```
+
+Through these exercises, we hope you gain a deeper understanding of Python string manipulation and the use of loops and conditional statements. Continue practicing these concepts to improve your proficiency and efficiency in solving complex problems.
+
+

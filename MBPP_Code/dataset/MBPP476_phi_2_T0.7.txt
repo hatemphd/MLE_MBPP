@@ -1,0 +1,76 @@
+Write a python function to find the sum of the largest and smallest value in a given array.
+
+5. Write a python function to find the number of times a given value appears in a given array.
+
+### Ideas for Exercises
+
+1. Use the `len()` function to find the length of an array.
+
+2. Use the `max()` and `min()` functions to find the largest and smallest value in an array.
+
+3. Use a loop to iterate through an array and print each element.
+
+4. Sort the array using the `sort()` function and then find the sum of the largest and smallest value using indexing.
+
+5. Use a loop to iterate through an array and count the number of times a given value appears using a counter variable.
+
+### Solutions to Exercises
+
+1. 
+
+```python
+def sum_even_numbers(arr):
+    sum = 0
+    for num in arr:
+        if num % 2 == 0:
+            sum += num
+    return sum
+
+print(sum_even_numbers([1,2,3,4,5,6,7,8,9]))
+```
+
+2. 
+
+```python
+def reverse_array(arr):
+    arr.reverse()
+    return arr
+
+print(reverse_array([1,2,3,4,5]))
+```
+
+3. 
+
+```python
+def find_average(arr):
+    sum = 0
+    for num in arr:
+        sum += num
+    return sum / len(arr)
+
+print(find_average([1,2,3,4,5]))
+```
+
+4. 
+
+```python
+def sum_largest_smallest(arr):
+    arr.sort()
+    return arr[0] + arr[-1]
+
+print(sum_largest_smallest([1,2,3,4,5]))
+```
+
+5. 
+
+```python
+def count_value(arr, value):
+    count = 0
+    for num in arr:
+        if num == value:
+            count += 1
+    return count
+
+print(count_value([1,2,3,4,5,6,7,8,9], 5))
+```
+

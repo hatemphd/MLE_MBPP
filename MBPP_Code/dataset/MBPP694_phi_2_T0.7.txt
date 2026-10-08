@@ -1,0 +1,40 @@
+Write a function to extract unique values from the given dictionary values.
+
+    *Note:* Use set comprehension to extract unique values.
+
+    ```python
+    def extract_unique_values(dictionary):
+        unique_values = {value for value in dictionary.values()}
+        return unique_values
+
+    # Test the function
+    print(extract_unique_values({"Name": "John", "Age": 25, "City": "New York"}))  # Output: {25, 'John', 'New York'}
+    ```
+
+4. **Exercise 4**: Write a function to check if all values in the dictionary are of same type.
+
+    *Note:* Use the `type()` function to check the type of each value.
+
+    ```python
+    def are_values_same_type(dictionary):
+        value_type = type(next(iter(dictionary.values())))
+        return all(isinstance(value, value_type) for value in dictionary.values())
+
+    # Test the function
+    print(are_values_same_type({"Name": "John", "Age": 25, "City": "New York"}))  # Output: False
+    ```
+
+5. **Exercise 5**: Write a function to sort values in the dictionary based on their length.
+
+    *Note:* Use list comprehension and the `sorted()` function with a lambda function as the key.
+
+    ```python
+    def sort_values_by_length(dictionary):
+        sorted_values = sorted(dictionary.values(), key=lambda x: len(x))
+        return sorted_values
+
+    # Test the function
+    print(sort_values_by_length({"Name": "John", "Country": "USA", "City": "New York"}))  # Output: ['John', 'USA', 'New York']
+    ```
+
+

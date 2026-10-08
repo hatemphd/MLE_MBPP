@@ -1,0 +1,17 @@
+Write a function to convert a date of yyyy-mm-dd format to dd-mm-yyyy format.
+
+_Hint_: You can use `split()` function to split the string at '-' and then swap the order of the resulting list.
+
+```python
+def convert_date(date_str):
+    date_parts = date_str.split('-')
+    new_date_str = '-'.join([date_parts[2], date_parts[1], date_parts[0]])
+    return new_date_str
+
+date_str = '2022-12-25'
+print(convert_date(date_str))  # '25-12-2022'
+```
+
+These exercises should give you a good understanding of how to manipulate strings in Python, which is a fundamental skill for any software developer.
+
+

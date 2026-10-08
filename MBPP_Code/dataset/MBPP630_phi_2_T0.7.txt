@@ -1,0 +1,67 @@
+Write a function to extract all the adjacent coordinates of the given coordinate tuple.
+
+```python
+# The function should take a coordinate tuple as an input and return a list of its adjacent coordinates.
+def adjacent_coords(coord):
+    x, y = coord
+    return [(x-1, y), (x+1, y), (x, y-1), (x, y+1)]
+
+# Test the function
+print(adjacent_coords((1, 2)))  # Returns: [(0, 2), (2, 2), (1, 1), (1, 3)]
+```
+
+4. Write a function to perform a breadth-first search on a grid starting from a given coordinate.
+
+```python
+# The function should take the grid, the start coordinate, and the end coordinate as inputs. It should return the path from the start to the end.
+from collections import deque
+
+def bfs(grid, start, end):
+    queue = deque([[start]])
+    seen = set([start])
+
+    while queue:
+        path = queue.popleft()
+        x, y = path[-1]
+
+        if (x, y) == end:
+            return path
+
+        for dx, dy in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
+            new_x, new_y = x + dx, y + dy
+
+            if (0 <= new_x < len(grid) and 0 <= new_y < len(grid[0])) and (new_x, new_y) not in seen and (grid[new_x][new_y] != '#'):
+                queue.append(path + [(new_x, new_y)])
+                seen.add((new_x, new_y))
+
+# Test the function
+grid = [['.', '.', '#', '.', '.'],
+        ['#', '.', '.', '.', '.'],
+        ['.', '.', '.', '.', '.'],
+        ['.', '#', '.', '#', '.']]
+print(bfs(grid, (0, 0), (3, 4)))  # Returns: [(0, 0), (0, 1), (0, 2), (0, 3), (1, 3), (2, 3), (3, 3), (3, 4)]
+```
+
+5. Write a function to print the grid with the coordinates marked.
+
+```python
+# The function should take the grid and the coordinates as inputs. It should print the grid with the coordinates marked.
+def print_marked_grid(grid, coords):
+    for row in grid:
+        for cell in row:
+            if (row.index(cell), col.index(cell)) in coords:
+                print('o', end='')
+            else:
+                print(cell, end='')
+        print()
+
+# Test the function
+print_marked_grid(grid, [(0, 0), (0, 2), (1, 2), (2, 2), (3, 2), (3, 4)])
+# Outputs:
+# . . o . .
+# # o . . .
+# . . . . .
+# . # o . .
+```
+
+

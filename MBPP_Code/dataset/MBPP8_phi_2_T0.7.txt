@@ -1,0 +1,43 @@
+Write a function to find squares of individual elements in a list using lambda function.
+
+    Hints: Use the `map` function along with `lambda` to apply the square operation to each element.
+
+    Solution:
+
+    ```python
+    numbers = [1, 2, 3, 4, 5]
+
+    result = map(lambda x: x**2, numbers)
+
+    print(list(result))  # Output: [1, 4, 9, 16, 25]
+    ```
+
+2. Use a lambda function to filter a list of strings to only include those that start with the letter 'a'.
+
+    Hints: Use the `filter` function along with `lambda` to filter the list.
+
+    Solution:
+
+    ```python
+    words = ['apple', 'banana', 'cherry', 'durian', 'apricot']
+
+    result = filter(lambda x: x.startswith('a'), words)
+
+    print(list(result))  # Output: ['apple', 'apricot']
+    ```
+
+3. Write a lambda function to sort a list of tuples by the second element of each tuple.
+
+    Hints: The `sort` function can take a `key` argument, which accepts a function. Apply lambda to the `key` argument.
+
+    Solution:
+
+    ```python
+    data = [(1, 'a'), (2, 'b'), (3, 'c')]
+
+    data.sort(key=lambda x: x[1])
+
+    print(data)  # Output: [(1, 'a'), (2, 'b'), (3, 'c')]
+    ```
+
+

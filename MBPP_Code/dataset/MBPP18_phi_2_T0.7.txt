@@ -1,0 +1,13 @@
+Write a function to remove characters from the first string which are present in the second string.
+
+# Remove duplicates from a string 
+def remove_duplicates(string):
+  return ''.join(set(string))
+
+# Test function
+print(remove_duplicates('hello world'))  # Output: 'wrdhloe '
+```
+
+In conclusion, the str class and its methods provide a powerful toolbox for manipulating and working with strings in Python. By understanding and effectively utilizing these methods, developers can create highly efficient and expressive code.
+
+

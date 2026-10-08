@@ -1,0 +1,31 @@
+Write a python function to find number of elements with odd factors in a given range.
+
+```python
+# Solution
+def odd_factors(start,end):
+    count = 0
+    for i in range(start, end+1):
+        for j in range(1, i+1):
+            if i%j == 0 and j%2 != 0:
+                count += 1
+    return count
+
+print(odd_factors(1,10))
+```
+
+2. Write a python function to find number of elements with even factors in a given range.
+
+```python
+# Solution
+def even_factors(start,end):
+    count = 0
+    for i in range(start, end+1):
+        for j in range(1, i+1):
+            if i%j == 0 and j%2 == 0:
+                count += 1
+    return count
+
+print(even_factors(1,10))
+```
+
+

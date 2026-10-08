@@ -1,0 +1,89 @@
+Write a python function to find smallest number in a list.
+
+**Hint**:
+- You can use a for loop to iterate over the list.
+- Use an if statement to check if the current number is smaller than the smallest number.
+
+```python
+def find_smallest_number(numbers):
+    smallest_number = numbers[0]
+    for number in numbers:
+        if number < smallest_number:
+            smallest_number = number
+    return smallest_number
+
+numbers = [5, 2, 9, 1, 5, 6, 7, 2, 1, 8]
+print(find_smallest_number(numbers))  # Output: 1
+```
+
+2. Write a python function that calculates the factorial of a number.
+
+**Hint**:
+- The factorial of a number is the product of all positive integers less than or equal to that number.
+- Use a for loop to multiply all numbers from 1 to the number.
+
+```python
+def factorial(n):
+    fact = 1
+    for i in range(1, n + 1):
+        fact *= i
+    return fact
+
+print(factorial(5))  # Output: 120
+```
+
+3. Write a python function that takes a list of numbers and returns a new list containing only the even numbers.
+
+**Hint**:
+- Use a for loop to iterate over the list.
+- Use an if statement to check if the number is even.
+
+```python
+def filter_even_numbers(numbers):
+    even_numbers = []
+    for number in numbers:
+        if number % 2 == 0:
+            even_numbers.append(number)
+    return even_numbers
+
+numbers = [2, 5, 7, 8, 9, 10, 12, 15, 16, 18]
+print(filter_even_numbers(numbers))  # Output: [2, 8, 10, 12, 16, 18]
+```
+
+4. Write a python function that takes a string and returns a new string with all vowels removed.
+
+**Hint**:
+- Use a for loop to iterate over the string.
+- Use an if statement to check if the character is a vowel.
+
+```python
+def remove_vowels(string):
+    vowels = "aeiouAEIOU"
+    new_string = ""
+    for char in string:
+        if char not in vowels:
+            new_string += char
+    return new_string
+
+string = "Hello, World!"
+print(remove_vowels(string))  # Output: "Hll, Wrld!"
+```
+
+5. Write a python function that takes a list of numbers and returns the sum of all numbers.
+
+**Hint**:
+- Use a for loop to iterate over the list.
+- Use a variable to keep track of the sum.
+
+```python
+def sum_numbers(numbers):
+    total = 0
+    for number in numbers:
+        total += number
+    return total
+
+numbers = [1, 2, 3, 4, 5]
+print(sum_numbers(numbers))  # Output: 15
+```
+
+

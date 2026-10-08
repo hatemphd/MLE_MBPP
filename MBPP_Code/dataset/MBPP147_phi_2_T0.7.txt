@@ -1,0 +1,23 @@
+Write a function to find the maximum total path sum in the given triangle.
+
+Triangle:
+- First row: [3]
+- Second row: [7, 4]
+- Third row: [2, 4, 6]
+
+The maximum total path sum from top to bottom is 3 + 7 + 4 = 14.
+
+```python
+def maxPathSum(triangle):
+    for i in range(len(triangle) - 2, -1, -1):
+        for j in range(len(triangle[i])):
+            triangle[i][j] += max(triangle[i+1][j], triangle[i+1][j+1])
+    return triangle[0][0]
+
+triangle = [[3], [7, 4], [2, 4, 6]]
+print(maxPathSum(triangle))  # Output: 14
+```
+
+In the above solution, we traverse the triangle in reverse order starting from the second last row. For every element in a row, we add the maximum of the two elements directly below it to it. This way, we ensure that the maximum path sum is always at the bottom of the triangle.
+
+

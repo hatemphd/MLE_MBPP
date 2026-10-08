@@ -1,0 +1,27 @@
+Write a python function to check whether the given strings are rotations of each other or not.
+
+The `is_rotation` method will loop over the length of the first string, and for each index, check whether the substring of the first string from that index to the end is a substring of the second string.
+
+```python
+class Palindrome:
+    def __init__(self, string):
+        self.string = string
+
+    def is_palindrome(self):
+        return self.string == self.string[::-1]
+
+    def is_rotation(self, other):
+        if len(self.string) != len(other.string):
+            return False
+        return other.string in self.string + self.string
+
+
+p = Palindrome('racecar')
+print(p.is_palindrome())  # returns: True
+print(p.is_rotation('racecar'))  # returns: True
+print(p.is_rotation('cearr'))  # returns: False
+```
+
+In this lesson, we've learned how to check whether a string is a palindrome or a rotation of another string. This can be particularly useful in many applications such as text processing, cryptography, and data validation.
+
+

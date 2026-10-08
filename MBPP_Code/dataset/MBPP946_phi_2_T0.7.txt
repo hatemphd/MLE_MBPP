@@ -1,0 +1,18 @@
+Write a function to find the most common elements and their counts of a specified text.
+
+**Hint:** Use a dictionary to keep track of the count of each element.
+
+```python
+def most_common_elements(text):
+    """
+    Returns the most common elements in the text and counts.
+    """
+    elements = text.split()
+    counter = collections.Counter(elements)
+    most_common = counter.most_common(5) # Find top 5 most common elements
+    return most_common
+
+print(most_common_elements("this is a sample text for testing"))
+```
+
+

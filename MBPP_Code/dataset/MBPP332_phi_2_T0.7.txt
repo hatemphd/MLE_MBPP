@@ -1,0 +1,54 @@
+Write a function to count character frequency of a given string.
+
+```python
+def count_char(s: str):
+    freq = {}
+    for c in s:
+        if c in freq:
+            freq[c] += 1
+        else:
+            freq[c] = 1
+    return freq
+
+print(count_char("hello"))
+```
+The function counts the frequency of each character in the input string.
+
+3. Implement a function to delete a specific element from a linked list.
+
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+def delete_node(node: Node, key: int):
+    current = node
+    if current and current.data == key:
+        node = current.next
+        current = None
+        return node
+    while current and current.data != key:
+        prev = current
+        current = current.next
+
+    if current is None:
+        return node
+
+    prev.next = current.next
+    current = None
+    return node
+
+# Initializing the linked list
+head = Node(1)
+head.next = Node(2)
+head.next.next = Node(3)
+head.next.next.next = Node(4)
+head.next.next.next.next = Node(5)
+
+# Deleting Node with data 3
+head = delete_node(head, 3)
+```
+The function deletes a node with the given key from the linked list. It returns the new head of the linked list.
+
+Overall, I enjoyed learning about recursion and its applications. I can see how it can be used in many other problems as well. I also gained some experience with Python data structures, specifically linked lists.

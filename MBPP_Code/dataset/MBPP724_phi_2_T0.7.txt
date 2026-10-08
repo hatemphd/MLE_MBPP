@@ -1,0 +1,32 @@
+Write a function to calculate the sum of all digits of the base to the specified power.
+
+For example, given the number 2 to the power of 3 (8), the sum of all digits is 2 + 8 = 10.
+
+## Solution
+
+```python
+def sum_of_digits(base, power):
+    # Calculate the sum of digits of the base to the power
+    total = sum(int(digit) for digit in str(base**power))
+    return total
+
+print(sum_of_digits(2, 3))  # Output: 10
+```
+
+## Exercise 2:
+
+Implement a function to calculate the sum of all digits of the base to the specified power using the `sum_of_digits` function defined above.
+
+## Solution
+
+```python
+def sum_of_digits_v2(base, power):
+    # Use the sum_of_digits function
+    return sum_of_digits(base, power)
+
+print(sum_of_digits_v2(2, 3))  # Output: 10
+```
+
+This concludes our exploration of the sum of digits of a power of a number. Keep practising to get a firm grasp on these concepts.
+
+

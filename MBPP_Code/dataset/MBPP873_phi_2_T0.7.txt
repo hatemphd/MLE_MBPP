@@ -1,0 +1,43 @@
+Write a function to solve the fibonacci sequence using recursion.
+
+Solution: 
+
+```
+def fibonacci(n):
+    if n <= 1:
+        return n
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+```
+
+Exercise 4:
+Write a function to check whether a given number is prime or not using recursion.
+
+Solution: 
+
+```
+def is_prime(n, i=2):
+    if n < 2:
+        return False
+    elif n == 2:
+        return True
+    elif n % i == 0:
+        return False
+    else:
+        return is_prime(n, i+1)
+```
+
+Exercise 5:
+Write a program to find the largest element in a list using recursion.
+
+Solution: 
+
+```
+def find_largest(lst):
+    if len(lst) == 1:
+        return lst[0]
+    else:
+        return max(lst[0], find_largest(lst[1:]))
+``` 
+
+That's it for today's lecture. We have covered the basics of recursion and its advantages and disadvantages. We have also solved some exercises using recursion and compared it with looping. Do practice these exercises and try to solve more complex problems using recursion. See you in the next lecture!

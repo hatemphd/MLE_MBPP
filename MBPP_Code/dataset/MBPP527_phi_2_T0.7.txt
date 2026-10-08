@@ -1,0 +1,56 @@
+Write a function to find all pairs in an integer array whose sum is equal to a given number. 
+
+**Hint:** Use two pointer approach with inner loop to traverse the array.
+
+```python
+def find_pairs(array, target):
+    pairs = []
+    array.sort()
+    left, right = 0, len(array) - 1
+    while left < right:
+        current_sum = array[left] + array[right]
+        if current_sum == target:
+            pairs.append((array[left], array[right]))
+            left += 1
+            right -= 1
+        elif current_sum < target:
+            left += 1
+        else:
+            right -= 1
+    return pairs
+
+print(find_pairs([1, 2, 3, 4, 5, 6, 7, 8, 9], 10)) 
+```
+
+## Exercise 2
+Write a function to find all possible unique pairs in an integer array whose sum is equal to a given number.
+
+**Hint:** Use two pointers approach with inner loop to traverse the array.
+
+```python
+def find_all_pairs(array, target):
+    pairs = []
+    array.sort()
+    left, right = 0, len(array) - 1
+    while left < right:
+        current_sum = array[left] + array[right]
+        if current_sum == target:
+            pairs.append((array[left], array[right]))
+            left += 1
+            right -= 1
+            while left < right and array[left] == array[left - 1]:
+                left += 1
+            while left < right and array[right] == array[right + 1]:
+                right -= 1
+        elif current_sum < target:
+            left += 1
+        else:
+            right -= 1
+    return pairs
+
+print(find_all_pairs([1, 2, 3, 4, 5, 6, 7, 8, 8], 10)) 
+```
+
+These exercises should provide a practical understanding of the two pointer approach used in Python to solve complex array problems. In the next chapter, we will delve into more advanced sorting and searching algorithms.
+
+

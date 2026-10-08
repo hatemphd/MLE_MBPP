@@ -1,0 +1,66 @@
+Write a function to multiply all the numbers in a list and divide with the length of the list.
+
+```python
+# function to multiply list
+def multiply_list(list_of_numbers):
+    product = 1
+    for num in list_of_numbers:
+        product *= num
+    return product
+
+# use the function
+print(multiply_list([2, 3, 4, 5]))
+```
+
+2. Write a Python script to check if a given number is in a list.
+
+```python
+# function to check if a number is in list
+def is_in_list(num, list_of_numbers):
+    return num in list_of_numbers
+
+# use the function
+print(is_in_list(4, [1, 2, 3, 4, 5]))
+```
+
+3. Write a Python script to calculate the range (max - min) of a list.
+
+```python
+# function to calculate range
+def calculate_range(list_of_numbers):
+    return max(list_of_numbers) - min(list_of_numbers)
+
+# use the function
+print(calculate_range([2, 3, 4, 5, 6]))
+```
+
+4. Write a Python function to find the second smallest number in a list.
+
+```python
+# function to find second smallest number
+def find_second_smallest(list_of_numbers):
+    unique_numbers = set(list_of_numbers)
+    if len(unique_numbers) < 2:
+        return None
+    smallest = min(unique_numbers)
+    unique_numbers.remove(smallest)
+    return min(unique_numbers)
+
+# use the function
+print(find_second_smallest([2, 3, 4, 5, 6]))
+```
+
+5. Write a Python function to find the mode of a list.
+
+```python
+# function to find mode
+from collections import Counter
+
+def find_mode(list_of_numbers):
+    return Counter(list_of_numbers).most_common(1)[0][0]
+
+# use the function
+print(find_mode([1, 2, 2, 3, 3, 3, 4, 4, 4, 4]))
+```
+
+

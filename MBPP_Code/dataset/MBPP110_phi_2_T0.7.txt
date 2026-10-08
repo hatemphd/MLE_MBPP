@@ -1,0 +1,51 @@
+Write a function to extract the ranges that are missing from the given list with the given start range and end range values.
+#
+# Examples
+#
+#
+# Input:
+# start = 1
+# end = 3
+# ranges = [2, 5, 5, 2, 4]
+#
+# Output: [1, 4]
+#
+# Input:
+# start = 1
+# end = 5
+# ranges = [1, 5, 5, 1, 5]
+#
+# Output: [2, 4]
+
+# @lc code=start
+class Solution:
+    def findMissingRanges(self, start: int, end: int, ranges: List[int]) -> List[int]:
+        if not ranges:
+            return []
+        
+        res = []
+        
+        min_range = min(ranges)
+        
+        if start <= min_range:
+            res.append(start)
+        
+        max_range = max(ranges)
+        
+        if max_range <= end:
+            res.append(max_range)
+            
+        
+        for i in range(len(ranges)):
+            if i == 0:
+                diff = ranges[i] - start
+                if diff > 0:
+                    res.append(start + diff)
+            else:
+                diff = ranges[i] - ranges[i-1]
+                if diff > 0:
+                    res.append(ranges[i-1] + diff)
+        
+        return res
+# @lc code=end
+

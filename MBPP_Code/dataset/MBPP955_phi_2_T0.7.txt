@@ -1,0 +1,44 @@
+Write a function to find out, if the given number is abundant.
+
+"""
+__author__ = 'Danyang'
+
+
+class Solution(object):
+    def isAbundantNumber(self, number):
+        """
+        Divide the number into its prime factorization and sum the prime factors
+        which are more than the number itself.
+        :param number: int
+        :return: bool
+        """
+        if number <= 1:
+            return False
+
+        def isPrime(x):
+            if x < 2:
+                return False
+
+            for i in xrange(2, int(x**0.5)+1):
+                if x % i == 0:
+                    return False
+            return True
+
+        cnt = 0
+        for i in xrange(2, number/2+1):
+            if number/i != i and isPrime(i) and number%i == 0:
+                cnt += i
+        return cnt > number
+
+
+if __name__ == "__main__":
+    assert Solution().isAbundantNumber(12)
+    assert Solution().isAbundantNumber(18)
+    assert Solution().isAbundantNumber(20)
+    assert Solution().isAbundantNumber(28)
+    assert Solution().isAbundantNumber(30)
+    assert not Solution().isAbundantNumber(1)
+    assert not Solution().isAbundantNumber(4)
+    assert not Solution().isAbundantNumber(10)
+    assert not Solution().isAbundantNumber(13)
+    assert not Solution().isAbundantNumber(16)

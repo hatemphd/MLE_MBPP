@@ -1,0 +1,60 @@
+Write a function to convert more than one list to nested dictionary.
+
+Ideas: You can use a loop to convert each list to a nested dictionary.
+
+```python
+def convert_to_nested_dict(lists):
+    for lst in lists:
+        nested_dict = {}
+        for i in range(len(lst)):
+            nested_dict[lst[i]] = {}
+        print(nested_dict)
+lists = [['a', 'b', 'c'], ['1', '2', '3'], ['red', 'green', 'blue']]
+convert_to_nested_dict(lists)
+```
+
+3. Write a function to find the value of a nested key.
+
+Ideas: You can use a loop to find the nested key.
+
+```python
+def find_nested_value(nested_dict, keys):
+    for key in keys:
+        nested_dict = nested_dict[key]
+    return nested_dict
+nested_dict = {'key1': {'subkey1': 'value1', 'subkey2': 'value2'}, 'key2': {'subkey3': 'value3', 'subkey4': 'value4'}}
+keys = ['key1', 'subkey1']
+print(find_nested_value(nested_dict, keys))
+```
+
+4. Write a function to flatten a nested dictionary.
+
+Ideas: You can use a recursive function to flatten the nested dictionary.
+
+```python
+def flatten_dict(d, parent_key='', sep='_'):
+    items = []
+    for k, v in d.items():
+        new_key = parent_key + sep + k if parent_key else k
+        if isinstance(v, dict):
+            items.extend(flatten_dict(v, new_key, sep=sep).items())
+        else:
+            items.append((new_key, v))
+    return dict(items)
+nested_dict = {'key1': {'subkey1': 'value1', 'subkey2': 'value2'}, 'key2': {'subkey3': 'value3', 'subkey4': 'value4'}}
+print(flatten_dict(nested_dict))
+```
+
+5. Write a function to convert a nested dictionary to JSON.
+
+Ideas: You can use the json module to convert the nested dictionary to JSON.
+
+```python
+import json
+def convert_to_json(nested_dict):
+    return json.dumps(nested_dict, indent=4)
+nested_dict = {'key1': {'subkey1': 'value1', 'subkey2': 'value2'}, 'key2': {'subkey3': 'value3', 'subkey4': 'value4'}}
+print(convert_to_json(nested_dict))
+```
+
+

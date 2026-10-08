@@ -1,0 +1,23 @@
+Write a python function to find sum of all prime divisors of a given number.
+
+```python
+def prime_divisors_sum(n):
+    divisors = prime_divisors(n)
+    return sum(divisors)
+
+print(prime_divisors_sum(12))  # output: 5
+```
+
+3. Create a python function to determine if a given number is prime.
+
+```python
+def is_prime(n):
+    return len(prime_divisors(n)) == 2
+
+print(is_prime(13))  # output: True
+print(is_prime(15))  # output: False
+```
+
+In conclusion, this chapter has provided a deeper understanding of prime numbers, prime decomposition, and prime divisors, and how they can be computed using Python. The exercises are meant to strengthen your understanding and provide practical applications of the concepts learned.
+
+

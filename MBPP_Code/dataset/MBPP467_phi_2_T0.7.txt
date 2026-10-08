@@ -1,0 +1,62 @@
+Write a python function to convert decimal number to octal number.
+
+```python
+def decimal_to_octal(num):
+    return oct(num)
+
+print(decimal_to_octal(10)) # Output: 0o12
+```
+
+Idea: Try using list comprehension to convert multiple decimal numbers to octal numbers.
+
+```python
+def decimal_to_octal_list(decimal_list):
+    return [oct(num) for num in decimal_list]
+
+print(decimal_to_octal_list([10, 20, 30, 40, 50])) # Output: ['0o12', '0o24', '0o36', '0o50', '0o62']
+```
+
+#### Exercise 4:
+
+Write a python function to convert octal number to decimal number.
+
+```python
+def octal_to_decimal(num):
+    return int(num, 8)
+
+print(octal_to_decimal('0o12')) # Output: 10
+```
+
+Idea: Try using list comprehension to convert multiple octal numbers to decimal numbers.
+
+```python
+def octal_to_decimal_list(octal_list):
+    return [int(num, 8) for num in octal_list]
+
+print(octal_to_decimal_list(['0o12', '0o24', '0o36', '0o50', '0o62'])) # Output: [10, 20, 30, 40, 50]
+```
+
+#### Exercise 5:
+
+Write a python program to convert a binary number to octal number and then to decimal number.
+
+```python
+binary_num = "10101010"
+octal_num = oct(int(binary_num, 2))
+decimal_num = int(octal_num, 8)
+print("Binary Number:", binary_num)
+print("Octal Number:", octal_num)
+print("Decimal Number:", decimal_num)
+```
+
+Idea: Try using list comprehension to convert multiple binary numbers to octal numbers and then to decimal numbers.
+
+```python
+binary_list = ["101010", "111000", "111010"]
+octal_list = [oct(int(binary, 2)) for binary in binary_list]
+decimal_list = [int(octal, 8) for octal in octal_list]
+print("Binary Numbers:", binary_list)
+print("Octal Numbers:", octal_list)
+print("Decimal Numbers:", decimal_list)
+```
+

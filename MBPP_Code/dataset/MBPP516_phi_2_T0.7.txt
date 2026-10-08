@@ -1,0 +1,15 @@
+Write a function to sort a list of elements using radix sort.
+
+```python
+def radix_sort(lst):
+    max_num = max(lst)
+    exp = 1
+    while max_num // exp > 0:
+        buckets = [[] for _ in range(10)]
+        for num in lst:
+            digit = (num // exp) % 10
+            buckets[digit].append(num)
+        lst = [num for sublist in buckets for num in sublist]
+        exp *= 10
+    return lst
+```

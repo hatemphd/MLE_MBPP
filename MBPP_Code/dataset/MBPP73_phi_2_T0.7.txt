@@ -1,0 +1,25 @@
+Write a function to split the given string with multiple delimiters by using regex.
+
+Thinking:
+I know that Python's `re` module can be used to split strings with multiple delimiters. I will use the `split()` method with `|`, which is a regular expression that matches any of the given delimiters.
+
+Solution:
+
+```python
+import re
+
+def split_with_delimiters(string, delimiters):
+    pattern = '|'.join(delimiters)
+    return re.split(pattern, string)
+
+string = "apple,banana;orange,grape"
+delimiters = [",", ";", ",", ","]
+print(split_with_delimiters(string, delimiters))
+```
+
+Output:
+```
+['apple', 'banana', 'orange', 'grape']
+```
+
+Overall, today's lesson was very informative, and I learned a lot about using regular expressions in Python. I can now confidently use regular expressions to match, search, and replace patterns in strings.

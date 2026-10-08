@@ -1,0 +1,23 @@
+Write a function that matches a word at the beginning of a string.
+```python
+import re
+
+def match_word_beginning(text, word):
+    pattern = re.compile("\\b"+word+"\\w*")
+    match = pattern.match(text)
+    return match.group() if match else None
+
+print(match_word_beginning("The quick brown fox jumps over the lazy dog.", "quick"))  # Output: "quick"
+```
+
+Exercise 5: Write a function that matches a word at the end of a string.
+```python
+import re
+
+def match_word_end(text, word):
+    pattern = re.compile("\\w*"+word+"\\b")
+    match = pattern.search(text)
+    return match.group() if match else None
+
+print(match_word_end("The quick brown fox jumps over the lazy dog.", "dog."))  # Output: "dog."
+```

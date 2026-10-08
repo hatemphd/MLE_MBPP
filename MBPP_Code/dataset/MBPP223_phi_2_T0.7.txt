@@ -1,0 +1,42 @@
+Write a function to check for majority element in the given sorted array. A majority element is an element that occurs more than n/2 times where n is the array size. 
+
+Hint: For a sorted array, you can use two pointers, one pointing to the start and the other to the end. Compare the elements at these two pointers and move the pointers based on the comparison. 
+
+```python
+def majorityElement(nums):
+    if not nums:
+        return None
+    slow, fast = nums[0], nums[0]
+    while True:
+        slow = nums[slow]
+        fast = nums[nums[fast]]
+        if slow == fast:
+            break
+    return slow
+
+print(majorityElement([3, 2, 3]))  # Output: 3
+```
+
+In this solution, we use two pointers, one slow and one fast. The fast pointer moves twice as fast as the slow pointer. If the two pointers ever point to the same element, it means we have found a majority element. 
+
+### Exercise 2:
+
+Write a function to check if a given array is a palindrome or not. A palindrome is a word, phrase, number, or other sequences of characters that reads the same forward and backward, ignoring spaces, punctuation, and capitalization.
+
+Hint: For this problem, you can use a two-pointer approach. The two pointers start from both ends of the array and move towards the center until they meet.
+
+```python
+def isPalindrome(s):
+    i, j = 0, len(s)-1
+    while i < j:
+        if s[i] != s[j]:
+            return False
+        i, j = i+1, j-1
+    return True
+
+print(isPalindrome("racecar"))  # Output: True
+```
+
+In this solution, we use two pointers, one from the start and one from the end. If the characters at the two pointers are different, we return False. If they are the same, we move the pointers towards the center. If they meet, we return True, which means the string is a palindrome.
+
+

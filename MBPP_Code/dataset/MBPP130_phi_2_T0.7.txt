@@ -1,0 +1,37 @@
+Write a function to find the item with maximum frequency in a given list.
+
+```python
+def max_frequency_item(lst):
+    frequency_dict = {i: lst.count(i) for i in lst}
+    return max(frequency_dict, key=frequency_dict.get)
+
+print(max_frequency_item([1, 2, 2, 3, 3, 3, 4, 4, 4, 4]))
+```
+
+**Exercise 3:** Create a function that takes a list of tuples, where each tuple contains a student's name and their score in a test. The function should return a dictionary where keys are student names and values are their scores.
+
+```python
+def student_scores(lst):
+    return {name: score for name, score in lst}
+
+print(student_scores([('John', 85), ('Lisa', 90), ('Mike', 78), ('Sara', 92)]))
+```
+
+**Exercise 4:** Write a function that takes a list of tuples, where each tuple contains a student's name and their score in a test. The function should return a dictionary where keys are the scores and values are lists of student names who scored that mark.
+
+```python
+def student_by_score(lst):
+    return {score: [name for name, score in lst if score == score] for score in set([score for name, score in lst])}
+
+print(student_by_score([('John', 85), ('Lisa', 90), ('Mike', 78), ('Sara', 92)]))
+```
+
+**Exercise 5:** Create a function that takes a list of numbers and returns a new list containing only the even numbers.
+
+```python
+def even_numbers(lst):
+    return [number for number in lst if number % 2 == 0]
+
+print(even_numbers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+```
+

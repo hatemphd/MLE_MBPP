@@ -1,0 +1,20 @@
+Write a python function to choose points from two ranges such that no point lies in both the ranges.
+
+Hints:
+- You can use the `numpy` module to create arrays of integers representing the ranges. Then, use list comprehension to iterate through both ranges and choose the points that do not lie in both ranges.
+
+Solution:
+
+```python
+def choose_points(range1, range2):
+    # Convert ranges to arrays
+    range1, range2 = np.array(range1), np.array(range2)
+    # Use list comprehension to iterate through both ranges
+    chosen_points = [point for point in range1 if point not in range2]
+    return chosen_points
+
+print(choose_points([1, 5, 7, 12], [2, 4, 9, 11]))
+# Output: [1, 5, 7, 12]
+```
+
+

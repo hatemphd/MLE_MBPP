@@ -1,0 +1,49 @@
+Write a function to calculate the difference between the squared sum of first n natural numbers and the sum of squared first n natural numbers.
+
+```python
+def difference_of_squared_sum(n):
+    """
+    This function calculates the difference between the squared sum of first n natural numbers and the sum of squared first n natural numbers.
+    """
+    squared_sum = sum([i**2 for i in range(1, n+1)])
+    sum_of_squared = sum([i**2 for i in range(1, n+1)])
+    return squared_sum - sum_of_squared
+
+print(difference_of_squared_sum(5)) # Output: 55
+```
+
+Exercise 3: Write a function to calculate the sum of first n odd numbers using list comprehension.
+
+```python
+def sum_of_first_n_odd_numbers(n):
+    """
+    This function calculates the sum of first n odd numbers using list comprehension.
+    """
+    return sum([2*i+1 for i in range(n)])
+
+print(sum_of_first_n_odd_numbers(3)) # Output: 9
+```
+
+Exercise 4: Write a function to calculate the sum of first n even numbers using list comprehension.
+
+```python
+def sum_of_first_n_even_numbers(n):
+    """
+    This function calculates the sum of first n even numbers using list comprehension.
+    """
+    return sum([2*i for i in range(n)])
+
+print(sum_of_first_n_even_numbers(4)) # Output: 20
+```
+
+Exercise 5: Write a function to calculate the sum of squares of even numbers between 1 and n (inclusive) using list comprehension.
+
+```python
+def sum_of_squares_of_even_numbers(n):
+    """
+    This function calculates the sum of squares of even numbers between 1 and n (inclusive) using list comprehension.
+    """
+    return sum([i**2 for i in range(2, n+1, 2)])
+
+print(sum_of_squares_of_even_numbers(6)) # Output: 56
+```

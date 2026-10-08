@@ -1,0 +1,38 @@
+Write a python function to find the count of rotations of a binary string with odd value.
+    - **Hints:** Similar to the previous exercise, use the `count_rotations` function. If the number of rotations is odd, increment the count.
+
+```python
+def odd_rotations(string):
+    if len(string) < 2:
+        return 0
+    else:
+        return (count_rotations(string) - 1) % 2
+
+print(odd_rotations("1101"))  # Outputs: 1
+```
+
+## Exercise 2
+
+Write a Python program to find all distinct rotations of a binary string.
+    - **Hints:** Similar to the previous exercise, use the `count_rotations` function. Keep a dictionary to store the rotations as keys and their count as values.
+
+```python
+def distinct_rotations(string):
+    if len(string) < 2:
+        return []
+    else:
+        rotations = {}
+        for i in range(len(string)):
+            rotation = string[i:] + string[:i]
+            if rotation in rotations:
+                rotations[rotation] += 1
+            else:
+                rotations[rotation] = 1
+        return rotations
+
+print(distinct_rotations("1101"))  # Outputs: {'1101': 1, '1011': 1, '0111': 1, '1001': 1}
+```
+
+These exercises expand upon the concept of binary string rotations, and aim to provide a more comprehensive understanding of the subject. By working on these exercises, you will gain a deeper comprehension of Python programming and binary manipulation.
+
+

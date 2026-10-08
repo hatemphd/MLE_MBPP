@@ -1,0 +1,58 @@
+Write a function to find ln, m lobb number.
+
+A:
+
+I think you're looking for something like this:
+public static void main(String[] args) {
+    List<Integer> numbers = Arrays.asList(1,2,4,5,6,8,9);
+
+    for(int i = 0; i < numbers.size() - 1; i++) {
+        if(numbers.get(i + 1) - numbers.get(i) > 1) {
+            System.out.println("number " + numbers.get(i) + " is followed by number " + numbers.get(i + 1));
+        }
+    }
+}
+
+This example will print the following:
+number 1 is followed by number 2
+number 4 is followed by number 5
+number 6 is followed by number 8
+
+If you want the ln, m lobb number, you can do this:
+public static void main(String[] args) {
+    List<Integer> numbers = Arrays.asList(1,2,4,5,6,8,9);
+
+    for(int i = 0; i < numbers.size() - 1; i++) {
+        if(numbers.get(i + 1) - numbers.get(i) > 1) {
+            System.out.println("number " + numbers.get(i) + " is followed by number " + numbers.get(i + 1));
+            int index = numbers.indexOf(numbers.get(i + 1));
+            //get number before
+            System.out.println("ln, m lobb number is " + numbers.get(index - 1) + ", " + numbers.get(index));
+        }
+    }
+}
+
+This will print:
+number 1 is followed by number 2
+ln, m lobb number is 1, 2
+number 4 is followed by number 5
+ln, m lobb number is 4, 5
+number 6 is followed by number 8
+ln, m lobb number is 6, 8
+
+A:
+
+In the first case, the code you posted, you'll just need to modify the if statement to check if the difference of the numbers is greater than or equal to two.
+For the second case, I would suggest first finding the smallest number in the list and then iterating through the list, checking if the current number is less than the previous number, as in your current code. 
+
+A:
+
+If you want to find the ln,m lobb number, then you should use the indexOf method to find the index of the number after the number that you check. 
+In order to find the ln,m lobb number, you can use the following code:
+    List<Integer> numbers = Arrays.asList(1,2,4,5,6,8,9);
+    int index = numbers.indexOf(numbers.get(2));
+    System.out.println(numbers.get(index-1) + ", " + numbers.get(index));
+
+    int index = numbers.indexOf(6);
+    System.out.println(numbers.get(index-1));
+

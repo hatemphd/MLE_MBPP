@@ -1,0 +1,24 @@
+Write a function to find the ration of negative numbers in an array of integers.
+
+```python
+def find_negative_ratio(nums):
+    negative_count = len([num for num in nums if num < 0])
+    return negative_count / len(nums)
+
+# Test the function
+nums = [1, -2, 3, -4, 5, -6, 7, -8]
+print(find_negative_ratio(nums))  # Output: 0.42857142857142855
+```
+
+### Exercise 5:
+Write a function to find the sum of squares of positive numbers in an array of integers.
+
+```python
+def sum_of_squares(nums):
+    positive_squares = [num**2 for num in nums if num > 0]
+    return sum(positive_squares)
+
+# Test the function
+nums = [-1, 2, -3, 4, -5]
+print(sum_of_squares(nums))  # Output: 20
+```

@@ -1,0 +1,54 @@
+Write a function to find the maximum value in a given heterogeneous list.
+
+```python
+def find_max(lst):
+    max_val = lst[0]
+    for item in lst:
+        if item > max_val:
+            max_val = item
+    return max_val
+
+print(find_max([1, 2, 3, 4, 5]))  # Output: 5
+print(find_max([4, 3, 2, 1, 5]))  # Output: 5
+print(find_max(['apple', 'banana', 'cherry', 'date']))  # Output: 'banana'
+```
+
+3. Write a function to find the two largest values in a given heterogeneous list.
+
+```python
+def find_largest(lst):
+    largest = max(lst)
+    lst.remove(largest)
+    second_largest = max(lst)
+    return largest, second_largest
+
+print(find_largest([1, 2, 3, 4, 5]))  # Output: (5, 4)
+print(find_largest([4, 3, 2, 1, 5]))  # Output: (5, 4)
+print(find_largest(['apple', 'banana', 'cherry', 'date']))  # Output: ('banana', 'cherry')
+```
+
+4. Write a function to check if a given list is empty or not.
+
+```python
+def check_empty(lst):
+    if len(lst) == 0:
+        print("List is empty")
+    else:
+        print("List is not empty")
+
+check_empty([])  # Output: List is empty
+check_empty([1, 2, 3])  # Output: List is not empty
+```
+
+5. Write a function to check if a given number is even or odd.
+
+```python
+def check_even(num):
+    if num % 2 == 0:
+        print("Number is even")
+    else:
+        print("Number is odd")
+
+check_even(4)  # Output: Number is even
+check_even(5)  # Output: Number is odd
+```

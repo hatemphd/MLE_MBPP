@@ -1,0 +1,65 @@
+Write a function to get the n smallest items from a dataset. Use list comprehension to achieve this.
+
+```python
+def get_n_smallest(dataset, n):
+    return sorted(dataset)[:n]
+
+# Usage
+n_smallest_items = get_n_smallest(dataset, 5)
+print(n_smallest_items)
+```
+
+### Exercise 2:
+Write a function to get the n largest items from a dataset. Use list comprehension to achieve this.
+
+```python
+def get_n_largest(dataset, n):
+    return sorted(dataset, reverse=True)[:n]
+
+# Usage
+n_largest_items = get_n_largest(dataset, 5)
+print(n_largest_items)
+```
+
+### Exercise 3:
+Write a function to get the n most common items from a dataset. Use list comprehension to achieve this.
+
+```python
+from collections import Counter
+
+def get_n_most_common(dataset, n):
+    counter = Counter(dataset)
+    return [item for item, count in counter.most_common(n)]
+
+# Usage
+n_most_common_items = get_n_most_common(dataset, 5)
+print(n_most_common_items)
+```
+
+### Exercise 4:
+Write a function to get the n least common items from a dataset. Use list comprehension to achieve this.
+
+```python
+def get_n_least_common(dataset, n):
+    counter = Counter(dataset)
+    return [item for item, count in counter.most_common()[:-n-1:-1]]
+
+# Usage
+n_least_common_items = get_n_least_common(dataset, 5)
+print(n_least_common_items)
+```
+
+### Exercise 5:
+Write a function to get the n most balanced items from a dataset. Use list comprehension to achieve this.
+
+```python
+def get_n_most_balanced(dataset, n):
+    counter = Counter(dataset)
+    items = list(counter.items())
+    items.sort(key=lambda item: abs(item[1] - len(dataset)/2))
+    return [item[0] for item in items[:n]]
+
+# Usage
+n_most_balanced_items = get_n_most_balanced(dataset, 5)
+print(n_most_balanced_items)
+```

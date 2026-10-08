@@ -1,0 +1,15 @@
+Write a function to sum all amicable numbers from 1 to a specified number. Use list comprehension to achieve this.
+
+**Hint:** Use the findAmicableSum function to find amicable numbers and list comprehension to sum all of them.
+
+```python
+def sumAllAmicableNumbers(n):
+    amicables = findAmicableNumbers(n)
+    return sum([i for i in amicable if i != 1])
+
+print(sumAllAmicableNumbers(10000))  # Outputs: 31626
+```
+
+In this chapter, we have learned about amicable numbers and how to generate them using Python. We have also learned about list comprehension, which is a powerful Python tool for working with lists.
+
+

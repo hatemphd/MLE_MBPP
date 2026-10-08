@@ -1,0 +1,36 @@
+Write a function to find the median of two sorted arrays of same size. The median is the middle value when the numbers are arranged in ascending order. If the size of the array is even, then the median is the average of the two middle values.
+Input: array1 = [1, 3, 5, 7]
+array2 = [2, 4, 6, 8]
+Output: def find_median(array1, array2):
+    # Find the size of the array
+    n = len(array1)
+
+    # Merge the two arrays into one sorted array
+    merged_array = []
+    i = 0
+    j = 0
+    while i < n and j < n:
+        if array1[i] < array2[j]:
+            merged_array.append(array1[i])
+            i += 1
+        else:
+            merged_array.append(array2[j])
+            j += 1
+    # Append the remaining elements of the larger array
+    merged_array += array1[i:]
+    merged_array += array2[j:]
+
+    # Find the middle index
+    middle = n // 2
+
+    # If the size is even, find the average of the two middle values
+    if n % 2 == 0:
+        return (merged_array[middle - 1] + merged_array[middle]) / 2
+    # If the size is odd, return the middle value
+    else:
+        return merged_array[middle]
+
+# Test the function
+array1 = [1, 3, 5, 7]
+array2 = [2, 4, 6, 8]
+print(find_median(array1, array2)) # Output: 4.5

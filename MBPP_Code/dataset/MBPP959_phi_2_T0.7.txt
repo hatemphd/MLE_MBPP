@@ -1,0 +1,57 @@
+Write a python function to find the average of a list.
+
+Hint: Use the sum() function and len() function to find the average.
+```python
+def find_average(lst):
+    if not lst:
+        return None
+    return sum(lst)/len(lst)
+
+print(find_average([1, 2, 3, 4, 5]))  # Output: 3.0
+```
+
+2. Write a python function to check whether a given key exists in a dictionary. If it exists, remove it and return the modified dictionary. If it doesn't exist, return the original dictionary.
+
+Hint: Use the in keyword to check if the key exists in the dictionary.
+```python
+def remove_key(dictionary, key):
+    if key in dictionary:
+        dictionary.pop(key)
+    return dictionary
+
+print(remove_key({'a': 1, 'b': 2}, 'a'))  # Output: {'b': 2}
+```
+
+3. Write a python function to reverse a given list.
+
+Hint: Use the reversed() function to reverse the list.
+```python
+def reverse_list(lst):
+    return list(reversed(lst))
+
+print(reverse_list([1, 2, 3, 4, 5]))  # Output: [5, 4, 3, 2, 1]
+```
+
+4. Write a python function to check if a given string is a palindrome.
+
+Hint: A string is a palindrome if it reads the same forwards and backwards.
+```python
+def is_palindrome(s):
+    return s == s[::-1]
+
+print(is_palindrome('madam'))  # Output: True
+```
+
+5. Write a python function to find the maximum value in a dictionary.
+
+Hint: Use the max() function with the dictionary values() method.
+```python
+def find_max_value(dictionary):
+    return max(dictionary.values())
+
+print(find_max_value({'a': 1, 'b': 2, 'c': 3}))  # Output: 3
+```
+
+Remember, practice is the key to mastering Python, so keep coding!
+
+

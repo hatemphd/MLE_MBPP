@@ -1,0 +1,67 @@
+Write a function to check whether the given string starts and ends with the same character or not using regex.
+
+```python
+import re
+
+def starts_ends_with_same(s):
+    pattern = r'^(.)(.*?)\1$'
+    match = re.match(pattern, s)
+    return match is not None
+
+print(starts_ends_with_same('hello'))  # Output: False
+print(starts_ends_with_same('wow'))  # Output: True
+print(starts_ends_with_same('abccba'))  # Output: True
+```
+
+In this example, we use `re.match()` to check if the given string matches the regular expression `^(.)(.*?)\1$`. This regular expression matches any string that starts and ends with the same character. The `(.)` captures the first character in the string, while `(.*?)` captures any characters between the first and second characters, but in the shortest possible length. The `\1` at the end of the regular expression matches the same character as the first captured group. The `^` and `$` anchors ensure that the pattern matches the entire string. 
+
+Exercise 3: Write a function to check whether the given string has at least one digit and one uppercase letter using regex.
+
+```python
+import re
+
+def has_digit_and_upper(s):
+    pattern = r'^(?=.*\d)(?=.*[A-Z])[A-Za-z\d]*$'
+    match = re.match(pattern, s)
+    return match is not None
+
+print(has_digit_and_upper('abc'))  # Output: False
+print(has_digit_and_upper('aBc123'))  # Output: True
+print(has_digit_and_upper('123'))  # Output: False
+```
+
+In this example, we use `re.match()` to check if the given string matches the regular expression `^(?=.*\d)(?=.*[A-Z])[A-Za-z\d]*$`. This regular expression matches any string that has at least one digit and one uppercase letter. The `(?=.*\d)` positive lookahead assertion ensures that there is at least one digit in the string, while `(?=.*[A-Z])` ensures that there is at least one uppercase letter in the string. The `[A-Za-z\d]*` matches any alphanumeric characters in the string.
+
+Exercise 4: Write a function to check whether the given string has only alphanumeric characters using regex.
+
+```python
+import re
+
+def is_alphanumeric(s):
+    pattern = r'^\w+$'
+    match = re.match(pattern, s)
+    return match is not None
+
+print(is_alphanumeric('hello123'))  # Output: True
+print(is_alphanumeric('123'))  # Output: True
+print(is_alphanumeric('hello 123'))  # Output: False
+```
+
+In this example, we use `re.match()` to check if the given string matches the regular expression `^\w+$`. This regular expression matches any string that contains only alphanumeric characters. The `^\w+` matches any word characters (letters, digits, or underscores) at the beginning of the string, and the `$` matches the end of the string.
+
+Exercise 5: Write a function to check whether the given string has at least one vowel and one consonant using regex.
+
+```python
+import re
+
+def has_vowel_and_consonant(s):
+    pattern = r'^(?=.*[a-zA-Z])(?=.*[aeiouAEIOU]).*$'
+    match = re.match(pattern, s)
+    return match is not None
+
+print(has_vowel_and_consonant('hello'))  # Output: True
+print(has_vowel_and_consonant('eo'))  # Output: False
+print(has_vowel_and_consonant('bcdfg'))  # Output: False
+```
+
+In this example, we use `re.match()` to check if the given string matches the regular expression `^(?=.*[a-zA-Z]

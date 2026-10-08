@@ -1,0 +1,23 @@
+Write a function to find length of the string.
+
+# In[4]:
+
+
+def string_length(string):
+    # Your code here
+    length = 0
+    for i in string:
+        length += 1
+    return length
+
+
+# ## Test Cases
+
+# In[5]:
+
+
+# Test Cases
+assert string_length("") == 0
+assert string_length("This is a test string") == 18
+assert string_length("This is a test string with a capital letter!") == 36
+

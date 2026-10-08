@@ -1,0 +1,39 @@
+Write a function to check whether the given month name contains 31 days or not.
+# Input Format :
+# Month Name
+# Output Format :
+# True or False
+
+def check31days(monthName):
+
+    months = {
+        'january': 31,
+        'february': 29,
+        'march': 31,
+        'april': 30,
+        'may': 31,
+        'june': 30,
+        'july': 31,
+        'august': 31,
+        'september': 30,
+        'october': 31,
+        'november': 30,
+        'december': 31
+    }
+
+    if monthName.lower() in months:
+        return months[monthName.lower()] == 31
+    else:
+        return False
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    m = input()
+
+    result = check31days(m)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()

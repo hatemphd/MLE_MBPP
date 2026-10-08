@@ -1,0 +1,62 @@
+Write a function to get a lucid number smaller than or equal to n.
+
+A lucid number is a number whose prime factors are not repeated.
+
+"""
+
+# Python program to find the minimal lucid number less than or equal to n
+
+# Function to get the minimal lucid number less than or equal to n
+def getMinLucidNumber(n):
+	
+	# Sort the prime factors in ascending order
+	primeFactors = sorted(getPrimeFactors(n))
+	
+	num = 1
+	
+	# Create a list to store the prime factors
+	primeFactorsSet = []
+	
+	# Loop through the prime factors
+	for factor in primeFactors:
+		
+		# Find the first factor that is not in the set
+		temp = factor
+		while temp in primeFactorsSet:
+			temp += 1
+		
+		# Add the factor to the set
+		primeFactorsSet.append(temp)
+		
+		# Multiply the number with the factor
+		num *= temp
+	
+	return num
+
+# Function to get the prime factors of n
+def getPrimeFactors(n):
+	
+	# Initialize the list of prime factors
+	primeFactors = []
+	
+	# Divide n by 2 until it is not divisible by 2
+	while n % 2 == 0:
+		primeFactors.append(2)
+		n //= 2
+	
+	# Check odd numbers up to the square root of n
+	for i in range(3, int(n**0.5) + 1, 2):
+		
+		while n % i == 0:
+			primeFactors.append(i)
+			n //= i
+			
+	# If n is a prime number, add it to the list
+	if n > 2:
+		primeFactors.append(n)
+	
+	return primeFactors
+
+# Driver program to test the above function
+n = int(input("Enter a number: "))
+print("The minimal lucid number less than or equal to", n, "is", getMinLucidNumber(n))

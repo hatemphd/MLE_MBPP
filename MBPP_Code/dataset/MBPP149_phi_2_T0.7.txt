@@ -1,0 +1,136 @@
+Write a function to find the longest subsequence such that the difference between adjacents is one for the given array.
+
+Example:
+Input: [1, 4, 2, 5, 3]
+
+Output: [1, 2, 3]
+'''
+
+def longest_subsequence_one_difference(nums):
+    
+    # check if nums is empty
+    if not nums:
+        return []
+    
+    # sort the nums
+    nums.sort()
+    
+    # initialize the result list
+    result = []
+    
+    # initialize the diff list
+    diff = [nums[0]]
+    
+    # loop through the nums
+    for i in range(1, len(nums)):
+        # append the current num to diff
+        diff.append(nums[i])
+        
+        # if there is one difference
+        if diff[-1] - diff[-2] == 1:
+            # append the current num to result
+            result.append(nums[i])
+    
+    # return the result
+    return result
+
+'''
+Exercise 2: Write a function to find the longest subsequence such that each element can be reached by moving either one or two steps.
+
+Example:
+Input: [1, 2, 3, 5, 6, 8]
+
+Output: [1, 2, 3, 6, 8]
+'''
+
+def longest_subsequence_one_two_steps(nums):
+    
+    # check if nums is empty
+    if not nums:
+        return []
+    
+    # initialize the result list
+    result = []
+    
+    # initialize the diff list
+    diff = [0]
+    
+    # loop through the nums
+    for i in range(1, len(nums)):
+        # if the current num can be reached by moving one step
+        if nums[i] - nums[i-1] <= 2:
+            # append the current num to diff
+            diff.append(nums[i])
+        
+        # if the current num can be reached by moving two steps
+        elif nums[i] - nums[i-1] == 2:
+            # append the current num to diff
+            diff.append(nums[i])
+            # check if the length of diff is greater than the length of result
+            if len(diff) > len(result):
+                # update result with diff
+                result = diff
+        
+        # otherwise
+        else:
+            # reset diff
+            diff = [nums[i]]
+    
+    # return the result
+    return result
+
+
+'''
+Exercise 3: Write a function to find the longest subsequence such that the difference between adjacent elements is either 1 or 2.
+
+Example:
+Input: [1, 2, 3, 4, 5, 7, 8, 9]
+
+Output: [1, 2, 3, 4, 5]
+'''
+
+def longest_subsequence_one_two_difference(nums):
+    
+    # check if nums is empty
+    if not nums:
+        return []
+    
+    # initialize the result list
+    result = []
+    
+    # initialize the diff list
+    diff = [nums[0]]
+    
+    # loop through the nums
+    for i in range(1, len(nums)):
+        # if the current num can be reached by moving one step
+        if nums[i] - nums[i-1] <= 2:
+            # append the current num to diff
+            diff.append(nums[i])
+        
+        # if the current num can be reached by moving two steps
+        elif nums[i] - nums[i-1] == 2:
+            # append the current num to diff
+            diff.append(nums[i])
+            # check if the length of diff is greater than the length of result
+            if len(diff) > len(result):
+                # update result with diff
+                result = diff
+            # reset diff
+            diff = [nums[i]]
+        
+        # otherwise
+        else:
+            # reset diff
+            diff = [nums[i]]
+    
+    # return the result
+    return result
+
+'''
+Exercise 4: Write a function to find the longest subsequence that contains at most k distinct elements.
+
+Example:
+Input: [1, 2, 1, 2, 3], k=2
+
+Output: [1,

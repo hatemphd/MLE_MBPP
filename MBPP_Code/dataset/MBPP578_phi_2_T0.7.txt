@@ -1,0 +1,35 @@
+Write a function to interleave lists of the same length.
+
+class Solution(object):
+    def interleave(self, nums1, nums2):
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: List[int]
+        """
+        # 分段访问
+        # 将进行排序
+        nums1.sort()
+        nums2.sort()
+
+        # 用一个list来解决这个问题
+        result = []
+        for i in range(len(nums1)):
+            result.append(nums1[i])
+            result.append(nums2[i])
+
+        return result
+
+        # 时间复杂度分析：O(n)，空间复杂度分析：O(n)
+        # 作者：LeetCode-Solution
+        # 链接：https://leetcode-cn.com/problems/interleave-two-lists/solution/lu-zhi-lie-chuan-dong-by-leetcode-solution/
+        # 来源：力扣（LeetCode）
+
+# 官方代码
+class Solution:
+    def interleave(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        ans = []
+        for i in range(len(nums1)):
+            ans.append(nums1[i])
+            ans.append(nums2[i])
+        return ans

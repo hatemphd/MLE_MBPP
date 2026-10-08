@@ -1,0 +1,32 @@
+Write a function to remove uppercase substrings from a given string by using regex. 
+
+Ideas:
+- Use the `re.sub` method to remove uppercase substrings.
+- The regular expression pattern for uppercase substrings is `[A-Z]+`.
+
+```python
+import re
+
+def remove_upper(s):
+  return re.sub('[A-Z]+', '', s)
+
+print(remove_upper('HeLLo WoRLd')) # Output: 'o WoRLd'
+```
+
+#### Exercise 5
+
+Write a function to split a given string into a list of words by using regex.
+
+Ideas:
+- Use the `re.findall` method to extract all the words from the string.
+- The regular expression pattern for words is `\w+`.
+
+```python
+import re
+
+def split_words(s):
+  return re.findall('\w+', s)
+
+print(split_words('Hello World!')) # Output: ['Hello', 'World']
+```
+

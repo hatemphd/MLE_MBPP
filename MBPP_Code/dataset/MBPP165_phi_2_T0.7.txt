@@ -1,0 +1,38 @@
+Write a python function to count characters at same position in a given string (lower and uppercase characters) as in english alphabet.
+
+Hints: 
+- Convert the string to lower case. 
+- Use a dictionary to store character counts.
+
+Solution:
+```
+def count_characters(string):
+    string = string.lower()
+    counts = {chr(i): 0 for i in range(ord('a'), ord('z')+1)}
+    for char in string:
+        if char in counts:
+            counts[char] += 1
+    return counts
+
+print(count_characters('Hello World'))
+```
+
+2. Write a function to find the first non-repeating character in a given string.
+
+Hints: 
+- Use a dictionary to store character counts.
+- Use a for loop to iterate over the string.
+
+Solution:
+```
+def first_non_repeating(string):
+    counts = {char: string.count(char) for char in string}
+    for char in string:
+        if counts[char] == 1:
+            return char
+    return None
+
+print(first_non_repeating('Hello World'))
+```
+
+

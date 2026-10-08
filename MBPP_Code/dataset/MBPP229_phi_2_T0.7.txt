@@ -1,0 +1,57 @@
+Write a function to re-arrange the elements of the given array so that all negative elements appear before positive ones.
+
+```python
+def reorder_negatives_positives(nums):
+    # Your code here
+
+nums = [1, -3, 2, -4, 3]
+print(reorder_negatives_positives(nums))  # Expected output: [-3, -4, 1, 2, 3]
+```
+
+This problem can be solved by iterating through the array and swapping elements when a negative number is encountered.
+
+```python
+def reorder_negatives_positives(nums):
+    i = 0
+    for j in range(len(nums)):
+        if nums[j] < 0:
+            nums[i], nums[j] = nums[j], nums[i]
+            i += 1
+    return nums
+
+nums = [1, -3, 2, -4, 3]
+print(reorder_negatives_positives(nums))  # Expected output: [-3, -4, 1, 2, 3]
+```
+
+In this solution, we use an additional variable `i` to keep track of the position of the last negative number. If a negative number is encountered, it is swapped with the current number and incremented by 1.
+
+## Exercise 2
+
+Write a function to re-arrange the elements of the given array so that all even numbers appear before odd ones.
+
+```python
+def reorder_evens_odds(nums):
+    # Your code here
+
+nums = [1, 2, 3, 4, 5]
+print(reorder_evens_odds(nums))  # Expected output: [2, 4, 1, 3, 5]
+```
+
+This problem can be solved similarly to the first exercise, by checking whether a number is even or odd and swapping it with the current element.
+
+```python
+def reorder_evens_odds(nums):
+    i = 0
+    for j in range(len(nums)):
+        if nums[j] % 2 == 0:
+            nums[i], nums[j] = nums[j], nums[i]
+            i += 1
+    return nums
+
+nums = [1, 2, 3, 4, 5]
+print(reorder_evens_odds(nums))  # Expected output: [2, 4, 1, 3, 5]
+```
+
+In this solution, we use the modulus operator `%` to check whether a number is even. If it is, it is swapped with the current element and incremented by 1.
+
+

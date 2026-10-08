@@ -1,0 +1,22 @@
+Write a python function to find the last two digits in factorial of a given number. Use list comprehension and the math module.
+
+```python
+import math
+
+def last_two_digits(num):
+    fact = math.factorial(num)
+    return [int(digit) for digit in str(fact)[-2:]]
+
+print(last_two_digits(10)) # Output: [6, 2]
+```
+
+Exercise 5:
+Write a python function to find the last digit in factorial of a given number using list comprehension.
+
+```python
+def last_digit(num):
+    fact = math.factorial(num)
+    return int(str(fact)[-1])
+
+print(last_digit(10)) # Output: 2
+```

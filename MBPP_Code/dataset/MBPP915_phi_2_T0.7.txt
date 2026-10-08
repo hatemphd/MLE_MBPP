@@ -1,0 +1,52 @@
+Write a function to rearrange positive and negative numbers in a given array using lambda function.
+
+```python
+def rearrange_positive_negative(numbers):
+    return sorted(numbers, key=lambda x: x > 0)
+
+numbers = [-5, 3, -1, 4, -2]
+print(rearrange_positive_negative(numbers))
+# Output: [3, 4, -1, -2, -5]
+```
+
+In this exercise, we used a lambda function to sort the numbers by whether they are positive or negative.
+
+#### Exercise 3:
+
+Write a lambda function to calculate the mean of a list of numbers.
+
+```python
+numbers = [1, 2, 3, 4, 5]
+mean = lambda x: sum(x) / len(x)
+print(mean(numbers))
+# Output: 3.0
+```
+
+In this exercise, we used a lambda function to define a function that takes a list of numbers and returns the mean.
+
+#### Exercise 4:
+
+Write a lambda function to determine if a number is even or odd.
+
+```python
+determine_even_odd = lambda x: "Even" if x % 2 == 0 else "Odd"
+
+print(determine_even_odd(6))
+# Output: Even
+```
+
+In this exercise, we used a lambda function to define a function that takes an integer as input, and returns whether the integer is even or odd.
+
+#### Exercise 5:
+
+Write a lambda function to find the maximum value of a list of numbers.
+
+```python
+numbers = [1, 5, 3, 7, 2]
+max_number = lambda x: max(x)
+print(max_number(numbers))
+# Output: 7
+```
+
+In this exercise, we used a lambda function to define a function that takes a list of numbers and returns the maximum value.
+

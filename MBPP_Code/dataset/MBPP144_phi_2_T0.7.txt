@@ -1,0 +1,15 @@
+Write a python function to find the sum of absolute differences in all pairs of the given array. The function should return the sum as an integer.
+
+Example:
+Input: arr = [3, 4, 5]
+Output: 2
+"""
+
+# Solution 1
+def sum_absolute_diff_pairs(arr):
+    n = len(arr)
+    total_difference = 0
+    for i in range(n):
+        for j in range(i+1, n):
+            total_difference += abs(arr[i] - arr[j])
+    return total_difference

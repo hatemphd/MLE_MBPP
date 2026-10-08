@@ -1,0 +1,57 @@
+Write a function to check if one tuple is a subset of another tuple.
+
+Solution:
+
+```python
+def is_subset(t1, t2):
+    return set(t1).issubset(set(t2))
+
+print(is_subset((1, 2), (1, 2, 3, 4)))  # Output: True
+print(is_subset((1, 2), (3, 4, 5, 6)))  # Output: False
+```
+
+2. Write a function to find the unique values in a list of tuples.
+
+Solution:
+
+```python
+def unique_values(list_of_tuples):
+    return list(set(sum(list_of_tuples, ())))
+
+print(unique_values([(1, 2), (2, 3), (3, 4), (2, 3)]))  # Output: [1, 2, 3, 4]
+```
+
+3. Write a function to sort a list of tuples based on the second element in descending order.
+
+Solution:
+
+```python
+def sort_tuples(tuples_list):
+    return sorted(tuples_list, key=lambda x: x[1], reverse=True)
+
+print(sort_tuples([(1, 2), (3, 1), (5, 4), (2, 3)]))  # Output: [(5, 4), (1, 2), (2, 3), (3, 1)]
+```
+
+4. Write a function to remove duplicates from a list of tuples.
+
+Solution:
+
+```python
+def remove_duplicates(tuples_list):
+    return list(set(tuples_list))
+
+print(remove_duplicates([(1, 2), (2, 3), (3, 4), (2, 3)]))  # Output: [(1, 2), (2, 3), (3, 4)]
+```
+
+5. Write a function to find the maximum value in a list of tuples based on the second element.
+
+Solution:
+
+```python
+def max_value(tuples_list):
+    return max(tuples_list, key=lambda x: x[1])
+
+print(max_value([(1, 2), (3, 1), (5, 4), (2, 3)]))  # Output: (5, 4)
+```
+
+

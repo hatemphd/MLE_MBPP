@@ -1,0 +1,3 @@
+Write a function to check if the given expression is balanced or not. You may assume that the input expression only contains parentheses, brackets, and braces. (
+Input: "{[}]}"
+Output: true

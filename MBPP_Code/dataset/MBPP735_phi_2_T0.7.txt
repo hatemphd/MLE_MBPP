@@ -1,0 +1,22 @@
+Write a python function to toggle bits of the number except the first and the last bit. 
+
+```python
+# Solution
+def toggle_bits(number):
+    # First and last bit are always 1
+    first_last_bit = 1
+
+    # Toggle all bits except the first and last
+    for _ in range(number.bit_length() - 2):
+        temp = number & ~(0x80000000)
+        number ^= temp
+
+    return number | first_last_bit
+
+# Test
+print(toggle_bits(0b11100011))  # Output: 0b10001011
+```
+
+The bitwise operators in Python provide a powerful tool for manipulating binary data. Through the exercises, we have seen how to perform bitwise operations and apply them in manipulating numbers.
+
+

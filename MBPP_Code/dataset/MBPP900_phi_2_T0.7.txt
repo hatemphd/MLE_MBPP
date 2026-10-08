@@ -1,0 +1,46 @@
+Write a function where a string will start with a specific number. For example, if we have a string "Hello there!" and we want it to start with the number 3, the function will output "333Hello there!".
+
+```python
+def start_with_number(string, number):
+    return str(number) + string
+
+print(start_with_number("Hello there!", 3))
+```
+
+2. Write a function where a string will end with a specific number. For example, if we have a string "Hello there!" and we want it to end with the number 3, the function will output "Hello there!3".
+
+```python
+def end_with_number(string, number):
+    return string + str(number)
+
+print(end_with_number("Hello there!", 3))
+```
+
+3. Write a function to concatenate a string and a number where the number is represented as a string. For example, if we have a string "Hello there!" and we want to concatenate it with the number 3, the function will output "Hello there!3".
+
+```python
+def concatenate_string_number(string, number):
+    return string + str(number)
+
+print(concatenate_string_number("Hello there!", 3))
+```
+
+4. Write a function that will return a string with a number incremented by 1. For example, if we have a string "Hello there!" and we want to increment the number 3 by 1, the function should return "Hello there!4".
+
+```python
+def increment_number(string, number):
+    return string + str(int(number) + 1)
+
+print(increment_number("Hello there!", 3))
+```
+
+5. Write a function that will return a string that starts with a specific number and ends with a specific number. For example, if we have a string "Hello there!" and we want it to start with the number 3 and end with the number 4, the function should return "333Hello there!4".
+
+```python
+def start_end_with_number(string, start, end):
+    return str(start) + string + str(end)
+
+print(start_end_with_number("Hello there!", 3, 4))
+```
+
+That's it for today's lecture! Remember, in Python, the int() function is used to convert a string to an integer. Also, in the exercises today, we used string concatenation to combine strings and numbers. Keep practicing and see you in the next lecture!

@@ -1,0 +1,36 @@
+Write a function to convert camel case string to snake case string.
+
+Example:
+Input: ThisIsCamelCase
+Output: this_is_camel_case
+
+Note:
+
+Only lowercase letters are in the string.
+The string does not start with a number, but may have one in the middle of a word.
+Only the letters a-z (lowercase) are changed to lowercase.
+All underscores ('_') are changed to spaces (' ').
+
+Follow up:
+Could you solve it without using any built-in function (such as lower())?"""
+
+
+class Solution(object):
+    def camelMatch(self, queries, pattern):
+        """
+        :type queries: List[str]
+        :type pattern: str
+        :rtype: List[bool]
+        """
+        if pattern == "":
+            return []
+        if len(pattern) == 1:
+            return [query == pattern for query in queries]
+        return [query[0] == pattern[0] or query[0].islower() or query[0] == "_" for query in queries]
+
+
+def test_camel_match():
+    s = Solution()
+    assert [True, True, True] == s.camelMatch(["ThisIsCamelCase", "abc", "d_abcd"], "abc")
+    assert [True, False, False] == s.camelMatch(["ThisIsCamelCase", "abc", "d_abcd"], "de")
+    assert [False, True, True] == s.camelMatch(["aBc", "dEf", "AbC"], "aBc")

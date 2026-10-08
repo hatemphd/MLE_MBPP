@@ -1,0 +1,40 @@
+Write a function to check whether the given number is armstrong or not.
+
+Answer:
+def isArmstrong(num):
+    digits = [int(d) for d in str(num)]
+    n = len(digits)
+    sum = 0
+    for d in digits:
+        sum += d**n
+    if sum == num:
+        return True
+    else:
+        return False
+
+Exercise 3:
+Write a function to calculate the sum of all Armstrong numbers between 1000 and 10000.
+
+Answer:
+def armstrongSum():
+    sum = 0
+    for i in range(1000, 10000):
+        if isArmstrong(i):
+            sum += i
+    return sum
+
+Exercise 4:
+Write a function to calculate the difference between the sum of all Armstrong numbers and the sum of all non-Armstrong numbers between 1000 and 10000.
+
+Answer:
+def armstrongDiff():
+    armstrong = armstrongSum()
+    nonArmstrong = sum([i for i in range(1000, 10000) if not isArmstrong(i)])
+    return nonArmstrong - armstrong
+
+Exercise 5:
+Write a function to check whether a given number is a perfect square or not.
+
+Answer:
+def isPerfectSquare(num):
+    return num**0.5 == int(num**0.5)

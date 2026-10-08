@@ -1,0 +1,39 @@
+Write a function to find the directrix of a parabola.
+
+My thinking: I can use the formula for the directrix of a parabola, which is y = a/4a^2, where a is the coefficient of the squared term.
+
+Correct solution: 
+
+def directrix(a):
+    return a/4
+
+Exercise 3: Write a function to find the focus of a parabola.
+
+My thinking: I can use the formula for the focus of a parabola, which is (-a, c), where c is the y-coordinate of the vertex.
+
+Correct solution: 
+
+def focus(a, c):
+    return (-a, c)
+
+Exercise 4: Write a function to find the axis of symmetry of a parabola.
+
+My thinking: I can use the formula for the axis of symmetry of a parabola, which is x = -b/2a, where a is the coefficient of the squared term and b is the coefficient of the linear term.
+
+Correct solution: 
+
+def axis_of_symmetry(a, b):
+    return -b/(2*a)
+
+Exercise 5: Write a function to find the vertex of a parabola.
+
+My thinking: I can use the formula for the vertex of a parabola, which is (h, k), where h is the x-coordinate of the axis of symmetry and k is the y-coordinate of the vertex.
+
+Correct solution: 
+
+def vertex(a, b, c):
+    h = -b/(2*a)
+    k = c - a*h**2
+    return (h, k)
+
+Overall, I found this section on finding the directrix, focus, and axis of symmetry of a parabola to be challenging but interesting. I especially enjoyed learning how to write Python functions to solve these problems. The exercises helped me solidify my understanding of these concepts and also reinforced my knowledge of Python functions. I look forward to applying these skills to other problems in the future.

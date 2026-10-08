@@ -1,0 +1,42 @@
+Write a function to find the minimum product from the pairs of tuples within a given list. 
+
+Hint: This is similar to our previous exercise, but now we are dealing with a list of tuples. 
+
+```python
+def min_product_pairs(tuples):
+    min_product = float('inf')
+    for t in tuples:
+        product = t[0] * t[1]
+        if product < min_product:
+            min_product = product
+    return min_product
+
+# testing the function
+pairs = [(1,2), (3,4), (5,6)]
+print(min_product_pairs(pairs))  # Output: 6
+```
+
+### Exercise 2
+Extend the function from Exercise 1 to return the pair of tuples that gives the minimum product.
+
+Hint: You can maintain a variable that stores the pair of tuples that yields the minimum product as you traverse the list.
+
+```python
+def min_product_pairs(tuples):
+    min_product = float('inf')
+    min_pair = None
+    for t in tuples:
+        product = t[0] * t[1]
+        if product < min_product:
+            min_product = product
+            min_pair = t
+    return min_pair
+
+# testing the function
+pairs = [(1,2), (3,4), (5,6)]
+print(min_product_pairs(pairs))  # Output: (1,2)
+```
+
+With these exercises, you should now be able to manipulate tuples, iterate through them, and use conditionals to solve complex problems. Continue practicing to master these concepts.
+
+

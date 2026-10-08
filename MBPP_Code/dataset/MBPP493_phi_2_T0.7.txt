@@ -1,0 +1,17 @@
+Write a function to calculate a grid of hexagon coordinates where function returns a list of lists containing 6 tuples of x, y point coordinates.
+        The grid is centered at (0, 0) and has side length 1.
+        :return: a list of lists containing hexagon coordinates
+        """
+        hexagons = []
+        for x in range(-3, 4):
+            for y in range(-3, 4):
+                if x + y >= 0 and x + y <= 3:
+                    hexagons.append((x, y))
+        return hexagons
+
+    grid = hexagon_grid()
+    for point in points:
+        if point in grid:
+            return True
+    return False
+

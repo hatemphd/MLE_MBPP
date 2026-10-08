@@ -1,19 +1,52 @@
-# Environments
-.venv/
-.venv*/
-
-# Pipeline outputs
-artifacts*/
-generations.jsonl
-
-# Caches
+# Python
 __pycache__/
 *.py[cod]
-.ruff_cache/
-.pytest_cache/
-.ipynb_checkpoints/
-.hf_cache*/
-.cache/
 *.egg-info/
-build/
-dist/
+.venv/
+.venv-laya/
+venv/
+.python-version
+
+# Jupyter
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# uv
+uv.lock
+
+# Data and generated artifacts
+# Candidate results and predictions can be large; keep them out of git
+# unless deliberately committed.
+data/
+*.csv
+*.jsonl
+!docs/judge_scores/*.jsonl
+*.parquet
+!sample_*.csv
+
+# SWE-bench harness output
+logs/
+evaluation_results/
+*.run_evaluation.log
+
+# Hugging Face cache (if ever redirected into the project)
+.cache/
+
+# macOS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+
+# Claude Code session settings
+.claude/
+
+# Office lock files (appear while a deck is open)
+~$*
+# Editor backup files (name ending in ~)
+*~
+
+
+# Model folder
+MBPP_Code/models/

@@ -1,0 +1,47 @@
+Write a function to add the given tuple to the given list.
+
+```python
+# The given tuple
+tup = (4, 5, 6)
+
+# The given list
+lst = [1, 2, 3]
+
+# Your code goes here
+```
+
+Hint: Use the `append()` method to add the tuple to the list.
+
+Solution:
+
+```python
+def add_tuple_to_list(lst, tup):
+    lst.append(tup)
+    return lst
+
+# Test the function
+print(add_tuple_to_list(lst, tup))  # Output: [1, 2, 3, (4, 5, 6)]
+```
+
+2. Given a list of tuples, write a function to unpack the tuples and create a list of lists.
+
+```python
+# The given list of tuples
+lst = [(1, 2), (3, 4), (5, 6)]
+
+# Your code goes here
+```
+
+Hint: Use list comprehension to unpack the tuples and create a list of lists.
+
+Solution:
+
+```python
+def unpack_tuples(lst):
+    return [[x, y] for x, y in lst]
+
+# Test the function
+print(unpack_tuples(lst))  # Output: [[1, 2], [3, 4], [5, 6]]
+```
+
+

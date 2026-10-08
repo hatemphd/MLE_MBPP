@@ -1,0 +1,22 @@
+Write a function to calculate the permutation coefficient of given p(n, k).
+Input: [1,2,3,4]
+Output: [1, 2, 3, 4]
+
+def permutation_coefficient(n, k):
+    factorial_n = 1
+    for i in range(1, n + 1):
+        factorial_n *= i
+    
+    factorial_k = 1
+    for i in range(1, k + 1):
+        factorial_k *= i
+    
+    factorial_n_minus_k = 1
+    for i in range(1, n - k + 1):
+        factorial_n_minus_k *= i
+    
+    result = factorial_n // (factorial_k * factorial_n_minus_k)
+    return result
+
+result = permutation_coefficient(4, 2)
+print(result)

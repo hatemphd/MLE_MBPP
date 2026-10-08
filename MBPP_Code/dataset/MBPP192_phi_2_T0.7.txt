@@ -1,0 +1,47 @@
+Write a python function to check whether a string has atleast one letter and one number.
+
+```python
+def has_alpha_num(s):
+    has_alpha = False
+    has_num = False
+    for char in s:
+        if char.isalpha():
+            has_alpha = True
+        if char.isnumeric():
+            has_num = True
+        if has_alpha and has_num:
+            break
+    if has_alpha and has_num:
+        return True
+    else:
+        return False
+    
+print(has_alpha_num("Hello123")) # True
+print(has_alpha_num("Hello")) # False
+```
+
+#### Exercise 4:
+Write a python function to check whether a string has atleast one character from a given list of characters.
+
+```python
+def has_chars(s, chars):
+    for char in chars:
+        if char in s:
+            return True
+    return False
+    
+print(has_chars("Hello", ["l", "o"])) # True
+print(has_chars("Hello", ["e", "x"])) # False
+```
+
+#### Exercise 5:
+Write a python function to count the number of words in a given string.
+
+```python
+def count_words(s):
+    return len(s.split())
+    
+print(count_words("Hello world")) # 2
+print(count_words("Hello there")) # 2
+```
+

@@ -1,0 +1,22 @@
+Write a function to remove an empty tuple from a list of tuples.
+
+```python
+def remove_empty_tuples(tuples):
+    return [t for t in tuples if t]
+
+tuples = [(1,2),(3,4,5),(),(6,),(7,8,9)]
+print(remove_empty_tuples(tuples))
+# Output: [(1, 2), (3, 4, 5), (6,), (7, 8, 9)]
+```
+
+5. Write a function to remove all tuples that contain a specific value.
+
+```python
+def remove_tuples_with_value(tuples, value):
+    return [t for t in tuples if value not in t]
+
+tuples = [(1,2,3),(4,5,6),(7,8,9)]
+print(remove_tuples_with_value(tuples, 5))
+# Output: [(1, 2, 3), (7, 8, 9)]
+```
+

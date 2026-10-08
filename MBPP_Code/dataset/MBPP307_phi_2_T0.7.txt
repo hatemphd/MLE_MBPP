@@ -1,0 +1,46 @@
+Write a function to get a colon of a tuple.
+
+```python
+# Your code goes here!
+```
+_Hint: Apply the indexing method._
+
+Solution:
+```python
+def get_colon(tup):
+    return tup[1]
+
+print(get_colon(my_tuple))  # Output: 'hello'
+```
+
+**Exercise 4:** Write a function to get the last element of a tuple.
+
+```python
+# Your code goes here!
+```
+_Hint: Use negative indexing._
+
+Solution:
+```python
+def get_last(tup):
+    return tup[-1]
+
+print(get_last(my_tuple))  # Output: 'z'
+```
+
+**Exercise 5:** Write a function to get elements of a tuple at even positions.
+
+```python
+# Your code goes here!
+```
+_Hint: Use slicing with a step._
+
+Solution:
+```python
+def get_even_positions(tup):
+    return tup[::2]
+
+print(get_even_positions(my_tuple))  # Output: ('h', 'o')
+```
+
+

@@ -1,0 +1,45 @@
+Write a python function to set the right most unset bit.
+
+```python
+def rightmost_unset_bit(i):
+    return i & -i
+
+print(rightmost_unset_bit(18))  # output: 2
+```
+
+3. Write a python function to convert a binary number to decimal.
+
+```python
+def binary_to_decimal(b):
+    binary_str = '{0:b}'.format(b)
+    decimal = 0
+    for i in range(len(binary_str)):
+        decimal += int(binary_str[i]) * 2**(len(binary_str)-i-1)
+    return decimal
+
+print(binary_to_decimal(18))  # output: 5
+```
+
+4. Write a python function to convert a decimal number to binary.
+
+```python
+def decimal_to_binary(d):
+    binary_str = ''
+    while d > 0:
+        binary_str = str(d % 2) + binary_str
+        d //= 2
+    return int(binary_str)
+
+print(decimal_to_binary(18))  # output: 10010
+```
+
+5. Write a python function to set nth bit in a number to 1.
+
+```python
+def set_nth_bit(n, b):
+    return n | (1 << b)
+
+print(set_nth_bit(18, 2))  # output: 20
+```
+
+

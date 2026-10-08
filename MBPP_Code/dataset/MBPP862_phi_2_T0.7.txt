@@ -1,0 +1,54 @@
+Write a function to find the occurrences of n most common words in a given text.
+
+def n_common_words(text, n):
+    text = text.lower()
+    words = text.split()
+    word_counts = Counter(words)
+    return word_counts.most_common(n)
+
+# Example usage
+text = "I am a student. I am studying at XYZ University. I like Python. Python is a great language. I am learning Python."
+print(n_common_words(text, 2))
+# Output: [('i', 4), ('am', 3)]
+
+Exercise 3:
+Write a function to generate a random password of length n.
+
+import random
+import string
+
+def generate_password(n):
+    password = ''.join(random.choices(string.ascii_letters + string.digits, k=n))
+    return password
+
+# Example usage
+print(generate_password(8))
+# Output: 'a4xT8zZ'
+
+Exercise 4:
+Write a function to find the median of a given list of numbers.
+
+def find_median(numbers):
+    numbers.sort()
+    if len(numbers) % 2 == 0:
+        median = (numbers[len(numbers)//2] + numbers[len(numbers)//2 - 1])/2
+    else:
+        median = numbers[len(numbers)//2]
+    return median
+
+# Example usage
+numbers = [5, 12, 3, 8, 10]
+print(find_median(numbers))
+# Output: 8
+
+Exercise 5:
+Write a function to convert a string to a list of words.
+
+def string_to_words(text):
+    words = text.split()
+    return words
+
+# Example usage
+text = "I am a student. I am studying at XYZ University. I like Python."
+print(string_to_words(text))
+# Output: ['I', 'am', 'a', 'student.', 'I', 'am', 'studying', 'at', 'XYZ', 'University.', 'I', 'like', 'Python.']

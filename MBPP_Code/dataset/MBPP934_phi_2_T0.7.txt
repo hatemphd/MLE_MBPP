@@ -1,0 +1,50 @@
+Write a function to find the nth delannoy number. The delannoy number is the number of ways to tile a 2 x n rectangle with 1 x 1 or 2 x 1 rectangles.
+
+Example 1:
+
+Input: n = 3
+Output: 5
+Explanation: 
+The 5 ways to tile a 2 x 3 rectangle are:
+
+```
+1 1 1
+1 1 2
+1 2 1
+2 1 1
+2 2 1
+```
+
+Example 2:
+
+Input: n = 4
+Output: 16
+Explanation: 
+The 16 ways to tile a 2 x 4 rectangle are:
+
+```
+1 1 1 1
+1 1 1 2
+1 1 2 1
+1 2 1 1
+1 2 1 2
+1 2 2 1
+2 1 1 1
+2 1 1 2
+2 1 2 1
+2 2 1 1
+2 2 1 2
+2 2 2 1
+2 2 2 2
+```
+
+Constraints:
+
+1 <= n <= 1000
+
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/delannoy-number
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+'''
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,55 @@
+Write a python function to count hexadecimal numbers for a given range.
+   * Hint: Use range() function to create a range of numbers.
+
+```python
+def count_hex(start, end):
+    count = 0
+    for i in range(start, end+1):
+        if hex(i).startswith('0x'):
+            count += 1
+    return count
+
+print(count_hex(10, 50))  # Output: 6
+```
+
+2. Write a python function to convert a list of integers into a list of hexadecimal numbers.
+   * Hint: Use list comprehension and the hex() function.
+
+```python
+def int_to_hex(numbers):
+    return [hex(n) for n in numbers]
+
+print(int_to_hex([10, 15, 16]))  # Output: ['0xa', '0xf', '0x10']
+```
+
+3. Write a python function to find the max hexadecimal number in a list.
+   * Hint: Use max() function with key parameter set as int.
+
+```python
+def max_hex(numbers):
+    return max(numbers, key=int)
+
+print(max_hex([10, 15, 16]))  # Output: 16
+```
+
+4. Write a python function to convert a list of hexadecimal numbers into a list of integers.
+   * Hint: Use list comprehension and int() function.
+
+```python
+def hex_to_int(hex_numbers):
+    return [int(n, 16) for n in hex_numbers]
+
+print(hex_to_int(['0xa', '0xf', '0x10']))  # Output: [10, 15, 16]
+```
+
+5. Write a python function to validate that all elements in a list are hexadecimal numbers.
+   * Hint: Use all() function with isinstance() function.
+
+```python
+def validate_hex(numbers):
+    return all(isinstance(n, str) and n.startswith('0x') for n in numbers)
+
+print(validate_hex(['0xa', '0xf', '0x10']))  # Output: True
+```
+
+

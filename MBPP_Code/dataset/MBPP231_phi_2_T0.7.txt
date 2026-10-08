@@ -1,0 +1,39 @@
+Write a function to find the maximum sum in the given right triangle of numbers.
+
+```python
+def max_sum(arr):
+    rows = len(arr)
+    cols = len(arr[0])
+    for i in range(1, rows):
+        for j in range(i+1):
+            if j == 0:
+                arr[i][j] += arr[i-1][j]
+            elif j == i:
+                arr[i][j] += arr[i-1][j-1]
+            else:
+                arr[i][j] += max(arr[i-1][j-1], arr[i-1][j])
+
+    return max(arr[-1])
+```
+
+This function takes in a list of lists as input, where each inner list represents a row in the triangle. It then calculates the maximum sum in the triangle by iterating through each element in the triangle and updating it based on the previously calculated elements. Finally, it returns the maximum sum in the bottom row of the triangle.
+
+Exercise 5: Write a function to find the minimum sum in the given right triangle of numbers.
+
+```python
+def min_sum(arr):
+    rows = len(arr)
+    cols = len(arr[0])
+    for i in range(1, rows):
+        for j in range(i+1):
+            if j == 0:
+                arr[i][j] += arr[i-1][j]
+            elif j == i:
+                arr[i][j] += arr[i-1][j-1]
+            else:
+                arr[i][j] += min(arr[i-1][j-1], arr[i-1][j])
+
+    return min(arr[-1])
+```
+
+This function takes in a list of lists as input, where each inner list represents a row in the triangle. It then calculates the minimum sum in the triangle by iterating through each element in the triangle and updating it based on the previously calculated elements. Finally, it returns the minimum sum in the bottom row of the triangle.

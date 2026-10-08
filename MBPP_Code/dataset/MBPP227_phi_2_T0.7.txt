@@ -1,0 +1,12 @@
+Write a function to find minimum of three numbers.
+
+```python
+def min_of_three(a, b, c):
+    return a if a <= b and a <= c else b if b <= a and b <= c else c
+
+print(min_of_three(3, 7, -1))  # Output: -1
+```
+
+These exercises are designed to help you understand how Python's `if` statement works and how to use it effectively in different scenarios. The key to mastering this concept is to practice regularly and try to incorporate `if` statements in your everyday coding.
+
+

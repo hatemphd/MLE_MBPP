@@ -1,0 +1,38 @@
+Write a function to merge two dictionaries.
+
+**Idea**: Use the `update()` method to merge two dictionaries.
+
+**Solution**:
+
+```python
+def merge_dict(dict1, dict2):
+    dict1.update(dict2)
+    return dict1
+
+dict1 = {"a": 1, "b": 2}
+dict2 = {"b": 3, "c": 4}
+print(merge_dict(dict1, dict2))
+```
+
+**Exercise 2:** Write a function to count the number of occurrences of each word in a text.
+
+**Idea**: Use a dictionary to store the word as a key and the count as a value. Also, use the `split()` method to split the text into words.
+
+**Solution**:
+
+```python
+def word_count(text):
+    words = text.split()
+    count = {}
+    for word in words:
+        if word in count:
+            count[word] += 1
+        else:
+            count[word] = 1
+    return count
+
+text = "The quick brown fox jumps over the lazy dog."
+print(word_count(text))
+```
+
+

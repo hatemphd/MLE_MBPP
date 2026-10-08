@@ -1,0 +1,69 @@
+Write a function to find the largest triangle that can be inscribed in an ellipse. The ellipse has a horizontal major axis and a vertical minor axis. The function should take the length of the major and minor axes as input parameters and return the area of the largest inscribed triangle.
+
+```python
+import math
+
+def largest_triangle_inscribed_in_ellipse(a: int, b: int) -> float:
+    """
+    Given the length of the major and minor axes of an ellipse, returns the area of the largest triangle that can be inscribed in the ellipse.
+    """
+    c = math.sqrt(a**2 - b**2)
+    s = (a + b + c) / 2
+    area = math.sqrt(s * (s - a) * (s - b) * (s - c))
+    return area
+
+# Example usage
+print(largest_triangle_inscribed_in_ellipse(6, 4)) # Output: 6.0
+```
+
+3. Write a function to find the largest circle that can be inscribed in a square. The function should take the length of the side of the square as input parameter and return the area of the largest inscribed circle.
+
+```python
+import math
+
+def largest_circle_inscribed_in_square(side_length: int) -> float:
+    """
+    Given the length of a square side, returns the area of the largest circle that can be inscribed in the square.
+    """
+    radius = side_length / 2
+    area = math.pi * radius**2
+    return area
+
+# Example usage
+print(largest_circle_inscribed_in_square(10)) # Output: 78.53981633974483
+```
+
+4. Write a function to find the largest triangle that can be inscribed in an equilateral triangle. The function should take the length of a side of the equilateral triangle as input parameter and return the area of the largest inscribed triangle.
+
+```python
+import math
+
+def largest_triangle_inscribed_in_equilateral_triangle(side_length: int) -> float:
+    """
+    Given the length of a side of an equilateral triangle, returns the area of the largest triangle that can be inscribed in the triangle.
+    """
+    height = math.sqrt(3) / 2 * side_length
+    base = side_length / 2
+    area = base * height / 2
+    return area
+
+# Example usage
+print(largest_triangle_inscribed_in_equilateral_triangle(6)) # Output: 9.16515138991168
+```
+
+5. Write a function to find the largest circle that can be inscribed in a regular hexagon. The function should take the length of a side of the hexagon as input parameter and return the area of the largest inscribed circle.
+
+```python
+import math
+
+def largest_circle_inscribed_in_regular_hexagon(side_length: int) -> float:
+    """
+    Given the length of a side of a regular hexagon, returns the area of the largest circle that can be inscribed in the hexagon.
+    """
+    radius = side_length / math.sqrt(3)
+    area = math.pi * radius**2
+    return area
+
+# Example usage
+print(largest_circle_inscribed_in_regular_hexagon(5)) # Output: 43.30127018922193
+```

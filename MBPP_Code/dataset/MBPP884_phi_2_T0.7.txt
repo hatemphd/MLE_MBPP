@@ -1,0 +1,28 @@
+Write a python function to check whether all the bits are within a given range or not.
+
+```python
+def check_bit_range(bit_sequence, start, end):
+    bit_sequence = bin(bit_sequence)[2:]
+    for bit in bit_sequence:
+        if int(bit) < start or int(bit) > end:
+            return False
+    return True
+
+print(check_bit_range(10, 1, 3))  # Returns: True
+print(check_bit_range(10, 1, 2))  # Returns: False
+```
+
+2. Write a python function that takes a sequence of bits and a bit position and returns the sequence with that bit flipped.
+
+```python
+def flip_bit(bit_sequence, position):
+    bit_sequence = bin(bit_sequence)[2:]
+    bit_sequence = bit_sequence[:position] + ('0' if bit_sequence[position] == '1' else '1') + bit_sequence[position+1:]
+    return int(bit_sequence, 2)
+
+print(flip_bit(10, 1))  # Returns: 6
+```
+
+These exercises help to reinforce the concepts discussed in this chapter. Remember, bit manipulation is a powerful tool in Python and is often used in complex problem-solving situations.
+
+

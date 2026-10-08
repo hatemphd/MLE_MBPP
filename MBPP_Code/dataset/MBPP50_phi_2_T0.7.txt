@@ -1,0 +1,27 @@
+Write a function to find the list with minimum length using lambda function.
+
+#### Solution:
+
+```python
+def find_min_length_list(lists):
+    return min(lists, key=len)
+
+print(find_min_length_list([[1, 2, 3], [4, 5], [6, 7, 8, 9]]))
+```
+The lambda function in `key=len` parameter tells Python to use the length of each list to determine the minimum length.
+
+#### Exercise 2
+
+Write a function to find the tuple with maximum second element using lambda function.
+
+#### Solution:
+
+```python
+def find_max_second_element_tuple(tuples):
+    return max(tuples, key=lambda x: x[1])
+
+print(find_max_second_element_tuple([(1, 2), (4, 5), (7, 8), (10, 11)]))
+```
+The lambda function in `key=lambda x: x[1]` parameter tells Python to use the second element of each tuple to determine the maximum second element.
+
+

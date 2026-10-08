@@ -1,0 +1,15 @@
+Write a function to convert the given tuples into set.
+
+    **Hint:** Use the `set()` function.
+
+    ```python
+    def tuple_to_set(tuple_list):
+        # convert each tuple in list to set
+        return [set(t) for t in tuple_list]
+
+    # test the function
+    tuple_list = [(1, 2, 3), (4, 5), (6, 7, 8, 9)]
+    print(tuple_to_set(tuple_list))  # Output: [{1, 2, 3}, {4, 5}, {6, 7, 8, 9}]
+    ```
+
+

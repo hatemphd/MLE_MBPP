@@ -1,0 +1,37 @@
+Write a function to check whether the given string is ending with only alphanumeric characters or not using regex.
+
+```python
+import re
+
+def check_alphanumeric(string):
+    pattern = re.compile(r'^\w+$')
+    return bool(pattern.match(string))
+
+print(check_alphanumeric("123abc"))   # True
+print(check_alphanumeric("abc!@#"))   # False
+```
+
+4. Write a function to extract all email addresses from a given string using regex.
+
+```python
+import re
+
+def extract_emails(string):
+    pattern = re.compile(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b')
+    return pattern.findall(string)
+
+print(extract_emails("Contact us at info@example.com or sales@example.com"))
+# ['info@example.com', 'sales@example.com']
+```
+
+5. Write a function to replace all whitespace characters with underscores in a given string using regex.
+
+```python
+import re
+
+def replace_whitespace(string):
+    pattern = re.compile(r'\s+')
+    return pattern.sub('_', string)
+
+print(replace_whitespace("Hello, World!"))   # "Hello,_World!"
+```

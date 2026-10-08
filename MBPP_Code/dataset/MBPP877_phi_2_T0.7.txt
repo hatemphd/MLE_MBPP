@@ -1,0 +1,13 @@
+Write a python function to sort the given string.
+
+```python
+def sort_string(string):
+    return ''.join(sorted(string))
+
+print(sort_string("python"))        
+print(sort_string("programming"))      
+```
+
+In the first exercise, we used the `sorted()` function to sort the elements of the list in ascending order and then joined them back into a string. The second exercise is similar to the first, but instead, we join the sorted list of characters back into a string.
+
+

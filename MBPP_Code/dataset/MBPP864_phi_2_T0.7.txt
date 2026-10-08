@@ -1,0 +1,34 @@
+Write a function to find palindromes in a given list of strings using lambda function.
+
+```python
+import re
+
+def find_palindromes(lst):
+    return list(filter(lambda s: re.match(r'^\w+$', s) and s == s[::-1], lst))
+
+# Example usage
+print(find_palindromes(["racecar", "hello", "12321", "world"]))
+# Output: ["racecar", "12321"]
+```
+
+4. Write a function to find words that contain the letter 'a' using lambda function and list comprehension.
+
+```python
+def find_words_with_a(lst):
+    return [w for w in lst if 'a' in w]
+
+# Example usage
+print(find_words_with_a(["apple", "banana", "pear", "orange", "grape", "kiwi"]))
+# Output: ["apple", "banana", "pear", "orange", "grape"]
+```
+
+5. Write a function to find words that start and end with the same letter using lambda function and list comprehension.
+
+```python
+def find_words_start_end_same(lst):
+    return [w for w in lst if len(w) > 1 and w[0] == w[-1]]
+
+# Example usage
+print(find_words_start_end_same(["racecar", "hello", "level", "world", "madam", "python"]))
+# Output: ["racecar", "level", "madam"]
+```

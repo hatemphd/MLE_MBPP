@@ -1,0 +1,53 @@
+Write a function to find the summation of tuple elements in the given tuple list.
+
+Hint: Use the `sum()` function.
+
+Solution:
+
+```python
+def sum_tuple_list(list_of_tuples):
+    return [sum(t) for t in list_of_tuples]
+
+print(sum_tuple_list([(1,2), (3,4), (5,6)]))  # Outputs: [3, 7, 11]
+```
+
+3. Write a function to find the maximum and minimum values in the given tuple list.
+
+Hint: Use the `max()` and `min()` functions.
+
+Solution:
+
+```python
+def min_max_tuple_list(list_of_tuples):
+    return [max(t), min(t)] for t in list_of_tuples]
+
+print(min_max_tuple_list([(1,2), (3,4), (5,6)]))  # Outputs: [(1, 2), (3, 4), (5, 6)]
+```
+
+4. Write a function to find the index of a given element in the tuple list.
+
+Hint: Use the `index()` function.
+
+Solution:
+
+```python
+def find_index(list_of_tuples, element):
+    return [t.index(element) for t in list_of_tuples]
+
+print(find_index([(1,2), (3,4), (5,6)], 3))  # Outputs: [1, 0, 0]
+```
+
+5. Write a function to find the index of the tuple with the maximum sum in the tuple list.
+
+Hint: Use the `index()` and `max()` functions.
+
+Solution:
+
+```python
+def max_sum_index(list_of_tuples):
+    return list_of_tuples.index(max(list_of_tuples, key=sum))
+
+print(max_sum_index([(1,2), (3,4), (5,6)]))  # Outputs: 2
+```
+
+

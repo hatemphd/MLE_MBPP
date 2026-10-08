@@ -1,0 +1,45 @@
+Write a python function to count the upper case characters in a given string.
+```python
+# Example solution
+def count_upper(string):
+    count = 0 
+    for char in string:
+        if char.isupper():
+            count += 1
+    return count
+
+string = "Hello World"
+print(count_upper(string))  # outputs: 2
+```
+
+2. Write a function to convert a given string into a list of words.
+```python
+# Example solution
+def string_to_list(string):
+    return string.split()
+
+string = "Hello, World!"
+print(string_to_list(string))  # outputs: ['Hello,', 'World!']
+```
+
+3. Write a function to replace all occurrences of a given word in a string with another word.
+```python
+# Example solution
+def replace_word(string, old_word, new_word):
+    return string.replace(old_word, new_word)
+
+string = "Hello, World!"
+print(replace_word(string, "Hello", "Goodbye"))  # outputs: Goodbye, World!
+```
+
+4. Write a python program to reverse a given string.
+```python
+# Example solution
+def reverse_string(string):
+    return string[::-1]
+
+string = "Hello, World!"
+print(reverse_string(string))  # outputs: !dlroW ,olleH
+```
+
+

@@ -1,0 +1,34 @@
+Write a function to print check if the triangle is equilateral or not.
+
+    ```python
+    def is_equilateral(self):
+        return self.side1 == self.side2 == self.side3
+
+    def print_triangle(self):
+        if self.is_equilateral():
+            print("The triangle is equilateral.")
+        else:
+            print("The triangle is not equilateral.")
+    ```
+
+2. Modify the `triangle` class to print the sides of the triangle in ascending order.
+
+    ```python
+    def print_sides(self):
+        sorted_sides = sorted([self.side1, self.side2, self.side3])
+        print(f"The sides are: {sorted_sides[0]}, {sorted_sides[1]}, {sorted_sides[2]}")
+    ```
+
+3. Create a function that takes a list of Triangle instances and prints the total perimeter of all triangles.
+
+    ```python
+    def print_total_perimeter(triangles):
+        total_perimeter = 0
+        for triangle in triangles:
+            total_perimeter += triangle.perimeter()
+        print(f"The total perimeter is: {total_perimeter}")
+    ```
+
+By completing these exercises, you will solidify your understanding of the Triangle class, enhancing your ability to solve problems related to triangles in Python.
+
+

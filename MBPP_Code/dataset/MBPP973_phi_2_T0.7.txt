@@ -1,0 +1,63 @@
+Write a python function to left rotate the string.
+
+Ideas: You can use string concatenation or list comprehension for this.
+
+```python
+def left_rotate(string, n):
+    return string[n:] + string[:n]
+
+# Testing the function
+print(left_rotate("Hello, World!", 3))  # Outputs: "lo, World!Hello"
+```
+
+**Exercise 2:** Write a python function to right rotate the string.
+
+Ideas: The function should be similar to the previous one, but you need to reverse the string before the rotation.
+
+```python
+def right_rotate(string, n):
+    return string[-n:] + string[:-n]
+
+# Testing the function
+print(right_rotate("Hello, World!", 3))  # Outputs: "orld, Hello!"
+```
+
+**Exercise 3:** Write a python function to left rotate the string based on a list of integers.
+
+Ideas: You can iterate over the list and apply the `left_rotate()` function to each element in the list.
+
+```python
+def left_rotate_list(string, rotations):
+    return [left_rotate(string, r) for r in rotations]
+
+# Testing the function
+print(left_rotate_list("Hello, World!", [3, 1, 4]))  # Outputs: ['World!Hello', 'ello, World!', 'llo, World!Hello']
+```
+
+**Exercise 4:** Write a python function to right rotate the string based on a list of integers.
+
+Ideas: The function should be similar to the previous one, but you need to reverse the string before the rotation.
+
+```python
+def right_rotate_list(string, rotations):
+    return [right_rotate(string, r) for r in rotations]
+
+# Testing the function
+print(right_rotate_list("Hello, World!", [3, 1, 4]))  # Outputs: ['orld, Hello!', 'llo, World!Hello', '!Hello, World']
+```
+
+**Exercise 5:** Write a python function to rotate the string and replace certain characters based on a list of tuples (old, new).
+
+Ideas: You can iterate over the list of tuples and apply the `replace()` string method to each element.
+
+```python
+def modify_string(string, replacements):
+    return ''.join(string.replace(old, new) for old, new in replacements)
+
+# Testing the function
+print(modify_string("Hello, World!", [('o', '0'), ('l', '1')]))  # Outputs: 'He110, W0r1d!'
+```
+
+By the end of this chapter, you should be familiar with the concept of string rotation and how to implement it in Python. Happy coding!
+
+

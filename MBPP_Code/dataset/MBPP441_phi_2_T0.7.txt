@@ -1,0 +1,30 @@
+Write a function to find the surface area of a cube. 
+
+```python
+def surface_area_cube(length):
+    return 6 * length**2
+
+print(surface_area_cube(5)) # Output: 150
+```
+
+Exercise 4:
+Write a function to find the surface area of a cylinder. 
+
+```python
+def surface_area_cylinder(radius, height):
+    base_area = math.pi * radius**2
+    lateral_area = 2 * math.pi * radius * height
+    return 2 * base_area + lateral_area
+
+print(surface_area_cylinder(3, 5)) # Output: 141.3716694115407
+```
+
+Exercise 5:
+Write a function to find the volume of a sphere. 
+
+```python
+def volume_sphere(radius):
+    return (4/3) * math.pi * radius**3
+
+print(volume_sphere(2)) # Output: 33.510321638291124
+```

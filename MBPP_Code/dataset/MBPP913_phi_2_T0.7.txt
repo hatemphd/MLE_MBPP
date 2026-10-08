@@ -1,0 +1,59 @@
+Write a function to check for a number at the end of a string.
+
+**Hint:** Use the `endswith` method.
+
+```python
+def check_number(s):
+    if s.endswith(".txt"):
+        print("This is a text file.")
+    else:
+        print("This is not a text file.")
+
+check_number("myfile.txt")   # Output: This is a text file.
+check_number("myfile")    # Output: This is not a text file.
+```
+
+3. Write a function to add a directory to the start of a list of files.
+
+**Hint:** Use the `insert` method.
+
+```python
+def add_directory(lst, directory):
+    lst.insert(0, directory)
+    return lst
+
+print(add_directory(["myfile.txt", "anotherfile.txt"], "folder"))    # Output: ['folder', 'myfile.txt', 'anotherfile.txt']
+```
+
+4. Write a function to check if a list of strings ends with ".xlsx" files.
+
+**Hint:** Use a for loop and the `endswith` method.
+
+```python
+def check_xlsx(lst):
+    for s in lst:
+        if s.endswith(".xlsx"):
+            print(f"{s} is an Excel file.")
+        else:
+            print(f"{s} is not an Excel file.")
+
+check_xlsx(["myfile.xlsx", "myfile.txt", "myfile2.xlsx"])   # Output: myfile.xlsx is an Excel file., myfile.txt is not an Excel file., myfile2.xlsx is an Excel file.
+```
+
+5. Write a function to add ".csv" files to the end of a list of files.
+
+**Hint:** Use a for loop and the `endswith` method.
+
+```python
+def add_csv(lst):
+    for i in range(len(lst)):
+        if not lst[i].endswith(".csv"):
+            lst[i] += ".csv"
+    return lst
+
+print(add_csv(["myfile.txt", "myfile2.xlsx"]))    # Output: ['myfile.txt.csv', 'myfile2.xlsx.csv']
+```
+
+Remember, the `endswith` method is a powerful tool for data validation and manipulation in the field of Business Intelligence. It can help streamline processes and improve efficiency.
+
+

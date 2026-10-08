@@ -1,0 +1,75 @@
+Write a function to filter the height and width of students which are stored in a dictionary.
+
+```python
+# A dictionary with student details
+student_details = {
+    "student1": {"name": "John", "age": 20, "height": 170, "weight": 70},
+    "student2": {"name": "Jane", "age": 18, "height": 160, "weight": 60},
+    "student3": {"name": "Bob", "age": 22, "height": 175, "weight": 80},
+}
+
+def filter_students(student_details):
+    return {student: details for student, details in student_details.items() if details["height"] >= 170 and details["weight"] > 70}
+
+filtered_students = filter_students(student_details)
+print(filtered_students)
+```
+
+2. Write a function that multiplies each element in a dictionary by 2.
+
+```python
+# A dictionary of students and their scores
+scores = {"John": 85, "Jane": 90, "Bob": 92}
+
+def double_scores(scores):
+    return {name: score*2 for name, score in scores.items()}
+
+doubled_scores = double_scores(scores)
+print(doubled_scores)
+```
+
+3. Write a function that sorts a dictionary by values.
+
+```python
+# A dictionary of students and their scores
+scores = {"John": 85, "Jane": 90, "Bob": 92}
+
+def sort_scores(scores):
+    return {name: score for name, score in sorted(scores.items(), key=lambda item: item[1])}
+
+sorted_scores = sort_scores(scores)
+print(sorted_scores)
+```
+
+4. Write a function that uses regular expressions to extract emails from a dictionary of student records.
+
+```python
+import re
+
+# A dictionary of student records
+student_records = {
+    "John": {"email": "john@gmail.com"},
+    "Jane": {"email": "jane@gmail.com"},
+    "Bob": {"email": "bob@yahoo.com"},
+}
+
+def extract_emails(student_records):
+    return {name: details["email"] for name, details in student_records.items() if re.search(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b', details["email"])}
+
+email_records = extract_emails(student_records)
+print(email_records)
+```
+
+5. Write a function that finds the student with the highest score in a dictionary.
+
+```python
+# A dictionary of students and their scores
+scores = {"John": 85, "Jane": 90, "Bob": 92}
+
+def highest_score(scores):
+    return max(scores, key=scores.get)
+
+highest = highest_score(scores)
+print(highest)
+```
+

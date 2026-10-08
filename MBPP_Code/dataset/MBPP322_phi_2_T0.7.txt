@@ -1,0 +1,79 @@
+Write a function to find all index positions of the minimum values in a given list.
+
+```python
+def min_index_positions(my_list):
+    # Your code here
+
+# Test your function on the given list
+print(min_index_positions([1, 2, 3, 4, 5, 6, 7, 8, 9]))
+```
+
+Ideas:
+- Use the `index()` method to find the first occurrence of the minimum value.
+- Use a loop to find all occurrences of the minimum value.
+
+Solution:
+```python
+def min_index_positions(my_list):
+    min_value = min(my_list)
+    min_indexes = []
+    for i in range(len(my_list)):
+        if my_list[i] == min_value:
+            min_indexes.append(i)
+    return min_indexes
+
+# Test your function on the given list
+print(min_index_positions([1, 2, 3, 4, 5, 6, 7, 8, 9]))
+```
+
+### Exercise 4
+Write a function to find the position of the first occurrence of the largest value in a given list.
+
+```python
+def max_index_position(my_list):
+    # Your code here
+
+# Test your function on the given list
+print(max_index_position([1, 2, 3, 4, 5, 6, 7, 8, 9]))
+```
+
+Ideas:
+- Use the `index()` method to find the first occurrence of the maximum value.
+- Use the `max()` function to find the maximum value, then use the `index()` method to find its position.
+
+Solution:
+```python
+def max_index_position(my_list):
+    max_value = max(my_list)
+    return my_list.index(max_value)
+
+# Test your function on the given list
+print(max_index_position([1, 2, 3, 4, 5, 6, 7, 8, 9]))
+```
+
+### Exercise 5
+Write a function to find the position of the first occurrence of the second smallest value in a given list.
+
+```python
+def second_smallest_index(my_list):
+    # Your code here
+
+# Test your function on the given list
+print(second_smallest_index([1, 2, 3, 4, 5, 6, 7, 8, 9]))
+```
+
+Ideas:
+- Use the `sorted()` function to sort the list in ascending order.
+- Use the `index()` method to find the position of the second smallest value.
+
+Solution:
+```python
+def second_smallest_index(my_list):
+    sorted_list = sorted(my_list)
+    second_smallest = sorted_list[1]
+    return my_list.index(second_smallest)
+
+# Test your function on the given list
+print(second_smallest_index([1, 2, 3, 4, 5, 6, 7, 8, 9]))
+```
+

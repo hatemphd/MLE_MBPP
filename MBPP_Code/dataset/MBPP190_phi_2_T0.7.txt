@@ -1,0 +1,24 @@
+Write a python function to count the number of integral co-ordinates that lie inside a square.
+
+Hint: Consider the square to be defined by the lower-left and upper-right points.
+
+Solution:
+
+```python
+def square_intersection(square1, square2):
+    # Check if the bounding boxes of the two squares overlap
+    if not (square1.left <= square2.right and square1.right >= square2.left and square1.bottom <= square2.top and square1.top >= square2.bottom):
+        return 0
+    else:
+        # Count the number of points inside the first square
+        return sum([1 for x in range(square1.left, square1.right+1) for y in range(square1.bottom, square1.top+1)])
+
+# Test the function
+square1 = Point(0, 0)
+square2 = Point(4, 4)
+print(square_intersection(square1, square2))  # Outputs: 16
+```
+
+By concluding this chapter, we have acquired the ability to identify the intersection of two squares, and count the number of integral co-ordinates within them. The principles and techniques we have discussed are broadly applicable in a variety of scenarios, and are paramount in the development of programs that require spatial computations or analyses.
+
+

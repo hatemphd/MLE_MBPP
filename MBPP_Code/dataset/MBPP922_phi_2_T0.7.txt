@@ -1,0 +1,22 @@
+Write a function to find a pair with the highest product from a given array of integers.
+
+Idea: Use a similar approach to the max product problem, but instead of storing a list of numbers, store the pair with the highest product.
+
+Solution:
+
+```python
+def max_pair_product(nums):
+    max_product = float('-inf')
+    max_pair = None
+    for i in range(len(nums)):
+        for j in range(i + 1, len(nums)):
+            product = nums[i] * nums[j]
+            if product > max_product:
+                max_product = product
+                max_pair = (nums[i], nums[j])
+    return max_pair
+```
+
+These exercises will provide an excellent foundation for solving more complex problems involving arrays in Python.
+
+

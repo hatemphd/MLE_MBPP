@@ -1,0 +1,45 @@
+Write a function which accepts an arbitrary list and converts it to a heap using heap queue algorithm. Print the heap and return.
+
+```python
+from queue import PriorityQueue
+
+def build_heap(data):
+    heapq.heapify(data)
+    print(f'The heap is {data}')
+    return data
+
+data = [5, 1, 9, 3, 7, 2]
+print(build_heap(data))
+```
+
+2. Implement a function `delete_smallest` that takes two parameters: a list, and an integer n. This function should delete the smallest n items from the list and return the modified list.
+
+```python
+def delete_smallest(data, n):
+    heapq.heapify(data)
+    for _ in range(n):
+        data.remove(heapq.heappop(data))
+    return data
+
+data = [5, 1, 9, 3, 7, 2]
+print(delete_smallest(data, 3))
+```
+
+3. Modify the `delete_smallest` function to use a priority queue. This should be less memory efficient, but may offer additional performance benefits.
+
+```python
+def delete_smallest_priority_queue(data, n):
+    q = PriorityQueue()
+    for item in data:
+        q.put(item)
+    for _ in range(n):
+        data.remove(q.get())
+    return data
+
+data = [5, 1, 9, 3, 7, 2]
+print(delete_smallest_priority_queue(data, 3))
+```
+
+These exercises should help you understand and practice the concepts discussed in this chapter. As you continue, you can experiment with more complex use cases and try to optimize your solutions for different scenarios.
+
+

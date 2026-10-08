@@ -1,0 +1,15 @@
+Write a function to find modulo division of two lists using map and lambda function.
+
+Hints:
+- Use the map function with a lambda function to divide each pair of elements from the two lists
+
+Solution:
+
+```python
+def modulo_division(list1, list2):
+    return list(map(lambda x, y: x % y, list1, list2))
+
+print(modulo_division([10, 20, 30], [3, 4, 5]))  # Output: [1, 0, 0]
+```
+
+

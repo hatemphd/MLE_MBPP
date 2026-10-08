@@ -1,0 +1,48 @@
+Write a function to find the number of rotations in a circularly sorted array. The array is sorted in ascending order but could be rotated at some pivot unknown to you beforehand.
+
+For example, consider the array [0, 1, 3, 4, 5, 6, 7]. If the first four elements are [0, 1, 3, 4], then the array is rotated at the pivot index 4. The first four rotated sorted arrays are:
+
+[0, 1, 3, 4]             [0, 1, 3, 4, 5, 6, 7]
+[1, 3, 4, 5, 6, 7]      [1, 3, 4, 5, 6, 7, 0]
+[3, 4, 5, 6, 7, 0]        [3, 4, 5, 6, 7, 0, 1]
+[4, 5, 6, 7, 0, 1]        [4, 5, 6, 7, 0, 1, 3]
+
+Given an array nums sorted in ascending order and an integer target, return the index if target is found. If not, return -1.
+
+You must write an algorithm with O(log n) runtime complexity.
+
+ 
+
+Example 1:
+
+Input: nums = [0,1,3,4,5,6,7], target = 3
+Output: 2
+Example 2:
+
+Input: nums = [0,1,3,4,5,6,7], target = 2
+Output: -1
+"""
+
+class Solution:
+    def search(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
+        lo, hi = 0, len(nums)-1
+        while lo <= hi:
+            mid = (lo + hi)//2
+            if nums[mid] == target:
+                return mid
+            if nums[lo] <= nums[mid]:
+                if target >= nums[lo] and target < nums[mid]:
+                    hi = mid-1
+                else:
+                    lo = mid+1
+            else:
+                if target <= nums[mid] and target > nums[lo]:
+                    lo = mid+1
+                else:
+                    hi = mid-1
+        return -1

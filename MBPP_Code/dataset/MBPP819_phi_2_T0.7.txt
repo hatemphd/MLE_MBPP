@@ -1,0 +1,61 @@
+Write a function to count the frequency of consecutive duplicate elements in a given list of numbers. The function should return a dictionary where the keys are the elements and the values are the number of times that element is consecutively repeated.
+
+```python
+def count_duplicates(lst):
+    freq = {}
+    for i in range(len(lst)):
+        count = 1
+        j = i+1
+        while j < len(lst) and lst[j] == lst[i]:
+            count += 1
+            j += 1
+        freq[lst[i]] = count
+    return freq
+```
+
+### Exercise 3
+Write a function to remove all duplicates from a given list of strings. The function should return a new list with all duplicates removed.
+
+```python
+def remove_duplicates(lst):
+    freq = {}
+    for item in lst:
+        freq[item] = freq.get(item, 0) + 1
+    return list(set(item for item, count in freq.items() if count == 1))
+```
+
+### Exercise 4
+Write a function to find the longest consecutive sequence of duplicates in a given list of numbers. The function should return a tuple of the longest sequence and its length.
+
+```python
+def longest_duplicate_seq(lst):
+    freq = {}
+    longest_seq = []
+    for item in lst:
+        freq[item] = freq.get(item, 0) + 1
+        if freq[item] > 1:
+            curr_seq = [item]
+            j = i+1
+            while j < len(lst) and lst[j] == lst[i]:
+                curr_seq.append(lst[j])
+                j += 1
+            if len(curr_seq) > len(longest_seq):
+                longest_seq = curr_seq
+    return tuple(longest_seq), len(longest_seq)
+```
+
+### Exercise 5
+Write a function to count the number of times each character appears consecutively in a given string. The function should return a dictionary where the keys are the characters and the values are the number of times that character appears consecutively.
+
+```python
+def count_consecutive_chars(s):
+    freq = {}
+    for i in range(len(s)):
+        count = 1
+        j = i+1
+        while j < len(s) and s[j] == s[i]:
+            count += 1
+            j += 1
+        freq[s[i]] = count
+    return freq
+```

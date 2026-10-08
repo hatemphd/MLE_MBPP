@@ -1,0 +1,14 @@
+Write a function to insert a given string at the beginning of all items in a list. The function should take two parameters: a list of strings, `list`, and a string, `s`.
+
+```python
+def insert_string(lst, s):
+    """
+    Given a list of strings, inserts a given string at the beginning of all items in the list.
+    """
+    return [s + item for item in lst]
+
+# Example usage
+fruits = ['apple', 'banana', 'cherry']
+print(insert_string(fruits, 'fruit: ')) # ['fruit: apple', 'fruit: banana', 'fruit: cherry']
+```
+

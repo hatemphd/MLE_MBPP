@@ -1,0 +1,49 @@
+Write a function to check if all the elements in tuple have same data type or not.
+
+Hint: You might want to use the len() function to check the length of the tuple.
+
+```python
+def check_type_tuple(tup):
+    return len(set([type(i) for i in tup])) == 1
+
+tup = (1, 2, 3)
+print(check_type_tuple(tup)) # Output: True
+
+tup = (1, 2, "three")
+print(check_type_tuple(tup)) # Output: False
+```
+
+3. Given a tuple of strings, write a function to sort them in reverse lexicographical order.
+
+```python
+def sort_tuple_reverse(tup):
+    return tuple(sorted(tup, reverse=True))
+
+tup = ("one", "two", "three")
+print(sort_tuple_reverse(tup)) # Output: ('three', 'two', 'one')
+```
+
+4. Given a tuple of numbers, write a function that returns a tuple containing the count of even and odd numbers separately.
+
+```python
+def count_even_odd(tup):
+    even_count = sum(1 for i in tup if i%2==0)
+    odd_count = len(tup) - even_count
+    return (even_count, odd_count)
+
+tup = (1, 2, 3, 4, 5, 6, 7, 8, 9)
+print(count_even_odd(tup)) # Output: (4, 5)
+```
+
+5. Given a tuple of strings, write a function that returns a tuple containing only the strings with length greater than 5.
+
+```python
+def filter_long_strings(tup):
+    return tuple(filter(lambda x: len(x)>5, tup))
+
+tup = ("one", "two", "three", "four", "five", "six", "seven", "eight")
+print(filter_long_strings(tup)) # Output: ('three', 'six', 'seven', 'eight')
+```
+
+In these exercises, we have incorporated the Python concept of "List Comprehensions" to filter or sort elements of a tuple based on certain conditions.
+

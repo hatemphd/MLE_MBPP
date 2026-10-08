@@ -1,0 +1,23 @@
+Write a function to convert a list of multiple integers into a single integer.
+
+```python
+# Hint: Convert each integer to a string and concatenate them
+
+def list_to_int(lst):
+    return int(''.join(map(str, lst)))
+
+print(list_to_int([1, 2, 3, 4]))
+```
+
+3. Write a function to check whether a number is a palindrome or not.
+
+```python
+# Hint: Convert the number to a string and compare it with its reversed version
+
+def is_palindrome(n):
+    return str(n) == str(n)[::-1]
+
+print(is_palindrome(121))
+```
+
+

@@ -1,0 +1,45 @@
+Write a function to find the number of subsequences having product smaller than k for the given non negative array.
+
+Example 1:
+
+Input: nums = [10,5,2,6], k = 100
+Output: 8
+Explanation: There are 8 subsequences whose product is smaller than k = 100.
+[2], [5], [2, 5], [5, 2], [2, 2], [2, 2, 2], [5, 2, 2], [5, 5]
+
+Example 2:
+
+Input: nums = [0,3,-2,-2], k = 0
+Output: 8
+Explanation: There are 8 subsequences whose product is smaller than k = 0.
+[0], [3], [0, 3], [3, 3], [3, 3, 3], [3, 3], [0, 3, 3], [0, 3, 3, 3]
+"""
+
+class Solution:
+    def numSmallerByFrequency(self, queries, words):
+        """
+        :type queries: List[str]
+        :type words: List[str]
+        :rtype: List[int]
+        """
+        
+        # using frequency
+        # for queries: 'abc', words: 'aabbcc'
+        # count frequency of each character in words
+        # count frequency of each character in query
+        # if char frequency of query is less than that of words, then the number of subsequences is equal to the product of
+        # frequency of words for that character and the number of words with that character in query.
+        
+        res = []
+        words = sorted(words)
+        for query in queries:
+            freq = {char: 0 for char in query}
+            for word in words:
+                for char in query:
+                    if char in word:
+                        freq[char] += 1
+            count = 1
+            for freq_char in freq:
+                count *= freq[freq_char]
+            res.append(len(words) - count)
+        return res

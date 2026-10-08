@@ -1,0 +1,27 @@
+Write a python function to get the last element of each sublist.
+
+```python
+def last_element(lst):
+    return [sublist[-1] for sublist in lst]
+
+print(last_element([[1,2,3],[4,5,6],[7,8,9]]))
+```
+
+4. Write a python function to get the number of elements in each sublist.
+
+```python
+def number_of_elements(lst):
+    return [len(sublist) for sublist in lst]
+
+print(number_of_elements([[1,2,3],[4,5,6],[7,8,9]]))
+```
+
+5. Write a python function to flatten a list of lists into a single list.
+
+```python
+def flatten(lst):
+    return [item for sublist in lst for item in sublist]
+
+print(flatten([[1,2,3],[4,5,6],[7,8,9]]))
+```
+

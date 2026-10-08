@@ -1,0 +1,43 @@
+Write a function to remove particular data type elements from the given tuple.
+
+```python
+# Hint: Use a conditional statement inside the while loop to check the data type of each element.
+# Solution:
+def remove_by_type(tup, data_type):
+    i = 0
+    while i < len(tup):
+        if type(tup[i]) == data_type:
+            tup = tup[:i] + tup[i+1:]
+            i -= 1
+        else:
+            i += 1
+    return tup
+
+# Testing the function
+tup = (1, 'a', 3.14, True, 'hello', 3, False, 4.2, 'world')
+print(remove_by_type(tup, str))  # ('a', 3.14, True, 4.2)
+```
+
+---
+
+### Exercise 5
+Write a function to remove all odd numbers from the given tuple.
+
+```python
+# Hint: Use a conditional statement inside the while loop to check if the number is odd.
+# Solution:
+def remove_odd_numbers(tup):
+    i = 0
+    while i < len(tup):
+        if tup[i] % 2 != 0:
+            tup = tup[:i] + tup[i+1:]
+        else:
+            i += 1
+    return tup
+
+# Testing the function
+tup = (1, 2, 3, 4, 5, 6, 7, 8, 9)
+print(remove_odd_numbers(tup))  # (2, 4, 6, 8)
+```
+
+

@@ -1,0 +1,30 @@
+Write a function to remove words from a given list of strings containing a character or string.
+
+```python
+def remove_words(strings, char):
+    """
+    Remove all words containing a given character or string from a list of strings.
+    """
+    return [s for s in strings if char not in s]
+
+strings = ["hello", "world", "python", "programming"]
+remove_words(strings, "o")
+# Output: ["python", "programming"]
+```
+
+### Exercise 5
+
+Write a function to remove all duplicates from a given list of strings.
+
+```python
+def remove_duplicates(strings):
+    """
+    Remove all duplicates from a list of strings.
+    """
+    return list(set(strings))
+
+strings = ["hello", "world", "world", "python", "programming", "hello"]
+remove_duplicates(strings)
+# Output: ["hello", "world", "python", "programming"]
+```
+

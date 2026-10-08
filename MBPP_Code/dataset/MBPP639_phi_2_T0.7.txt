@@ -1,0 +1,43 @@
+Write a function to sum the length of the names of a given list of names after removing the names that start with a lowercase letter.
+
+```python
+# Solution
+def sum_length_names(names):
+    '''
+    This function receives a list of names and returns the sum of lengths of the names that starts with a capital letter.
+    '''
+    return sum([len(name) for name in names if name[0].isupper()])
+
+names = ["Mike", "james", "John", "anna", "Jane"]
+print(sum_length_names(names))
+```
+
+2. Write a function to find the length of the longest word that starts with an uppercase letter of a given list of words.
+
+```python
+# Solution
+def find_longest_word(words):
+    '''
+    This function receives a list of words and returns the length of the longest word that starts with an uppercase letter.
+    '''
+    return max([len(word) for word in words if word[0].isupper()], default=0)
+
+words = ["Python", "is", "a", "Beautiful", "Language"]
+print(find_longest_word(words))
+```
+
+3. Write a function to remove all the words that start with a lowercase letter of a given list of words.
+
+```python
+# Solution
+def remove_lowercase_words(words):
+    '''
+    This function receives a list of words and removes all the words that start with a lowercase letter.
+    '''
+    return [word for word in words if word[0].isupper()]
+
+words = ["Python", "is", "a", "Beautiful", "Language"]
+print(remove_lowercase_words(words))
+```
+
+

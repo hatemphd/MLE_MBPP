@@ -1,0 +1,38 @@
+Write a python function to find the sum of common divisors of two given numbers.
+
+Ideas:
+- Use the `divisible_by` function to find the divisors of each number.
+- Use the `intersection` set method to find the common divisors.
+- Use the `sum` function to find the sum of the common divisors.
+
+Solution:
+
+```python
+def common_divisors_sum(a, b):
+    divisors_a = set(divisible_by(a))
+    divisors_b = set(divisible_by(b))
+    return sum(divisors_a.intersection(divisors_b))
+
+print(common_divisors_sum(12, 18))
+```
+
+2. Write a python function to check if a number is a perfect square.
+
+Ideas:
+- Use the `divisible_by` function to find the divisors of the number.
+- If the number of divisors is even, then it's a perfect square.
+
+Solution:
+
+```python
+def is_perfect_square(n):
+    divisors = set(divisible_by(n))
+    return len(divisors) % 2 == 0
+
+print(is_perfect_square(16))  # This should print: True
+print(is_perfect_square(15))  # This should print: False
+```
+
+Remember, practice makes perfect. Keep experimenting and tweaking these functions to get a better understanding of how Python sets and functions work.
+
+

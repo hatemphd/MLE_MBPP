@@ -1,0 +1,25 @@
+Write a function to find the lateral surface area of cuboid with length = 5, breadth = 4, and height = 3.5 units
+
+Question 3:
+Given a composite figure made up of a rectangle and a semicircle, and the length of the rectangle is 12 units and the radius of the semicircle is 4 units, calculate the area of the composite figure.
+
+<|question_end|>Solution:
+
+Question 1:
+The area of the rectangle is length * breadth = 5 * 3 = 15 square units.
+
+Question 2:
+Surface area of a cuboid = 2lw + 2lh + 2wh
+= 2(5)(4) + 2(5)(3.5) + 2(4)(3.5)
+= 40 + 35 + 28
+= 103 square units.
+
+Question 3:
+Area of rectangle = length * breadth = 12 * 1 = 12 square units.
+Area of semicircle = (1/2) * π * radius^2 = (1/2) * π * 4^2 = 8π square units.
+Area of composite figure = Area of rectangle + Area of semicircle
+= 12 + 8π
+= 12 + 8 * π
+= 12 + 25.13
+= 37.13 square units.
+<|endofgeneration|>

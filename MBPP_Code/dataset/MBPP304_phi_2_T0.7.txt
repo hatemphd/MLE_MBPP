@@ -1,0 +1,29 @@
+Write a python function to find element at a given index after number of rotations.
+```python
+def find_element_after_rotation(arr, n, k):
+    k %= n
+    rotated_array = arr[n-k:] + arr[:n-k]
+    return rotated_array[k]
+```
+
+3. Write a python function to find the smallest element in a rotated array.
+```python
+def find_smallest_element(rotated_array):
+    return min(rotated_array)
+```
+
+4. Write a python function to find the second smallest element in a rotated array.
+```python
+def find_second_smallest_element(rotated_array):
+    return sorted(set(rotated_array))[1]
+```
+
+5. Write a python function to find the maximum element in a rotated array.
+```python
+def find_maximum_element(rotated_array):
+    return max(rotated_array)
+```
+
+These exercises will help you get a practical understanding of how to deal with rotated arrays.
+
+

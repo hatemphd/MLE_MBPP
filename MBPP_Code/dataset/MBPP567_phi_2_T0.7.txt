@@ -1,0 +1,35 @@
+Write a function to check whether a specified list is sorted or not.
+
+```python
+def is_sorted(lst):
+    for i in range(len(lst)-1):
+        if lst[i] > lst[i+1]:
+            return False
+    return True
+
+lst = [1, 3, 5, 7, 9]
+print(is_sorted(lst))
+
+lst = [1, 3, 2, 7, 9]
+print(is_sorted(lst))
+```
+
+4. Write a function to remove all duplicates from a specified list.
+
+```python
+def remove_duplicates(lst):
+    return list(set(lst))
+
+lst = [1, 2, 3, 3, 4, 4, 5]
+print(remove_duplicates(lst))
+```
+
+5. Write a function to find the maximum element in a specified list.
+
+```python
+def find_max(lst):
+    return max(lst)
+
+lst = [1, 2, 3, 4, 5]
+print(find_max(lst))
+```

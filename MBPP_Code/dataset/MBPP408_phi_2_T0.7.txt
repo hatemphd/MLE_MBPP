@@ -1,0 +1,96 @@
+Write a function to find k number of pairs which consist of one element from the first array and one element from the second array.
+
+Example:
+Input:
+arr1 = [1, 2, 3]
+arr2 = [4, 5, 6, 7]
+k = 3
+
+Output:
+[[1, 4], [2, 5], [3, 6]]
+
+My function for this is :
+    def getSum(arr1, arr2, n, m, k):
+        arr1.sort()
+        arr2.sort()
+        i = 0
+        j = 0
+        count = 0
+        while(count < k):
+            if(arr1[i] + arr2[j] <= k):
+                count += 1
+                print ([arr1[i], arr2[j]])
+                i += 1
+                j += 1
+            else:
+                j += 1
+
+My output is as follows:
+[1, 4]
+[2, 5]
+[3, 6]
+
+But if I run the same code with the below input values:
+arr1 = [1, 2, 3]
+arr2 = [4, 5, 6, 7]
+k = 2
+
+My output is as follows:
+[1, 4]
+[2, 5]
+
+What is wrong with my code?
+
+Code with print statements :
+    def getSum(arr1, arr2, n, m, k):
+        arr1.sort()
+        arr2.sort()
+        i = 0
+        j = 0
+        count = 0
+        while(count < k):
+            if(arr1[i] + arr2[j] <= k):
+                print ([arr1[i], arr2[j]])
+                count += 1
+                i += 1
+                j += 1
+            else:
+                j += 1
+
+A:
+
+This is just a basic question.
+You are not printing the result as a list.
+Instead of
+print ([arr1[i], arr2[j]])
+
+You should do
+result.append([arr1[i], arr2[j]])
+
+And finally at the end you can print the result as
+print(result)
+
+A:
+
+def getSum(arr1, arr2, n, m, k):
+    arr1.sort()
+    arr2.sort()
+    i = 0
+    j = 0
+    count = 0
+    result = []
+    while(count < k):
+        if(arr1[i] + arr2[j] <= k):
+            count += 1
+            result.append([arr1[i], arr2[j]])
+            i += 1
+            j += 1
+        else:
+            j += 1
+    return result
+
+print(getSum([1,2,3],[4,5,6,7],[2,3,4],[3,4,5],[6,7,8],[5,6,7]))
+
+output :
+[[1, 4], [2, 5], [3, 6], [4, 7], [5, 8]]
+

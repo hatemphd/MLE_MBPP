@@ -1,0 +1,37 @@
+Write a python function to check whether the given two numbers have same number of digits or not.
+    
+    Example:
+    num1 = 123
+    num2 = 456
+    print(same_digits(num1, num2))
+    Output: False
+    """
+    def count_digits(num):
+        count = 0
+        while(num != 0):
+            num = num/10
+            count += 1
+        return count
+    
+    return count_digits(num1) == count_digits(num2)
+    
+# Test the function
+num1 = 123
+num2 = 456
+print(same_digits(num1, num2))
+
+Exercise 5: Write a python function to check whether the given two strings have same length or not.
+    
+    Example:
+    str1 = 'hello'
+    str2 = 'world'
+    print(same_length(str1, str2))
+    Output: True
+    """
+    def same_length(str1, str2):
+        return len(str1) == len(str2)
+    
+    # Test the function
+    str1 = 'hello'
+    str2 = 'world'
+    print(same_length(str1, str2))

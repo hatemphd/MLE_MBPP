@@ -1,0 +1,37 @@
+Write a function to convert tuple string to integer tuple. 
+
+```python
+# Hint: Use the map() function to convert each character in the string to an integer.
+# Then use the tuple() function to convert the map object to a tuple.
+```
+
+Solution:
+
+```python
+def tuple_string_to_int(str_tuple):
+    return tuple(map(int, str_tuple))
+
+tuple_string = ("1", "2", "3", "4")
+result = tuple_string_to_int(tuple_string)
+print(result)  # (1, 2, 3, 4)
+```
+
+2. Write a function to sort a tuple of tuples by the second item in each tuple.
+
+```python
+# Hint: Use the sorted() function with a custom key function. 
+# The key function should return the second item in each tuple.
+```
+
+Solution:
+
+```python
+def sort_tuple_of_tuples(tuple_of_tuples):
+    return tuple(sorted(tuple_of_tuples, key=lambda x: x[1]))
+
+tuple_of_tuples = (("apple", 3), ("banana", 2), ("cherry", 1))
+result = sort_tuple_of_tuples(tuple_of_tuples)
+print(result)  # (('cherry', 1), ('banana', 2), ('apple', 3))
+```
+
+

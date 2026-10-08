@@ -1,0 +1,35 @@
+Write a function to remove all whitespaces from the given string using regex.
+
+Ideas:
+- Use the `re.sub()` function with the appropriate regular expression pattern to replace all whitespace characters with nothing.
+
+```python
+import re
+
+def remove_whitespace(string):
+    clean_string = re.sub(r"\s+", "", string)
+    return clean_string
+
+string_with_whitespace = "  This is a   string   with    spaces.   "
+clean_string = remove_whitespace(string_with_whitespace)
+print(clean_string)  # "Thisisastringwithspaces."
+```
+
+##### Exercise 5
+Write a function to remove all non-alphanumeric characters from the given string using regex.
+
+Ideas:
+- Use the `re.sub()` function with the appropriate regular expression pattern to replace all non-alphanumeric characters with nothing.
+
+```python
+import re
+
+def remove_non_alphanumeric(string):
+    clean_string = re.sub(r"[^a-zA-Z0-9]", "", string)
+    return clean_string
+
+string_with_non_alphanumeric = "This is a string! With some*special characters like @#$%^&*()"
+clean_string = remove_non_alphanumeric(string_with_non_alphanumeric)
+print(clean_string)  # "ThisisastringWithsomespecialcharacterslike"
+```
+

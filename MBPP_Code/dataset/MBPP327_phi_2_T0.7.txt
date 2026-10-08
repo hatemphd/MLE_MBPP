@@ -1,0 +1,80 @@
+Write a function to print check if the triangle is isosceles or not. If its not isosceles print which side is longer.
+if its isosceles print which angle is less.
+
+#include<iostream>
+using namespace std;
+
+int main(){
+    int a,b,c,d,e,f,g,h,i,j,k,l,m,n,p;
+    cin>>a>>b>>c>>d>>e>>f>>g>>h>>i>>j>>k>>l>>m>>n>>p;
+    if(a==b&&b==c && c==d &&d==e && e==f &&f==g && g==h && h==i && i==j && j==k && k==l && l==m && m==n && n==p)
+        cout<<"Equilateral\n";
+    else if(a==b||b==c||c==d||d==e||e==f||f==g||g==h||h==i||i==j||j==k||k==l||l==m||m==n||n==p)
+        cout<<"Isosceles\n";
+    else
+        cout<<"Scalene\n";
+    return 0;
+}
+
+A:
+
+You can just write a function that compares values and returns "left" or "right" for the larger value, like this:
+bool left(int a, int b) { return a > b; }
+bool right(int a, int b) { return a < b; }
+
+And then just use it like this:
+if (left(a, b) && left(b, c) && left(c, d)) {
+    cout << "equilateral" << endl;
+}
+else if (left(a, b) || left(b, c) || left(c, d)) {
+    cout << "isosceles" << endl;
+}
+else {
+    cout << "scalene" << endl;
+}
+
+A:
+
+Here's my take on this - you could probably make it more efficient with the use of a vector, but it should do the trick:
+bool check1(int a, int b, int c) {
+    return a == b && b == c;
+}
+
+bool check2(int a, int b, int c) {
+    return a == b || b == c || c == a;
+}
+
+bool check3(int a, int b, int c) {
+    return a == b || b == c || c == a;
+}
+
+bool check4(int a, int b, int c) {
+    return a == b || b == c || c == a;
+}
+
+int main() {
+    int a, b, c, d, e, f, g, h, i, j, k, l, m, n, p;
+    cin >> a >> b >> c >> d >> e >> f >> g >> h >> i >> j >> k >> l >> m >> n >> p;
+    if (check1(a, b, c))
+        cout << "Equilateral" << endl;
+    else if (check2(a, b, c))
+        cout << "Isosceles" << endl;
+    else if (check3(a, b, c))
+        cout << "Scalene" << endl;
+    else if (check4(a, b, c))
+        cout << "Scalene" << endl;
+}
+
+A:
+
+Check the values of the triangle and then print.
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int a,b,c,d,e,f,g,h,i,j,k,l,m,n,p;
+    cin>>a>>b>>c>>d>>e>>f>>g>>h>>i>>j>>k>>l>>m>>n>>p;
+    if(a==b && b==c && c==d && d==e && e==f && f==g && g==h && h==i && i==j && j==k && k==l && l==m && m==n && n==p)
+        cout<<"Equilateral"<<endl;
+    else if(a==b || b==c || c==d || d==e || e

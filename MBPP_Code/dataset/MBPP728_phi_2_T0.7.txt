@@ -1,0 +1,62 @@
+Write a function to sum elements in two lists.
+
+```python
+def sum_lists(list1, list2):
+    return [x + y for x, y in zip(list1, list2)]
+
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+
+print(sum_lists(list1, list2))  # Output: [5, 7, 9]
+```
+
+2. Write a function to calculate the dot product of two vectors.
+
+```python
+def dot_product(vector1, vector2):
+    return sum([x * y for x, y in zip(vector1, vector2)])
+
+vector1 = [1, 2, 3]
+vector2 = [4, 5, 6]
+
+print(dot_product(vector1, vector2))  # Output: 32
+```
+
+3. Write a function to calculate the covariance matrix of a dataset.
+
+```python
+import numpy as np
+
+def covariance_matrix(dataset):
+    return np.cov(dataset)
+
+dataset = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+
+print(covariance_matrix(dataset))
+```
+
+4. Write a function to calculate the eigenvalues and eigenvectors of a matrix.
+
+```python
+import numpy as np
+
+def eigen(matrix):
+    return np.linalg.eig(matrix)
+
+matrix = np.array([[1, 2], [3, 4]])
+
+print(eigen(matrix))
+```
+
+5. Write a function to calculate the correlation matrix of a dataset.
+
+```python
+import numpy as np
+
+def correlation_matrix(dataset):
+    return np.corrcoef(dataset)
+
+dataset = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+
+print(correlation_matrix(dataset))
+```

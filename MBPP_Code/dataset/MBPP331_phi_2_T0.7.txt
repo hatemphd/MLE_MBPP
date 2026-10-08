@@ -1,0 +1,71 @@
+Write a python function to count unset bits of a given number.
+
+Hint: Bitwise operators can be used to count the number of set bits in a number.
+
+Solution:
+
+```python
+def count_unset_bits(num):
+    count = 0
+    while num:
+        num = num & (num - 1)
+        count += 1
+    return count
+
+print(count_unset_bits(10))  # Output: 2
+```
+
+In the above function, the bitwise AND operation is used to count the number of set bits in the number.
+
+## Exercise 11.3:
+
+Write a python function to perform the following bitwise operations: AND, OR, XOR, NOT, Left Shift, and Right Shift on given numbers.
+
+Solution:
+
+```python
+def perform_operations(num1, num2):
+    print(f"AND: {num1 & num2}")
+    print(f"OR: {num1 | num2}")
+    print(f"XOR: {num1 ^ num2}")
+    print(f"NOT: {~num1}")
+    print(f"Left Shift: {num1 << 2}")
+    print(f"Right Shift: {num1 >> 2}")
+
+perform_operations(10, 4)  
+# Output: AND: 0
+# Output: OR: 14
+# Output: XOR: 14
+# Output: NOT: -11
+# Output: Left Shift: 40
+# Output: Right Shift: 2
+```
+
+In the above function, the bitwise operations are performed on the given numbers.
+
+## Exercise 11.4:
+
+Write a python function to perform bitwise operations on a list of numbers.
+
+Solution:
+
+```python
+def perform_operations_on_list(nums):
+    num1 = nums[0]
+    for num2 in nums[1:]:
+        print(f"AND: {num1 & num2}")
+        print(f"OR: {num1 | num2}")
+        print(f"XOR: {num1 ^ num2}")
+        print(f"NOT: {~num1}")
+        print(f"Left Shift: {num1 << 2}")
+        print(f"Right Shift: {num1 >> 2}")
+        num1 = num2
+
+perform_operations_on_list([10, 4, 2])
+```
+
+In the above function, the bitwise operations are performed on all numbers in the list.
+
+This marks the end of this chapter on using bitwise operators in Python. The exercises provided were designed to strengthen your understanding of the concepts discussed. Happy coding!
+
+

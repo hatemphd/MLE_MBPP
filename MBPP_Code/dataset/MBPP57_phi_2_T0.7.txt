@@ -1,0 +1,59 @@
+Write a python function to find the largest number that can be formed with the given digits.
+
+```python
+# Solution
+def find_largest_number(digits):
+    digits.sort(reverse=True)
+    return int(''.join(map(str, digits)))
+
+print(find_largest_number([1, 2, 3, 4, 5]))  # Output: 54321
+```
+
+2. Write a python function to convert a number to a string.
+
+```python
+# Solution
+def convert_to_string(n):
+    return str(n)
+
+print(convert_to_string(123))  # Output: '123'
+```
+
+3. Write a python function to find the sum of all digits in a number.
+
+```python
+# Solution
+def sum_of_digits(n):
+    return sum(int(digit) for digit in str(n))
+
+print(sum_of_digits(123))  # Output: 6
+```
+
+4. Write a python function to check if a number is a palindrome.
+
+```python
+# Solution
+def is_palindrome(n):
+    return str(n) == str(n)[::-1]
+
+print(is_palindrome(121))  # Output: True
+```
+
+5. Write a python function to find the number of trailing zeros in a factorial.
+
+```python
+# Solution
+def count_trailing_zeros(n):
+    count = 0
+    i = 5
+    while n // i >= 1:
+        count += n // i
+        i *= 5
+    return count
+
+print(count_trailing_zeros(10))  # Output: 2
+```
+
+The exercises provided above will help reinforce your understanding of the concepts discussed in this chapter and will provide a solid foundation for more complex problems involving permutations and factorials.
+
+

@@ -1,0 +1,120 @@
+Write a function to count the longest repeating subsequences such that the two subsequences don’t have same string characters at same positions.
+
+Example 1:
+
+Input:
+s = "abcdefg"
+
+Output:
+3
+
+Explanation:
+The longest repeating subsequences are "cdefg", "defg", "efg" (all of them are 3 characters long).
+
+Example 2:
+
+Input:
+s = "abcabcabc"
+
+Output:
+3
+
+Explanation:
+The longest repeating subsequences are "abcabc", "abcabc", "abcabc" (all of them are 3 characters long).
+
+Example 3:
+
+Input:
+s = "abcabcab"
+
+Output:
+2
+
+Explanation:
+The longest repeating subsequences are "abcabc", "abcab" (both of them are 3 characters long).
+
+Example 4:
+
+Input:
+s = "abc"
+
+Output:
+1
+
+Explanation:
+The longest repeating subsequences are "abc" (it is 1 character long).
+
+Example 5:
+
+Input:
+s = "abcabcabcabcabc"
+
+Output:
+1
+
+Explanation:
+The longest repeating subsequences are "abcabcabcabcabc" (it is 1 character long).
+
+Example 6:
+
+Input:
+s = "abcabcabcabcab"
+
+Output:
+2
+
+Explanation:
+The longest repeating subsequences are "abcabcabcabcabc", "abcabcabcabcab" (both of them are 12 characters long).
+
+Example 7:
+
+Input:
+s = "abcabcabcabcabca"
+
+Output:
+2
+
+Explanation:
+The longest repeating subsequences are "abcabcabcabcabc", "abcabcabcabcab" (both of them are 12 characters long).
+
+Constraints:
+
+1 <= s.length <= 10^5
+
+s[i] is an English lowercase letter.
+"""
+# """
+# This is the interface that allows for creating nested lists.
+# You should not implement it, or speculate about its implementation
+# """
+#class NestedInteger:
+#    def isInteger(self) -> bool:
+#        """
+#        @return True if this NestedInteger holds a single integer, rather than a nested list.
+#        """
+#
+#    def getInteger(self) -> int:
+#        """
+#        @return the single integer that this NestedInteger holds, if it holds a single integer
+#        Return None if this NestedInteger holds a nested list
+#        """
+#
+#    def getList(self) -> [NestedInteger]:
+#        """
+#        @return the nested list that this NestedInteger holds, if it holds a nested list
+#        Return None if this NestedInteger holds a single integer
+#        """
+
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        if s is None or len(s) == 0:
+            return 0
+        # # 思路：
+        # # 将s为字符串，先切分为字符串串，每个字符串分为子串，再求最长子串
+        # # 把每个字符串分成子串，用经典的扫描算法求最长子串
+
+        # # 思路：
+        # # 将s为字符串，切分为字符串串，每个字符串分为子串，统计子串的出现，最多出现的子串为最长子串
+        # # 把每个字符串分成子串，用哈希表求出子串出现的次数，最大的次数为最长子串
+
+        

@@ -1,0 +1,43 @@
+Write a function to check whether a given string has a capital letter, a lower case letter, a number and specified length using lambda function.
+
+Idea: Use the lambda function to check for each condition.
+
+Solution:
+
+```python
+def check_string(s, cap, low, num, length):
+    return any([len(s)==length, any([c.isupper() for c in s]), any([c.islower() for c in s]), any([c.isdigit() for c in s]), cap in s, low in s])
+```
+
+4. Write a lambda function to sort a list of tuples based on the second item.
+
+Idea: Use the lambda function as the key parameter in the sorted function.
+
+Solution:
+
+```python
+# list of tuples
+tuples = [('apple', 10), ('orange', 5), ('banana', 15), ('grape', 20)]
+
+# sorting based on the second item
+sorted_tuples = sorted(tuples, key=lambda x: x[1])
+
+# print sorted list
+print(sorted_tuples)  # Output: [('orange', 5), ('apple', 10), ('banana', 15), ('grape', 20)]
+```
+
+5. Write a lambda function that returns the absolute value of a number.
+
+Idea: Use the abs() function in the lambda function.
+
+Solution:
+
+```python
+# lambda function for absolute value
+abs_val = lambda x: abs(x)
+
+# print absolute value of -5
+print(abs_val(-5))  # Output: 5
+```
+
+

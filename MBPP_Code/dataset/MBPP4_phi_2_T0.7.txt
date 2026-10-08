@@ -1,0 +1,22 @@
+Write a function to find the largest integers from a given list of numbers using heap queue algorithm.
+
+#### Idea
+We can use the heapq module in python which provides an implementation of the heap queue algorithm.
+
+#### Solution
+```python
+import heapq
+
+def find_largest_numbers(numbers, n):
+    heap = numbers[:n]
+    heapq.heapify(heap)
+    for num in numbers[n:]:
+        if num > heap[0]:
+            heapq.heappop(heap)
+            heapq.heappush(heap, num)
+    return heap
+
+print(find_largest_numbers([1, 2, 3, 4, 5, 6, 7, 8, 9], 3))  # Output: [9, 8, 7]
+```
+
+

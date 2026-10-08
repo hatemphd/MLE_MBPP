@@ -1,0 +1,42 @@
+Write a function that gives profit amount if the given amount has profit else return none.
+
+```python
+def profit_amount(amount, price):
+    try:
+        profit = amount - price
+        return profit
+    except TypeError:
+        return None
+
+print(profit_amount(100, 80))
+print(profit_amount('100', 80))
+```
+
+#### Exercise 4: 
+Write a function that accepts a list of numbers and returns the sum of the numbers. If the list is empty, the function should return None.
+
+```python
+def sum_of_numbers(numbers):
+    try:
+        return sum(numbers)
+    except TypeError:
+        return None
+
+print(sum_of_numbers([1, 2, 3, 4, 5]))
+print(sum_of_numbers([]))
+```
+
+#### Exercise 5: 
+Write a function that takes a dictionary and prints the value of a key. If the key is not found, the function should return None.
+
+```python
+def get_value(dictionary, key):
+    try:
+        return dictionary[key]
+    except KeyError:
+        return None
+
+print(get_value({'a': 1, 'b': 2, 'c': 3}, 'a'))
+print(get_value({'a': 1, 'b': 2, 'c': 3}, 'd'))
+```
+

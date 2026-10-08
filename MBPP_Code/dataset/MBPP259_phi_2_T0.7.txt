@@ -1,0 +1,16 @@
+Write a function to maximize the given two tuples.
+
+# Sample solution
+def max_tuples(tuple1, tuple2):
+  max_list = []
+  for i in range(len(tuple1)):
+    if tuple1[i] > tuple2[i]:
+      max_list.append(tuple1[i])
+    else:
+      max_list.append(tuple2[i])
+  return tuple(max_list)
+
+print(max_tuples((1, 5, 3), (2, 4, 1)))
+```
+
+

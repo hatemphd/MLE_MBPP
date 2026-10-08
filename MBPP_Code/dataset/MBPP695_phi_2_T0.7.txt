@@ -1,0 +1,38 @@
+Write a function to check if each element of the second tuple is greater than its corresponding index in the first tuple.
+
+```python
+# Solution
+def is_tuple_valid(t1, t2):
+    for i in range(len(t1)):
+        if t1[i] <= i or t2[i] <= i:
+            return False
+    return True
+
+print(is_tuple_valid((1, 2, 3), (3, 2, 1)))  # Returns: True
+print(is_tuple_valid((1, 2, 3), (4, 2, 1)))  # Returns: False
+```
+
+2. Write a code to create a program that will calculate the factorial of a number using a tuple.
+
+```python
+# Solution
+def factorial(n):
+    factorial = 1
+    for i in range(1, n + 1):
+        factorial *= i
+    return factorial
+
+print(factorial(5))  # Returns: 120
+```
+
+3. Write a function that takes a tuple of numbers and returns a tuple where each number is squared.
+
+```python
+# Solution
+def square_numbers(numbers):
+    return tuple(i ** 2 for i in numbers)
+
+print(square_numbers((1, 2, 3, 4)))  # Returns: (1, 4, 9, 16)
+```
+
+

@@ -1,0 +1,10 @@
+Write a function to find the n-th power of individual elements in a list using lambda function.
+
+```python
+n = 3
+lst = [1, 2, 3, 4, 5]
+# Using map with lambda function to find n-th power of elements in list
+nth_power = list(map(lambda x: x**n, lst))
+print(nth_power)
+```
+

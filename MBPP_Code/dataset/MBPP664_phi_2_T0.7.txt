@@ -1,0 +1,10 @@
+Write a python function to find the average of even numbers till a given even number.  Input 1: 2 Input 2: 5 Output: def average_even_numbers(even_numbers):
+    total = sum(even_numbers)
+    count = len(even_numbers)
+    if count == 0:
+        return 0
+    else:
+        return total / count
+
+even_numbers = [2, 5]
+print(average_even_numbers(even_numbers))

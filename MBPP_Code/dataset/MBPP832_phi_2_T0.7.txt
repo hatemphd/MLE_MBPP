@@ -1,0 +1,46 @@
+Write a function to extract the maximum numeric value from a string by using regex.
+
+```
+import re
+
+def extract_max_number(string):
+    pattern = r'\d+'
+    matches = re.findall(pattern, string)
+    max_number = max(map(int, matches))
+    return max_number
+
+# Test the function
+print(extract_max_number("The maximum value is 42 and the minimum value is -3."))
+```
+
+Exercise 4:
+Write a function to extract all the words that start with a capital letter from a string by using regex.
+
+```
+import re
+
+def extract_capital_words(string):
+    pattern = r'\b[A-Z]\w+\b'
+    matches = re.findall(pattern, string)
+    return matches
+
+# Test the function
+print(extract_capital_words("The quick Brown fox Jumps over the Lazy Dog."))
+```
+
+Exercise 5:
+Write a function to extract the first and last name from a full name by using regex.
+
+```
+import re
+
+def extract_first_last_name(name):
+    pattern = r'([A-Z][a-z]*)\s([A-Z][a-z]*)\s([A-Z][a-z]*)'
+    matches = re.match(pattern, name)
+    first_name = matches.group(1)
+    last_name = matches.group(3)
+    return (first_name, last_name)
+
+# Test the function
+print(extract_first_last_name("John Doe"))
+```

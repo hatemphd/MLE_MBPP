@@ -1,0 +1,36 @@
+Write a python function to find the maximum element in a sorted and rotated array.
+
+_Solution:_
+```python
+def find_max(rotated_array):
+    n = len(rotated_array)
+    left = 0
+    right = n - 1
+    while left < right:
+        mid = (left + right) // 2
+        if rotated_array[mid] > rotated_array[right]:
+            left = mid + 1
+        else:
+            right = mid
+    return rotated_array[left]
+
+numbers = [3,4,5,1,2]
+print(find_max(numbers))  # Output: 5
+```
+
+## Exercise 2: 
+
+Create a sorted array from a given randomized array.
+
+_Solution:_
+```python
+def sorted_array(random_numbers):
+    return sorted(random_numbers)
+
+numbers = [3,5,2,4,1]
+print(sorted_array(numbers)) # Output: [1, 2, 3, 4, 5]
+```
+
+In conclusion, this chapter has provided an in-depth understanding of binary search in a sorted and rotated array. Understanding the underlying principles of array manipulation, sorting, and binary search is critical for solving complex problems in Python.
+
+

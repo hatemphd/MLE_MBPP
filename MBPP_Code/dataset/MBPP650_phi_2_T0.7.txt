@@ -1,0 +1,80 @@
+Write a python function to check whether the given two arrays are equal or not.
+
+```python
+def check_equal_arrays(array1, array2):
+    if (array1.size == array2.size) & (array1 == array2):
+        return True
+    else:
+        return False 
+
+array1 = np.array([1, 2, 3])
+array2 = np.array([1, 2, 3])
+
+print(check_equal_arrays(array1, array2))
+# Output: True
+```
+
+**Exercise 2:** Write a python function to check whether the given two arrays are equal or not.
+
+```python
+def check_equal_arrays(array1, array2):
+    if (array1.size == array2.size) & (array1 == array2):
+        return True
+    else:
+        return False 
+
+array1 = np.array([1, 2, 3])
+array2 = np.array([1, 2, 4])
+
+print(check_equal_arrays(array1, array2))
+# Output: False
+```
+
+**Exercise 3:** Write a python function to check whether the given two arrays are equal or not.
+
+```python
+def check_equal_arrays(array1, array2):
+    if (array1.size == array2.size) & (array1 == array2):
+        return True
+    else:
+        return False 
+
+array1 = np.array([1, 2, 3])
+array2 = np.array([1, 2])
+
+print(check_equal_arrays(array1, array2))
+# Output: False
+```
+
+**Exercise 4:** Write a python function to check whether the given two arrays are equal or not.
+
+```python
+def check_equal_arrays(array1, array2):
+    if (array1.size == array2.size) & (array1 == array2):
+        return True
+    else:
+        return False 
+
+array1 = np.array([1, 2, 3])
+array2 = np.array([1, 2, 3, 4])
+
+print(check_equal_arrays(array1, array2))
+# Output: False
+```
+
+**Exercise 5:** Write a python function to check whether the given two arrays are equal or not.
+
+```python
+def check_equal_arrays(array1, array2):
+    if (array1.size == array2.size) & (array1 == array2):
+        return True
+    else:
+        return False 
+
+array1 = np.array([1, 2, 3])
+array2 = np.array([])
+
+print(check_equal_arrays(array1, array2))
+# Output: False
+```
+

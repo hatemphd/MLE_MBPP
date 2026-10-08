@@ -1,0 +1,84 @@
+Write a function to search a literals string in a string and also find the location within the original string where the pattern occurs.
+
+```python
+# Idea: Similar to the previous exercise, but this time we are searching for literals instead of keywords.
+```
+
+```python
+def find_literal(literals_string, literal):
+    start_index = 0
+    while True:
+        start_index = literals_string.find(literal, start_index)
+        if start_index == -1:
+            return -1, -1
+        end_index = start_index + len(literal)
+        yield start_index, end_index
+        start_index += 1
+```
+
+2. Modify the `find_keyword` function to return an error message if the keyword is not found.
+
+```python
+# Idea: We can add an if statement inside the while loop to check if the keyword is found or not.
+```
+
+```python
+def find_keyword(keywords_string, keyword):
+    start_index = 0
+    while True:
+        start_index = keywords_string.find(keyword, start_index)
+        if start_index == -1:
+            return -1, -1
+        end_index = start_index + len(keyword)
+        yield start_index, end_index
+        start_index += 1
+    return 0, 0
+```
+
+3. Write a function `find_literals` to find the locations of all literals in a string.
+
+```python
+# Idea: Similar to the previous exercises, but this time we are searching for literals instead of keywords.
+```
+
+```python
+def find_literals(literals_string, literals):
+    start_index = 0
+    while True:
+        start_index = literals_string.find(literals, start_index)
+        if start_index == -1:
+            return -1
+        end_index = start_index + len(literals)
+        yield start_index, end_index
+        start_index += 1
+```
+
+4. Write a function `find_all` that takes in a string and a list of patterns and returns a list of locations where each pattern is found.
+
+```python
+# Idea: We can use a for loop to iterate over the patterns and use the `find` function to get the locations.
+```
+
+```python
+def find_all(input_string, patterns):
+    locations = []
+    for pattern in patterns:
+        locations += list(find_keyword(input_string, pattern))
+    return locations
+```
+
+5. Modify the `find_all` function to return a dictionary where the keys are the patterns and the values are lists of locations where the pattern is found.
+
+```python
+# Idea: We can use a dictionary to store the locations for each pattern.
+```
+
+```python
+def find_all(input_string, patterns):
+    locations = {}
+    for pattern in patterns:
+        locations[pattern] = list(find_keyword(input_string, pattern))
+    return locations
+```
+
+

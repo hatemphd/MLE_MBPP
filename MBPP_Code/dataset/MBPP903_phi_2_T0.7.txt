@@ -1,0 +1,22 @@
+Write a python function to count the total unset bits from 1 to n.
+
+Hint: Utilize the bitwise AND operation to count the number of unset bits.
+
+```python
+def count_unset_bits(n):
+    count = 0
+    i = 1
+    while i <= n:
+        if i & n:
+            count += 1
+        i = i << 1  # right shift i by 1
+    return count
+
+print(count_unset_bits(7))  # Output: 3
+```
+
+In the solution above, the function `count_unset_bits` counts the number of unset bits in an integer `n` by shifting `i` to the right until it's greater than `n`, and then it counts the number of times the bitwise AND operation results in 1.
+
+In conclusion, the bitwise shift and AND operations are essential tools for efficiently manipulating binary numbers in Python. By understanding these fundamental operations, you can improve your problem-solving skills in areas like data compression, encryption, and optimization.
+
+

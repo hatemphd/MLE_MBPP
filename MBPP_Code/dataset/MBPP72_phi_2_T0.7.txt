@@ -1,0 +1,35 @@
+Write a python function to check whether the given number can be represented as difference of two squares or not.
+
+Hint: Use the property that a^2 - b^2 = (a+b)(a-b)
+
+```python
+def check_difference_of_squares(num):
+    for a in range(num):
+        b = num - a*a
+        if b >= 0 and (b == int(b) or (b/2).is_integer()):
+            return True
+    return False
+
+num = 13
+print(check_difference_of_squares(num)) #Prints True
+```
+
+2. Write a python function to find the longest increasing subsequence in the given sequence.
+
+Hint: Use Dynamic Programming for this problem.
+
+```python
+def longest_increasing_subsequence(arr):
+    n = len(arr)
+    lis = [1]*n
+    for i in range(1, n):
+        for j in range(i):
+            if arr[i] > arr[j]:
+                lis[i] = max(lis[i], lis[j]+1)
+    return max(lis)
+
+arr = [10, 22, 9, 33, 21, 50, 41, 60]
+print(longest_increasing_subsequence(arr)) #Prints 5
+```
+
+

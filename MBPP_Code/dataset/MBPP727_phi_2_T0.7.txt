@@ -1,0 +1,22 @@
+Write a function to remove all characters except letters and numbers using regex.
+
+**Idea:** Use the `re` module to specify a regular expression that only matches letters and numbers.
+
+```python
+import re
+
+def remove_special(s):
+    return re.sub(r'[^a-zA-Z0-9\s]', '', s)
+```
+
+5. Write a function to convert a string to title case using regex.
+
+**Idea:** Use the `re` module to specify a regular expression that matches a word character followed by zero or more non-word characters.
+
+```python
+import re
+
+def to_title_case(s):
+    return re.sub(r'\b\w+\b', lambda m: m.group().title(), s)
+```
+

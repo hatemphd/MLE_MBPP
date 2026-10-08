@@ -1,0 +1,8 @@
+Write a function that gives loss amount if the given amount has loss else return none.
+        :param amount: Amount with loss or not
+        :return: None if amount doesn't have loss, else loss amount
+        """
+        if not amount.has_loss:
+            return None
+        return amount.loss
+

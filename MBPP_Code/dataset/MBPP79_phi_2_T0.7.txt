@@ -1,0 +1,60 @@
+Write a python function to check whether the length of the word is odd or not. If the length is even, print "Even length". If the word length is odd, print "Odd length".
+
+```python
+def is_odd_length(word):
+    if len(word)%2 == 0:
+        print("Even length")
+    else:
+        print("Odd length")
+
+is_odd_length("apple")
+# Output: Odd length
+```
+
+3. Write a python function to check whether a given year is a leap year or not.
+
+```python
+def is_leap_year(year):
+    if year%4 == 0:
+        if year%100 == 0:
+            if year%400 == 0:
+                print("Leap year")
+            else:
+                print("Not a leap year")
+        else:
+            print("Leap year")
+    else:
+        print("Not a leap year")
+
+is_leap_year(2019)
+# Output: Not a leap year
+```
+
+4. Write a python function to check whether a given number is divisible by 3 or not. If it is divisible by 3, print "Divisible by 3". If it is not divisible by 3, print "Not divisible by 3".
+
+```python
+def is_divisible_by_3(num):
+    if num%3 == 0:
+        print("Divisible by 3")
+    else:
+        print("Not divisible by 3")
+
+is_divisible_by_3(9)
+# Output: Divisible by 3
+```
+
+5. Write a python function to check whether a given string is in uppercase or not. If it is in uppercase, print "Uppercase". If it is in lowercase, print "Lowercase". If the string is neither in uppercase nor in lowercase, print "Mixed case".
+
+```python
+def check_case(string):
+    if string.isupper():
+        print("Uppercase")
+    elif string.islower():
+        print("Lowercase")
+    else:
+        print("Mixed case")
+
+check_case("hello")
+# Output: Lowercase
+```
+

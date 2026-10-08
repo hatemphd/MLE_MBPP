@@ -1,0 +1,128 @@
+Write a function to divide a number into two parts such that the sum of digits is maximum.
+
+Example:
+
+Input: 5
+Output: [3,2]
+Explanation:
+3+2=5
+
+Input: 99
+Output: [49,50]
+Explanation:
+49+50=99
+
+# Python program to find the maximum sum of digits in a number
+
+def max_sum_digits(n):
+   
+   # Initialize max_sum with -1
+   max_sum = -1
+   
+   while n > 0:
+      
+      # Extract the last digit
+      digit = n % 10
+      
+      # Update max_sum
+      max_sum = max(max_sum, digit + max_sum_digits(n//10))
+      
+      # Remove the last digit
+      n = n // 10
+      
+   return max_sum
+
+n = 5
+print(f"The maximum sum of digits in {n} is {max_sum_digits(n)}")
+
+n = 99
+print(f"The maximum sum of digits in {n} is {max_sum_digits(n)}")
+
+# Expected output:
+# The maximum sum of digits in 5 is 5
+# The maximum sum of digits in 99 is 99
+```
+
+Exercise 3:
+
+Write a Python program to find the greatest common divisor (gcd) of two numbers using Euclid's algorithm.
+
+Example:
+
+Input: 24, 36
+Output: 12
+
+Exercise 4:
+
+Write a Python program to find the least common multiple (lcm) of two numbers using the gcd function from Exercise 3.
+
+Example:
+
+Input: 24, 36
+Output: 72
+
+# Python program to find the gcd and lcm of two numbers
+
+def gcd(a, b):
+   
+   while b != 0:
+      a, b = b, a % b
+      
+   return a
+
+def lcm(a, b):
+   
+   return abs(a*b) // gcd(a, b)
+
+a = 24
+b = 36
+print(f"The gcd of {a} and {b} is {gcd(a, b)}")
+print(f"The lcm of {a} and {b} is {lcm(a, b)}")
+
+# Expected output:
+# The gcd of 24 and 36 is 12
+# The lcm of 24 and 36 is 72
+```
+
+Exercise 5:
+
+Write a Python program to factorize a number using the Euclid's algorithm and list comprehension.
+
+Example:
+
+Input: 60
+Output: [2, 3, 5]
+
+Exercise 6:
+
+Write a Python program to find all the divisors of a number using the Euclid's algorithm and list comprehension.
+
+Example:
+
+Input: 12
+Output: [1, 2, 3, 4, 6, 12]
+
+# Python program to find the divisors of a number using Euclid's algorithm
+
+def divisors(n):
+   
+   divisors_list = [1]
+   
+   for i in range(2, int(n**0.5)+1):
+      
+      while n % i == 0:
+         
+         divisors_list.append(i)
+         n = n // i
+         
+   if n > 1:
+      divisors_list.append(n)
+      
+   return sorted(divisors_list)
+
+n = 12
+print(f"The divisors of {n} are {divisors(n)}")
+
+# Expected output:
+# The divisors of 12 are [1, 2, 3, 4, 6, 12]
+```

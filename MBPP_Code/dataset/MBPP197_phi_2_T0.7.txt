@@ -1,0 +1,16 @@
+Write a function to perform the exponentiation of the given two tuples.
+
+*Ideas:*
+* Use the operator.pow function.
+
+```python
+# Solution
+import operator
+
+def exponentiate_tuples(t1, t2):
+    return tuple(map(operator.pow, t1, t2))
+
+print(exponentiate_tuples(t1, t2))  # (4, 9, 16)
+```
+
+

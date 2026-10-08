@@ -1,0 +1,52 @@
+Write a function to find the inversions of tuple elements in the given tuple list.
+
+Hint: For each pair of elements, if the first element is greater than the second, they are inversion of each other.
+
+```python
+def inversions(tuple_list):
+    inversions = 0
+    for i in range(len(tuple_list)):
+        for j in range(i+1, len(tuple_list)):
+            if tuple_list[i] > tuple_list[j]:
+                inversions += 1
+    return inversions
+
+tuple_list = [(1, 2, 3), (4, 5, 6), (7, 8, 9)]
+print(inversions(tuple_list))  # Output: 0
+```
+
+2. Write a function to find the maximum product of any two elements in a tuple.
+
+Hint: Use a nested loop to compare each pair of elements.
+
+```python
+def max_product(tuple):
+    max_product = 0
+    for i in range(len(tuple)):
+        for j in range(i+1, len(tuple)):
+            max_product = max(max_product, tuple[i] * tuple[j])
+    return max_product
+
+tuple = (1, 2, 3, 4, 5)
+print(max_product(tuple))  # Output: 20
+```
+
+3. Write a function to find the index of the maximum element in a tuple using only one loop.
+
+Hint: Initialize a variable with the first element of the tuple, then loop over the tuple to compare each element with the current maximum and update the variable if a larger element is found.
+
+```python
+def max_index(tuple):
+    max_index = 0
+    max_value = tuple[0]
+    for i in range(1, len(tuple)):
+        if tuple[i] > max_value:
+            max_value = tuple[i]
+            max_index = i
+    return max_index
+
+tuple = (1, 2, 3, 4, 5)
+print(max_index(tuple))  # Output: 4
+```
+
+

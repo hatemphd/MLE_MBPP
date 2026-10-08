@@ -1,0 +1,63 @@
+Write a python function to find common divisor between two numbers in a given pair.
+
+_hint_: You can use a loop to iterate over the possible divisors.
+
+```python
+def find_common_divisor(num1, num2):
+    for i in range(1, min(num1, num2)+1):
+        if num1 % i == 0 and num2 % i == 0:
+            return i
+    return 1
+
+print(find_common_divisor(60, 48))  # Output: 12
+```
+
+## Exercise 2:
+
+Create a function that receives a list of pairs and returns a list with the common divisor of each pair.
+
+_hint_: You can use a list comprehension.
+
+```python
+def find_common_divisors(list_of_pairs):
+    return [find_common_divisor(pair[0], pair[1]) for pair in list_of_pairs]
+
+print(find_common_divisors([(60, 48), (100, 125), (40, 60)]))  # Output: [12, 25, 20]
+```
+
+## Exercise 3:
+
+Create a function that receives a list of pairs and returns a dictionary where the keys are the pairs and the values are the common divisors.
+
+```python
+def pairs_to_dict(list_of_pairs):
+    return {pair: find_common_divisor(pair[0], pair[1]) for pair in list_of_pairs}
+
+print(pairs_to_dict([(60, 48), (100, 125), (40, 60)]))  # Output: {(60, 48): 12, (100, 125): 25, (40, 60): 20}
+```
+
+## Exercise 4:
+
+Create a Python function to find the pair with the largest common divisor.
+
+_hint_: You can use the built-in Python function `max()`.
+
+```python
+def find_max_common_divisor(list_of_pairs):
+    return max(list_of_pairs, key=lambda pair: find_common_divisor(pair[0], pair[1]))
+
+print(find_max_common_divisor([(60, 48), (100, 125), (40, 60)]))  # Output: (100, 125)
+```
+
+## Exercise 5:
+
+Create a Python function to find the pair with the smallest common divisor.
+
+```python
+def find_min_common_divisor(list_of_pairs):
+    return min(list_of_pairs, key=lambda pair: find_common_divisor(pair[0], pair[1]))
+
+print(find_min_common_divisor([(60, 48), (100, 125), (40, 60)]))  # Output: (60, 48)
+```
+
+

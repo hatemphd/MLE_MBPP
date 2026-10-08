@@ -1,0 +1,26 @@
+Write a function to count bidirectional tuple pairs.
+```python
+from itertools import combinations
+def count_pairs(string, n):
+    return len([pair for pair in combinations(string, 2) if pair[::-1] in string])
+
+print(count_pairs("abcabcabc", 2)) # Output: 3
+```
+
+This chapter concludes with a set of challenging exercises to test your understanding of bi-directional tuple pairs in strings.
+
+### Exercise 1:
+Write a function to find the number of bi-directional tuple pairs of length `n` in a string where the tuple elements are not distinct.
+
+### Exercise 2:
+Write a function to find the number of bi-directional tuple pairs of length `n` in a string where the tuple elements are distinct.
+
+### Exercise 3:
+Write a function to count the number of bi-directional tuple pairs in a string where the tuple elements are not distinct and the string contains the same tuple more than once.
+
+### Exercise 4:
+Write a function to count the number of bi-directional tuple pairs in a string where the tuple elements are distinct and the string contains the same tuple more than once.
+
+Each of these exercises is designed to test your understanding of the concepts and techniques discussed in this chapter. Happy Coding!
+
+

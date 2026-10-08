@@ -1,0 +1,52 @@
+Write a python function to toggle all even bits of a given number.
+
+```python
+def toggle_even_bits(num):
+    return int(''.join(['1' if bit == '0' else '0' for bit in bin(num)[2:]]), 2)
+```
+
+The function `toggle_even_bits` converts the given number to a binary string, and then uses list comprehension to toggle all even bits to 0s and all odd bits to 1s.
+
+## Exercise 2
+Write a python function to swap two even bits in a given number.
+
+```python
+def swap_even_bits(num):
+    mask = 0xAAAAAAAA
+    return ((num & mask) >> 1) | ((num & mask) << 1)
+```
+
+The function `swap_even_bits` uses bitwise AND and shift operators to swap two even bits in the given number.
+
+## Exercise 3
+Write a python function to XOR two even bits in a given number.
+
+```python
+def xor_even_bits(num1, num2):
+    mask = 0xAAAAAAAA
+    return ((num1 & mask) ^ (num2 & mask)) >> 1
+```
+
+The function `xor_even_bits` uses bitwise XOR and shift operators to XOR two even bits in the given numbers.
+
+## Exercise 4
+Write a python function to swap and toggle two even bits in a given number.
+
+```python
+def swap_toggle_even_bits(num):
+    mask = 0xAAAAAAAA
+    return ((num & mask) >> 1) | (~(num & mask) << 1)
+```
+
+The function `swap_toggle_even_bits` uses bitwise AND, shift operators, and bitwise NOT to swap and toggle two even bits in the given number.
+
+## Exercise 5
+Write a python function to swap two odd bits in a given number.
+
+```python
+def swap_odd_bits(num):
+    mask = 0x55555555
+    return ((num & mask) >> 1) | ((num & mask) << 1)
+```
+
+The function `swap_odd_bits` uses bitwise AND and shift operators to swap two odd bits in the given number.

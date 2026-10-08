@@ -1,0 +1,61 @@
+Write a function to swap two numbers.
+
+Solution:
+
+```python
+def swap_numbers(a, b):
+    a, b = b, a
+    return a, b
+
+print(swap_numbers(5, 10))  # Output: (10, 5)
+```
+
+2. Write a function that takes a string as an argument and returns a new string with the first and last characters swapped.
+
+Solution:
+
+```python
+def swap_first_last(s):
+    if len(s) <= 1:
+        return s
+    else:
+        return s[-1] + s[1:-1] + s[0]
+
+print(swap_first_last("hello"))  # Output: 'oellh'
+```
+
+3. Write a function that takes a list of numbers as an argument and returns a new list with the same numbers in reverse order.
+
+Solution:
+
+```python
+def reverse_numbers(numbers):
+    return numbers[::-1]
+
+print(reverse_numbers([1, 2, 3, 4, 5]))  # Output: [5, 4, 3, 2, 1]
+```
+
+4. Write a function that takes a string as an argument and returns a new string with all vowels replaced by the letter 'x'.
+
+Solution:
+
+```python
+def replace_vowels(s):
+    vowels = 'aeiouAEIOU'
+    for vowel in vowels:
+        s = s.replace(vowel, 'x')
+    return s
+
+print(replace_vowels("hello world"))  # Output: 'hxllx wxrld'
+```
+
+5. Write a function that takes a list of numbers as an argument and returns a new list with only the even numbers.
+
+Solution:
+
+```python
+def select_evens(numbers):
+    return [num for num in numbers if num % 2 == 0]
+
+print(select_evens([1, 2, 3, 4, 5, 6]))  # Output: [2, 4, 6]
+```

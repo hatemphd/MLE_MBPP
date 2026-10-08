@@ -1,0 +1,72 @@
+Write a python function to count the number of rotations required to generate a sorted array.
+
+###### Idea:
+Use the binary search approach.
+
+###### Solution:
+
+```python
+def count_rotations(arr):
+    low = 0
+    high = len(arr) - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] < arr[high]:
+            high = mid - 1
+        elif arr[mid] > arr[high]:
+            low = mid + 1
+        else:
+            break
+
+    return high + 1
+```
+
+### Exercise 2:
+Write a python function to check if an array is sorted after a rotation.
+
+###### Idea:
+Compare the first element with the last element.
+
+###### Solution:
+
+```python
+def is_sorted_after_rotation(arr):
+    if len(arr) == 0:
+        return False
+
+    min_val = arr[0]
+    max_val = arr[-1]
+
+    if arr[0] <= arr[-1]:
+        return max_val >= min_val
+
+    return True
+```
+
+### Exercise 3:
+Given an array of integers, write a python function to return the rotation point (index).
+
+###### Idea:
+Use the binary search approach.
+
+###### Solution:
+
+```python
+def find_rotation_point(arr):
+    low = 0
+    high = len(arr) - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] > arr[mid + 1]:
+            return mid
+        elif arr[mid] < arr[high]:
+            high = mid - 1
+        else:
+            low = mid + 1
+
+    return -1
+```
+
+

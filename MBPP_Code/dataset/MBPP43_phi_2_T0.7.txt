@@ -1,0 +1,78 @@
+Write a function to find sequences of lowercase letters joined with an underscore using regex.
+
+```python
+# Sample solution
+def underscore_sequences(text):
+    pattern = r'[a-z]+'
+    matches = re.findall(pattern, text)
+    return matches
+
+print(underscore_sequences("This_is_a_sample_text"))
+# Output: ['This_is', 'a_sample', 'text']
+```
+
+2. Create a regex pattern to find non-alphanumeric characters in a text.
+
+```python
+# Sample solution
+def non_alnum_chars(text):
+    pattern = r'\W+'
+    matches = re.findall(pattern, text)
+    return matches
+
+print(non_alnum_chars("This_is_a_sample_text!"))
+# Output: ['_', '_', '_', '!']
+```
+
+3. Write a regex pattern to match dates in the format "YYYY-MM-DD".
+
+```python
+# Sample solution
+def date_pattern(text):
+    pattern = r'\d{4}-\d{2}-\d{2}'
+    matches = re.findall(pattern, text)
+    return matches
+
+print(date_pattern("Today is 2022-01-01 and tomorrow is 2022-01-02"))
+# Output: ['2022-01-01', '2022-01-02']
+```
+
+4. Create a regex pattern to match a string if it starts with "python" and ends with a period.
+
+```python
+# Sample solution
+def pattern_python(text):
+    pattern = r'^python.*\.$'
+    match = re.match(pattern, text)
+    if match:
+        return True
+    else:
+        return False
+
+print(pattern_python("Python is a great language. Python is popular."))
+# Output: True
+print(pattern_python("Python is a great language."))
+# Output: False
+```
+
+5. Write a regex pattern to match a string that contains exactly 4 digits.
+
+```python
+# Sample solution
+def pattern_four_digits(text):
+    pattern = r'\d{4}'
+    match = re.findall(pattern, text)
+    if match:
+        return True
+    else:
+        return False
+
+print(pattern_four_digits("My phone number is 12345678."))
+# Output: True
+print(pattern_four_digits("My phone number is 123456."))
+# Output: False
+```
+
+These exercises are designed to reinforce your understanding of using regex in Python. Practice them to become more comfortable with regex patterns and their applications in text manipulation.
+
+

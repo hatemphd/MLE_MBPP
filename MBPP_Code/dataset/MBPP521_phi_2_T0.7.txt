@@ -1,0 +1,32 @@
+Write a function to print check if the triangle is scalene or not.
+
+```python
+def is_scalene(self):
+    return self.side1 != self.side2 and self.side1 != self.side3 and self.side2 != self.side3
+
+Triangle.is_scalene = is_scalene
+```
+
+2. Write a function to print check if the triangle is isosceles or not.
+
+```python
+def is_isosceles(self):
+    return self.side1 == self.side2 or self.side1 == self.side3 or self.side2 == self.side3
+
+Triangle.is_isosceles = is_isosceles
+```
+
+3. Write a function to print check if the triangle is equilateral or not.
+
+```python
+def is_equilateral(self):
+    return self.side1 == self.side2 == self.side3
+
+Triangle.is_equilateral = is_equilateral
+```
+
+In conclusion, the Triangle class encapsulates the properties and operations common to all triangles: the sides and the angles. With the help of Python's inheritance mechanism, we can extend the Triangle class to represent different types of triangles, such as right, equilateral, and isosceles.
+
+In the next chapter, we will discuss how to use these classes to perform calculations involving triangles, such as computing the area and perimeter.
+
+

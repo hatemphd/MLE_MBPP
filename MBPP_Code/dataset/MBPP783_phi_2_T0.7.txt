@@ -1,0 +1,70 @@
+Write a function to convert rgb color to hsv color.
+
+def rgb_to_hsv(r, g, b):
+    # Convert RGB to HSV
+    r, g, b = r/255.0, g/255.0, b/255.0
+    mx = max(r, g, b)
+    mn = min(r, g, b)
+    delta = mx-mn
+
+    if delta == 0:
+        hue = 0
+    elif mx == r:
+        hue = ((g-b)/delta) % 6
+    elif mx == g:
+        hue = (b-r)/delta + 2
+    else:
+        hue = (r-g)/delta + 4
+
+    hue = round(hue * 60)
+    if hue < 0:
+        hue += 360
+
+    saturation = 0 if mx == 0 else delta / mx
+    value = mx
+
+    return hue, saturation, value
+
+Exercise 3:
+Write a function to convert hsv color to rgb color.
+
+def hsv_to_rgb(hue, saturation, value):
+    # Convert HSV to RGB
+    c = value * saturation
+    x = c * (1 - abs((hue/60) % 2 - 1))
+    m = value - c
+
+    if hue < 60:
+        r, g, b = c, x, 0
+    elif hue < 120:
+        r, g, b = x, c, 0
+    elif hue < 180:
+        r, g, b = 0, c, x
+    elif hue < 240:
+        r, g, b = 0, x, c
+    elif hue < 300:
+        r, g, b = x, 0, c
+    else:
+        r, g, b = c, 0, x
+
+    r, g, b = int((r+m)*255), int((g+m)*255), int((b+m)*255)
+    return r, g, b
+
+Exercise 4:
+Write a function to convert rgb color to hex code.
+
+def rgb_to_hex(r, g, b):
+    # Convert RGB to hex code
+    hex_code = '#'
+    for val in [r, g, b]:
+        hex_code += "{:02x}".format(val)
+    return hex_code
+
+Exercise 5:
+Write a function to convert hex code to rgb color.
+
+def hex_to_rgb(hex_code):
+    # Convert hex code to RGB
+    hex_code = hex_code.lstrip('#')
+    h, s, v = rgb_to_hsv(*[int(hex_code[i:i+2], 16) / 255.0 for i in range(0, 6, 2)])
+    return hsv_to_rgb(h, s, v)

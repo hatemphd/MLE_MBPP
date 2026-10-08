@@ -1,0 +1,44 @@
+Write a function to extract every first or specified element from a given two-dimensional list. 
+
+- Hint: Use list slicing to achieve the desired result.
+
+```python
+def extract_list(two_dimensional_list, first_element_index, second_element_index):
+    return two_dimensional_list[first_element_index][second_element_index]
+    
+two_dimensional_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print(extract_list(two_dimensional_list, 1, 0)) # 2
+```
+
+4. Write a function to extract every second element from a given list.
+
+- Hint: Use a for loop to iterate through the list and an if statement to check if the current index is even.
+
+```python
+def extract_second_elements(input_list):
+    second_elements = []
+    for i in range(len(input_list)):
+        if i % 2 == 0:
+            second_elements.append(input_list[i])
+    return second_elements
+    
+input_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(extract_second_elements(input_list)) # [2, 4, 6, 8]
+```
+
+5. Write a function to extract certain elements from a given list based on a condition.
+
+- Hint: Use a for loop to iterate through the list and an if statement to check if the current element satisfies the condition.
+
+```python
+def extract_elements(input_list, condition):
+    elements = []
+    for i in input_list:
+        if condition(i):
+            elements.append(i)
+    return elements
+    
+input_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(extract_elements(input_list, lambda x: x % 2 == 0)) # [2, 4, 6, 8]
+```
+

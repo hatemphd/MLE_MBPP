@@ -1,0 +1,22 @@
+Write a python function to check whether the given number can be represented by product of two squares or not.
+
+**Hint:** A number can be represented by the product of two squares if it satisfies the equation a^2 * b^2 = number, where a and b are positive integers. You can use the 'sqrt' function from the 'math' module to calculate the square root of a number.
+
+```python
+import math
+
+def is_sum_of_squares(number):
+    for i in range(1, int(math.sqrt(number))+1):
+        if number % i == 0:
+            j = number // i
+            if (math.sqrt(i) == int(math.sqrt(i)) and math.sqrt(j) == int(math.sqrt(j))):
+                return True
+    return False
+
+print(is_sum_of_squares(5)) # False
+print(is_sum_of_squares(13)) # True
+print(is_sum_of_squares(15)) # False
+print(is_sum_of_squares(16)) # True
+```
+
+

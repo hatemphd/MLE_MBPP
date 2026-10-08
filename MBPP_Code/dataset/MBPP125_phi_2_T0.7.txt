@@ -1,0 +1,67 @@
+Write a function to find the maximum difference between the number of 0s and number of 1s in any sub-string of the given binary string.
+
+```python
+def max_diff(s: str, d: int) -> int:
+    """
+    Function to find the maximum difference between the number of 0s and 1s in any sub-string of the given binary string.
+    """
+    count = 0
+    max_diff = 0
+    for i in range(len(s)):
+        if s[i] == '0':
+            count += 1
+        else:
+            count -= 1
+        max_diff = max(max_diff, abs(count))
+    return max_diff
+```
+
+In this function, we use a loop to iterate through each character in the binary string. If the character is '0', we increment the count. If the character is '1', we decrement the count. We calculate the absolute difference with the max_diff and update the max_diff if the absolute difference is greater.
+
+## Exercise 2:
+
+Write a function to find the maximum difference between the number of 0s and 1s in any sub-string of the given binary string, but only consider sub-strings of length 'd'.
+
+```python
+def max_diff(s: str, d: int) -> int:
+    """
+    Function to find the maximum difference between the number of 0s and 1s in any sub-string of the given binary string of length 'd'.
+    """
+    count = 0
+    max_diff = 0
+    for i in range(len(s) - d + 1):
+        if sum(1 for j in range(i, i + d) if s[j] == '0') - sum(1 for j in range(i, i + d) if s[j] == '1') > 0:
+            max_diff = max(max_diff, abs(sum(1 for j in range(i, i + d) if s[j] == '0') - sum(1 for j in range(i, i + d) if s[j] == '1')))
+    return max_diff
+```
+
+In this function, we use a loop to iterate through each sub-string of length 'd' in the binary string. We calculate the absolute difference with the max_diff and update the max_diff if the absolute difference is greater.
+
+## Exercise 3:
+
+Write a function to find the maximum difference between the number of 0s and 1s in any sub-string of the given binary string, but only consider sub-strings of length 'd' and in which the number of 1s is greater than or equal to the number of 0s.
+
+```python
+def max_diff(s: str, d: int) -> int:
+    """
+    Function to find the maximum difference between the number of 0s and 1s in any sub-string of the given binary string of length 'd' and in which the number of 1s is greater than or equal to the number of 0s.
+    """
+    count = 0
+    max_diff = 0
+    for i in range(len(s) - d + 1):
+        if s[i:i + d].count('1') >= d:
+            if sum(1 for j in range(i, i + d) if s[j] == '0') - sum(1 for j in range(i, i + d) if s[j] == '1') > 0:
+                max_diff = max(max_diff, abs(sum(1 for j in range(i, i + d) if s[j] == '0') - sum(1 for j in range(i, i + d) if s[j] == '1')))
+    return max_diff
+```
+
+In this function, we use a loop to iterate through each sub-string of length 'd' in the binary string. If the number of 1s in the sub-string is greater than or equal to 'd', we check if the absolute difference with the max_diff is greater. If it is, we update the max_diff.
+
+## Exercise 4:
+
+Write a function to find the maximum difference between the number of 0s and 1s in any sub-string of the given binary string, but only consider sub-strings of length 'd' and in which the difference between the number of 0s and number of 1s is even.
+
+```python
+def max_diff(s: str, d: int) -> int:
+    """
+    Function to find the maximum difference between the

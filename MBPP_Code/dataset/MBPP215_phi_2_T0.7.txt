@@ -1,0 +1,37 @@
+Write a function to decode a run-length encoded given list.
+
+**Hint:** You can use a counter to keep track of the number of consecutive items in the list.
+
+```python
+def decode_rle(rle_encoded_list):
+    decoded_list = []
+    for i, value in enumerate(rle_encoded_list):
+        if i+1 < len(rle_encoded_list):
+            decoded_list += [value]*rle_encoded_list[i+1]
+        else:
+            decoded_list += [value]
+    return decoded_list
+
+print(decode_rle(rle_encoded_list))  # Output: [1, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4]
+```
+
+## Exercise 2:
+
+Modify the `encode_rle` function to return a dictionary where the keys are the encoded values and the values are the count of each value.
+
+**Hint:** Instead of appending `[value]*count` to the `rle_encoded_list` in the `encode_rle` function, create a new key-value pair in the dictionary.
+
+```python
+def encode_rle_dict(lst):
+    rle_encoded_dict = {}
+    for value in lst:
+        if value in rle_encoded_dict:
+            rle_encoded_dict[value] += 1
+        else:
+            rle_encoded_dict[value] = 1
+    return rle_encoded_dict
+
+print(encode_rle_dict(lst))  # Output: {1: 1, 2: 3, 3: 4, 4: 5}
+```
+
+

@@ -1,0 +1,6 @@
+Write a function to round the given number to the nearest multiple of a specific number. number = 17, multiple = 5
+Answer: def round_to_multiple(number, multiple):
+    """
+    Rounds the given number to the nearest multiple of the given number.
+    """
+    return round(number / multiple) * multiple

@@ -1,0 +1,70 @@
+Write a function to find the nth nonagonal number.
+
+# Hint 1: A nonagonal number is a number that can be represented as 9n^2+1 for some integer n.
+
+# Solution:
+
+def find_nth_nonagonal(n):
+    return 9 * n ** 2 + 1
+
+# Test the function
+print(find_nth_nonagonal(5))  # Output: 49
+```
+
+### Exercise 2:
+Write a function to find the nth triangular number.
+
+# Hint: A triangular number is the sum of all natural numbers up to n. In mathematical notation, it is represented by Tn = n(n+1)/2.
+
+# Solution:
+
+def find_nth_triangular(n):
+    return n * (n + 1) // 2
+
+# Test the function
+print(find_nth_triangular(5))  # Output: 15
+```
+
+### Exercise 3:
+Write a function to find the nth hexagonal number.
+
+# Hint: A hexagonal number can be represented as 2n^2 - n for some integer n.
+
+# Solution:
+
+def find_nth_hexagonal(n):
+    return 2 * n ** 2 - n
+
+# Test the function
+print(find_nth_hexagonal(5))  # Output: 61
+```
+
+### Exercise 4:
+Write a function to find the nth pentagonal number.
+
+# Hint: A pentagonal number can be represented as n(3n-1)/2 for some integer n.
+
+# Solution:
+
+def find_nth_pentagonal(n):
+    return n * (3 * n - 1) // 2
+
+# Test the function
+print(find_nth_pentagonal(5))  # Output: 35
+```
+
+### Exercise 5:
+Write a function to find the nth heptagonal number.
+
+# Hint: A heptagonal number can be represented as 7n^2 - 6n for some integer n.
+
+# Solution:
+
+def find_nth_heptagonal(n):
+    return 7 * n ** 2 - 6 * n
+
+# Test the function
+print(find_nth_heptagonal(5))  # Output: 127
+```
+
+

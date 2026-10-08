@@ -1,0 +1,32 @@
+Write a function to sort a list of dictionaries using lambda function.
+
+```python
+# Solution
+def sort_dict(list_dict, key):
+    return sorted(list_dict, key=lambda x: x[key])
+
+dict_list = [{"name": "John", "age": 20}, {"name": "Peter", "age": 18}, {"name": "Harry", "age": 25}]
+print(sort_dict(dict_list, "age"))  # Returns: [{'name': 'Peter', 'age': 18}, {'name': 'John', 'age': 20}, {'name': 'Harry', 'age': 25}]
+```
+
+Exercise 2: Write a function to add elements to a dictionary using lambda function.
+
+```python
+# Solution
+add_element = lambda d, key, value: {**d, key: value} if key not in d else d
+
+print(add_element({"name": "John", "age": 20}, "address", "123 Main St"))  # Returns: {'name': 'John', 'age': 20, 'address': '123 Main St'}
+print(add_element({"name": "John", "age": 20}, "address", "456 Main St"))  # Returns: {'name': 'John', 'age': 20, 'address': '456 Main St'}
+```
+
+Exercise 3: Write a function to multiply values of a dictionary using lambda function.
+
+```python
+# Solution
+multiply_dict = lambda d, multiplier: {k: v * multiplier for k, v in d.items()}
+
+d = {"a": 1, "b": 2, "c": 3}
+print(multiply_dict(d, 2))  # Returns: {'a': 2, 'b': 4, 'c': 6}
+```
+
+

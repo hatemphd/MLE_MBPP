@@ -1,0 +1,31 @@
+Write a python function to count integers from a given list.
+
+```python
+import random
+
+# generate list of numbers
+numbers = [random.randint(0, 100) for _ in range(50)]
+
+def count_integers(lst):
+    return len([num for num in lst if isinstance(num, int)])
+
+print(count_integers(numbers))
+```
+
+**Exercise 2:** Write a python function to generate a list of random numbers until a number greater than 50 is generated.
+
+```python
+import random
+
+def generate_until_50():
+    numbers = []
+    while random.randint(0, 100) <= 50:
+        numbers.append(random.randint(1, 100))
+    return numbers
+
+print(generate_until_50())
+```
+
+These exercises will help you understand the random module in Python and how it can be used in various scenarios.
+
+

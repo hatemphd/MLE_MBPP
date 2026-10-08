@@ -1,0 +1,130 @@
+Write a function to check whether the given amount has no profit and no loss in coins change
+
+coins = [1,2,5,10,20,50,100,200]
+amount = 6
+
+Expected Output:
+True
+
+coins = [1,2,5,10,20,50,100,200]
+amount = 3
+
+Expected Output:
+False
+
+coins = [1,2,5,10,20,50,100,200]
+amount = 12
+
+Expected Output:
+True
+
+coins = [1,2,5,10,20,50,100,200]
+amount = 200
+
+Expected Output:
+True
+
+coins = [1,2,5,10,20,50,100,200]
+amount = 0
+
+Expected Output:
+True
+
+coins = [1,2,5,10,20,50,100,200]
+amount = 1
+
+Expected Output:
+True
+
+coins = [1,2,5,10,20,50,100,200]
+amount = -1
+
+Expected Output:
+False
+
+coins = [1,2,5,10,20,50,100,200]
+amount = -3
+
+Expected Output:
+False
+
+coins = [1,2,5,10,20,50,100,200]
+amount = -12
+
+Expected Output:
+False
+
+coins = [1,2,5,10,20,50,100,200]
+amount = -200
+
+Expected Output:
+False
+
+I tried to create a function to check whether the given amount has no profit and no loss in coins change, but I am facing some problems. I tried to use the condition but it doesn't work.
+
+def check(coins, amount):
+    if amount in coins:
+        return True
+    else:
+        return False
+
+A:
+
+You can't use the in operator to check whether an item is in a set. Instead, you can use a loop to iterate over the items in the set.
+Here's how you can modify your code to use a loop:
+def check(coins, amount):
+    for coin in coins:
+        if amount == coin:
+            return True
+    return False
+
+coins = [1, 2, 5, 10, 20, 50, 100, 200]
+amount = 6
+
+print(check(coins, amount))  # True
+
+coins = [1, 2, 5, 10, 20, 50, 100, 200]
+amount = 3
+
+print(check(coins, amount))  # False
+
+coins = [1, 2, 5, 10, 20, 50, 100, 200]
+amount = 12
+
+print(check(coins, amount))  # True
+
+coins = [1, 2, 5, 10, 20, 50, 100, 200]
+amount = 200
+
+print(check(coins, amount))  # True
+
+coins = [1, 2, 5, 10, 20, 50, 100, 200]
+amount = 0
+
+print(check(coins, amount))  # True
+
+coins = [1, 2, 5, 10, 20, 50, 100, 200]
+amount = 1
+
+print(check(coins, amount))  # True
+
+coins = [1, 2, 5, 10, 20, 50, 100, 200]
+amount = -1
+
+print(check(coins, amount))  # False
+
+coins = [1, 2, 5, 10, 20, 50, 100, 200]
+amount = -3
+
+print(check(coins, amount))  # False
+
+coins = [1, 2, 5, 10, 20, 50, 100, 200]
+amount = -12
+
+print(check(coins, amount))  # False
+
+coins = [1, 2, 5, 10, 20, 50, 100, 200]
+amount = -200
+
+print(check(coins, amount))  # False
+

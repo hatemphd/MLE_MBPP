@@ -1,0 +1,19 @@
+Write a function to check if a nested list is a subset of another nested list.
+
+Hints:
+1. You can modify the `is_subset` function.
+2. You can use the `any` function and a nested loop to check if each sublist of the first list is a subset of each sublist of the second list.
+
+Solution:
+```python
+def is_subset_nested(subset, superset):
+    return all(any(is_subset(sub, superset[i]) for i in range(len(superset))) for sub in subset)
+
+nested_list1 = [[1, 2], [3, 4], [5, 6]]
+nested_list2 = [[1, 2], [3, 4], [5, 6], [7, 8]]
+print(is_subset_nested(nested_list1, nested_list2)) # True
+```
+
+In the solution, we use the `all` and `any` functions along with a nested loop and the `is_subset` function to check if each sublist of the first list is a subset of each sublist of the second list.
+
+

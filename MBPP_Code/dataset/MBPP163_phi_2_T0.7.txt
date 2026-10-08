@@ -1,0 +1,80 @@
+Write a function to calculate the area of a regular polygon. The function should take in two arguments: the number of sides of the polygon and the length of each side. 
+
+Solution:
+To calculate the area of a regular polygon, we can use the formula: 
+
+Area = (1/4) * n * s^2 * cot(π/n)
+
+where n is the number of sides, s is the length of each side, and cot is the cotangent function.
+
+Here's how we can implement this formula in Python:
+
+```python
+import math
+
+def calculate_polygon_area(n_sides, side_length):
+    area = (1/4) * n_sides * side_length ** 2 * math.cot(math.pi / n_sides)
+    return area
+```
+
+Now, let's test this function with an example:
+
+```python
+n_sides = 6
+side_length = 5
+area = calculate_polygon_area(n_sides, side_length)
+print("The area of the regular polygon is", area)
+```
+
+Output:
+```
+The area of the regular polygon is 64.9519052838329
+```
+
+Follow-up exercises:
+1. What is the area of a regular hexagon with side length 4?
+Solution:
+```python
+n_sides = 6
+side_length = 4
+area = calculate_polygon_area(n_sides, side_length)
+print("The area of the regular hexagon is", area)
+```
+Output:
+```
+The area of the regular hexagon is 41.57142857142858
+```
+
+2. What happens if we use a negative value for the side length in the function?
+Solution:
+```python
+n_sides = 6
+side_length = -5
+area = calculate_polygon_area(n_sides, side_length)
+print("The area of the regular polygon is", area)
+```
+Output:
+```
+The area of the regular polygon is -0.041666666666666664
+```
+
+3. How can we modify the function to round the area to 2 decimal places?
+Solution:
+```python
+def calculate_polygon_area(n_sides, side_length):
+    area = (1/4) * n_sides * side_length ** 2 * math.cot(math.pi / n_sides)
+    return round(area, 2)
+```
+
+4. What is the area of a regular octagon with side length 3.5?
+Solution:
+```python
+n_sides = 8
+side_length = 3.5
+area = calculate_polygon_area(n_sides, side_length)
+print("The area of the regular octagon is", area)
+```
+Output:
+```
+The area of the regular octagon is 57.038
+```

@@ -1,0 +1,91 @@
+Write a function to caluclate the area of a tetrahedron.
+
+    Args:
+        a (float): Length of edge 1.
+        b (float): Length of edge 2.
+        c (float): Length of edge 3.
+        d (float): Length of edge 4.
+    
+    Returns:
+        float: Area of the tetrahedron.
+    
+    Raises:
+        ValueError: A tetrahedron must have 4 edges. 
+    """
+    if a+b+c+d != 4:
+        raise ValueError("A tetrahedron must have 4 edges.")
+    
+    s = (a+b+c+d)/2
+    
+    return (s*(s-a)*(s-b)*(s-c)*(s-d))**0.5
+
+
+
+def tetrahedron_weighted_avg(tetrahedron, edge_weights):
+    """Calculate the weighted average of a tetrahedron.
+
+    Args:
+        tetrahedron (list of float): A list of length 4 with the lengths of
+            the 4 edges.
+        edge_weights (list of float): A list of length 4 with the weights
+            of the 4 edges.
+    
+    Returns:
+        float: The weighted average of the tetrahedron
+    
+    Raises:
+        ValueError: Tetrahedron and edge_weights must have the same length.
+    """
+    if len(tetrahedron) != len(edge_weights):
+        raise ValueError("Tetrahedron and edge_weights must have the same length.")
+    
+    tetrahedron_area = tetrahedron_area(*tetrahedron)
+    
+    return (sum([edge_weights[i]*tetrahedron[i] for i in range(len(tetrahedron))]) / tetrahedron_area)
+
+
+
+def tetrahedron_weighted_avg_of_tetrahedra(tetrahedra, edge_weights):
+    """Calculate the weighted average of a list of tetrahedra.
+
+    Args:
+        tetrahedra (list of tetrahedron): A list of tetrahedra.
+        edge_weights (list of float): A list of length 4 with the weights
+            of the 4 edges.
+    
+    Returns:
+        float: The weighted average of the tetrahedra
+    
+    Raises:
+        ValueError: Tetrahedra and edge_weights must have the same length.
+    """
+    if len(tetrahedra) != len(edge_weights):
+        raise ValueError("Tetrahedra and edge_weights must have the same length.")
+    
+    return sum([tetrahedron_weighted_avg(t, edge_weights) for t in tetrahedra]) / len(tetrahedra)
+
+
+
+def tetrahedron_weighted_cov(tetrahedra, edge_weights):
+    """Calculate the weighted covariance matrix of a list of tetrahedra.
+
+    Args:
+        tetrahedra (list of tetrahedron): A list of tetrahedra.
+        edge_weights (list of float): A list of length 4 with the weights
+            of the 4 edges.
+    
+    Returns:
+        numpy.ndarray: The weighted covariance matrix of the tetrahedra.
+    
+    Raises:
+        ValueError: Tetrahedra and edge_weights must have the same length.
+    """
+    if len(tetrahedra) != len(edge_weights):
+        raise ValueError("Tetrahedra and edge_weights must have the same length.")
+    
+    tetrahedra_weighted_avg = tetrahedron_weighted_avg_of_tetrahedra(tetrahedra, edge_weights)
+    
+    cov = np.zeros((len(edge_weights),len(edge_weights)))
+    for t in tetrahedra:
+        diff = t - tetrahedra_weighted_avg
+        cov += edge_weights[0]*diff[0]*diff[1] + edge_weights[1]*diff[0]*diff[2] + edge_weights[2]*diff[0]*diff[3] + edge_weights

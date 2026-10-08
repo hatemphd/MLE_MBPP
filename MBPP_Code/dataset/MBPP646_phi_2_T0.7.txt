@@ -1,0 +1,24 @@
+Write a python function to count number of cubes of size k in a cube of size n.
+
+```python
+def count_cubes(n, k):
+    return (n // k) ** 3
+```
+
+#### Exercise 4
+
+Write a python function to find the number of unique paths from top left corner to bottom right corner of an m x n grid.
+
+```python
+def unique_paths(m, n):
+    return factorial(m + n - 2) // (factorial(m - 1) * factorial(n - 1))
+```
+
+#### Exercise 5
+
+Write a python function to find the number of ways to partition a set of n distinct elements into k non-empty subsets.
+
+```python
+def partition_ways(n, k):
+    return factorial(n) // (factorial(k) ** n)
+```

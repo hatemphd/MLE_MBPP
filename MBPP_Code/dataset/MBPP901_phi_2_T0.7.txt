@@ -1,0 +1,39 @@
+Write a function to find the smallest multiple of the first n numbers.
+
+Hint: Remember to use the lcm ufunc.
+
+Solution:
+
+```python
+import numpy as np
+
+def smallest_multiple(n):
+    return np.lcm.reduce(range(1, n+1))
+
+print(smallest_multiple(5))  # Output: 60
+```
+
+2) Write a program to solve a system of linear equations using the `np.lcm.reduce` function.
+
+Hint: Convert the coefficients and constants into fractions with a common denominator.
+
+Solution:
+
+```python
+import numpy as np
+
+coefficients = np.array([[2, 1], [1, 2]])
+constants = np.array([4, 6])
+
+# Convert coefficients and constants to fractions with a common denominator
+common_denominator = np.lcm.reduce(coefficients)
+coefficients = coefficients * common_denominator / np.lcm.reduce(coefficients)
+constants = constants * common_denominator / np.lcm.reduce(constants)
+
+# Solve the system using np.lcm.reduce
+solution = np.lcm.reduce(coefficients) / np.lcm.reduce(constants)
+
+print(solution)  # Output: 2.0
+```
+
+

@@ -1,0 +1,28 @@
+Write a function to find tuples which have all elements divisible by k from the given list of tuples.
+
+```python
+def find_divisible_tuples(tuple_list, k):
+    divisible_tuples = []
+    for tup in tuple_list:
+        if all(i % k == 0 for i in tup):
+            divisible_tuples.append(tup)
+    return divisible_tuples
+    
+tuple_list = [(1, 2, 3), (4, 5, 6), (7, 8, 9), (10, 11, 12)]
+print(find_divisible_tuples(tuple_list, 3))  # Output: [(1, 2, 3), (4, 5, 6), (7, 8, 9), (10, 11, 12)]
+```
+
+5. Write a function to find the second largest element in each tuple from the given list of tuples.
+
+```python
+def find_second_largest(tuple_list):
+    second_largest = []
+    for tup in tuple_list:
+        sorted_tup = sorted(tup, reverse=True)
+        second_largest.append(sorted_tup[1])
+    return second_largest
+    
+tuple_list = [(2, 4, 6), (5, 3, 1), (8, 7, 9), (10, 3, 2)]
+print(find_second_largest(tuple_list))  # Output: [4, 3, 7, 3]
+```
+

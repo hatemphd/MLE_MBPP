@@ -1,0 +1,105 @@
+Write a function to find the focus of a parabola.
+    """
+    # Define the parabola equation
+    def parabola(x, a, b, c):
+        return a*x**2 + b*x + c
+
+    # Find the vertex of the parabola
+    a = parabola.coefficients[0]
+    b = parabola.coefficients[1]
+    c = parabola.coefficients[2]
+    x_vertex = -b/(2*a)
+    y_vertex = parabola(x_vertex, a, b, c)
+
+    # Find the distance between the vertex and the focus
+    focus_x = x_vertex
+    focus_y = y_vertex + (1/(4*a))
+
+    # Return the focus as a tuple
+    return (focus_x, focus_y)
+
+# Example usage
+coefficients = [1, -2, 1]
+focus = find_parabola_focus(coefficients)
+print("The focus of the parabola is", focus)
+
+# Output: The focus of the parabola is (1.0, 0.5)
+
+"""
+Question 1: Define a function to find the directrix of a parabola.
+"""
+
+# Define the parabola equation
+def parabola(x, a, b, c):
+    return a*x**2 + b*x + c
+
+# Find the vertex of the parabola
+a = parabola.coefficients[0]
+b = parabola.coefficients[1]
+c = parabola.coefficients[2]
+x_vertex = -b/(2*a)
+y_vertex = parabola(x_vertex, a, b, c)
+
+# Find the distance between the vertex and the directrix
+directrix = y_vertex - (1/(4*a))
+
+def find_parabola_directrix(coefficients):
+    """
+    Given the coefficients of a parabola, find its directrix.
+    """
+    # Find the vertex of the parabola
+    a = coefficients[0]
+    b = coefficients[1]
+    c = coefficients[2]
+    x_vertex = -b/(2*a)
+    y_vertex = parabola(x_vertex, a, b, c)
+
+    # Return the directrix as a tuple
+    return y_vertex - (1/(4*a))
+
+# Example usage
+coefficients = [1, -2, 1]
+directrix = find_parabola_directrix(coefficients)
+print("The directrix of the parabola is", directrix)
+
+# Output: The directrix of the parabola is 0.0
+
+"""
+Question 2: Define a function to find the axis of symmetry of a parabola.
+"""
+
+# Define the parabola equation
+def parabola(x, a, b, c):
+    return a*x**2 + b*x + c
+
+# Find the vertex of the parabola
+a = parabola.coefficients[0]
+b = parabola.coefficients[1]
+c = parabola.coefficients[2]
+x_vertex = -b/(2*a)
+y_vertex = parabola(x_vertex, a, b, c)
+
+def find_parabola_axis(coefficients):
+    """
+    Given the coefficients of a parabola, find its axis of symmetry.
+    """
+    # Find the vertex of the parabola
+    a = coefficients[0]
+    b = coefficients[1]
+    c = coefficients[2]
+    x_vertex = -b/(2*a)
+    y_vertex = parabola(x_vertex, a, b, c)
+
+    # Return the axis of symmetry as a tuple
+    return (x_vertex, y_vertex)
+
+# Example usage
+coefficients = [1, -2, 1]
+axis = find_parabola_axis(coefficients)
+print("The axis of symmetry of the parabola is", axis)
+
+# Output: The axis of symmetry of the parabola is (1.0, 0.5)
+
+"""
+Question 3: Define a function to find the maximum or minimum of a parabola.
+"""

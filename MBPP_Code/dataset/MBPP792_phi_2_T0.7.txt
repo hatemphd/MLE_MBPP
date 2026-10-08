@@ -1,0 +1,50 @@
+Write a python function to count the number of lists in a given number of lists.
+
+__Hint__: Consider a nested list.
+
+```python
+def count_lists(nested_list):
+    if isinstance(nested_list, list):
+        return 1 + sum(count_lists(item) for item in nested_list)
+    else:
+        return 0
+
+print(count_lists(["Python", ["list", "comprehension", ["is", "powerful"]]]))
+```
+
+__Exercise 3__: Write a python function to check if all elements in a list are of the same type.
+
+__Hint__: Consider using a set to find the number of unique data types.
+
+```python
+def check_same_type(input_list):
+    return len(set([type(item) for item in input_list])) == 1
+
+print(check_same_type([1, 2, 3]))
+print(check_same_type([1, '2', 3]))
+```
+
+__Exercise 4__: Write a python function to check if a given list is empty or not.
+
+__Hint__: Use the `len()` function.
+
+```python
+def is_empty(input_list):
+    return len(input_list) == 0
+
+print(is_empty([]))
+print(is_empty([1, 2, 3]))
+```
+
+__Exercise 5__: Write a python function to convert a list of integers into a list of strings.
+
+__Hint__: Use list comprehension and the `str()` function.
+
+```python
+def to_string(input_list):
+    return [str(item) for item in input_list]
+
+print(to_string([1, 2, 3, 4, 5]))
+```
+
+

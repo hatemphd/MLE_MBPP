@@ -1,0 +1,26 @@
+Write a python function to find the sublist having maximum length.
+
+Hints:
+- Define a function called `max_length_sublist`
+- Use a for loop to iterate over the length of the list
+- Inside the for loop, use the `max` function to find the longest sublist based on the length
+
+Here is one possible solution.
+```python
+def max_length_sublist(lst):
+    max_length = 0
+    for i in range(len(lst)):
+        for j in range(i+1, len(lst)+1):
+            sublist = lst[i:j]
+            if len(sublist) > max_length:
+                max_length = len(sublist)
+                max_sublist = sublist
+    return max_sublist
+
+lst = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+print(max_length_sublist(lst)) # ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+```
+
+In this solution, we first define a function called `max_length_sublist` that takes a list as an argument. Inside the function, we use two nested for loops to iterate over all possible sublists of the input list. The outer loop iterates over the starting index of the sublist, and the inner loop iterates over the ending index. For each sublist, we calculate its length and compare it with the current maximum length. If the length is greater, we update the maximum length and the corresponding sublist. Finally, we return the sublist with the maximum length.
+
+

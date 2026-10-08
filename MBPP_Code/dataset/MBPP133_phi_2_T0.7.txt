@@ -1,0 +1,37 @@
+Write a function to calculate the sum of the negative numbers of a given list of numbers using lambda function.
+
+Hint: Use the filter function with lambda to filter out the negative numbers.
+
+Solution:
+```python
+numbers = [5, -3, 2, -10, 1, -7]
+
+# Lambda function to check if a number is negative
+negative_filter = lambda x: x < 0
+
+# Sum of negative numbers
+sum_negative = sum(filter(negative_filter, numbers))
+
+print("Sum of negative numbers:", sum_negative)
+```
+
+3. Write a function to multiply all the elements in a given list of numbers using lambda function.
+
+Hint: Use the reduce function with lambda to reduce the list to a single number.
+
+Solution:
+```python
+from functools import reduce
+
+numbers = [5, 3, 2, 1]
+
+# Lambda function to multiply two numbers
+multiply = lambda x, y: x * y
+
+# Multiply all numbers
+product = reduce(multiply, numbers)
+
+print("Product of all numbers:", product)
+```
+
+

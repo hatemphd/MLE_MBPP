@@ -1,0 +1,42 @@
+Write a function to perform the adjacent element concatenation in the given tuples.
+
+*Hint: You can use the zip() function to pair up elements from different tuples.*
+
+```python
+# Solution
+def adjacent_concatenation(t1, t2):
+    return tuple(str(x) + y for x, y in zip(t1, t2))
+
+t1 = (1, 2, 3)
+t2 = (4, 5, 6)
+print(adjacent_concatenation(t1, t2))  # Output: ('14', '25', '36')
+```
+
+2. Write a function to find the maximum difference between adjacent elements in a tuple.
+
+*Hint: You can use the max() and abs() functions to find the maximum difference. You can use a list comprehension with the zip() function to create pairs of adjacent elements.*
+
+```python
+# Solution
+def max_adjacent_difference(t):
+    return max(abs(x - y) for x, y in zip(t[:-1], t[1:]))
+
+t = (10, 14, 3, 7, 18, 20)
+print(max_adjacent_difference(t))  # Output: 15
+```
+
+3. Write a function to combine two tuples into a dictionary, with the first tuple serving as keys and the second tuple serving as values.
+
+*Hint: You can use the zip() function to pair up elements from different tuples. Then, you can convert the pairs into a dictionary using the dict() function.*
+
+```python
+# Solution
+def combine_tuples_to_dict(t1, t2):
+    return dict(zip(t1, t2))
+
+t1 = ('a', 'b', 'c')
+t2 = (1, 2, 3)
+print(combine_tuples_to_dict(t1, t2))  # Output: {'a': 1, 'b': 2, 'c': 3}
+```
+
+

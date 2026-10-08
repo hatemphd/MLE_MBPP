@@ -1,0 +1,60 @@
+Write a function to find maximum of three numbers.
+```python
+def max_three(a, b, c):
+    """
+    A function to find maximum of three numbers
+    """
+    
+    # Write your code here
+    
+    pass
+```
+
+2. Write a function to concatenate strings and separate them using a character.
+```python
+def concat_strings(string1, string2, char):
+    """
+    A function to concatenate strings and separate them using a character
+    """
+    
+    # Write your code here
+    
+    pass
+```
+
+3. Write a function to check if a string is a palindrome.
+```python
+def is_palindrome(s):
+    """
+    A function to check if a string is a palindrome
+    """
+    
+    # Write your code here
+    
+    pass
+```
+
+4. Write a function to remove all the vowels from a string.
+```python
+def remove_vowels(s):
+    """
+    A function to remove all the vowels from a string
+    """
+    
+    # Write your code here
+    
+    pass
+```
+
+5. Write a function to count the number of occurrences of a character in a string.
+```python
+def count_char(s, c):
+    """
+    A function to count the number of occurrences of a character in a string
+    """
+    
+    # Write your code here
+    
+    pass
+```
+

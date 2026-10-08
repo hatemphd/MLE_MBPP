@@ -1,0 +1,115 @@
+Write a function to find entringer number e(n, k).
+
+Explanation: 
+
+For a given number n, you have to print all the distinct numbers that can be formed from the digits of n.
+
+Example:
+
+n = 1234
+k = 3
+Answer :
+
+1, 2, 3, 4, 12, 13, 14, 23, 24, 34, 123, 124, 134, 234, 1234
+
+The code is as follows:
+// Complete the getEntringer function below.
+static int getEntringer(int n, int k)
+{
+    int result = 0;
+    char digits[k];
+    int i, count = 0, m;
+
+    for(i = 0; n != 0; i++){
+        digits[i] = n%10;
+        n /= 10;
+    }
+
+    for(i = 0; i < k; i++){
+        result = result + getEntringer(n, k-1);
+    }
+
+    for(i = 0; i < k; i++){
+        int j = 0;
+        int b = digits[i];
+
+        while(b != 0){
+            b = b/10;
+            j++;
+        }
+
+        count = count + (Math.pow(10, j-1) * (k-i-1));
+
+    }
+
+    return result + count;
+
+}
+
+A:
+
+As you are calculating E(n, k) for multiple values of n and k, I would recommend to use memoization.
+int getEntringer(int n, int k, Map<Integer, Integer> dp) {
+
+    if(n == 0)
+        return 1;
+
+    if(k == 0)
+        return 0;
+
+    if(k == 1)
+        return n;
+
+    if(dp.containsKey(n))
+        return dp.get(n);
+
+    int result = getEntringer(n, k-1, dp) + getEntringer(n-1, k, dp);
+    dp.put(n, result);
+
+    return result;
+}
+
+A:
+
+This is a dynamic programming problem with a base case in which k=1.  The recurrence relation is:
+E(n, k) = E(n-1, k) + E(n-1, k-1)
+
+The base case is:
+E(n, 1) = 0 if n < 10, else 1
+
+This is just E(n-1, 1) + E(n-1, 0)
+Here is my implementation:
+static int getEntringer(int n, int k) {
+
+    if (n < 10) return 0;
+    if (k == 1) return 1;
+
+    int result = getEntringer(n - 1, k);
+    int prevResult = getEntringer(n - 1, k - 1);
+    return result + prevResult;
+}
+
+A:
+
+I am not sure whether I understand the question correctly, but this seems to work:
+public static void main(String[] args) {
+    System.out.println(getEntringer(123, 2));
+}
+
+public static Integer getEntringer(Integer n, Integer k) {
+    if (n < 10 || k < 1) return 0;
+    return getEntringer(n / 10, k - 1) + getEntringer(n % 10, k - 1);
+}
+
+prints
+1234
+
+A:
+
+Another simple solution using recursion:
+public static int getEntringer(int n, int k) {
+    if (n == 0) return 1;
+    if (k == 0) return 0;
+    return getEntringer(n / 10, k) + getEntringer(n % 10, k);
+}
+

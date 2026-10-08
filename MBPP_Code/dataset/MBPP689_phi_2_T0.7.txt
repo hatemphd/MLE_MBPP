@@ -1,0 +1,105 @@
+## write a function to find the minimum number of jumps to reach the end of the array for the given array of integers where each element represents the max number of steps that can be made forward from that element. > indented block > indented block > indented block 
+
+def findMinJumps(arr):
+    n = len(arr)
+    # Initialize jump count
+    jumps = [0]*n
+    jumps[0] = 0
+    for i in range(1, n):
+        # Update jumps for current index
+        jumps[i] = float('inf')
+        for j in range(0, i):
+            if (i <= j + arr[j] and jumps[j] != float('inf')):
+                jumps[i] = min(jumps[i], jumps[j] + 1)
+                break
+    return jumps[-1] if jumps[-1] != float('inf') else -1
+```
+
+## 10.4 Exercises
+
+For the following exercises, implement the solutions using the concepts and methods discussed in this chapter.
+
+### Exercise 1:
+Given an array `arr = [6, 2, 5, 3, 1, 1, 6]`, find the minimum number of jumps to reach the end of the array.
+
+#### Guideline: 
+You can use the function `findMinJumps` defined in the chapter.
+
+#### Solution:
+
+```python
+arr = [6, 2, 5, 3, 1, 1, 6]
+print(findMinJumps(arr))
+```
+
+### Exercise 2:
+Modify the function `findMinJumps` to return the actual jumps made, not just the minimum number of jumps.
+
+#### Guideline: 
+You can initialize a list `path` along with `jumps` where each element represents the index from which the jump is made.
+
+#### Solution:
+
+```python
+def findMinJumps(arr):
+    n = len(arr)
+    jumps = [0]*n
+    path = [0]*n
+    jumps[0] = 0
+    for i in range(1, n):
+        jumps[i] = float('inf')
+        for j in range(0, i):
+            if (i <= j + arr[j] and jumps[j] != float('inf')):
+                jumps[i] = min(jumps[i], jumps[j] + 1)
+                path[i] = j
+                break
+    return path[-1] if path[-1] != -1 else -1
+```
+
+### Exercise 3:
+Enhance the function to return a path that represents the minimum jumps to reach the end of the array.
+
+#### Guideline: 
+You can use the `path` initialized in the above function.
+
+#### Solution:
+
+```python
+def findMinJumps(arr):
+    n = len(arr)
+    jumps = [0]*n
+    path = [0]*n
+    jumps[0] = 0
+    for i in range(1, n):
+        jumps[i] = float('inf')
+        for j in range(0, i):
+            if (i <= j + arr[j] and jumps[j] != float('inf')):
+                jumps[i] = min(jumps[i], jumps[j] + 1)
+                path[i] = j
+                break
+    return path
+```
+
+### Exercise 4:
+Write a function `jumpArray` that takes an array `arr` and a number `n` and returns the minimum number of jumps from the start to the end of the array to reach `n`th position.
+
+#### Guideline: 
+You can extend the above function to find the minimum jumps in a range.
+
+#### Solution:
+
+```python
+def jumpArray(arr, n):
+    n = len(arr)
+    jumps = [0]*n
+    jumps[0] = 0
+    for i in range(1, n):
+        jumps[i] = float('inf')
+        for j in range(0, i):
+            if (i <= j + arr[j] and jumps[j] != float('inf')):
+                jumps[i] = min(jumps[i], jumps[j] + 1)
+                break
+    return jumps[n-1]
+```
+
+

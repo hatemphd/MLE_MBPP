@@ -1,0 +1,16 @@
+Write a python function to find remainder of array multiplication divided by n.
+
+```python
+# Solution
+def compute_remainder(arr, n):
+    result = 1
+    for i in arr:
+        result *= i
+    return result % n
+
+print(compute_remainder([1, 2, 3, 4, 5], 100))  # Outputs: 4
+```
+
+The function `compute_remainder` takes two arguments: an array of integers and a positive integer `n`. It initializes a variable `result` with the value 1. It then iterates over each integer in the array, multiplying `result` by each integer. The final result is the product of all integers in the array. The function then returns the remainder of this product when divided by `n`.
+
+

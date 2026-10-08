@@ -1,0 +1,19 @@
+Write a python function to check whether the sum of divisors are same or not.
+
+```python
+def check_sum_of_divisors_same(n):
+    div_sum = sum_of_divisors(n)
+    for divisor in divisors(n):
+        if sum_of_divisors(divisor) != div_sum:
+            return False
+    return True
+
+print(check_sum_of_divisors_same(6))  # Returns: True
+print(check_sum_of_divisors_same(15))  # Returns: False
+```
+
+The function `check_sum_of_divisors_same()` calculates the sum of divisors for `n` using the `sum_of_divisors()` function, then iterates over each divisor of `n` to check if the sum of divisors is same or not.
+
+Through these exercises, you should become comfortable with the concepts and functions discussed in this chapter. Continue practicing and exploring the world of Python programming.
+
+

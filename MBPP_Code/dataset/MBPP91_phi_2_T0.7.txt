@@ -1,0 +1,13 @@
+Write a function to check if a substring is present in a given list of string values.
+
+For example, given a list of strings and a substring "Python", write a function to check if "Python" is present in the list.
+
+```python
+def find_substring(lst, substring):
+    return any(substring in s for s in lst)
+
+lst = ["Python is great", "I love Python", "Java is not my favorite"]
+substring = "Python"
+print(find_substring(lst, substring))  # Output: True
+```
+

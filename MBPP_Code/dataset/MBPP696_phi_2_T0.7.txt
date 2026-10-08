@@ -1,0 +1,60 @@
+Write a function to zip two given lists of lists.
+
+```python
+def zip_lists(list1, list2):
+    return list(zip(list1, list2))
+
+# Test the function
+list1 = [[1, 2], [3, 4]]
+list2 = [[5, 6], [7, 8]]
+print(zip_lists(list1, list2)) # Output: [[1, 2], [3, 4], [5, 6], [7, 8]]
+```
+
+Exercise 2:
+Write a function to transpose a given matrix.
+
+```python
+def transpose_matrix(matrix):
+    return list(map(list, zip(*matrix)))
+
+# Test the function
+matrix = [[1, 2, 3], [4, 5, 6]]
+print(transpose_matrix(matrix)) # Output: [[1, 4], [2, 5], [3, 6]]
+```
+
+Exercise 3:
+Write a function to combine two given lists of lists into a single list of lists.
+
+```python
+def combine_lists(list1, list2):
+    return list1 + list2
+
+# Test the function
+list1 = [[1, 2], [3, 4]]
+list2 = [[5, 6], [7, 8]]
+print(combine_lists(list1, list2)) # Output: [[1, 2], [3, 4], [5, 6], [7, 8]]
+```
+
+Exercise 4:
+Write a function to return the index of the maximum element in a given list.
+
+```python
+def max_index(lst):
+    return lst.index(max(lst))
+
+# Test the function
+lst = [1, 4, 7, 3, 9, 2]
+print(max_index(lst)) # Output: 4
+```
+
+Exercise 5:
+Write a function to return the index of the first occurrence of a given element in a given list.
+
+```python
+def first_index(lst, element):
+    return lst.index(element)
+
+# Test the function
+lst = [1, 4, 7, 3, 9, 2, 4]
+print(first_index(lst, 4)) # Output: 1
+```

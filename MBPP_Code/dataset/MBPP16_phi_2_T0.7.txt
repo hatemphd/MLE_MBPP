@@ -1,0 +1,59 @@
+Write a function to find sequences of lowercase letters joined with an underscore.
+
+Hints:
+- The regular expression for lowercase sequences joined with an underscore is `[a-z]+_[a-z]+`.
+- Use the `re.findall` function.
+
+Solution:
+
+```python
+import re
+
+def find_sequences(text):
+    pattern = r'[a-z]+_[a-z]+'
+    matches = re.findall(pattern, text)
+    return matches
+
+text = 'hello_world, this_is_test_case'
+print(find_sequences(text))  # Output: ['hello_world', 'this_is_test_case']
+```
+
+**Exercise 2:** Implement a function that checks if a given string only contains alphanumeric characters and underscores.
+
+Hints:
+- The regular expression for alphanumeric sequences joined with underscore is `[a-zA-Z0-9]+_[a-zA-Z0-9]+`.
+- The `re.match` function can check if a string matches a regular expression.
+
+Solution:
+
+```python
+import re
+
+def validate_username(username):
+    pattern = r'[a-zA-Z0-9]+_[a-zA-Z0-9]+'
+    return bool(re.match(pattern, username))
+
+username = 'test_case_123'
+print(validate_username(username))  # Output: True
+```
+
+**Exercise 3:** Write a function that replaces all sequences of lowercase letters joined with an underscore with the word 'sequence'.
+
+Hints:
+- The regular expression for lowercase sequences joined with an underscore is `[a-z]+_[a-z]+`.
+- Use the `re.sub` function.
+
+Solution:
+
+```python
+import re
+
+def replace_sequences(text):
+    pattern = r'[a-z]+_[a-z]+'
+    return re.sub(pattern, 'sequence', text)
+
+text = 'hello_world, this_is_test_case'
+print(replace_sequences(text))  # Output: 'hello sequence, this sequence'
+```
+
+

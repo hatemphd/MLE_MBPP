@@ -1,0 +1,29 @@
+Write a function to sort a given mixed list of integers and strings. The function should return a new sorted list where all integers come before the strings.
+
+Here's an idea for the solution: You can use the `isinstance()` function to check the type of each element.
+
+```python
+def sort_mixed_list(data):
+    # Using list comprehension to separate integers and strings
+    integers = [i for i in data if isinstance(i, int)]
+    strings = [s for s in data if isinstance(s, str)]
+    # Concatenating sorted lists
+    return sorted(integers) + sorted(strings)
+
+mixed_list = [3, 'cat', 1, 'dog', 2]
+print(sort_mixed_list(mixed_list))  # Output: [1, 2, 3, 'cat', 'dog']
+```
+
+2. Write a function to calculate the sum of a list of integers and strings. The function should return the sum of all numbers in the list.
+
+Here's an idea for the solution: You can use the `isinstance()` function to check the type of each element and add only the integers to the sum.
+
+```python
+def sum_numbers(data):
+    return sum(i for i in data if isinstance(i, int))
+
+mixed_list = [3, 'cat', 1, 'dog', 2]
+print(sum_numbers(mixed_list))  # Output: 6
+```
+
+

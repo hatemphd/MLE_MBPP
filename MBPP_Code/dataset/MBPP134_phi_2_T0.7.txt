@@ -1,0 +1,81 @@
+Write a python function to check whether the last element of given array is even or odd after performing an operation p times.
+
+Input:
+n: An integer representing the number of elements in the array.
+array: An integer array.
+p: An integer representing the number of times we perform the operation.
+
+Output:
+Output will print "Even" if the last element of the array after performing the operation p times is even, otherwise "Odd".
+
+Example 1:
+
+Input:
+n = 5
+array = [1, 2, 3, 4, 5]
+p = 2
+Output: "Even"
+
+Example 2:
+
+Input:
+n = 4
+array = [1, 2, 3, 4]
+p = 1
+Output: "Odd"
+
+Example 3:
+
+Input:
+n = 2
+array = [2, 2]
+p = 3
+Output: "Even"
+
+Example 4:
+
+Input:
+n = 3
+array = [1, 2, 3]
+p = 3
+Output: "Odd"
+
+Example 5:
+
+Input:
+n = 1
+array = [1]
+p = 3
+Output: "Even"
+
+Example 6:
+
+Input:
+n = 0
+array = []
+p = 4
+Output: "Even"
+"""
+
+
+def last_element_check(n, array, p):
+    if n == 0:
+        return "Even"
+    else:
+        array[-1] += p
+        if array[-1] % 2 == 0:
+            return "Even"
+        else:
+            return "Odd"
+
+
+# Function to Print the Output
+def print_answer(n, array, p):
+    print(last_element_check(n, array, p))
+
+
+# Driver Code
+n = int(input("Enter the number of elements in array: "))
+array = list(map(int, input("Enter the array elements seperated by space: ").split()))
+p = int(input("Enter the value of operation to be performed: "))
+print_answer(n, array, p)

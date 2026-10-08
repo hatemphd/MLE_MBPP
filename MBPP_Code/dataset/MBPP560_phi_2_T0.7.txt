@@ -1,0 +1,84 @@
+Write a function to find the union of elements of the given tuples.
+
+**Solution:**
+```python
+def union(tup1, tup2):
+    """
+    The function to find the union of two tuples. 
+    
+    :param tup1: tuple 1
+    :param tup2: tuple 2
+    :return: tuple with the union of elements
+    """
+    return tuple(set(tup1).union(set(tup2)))
+
+# Testing the function
+tup1 = (1, 2, 3)
+tup2 = (3, 4, 5)
+print(union(tup1, tup2)) # (1, 2, 3, 4, 5)
+```
+
+**Exercise 3:**
+Write a function to find the intersection of elements in the given tuples.
+
+**Solution:**
+```python
+def intersection(tup1, tup2):
+    """
+    The function to find the intersection of two tuples. 
+    
+    :param tup1: tuple 1
+    :param tup2: tuple 2
+    :return: tuple with the intersection of elements
+    """
+    return tuple(set(tup1).intersection(set(tup2)))
+
+# Testing the function
+tup1 = (1, 2, 3)
+tup2 = (3, 4, 5)
+print(intersection(tup1, tup2)) # (3)
+```
+
+**Exercise 4:**
+Write a function to find the difference of elements in the given tuples.
+
+**Solution:**
+```python
+def difference(tup1, tup2):
+    """
+    The function to find the difference of two tuples. 
+    
+    :param tup1: tuple 1
+    :param tup2: tuple 2
+    :return: tuple with the difference of elements
+    """
+    return tuple(set(tup1).difference(set(tup2)))
+
+#Testing the function
+tup1 = (1, 2, 3)
+tup2 = (3, 4, 5)
+print(difference(tup1, tup2)) # (1, 2)
+```
+
+**Exercise 5:**
+Write a function to find the symmetric difference of elements in the given tuples.
+
+**Solution:**
+```python
+def symmetric_difference(tup1, tup2):
+    """
+    The function to find the symmetric difference of two tuples. 
+    
+    :param tup1: tuple 1
+    :param tup2: tuple 2
+    :return: tuple with the symmetric difference of elements
+    """
+    return tuple(set(tup1).symmetric_difference(set(tup2)))
+
+# Testing the function
+tup1 = (1, 2, 3)
+tup2 = (3, 4, 5)
+print(symmetric_difference(tup1, tup2)) # (1, 2, 4, 5)
+```
+
+

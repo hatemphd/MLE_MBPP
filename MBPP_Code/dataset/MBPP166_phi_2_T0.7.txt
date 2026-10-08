@@ -1,0 +1,61 @@
+Write a python function to count the pairs with xor as an even number.
+
+Hints:
+- You'll need to use a counter to keep track of the pairs.
+- You'll also need to keep track of the number of occurrences of each number in the list.
+
+```python
+def count_even_xor_pairs(nums):
+    count = 0
+    freq = [0]*256
+    for num in nums:
+        freq[num] += 1
+    for i in range(0, 128, 2):
+        count += freq[i]*(freq[i] - 1)//2
+    return count
+
+print(count_even_xor_pairs([1, 2, 3, 4]))
+```
+
+2. Write a python function to return the pair with the maximum xor value.
+
+Hints:
+- You can use a variable to store the maximum xor value and its corresponding pair.
+- Update this variable whenever you encounter a new pair with a higher xor value.
+
+```python
+def max_xor_pair(nums):
+    max_xor = 0
+    max_pair = None
+    for i in range(len(nums)):
+        for j in range(i + 1, len(nums)):
+            xor = nums[i] ^ nums[j]
+            if xor > max_xor:
+                max_xor = xor
+                max_pair = (nums[i], nums[j])
+    return max_pair
+
+print(max_xor_pair([1, 2, 3, 4]))
+```
+
+3. Write a python function to return the pair with the minimum xor value.
+
+Hints:
+- Similar to exercise 2, but you need to find the minimum xor value instead.
+
+```python
+def min_xor_pair(nums):
+    min_xor = float('inf')
+    min_pair = None
+    for i in range(len(nums)):
+        for j in range(i + 1, len(nums)):
+            xor = nums[i] ^ nums[j]
+            if xor < min_xor:
+                min_xor = xor
+                min_pair = (nums[i], nums[j])
+    return min_pair
+
+print(min_xor_pair([1, 2, 3, 4]))
+```
+
+

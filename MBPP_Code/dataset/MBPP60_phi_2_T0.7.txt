@@ -1,0 +1,25 @@
+Write a function to find the maximum length of the subsequence with difference between adjacent elements for the given array.
+
+Hints: This exercise is a bit more difficult as it involves keeping track of the maximum difference found so far. You will need an additional variable to store this difference.
+
+```python
+def max_length_subsequence(array):
+    array.sort()
+    diff = array[1] - array[0]
+    max_length = 1
+    for i in range(2, len(array)):
+        if array[i] - array[i-1] == diff:
+            max_length += 1
+        else:
+            diff = array[i] - array[i-1]
+            max_length = 2
+    return max_length
+
+print(max_length_subsequence(array))  # Output: 2
+```
+
+In the above function, we first sort the array. We then calculate the difference between the first two elements. We then iterate through the sorted array. If the difference between the current and the previous element is equal to the difference between the first two elements, we increment the length of the subsequence. If not, we update the difference and reset the length of the subsequence to 2.
+
+In conclusion, understanding and implementing these exercises will enable you to comprehend the concept of array manipulation, and will provide a solid foundation for solving more complex problems in the future.
+
+

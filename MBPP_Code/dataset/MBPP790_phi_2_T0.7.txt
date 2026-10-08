@@ -1,0 +1,19 @@
+Write a python function to check whether every even index contains even numbers of a given list.
+
+```python
+def check_even_index_even(lst):
+    for i in range(0, len(lst), 2):
+        if any(num % 2 != 0 for num in lst[i:]):
+            return False
+    return True
+
+lst1 = [1, 2, 3, 4, 5, 6]
+lst2 = [1, 2, 3, 4, 5, 7, 8, 9]
+lst3 = [1, 4, 3, 6, 5, 8]
+
+print(check_even_index_even(lst1)) # True
+print(check_even_index_even(lst2)) # False
+print(check_even_index_even(lst3)) # True
+```
+
+In this exercise, we use the range function to iterate over even indices of a list. We then use the any function to check whether every number in the current index or the rest of the list is odd. If there is any odd number, we return False, indicating that the condition is not met. If the function completes all even indices without returning False, it returns True.

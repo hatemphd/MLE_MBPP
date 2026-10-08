@@ -1,0 +1,79 @@
+Write a python function to find gcd of two positive integers.
+
+Hint: Use Euclid's division algorithm.
+
+Solution:
+
+```python
+def gcd(a, b):
+    # Base case
+    if b == 0:
+        return a
+    else:
+        return gcd(b, a % b)
+
+print(gcd(48, 18))  # Output: 6
+```
+
+2. Write a python function to find the gcd of an array of positive integers.
+
+Hint: Use the function from exercise 1 and apply it in a loop.
+
+Solution:
+
+```python
+def gcd_array(array):
+    num = array[0]
+    for i in range(1, len(array)):
+        num = gcd(num, array[i])
+    return num
+
+print(gcd_array([48, 48, 18]))  # Output: 6
+```
+
+3. Write a python function to find the gcd of an array of positive integers using list comprehension.
+
+Hint: Use the function from exercise 2 and apply it in a list comprehension.
+
+Solution:
+
+```python
+def gcd_array_lc(array):
+    return gcd_array([x for x in array])
+
+print(gcd_array_lc([48, 48, 18]))  # Output: 6
+```
+
+4. Write a python function to find the gcd of two positive integers and also return the process of gcd calculation.
+
+Hint: Use a list to keep track of the remainders.
+
+Solution:
+
+```python
+def gcd(a, b):
+    process = [a, b]
+    while b != 0:
+        a, b = b, a % b
+        process.append(b)
+    return a, process
+
+print(gcd(48, 18))  # Output: (6, [48, 18, 0])
+```
+
+5. Write a python function to find the gcd of two positive integers and also return the process of gcd calculation using list comprehension.
+
+Hint: Same as exercise 4 but use list comprehension.
+
+Solution:
+
+```python
+def gcd_lc(a, b):
+    process = [a, b]
+    [process.append(b) for _ in range(a // b) while b != 0]
+    return a, process
+
+print(gcd_lc(48, 18))  # Output: (6, [48, 18, 0])
+```
+
+

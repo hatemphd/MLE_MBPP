@@ -1,0 +1,49 @@
+Write a function to add a dictionary to the tuple.
+
+```python
+class TupleDict(tuple, dict):
+    def add_dict(self, key, value):
+        self[key] = value
+
+# Usage
+tuple_dict = TupleDict((1, 2, 3))
+tuple_dict.add_dict('new_key', 'new_value')
+print(tuple_dict)  # prints: (1, 2, 3, {'new_key': 'new_value'})
+```
+
+### Exercise 4
+
+Create a function that accepts a tuple and a dictionary, and checks if all key-value pairs in the dictionary exist in the tuple.
+
+```python
+def check_dict_in_tuple(tup, dict):
+    for key in dict:
+        if key not in tup or dict[key] != tup[tup.index(key):tup.index(key) + 1]:
+            return False
+    return True
+
+# Usage
+tuple_dict = TupleDict((1, 2, 3))
+dict = {1: 'one', 2: 'two'}
+print(check_dict_in_tuple(tuple_dict, dict))  # prints: True
+```
+
+### Exercise 5
+
+Create a function to convert the tuple to a dictionary, and vice versa.
+
+```python
+def tuple_to_dict(tup):
+    return dict(tup)
+
+def dict_to_tuple(dict):
+    return tuple(dict.items())
+
+# Usage
+tuple_dict = TupleDict((1, 2, 3))
+dict = {1: 'one', 2: 'two', 3: 'three'}
+print(tuple_to_dict(tuple_dict))  # prints: {1: 'one', 2: 'two', 3: 'three'}
+print(dict_to_tuple(dict))  # prints: ((1, 'one'), (2, 'two'), (3, 'three'))
+```
+
+

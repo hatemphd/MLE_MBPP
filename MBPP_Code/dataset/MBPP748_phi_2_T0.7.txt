@@ -1,0 +1,28 @@
+Write a function to put spaces between words starting with capital letters in a given string by using regex.
+
+```python
+import re
+
+def insert_spaces(text):
+    return re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', text)
+
+text = "ThisIsAnExampleOfSpacesAddedInTheText"
+print(insert_spaces(text))
+```
+
+Output: `This Is An Example Of Spaces Added In The Text`
+
+Exercise 5:
+Write a function to extract all phone numbers from a given string by using regex.
+
+```python
+import re
+def extract_phone_numbers(text):
+    pattern = r'\d{3}[-\.\s]??\d{3}[-\.\s]??\d{4}|\(\d{3}\)\s*\d{3}[-\.\s]??\d{4}|\d{3}[-\.\s]??\d{4}'
+    return re.findall(pattern, text)
+
+text = "My phone numbers are 123-456-7890 and (123) 456-7890. Please call me at 123.456.7890"
+print(extract_phone_numbers(text))
+```
+
+Output: `['123-456-7890', '(123) 456-7890', '123.456.7890']`

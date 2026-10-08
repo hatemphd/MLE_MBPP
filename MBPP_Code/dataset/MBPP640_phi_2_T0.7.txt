@@ -1,0 +1,41 @@
+Write a function to remove the parenthesis area in a string.
+
+# Example 1:
+# Input: s = "a(b)c"
+# Output: "ac"
+# Example 2:
+# Input: s = "a()()"
+# Output: ""
+# Example 3:
+# Input: s = "(a(b)c)";
+# Output: "abc"
+
+# Constraints:
+# 1 <= s.length <= 10^4
+# s[i] is a lowercase English letter ('a' to 'z'), or an '(', ')', or a whitespace ' ' character.
+
+class Solution:
+    def removeParentheses(self, s: str) -> str:
+        # Runtime: 20 ms, faster than 91.22% of Python3 online submissions for Remove Parentheses.
+        # Memory Usage: 14.8 MB, less than 100.00% of Python3 online submissions for Remove Parentheses.
+
+        if not s:
+            return s
+
+        stack = [s]
+        ans = []
+
+        while stack:
+            curr = stack.pop()
+            ans.append(curr)
+
+            if '(' in curr:
+                stack.append(curr.replace(
+                    '(', '', 1))  # remove the first '(' and push the new string
+                stack.append(curr.replace(')', '', 1))  # remove the first ')' and push the new string
+            if ')' in curr:
+                stack.append(curr.replace(
+                    ')', '', 1))  # remove the first ')' and push the new string
+                stack.append(curr.replace('(', '', 1))  # remove the first '(' and push the new string
+
+        return ''.join(ans)

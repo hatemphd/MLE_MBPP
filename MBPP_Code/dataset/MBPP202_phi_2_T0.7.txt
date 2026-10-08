@@ -1,0 +1,52 @@
+Write a function to remove even characters in a string.
+
+```python
+def remove_even(string):
+  return ''.join([char for i, char in enumerate(string) if i % 2 != 0])
+
+print(remove_even('Hello World'))  # Output: HloWrd
+```
+
+2. Write a function to remove vowels from a string.
+
+```python
+def remove_vowels(string):
+  vowels = 'aeiouAEIOU'
+  return ''.join([char for char in string if char not in vowels])
+
+print(remove_vowels('Hello World'))  # Output: Hll Wrld
+```
+
+3. Write a function to remove digits from a string.
+
+```python
+def remove_digits(string):
+  return ''.join([char for char in string if not char.isdigit()])
+
+print(remove_digits('Hello 123 World'))  # Output: Hello  World
+```
+
+4. Write a function to remove all the punctuation marks from a string.
+
+```python
+import string
+
+def remove_punctuation(string):
+  return string.translate(str.maketrans('', '', string.punctuation))
+
+print(remove_punctuation('Hello, World!'))  # Output: Hello World
+```
+
+5. Write a function to remove all the stop words from a sentence.
+
+```python
+import nltk
+from nltk.corpus import stopwords
+
+def remove_stopwords(sentence):
+  stop_words = set(stopwords.words('english'))
+  return ' '.join([word for word in sentence.split() if word not in stop_words])
+
+print(remove_stopwords('This is a sample sentence.'))  # Output: This sample sentence.
+```
+

@@ -1,0 +1,30 @@
+Write a function to solve gold mine problem. 
+#  I've been working on this for 10 days. 
+#  
+# I don't know why this solution is wrong. 
+
+def goldMine(M):
+    """
+    :type M: List[List[int]]
+    :rtype: int
+    """
+    if M==[]: return 0
+    m, n = len(M), len(M[0])
+    def dfs(i,j):
+        if i<0 or j<0 or i>=m or j>=n or M[i][j]==0 or visited[i][j]:
+            return 0
+        visited[i][j] = True
+        return (M[i][j] + dfs(i-1,j) + dfs(i,j+1) + dfs(i+1,j))
+    
+    visited = [[False for _ in range(n)] for _ in range(m)]
+    return max([dfs(i,j) for i in range(m) for j in range(n)])
+
+
+M = [
+  [3, 0, 8, 4],
+  [9, 5, 1, 7],
+  [0, 6, 3, 0],
+  [0, 0, 0, 0]
+]
+res = goldMine(M)
+print(res)

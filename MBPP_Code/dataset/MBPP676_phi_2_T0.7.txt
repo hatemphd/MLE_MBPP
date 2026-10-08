@@ -1,0 +1,26 @@
+Write a function to remove everything except alphanumeric characters from the given string by using regex.
+
+**Hint:** Use the `re` module.
+
+```python
+import re
+def remove_special_chars(input_string):
+    clean_string = re.sub('[^a-zA-Z0-9]+', '', input_string)
+    return clean_string
+
+print(remove_special_chars("Hello, World! 123")) # Output: HelloWorld123
+```
+
+### Exercise 5
+
+Write a function to remove all the strings that start with the letter `a` from the given list of strings.
+
+**Hint:** Use list comprehension and startswith() method.
+
+```python
+def remove_a_strings(input_list):
+    return [string for string in input_list if not string.startswith('a')]
+
+print(remove_a_strings(['apple', 'banana', 'avocado', 'orange'])) # Output: ['banana', 'orange']
+```
+

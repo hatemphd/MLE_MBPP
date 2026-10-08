@@ -1,0 +1,31 @@
+Write a function to find the largest sum of contiguous subarray in the given array.
+
+[2, 1, -2, -8, 0, -2, 5, 1]
+
+1. The first element is the only element in the subarray.
+2. The largest sum is 2, since it's the only element in the subarray.
+3. The largest sum of a contiguous subarray is 2.
+"""
+
+def max_subarray_sum(arr):
+    max_sum = 0
+    current_sum = 0
+
+    for num in arr:
+        current_sum += num
+        if current_sum < 0:
+            current_sum = 0
+        if current_sum > max_sum:
+            max_sum = current_sum
+
+    return max_sum
+
+# Test the function
+arr = [2, 1, -2, -8, 0, -2, 5, 1]
+print(max_subarray_sum(arr)) # Output: 7
+
+"""
+Explanation:
+The largest sum of a contiguous subarray in the given array is 7.
+
+"""

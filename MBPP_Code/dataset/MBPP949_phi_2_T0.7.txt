@@ -1,0 +1,44 @@
+Write a function to sort the given tuple list basis the total digits in tuple. 
+
+Hints: Use the `count_digits` function and the `sort` method.
+
+```python
+def sort_tuple_list(tuple_list):
+    # Your code here
+    pass
+
+# Test the function
+tuple_list = [('abc','123'),('def','45'),('ghi','6789'),('jkl','12')]
+print(sort_tuple_list(tuple_list)) # Expected output: [('jkl', '12'), ('abc', '123'), ('def', '45'), ('ghi', '6789')]
+```
+
+2. Write a function to convert a list of tuples into a dict where the first element of tuple is key and the second element is value.
+
+Hints: Use the `zip` function and dictionary comprehension.
+
+```python
+def list_to_dict(tuple_list):
+    # Your code here
+    pass
+
+# Test the function
+tuple_list = [('a', 1), ('b', 2), ('c', 3)]
+print(list_to_dict(tuple_list)) # Expected output: {'a': 1, 'b': 2, 'c': 3}
+```
+
+3. Write a function to merge two dictionaries using tuples.
+
+Hints: Use dictionary unpacking while merging.
+
+```python
+def merge_dicts(dict1, dict2):
+    # Your code here
+    pass
+
+# Test the function
+dict1 = {'a': 1, 'b': 2}
+dict2 = {'c': 3, 'd': 4}
+print(merge_dicts(dict1, dict2)) # Expected output: {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+```
+
+

@@ -1,0 +1,47 @@
+Write a function to increment the numeric values in the given strings by k.
+
+Example 1:
+Input: s = "abcd", k = 3
+Output: "abcd"
+
+Example 2:
+Input: s = "1234", k = 3
+Output: "1237"
+
+Example 3:
+Input: s = "1525849023224", k = 3
+Output: "1525849523228"
+
+Note:
+The length of s will be in the range [1, 10000].
+The integer k will be in the range [-9999, 9999].
+"""
+
+
+class Solution:
+    def increment_string(self, s: str, k: int) -> str:
+        i = len(s) - 1
+        result = ""
+        while i >= 0 and k > 0:
+            if s[i].isdigit():
+                v = int(s[i]) + k
+                if v > 9:
+                    k -= 10
+                    v = 1
+                    i -= 1
+            else:
+                v = 0
+            result = str(v) + result
+            k -= 1
+            i -= 1
+        if k == 0:
+            return result
+        k = str(k)
+        result = k + result
+        return result
+
+
+if __name__ == "__main__":
+    assert Solution().increment_string("abcd", 3) == "abcd"
+    assert Solution().increment_string("1234", 3) == "1237"
+    assert Solution().increment_string("1525849023224", 3) == "1525849523228"

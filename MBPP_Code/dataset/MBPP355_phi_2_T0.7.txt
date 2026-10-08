@@ -1,0 +1,29 @@
+Write a python function to count the number of rectangles in a circle of radius r.
+```python
+def count_rectangles(r):
+    return 2 * r**2
+```
+
+2. Write a python function to find the maximum area of a rectangle that can be inscribed in a circle of radius r.
+```python
+def max_area(r):
+    return r**2
+```
+
+3. Write a python function to find the number of squares that can be inscribed in a circle of radius r.
+```python
+def count_squares(r):
+    return 4 * (r**2)
+```
+
+4. Write a python function to find the diameter of the largest rectangle that can be inscribed in a circle of radius r.
+```python
+def diameter_of_largest_rectangle(r):
+    return 2 * r
+```
+
+5. Write a python function to find the number of triangles that can be inscribed in a circle of radius r.
+```python
+def count_triangles(r):
+    return 8 * (r**2)
+```

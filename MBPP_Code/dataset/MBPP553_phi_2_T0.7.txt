@@ -1,0 +1,11 @@
+Write a function to convert the given tuple to a floating-point number.
+    
+```python
+def tuple_to_float(tup):
+    return float(tup)
+
+tup = (2, 3, 4)
+print(tuple_to_float(tup))
+```
+
+

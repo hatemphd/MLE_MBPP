@@ -1,0 +1,102 @@
+Write a function that matches a string that has an a followed by one or more b's. 
+
+Ideas:
+- Use the `{}` notation to indicate the number of occurrences of a character.
+- The `+` symbol means one or more occurrences of the preceding character.
+
+Solution:
+```python
+def match_ab(string):
+    pattern = r'a{1,}b{1,}'
+    return bool(re.search(pattern, string))
+
+print(match_ab("abbbbb"))  # True
+print(match_ab("ab"))  # False
+print(match_ab("aabbbbb"))  # True
+print(match_ab("abababbab"))  # True
+print(match_ab("aab"))  # False
+```
+
+#### Exercise 2:
+
+Write a function that matches a string that has a digit followed by a non-digit character.
+
+Ideas:
+- Use the `\d` character class to match a digit.
+- Use the `\D` character class to match a non-digit character.
+- Use the `{}` notation to indicate the order of matching.
+
+Solution:
+```python
+def match_digit_non_digit(string):
+    pattern = r'\d\D'
+    return bool(re.search(pattern, string))
+
+print(match_digit_non_digit("a1b"))  # True
+print(match_digit_non_digit("a1b1"))  # False
+print(match_digit_non_digit("a1a2b3"))  # True
+print(match_digit_non_digit("a1a1b1"))  # False
+print(match_digit_non_digit("a1a2b3a"))  # False
+```
+
+#### Exercise 3:
+
+Write a function that matches a string that has a lowercase letter followed by an uppercase letter.
+
+Ideas:
+- Use the `[a-z]` character class to match a lowercase letter.
+- Use the `[A-Z]` character class to match an uppercase letter.
+- Use the `{}` notation to indicate the number of occurrences of a character.
+
+Solution:
+```python
+def match_lower_upper(string):
+    pattern = r'[a-z][A-Z]'
+    return bool(re.search(pattern, string))
+
+print(match_lower_upper("aB"))  # True
+print(match_lower_upper("AB"))  # True
+print(match_lower_upper("ab"))  # False
+print(match_lower_upper("Aa"))  # False
+print(match_lower_upper("a"))  # False
+```
+
+#### Exercise 4:
+
+Write a function that matches a string that has a digit followed by a letter.
+
+Ideas:
+- Use the `\d` character class to match a digit.
+- Use the `[a-zA-Z]` character class to match a letter.
+- Use the `{}` notation to indicate the number of occurrences of a character.
+
+Solution:
+```python
+def match_digit_letter(string):
+    pattern = r'\d[a-zA-Z]'
+    return bool(re.search(pattern, string))
+
+print(match_digit_letter("a1b"))  # True
+print(match_digit_letter("a1b1"))  # False
+print(match_digit_letter("a1a2b3"))  # True
+print(match_digit_letter("a1a1b1"))  # False
+print(match_digit_letter("a1a2b3a"))  # False
+```
+
+#### Exercise 5:
+
+Write a function that matches a string that has a letter followed by one or more digits.
+
+Ideas:
+- Use the `[a-zA-Z]` character class to match a letter.
+- Use the `\d` character class to match a digit.
+- Use the `+` symbol to match one or more occurrences of the preceding character.
+
+Solution:
+```python
+def match_letter_digits(string):
+    pattern = r'[a-zA-Z]\d+'
+    return bool(re.search(pattern, string))
+
+print(match_letter_digits("a1b"))  # True
+print(match_letter_digits("a1b

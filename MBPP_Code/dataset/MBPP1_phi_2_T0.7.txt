@@ -1,0 +1,42 @@
+Write a function to find the minimum cost path to reach (m, n) from (0, 0) for the given cost matrix cost[][] and a position (m, n) in cost[][].
+
+The cost[i][j] represents the cost to reach cell (i, j). You can only move right or down from a cell.
+
+For example, if cost[][] is as follows:
+
+cost[][] =
+[
+  [1, 3, 1],
+  [1, 5, 1],
+  [4, 2, 1]
+]
+Then the function should return 7. The cost is obtained by moving right three times, right once, down twice, and down once.
+
+Note: If there is no way to reach (m, n), return -1.
+
+"""
+
+
+class Solution:
+    def minCost(self, cost):
+        """
+        :type cost: List[List[int]]
+        :rtype: int
+        """
+        m, n = len(cost), len(cost[0])
+        for i in xrange(m):
+            for j in xrange(n):
+                if i == 0 and j == 0:
+                    continue
+                elif i == 0:
+                    cost[i][j] += cost[i][j - 1]
+                elif j == 0:
+                    cost[i][j] += cost[i - 1][j]
+                else:
+                    cost[i][j] += min(cost[i - 1][j], cost[i][j - 1])
+
+        return cost[m - 1][n - 1] if cost[m - 1][n - 1] != float('inf') else -1
+
+
+s = Solution()
+print s.minCost([[1, 3, 1], [1, 5, 1], [4, 2, 1]])

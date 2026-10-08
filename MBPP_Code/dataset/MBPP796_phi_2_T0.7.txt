@@ -1,0 +1,7 @@
+Write function to find the sum of all items in the given dictionary. {'a': 1, 'b': 2, 'c': 3} OUTPUT: def sum_dict_values(d):
+    total = 0
+    for v in d.values():
+        total += v
+    return total
+
+sum_dict_values({'a': 1, 'b': 2, 'c': 3})  # returns 6

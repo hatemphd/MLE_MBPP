@@ -1,0 +1,102 @@
+Write a python function to get the difference between two lists.
+
+Hints:
+- Create a function named `list_difference` to take two lists as arguments.
+- Use a `for` loop to iterate over the first list.
+- Use the `not in` keyword to check if an element is not present in the second list.
+- Append the element to a new list.
+- Return the new list.
+
+Solution:
+```python
+def list_difference(list1, list2):
+    new_list = []
+    for element in list1:
+        if element not in list2:
+            new_list.append(element)
+    return new_list
+```
+
+### Exercise 2:
+
+Write a python function to get the common elements between two lists.
+
+Hints:
+- Create a function named `list_common` to take two lists as arguments.
+- Use a `for` loop to iterate over the first list.
+- Use the `in` keyword to check if an element is present in the second list.
+- Append the element to a new list.
+- Return the new list.
+
+Solution:
+```python
+def list_common(list1, list2):
+    new_list = []
+    for element in list1:
+        if element in list2:
+            new_list.append(element)
+    return new_list
+```
+
+### Exercise 3:
+
+Write a python function to merge two lists and remove duplicates.
+
+Hints:
+- Create a function named `list_merge` to take two lists as arguments.
+- Use the `+` operator to merge the two lists.
+- Use a `for` loop to iterate over the merged list.
+- Use the `not in` keyword to check if an element is not present in the new list.
+- Append the element to the new list.
+- Return the new list.
+
+Solution:
+```python
+def list_merge(list1, list2):
+    new_list = list1 + list2
+    for element in new_list:
+        if element not in new_list:
+            new_list.remove(element)
+    return new_list
+```
+
+### Exercise 4:
+
+Write a python function to get the product of all elements in a list.
+
+Hints:
+- Create a function named `list_product` to take a list as an argument.
+- Initialize a variable named `product` to 1.
+- Use a `for` loop to iterate over the list.
+- Multiply the product by the current element.
+- Return the product.
+
+Solution:
+```python
+def list_product(list1):
+    product = 1
+    for element in list1:
+        product *= element
+    return product
+```
+
+### Exercise 5:
+
+Write a python function to check if a list is sorted in ascending order.
+
+Hints:
+- Create a function named `list_sorted` to take a list as an argument.
+- Use a `for` loop to iterate over the list.
+- Use the `<` operator to compare consecutive elements.
+- Return `True` if all elements are in ascending order.
+- Return `False` otherwise.
+
+Solution:
+```python
+def list_sorted(list1):
+    for i in range(len(list1)-1):
+        if list1[i] > list1[i+1]:
+            return False
+    return True
+```
+

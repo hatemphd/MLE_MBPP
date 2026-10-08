@@ -1,0 +1,18 @@
+Write a function to create a list taking alternate elements from another given list.
+
+```python
+def alternate_list(lst1, lst2):
+    return [lst1[i] for i in range(0, len(lst1), 2)] + [lst2[i] for i in range(0, len(lst2), 2)]
+
+print(alternate_list([1, 2, 3, 4], ['a', 'b', 'c', 'd']))
+```
+
+### Exercise 5:
+Write a function to create a list of tuples, where each tuple contains an element from two given lists.
+
+```python
+def create_list_of_tuples(lst1, lst2):
+    return [(lst1[i], lst2[i]) for i in range(len(lst1))]
+
+print(create_list_of_tuples([1, 2, 3], ['a', 'b', 'c']))
+```

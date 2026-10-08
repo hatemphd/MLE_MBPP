@@ -1,0 +1,29 @@
+Write a function to find nth polite number.
+
+A polite number is a number which is divisible by either n or n+1.
+
+Example:
+
+Input: n = 6
+Output: [1, 3, 6, 9, 12, 15, 18, 21, 24, 27]
+
+Input: n = 3
+Output: [1, 3, 5, 6, 9, 10, 12, 15, 18, 21]
+ 
+
+Constraints:
+
+1 <= n <= 10^3
+
+'''
+
+
+class Solution:
+    def nthPoliteNumber(self, n: int) -> List[int]:
+        ans = 1
+        res = []
+        while len(res) < n:
+            if ans % (ans+1) == 0 or ans % (ans+2) == 0:
+                res.append(ans)
+            ans += 1
+        return res

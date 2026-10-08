@@ -1,0 +1,28 @@
+Write a function to find the similar elements from the given two tuple lists.
+
+```python
+# Idea: Use the set intersection operation between two tuples.
+
+# Solution
+def find_similar_elements(tuple1, tuple2):
+    return set(tuple1).intersection(set(tuple2))
+
+# Test the function
+tuple1 = (1, 2, 3, 4)
+tuple2 = (3, 4, 5, 6)
+print(find_similar_elements(tuple1, tuple2))
+# Output: {3, 4}
+```
+
+3. Create a tuple containing the names of the planets in our solar system. Use a loop to print each planet name in uppercase.
+
+```python
+# Idea: Use the upper() function inside a loop.
+
+# Solution
+planets = ("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
+for planet in planets:
+    print(planet.upper())
+```
+
+

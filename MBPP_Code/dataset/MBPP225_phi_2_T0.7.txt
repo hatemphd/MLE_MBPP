@@ -1,0 +1,58 @@
+Write a python function to find the minimum element in a sorted and rotated array.
+
+**Hint:**
+The minimum element is always at the start of the array in a sorted and rotated array.
+
+**Solution:**
+```python
+def find_min(nums):
+    if len(nums) == 1:
+        return nums[0]
+
+    start, end = 0, len(nums) - 1
+
+    while start < end:
+        mid = (start + end) // 2
+
+        if nums[mid] > nums[end]:
+            start = mid + 1
+        else:
+            end = mid
+            
+    return nums[start]
+
+nums = [4, 5, 6, 7, 0, 1, 2]
+print(find_min(nums))  # Output: 0
+```
+
+**Exercise 2:**
+Write a python function to find the maximum element in a sorted and rotated array.
+
+**Hint:**
+The maximum element is always at the end of the array in a sorted and rotated array.
+
+**Solution:**
+```python
+def find_max(nums):
+    if len(nums) == 1:
+        return nums[0]
+
+    start, end = 0, len(nums) - 1
+
+    while start < end:
+        mid = (start + end) // 2
+
+        if nums[mid] < nums[end]:
+            start = mid + 1
+        else:
+            end = mid
+            
+    return nums[start]
+
+nums = [4, 5, 6, 7, 0, 1, 2]
+print(find_max(nums))  # Output: 7
+```
+
+By the end of this chapter, you should have a firm understanding of how to find the minimum and maximum elements in a sorted and rotated array. The skills and concepts you've learned here are crucial for solving complex algorithmic problems and will be invaluable in your software development and data analysis pursuits.
+
+

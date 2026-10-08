@@ -1,0 +1,59 @@
+Write a function to replace characters in a string. The function should take a string as input, the character to be replaced, and the character to replace it with.
+
+Example:
+```python
+def replace_char(string, old_char, new_char):
+    # Your code here
+    pass
+
+print(replace_char('Hello, World!', 'o', 'a'))
+```
+
+### Exercise 2:
+Write a function to reverse a string. The function should take a string as input and return the reversed string.
+
+Example:
+```python
+def reverse_string(string):
+    # Your code here
+    pass
+
+print(reverse_string('Hello, World!'))
+```
+
+### Exercise 3:
+Write a function that takes a string and returns the longest word in the string.
+
+Example:
+```python
+def longest_word(string):
+    # Your code here
+    pass
+
+print(longest_word('The quick brown fox jumps over the lazy dog'))
+```
+
+### Exercise 4:
+Write a function to check if a string is a palindrome. A palindrome is a word, phrase, number, or other sequence of characters that reads the same backward as forward.
+
+Example:
+```python
+def is_palindrome(string):
+    # Your code here
+    pass
+
+print(is_palindrome('racecar'))
+```
+
+### Exercise 5:
+Write a function to count the number of vowels in a string.
+
+Example:
+```python
+def count_vowels(string):
+    # Your code here
+    pass
+
+print(count_vowels('Hello, World!'))
+```
+

@@ -1,0 +1,25 @@
+Write a function to find the longest palindromic subsequence in the given string.
+## INPUT
+string = "babad"
+##OUTPUT
+def longest_palindrome_subsequence(string):
+    n = len(string)
+    # create a 2D array to store the lengths of palindromic subsequences
+    dp = [[0 for _ in range(n)] for _ in range(n)]
+    # fill the diagonal elements with 1
+    for i in range(n):
+        dp[i][i] = 1
+    # fill the upper triangle with the minimum of the diagonal and the left element
+    for i in range(n-1, -1, -1):
+        for j in range(i+1, n):
+            if string[i] == string[j]:
+                dp[i][j] = dp[i+1][j-1] + 2
+            else:
+                dp[i][j] = max(dp[i+1][j], dp[i][j-1])
+    # the bottom-right element of the array contains the length of the longest palindromic subsequence
+    return dp[0][n-1]
+
+# example
+string = "babad"
+print(longest_palindrome_subsequence(string))
+# output: 3

@@ -1,0 +1,50 @@
+Write a function to find n’th smart number.
+
+A smart number is a positive integer that is divisible by all of its digits.
+
+Example:
+
+Input: n = 2
+Output: 12
+
+Explanation: 12 is divisible by 1 and 2, so it is a smart number.
+ 
+
+Constraints:
+
+1 <= n <= 10^6
+
+"""
+
+
+class Solution(object):
+    def nthSmartNumber(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        
+        # Runtime: 20 ms
+        # Memory: 13.6 MB
+        
+        # Edge case
+        if n == 1:
+            return 1
+        
+        def is_smart(num):
+            div = 1
+            for digit in str(num):
+                div *= int(digit)
+            if div == num:
+                return True
+            else:
+                return False
+        
+        count = 1
+        while True:
+            if is_smart(count):
+                count += 1
+                if count == n:
+                    return count
+            else:
+                count += 1

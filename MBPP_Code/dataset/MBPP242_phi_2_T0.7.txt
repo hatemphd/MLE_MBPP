@@ -1,0 +1,61 @@
+Write a function to count total characters in a string.
+
+Hint: You can use the built-in len() function in Python.
+
+Solution:
+```python
+def count_characters(string):
+    return len(string)
+
+print(count_characters("Hello, World!"))  # Output: 13
+```
+
+2. Write a function to find the highest number in a list.
+
+Hint: Use the built-in max() function in Python.
+
+Solution:
+```python
+def find_max(numbers):
+    return max(numbers)
+
+print(find_max([1, 2, 3, 4, 5]))  # Output: 5
+```
+
+3. Write a function to convert a list of strings into a single string, separated by a space.
+
+Hint: Use the join() function in Python.
+
+Solution:
+```python
+def join_strings(strings):
+    return " ".join(strings)
+
+print(join_strings(["Hello", "World", "!"]))  # Output: "Hello World !"
+```
+
+4. Write a function to reverse a string.
+
+Hint: You can use slicing in Python to reverse a string.
+
+Solution:
+```python
+def reverse_string(string):
+    return string[::-1]
+
+print(reverse_string("Hello, World!"))  # Output: "!dlroW ,olleH"
+```
+
+5. Write a function to check if a string is a palindrome.
+
+Hint: A palindrome is a word that is the same forwards as it is backwards.
+
+Solution:
+```python
+def is_palindrome(string):
+    return string == string[::-1]
+
+print(is_palindrome("racecar"))  # Output: True
+```
+
+

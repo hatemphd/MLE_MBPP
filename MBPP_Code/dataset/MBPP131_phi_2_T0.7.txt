@@ -1,0 +1,46 @@
+Write a python function to reverse only the vowels of a given string.
+
+**Hint:** You can use a similar approach as 'Counting vowels'.
+
+```python
+def reverse_vowels(s):
+    s = list(s)
+    start, end = 0, len(s) - 1 
+
+    while start < end:
+        if s[start].lower() not in VOWELS:
+            start += 1
+        elif s[end].lower() not in VOWELS:
+            end -= 1
+        else:
+            s[start], s[end] = s[end], s[start]
+            start += 1
+            end -= 1
+
+    return ''.join(s)
+
+print(reverse_vowels("Hello World"))  # Output: "Hollo Werld"
+```
+
+### Exercise 2
+
+Write a python function to count the number of vowels in a string and print them in reverse order.
+
+**Hint:** You can use the `reverse_vowels` function along with list slicing.
+
+```python
+def count_and_reverse_vowels(s):
+    count = reverse_vowels(s)
+    for vowel in count:
+        print(vowel)
+
+count_and_reverse_vowels("Hello World")  
+# Output: e
+#         o
+#         o
+#         o
+```
+
+In conclusion, this chapter has provided an overview of how to count the number of vowels in a string in Python, and how to reverse only the vowels of a given string. The exercises provided will help reinforce the concepts learned.
+
+

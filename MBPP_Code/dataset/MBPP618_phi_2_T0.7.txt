@@ -1,0 +1,82 @@
+Write a function to divide two lists using map and lambda function.
+
+```python
+# Divide two lists using map and lambda function
+list1 = [1, 2, 3, 4, 5]
+list2 = [2, 4, 6, 8, 10]
+result = list(map(lambda x, y: x / y, list1, list2))
+print(result)
+```
+
+Output:
+```
+[0.5, 0.5, 0.5, 0.5, 0.5]
+```
+
+Explanation:
+- We define two lists: `list1` and `list2`.
+- We use `map` function to apply a lambda function that takes two elements from `list1` and `list2`, and divide them.
+- We convert the result of `map` function to a list using `list` function.
+
+### Exercise 3:
+
+Write a function to get the maximum value from a list using map and lambda function.
+
+```python
+# Get the maximum value from a list using map and lambda function
+lst = [1, 2, 3, 4, 5]
+result = max(lst, key=lambda x: x)
+print(result)
+```
+
+Output:
+```
+5
+```
+
+Explanation:
+- We define a list: `lst`.
+- We use `map` function to apply a lambda function to each element of the list, which returns the element itself.
+- We use `max` function to find the maximum value in the list.
+
+### Exercise 4:
+
+Write a function to multiply all the elements of a list using map and lambda function.
+
+```python
+# Multiply all the elements of a list using map and lambda function
+lst = [1, 2, 3, 4, 5]
+result = reduce(lambda x, y: x * y, map(lambda x: x**2, lst))
+print(result)
+```
+
+Output:
+```
+120
+```
+
+Explanation:
+- We define a list: `lst`.
+- We use `map` function to apply a lambda function that squares each element of the list.
+- We use `reduce` function to multiply all the squared elements together.
+
+### Exercise 5:
+
+Write a function to filter only the even numbers from a list using map and lambda function.
+
+```python
+# Filter only the even numbers from a list using map and lambda function
+lst = [1, 2, 3, 4, 5]
+result = list(filter(lambda x: x % 2 == 0, map(lambda x: x**2, lst)))
+print(result)
+```
+
+Output:
+```
+[4, 16]
+```
+
+Explanation:
+- We define a list: `lst`.
+- We use `map` function to square each element of the list.
+- We use `filter` function to filter only the even numbers from the squared list.

@@ -1,0 +1,21 @@
+Write a function to round up a number to specific digits.
+def round_up(number, digits):
+    # Write your code here.
+
+# Test the function
+print(round_up(1234, 2)) # Output: 1230
+```
+
+**Idea:** Use the `math.ceil` function.
+
+**Solution:**
+```python
+import math
+
+def round_up(number, digits):
+    return math.ceil(number/10**digits)*10**digits
+
+# Test the function
+print(round_up(1234, 2)) # Output: 1230
+```
+

@@ -1,0 +1,40 @@
+Write a python function to find nth number in a sequence which is not a multiple of a given number.
+
+Example:
+
+```python
+# nth number not divisible by 3 is 8
+n = 8
+k = 3
+print(nth_number_not_divisible_by_k(n, k))  # Output: 8
+```
+
+**Idea:** The idea is similar to the previous exercise. Use the formula `k*(n - 1) + 1` to find the nth number that is not divisible by k.
+
+```python
+def nth_number_not_divisible_by_k(n, k):
+    return k*(n - 1) + 1
+```
+
+**Exercise 2:** Write a python function to find all prime numbers up to n.
+
+Example:
+
+```python
+# prime numbers up to 20 are [2, 3, 5, 7, 11, 13, 17, 19]
+n = 20
+print(find_primes(n))  # Output: [2, 3, 5, 7, 11, 13, 17, 19]
+```
+
+**Idea:** This is a classic problem. You can use the `is_prime` function from the first exercise to check if a number is prime.
+
+```python
+def find_primes(n):
+    primes = []
+    for i in range(2, n+1):
+        if is_prime(i):
+            primes.append(i)
+    return primes
+```
+
+

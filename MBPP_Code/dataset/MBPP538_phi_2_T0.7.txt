@@ -1,0 +1,74 @@
+Write a python function to convert a given string list to a tuple.
+
+*Solution:*
+
+```python
+def list_to_tuple(lst):
+    return tuple(lst)
+
+my_list = ["apple", "banana", "cherry"]
+print(list_to_tuple(my_list))
+```
+
+**Exercise 2**: Write a python function to remove duplicates from a tuple.
+
+*Hint:* Convert the tuple to a list, remove duplicates, and then convert it back to a tuple.
+
+*Solution:*
+
+```python
+def remove_duplicates(my_tuple):
+    return tuple(set(my_tuple))
+
+my_tuple = (1, 2, 2, 3, 4, 4, 4, 5)
+print(remove_duplicates(my_tuple))
+```
+
+**Exercise 3**: Write a python function to find the intersection of two tuples.
+
+*Hint:* Convert the tuples to sets and use the intersection method.
+
+*Solution:*
+
+```python
+def intersection(tuple1, tuple2):
+    set1 = set(tuple1)
+    set2 = set(tuple2)
+    return set1.intersection(set2)
+
+tuple1 = (1, 2, 3, 4, 5)
+tuple2 = (4, 5, 6, 7, 8)
+print(intersection(tuple1, tuple2))
+```
+
+**Exercise 4**: Write a python function to swap the first and last elements of a tuple.
+
+*Hint:* Convert the tuple to a list, swap elements, and then convert it back to a tuple.
+
+*Solution:*
+
+```python
+def swap(tuple):
+    lst = list(tuple)
+    lst[0], lst[-1] = lst[-1], lst[0]
+    return tuple(lst)
+
+my_tuple = (1, 2, 3, 4, 5)
+print(swap(my_tuple))
+```
+
+**Exercise 5**: Write a python function to find the length of a tuple.
+
+*Hint:* Use the built-in len function.
+
+*Solution:*
+
+```python
+def len_tuple(tuple):
+    return len(tuple)
+
+my_tuple = (1, 2, 3, 4, 5)
+print(len_tuple(my_tuple))
+```
+
+

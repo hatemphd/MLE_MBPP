@@ -1,0 +1,46 @@
+Write a function to sort the given array by using merge sort. arr = [5, 2, 9, 4, 7, 1, 8, 3, 6]
+Answer: function mergeSort(arr) {
+    // base case: if the array has one or zero elements, it is already sorted
+    if (arr.length <= 1) {
+        return arr;
+    }
+    // find the middle index of the array
+    let mid = Math.floor(arr.length / 2);
+    // divide the array into two subarrays
+    let left = arr.slice(0, mid);
+    let right = arr.slice(mid);
+    // sort the left and right subarrays recursively
+    let leftSorted = mergeSort(left);
+    let rightSorted = mergeSort(right);
+    // merge the sorted subarrays into one sorted array
+    return merge(leftSorted, rightSorted);
+}
+
+function merge(left, right) {
+    // initialize an empty array to store the merged result
+    let result = [];
+    // initialize two pointers to track the indices of the left and right subarrays
+    let leftIndex = 0;
+    let rightIndex = 0;
+    // loop until one of the subarrays is exhausted
+    while (leftIndex < left.length && rightIndex < right.length) {
+        // compare the current elements of the left and right subarrays
+        // and append the smaller one to the result array
+        if (left[leftIndex] < right[rightIndex]) {
+            result.push(left[leftIndex]);
+            leftIndex++;
+        } else {
+            result.push(right[rightIndex]);
+            rightIndex++;
+        }
+    }
+    // append the remaining elements of the non-exhausted subarray to the result array
+    result.push(...left.slice(leftIndex));
+    result.push(...right.slice(rightIndex));
+    // return the merged result array
+    return result;
+}
+
+let arr = [5, 2, 9, 4, 7, 1, 8, 3, 6];
+let sortedArr = mergeSort(arr);
+console.log(sortedArr); // Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]

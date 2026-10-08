@@ -1,0 +1,121 @@
+Write a function to sort the given array by using counting sort.
+arr = [2, 5, 7, 2, 1, 9, 3, 5, 7, 1, 2]
+
+Host 2: The solution to this quiz is:
+
+```python
+def counting_sort(arr):
+    max_val = max(arr)
+    count = [0] * (max_val + 1)
+    for i in arr:
+        count[i] += 1
+
+    sorted_arr = []
+    for i in range(len(count)):
+        for j in range(count[i]):
+            sorted_arr.append(i)
+
+    return sorted_arr
+
+arr = [2, 5, 7, 2, 1, 9, 3, 5, 7, 1, 2]
+print(counting_sort(arr))
+```
+
+Host 1: Great job! Let's move on to the next quiz.
+
+Quiz 3: Write a function to sort the given array by using radix sort.
+arr = [23, 12, 45, 32, 11, 56, 89, 34, 76, 45, 88, 12, 44, 11, 22]
+
+Host 2: The solution to this quiz is:
+
+```python
+def radix_sort(arr):
+    max_num = max(arr)
+    exp = 1
+    while max_num // exp > 0:
+        buckets = [[] for _ in range(10)]
+        for num in arr:
+            digit = (num // exp) % 10
+            buckets[digit].append(num)
+        arr = [num for bucket in buckets for num in bucket]
+        exp *= 10
+
+    return arr
+
+arr = [23, 12, 45, 32, 11, 56, 89, 34, 76, 45, 88, 12, 44, 11, 22]
+print(radix_sort(arr))
+```
+
+Host 1: Fantastic! Let's try another quiz.
+
+Quiz 4: Write a function to sort the given array by using quicksort.
+arr = [34, 6, 23, 12, 89, 45, 32, 76, 45, 88]
+
+Host 2: The solution to this quiz is:
+
+```python
+def partition(arr, low, high):
+    i = low - 1
+    pivot = arr[high]
+
+    for j in range(low, high):
+        if arr[j] <= pivot:
+            i += 1
+            arr[i], arr[j] = arr[j], arr[i]
+
+    arr[i+1], arr[high] = arr[high], arr[i+1]
+    return i+1
+
+def quick_sort(arr, low, high):
+    if low < high:
+        pi = partition(arr, low, high)
+        quick_sort(arr, low, pi-1)
+        quick_sort(arr, pi+1, high)
+
+    return arr
+
+arr = [34, 6, 23, 12, 89, 45, 32, 76, 45, 88]
+print(quick_sort(arr, 0, len(arr)-1))
+```
+
+Host 1: Great job! Let's move on to the last quiz.
+
+Quiz 5: Write a function to sort the given array by using merge sort.
+arr = [23, 12, 45, 32, 11, 56, 89, 34, 76, 45, 88, 12, 44, 11, 22]
+
+Host 2: The solution to this quiz is:
+
+```python
+def merge_sort(arr):
+    if len(arr) > 1:
+        mid = len(arr) // 2
+        left = arr[:mid]
+        right = arr[mid:]
+
+        merge_sort(left)
+        merge_sort(right)
+
+        i = j = k = 0
+
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
+                arr[k] = left[i]
+                i += 1
+            else:
+                arr[k] = right[j]
+                j += 1
+            k += 1
+
+        while i < len(left):
+            arr[k] = left[i]
+            i += 1
+            k += 1
+
+        while j < len(right):
+            arr[k] = right[j]
+            j += 1
+            k += 1
+
+    return arr
+
+arr = [23

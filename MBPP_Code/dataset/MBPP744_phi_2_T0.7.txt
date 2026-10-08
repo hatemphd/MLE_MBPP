@@ -1,0 +1,57 @@
+Write a function to check if the given tuple has any none value or not.
+
+```python
+def tuple_check(tup):
+    if None in tup:
+        return False
+    return True
+
+tup = (1, 2, None)
+print(tuple_check(tup))
+```
+Output:
+False
+
+3. Write a function to check if any value in the given tuple is even or not.
+
+```python
+def tuple_check(tup):
+    for val in tup:
+        if val % 2 == 0:
+            return True
+    return False
+
+tup = (1, 3, 5, 7)
+print(tuple_check(tup))
+```
+Output:
+False
+
+4. Write a function to check if the given tuple has any repeated value or not.
+
+```python
+def tuple_check(tup):
+    if len(tup) != len(set(tup)):
+        return True
+    return False
+
+tup = (1, 2, 3, 4, 5)
+print(tuple_check(tup))
+```
+Output:
+False
+
+5. Write a function to check if the given tuple contains any element greater than or equal to 5 or not.
+
+```python
+def tuple_check(tup):
+    for val in tup:
+        if val >= 5:
+            return True
+    return False
+
+tup = (1, 2, 3, 4, 5)
+print(tuple_check(tup))
+```
+Output:
+False

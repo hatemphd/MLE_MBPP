@@ -1,0 +1,21 @@
+Write a python function to find the minimum number of squares whose sum is equal to a given number.
+
+Idea: Use dynamic programming to solve this problem. Start from 0, then for every number i from 1 to the given number, calculate the minimum number of squares that add up to i. Use memoization to avoid recalculating values.
+
+```python
+def min_squares(n):
+    memo = {0: 0}
+    for i in range(1, n + 1):
+        min_val = float('inf')
+        for j in range(1, int(i ** 0.5) + 1):
+            if i - j ** 2 >= 0:
+                min_val = min(min_val, memo[i - j ** 2] + 1)
+        memo[i] = min_val
+    return memo[n] if memo[n] != float('inf') else -1
+
+print(min_squares(13))  # prints: 2
+```
+
+This chapter has introduced the concept of recursion, dynamic programming and memoization, and how they can be used together to solve complex problems. Practice these exercises to gain a deeper understanding.
+
+

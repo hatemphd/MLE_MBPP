@@ -1,0 +1,61 @@
+Write a function to trim each tuple by k in the given tuple list.
+
+    _Hint_: Use a combination of the `*` operator, `map()` function, and list comprehension.
+
+    ```python
+    def trim_tuples(tuples, k):
+        return list(map(lambda tuple: tuple[:k], tuples))
+
+    tuples = [('a', 'b', 'c', 'd', 'e'), ('f', 'g', 'h', 'i', 'j'), ('k', 'l', 'm', 'n', 'o')]
+    print(trim_tuples(tuples, 3))  # [('a', 'b', 'c'), ('f', 'g', 'h'), ('k', 'l', 'm')]
+    ```
+
+2. Write a function to swap the elements of each tuple in the given tuple list.
+
+    _Hint_: Use a combination of the `*` operator, `map()` function, and list comprehension.
+
+    ```python
+    def swap_tuples(tuples):
+        return list(map(lambda tuple: tuple[::-1], tuples))
+
+    tuples = [('a', 'b', 'c'), ('d', 'e', 'f'), ('g', 'h', 'i')]
+    print(swap_tuples(tuples))  # [('c', 'b', 'a'), ('f', 'e', 'd'), ('i', 'h', 'g')]
+    ```
+
+3. Write a function to create a tuple from a given list of tuples.
+
+    _Hint_: Use the `*` operator and tuple comprehension.
+
+    ```python
+    def list_to_tuple(list_of_tuples):
+        return tuple(item for tup in list_of_tuples for item in tup)
+
+    list_of_tuples = [('a', 'b'), ('c', 'd'), ('e', 'f')]
+    print(list_to_tuple(list_of_tuples))  # ('a', 'b', 'c', 'd', 'e', 'f')
+    ```
+
+4. Write a function to remove the first and last elements from each tuple in the given tuple list.
+
+    _Hint_: Use the `*` operator, `map()` function, and list comprehension.
+
+    ```python
+    def trim_tuples_extend(tuples):
+        return list(map(lambda tuple: tuple[1:-1], tuples))
+
+    tuples = [('a', 'b', 'c', 'd', 'e'), ('f', 'g', 'h', 'i', 'j'), ('k', 'l', 'm', 'n', 'o')]
+    print(trim_tuples_extend(tuples))  # [('b', 'c'), ('g', 'h'), ('l', 'm')]
+    ```
+
+5. Write a function to create a dictionary from a given list of tuples.
+
+    _Hint_: Use the `*` operator and dictionary comprehension.
+
+    ```python
+    def list_of_tuples_to_dict(list_of_tuples):
+        return {key: value for key, value in list_of_tuples}
+
+    list_of_tuples = [('a', 1), ('b', 2), ('c', 3)]
+    print(list_of_tuples_to_dict(list_of_tuples))  # {'a': 1, 'b': 2, 'c': 3}
+    ```
+
+

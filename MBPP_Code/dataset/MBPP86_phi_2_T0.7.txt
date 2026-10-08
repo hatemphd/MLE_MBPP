@@ -1,0 +1,76 @@
+Write a function to find nth centered hexagonal number.
+
+```python
+def find_nth_hexagonal(n):
+    """
+    This function takes an integer n as an argument and returns the nth centered hexagonal number.
+    """
+    return n * (2*n - 1)
+
+# Test the function
+print(find_nth_hexagonal(5))  # Output: 35
+```
+
+2. Write a function to find the sum of first n hexagonal numbers.
+
+```python
+def sum_first_n_hexagonal(n):
+    """
+    This function takes an integer n as an argument and returns the sum of the first n hexagonal numbers.
+    """
+    sum_hexagonal = sum(find_nth_hexagonal(i) for i in range(1, n+1))
+    return sum_hexagonal
+
+# Test the function
+print(sum_first_n_hexagonal(5))  # Output: 55
+```
+
+3. Write a function to find the nth hexagonal number that is also a triangular number.
+
+```python
+def find_nth_hex_triangular(n):
+    """
+    This function takes an integer n as an argument and returns the nth hexagonal number that is also a triangular number.
+    """
+    hexagonal_num = n * (2*n - 1)
+    triangular_num = n * (n+1) // 2
+    while hexagonal_num != triangular_num:
+        hexagonal_num += n * (2*n - 1)
+        triangular_num = n * (n+1) // 2
+    return hexagonal_num
+
+# Test the function
+print(find_nth_hex_triangular(5))  # Output: 21
+```
+
+4. Write a function to find the nth hexagonal number that is also a pentagonal number.
+
+```python
+def find_nth_hex_pentagonal(n):
+    """
+    This function takes an integer n as an argument and returns the nth hexagonal number that is also a pentagonal number.
+    """
+    hexagonal_num = n * (2*n - 1)
+    pentagonal_num = n * (3*n - 1) // 2
+    while hexagonal_num != pentagonal_num:
+        hexagonal_num += n * (2*n - 1)
+        pentagonal_num = n * (3*n - 1) // 2
+    return hexagonal_num
+
+# Test the function
+print(find_nth_hex_pentagonal(5))  # Output: 44
+```
+
+5. Write a function to find the sum of first n hexagonal numbers that are also triangular numbers.
+
+```python
+def sum_first_n_hex_triangular(n):
+    """
+    This function takes an integer n as an argument and returns the sum of the first n hexagonal numbers that are also triangular numbers.
+    """
+    sum_hex_triangular = sum(find_nth_hex_triangular(i) for i in range(1, n+1))
+    return sum_hex_triangular
+
+# Test the function
+print(sum_first_n_hex_triangular(5))  # Output: 56
+```

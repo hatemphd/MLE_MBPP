@@ -1,0 +1,31 @@
+Write a python function to find the first natural number whose factorial is divisible by x.
+
+**Solution:**
+```python
+def first_factorial_divisible_by_x(x):
+    n = 1
+    factorial = 1
+    while factorial % x != 0:
+        n += 1
+        factorial *= n
+    return n
+
+print(first_factorial_divisible_by_x(5))  # Output: 5
+```
+
+**Exercise 2:**
+Write a python function to find the nth Fibonacci number using the formula `F(n) = (phi^n - psi^n) / sqrt(5)`, where `phi = (1 + sqrt(5)) / 2` and `psi = (1 - sqrt(5)) / 2`.
+
+**Solution:**
+```python
+def nth_fibonacci_number(n):
+    phi = (1 + math.sqrt(5)) / 2
+    psi = (1 - math.sqrt(5)) / 2
+    return round((phi**n - psi**n) / math.sqrt(5))
+
+print(nth_fibonacci_number(10))  # Output: 55
+```
+
+Remember, practice is key to mastering any concept. So, try to solve as many exercises as you can by yourself before checking the solutions.
+
+

@@ -1,0 +1,28 @@
+Write a python function to count negative numbers in a list.
+
+Hints: Use the `enumerate()` function to access both the index and value of the list.
+
+```python
+def count_negative(numbers):
+    return sum(1 for i, num in enumerate(numbers) if num < 0)
+
+numbers = [1, -2, 3, -4, 5, -6]
+print(count_negative(numbers))  # Output: 3
+```
+
+3. Write a python function to find the index of the first occurrence of a number in a list.
+
+Hints: Use the `enumerate()` function and the `break` statement.
+
+```python
+def find_index(numbers, target):
+    for i, num in enumerate(numbers):
+        if num == target:
+            return i
+    return -1  # Return -1 if target not found
+
+numbers = [1, 2, 3, 4, 5]
+print(find_index(numbers, 3))  # Output: 2
+```
+
+

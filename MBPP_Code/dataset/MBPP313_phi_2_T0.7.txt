@@ -1,0 +1,51 @@
+Write a python function to print positive numbers in a list.
+```python
+def print_positive(numbers):
+    for number in numbers:
+        if number > 0:
+            print(number)
+
+numbers = [2, -1, 5, -3, 7]
+print_positive(numbers)
+```
+Output:
+```
+2
+5
+7
+```
+
+Exercise 4:
+Write a python function to print only the names that start with a vowel in a list of names.
+```python
+def print_vowel_names(names):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    for name in names:
+        if name[0].lower() in vowels:
+            print(name)
+
+names = ['Alice', 'Bob', 'Eve', 'Oscar', 'Ivy']
+print_vowel_names(names)
+```
+Output:
+```
+Alice
+Eve
+Ivy
+```
+
+Exercise 5:
+Write a python function to print even numbers in a list of numbers.
+```python
+def print_even(numbers):
+    for number in numbers:
+        if number % 2 == 0:
+            print(number)
+
+numbers = [2, -1, 5, -3, 7]
+print_even(numbers)
+```
+Output:
+```
+2
+```

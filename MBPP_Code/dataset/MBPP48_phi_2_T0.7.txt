@@ -1,0 +1,26 @@
+Write a python function to set all odd bits of a given number.
+
+```python
+def odd_bits(num):
+    binary = bin(num)[2:]
+    binary = '0'*(len(binary)%2) + binary
+    binary = binary[1::2]
+    binary = ''.join([str(int(i)+1) if i=='0' else i for i in binary])
+    return int(binary, 2)
+
+print(odd_bits(13))
+```
+
+### Exercise 5:
+Write a python function to set all bits of a given number to 1.
+
+```python
+def all_bits(num):
+    binary = bin(num)[2:]
+    binary = '0'*(len(binary)%8) + binary
+    binary = '1'*len(binary)
+    binary = '0'*(8-(len(binary)%8)) + binary
+    return int(binary, 2)
+
+print(all_bits(13))
+```

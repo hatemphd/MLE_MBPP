@@ -1,0 +1,48 @@
+Write a function to check for the number of jumps required of given length to reach a point of form (d, 0) from origin in a 2d plane.
+
+You are given two integer arrays start and jump which represent the starting position and jump length of a frog on a number line. The frog starts at the position start[0] and can jump either jump[0] units to the right, jump[1] units to the right, or jump[2] units to the right. Return the minimum number of jumps it takes for the frog to reach the point (d, 0). If it is not possible for the frog to reach the point (d, 0), return -1.
+
+Example 1:
+
+Input: start = [2,3,1,1,4], jump = [3,2,1,2,1]
+Output: 3
+Explanation: The frog's jumps are marked as follows:
+(2, 0)  (2, 2)  (3, 2)  (4, 2)  (4, 0)
+
+Example 2:
+
+Input: start = [2,3,1,1,4], jump = [3,2,1,1,1]
+Output: -1
+Explanation: The frog will never reach the point (4, 0).
+Note:
+
+1 <= start.length = jump.length <= 10000
+0 <= start[i], jump[i] <= 10000
+
+"""
+
+
+class Solution:
+    def jump(self, start: List[int], jump: List[int]) -> int:
+
+        current_position = 0
+        jumps_taken = 0
+        visited = [False] * len(start)
+
+        while current_position != -1 and current_position != len(start) - 1:
+            visited[current_position] = True
+            if current_position == len(start) - 1:
+                return jumps_taken
+
+            for i in range(1, 4):
+                next_position = current_position + i * jump[current_position]
+
+                if visited[next_position] == False and next_position < len(start):
+                    current_position = next_position
+                    jumps_taken += 1
+                    break
+
+            if current_position == -1:
+                return -1
+
+        return -1

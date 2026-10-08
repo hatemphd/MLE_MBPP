@@ -1,0 +1,40 @@
+Write a python function to count the occurrence of a given character in a string.
+```python
+def count_char(string, char):
+    # Your code here
+
+# Idea: Use the count method
+
+def count_char(string, char):
+    return string.count(char)
+
+print(count_char("Hello, World!", "o"))  # Output: 2
+```
+
+2. Given a string, write a python function to reverse the string.
+```python
+def reverse_string(string):
+    # Your code here
+
+# Idea: Use slicing
+
+def reverse_string(string):
+    return string[::-1]
+
+print(reverse_string("Hello, World!"))  # Output: "!dlroW ,olleH"
+```
+
+3. Given a string of words, write a python function to return the sorted words.
+```python
+def sort_words(string):
+    # Your code here
+
+# Idea: Split the string into words, sort them, and join them back
+
+def sort_words(string):
+    return " ".join(sorted(string.split()))
+
+print(sort_words("Hello, World!"))  # Output: "Hello, World!"
+```
+
+

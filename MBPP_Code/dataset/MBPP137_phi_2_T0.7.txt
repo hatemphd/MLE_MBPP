@@ -1,0 +1,14 @@
+Write a function to find the ration of zeroes in an array of integers.
+
+Idea: Use the `count_zeroes` function in a loop and keep a count of the number of zeroes found.
+
+```python
+def ratio_of_zeroes(arr):
+    count = 0
+    for num in arr:
+        if num == 0:
+            count += 1
+    return count/len(arr)
+```
+
+

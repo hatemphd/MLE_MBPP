@@ -1,0 +1,15 @@
+Write a function to find the minimum total path sum in the given triangle.
+
+### Solution:
+
+```python
+def minTotalPath(triangle):
+    for i in range(len(triangle) - 2, -1, -1):
+        for j in range(len(triangle[i])):
+            triangle[i][j] += min(triangle[i + 1][j], triangle[i + 1][j + 1])
+    return triangle[0][0]
+```
+
+This code works by starting from the second-last row of the triangle and gradually moving towards the top. For each cell in the row, we add the minimum value between the cell directly below it and the cell diagonally below and to the right, and update the cell in the current row accordingly. This approach ensures that we always have the minimum total path sum at the top of the triangle.
+
+

@@ -1,0 +1,13 @@
+Write a python function to check whether a sequence of numbers has a decreasing trend or not.
+
+```Python
+def check_decreasing(numbers):
+    for i in range(len(numbers) - 1):
+        if numbers[i] < numbers[i + 1]:
+            return False
+    return True
+
+print(check_decreasing([1, 2, 3]))  # Output: False
+```
+
+

@@ -1,0 +1,103 @@
+Write a python function to convert a decimal number to binary number. Here is the function signature:
+```
+def decimal_to_binary(decimal_number: int) -> str:
+    """
+    Converts a decimal number to a binary number and returns the binary number as a string.
+    """
+```
+
+3. Write a python function to convert a binary number to decimal number. Here is the function signature:
+```
+def binary_to_decimal(binary_number: str) -> int:
+    """
+    Converts a binary number to a decimal number and returns the decimal number as an integer.
+    """
+```
+
+4. Write a python function to convert a hexadecimal number to decimal number. Here is the function signature:
+```
+def hex_to_decimal(hex_number: str) -> int:
+    """
+    Converts a hexadecimal number to a decimal number and returns the decimal number as an integer.
+    """
+```
+
+5. Write a python function to convert a decimal number to octal number. Here is the function signature:
+```
+def decimal_to_octal(decimal_number: int) -> str:
+    """
+    Converts a decimal number to an octal number and returns the octal number as a string.
+    """
+```
+
+Solutions:
+1. Here is the python code for the `decimal_to_binary` function:
+```
+def decimal_to_binary(decimal_number: int) -> str:
+    """
+    Converts a decimal number to a binary number and returns the binary number as a string.
+    """
+    if decimal_number == 0:
+        return "0"
+    binary_number = ""
+    while decimal_number > 0:
+        binary_number = str(decimal_number % 2) + binary_number
+        decimal_number //= 2
+    return binary_number
+```
+
+2. Here is the python code for the `binary_to_decimal` function:
+```
+def binary_to_decimal(binary_number: str) -> int:
+    """
+    Converts a binary number to a decimal number and returns the decimal number as an integer.
+    """
+    decimal_number = 0
+    for i in range(len(binary_number)):
+        if binary_number[i] == "1":
+            decimal_number += 2 ** (len(binary_number) - i - 1)
+    return decimal_number
+```
+
+3. Here is the python code for the `hex_to_decimal` function:
+```
+def hex_to_decimal(hex_number: str) -> int:
+    """
+    Converts a hexadecimal number to a decimal number and returns the decimal number as an integer.
+    """
+    decimal_number = 0
+    hex_digits = "0123456789ABCDEF"
+    for i in range(len(hex_number)):
+        decimal_number += hex_digits.index(hex_number[i]) * 16 ** (len(hex_number) - i - 1)
+    return decimal_number
+```
+
+4. Here is the python code for the `decimal_to_octal` function:
+```
+def decimal_to_octal(decimal_number: int) -> str:
+    """
+    Converts a decimal number to an octal number and returns the octal number as a string.
+    """
+    if decimal_number == 0:
+        return "0"
+    octal_number = ""
+    while decimal_number > 0:
+        octal_number = str(decimal_number % 8) + octal_number
+        decimal_number //= 8
+    return octal_number
+```
+
+5. Here is the python code for the `decimal_to_octal` function:
+```
+def decimal_to_octal(decimal_number: int) -> str:
+    """
+    Converts a decimal number to an octal number and returns the octal number as a string.
+    """
+    if decimal_number == 0:
+        return "0"
+    octal_number = ""
+    while decimal_number > 0:
+        octal_number = str(decimal_number % 8) + octal_number
+        decimal_number //= 8
+    return octal_number
+```

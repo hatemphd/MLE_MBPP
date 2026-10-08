@@ -1,0 +1,70 @@
+Write a function to find the cumulative sum of all the values that are present in the given tuple list.
+
+```python
+def cumulative_sum(tuple_list):
+    # Your code here
+    
+tuple_list = [(1, 2, 3), (4, 5, 6), (7, 8, 9)]
+print(cumulative_sum(tuple_list))  # [6, 15, 24]
+```
+
+_Ideas:_
+- Use a for loop to iterate over each tuple in the list
+- Use the sum() function to calculate the sum of values in each tuple
+- Use a list to store the cumulative sum of values in each tuple
+
+_Solution:_
+```python
+def cumulative_sum(tuple_list):
+    # Initialize an empty list to store the cumulative sum
+    cumulative_list = []
+    
+    # Iterate over each tuple in the list
+    for tup in tuple_list:
+        # Calculate the sum of values in the tuple
+        tup_sum = sum(tup)
+        
+        # Add the sum to the cumulative list
+        cumulative_list.append(tup_sum)
+    
+    return cumulative_list
+
+tuple_list = [(1, 2, 3), (4, 5, 6), (7, 8, 9)]
+print(cumulative_sum(tuple_list))  # [6, 15, 24]
+```
+
+### Exercise 5
+
+Write a function to flatten a given list of tuples into a single tuple.
+
+```python
+def flatten_tuples(tuple_list):
+    # Your code here
+    
+tuple_list = [(1, 2), (3, 4), (5, 6)]
+print(flatten_tuples(tuple_list))  # (1, 2, 3, 4, 5, 6)
+```
+
+_Ideas:_
+- Use a for loop to iterate over each tuple in the list
+- Use the extend() method to add the values in each tuple to a new list
+- Convert the list to a tuple and return it
+
+_Solution:_
+```python
+def flatten_tuples(tuple_list):
+    # Initialize an empty list to store the flattened values
+    flattened_list = []
+    
+    # Iterate over each tuple in the list
+    for tup in tuple_list:
+        # Add the values in the tuple to the flattened list
+        flattened_list.extend(tup)
+    
+    # Convert the flattened list to a tuple and return it
+    return tuple(flattened_list)
+
+tuple_list = [(1, 2), (3, 4), (5, 6)]
+print(flatten_tuples(tuple_list))  # (1, 2, 3, 4, 5, 6)
+```
+

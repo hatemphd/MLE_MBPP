@@ -1,0 +1,78 @@
+Write a python function to find the sum of all odd length subarrays.
+
+```python
+# Sample array
+arr = [1, 2, 3, 4, 5]
+
+def sum_of_odd_length_subarrays(arr):
+    total_sum = 0
+    for i in range(len(arr)):
+        for j in range(i, len(arr)):
+            if (j-i+1)%2 != 0:
+                total_sum += sum(arr[i:j+1])
+    return total_sum
+
+print(sum_of_odd_length_subarrays(arr))
+```
+
+## Time Complexity
+
+The time complexity of the above code is O(n^3) as we have two nested loops traversing the array. We can observe that the time complexity increases linearly with the size of the input array.
+
+## Space Complexity
+
+The space complexity of the above code is O(1) as we are not using any additional space proportional to the size of the input array.
+
+## Exercises
+
+**Exercise 1:** Write a python function to find the sum of all even length subarrays.
+
+**Hint:** Simply change the modulus condition in the if statement to check for even length subarrays.
+
+```python
+def sum_of_even_length_subarrays(arr):
+    total_sum = 0
+    for i in range(len(arr)):
+        for j in range(i, len(arr)):
+            if (j-i+1)%2 == 0:
+                total_sum += sum(arr[i:j+1])
+    return total_sum
+
+print(sum_of_even_length_subarrays(arr))
+```
+
+**Exercise 2:** Write a python function that finds the maximum sum subarray of odd length.
+
+**Hint:** You can keep track of the maximum sum and update it while traversing the array.
+
+```python
+def maximum_sum_odd_length_subarray(arr):
+    max_sum = float('-inf')
+    for i in range(len(arr)):
+        for j in range(i, len(arr)):
+            if (j-i+1)%2 != 0:
+                temp_sum = sum(arr[i:j+1])
+                max_sum = max(max_sum, temp_sum)
+    return max_sum
+
+print(maximum_sum_odd_length_subarray(arr))
+```
+
+**Exercise 3:** Write a python function that finds the minimum sum subarray of even length.
+
+**Hint:** Similar to the previous exercise, keep track of the minimum sum and update it while traversing the array.
+
+```python
+def minimum_sum_even_length_subarray(arr):
+    min_sum = float('inf')
+    for i in range(len(arr)):
+        for j in range(i, len(arr)):
+            if (j-i+1)%2 == 0:
+                temp_sum = sum(arr[i:j+1])
+                min_sum = min(min_sum, temp_sum)
+    return min_sum
+
+print(minimum_sum_even_length_subarray(arr))
+```
+
+

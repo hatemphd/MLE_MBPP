@@ -1,0 +1,26 @@
+Write a python function to minimize the length of the string by removing occurrence of only one character.
+
+**Hint:** Implement the same approach as Exercise 3 but consider only one character.
+
+**Solution:**
+
+```python
+def min_string_length(s):
+    count_dict = {}
+    for char in s:
+        if char in count_dict:
+            count_dict[char] += 1
+        else:
+            count_dict[char] = 1
+    if max(count_dict.values()) == 1:
+        char_to_remove = max(count_dict, key=count_dict.get)
+        return len(s) - count_dict[char_to_remove]
+    else:
+        return len(s)
+
+print("Minimum length of string is", min_string_length("abcdabcd"))
+```
+
+In the above solution, a separate check is performed to find the character that occurs only once. This character is then removed, and the length of the resulting string is returned.
+
+

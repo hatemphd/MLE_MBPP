@@ -1,0 +1,31 @@
+Write a function to extract values between quotation marks of a string. 
+
+```python
+def extract_quoted_values(string):
+    start = None
+    values = []
+    for i, char in enumerate(string):
+        if char == '"':
+            if start is None:
+                start = i
+            elif i == len(string) - 1:
+                values.append(string[start+1:i])
+        elif start is not None:
+            values.append(string[start:i])
+            start = None
+    return values
+```
+
+5. Write a function to remove all comments from a string.
+
+```python
+def remove_comments(string):
+    lines = string.split("\n")
+    result = []
+    for line in lines:
+        comment_start = line.find("#")
+        if comment_start != -1:
+            line = line[:comment_start]
+        result.append(line)
+    return "\n".join(result)
+```

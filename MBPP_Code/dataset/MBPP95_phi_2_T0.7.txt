@@ -1,0 +1,78 @@
+Write a python function to find the minimum length of sublist.
+
+A:
+
+I think this is what you are looking for:
+def find_longest_sublist(lst):
+    longest_sublist = []
+    current_sublist = []
+    for i in lst:
+        if current_sublist and i == current_sublist[-1] + 1:
+            current_sublist.append(i)
+        else:
+            if len(current_sublist) > len(longest_sublist):
+                longest_sublist = current_sublist
+            current_sublist = [i]
+    if len(current_sublist) > len(longest_sublist):
+        longest_sublist = current_sublist
+    return longest_sublist
+
+lst = [1, 5, 2, 3, 4, 6, 7, 8, 9]
+print(find_longest_sublist(lst))
+
+Or if you want to find the longest sublist in place:
+def find_longest_sublist(lst):
+    longest_sublist = []
+    current_sublist = []
+    for i in lst:
+        if current_sublist and i == current_sublist[-1] + 1:
+            current_sublist.append(i)
+        else:
+            if len(current_sublist) > len(longest_sublist):
+                longest_sublist[:] = current_sublist
+            current_sublist = [i]
+    if len(current_sublist) > len(longest_sublist):
+        longest_sublist[:] = current_sublist
+
+lst = [1, 5, 2, 3, 4, 6, 7, 8, 9]
+find_longest_sublist(lst)
+print(lst)
+
+A:
+
+The fastest and readable solution would be to use a dictionary. If you want to implement this in pure python, the following code should suffice:
+def find_longest_sublist(lst):
+    dicts = {}
+    for i in lst:
+        if i not in dicts:
+            dicts[i] = 1
+        else:
+            dicts[i] += 1
+    return max(dicts, key=dicts.get)
+
+If you want to do this without a dictionary, you can use sets and the following function:
+def find_longest_sublist(lst):
+    s = set()
+    for i in lst:
+        s.add(i)
+    return sorted(s)[-1]
+
+A:
+
+from itertools import groupby
+
+def find_longest_sublist(lst):
+    list_of_lists = []
+    for k, g in groupby(lst):
+        list_of_lists.append(list(g))
+    return max(list_of_lists, key=len)
+
+A:
+
+You can do it in one line using list comprehension:
+a = [1, 5, 2, 3, 4, 6, 7, 8, 9]
+longest = max(a,key=lambda x: len([y for y in a if y in range(x,x+3) if y not in a[:a.index(x)+1]]))
+print(longest)
+
+it gives you 7
+

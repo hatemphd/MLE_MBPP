@@ -1,0 +1,55 @@
+Write a function to insert an element before each element of a list.
+
+```python
+def insertBeforeEach(list, element):
+    for i in range(len(list)):
+        list.insert(i, element)
+    return list
+
+print(insertBeforeEach(["a", "b", "c"], "x"))
+```
+
+2. Write a function to insert a list into another list at the beginning and end.
+
+```python
+def insertAtBeginAndEnd(list1, list2):
+    list1.insert(0, list2)
+    list1.append(list2)
+    return list1
+
+print(insertAtBeginAndEnd(["a", "b", "c"], ["x", "y"]))
+```
+
+3. Write a function to insert a list into a list at the middle.
+
+```python
+def insertAtMiddle(list1, list2, index):
+    list1.insert(index, list2)
+    return list1
+
+print(insertAtMiddle(["a", "b", "c"], ["x", "y"], 1))
+```
+
+4. Write a function to insert a list into a list at the end, but only if the list is not already in the list.
+
+```python
+def insertIfNotPresent(list1, list2):
+    if list2 not in list1:
+        list1.append(list2)
+    return list1
+
+print(insertIfNotPresent(["a", "b", "c"], ["x", "y"]))
+```
+
+5. Write a function to insert a list into a list at the beginning, but only if the list is not already in the list.
+
+```python
+def insertIfNotPresent(list1, list2):
+    if list2 not in list1:
+        list1.insert(0, list2)
+    return list1
+
+print(insertIfNotPresent(["a", "b", "c"], ["x", "y"]))
+```
+
+

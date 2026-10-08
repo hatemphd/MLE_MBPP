@@ -1,0 +1,19 @@
+Write a function to search an element in the given array by using sequential search. array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], search element = 7
+Answer: def sequentialSearch(array, searchElement):
+    # Set the index of the first element
+    index = 0
+    # Loop through the array elements until the end or the element is found
+    while index < len(array) and array[index] != searchElement:
+        # Increment the index by 1
+        index += 1
+    # If the element is found, return its index
+    if index < len(array) and array[index] == searchElement:
+        return index
+    # Otherwise, return -1
+    else:
+        return -1
+
+# Driver code
+array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+searchElement = 7
+print(sequentialSearch(array, searchElement))

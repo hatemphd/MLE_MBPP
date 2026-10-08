@@ -1,0 +1,32 @@
+Write a python function to find the volume of a triangular prism.
+
+Question 3:
+A company has a triangular prism with a base area of 20 square units and a height of 10 units. The company wants to increase the height of the prism by 5 units. Write a python function to calculate the new volume of the prism.
+
+<|question_end|>Solution:
+
+Question 1:
+The formula for the volume of a triangular prism is V = (1/2)bh * h
+Where V is the volume, b is the base area, h is the height.
+= (1/2)(10)(8) * 10
+= 40 * 10
+= 400 cubic units.
+
+Question 2:
+The formula for the volume of a triangular prism is V = (1/2)bh * h
+Where V is the volume, b is the base area, h is the height.
+= (1/2)(10)(12) * 15
+= 60 * 15
+= 900 cubic units.
+
+Question 3:
+The initial volume of the triangular prism is V = (1/2)bh * h
+= (1/2)(20)(10) * 10
+= 100 * 10
+= 1000 cubic units.
+The new volume of the prism is V' = (1/2)bh * (h+5)
+= (1/2)(20)(10+5) * (10+5)
+= 150 * 15
+= 2250 cubic units.
+
+<|endofgeneration|>

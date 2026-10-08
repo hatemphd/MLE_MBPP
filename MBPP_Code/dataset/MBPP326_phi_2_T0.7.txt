@@ -1,0 +1,39 @@
+Write a function to get the word with most number of occurrences in the given strings list.
+
+Example:
+Input: ["I am happy", "I am sad", "I am happy"]
+Output: "I am happy"
+
+"""
+from collections import Counter
+
+def get_most_frequent_word(strings_list):
+    """
+    Arguments:
+        strings_list {list} -- A list of strings
+
+    Returns:
+        str -- The most frequent word in the given list
+    """
+    
+    most_frequent_word = ""
+    most_frequent_word_count = 0
+    
+    for string in strings_list:
+        
+        # Converting the string into a list of words
+        string_words = string.split(' ')
+        
+        # Converting the list of words into a dictionary with words as keys and their frequency as values
+        word_frequency_dict = dict(Counter(string_words))
+        
+        # Finding the word with maximum frequency
+        for key in word_frequency_dict:
+            if word_frequency_dict[key] > most_frequent_word_count:
+                most_frequent_word = key
+                most_frequent_word_count = word_frequency_dict[key]
+                
+    return most_frequent_word
+
+strings_list = ["I am happy", "I am sad", "I am happy"]
+print(get_most_frequent_word(strings_list))

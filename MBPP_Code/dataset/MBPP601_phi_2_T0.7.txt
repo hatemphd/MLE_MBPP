@@ -1,0 +1,33 @@
+Write a function to find the longest chain which can be formed from the given set of pairs.
+
+```python
+def findLongestChain(pairs):
+    # Implement your solution here
+    pass
+```
+For the solution, we can modify our `longestChain` function. Instead of returning the length of the longest chain we can return the longest chain itself. We can also modify our `findLongestChain` function to return the longest chain directly.
+
+```python
+def longestChain(pairs):
+    # Modified function
+    def dfs(node):
+        nonlocal maxChain, chain
+        for next_node in pairs[node]:
+            if next_node not in visited:
+                visited[next_node] = True
+                dfs(next_node)
+                if len(chain) < len(maxChain):
+                    maxChain = chain
+                    chain = [node, next_node]
+    maxChain = []
+    chain = []
+    visited = {node: False for node in pairs}
+    dfs(next(iter(pairs)))
+    return maxChain
+
+print(findLongestChain(pairs))
+```
+
+Remember, understanding the concept is more important than memorizing the code. So don't hesitate to modify and experiment with the code to fully understand the concept.
+
+

@@ -1,0 +1,51 @@
+Write a function to find the surface area of a cylinder. The formula for the surface area of a cylinder is: 
+
+Surface Area = 2πr(r + h)
+
+where r is the radius of the base and h is the height of the cylinder.
+
+```python
+def surface_area(radius, height):
+    surface_area = 2 * math.pi * radius * (radius + height)
+    return surface_area
+```
+
+### Exercise 3:
+
+Write a function to find the volume of a sphere. The formula for the volume of a sphere is:
+
+Volume = (4/3)πr^3
+
+where r is the radius of the sphere.
+
+```python
+def volume_of_sphere(radius):
+    volume = (4/3) * math.pi * radius**3
+    return volume
+```
+
+### Exercise 4:
+
+Write a function to find the surface area of a cone. The formula for the surface area of a cone is:
+
+Surface Area = πr(r + l)
+
+where r is the radius of the base and l is the slant height of the cone.
+
+```python
+def surface_area_of_cone(radius, slant_height):
+    surface_area = math.pi * radius * (radius + slant_height)
+    return surface_area
+```
+
+### Exercise 5:
+
+Write a function to find the total surface area of a solid figure made up of a cylinder and a cone. The cylinder has a radius of 5cm, a height of 10cm, and the cone has a radius of 5cm and a height of 10cm.
+
+```python
+def total_surface_area(cylinder_radius, cylinder_height, cone_radius, cone_height):
+    cylinder_surface_area = 2 * math.pi * cylinder_radius * (cylinder_radius + cylinder_height)
+    cone_surface_area = math.pi * cone_radius * (cone_radius + cone_height)
+    total_surface_area = cylinder_surface_area + cone_surface_area
+    return total_surface_area
+```

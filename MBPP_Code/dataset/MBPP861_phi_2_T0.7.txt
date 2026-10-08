@@ -1,0 +1,14 @@
+Write a function to find all anagrams of a string in a given list of strings using lambda function.
+
+```python
+string = 'listen'
+anagrams = ['enlist', 'google', 'inlets', 'banana']
+
+# Solution
+def find_anagrams(s, lst):
+    return [word for word in lst if sorted(s) == sorted(word)]
+
+print(find_anagrams(string, anagrams))  # Output: ['enlist', 'inlets']
+```
+
+

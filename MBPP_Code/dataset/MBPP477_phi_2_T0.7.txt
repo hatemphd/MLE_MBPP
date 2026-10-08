@@ -1,0 +1,22 @@
+Write a python function to convert the given string to lower case. 
+
+**Solution**
+```python
+def to_lower_case(string:str)->str:
+    return string.lower()
+
+to_lower_case("PYTHON Programming") #Returns "python programming"
+
+```
+
+5. Write a python program to concatenate the given 2 strings.
+
+**Solution**
+```python
+def concatenate_strings(string1:str, string2:str)->str:
+    return string1+string2
+
+concatenate_strings("Hello", "World") #Returns "HelloWorld"
+```
+
+

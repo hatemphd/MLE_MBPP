@@ -1,0 +1,14 @@
+Write a function to calculate the nth pell number.
+#
+# https://leetcode.com/problems/pell-number/description/
+
+class Solution(object):
+    def pellNumber(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        a, b = 0, 1
+        for i in range(2, n + 1):
+            a, b = b, a + b
+        return b

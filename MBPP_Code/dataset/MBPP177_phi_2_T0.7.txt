@@ -1,0 +1,68 @@
+Write a python function to find two distinct numbers such that their lcm lies within the given range.
+
+```python
+# Hint: Use the lcm function inside a loop to iterate over all pairs of numbers.
+
+def find_numbers_in_range(a, b, lower, upper):
+    for i in range(lower, upper + 1):
+        if np.lcm(a, i) <= upper and np.lcm(a, i) >= lower:
+            return a, i
+    return None
+
+print(find_numbers_in_range(3, 5, 10, 30))
+```
+
+2. Implement a function that returns the LCM of all numbers in a list.
+
+```python
+# Hint: Use a loop to iterate over the numbers in the list and keep track of the lcm.
+
+def lcm_of_list(numbers):
+    lcm = numbers[0]
+    for num in numbers[1:]:
+        lcm = np.lcm(lcm, num)
+    return lcm
+
+print(lcm_of_list([3, 5, 12, 18]))  # Output: 180
+```
+
+3. Implement a function that returns the LCM of two numbers without using numpy's lcm function.
+
+```python
+# Hint: Use the formula lcm(x, y) = (x*y) / gcd(x, y).
+
+def gcd(x, y):
+    while(y):
+        x, y = y, x % y
+    return x
+
+def lcm(x, y):
+    return x * y // gcd(x, y)
+
+print(lcm(3, 5))  # Output: 15
+```
+
+4. Implement a function that takes two lists of numbers and returns a new list that contains the LCM of each pair of corresponding numbers.
+
+```python
+# Hint: Use the zip function to iterate over two lists simultaneously.
+
+def lcm_pairs(list1, list2):
+    return [np.lcm(x, y) for x, y in zip(list1, list2)]
+
+print(lcm_pairs([3, 5, 12], [2, 6, 18]))  # Output: [6, 30, 36]
+```
+
+5. Implement a function that takes a list of numbers and returns the number closest to the LCM of the list.
+
+```python
+# Hint: Use the lcm_of_list function from exercise 2, and Python's built-in min function.
+
+def closest_to_lcm(numbers):
+    lcm = lcm_of_list(numbers)
+    return min(numbers, key=lambda x: abs(x - lcm))
+
+print(closest_to_lcm([3, 5, 12, 18]))  # Output: 15
+```
+
+

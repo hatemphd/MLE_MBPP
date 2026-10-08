@@ -1,0 +1,89 @@
+Write a function to sort a list of elements using pancake sort. 
+
+```python
+def pancake_sort(arr):
+    n = len(arr)
+    # Iterating through the array from the last element to the second element
+    for i in range(n-1, 0, -1):
+        # Find the minimum element from the unsorted part of the array
+        min_index = arr.index(min(arr[:i+1]))
+        # If the current index is not equal to the minimum index
+        if min_index != i:
+            # Flip the current index and the minimum index
+            arr = flip(arr, min_index, i)
+            # Flip the array from the start to the current index
+            arr = flip(arr, 0, i)
+    return arr
+
+def flip(arr, i, j):
+    # Reverse the elements from index 'i' to 'j' (inclusive)
+    arr[i:j+1] = arr[i:j+1][::-1]
+    return arr
+
+# Test the function
+arr = [10, 20, 30, 40, 50]
+print(pancake_sort(arr))
+# Output: [10, 20, 30, 40, 50]
+```
+
+The function `pancake_sort` takes an array as input, sorts it using the `flip` function, and finally returns the sorted array. The function `flip` reverses the elements from the start to the given index. 
+
+## Exercises
+
+1. **Exercise:** Modify the `pancake_sort` function to sort the array in descending order.
+
+   **Hint:** To accomplish this, you will need to change the comparison in the `flip` function.
+
+   **Solution:**
+
+   ```python
+   def pancake_sort_desc(arr):
+       n = len(arr)
+       for i in range(n-1, 0, -1):
+           min_index = arr.index(min(arr[:i+1]))
+           if min_index != i:
+               arr = flip(arr, min_index, i)
+               arr = flip(arr, 0, i)
+       return arr
+
+   def flip(arr, i, j):
+       arr[i:j+1] = arr[i:j+1][::-1]
+       return arr
+
+   # Test the function
+   arr = [10, 20, 30, 40, 50]
+   print(pancake_sort_desc(arr))
+   # Output: [50, 40, 30, 20, 10]
+   ```
+
+2. **Exercise:** Optimize the `pancake_sort` function to reduce the number of flips.
+
+   **Hint:** The current implementation of `pancake_sort` requires flipping the array after every swap, which leads to an inefficient use of flips.
+
+   **Solution:**
+
+   ```python
+   def pancake_sort_optimized(arr):
+       n = len(arr)
+       for i in range(n-1, 0, -1):
+           # Find the minimum element from the unsorted part of the array
+           min_index = arr.index(min(arr[:i+1]))
+           # If the current index is not equal to the minimum index
+           if min_index != i:
+               # Perform a single flip to move the minimum element to its correct position
+               arr = flip_single_index(arr, min_index, i)
+       return arr
+
+   def flip_single_index(arr, i, j):
+       arr[i:j+1] = arr[i:j+1][::-1]
+       return arr
+
+   # Test the function
+   arr = [10, 50, 30, 20, 40]
+   print(pancake_sort_optimized(arr))
+   # Output: [10, 20, 30, 40, 50]
+   ```
+
+In the above solution, we have removed the need for an extra flip by performing a single flip to move the minimum element to its correct position. This modification decreases the number of flips from `n` to `n-1` in the worst case.
+
+

@@ -1,0 +1,80 @@
+Write a python function to check whether the given list contains consecutive numbers or not.
+
+```python
+# Solution
+
+def check_consecutive(lst):
+    if len(lst) < 2:
+        return False
+    lst.sort()
+    for i in range(len(lst)-1):
+        if lst[i+1] - lst[i] != 1:
+            return False
+    return True
+
+lst1 = [1,2,3,4,5]
+lst2 = [1,2,4,5]
+print(check_consecutive(lst1)) # True
+print(check_consecutive(lst2)) # False
+```
+
+
+### Exercise 3
+
+Write a python function to check whether a given list is empty or not.
+
+```python
+# Solution
+
+def check_empty(lst):
+    if len(lst) == 0:
+        return True
+    return False
+
+lst1 = []
+lst2 = [1,2,3]
+print(check_empty(lst1)) # True
+print(check_empty(lst2)) # False
+```
+
+
+### Exercise 4
+
+Write a python function to remove the duplicate elements from a list.
+
+```python
+# Solution
+
+def remove_duplicates(lst):
+    return list(set(lst))
+
+lst1 = [1,2,3,4,4,5,5,6]
+lst2 = [1,2,3,4,4,5,5,6]
+print(remove_duplicates(lst1)) # [1, 2, 3, 4, 5, 6]
+print(remove_duplicates(lst2)) # [1, 2, 3, 4, 5, 6]
+```
+
+
+### Exercise 5
+
+Write a python function to count the number of even and odd numbers in a list.
+
+```python
+# Solution
+
+def count_even_odd(lst):
+    even_lst = []
+    odd_lst = []
+    for num in lst:
+        if num % 2 == 0:
+            even_lst.append(num)
+        else:
+            odd_lst.append(num)
+    return {"even": len(even_lst), "odd": len(odd_lst)}
+
+lst1 = [1,2,3,4,5,6]
+lst2 = [10,11,12,13,14]
+print(count_even_odd(lst1)) # {'even': 3, 'odd': 3}
+print(count_even_odd(lst2)) # {'even': 2, 'odd': 3}
+```
+

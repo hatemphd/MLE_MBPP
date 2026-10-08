@@ -1,0 +1,61 @@
+Write a function to concatenate each element of tuple by the delimiter.
+
+```python
+# Here's an example tuple
+tuple_example = ("Hello", "World", "Python")
+
+# Write your solution here
+```
+**Solution**
+
+```python
+def concatenate_tuple(tuple_example, delimiter):
+    return delimiter.join(tuple_example)
+
+print(concatenate_tuple(tuple_example, '-'))  # outputs: Hello-World-Python
+```
+
+4. Write a function to convert a tuple into a list, perform an operation and then convert it back to a tuple.
+
+```python
+# Here's an example tuple
+tuple_example = (1, 2, 3, 4, 5)
+
+# Write your solution here
+```
+**Solution**
+
+```python
+def convert_and_operate(tuple_example, operation):
+    # Convert tuple to list
+    tuple_list = list(tuple_example)
+    
+    # Perform operation
+    tuple_list = [i*2 for i in tuple_list]
+    
+    # Convert list back to tuple
+    result = tuple(tuple_list)
+    
+    return result
+
+print(convert_and_operate(tuple_example, 2))  # outputs: (2, 4, 6, 8, 10)
+```
+
+5. Write a function that accepts a tuple of strings and returns a dictionary where the keys are the strings and the values are their lengths.
+
+```python
+# Here's an example tuple
+tuple_example = ("Hello", "World", "Python")
+
+# Write your solution here
+```
+**Solution**
+
+```python
+def string_lengths(tuple_example):
+    return {i: len(i) for i in tuple_example}
+
+print(string_lengths(tuple_example))  # outputs: {'Hello': 5, 'World': 5, 'Python': 6}
+```
+
+

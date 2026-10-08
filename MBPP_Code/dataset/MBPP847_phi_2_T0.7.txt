@@ -1,0 +1,75 @@
+Write a python function to copy a list from a singleton tuple. 
+
+*Hint:* Use the list() function to convert the tuple into a list.
+
+```python
+def copy_singleton_tuple(tuple_singleton, list_output):
+    list_output = list(tuple_singleton)
+    return list_output
+
+tuple_singleton = (1, 2, 3)
+list_output = copy_singleton_tuple(tuple_singleton, [])
+print(list_output)  # Output: [1, 2, 3]
+```
+
+2. Write a python function to copy a list without using the copy method.
+
+*Hint:* Use list slicing to copy the list.
+
+```python
+def copy_list_without_copy_method(list_input):
+    copy_list = list_input[:]
+    return copy_list
+
+list_input = [1, 2, 3, 4, 5]
+copy_list = copy_list_without_copy_method(list_input)
+print(copy_list)  # Output: [1, 2, 3, 4, 5]
+```
+
+3. Write a python function to copy a list and modify the original list. Check if the copied list is the same as the original list.
+
+*Hint:* Use the copy method to copy the list and then modify the original list.
+
+```python
+def copy_modify_original(list_input):
+    copy_list = list_input.copy()
+    list_input.append(6)
+    return copy_list, list_input
+
+list_input = [1, 2, 3]
+copy_list, list_input = copy_modify_original(list_input)
+print(copy_list == list_input)  # Output: False
+```
+
+4. Modify the previous function to copy a list and modify the copied list. Check if the original list is the same as the copied list.
+
+*Hint:* Use the copy method to copy the list and then modify the copied list.
+
+```python
+def copy_modify_copied(list_input):
+    copy_list = list_input[:]
+    copy_list.append(6)
+    return list_input, copy_list
+
+list_input = [1, 2, 3]
+list_input, copy_list = copy_modify_copied(list_input)
+print(list_input == copy_list)  # Output: False
+```
+
+5. Write a python function to copy a list that contains nested lists.
+
+*Hint:* Use the deepcopy() function from the copy module to copy the list that contains nested lists.
+
+```python
+import copy
+
+def copy_nested_list(nested_list):
+    copy_list = copy.deepcopy(nested_list)
+    return copy_list
+
+nested_list = [[1, 2, 3], [4, 5, 6]]
+copy_list = copy_nested_list(nested_list)
+print(copy_list)  # Output: [[1, 2, 3], [4, 5, 6]]
+```
+
+

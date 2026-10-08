@@ -1,0 +1,46 @@
+Write a python function to calculate the product of the unique numbers of a given list.
+
+```python
+def product_unique_numbers(arr):
+    unique_nums = set(arr)
+    product = 1
+    for num in unique_nums:
+        product *= num
+    return product
+
+print(product_unique_numbers([1, 2, 2, 3, 3, 3]))
+```
+
+### Exercise 7.3.2
+Write a Python function to calculate the product of all numbers in a list, excluding a given number.
+
+```python
+def product_except_self(arr, num):
+    product = 1
+    for n in arr:
+        if n != num:
+            product *= n
+    return product
+
+print(product_except_self([1,2,3,4,5], 4))
+```
+
+### Exercise 7.3.3
+Write a Python function to calculate the product of the numbers in a list, but if 0 is present in the list, return 0.
+
+```python
+def product_with_zero(arr):
+    if 0 in arr:
+        return 0
+    product = 1
+    for num in arr:
+        product *= num
+    return product
+
+print(product_with_zero([1,2,3,4,5]))
+print(product_with_zero([0,1,2,3,4,5]))
+```
+
+Through these exercises, you should have gained a more profound understanding of how to calculate the product of numbers in a list using Python's built-in functions.
+
+

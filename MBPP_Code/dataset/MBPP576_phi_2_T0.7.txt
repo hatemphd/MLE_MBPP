@@ -1,0 +1,28 @@
+Write a python function to check whether an array is subarray of another or not.
+
+Idea: You can use the `in` keyword to check whether the target array is a subarray of the main array.
+
+```python
+def is_subarray(array1, array2):
+    return array2 in array1
+```
+
+**Exercise 4:** Write a python function to find the sum of all elements in a 2D array.
+
+Idea: You can iterate over each sublist in the 2D array and use the `sum` function to calculate the sum of its elements.
+
+```python
+def sum_2d_array(array):
+    return sum(sum(sublist) for sublist in array)
+```
+
+**Exercise 5:** Write a python function to find the transpose of a 2D array.
+
+Idea: You can use list comprehension to create a new 2D array where each sublist is the corresponding element from the original array.
+
+```python
+def transpose_2d_array(array):
+    return [[array[j][i] for j in range(len(array))] for i in range(len(array[0]))]
+```
+
+

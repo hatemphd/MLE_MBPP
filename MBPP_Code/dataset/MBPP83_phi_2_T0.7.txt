@@ -1,0 +1,41 @@
+Write a python function to find the character made by adding all the characters of the given string.
+
+    **Hint:** Use the sum() function with the ord() function.
+    ```python
+    def sum_char_ascii(s):
+        return sum(ord(c) for c in s)
+
+    print(sum_char_ascii("Hello"))  # Output: 532
+    ```
+
+3. Write a python function to find the position of the character 'a' in the given string.
+
+    **Hint:** Use the index() function.
+    ```python
+    def find_a_position(s):
+        return s.index('a')
+
+    print(find_a_position("Hello"))  # Output: 1
+    ```
+
+4. Write a python function to find if 'Hello' is present in the given string.
+
+    **Hint:** Use the 'in' operator.
+    ```python
+    def check_string(s):
+        return 'Hello' in s
+
+    print(check_string("Hello World"))  # Output: True
+    ```
+
+5. Write a python function to count the number of 'l' in the given string.
+
+    **Hint:** Use the count() function.
+    ```python
+    def count_l(s):
+        return s.count('l')
+
+    print(count_l("Hello World"))  # Output: 3
+    ```
+
+

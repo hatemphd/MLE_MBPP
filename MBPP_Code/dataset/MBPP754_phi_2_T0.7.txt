@@ -1,0 +1,15 @@
+Write a function to find common index elements from three lists.
+
+```python
+def common_index_elements(list1, list2, list3):
+    """Find common index elements from three lists"""
+    common_list = []
+    for i in range(min(len(list1), len(list2), len(list3))):
+        if list1[i] == list2[i] == list3[i]:
+            common_list.append(i)
+    return common_list
+
+print(common_index_elements([1, 2, 3, 4], [2, 3, 4, 5], [3, 4, 5, 6]))  # Output: [2]
+```
+
+

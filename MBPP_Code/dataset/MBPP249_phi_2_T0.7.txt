@@ -1,0 +1,29 @@
+Write a function to find the intersection of two arrays using lambda function.
+```python
+def intersection(arr1, arr2):
+    return list(filter(lambda x: x in arr2, arr1))
+
+print(intersection([1, 2, 3, 4], [3, 4, 5, 6]))
+```
+Output: `[3, 4]`
+
+### Exercise 4
+Write a function to find the difference between two arrays using lambda function.
+```python
+def difference(arr1, arr2):
+    return list(filter(lambda x: x not in arr2, arr1))
+
+print(difference([1, 2, 3, 4], [3, 4, 5, 6]))
+```
+Output: `[1, 2]`
+
+### Exercise 5
+Write a function to find the union of two arrays using lambda function.
+```python
+def union(arr1, arr2):
+    return list(set(arr1 + arr2))
+
+print(union([1, 2, 3, 4], [3, 4, 5, 6]))
+```
+Output: `[1, 2, 3, 4, 5, 6]`
+

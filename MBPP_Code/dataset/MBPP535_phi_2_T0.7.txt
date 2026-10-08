@@ -1,0 +1,41 @@
+Write a function to find the top or bottom surface area of a cylinder.
+
+```python
+import math
+
+def cylinder_surface_area(radius, height):
+    """Return the total surface area of a cylinder."""
+    return 2 * math.pi * radius * (height + radius)
+
+# Example usage
+radius = 2.5
+height = 5
+print(f"The total surface area of the cylinder is {cylinder_surface_area(radius, height):.2f} square units.")
+```
+
+4. Write a function to find the volume of a sphere.
+
+```python
+import math
+
+def sphere_volume(radius):
+    """Return the volume of a sphere."""
+    return (4 / 3) * math.pi * radius ** 3
+
+# Example usage
+radius = 3
+print(f"The volume of the sphere is {sphere_volume(radius):.2f} cubic units.")
+```
+
+5. Write a function to find the area of a rectangle.
+
+```python
+def rectangle_area(length, width):
+    """Return the area of a rectangle."""
+    return length * width
+
+# Example usage
+length = 10
+width = 5
+print(f"The area of the rectangle is {rectangle_area(length, width):.2f} square units.")
+```

@@ -1,0 +1,56 @@
+Write a function to repeat the given tuple n times.
+
+Hints: Remember, you can use the `*` operator to repeat a tuple.
+
+```python
+def repeat_tuple(t, n):
+    return t * n
+
+print(repeat_tuple(('Python', 'Java'), 3)) # it will print ('Python', 'Java', 'Python', 'Java', 'Python', 'Java')
+```
+
+2. Write a function to find the count of a given element in the tuple.
+
+Hints: Use the `count()` method.
+
+```python
+def count_element(t, e):
+    return t.count(e)
+
+print(count_element(('Python', 'Java', 'Python', 'Java', 'Java'), 'Java')) # it will print 3
+```
+
+3. Write a function to find the index of the first occurrence of a given element in the tuple.
+
+Hints: Use the `index()` method.
+
+```python
+def index_element(t, e):
+    return t.index(e)
+
+print(index_element(('Python', 'Java', 'Python', 'Java', 'Java'), 'Java')) # it will print 1
+```
+
+4. Write a function to sort a tuple in ascending order.
+
+Hints: Convert it to a list, sort the list, and then convert it back to a tuple.
+
+```python
+def sort_tuple(t):
+    return tuple(sorted(t))
+
+print(sort_tuple(('Python', 'Java', 'C++', 'Ruby', 'JavaScript'))) # it will print ('C++', 'Java', 'JavaScript', 'Python', 'Ruby')
+```
+
+5. Write a function to concatenate two tuples.
+
+Hints: Use the `+` operator.
+
+```python
+def concatenate_tuples(t1, t2):
+    return t1 + t2
+
+print(concatenate_tuples(('Python', 'Java'), ('C++', 'Ruby'))) # it will print ('Python', 'Java', 'C++', 'Ruby')
+```
+
+

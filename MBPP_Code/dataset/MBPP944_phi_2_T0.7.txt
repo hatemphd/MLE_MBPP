@@ -1,0 +1,46 @@
+Write a function to separate and print the numbers and their position of a given string.
+
+```python
+# Your string
+s = "Python3"
+
+# Write your function here
+```
+
+#### Solution
+
+```python
+def separateNumbers(s):
+    for i in range(len(s)):
+        if s[i].isdigit():
+            print(f'Number found at position {i}: {s[i]}')
+
+separateNumbers(s) 
+# Output: Number found at position 6: 3
+```
+
+### Exercise 2: 
+Write a function that takes a string of mixed alphabets and numbers. The function should return a dictionary with keys as numbers and values as corresponding alphabets.
+
+```python
+# Your string
+s = "Python3"
+
+# Write your function here
+```
+
+#### Solution
+
+```python
+def convertToDict(s):
+    d = {}
+    for i in range(len(s)):
+        if s[i].isdigit():
+            d[int(s[i])] = s[i+1]
+    return d
+
+print(convertToDict(s)) 
+# Output: {3: 'h'}
+```
+
+

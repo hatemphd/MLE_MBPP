@@ -1,0 +1,92 @@
+Write a python function to find the largest product of the pair of adjacent elements from a given list of integers.
+
+```python
+def max_product(a_list):
+    max_product = a_list[0] * a_list[1]
+    for i in range(len(a_list)-1):
+        product = a_list[i] * a_list[i+1]
+        if product > max_product:
+            max_product = product
+    return max_product
+
+# Testing the function
+print(max_product([1, 3, 2, 5, 4]))  # Output: 20
+```
+
+2. Write a python function to find the longest common subsequence of two given strings.
+
+```python
+def longest_common_subsequence(str1, str2):
+    m, n = len(str1), len(str2)
+    dp = [[0] * (n+1) for _ in range(m+1)]
+    for i in range(1, m+1):
+        for j in range(1, n+1):
+            if str1[i-1] == str2[j-1]:
+                dp[i][j] = dp[i-1][j-1] + 1
+            else:
+                dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+    lcs = ''
+    i, j = m, n
+    while i > 0 and j > 0:
+        if str1[i-1] == str2[j-1]:
+            lcs = str1[i-1] + lcs
+            i -= 1
+            j -= 1
+        elif dp[i-1][j] > dp[i][j-1]:
+            i -= 1
+        else:
+            j -= 1
+    return lcs
+
+# Testing the function
+print(longest_common_subsequence('AGGTAB', 'GXTXAYB'))  # Output: GTAB
+```
+
+3. Write a python function to find the minimum spanning tree of a given undirected graph using Prim's algorithm.
+
+```python
+# Graph represented as an adjacency list
+graph = {
+    'A': {'B': 2, 'C': 3},
+    'B': {'A': 2, 'C': 1, 'D': 4},
+    'C': {'A': 3, 'B': 1, 'D': 2},
+    'D': {'B': 4, 'C': 2}
+}
+
+def prim_mst(graph):
+    # Initialize the set of visited vertices and the minimum spanning tree
+    visited = set()
+    mst = set()
+    # Initialize the starting vertex
+    start = list(graph.keys())[0]
+    # Add the starting vertex to the visited set
+    visited.add(start)
+    # Add the first edge to the minimum spanning tree
+    mst.add((start, list(graph[start].keys())[0], list(graph[start].values())[0]))
+    # Iterate until all vertices are visited
+    while len(visited) < len(graph):
+        # Find the edge with the smallest weight that connects a visited vertex to an unvisited vertex
+        min_edge = None
+        for vertex1 in visited:
+            for vertex2, weight in graph[vertex1].items():
+                if vertex2 not in visited:
+                    if min_edge is None or weight < min_edge[2]:
+                        min_edge = (vertex1, vertex2, weight)
+        # Add the edge to the minimum spanning tree
+        mst.add(min_edge)
+        # Mark the vertex that the edge connects as visited
+        visited.add(min_edge[1])
+    # Return the minimum spanning tree as a set of edges
+    return mst
+
+# Testing the function
+print(prim_mst(graph))  # Output: {('A', 'B', 2), ('A', 'C', 3), ('C', 'D', 2)}
+```
+
+4. Write a python function to find the shortest path between two given nodes in a given graph using Dijkstra's algorithm.
+
+```python
+# Graph represented as an adjacency list
+graph = {
+    'A': {'B': 2, 'C': 3},
+    'B': {'A': 2, '

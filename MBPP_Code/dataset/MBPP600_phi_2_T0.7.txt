@@ -1,0 +1,27 @@
+Write a python function to check whether the given number is even or not using bitwise operator.
+
+Host 1: This one's a bit tricky. Let's give our audience some time to think about it.
+
+(Pause for a few seconds)
+
+Host 2: The solution to this quiz is to use the bitwise AND operator with 1. If the given number is even, then the bitwise AND of the number and 1 will be 0. Otherwise, it will be 1.
+
+Host 1: Excellent. Here's the fourth quiz for our audience. Write a python function to swap the values of two variables a and b using bitwise operators.
+
+Host 2: Hmm, this quiz is a bit challenging. Let's give our audience some time to think about it.
+
+(Pause for a few seconds)
+
+Host 1: The solution to this quiz is to use the XOR operator. The XOR of a and b will give us a new value that is the XOR of a and b. Then we can use the left shift operator with 0 to move the XOR value to b's position, and finally, we can use the left shift operator with 1 to move the XOR value to a's position.
+
+Host 2: These are some really good quizzes. And now, the final quiz for our audience. Write a python function to check whether a given number is a power of 2 using bitwise operators.
+
+Host 1: This is a great quiz to end on. Let's give our audience some time to think about it.
+
+(Pause for a few seconds)
+
+Host 2: The solution to this quiz is to use the bitwise AND operator with the given number and its predecessor. If the given number is a power of 2, then the result of the AND operation will be equal to the given number.
+
+Host 1: That was a great set of quizzes, Host 2. I hope our audience learned a lot from them.
+
+Host 2: Me too, Host 1. And that concludes our episode on Bitwise Operators and Arithmetic Operations in Python. Join us next time for more interesting topics on Learning Computer Science via Python.

@@ -1,0 +1,44 @@
+Write a function to find the maximum sum of subsequences of given array with no adjacent elements.
+
+```python
+# Hints: 
+    # Use dynamic programming to save the maximum sum including the current element and the maximum sum excluding it.
+    # The maximum sum including the current element is the maximum of the current element and the sum of the maximum sum including the previous element.
+    # The maximum sum excluding the current element is the maximum of the maximum sum excluding the previous element.
+
+def max_subsequence_sum(arr):
+    incl = 0
+    excl = 0
+    for i in arr:
+        new_incl = excl + i
+        excl = max(incl, excl)
+        incl = new_incl
+    return max(incl, excl)
+
+print(max_subsequence_sum([2, 6, 10, 2, 5]))  # Outputs: 18
+```
+
+2. Write a function to detect whether a given array contains a subsequence that sums to a target sum.
+
+```python
+# Hints: 
+    # Use a sliding window technique to traverse through the array.
+    # For each element, keep a running sum of the elements in the window.
+    # If the running sum equals the target sum, return True.
+    # If the running sum exceeds the target sum, subtract the first element of the window and continue.
+
+def has_subsequence_sum(arr, target):
+    window_sum = 0
+    for i in range(len(arr)):
+        window_sum += arr[i]
+        while window_sum > target:
+            window_sum -= arr[i - len(window_sum.__str__())]
+        if window_sum == target:
+            return True
+    return False
+
+print(has_subsequence_sum([1, 2, 3, 4, 5], 9))  # Outputs: True
+print(has_subsequence_sum([1, 2, 3, 4, 5], 15))  # Outputs: False
+```
+
+

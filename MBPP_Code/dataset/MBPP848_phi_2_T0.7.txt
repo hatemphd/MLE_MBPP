@@ -1,0 +1,62 @@
+Write a function to find the area of a trapezium. Given the length of its parallel sides and height. 
+
+```python
+def trapezium_area(a, b, h):
+    """
+    Calculate the area of a trapezoid using the formula: 
+    (a + b) * h / 2
+    """
+    return (a + b) * h / 2
+```
+
+**Exercise 2**
+
+Write a function to find the area of a triangle. Given the length of its base and height. 
+
+```python
+def triangle_area(b, h):
+    """
+    Calculate the area of a triangle using the formula: 
+    b * h / 2
+    """
+    return b * h / 2
+```
+
+**Exercise 3**
+
+Write a function to find the area of a sector. Given the radius of a circle, its central angle, and pi. 
+
+```python
+def sector_area(r, angle, pi):
+    """
+    Calculate the area of a sector using the formula: 
+    angle/360 * pi * r**2
+    """
+    return angle/360 * pi * r**2
+```
+
+**Exercise 4**
+
+Write a function to find the area of a regular polygon. Given the length of its sides and the number of sides. 
+
+```python
+def regular_polygon_area(s, n):
+    """
+    Calculate the area of a regular polygon using the formula: 
+    n * s**2 / (4 * tan(pi/n))
+    """
+    return n * s**2 / (4 * tan(pi/n))
+```
+
+**Exercise 5**
+
+Write a function to find the area of a composite shape. Given the area of its individual parts. 
+
+```python
+def composite_shape_area(a1, a2, a3, a4):
+    """
+    Calculate the area of a composite shape using the formula: 
+    a1 + a2 + a3 + a4
+    """
+    return a1 + a2 + a3 + a4
+```

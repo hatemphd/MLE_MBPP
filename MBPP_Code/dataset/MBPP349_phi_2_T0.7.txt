@@ -1,0 +1,77 @@
+Write a python function to check whether the given string is a binary string or not.
+
+Hint: Use a for loop to iterate through all characters and check if the character is 0 or 1.
+
+Solution:
+```python
+def is_binary_string(s):
+    for c in s:
+        if c not in ['0', '1']:
+            return False
+    return True
+
+# Testing the function
+print(is_binary_string('101010101'))  # Output: True
+print(is_binary_string('101010102'))  # Output: False
+```
+
+#### Exercise 3
+
+Write a python function to reverse a string.
+
+Hint: Use a for loop to iterate through the string in reverse order and append each character to a new string.
+
+Solution:
+```python
+def reverse_string(s):
+    reversed_s = ''
+    for c in s[::-1]:
+        reversed_s += c
+    return reversed_s
+
+# Testing the function
+print(reverse_string('hello'))  # Output: 'olleh'
+```
+
+#### Exercise 4
+
+Write a python function to count the number of vowels in a given string.
+
+Hint: Use a for loop to iterate through all characters and check if the character is a vowel.
+
+Solution:
+```python
+def count_vowels(s):
+    count = 0
+    for c in s:
+        if c in ['a', 'e', 'i', 'o', 'u']:
+            count += 1
+    return count
+
+# Testing the function
+print(count_vowels('hello'))  # Output: 2
+```
+
+#### Exercise 5
+
+Write a python function to check whether the given number is prime or not.
+
+Hint: Use a for loop to iterate through all numbers from 2 to the square root of the number and check if the number is divisible by any of these numbers.
+
+Solution:
+```python
+import math
+
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(math.sqrt(n))+1):
+        if n % i == 0:
+            return False
+    return True
+
+# Testing the function
+print(is_prime(7))  # Output: True
+print(is_prime(10))  # Output: False
+```
+

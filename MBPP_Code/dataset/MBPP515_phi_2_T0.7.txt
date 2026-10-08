@@ -1,0 +1,41 @@
+Write a function to check if there is a subset with sum divisible by m.
+
+_Ideas:_ Create a set `remainder` to hold the remainders. For each number, add the number modulo m to the set. For each remainder, check if the difference between m and remainder is also in the set.
+
+_Solution:_
+```python
+def check_subset_sum_divisible_by_m(nums, m):
+    remainder = set()
+    for num in nums:
+        remainder.add(num % m)
+        if (m - remainder.difference({m}).pop()) in remainder:
+            return True
+    return False
+
+print(check_subset_sum_divisible_by_m([4, 2, 2, 2], 5))  # Output: True
+print(check_subset_sum_divisible_by_m([4, 2, 2, 3], 5))  # Output: False
+```
+This function maintains a set of remainders and checks if the difference between m and any remainder is also in the set.
+
+2. Write a function to find the smallest subset with the desired sum.
+
+_Ideas:_ Sort the list in descending order. Iterate through the list adding numbers to a subset until the sum equals the target or exceeds it.
+
+_Solution:_
+```python
+def smallest_subset_with_sum(nums, target):
+    nums.sort(reverse=True)
+    subset = []
+    for num in nums:
+        if sum(subset) + num <= target:
+            subset.append(num)
+        if sum(subset) == target:
+            return subset
+    return subset
+
+print(smallest_subset_with_sum([4, 2, 2, 2], 5))  # Output: [4, 2, 2]
+print(smallest_subset_with_sum([4, 2, 2, 3], 5))  # Output: [4, 2]
+```
+This function sorts the list in descending order, then iterates over it, adding numbers to a subset until the sum equals the target or exceeds it.
+
+

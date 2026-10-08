@@ -1,0 +1,56 @@
+Write a python function to find the first element occurring k times in a given array.
+
+Hints:
+- Use a dictionary to keep track of the count of each element.
+- When you find an element that has occurred k times, return it.
+
+Solution:
+
+```python
+def find_first_kth_element(nums, k):
+    frequency = {}
+    for num in nums:
+        if num in frequency:
+            frequency[num] += 1
+        else:
+            frequency[num] = 1
+            
+        if frequency[num] == k:
+            return num
+    return -1
+
+nums = [1, 2, 3, 2]
+k = 2
+print(find_first_kth_element(nums, k))
+# Outputs: 2
+```
+
+In the solution, we use a dictionary to keep track of the frequency of elements in our list. We increment the count of each number as we iterate through the list. If we encounter a number that has occurred k times, we return it.
+
+## Exercise 2:
+Write a python function to count the number of unique occurrences of each integer in a given array.
+
+Hints:
+- Use a dictionary to keep track of the count of each element.
+- Convert the keys of the dictionary to a set to remove duplicates.
+
+Solution:
+
+```python
+def count_unique_occurrences(nums):
+    frequency = {}
+    for num in nums:
+        if num in frequency:
+            frequency[num] += 1
+        else:
+            frequency[num] = 1
+    return len(set(frequency.keys()))
+
+nums = [1, 2, 3, 2]
+print(count_unique_occurrences(nums))
+# Outputs: 3
+```
+
+In the solution, we use a dictionary to keep track of the frequency of each number. We then convert the keys of the dictionary to a set to remove duplicates and return the size of the set, which gives us the count of unique occurrences.
+
+

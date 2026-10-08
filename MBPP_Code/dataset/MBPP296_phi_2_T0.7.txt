@@ -1,0 +1,38 @@
+Write a python function to count inversions in an array. An inversion is a pair of indices (i, j) such that i < j and arr[i] > arr[j]. Use the binary search algorithm to find the number of inversions.
+
+**Hint:** Binary search can be used to find the number of inversions that are greater than or equal to a given element. The number of inversions that are less than the given element can be computed by subtracting the number of inversions that are greater than or equal to it.
+
+**Solution:**
+
+```python
+def count_inversions(arr):
+    def merge_and_count(left, right):
+        i = j = inversions = 0
+        merged = []
+        while i < len(left) and j < len(right):
+            if left[i] <= right[j]:
+                merged.append(left[i])
+                i += 1
+            else:
+                merged.append(right[j])
+                j += 1
+                inversions += len(left) - i
+        merged += left[i:]
+        merged += right[j:]
+        return merged, inversions
+
+    def merge_sort(arr):
+        if len(arr) <= 1:
+            return arr, 0
+        mid = len(arr) // 2
+        left, inv_left = merge_sort(arr[:mid])
+        right, inv_right = merge_sort(arr[mid:])
+        merged, inv_merge = merge_and_count(left, right)
+        return merged, inv_left + inv_right + inv_merge
+
+    return merge_sort(arr)[1]
+```
+
+In this solution, the merge_sort function is used to sort the array and count the number of inversions. The merge_and_count function merges two sorted arrays and returns the merged array and the number of inversions. The count_inversions function uses binary search to find the number of inversions that are greater than or equal to a given element.
+
+

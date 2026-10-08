@@ -1,0 +1,8 @@
+Write a function to check if the string is a valid email address or not using regex. 'john.doe@example.com' OUTPUT: def is_valid_email(email):
+    import re
+    pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+    return re.match(pattern, email) is not None
+
+# Driver code
+email = 'john.doe@example.com'
+print(is_valid_email(email))

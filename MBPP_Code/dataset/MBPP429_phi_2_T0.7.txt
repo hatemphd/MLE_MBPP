@@ -1,0 +1,50 @@
+Write a function to extract the elementwise and tuples from the given two tuples.
+
+```python
+def extract_elements(tuple1, tuple2):
+    """
+    This function extracts the elementwise and tuples from the given two tuples.
+    """
+    tuple3 = tuple(zip(tuple1, tuple2))
+    tuple4 = tuple((tuple1[i], tuple2[i]) for i in range(len(tuple1)))
+    
+    return tuple3, tuple4
+
+tuple1 = (1, 2, 3)
+tuple2 = (4, 5, 6)
+print(extract_elements(tuple1, tuple2))
+```
+
+### Exercise 4:
+Write a function to extract the elementwise from the given tuple into a list.
+
+```python
+def extract_elementwise(tuple1):
+    """
+    This function extracts the elementwise from the given tuple into a list.
+    """
+    return list(tuple1)
+
+tuple1 = (1, 2, 3)
+print(extract_elementwise(tuple1))
+```
+
+### Exercise 5:
+Write a function to extract the elementwise and tuples from the given tuples and add them into a new list.
+
+```python
+def add_tuple_to_list(tuple1, tuple2):
+    """
+    This function extracts the elementwise and tuples from the given tuples and add them into a new list.
+    """
+    list1 = extract_elementwise(tuple1)
+    list2 = extract_elementwise(tuple2)
+    list3 = list(zip(list1, list2))
+    list4 = [tuple((list1[i], list2[i])) for i in range(len(list1))]
+    return list3 + list4
+
+tuple1 = (1, 2, 3)
+tuple2 = (4, 5, 6)
+print(add_tuple_to_list(tuple1, tuple2))
+```
+

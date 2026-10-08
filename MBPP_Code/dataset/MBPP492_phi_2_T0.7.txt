@@ -1,0 +1,16 @@
+Write a function to search an element in the given array by using binary search.
+Input: array = [2, 4, 6, 8, 10], x = 6
+Output: def binarySearch(array, x): 
+    low = 0
+    high = len(array) - 1
+  
+    while low <= high: 
+        mid = (low + high) // 2
+        if array[mid] == x: 
+            return mid 
+        elif array[mid] < x: 
+            low = mid + 1
+        else: 
+            high = mid - 1
+  
+    return -1

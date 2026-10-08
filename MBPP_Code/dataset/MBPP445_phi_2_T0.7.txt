@@ -1,0 +1,89 @@
+Write a function to perform index wise multiplication of tuple elements in the given two tuples.
+
+```python
+def index_wise_multiply_tuples(t1, t2):
+```
+
+Hint: Use Python's built-in function `zip` to iterate over the tuple elements simultaneously.
+
+Solution:
+```python
+def index_wise_multiply_tuples(t1, t2):
+    return tuple(x * y for x, y in zip(t1, t2))
+
+t1 = (1, 2, 3)
+t2 = (4, 5, 6)
+print(index_wise_multiply_tuples(t1, t2))
+```
+
+2. Write a function to sort a tuple of tuples based on the second element.
+
+```python
+def sort_tuples(t1):
+```
+
+Hint: Use Python's built-in function `sort` which takes a `key` parameter to specify a function of one argument that is used to extract a comparison key from each input element.
+
+Solution:
+```python
+def sort_tuples(t1):
+    return tuple(sorted(t1, key=lambda x: x[1]))
+
+t1 = ((2, 'b'), (1, 'a'), (3, 'c'))
+print(sort_tuples(t1))
+```
+
+3. Write a function to find the maximum difference between a tuple and its sorted version.
+
+```python
+def max_difference(t1):
+```
+
+Hint: Use Python's built-in function `max` and `min` to find the highest and lowest elements in a tuple.
+
+Solution:
+```python
+def max_difference(t1):
+    return max(t1) - min(t1)
+
+t1 = (5, 2, 8, 1, 9)
+print(max_difference(t1))
+```
+
+4. Write a function to calculate the dot product of two tuples.
+
+```python
+def dot_product(t1, t2):
+```
+
+Hint: Iterate over the tuples using a for loop and multiply the corresponding elements.
+
+Solution:
+```python
+def dot_product(t1, t2):
+    return sum(x * y for x, y in zip(t1, t2))
+
+t1 = (1, 2, 3)
+t2 = (4, 5, 6)
+print(dot_product(t1, t2))
+```
+
+5. Write a function to concatenate two tuples.
+
+```python
+def concatenate_tuples(t1, t2):
+```
+
+Hint: Use the `+` operator to concatenate tuples.
+
+Solution:
+```python
+def concatenate_tuples(t1, t2):
+    return t1 + t2
+
+t1 = (1, 2, 3)
+t2 = (4, 5, 6)
+print(concatenate_tuples(t1, t2))
+```
+
+

@@ -1,0 +1,51 @@
+Write a function to print the season for the given month and day.
+
+```python
+# Ideas
+# Use the datetime.datetime.strptime() method to convert the input strings into datetime objects.
+# Use the .month and .day attributes of the datetime objects to return the season.
+
+# Solution
+def get_season(month, day):
+    datetime_object = datetime.datetime.strptime(f"{month}-{day}", "%m-%d")
+    
+    if datetime_object.month in range(3, 6):
+        return "Spring"
+    elif datetime_object.month in range(6, 9):
+        return "Summer"
+    elif datetime_object.month in range(9, 12):
+        return "Fall"
+    else:
+        return "Winter"
+
+print(get_season("5", "30")) # Summer
+print(get_season("12", "31")) # Winter
+```
+
+2. Write a function to find the oldest user from a given list of users.
+
+```python
+# Ideas
+# Use a for loop to iterate over the list of users.
+# Use the .min() method to find the user with the minimum age.
+
+# Solution
+def find_oldest_user(users):
+    oldest_user = users[0]
+    
+    for user in users:
+        if user.age < oldest_user.age:
+            oldest_user = user
+    
+    return oldest_user
+
+class User:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+users = [User("Alice", 30), User("Bob", 25), User("Charlie", 40)]
+print(find_oldest_user(users)) # Charlie
+```
+
+

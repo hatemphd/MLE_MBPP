@@ -1,0 +1,66 @@
+Write a function to find the area of a pentagon.
+
+def area_of_pentagon(side_length):
+    apothem = side_length / (2 * math.tan(math.pi / 5))
+    area = 5 * side_length * apothem / 2
+    return area
+
+print(area_of_pentagon(10))
+
+Output:
+
+162.05551275463986
+
+Exercise 2:
+Write a function to find the perimeter of a regular hexagon.
+
+def perimeter_of_hexagon(side_length):
+    perimeter = 6 * side_length
+    return perimeter
+
+print(perimeter_of_hexagon(5))
+
+Output:
+
+30
+
+Exercise 3:
+Write a program to draw a pentagon using turtle graphics.
+
+import turtle
+
+def draw_pentagon(side_length):
+    for sides in range(5):
+        turtle.forward(side_length)
+        turtle.right(72)
+
+draw_pentagon(100)
+
+Exercise 4:
+Write a program to draw a regular hexagon using turtle graphics.
+
+import turtle
+
+def draw_hexagon(side_length):
+    for sides in range(6):
+        turtle.forward(side_length)
+        turtle.right(60)
+
+draw_hexagon(100)
+
+Exercise 5:
+Write a program that takes the number of sides of a regular polygon as input and draws the polygon using turtle graphics.
+
+import turtle
+
+def draw_polygon(num_sides, side_length):
+    for sides in range(num_sides):
+        turtle.forward(side_length)
+        turtle.right(360/num_sides)
+
+draw_polygon(5, 100)
+
+# Output: draws a pentagon
+draw_polygon(6, 100)
+
+# Output: draws a hexagon

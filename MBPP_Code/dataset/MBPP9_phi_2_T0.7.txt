@@ -1,0 +1,76 @@
+Write a python function to find the minimum number of rotations required to get the same string.
+
+```python
+def rotations_to_same(s1, s2):
+    if len(s1) != len(s2):
+        return -1
+    for i in range(len(s1)):
+        if s1 == s2:
+            return i
+        s1 = s1[1:] + s1[0]
+    return -1
+
+print(rotations_to_same('python', 'ythonp'))
+```
+
+### Exercise 2:
+Write a python function to convert a string to an integer without using int(), str(), or any built-in functions.
+
+```python
+def str_to_int(s):
+    result = 0
+    for c in s:
+        result = result * 10 + ord(c) - ord('0')
+    return result
+
+print(str_to_int('12345'))
+```
+
+### Exercise 3:
+Write a python function to find the length of the longest substring without repeating characters in a string.
+
+```python
+def longest_substring(s):
+    max_length = 0
+    start = 0
+    char_dict = {}
+    for end in range(len(s)):
+        if s[end] in char_dict:
+            start = max(char_dict[s[end]], start)
+        char_dict[s[end]] = end
+        max_length = max(max_length, end - start + 1)
+    return max_length
+
+print(longest_substring('abcabcbb'))
+```
+
+### Exercise 4:
+Write a python function to reverse a string without using slicing.
+
+```python
+def reverse_string(s):
+    result = ''
+    for i in range(len(s)-1, -1, -1):
+        result += s[i]
+    return result
+
+print(reverse_string('python'))
+```
+
+### Exercise 5:
+Write a python function to check if two strings are anagrams of each other.
+
+```python
+def is_anagram(s1, s2):
+    if len(s1) != len(s2):
+        return False
+    s1_count = {}
+    s2_count = {}
+    for c in s1:
+        s1_count[c] = s1_count.get(c, 0) + 1
+    for c in s2:
+        s2_count[c] = s2_count.get(c, 0) + 1
+    return s1_count == s2_count
+
+print(is_anagram('python', 'typhon'))
+```

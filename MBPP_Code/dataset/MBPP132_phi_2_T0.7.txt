@@ -1,0 +1,46 @@
+Write a function to convert tuple to a string.
+
+```python
+# Your code here
+def tuple_to_string(t):
+    return str(t)
+
+t = (1, 2, 3, 4, 5)
+print(tuple_to_string(t))
+```
+
+**Exercise 3:** Write a function that takes a tuple and a string and return the index of the first occurrence of the string in the tuple.
+
+```python
+# Your code here
+def find_string(t, s):
+    return t.index(s)
+
+t = ('apple', 'banana', 'cherry', 'apple')
+print(find_string(t, 'apple'))
+```
+
+**Exercise 4:** Write a function that will return a copy of a tuple after reversing.
+
+```python
+# Your code here
+def reverse_tuple(t):
+    return t[::-1]
+
+t = (1, 2, 3, 4, 5)
+print(reverse_tuple(t))
+```
+
+**Exercise 5:** Write a function that takes a tuple and an integer, and returns a new tuple with the integer added to each element of the original tuple.
+
+```python
+# Your code here
+def add_to_tuple(t, num):
+    return tuple(i + num for i in t)
+
+t = (1, 2, 3, 4, 5)
+num = 10
+print(add_to_tuple(t, num))
+```
+
+

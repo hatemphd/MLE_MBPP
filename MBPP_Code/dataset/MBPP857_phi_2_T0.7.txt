@@ -1,0 +1,22 @@
+Write a function to list out the list of given strings individually using map function.
+
+Idea: You can use a lambda function inside the map function to print each string.
+
+```python
+# Solution
+str_list = ["hello", "world", "python", "map"]
+print(list(map(lambda x: print(x), str_list)))
+```
+
+5. Use the map function to calculate the factorial of each number in a list.
+
+Idea: You can use the math.factorial function inside a lambda function.
+
+```python
+# Solution
+import math
+numbers = [3, 4, 5, 6]
+print(list(map(lambda x: math.factorial(x), numbers)))
+```
+
+

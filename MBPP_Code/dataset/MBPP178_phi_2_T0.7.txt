@@ -1,0 +1,66 @@
+Write a function to search some literals strings in a string.
+
+```python
+def search_literals(string, literals):
+    for literal in literals:
+        if literal in string:
+            print(f"{literal} found in {string}")
+        else:
+            print(f"{literal} does not found in {string}")
+
+search_literals("This is a sample string", "sample", "Python")
+```
+
+In this exercise, we have a function named search_literals() that takes a string and a list of literals as input. The function iterates over the literals and checks if they are present in the string.
+
+## Exercise 2
+
+Implement a function to convert a string to a list.
+
+```python
+def str_to_list(string):
+    return list(string)
+
+print(str_to_list("This string should be converted to a list."))
+```
+
+In this exercise, we have a function named str_to_list() that takes a string as input and returns a list containing each character of the string.
+
+## Exercise 3
+
+Write a function to remove duplicates from a list.
+
+```python
+def remove_duplicates(lst):
+    return list(set(lst))
+
+print(remove_duplicates([1, 2, 3, 2, 4, 3, 5, 6, 5]))
+```
+
+In this exercise, we have a function named remove_duplicates() that takes a list as input and returns a list with duplicates removed.
+
+## Exercise 4
+
+Implement a function to find the index of an element in a list.
+
+```python
+def find_index(lst, element):
+    return lst.index(element)
+
+print(find_index([1, 2, 3, 4, 5], 3))
+```
+
+In this exercise, we have a function named find_index() that takes a list and an element as input and returns the index of the first occurrence of the element in the list.
+
+## Exercise 5
+
+Write a function to find the maximum value in a list.
+
+```python
+def find_max(lst):
+    return max(lst)
+
+print(find_max([1, 5, 3, 7, 2]))
+```
+
+In this exercise, we have a function named find_max() that takes a list as input and returns the maximum value in the list.

@@ -1,0 +1,21 @@
+Write a python function to find sum of product of binomial co-efficients.
+
+Hint: You can use the formula of binomial theorem in combination with the factorial function.
+
+Solution:
+
+```python
+def binomial_sum(n, k):
+    return sum((n - i) * (i) for i in range(k+1))
+
+def product_of_coeffs(n, k):
+    return binomial_sum(n, k) * n
+
+print(product_of_coeffs(4, 2)) # Output: 20
+```
+
+In this solution, the `binomial_sum` function calculates the sum of products of binomial co-efficients and the `product_of_coeffs` function multiplies the result by the value of n. 
+
+We hope that these exercises have helped you strengthen your understanding of binomial coefficients and how to implement them in Python. Keep practicing to become proficient in handling such complex problems.
+
+

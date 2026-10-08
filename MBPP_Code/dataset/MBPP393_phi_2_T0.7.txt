@@ -1,0 +1,57 @@
+Write a function to find the list with maximum length using lambda function.
+
+Hints: Use the `len` function inside the lambda expression.
+
+```python
+# Solution:
+def max_length(lists):
+    return max(lists, key=lambda lst: len(lst))
+
+print(max_length([[1, 2], [3, 4, 5], [6]])) # Output: [3, 4, 5]
+```
+
+2. Write a lambda function to calculate the mean of a list.
+
+Hints: Use the `sum` function and `len` function inside the lambda expression.
+
+```python
+# Solution:
+mean = lambda lst: sum(lst) / len(lst)
+
+print(mean([1, 2, 3, 4, 5])) # Output: 3.0
+```
+
+3. Write a lambda function to capitalize the first letter of each word in a string.
+
+Hints: Use the `split` function to split the string into words, then capitalize each word using the `capitalize` function.
+
+```python
+# Solution:
+capitalize_first = lambda s: ' '.join(word.capitalize() for word in s.split())
+
+print(capitalize_first('hello world')) # Output: 'Hello World'
+```
+
+4. Write a lambda function to filter out the odd numbers from a list.
+
+Hints: Use the `filter` function and the modulo operator `%`.
+
+```python
+# Solution:
+filter_odd = lambda lst: list(filter(lambda x: x % 2 == 0, lst))
+
+print(filter_odd([1, 2, 3, 4, 5])) # Output: [2, 4]
+```
+
+5. Write a lambda function to sort a list of tuples by the second element in ascending order.
+
+Hints: Use the `sorted` function and a lambda function for the key.
+
+```python
+# Solution:
+sort_by_second = lambda lst: sorted(lst, key=lambda x: x[1])
+
+print(sort_by_second([(1, 2), (3, 1), (5, 4)])) # Output: [(3, 1), (1, 2), (5, 4)]
+```
+
+

@@ -1,0 +1,18 @@
+Write a python function to find the sum of fifth power of n natural numbers.
+
+```python
+def sum_fifth_power(n):
+    return sum([i ** 5 for i in range(1, n+1)])
+
+print(sum_fifth_power(5)) #output: 225
+```
+
+Exercise 5:
+Write a python function to find the sum of third power of even numbers between 1 and n (inclusive).
+
+```python
+def sum_third_power_even(n):
+    return sum([i ** 3 for i in range(2, n+1, 2)])
+
+print(sum_third_power_even(10)) #output: 224
+```

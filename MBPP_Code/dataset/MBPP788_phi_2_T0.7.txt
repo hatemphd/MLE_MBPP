@@ -1,0 +1,51 @@
+Write a function to create a new tuple from the given string and list.
+
+```python
+string_list = ['a', 'b', 'c', 'd', 'e']
+string_tuple = tuple(string_list)
+print(string_tuple)
+
+# Output: ('a', 'b', 'c', 'd', 'e')
+```
+
+2. Write a function to join two tuples and return a new tuple.
+
+```python
+tuple1 = (1, 2, 3)
+tuple2 = (4, 5, 6)
+joined_tuple = tuple1 + tuple2
+print(joined_tuple)
+
+# Output: (1, 2, 3, 4, 5, 6)
+```
+
+3. Write a function to create a tuple from a string and return it.
+
+```python
+string = "Hello World!"
+string_tuple = tuple(string)
+print(string_tuple)
+
+# Output: ('H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd', '!')
+```
+
+4. Write a function to join a list of strings into a single string and return it as a tuple.
+
+```python
+list_of_strings = ["This", "is", "a", "test"]
+joined_string = " ".join(list_of_strings)
+joined_tuple = tuple(joined_string)
+print(joined_tuple)
+
+# Output: ('T', 'h', 'i', 's', ' ', 'i', 's', ' ', 'a', ' ', 't', 'e', 's', 't')
+```
+
+5. Write a function to create a tuple of numbers from 1 to 10 using list comprehension.
+
+```python
+number_tuple = tuple([i for i in range(1, 11)])
+print(number_tuple)
+
+# Output: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+```
+

@@ -1,0 +1,37 @@
+Write a function to find the maximum product from the pairs of tuples within a given list.
+
+#### Hint:
+Use a generator function to iterate through the list of tuples.
+
+#### Solution:
+
+```python
+def max_product(tuples_list):
+    return max(product(t) for t in tuples_list)
+
+tuples_list = [(2, 3), (5, 4), (7, 8)]
+print(max_product(tuples_list))
+```
+
+In this solution, we define a generator function `product` that yields the product of two numbers. We then use a generator comprehension to yield the product of each tuple in the list. Finally, we use the built-in `max` function to find the maximum product.
+
+### Exercise 2
+
+Write a program to find the maximum product from the pairs of tuples within a given list, but this time, only consider the tuples where both numbers are even.
+
+#### Hint:
+Use an `if` condition within the generator function to filter out tuples where at least one number is odd.
+
+#### Solution:
+
+```python
+def max_even_product(tuples_list):
+    return max(product(t) for t in tuples_list if all(num % 2 == 0 for num in t))
+
+tuples_list = [(2, 3), (4, 5), (6, 8), (7, 8)]
+print(max_even_product(tuples_list))
+```
+
+In this solution, we call the `all` function on the tuple `t` within the generator comprehension. The `all` function returns `True` if all elements in the iterable are true. Here, we use it to check if all numbers in the tuple are even. If so, we yield the product. Otherwise, we skip to the next tuple.
+
+

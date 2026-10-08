@@ -1,0 +1,48 @@
+Write a python function to set all even bits of a given number.
+
+4. Write a python function to set all odd bits of a given number.
+
+5. Write a Python function to set all bits at even positions to zero and all bits at odd positions to one.
+
+**Hints:**
+
+- Use bitwise AND and XOR operations to set or unset bits.
+- Use bitwise shift operations to move bits to different positions.
+
+**Solutions:**
+
+1. 
+
+```python
+def set_all_bits(num):
+    return num | 0b11111111
+```
+
+2. 
+
+```python
+def set_odd_bits(num):
+    return num ^ 0b11111111
+```
+
+3. 
+
+```python
+def set_even_bits(num):
+    return num & 0b11111111
+```
+
+4. 
+
+```python
+def set_odd_bits(num):
+    return num & 0b0000000000000000
+```
+
+5. 
+
+```python
+def set_bits_parity(num):
+    return num & 0b11111111111111111111111111111111
+```
+

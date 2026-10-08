@@ -1,0 +1,66 @@
+Write a function to find the median of a trapezium.
+
+```python
+class Trapezium(Polygon):
+    def __init__(self, base1, base2, height):
+        self.base1 = base1
+        self.base2 = base2
+        self.height = height
+
+    def area(self):
+        return (self.base1 + self.base2) * self.height / 2
+
+    def perimeter(self):
+        return 2 * self.base1 + 2 * self.base2
+
+    def median(self):
+        return (self.base1 + self.base2) / 2
+
+t = Trapezium(10, 20, 15)
+print(t.area())
+print(t.perimeter())
+print(t.median())
+```
+
+4. Write a function to find the centroid of a rectangle.
+
+```python
+class Rectangle(Polygon):
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+    def area(self):
+        return self.length * self.width
+
+    def perimeter(self):
+        return 2 * (self.length + self.width)
+
+    def centroid(self):
+        return (self.length / 3, self.width / 3)
+
+r = Rectangle(10, 20)
+print(r.area())
+print(r.perimeter())
+print(r.centroid())
+```
+
+5. Write a function to find the sum of the interior angles of a polygon.
+
+```python
+class Polygon:
+    def __init__(self, sides):
+        self.sides = sides
+
+    def interior_angle(self):
+        return (self.sides - 2) * 180 / self.sides
+
+    def exterior_angle(self):
+        return 360 / self.sides
+
+    def sum_of_angles(self):
+        return self.sides * self.interior_angle()
+
+p = Polygon(3)
+print(p.sum_of_angles())
+```

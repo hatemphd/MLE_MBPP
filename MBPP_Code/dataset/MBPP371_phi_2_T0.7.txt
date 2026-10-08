@@ -1,0 +1,36 @@
+Write a function to find the smallest missing element in a sorted array.
+
+Hint: Use a for loop to iterate over the array and compare each element with its previous one.
+
+```python
+def find_smallest_missing(arr):
+    for i in range(1, len(arr)):
+        if arr[i] != arr[i-1] + 1:
+            return arr[i-1] + 1
+    return arr[-1] + 1
+
+print(find_smallest_missing([1, 2, 3, 5]))  # Outputs: 4
+```
+
+## Exercise 2
+Write a function to find the smallest missing element in a sorted array using binary search.
+
+Hint: Modify the binary search algorithm to return the smallest missing element.
+
+```python
+def find_smallest_missing_binary(arr):
+    low, high = 0, len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if mid + 1 in arr:
+            high = mid - 1
+        else:
+            low = mid + 1
+    return low
+
+print(find_smallest_missing_binary([1, 2, 3, 5]))  # Outputs: 4
+```
+
+This concludes our exploration of finding the smallest missing element in a sorted array. We encourage you to experiment further with these algorithms and consider their time and space complexity implications.
+
+

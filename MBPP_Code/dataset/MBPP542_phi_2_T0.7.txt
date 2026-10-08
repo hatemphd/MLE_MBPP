@@ -1,0 +1,11 @@
+Write a function to replace all occurrences of spaces, commas, or dots with a colon in the given string by using regex.
+
+```python
+import re
+
+def replace_special_chars(string):
+    pattern = r"[,\s.]"
+    return re.sub(pattern, ":", string)
+
+print(replace_special_chars("this is a string, with spaces, commas, and dots"))
+```

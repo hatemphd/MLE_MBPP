@@ -1,0 +1,28 @@
+Write a function to find a path with the maximum average over all existing paths for the given square matrix of size n*n. The function should return the path and its average.
+
+**Hint:**
+- Use dynamic programming to solve the problem.
+**Solution:**
+
+```python
+def max_average_path(matrix):
+    n = len(matrix)
+    dp = [[0]*n for _ in range(n)]
+    for i in range(n):
+        for j in range(n):
+            dp[i][j] = matrix[i][j] + max(0, dp[i-1][j]), max(0, dp[i][j-1])
+            if i > 0:
+                dp[i][j] = max(dp[i][j], matrix[i][j] + dp[i-1][j-1])
+    
+    max_path = max(dp[-1])
+    max_index = dp[-1].index(max_path)
+    max_path = [matrix[max_index//n][max_index%n]] + max_path[max_index//n:max_index//n+2]
+    return max_path, sum(max_path) / len(max_path)
+
+matrix = [[1,6,-2,4], [-3,2,7,5], [3,4,2,1], [-2,1,6,-3]]
+print(max_average_path(matrix))
+```
+
+In this chapter, we have learned how to find the maximum average path in a square matrix using dynamic programming. Keep practicing to solidify your understanding of dynamic programming and its applications in Python.
+
+

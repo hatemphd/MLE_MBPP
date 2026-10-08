@@ -1,0 +1,56 @@
+Write a function to split a list for every nth element.
+
+**Hint:** You can use slicing with a step of n.
+
+```python
+def split_list(lst, n):
+    return [lst[i::n] for i in range(n)]
+
+print(split_list([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3))
+```
+
+2. Write a function to rotate a 2D matrix by 90 degrees clockwise.
+
+**Hint:** You can use list comprehension and * operator.
+
+```python
+def rotate_matrix(matrix):
+    return [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0])-1, -1, -1)]
+
+print(rotate_matrix([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))
+```
+
+3. Write a function to flatten a list of lists.
+
+**Hint:** You can use list comprehension.
+
+```python
+def flatten(lst):
+    return [item for sublist in lst for item in sublist]
+
+print(flatten([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))
+```
+
+4. Write a function to find the maximum value in a list.
+
+**Hint:** You can use the built-in max function.
+
+```python
+def find_max(lst):
+    return max(lst)
+
+print(find_max([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+```
+
+5. Write a function that takes a string as input and returns a dictionary where the keys are the characters in the string and the values are the occurrences of each character.
+
+**Hint:** You can use list comprehension and the count method of strings.
+
+```python
+def char_occurrences(s):
+    return {char: s.count(char) for char in set(s)}
+
+print(char_occurrences("hello world"))
+```
+
+

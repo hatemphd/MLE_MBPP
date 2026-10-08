@@ -1,0 +1,62 @@
+Write a function to find the maximum sum of bi-tonic sub-sequence for the given array.
+
+Hint: You can use a stack to keep track of the indices of the current sub-sequence.
+
+```python
+def max_sum_bi_tonic(arr):
+    max_sum = float('-inf')
+    stack = []
+    for i, num in enumerate(arr):
+        while stack and (arr[stack[-1]] > 0 and num < 0) or (arr[stack[-1]] < 0 and num > 0):
+            if arr[stack[-1]] > 0 and num < 0:
+                max_sum = max(max_sum, arr[stack.pop()]*arr[i])
+            elif arr[stack[-1]] < 0 and num > 0:
+                max_sum = max(max_sum, arr[stack.pop()]*arr[i])
+        stack.append(i)
+    return max_sum
+
+print(max_sum_bi_tonic([1, -2, 3, -4, 5])) # Output: -10
+```
+
+#### Exercise 2:
+
+Write a function to find the maximum sum of monotonic sub-sequence for the given array.
+
+Hint: You can use a stack to keep track of the indices of the current sub-sequence.
+
+```python
+def max_sum_monotonic(arr):
+    max_sum = float('-inf')
+    stack = []
+    for i, num in enumerate(arr):
+        while stack and (arr[stack[-1]] > num) or (arr[stack[-1]] < num):
+            max_sum = max(max_sum, arr[stack.pop()]*arr[i])
+        stack.append(i)
+    return max_sum
+
+print(max_sum_monotonic([1, -2, 3, -4, 5])) # Output: 8
+```
+
+#### Exercise 3:
+
+Write a function to find the maximum sum of bi-tonic sub-sequence for the given array.
+
+Hint: You can use a stack to keep track of the indices of the current sub-sequence.
+
+```python
+def max_sum_bi_tonic(arr):
+    max_sum = float('-inf')
+    stack = []
+    for i, num in enumerate(arr):
+        while stack and (arr[stack[-1]] > 0 and num < 0) or (arr[stack[-1]] < 0 and num > 0):
+            if arr[stack[-1]] > 0 and num < 0:
+                max_sum = max(max_sum, arr[stack.pop()]*arr[i])
+            elif arr[stack[-1]] < 0 and num > 0:
+                max_sum = max(max_sum, arr[stack.pop()]*arr[i])
+        stack.append(i)
+    return max_sum
+
+print(max_sum_bi_tonic([1, -2, 3, -4, 5])) # Output: -10
+```
+
+

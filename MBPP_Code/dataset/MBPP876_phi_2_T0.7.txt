@@ -1,0 +1,59 @@
+Write a python function to find lcm of two positive integers.
+
+```python
+# One way to solve the problem is to use the formula for LCM: LCM(a, b) = abs(a*b) / GCD(a, b)
+# where GCD is the greatest common divisor of a and b.
+
+# We can implement this formula as follows:
+
+def lcm(a, b):
+    """
+    Function to find the Least Common Multiple (LCM) of two positive integers.
+    
+    Parameters:
+    a (int): First positive integer
+    b (int): Second positive integer
+    
+    Returns:
+    int: LCM of a and b
+    """
+    import math
+    
+    # Compute the GCD of a and b
+    gcd = math.gcd(a, b)
+    
+    # Compute the LCM using the formula
+    lcm = abs(a*b) // gcd
+    
+    return lcm
+```
+
+- Write a python function to find lcm of multiple positive integers.
+
+```python
+# One way to solve the problem is to use the fact that the LCM of multiple numbers is equal to the product of the numbers divided by their GCD.
+
+# We can implement this formula as follows:
+
+def lcm(*args):
+    """
+    Function to find the Least Common Multiple (LCM) of multiple positive integers.
+    
+    Parameters:
+    *args (list): List of positive integers
+    
+    Returns:
+    int: LCM of the numbers in the list
+    """
+    import math
+    
+    # Compute the GCD of the numbers using reduce()
+    gcd = math.gcd(*args)
+    
+    # Compute the LCM using the formula
+    lcm = abs(reduce(lambda x, y: x*y // gcd, args))
+    
+    return lcm
+```
+
+

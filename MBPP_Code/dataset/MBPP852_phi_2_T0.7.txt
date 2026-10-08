@@ -1,0 +1,66 @@
+Write a python function to remove negative numbers from a list.
+
+Ideas: Use list comprehension and conditional statement.
+
+Solution:
+
+```python
+def remove_negative(numbers):
+    return [number for number in numbers if number >= 0]
+```
+
+#### Exercise 2:
+
+Write a python function to remove duplicates from a list.
+
+Ideas: Use list comprehension and `not in` operator.
+
+Solution:
+
+```python
+def remove_duplicates(numbers):
+    return list(set([number for number in numbers]))
+```
+
+#### Exercise 3:
+
+Write a python function to remove items from a list at a specific position.
+
+Ideas: Use list comprehension and slicing.
+
+Solution:
+
+```python
+def remove_item(numbers, position):
+    return numbers[:position] + numbers[position+1:]
+```
+
+#### Exercise 4:
+
+Write a python function to remove items from a list that are not divisible by a specific number.
+
+Ideas: Use list comprehension and modulo operator.
+
+Solution:
+
+```python
+def remove_divisible(numbers, divisor):
+    return [number for number in numbers if number % divisor == 0]
+```
+
+#### Exercise 5:
+
+Write a python function to remove items from a list based on a condition.
+
+Ideas: Use list comprehension and conditional statement.
+
+Solution:
+
+```python
+def remove_condition(numbers, condition):
+    return [number for number in numbers if not condition]
+```
+
+The exercises above should help you understand how to use remove list items in Python and how it can be applied in a data science setting. Happy coding!
+
+

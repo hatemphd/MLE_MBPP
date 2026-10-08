@@ -1,0 +1,61 @@
+Write a python function to check whether an array can be sorted or not by picking only the corner elements.
+
+_Hint:_ If an array has only one or two elements, it is already sorted. If there are more than two elements, you can compare the first and the last element. If they are in the right order, then the array is sorted. If not, reverse the order of the first and the last elements and then check again.
+
+```python
+def check_sorted(arr):
+    if len(arr) <= 2:
+        return True
+    if arr[0] < arr[-1]:
+        return check_sorted(arr[1:-1])
+    else:
+        arr[0], arr[-1] = arr[-1], arr[0]
+        return check_sorted(arr[1:-1])
+
+check_sorted([5, 4, 3, 2, 1]) # True
+```
+
+2. Write a python function to check whether an array can be sorted or not by picking at most one element.
+
+_Hint:_ You can pick any one element and reverse its order. Then, check whether the array is sorted or not.
+
+```python
+def check_sorted(arr):
+    l, r = 0, len(arr) - 1
+    while l < r:
+        if arr[l] > arr[r]:
+            arr[l], arr[r] = arr[r], arr[l]
+            return check_sorted(arr)
+        l += 1
+        r -= 1
+    return True
+
+check_sorted([5, 4, 3, 2, 1]) # True
+```
+
+3. Write a python function to sort an array by picking only the corner elements.
+
+_Hint:_ You can pick at most two elements at a time and swap them if they are not in the right order.
+
+```python
+def sort_array(arr):
+    def swap(i, j):
+        arr[i], arr[j] = arr[j], arr[i]
+        
+    def check_sorted():
+        l, r = 0, len(arr) - 1
+        while l < r:
+            if arr[l] > arr[r]:
+                swap(l, r)
+                return check_sorted()
+            l += 1
+            r -= 1
+        return True
+    
+    swap(0, len(arr) - 1)
+    return check_sorted()
+
+sort_array([5, 4, 3, 2, 1]) # True
+```
+
+

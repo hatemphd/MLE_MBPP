@@ -1,0 +1,19 @@
+Write a function to find all the values in a list that are greater than a specified number.
+
+```python
+def greater_than(numbers, threshold):
+    result = list(filter(lambda number: number > threshold, numbers))
+    return result
+
+print(greater_than([1, 2, 3, 4, 5], 3))  # Output: [4, 5]
+```
+
+5. Write a function to find all the values in a list that are not divisible by 3 or 5.
+
+```python
+def not_divisible(numbers):
+    result = list(filter(lambda number: number % 3 != 0 and number % 5 != 0, numbers))
+    return result
+
+print(not_divisible([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))  # Output: [1, 2, 4, 7, 8]
+```

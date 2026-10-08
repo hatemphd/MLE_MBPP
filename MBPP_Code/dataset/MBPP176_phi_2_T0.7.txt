@@ -1,0 +1,94 @@
+Write a function to find the perimeter of a triangle.
+
+### Ideas
+- Define a function that takes the lengths of the triangle's sides as arguments.
+- Use the formula for the perimeter of a triangle to calculate the answer.
+- Return the answer.
+```python
+def perimeter(side1, side2, side3):
+    return side1 + side2 + side3
+
+# Test
+print(perimeter(3, 4, 5)) # 12
+```
+
+### Exercise 2
+Write a function to find the area of a triangle.
+
+### Ideas
+- Define a function that takes the lengths of the triangle's sides as arguments.
+- Use Heron's formula to calculate the area of the triangle.
+- Return the answer.
+```python
+import math
+
+def area(side1, side2, side3):
+    s = (side1 + side2 + side3) / 2
+    return math.sqrt(s * (s - side1) * (s - side2) * (s - side3))
+
+# Test
+print(area(3, 4, 5)) # 6.0
+```
+
+### Exercise 3
+Write a function to find the volume of a triangle.
+
+### Ideas
+- Define a function that takes the lengths of the triangle's sides and the height as arguments.
+- Calculate the area of the triangle using Heron's formula.
+- Multiply the area by the height to get the volume.
+- Return the answer.
+```python
+import math
+
+def volume(side1, side2, side3, height):
+    s = (side1 + side2 + side3) / 2
+    area = math.sqrt(s * (s - side1) * (s - side2) * (s - side3))
+    return area * height
+
+# Test
+print(volume(3, 4, 5, 6)) # 18.0
+```
+
+### Exercise 4
+Write a function to find the surface area of a triangular prism.
+
+### Ideas
+- Define a function that takes the length, width, height, and the base of the triangular prism as arguments.
+- Calculate the area of the triangular base and the area of the three rectangular faces.
+- Multiply the area of the base by the height and add the areas of the three rectangular faces to get the surface area.
+- Return the answer.
+```python
+def surface_area(length, width, height, base):
+    tri_base_area = base * height / 2
+    rect_top_area = length * width
+    rect_bottom_area = length * width
+    rect_front_area = length * height
+    rect_back_area = length * height
+    return tri_base_area + rect_top_area + rect_bottom_area + rect_front_area + rect_back_area
+
+# Test
+print(surface_area(3, 4, 5, 6)) # 94.0
+```
+
+### Exercise 5
+Write a function to find the centroid of a triangle.
+
+### Ideas
+- Define a function that takes the lengths of the sides of the triangle as arguments.
+- Calculate the area of the triangle using Heron's formula.
+- Calculate the coordinates of the centroid using the formula: centroid_x = (a * x_1 + b * x_2 + c * x_3) / (a + b + c), centroid_y = (a * y_1 + b * y_2 + c * y_3) / (a + b + c).
+- Return the coordinates of the centroid.
+```python
+def centroid(side1, side2, side3):
+    s = (side1 + side2 + side3) / 2
+    area = math.sqrt(s * (s - side1) * (s - side2) * (s - side3))
+    centroid_x = (side1 * 0 + side2 * 1 + side3 * 2) / (side1 + side2 + side3)
+    centroid_y = (side1 * 0 + side2 * 1 + side3 * 2) / (side1 + side2 + side3)
+    return (centroid_x, centroid_y)
+
+# Test
+print(centroid(3, 4, 5)) # (0.5, 2.0)
+```
+
+

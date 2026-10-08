@@ -1,0 +1,42 @@
+Write a function to remove duplicate words from a given string using collections module.
+
+```python
+import collections
+
+def remove_duplicates(string):
+    words = string.split()
+    unique_words = list(collections.OrderedDict.fromkeys(words))
+    return " ".join(unique_words)
+
+string = "hello world hello"
+print(remove_duplicates(string)) # Output: hello world
+```
+
+Exercise 4:
+Write a function to find the second most common word in a given string using collections module.
+
+```python
+import collections
+
+def find_second_most_common(string):
+    words = string.split()
+    word_counts = collections.Counter(words)
+    return word_counts.most_common()[1][0]
+
+string = "hello world hello"
+print(find_second_most_common(string)) # Output: world
+```
+
+Exercise 5:
+Write a function to check if two given strings are anagrams of each other using collections module.
+
+```python
+import collections
+
+def is_anagram(string1, string2):
+    return collections.Counter(string1) == collections.Counter(string2)
+
+string1 = "listen"
+string2 = "silent"
+print(is_anagram(string1, string2)) # Output: True
+```

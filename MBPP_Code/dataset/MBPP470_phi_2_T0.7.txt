@@ -1,0 +1,18 @@
+Write a function to find the pairwise addition of the elements of the given tuples.
+
+*Solution*:
+
+```python
+def pairwise_sum(t1, t2):
+    return tuple(sum(pair) for pair in zip(t1, t2))
+
+t1 = (1, 2, 3)
+t2 = (4, 5, 6)
+print(pairwise_sum(t1, t2)) # Output: (5, 7, 9)
+```
+
+---
+
+These exercises should give you a hands-on experience in handling tuples in Python and the power of its built-in functions. Happy coding!
+
+

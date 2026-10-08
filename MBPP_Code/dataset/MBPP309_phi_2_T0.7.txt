@@ -1,0 +1,41 @@
+Write a python function to find the maximum of two numbers.
+
+***Hint:*** Use the max() function.
+
+***Solution:***
+```python
+def max_num(a, b):
+    return max(a, b)
+
+print(max_num(5, 7))  # Outputs: 7
+```
+
+2. Write a python function to find the factorial of a number.
+
+***Hint:*** Use the math module's factorial function.
+
+***Solution:***
+```python
+import math
+
+def factorial(n):
+    return math.factorial(n)
+
+print(factorial(5))  # Outputs: 120
+```
+
+3. Write a python function to find the LCM of two numbers.
+
+***Hint:*** Use the gcd() function from the math module and the formula for LCM: lcm(a, b) = abs(a*b) / gcd(a, b).
+
+***Solution:***
+```python
+import math
+
+def lcm(a, b):
+    return abs(a*b) // math.gcd(a, b)
+
+print(lcm(15, 20))  # Outputs: 60
+```
+
+

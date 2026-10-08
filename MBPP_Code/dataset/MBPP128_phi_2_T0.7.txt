@@ -1,0 +1,46 @@
+Write a function to shortlist words that are longer than n from a given list of words.
+
+```python
+def filter_long_words(words, n):
+    return [word for word in words if len(word) > n]
+```
+
+Exercise 2:
+
+Write a function to generate all possible combinations of a given list of words.
+
+```python
+import itertools
+
+def generate_combinations(words):
+    return list(itertools.product(*words))
+```
+
+Exercise 3:
+
+Write a function to check if a given word is a palindrome.
+
+```python
+def is_palindrome(word):
+    return word == word[::-1]
+```
+
+Exercise 4:
+
+Write a function to check if a given word is a valid anagram of another word.
+
+```python
+def is_anagram(word1, word2):
+    return sorted(word1) == sorted(word2)
+```
+
+Exercise 5:
+
+Write a function to generate all possible permutations of a given list of words.
+
+```python
+import itertools
+
+def generate_permutations(words):
+    return list(itertools.permutations(words))
+```

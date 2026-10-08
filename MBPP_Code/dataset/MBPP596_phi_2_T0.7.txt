@@ -1,0 +1,6 @@
+Write a function to find the size of the given tuple.
+## INPUT
+my_tuple = ("apple", "banana", "cherry")
+##OUTPUT
+def tuple_size(my_tuple):
+    return len(my_tuple)

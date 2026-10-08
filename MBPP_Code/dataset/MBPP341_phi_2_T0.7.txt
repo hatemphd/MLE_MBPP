@@ -1,0 +1,4 @@
+Write a function to convert the given set into ordered tuples. my_set = {(1, 2), (3, 4), (5, 6)} OUTPUT: def set_to_tuples(my_set):
+    return tuple(my_set)
+
+set_to_tuples(my_set) = ((1, 2), (3, 4), (5, 6))

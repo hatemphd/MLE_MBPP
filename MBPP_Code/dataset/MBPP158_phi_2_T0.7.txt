@@ -1,0 +1,47 @@
+Write a python function to find k number of operations required to make all elements equal.
+
+**Exercise 2:** Modify the `find_xor` function to return a list of all pairs of elements having their XOR values as `k`.
+
+**Exercise 3:** Modify the `find_xor` function to return XOR of all elements.
+
+**Exercise 4:** Modify the `find_xor` function to return pairs of elements having XOR value `k` but the pair should not contain the same element.
+
+The solutions for these exercises are as follows:
+
+**Exercise 1:**
+
+```python
+def find_k(arr, k):
+    # Your code here
+```
+
+The idea is similar to Exercise 2. This time, we are not interested in XOR value of each element with all other elements, but the minimum number of operations required to make all elements equal.
+
+**Exercise 2:**
+
+```python
+def find_xor_pairs(arr, k):
+    # Your code here
+```
+
+This requires you to keep track of pairs of elements which have XOR value as `k`.
+
+**Exercise 3:**
+
+```python
+def find_xor_all(arr):
+    # Your code here
+```
+
+The idea is to XOR all the elements and return the result.
+
+**Exercise 4:**
+
+```python
+def find_xor_distinct_pairs(arr, k):
+    # Your code here
+```
+
+This requires you to keep track of pairs of elements which have XOR value as `k` but the pair should not contain the same element.
+
+

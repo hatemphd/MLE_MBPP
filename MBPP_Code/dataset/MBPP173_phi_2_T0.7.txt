@@ -1,0 +1,76 @@
+Write a function to remove everything except alphanumeric characters from a string.
+
+#### Ideas:
+- Use the `isalnum()` method to check if a character is alphanumeric.
+- Use the `join()` method to join the alphanumeric characters.
+
+#### Solution:
+```python
+def remove_non_alphanumeric(string):
+    return ''.join(char for char in string if char.isalnum())
+
+print(remove_non_alphanumeric("Hello World! This is a test."))  # Output: "HelloWorldThisisatest"
+```
+
+#### Exercise 2:
+Write a function that takes a string and returns `True` if the string is a palindrome (reads the same backwards as forwards), and `False` otherwise.
+
+#### Ideas:
+- Use string slicing to reverse the string.
+- Compare the original string with the reversed string.
+
+#### Solution:
+```python
+def is_palindrome(string):
+    return string == string[::-1]
+
+print(is_palindrome("radar"))  # Output: True
+print(is_palindrome("python"))  # Output: False
+```
+
+#### Exercise 3:
+Write a function that takes a string and returns `True` if the string contains only unique characters (i.e. no character is repeated), and `False` otherwise.
+
+#### Ideas:
+- Convert the string to a set to remove duplicates.
+- Compare the length of the set with the length of the original string.
+
+#### Solution:
+```python
+def has_unique_chars(string):
+    return len(string) == len(set(string))
+
+print(has_unique_chars("abcdef"))  # Output: True
+print(has_unique_chars("hello"))  # Output: False
+```
+
+#### Exercise 4:
+Write a function that takes a string and returns a list of all the words in the string in reverse order.
+
+#### Ideas:
+- Use the `split()` method to split the string into words.
+- Use list slicing to reverse the order of the words.
+
+#### Solution:
+```python
+def reverse_words(string):
+    return string.split()[::-1]
+
+print(reverse_words("Hello World! This is a test."))  # Output: ['test.', 'a', 'is', 'This', 'World!', 'Hello']
+```
+
+#### Exercise 5:
+Write a function that takes a string and returns a dictionary where the keys are the unique characters in the string, and the values are the number of times each character appears in the string.
+
+#### Ideas:
+- Use the `count()` method to count the number of occurrences of each character.
+- Create a dictionary comprehension to create the dictionary.
+
+#### Solution:
+```python
+def count_chars(string):
+    return {char: string.count(char) for char in set(string)}
+
+print(count_chars("hello world"))  # Output: {'l': 3, 'o': 2, 'h': 1, 'e': 1, ' ': 1, 'w': 1, 'r': 1, 'd': 1}
+```
+

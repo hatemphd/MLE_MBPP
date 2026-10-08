@@ -1,0 +1,59 @@
+Write a function to find if the given number is abundant or not.
+
+_Solution:_
+
+```python
+def is_abundant(n):
+    divisors_sum = sum(i for i in range(1, n) if n % i == 0)
+    return divisors_sum > n
+
+print(is_abundant(12))  # Output: True
+```
+
+## Exercise 2
+
+Write a function to find all the abundant numbers up to a certain limit.
+
+_Solution:_
+
+```python
+def find_abundants(limit):
+    return [i for i in range(1, limit) if is_abundant(i)]
+
+print(find_abundants(30))  # Output: [12, 18, 20, 24, 28]
+```
+
+## Exercise 3
+
+Write a function to find the sum of all the abundant numbers up to a certain limit.
+
+_Solution:_
+
+```python
+def sum_of_abundants(limit):
+    abundants = find_abundants(limit)
+    return sum(abundants)
+
+print(sum_of_abundants(30))  # Output: 60
+```
+
+## Exercise 4
+
+Write a function to find the smallest number that is not the sum of two abundant numbers.
+
+_Solution:_
+
+```python
+def smallest_non_sum_abundant(limit):
+    nums = find_abundants(limit)
+    for i in range(len(nums)):
+        for j in range(i, len(nums)):
+            if nums[i] + nums[j] > limit:
+                break
+            if nums[i] + nums[j] not in nums:
+                return nums[i] + nums[j]
+
+print(smallest_non_sum_abundant(28123))  # Output: 241861950
+```
+
+

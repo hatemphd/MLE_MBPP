@@ -1,0 +1,37 @@
+Write a python function to count lower case letters in a given string.
+
+    ```python
+    def count_lowercase(text):
+        return sum(1 for char in text if char.islower())
+
+    print(count_lowercase("Hello World"))  # Output: 8
+    ```
+
+3. Write a python function to check if a string is a palindrome after converting the string to lowercase.
+
+    ```python
+    def is_palindrome(s):
+        return s.lower() == s.lower()[::-1]
+
+    print(is_palindrome("Madam"))  # Output: True
+    ```
+
+4. Write a python function to capitalize the first letter of each word in a string.
+
+    ```python
+    def capitalize_words(s):
+        return ' '.join(word.capitalize() for word in s.split())
+
+    print(capitalize_words("hello world"))  # Output: "Hello World"
+    ```
+
+5. Write a python function to remove all vowels from a given string.
+
+    ```python
+    def remove_vowels(s):
+        return ''.join(char for char in s if char.lower() not in 'aeiou')
+
+    print(remove_vowels("Hello World"))  # Output: "Hll Wrld"
+    ```
+
+

@@ -1,0 +1,59 @@
+Write a python function to find the length of the longest word.
+
+```python
+def longest_word(s):
+    words = s.split()
+    longest_word_len = max([len(word) for word in words])
+    return longest_word_len
+
+# Solution
+def longest_word(s):
+    words = s.split()
+    longest_word_len = max([len(word) for word in words])
+    return longest_word_len
+
+# Test
+s = "The quick brown fox jumps over the lazy dog"
+print(longest_word(s)) # 5
+```
+
+In this solution, the function `longest_word` takes in a string `s` as an argument. The function first splits the string into a list of words using the `split` method. The function then uses list comprehension to find the length of each word. The `max` function is then used to find the longest length in the list. The function then returns the longest length.
+
+3. Write a python function to print all the prime numbers between 1 and n.
+
+```python
+def all_primes(n):
+    primes = []
+    for i in range(2, n+1):
+        # all primes are divisible by 1 and themselves
+        is_prime = True
+        for j in range(2, i):
+            if i % j == 0:
+                is_prime = False
+                break
+        if is_prime:
+            primes.append(i)
+    return primes
+
+# Solution
+def all_primes(n):
+    primes = []
+    for i in range(2, n+1):
+        # all primes are divisible by 1 and themselves
+        is_prime = True
+        for j in range(2, i):
+            if i % j == 0:
+                is_prime = False
+                break
+        if is_prime:
+            primes.append(i)
+    return primes
+
+# Test
+n = 50
+print(all_primes(n)) # [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+```
+
+In this solution, the function `all_primes` takes in an integer `n` as an argument. The function initializes an empty list `primes`. The function then uses a for loop to iterate over the range from 2 to n (inclusive). Within the for loop, the function uses another for loop to check if the current number is divisible by any number between 2 and itself. If the number is not divisible by any number between 2 and itself, it is considered prime and is appended to the `primes` list. The function then returns the `primes` list.
+
+

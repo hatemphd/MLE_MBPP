@@ -1,0 +1,53 @@
+Write a function to find the volume of a cuboid.
+
+*Hint:* The volume of a cuboid is calculated as length times width times height.
+
+```python
+def cuboid_volume(l, w, h):
+    return l * w * h
+
+print(cuboid_volume(2,3,4)) # 24
+```
+
+3. Write a function to find the hypotenuse of a right triangle.
+
+*Hint:* The hypotenuse of a right triangle is calculated as the square root of the sum of the squares of the other two sides.
+
+```python
+import math
+
+def hypotenuse(a, b):
+    return math.sqrt(a**2 + b**2)
+
+print(hypotenuse(3,4)) # 5.0
+```
+
+4. Write a function to find the surface area of a sphere.
+
+*Hint:* The surface area of a sphere is calculated as 4πr².
+
+```python
+import math
+
+def sphere_surface_area(r):
+    return 4 * math.pi * r**2
+
+print(sphere_surface_area(2)) # 50.26548245743669
+```
+
+5. Write a function to find the factorial of a number.
+
+*Hint:* The factorial of a number is the product of all positive integers up to that number.
+
+```python
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+print(factorial(5)) # 120
+```
+
+*Note:* In all these exercises, the `math` module is used to perform mathematical operations.
+

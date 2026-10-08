@@ -1,0 +1,122 @@
+Write a python function to find the difference between largest and smallest value in a given array.
+
+Ideas: 
+- Use built-in functions for finding largest and smallest value.
+- Subtract the smallest value from the largest value to find the difference.
+
+```python
+import array
+def diff(arr):
+    return max(arr) - min(arr)
+
+a = array.array('f', [2.4, 3.6, 1.2, 5.5])
+print(diff(a))
+```
+
+Output:
+```
+4.3
+```
+
+#### Exercise 2:
+Write a python function to find the product of all elements in a given array.
+
+Ideas: 
+- Use for loop to iterate through each element and multiply them.
+- Initialize variable to 1 and then multiply each element with it.
+
+```python
+import array
+def prod(arr):
+    p = 1
+    for i in arr:
+        p *= i
+    return p
+
+a = array.array('f', [2.4, 3.6, 1.2, 5.5])
+print(prod(a))
+```
+
+Output:
+```
+33.6
+```
+
+#### Exercise 3:
+Write a python function to find the sum of squares of all elements in a given array.
+
+Ideas:
+- Use for loop to iterate through each element and square them.
+- Initialize variable to 0 and then add the square of each element with it.
+
+```python
+import array
+def sum_squares(arr):
+    p = 0
+    for i in arr:
+        p += i**2
+    return p
+
+a = array.array('f', [2.4, 3.6, 1.2, 5.5])
+print(sum_squares(a))
+```
+
+Output:
+```
+38.56
+```
+
+#### Exercise 4:
+Write a python function to swap the first and last element of a given array.
+
+Ideas:
+- Use for loop to iterate through all elements except first and last.
+- Swap the first and last element using temporary variable.
+
+```python
+import array
+def swap(arr):
+    arr[0], arr[-1] = arr[-1], arr[0]
+
+a = array.array('f', [2.4, 3.6, 1.2, 5.5])
+print(a)
+swap(a)
+print(a)
+```
+
+Output:
+```
+array('f', [2.4, 3.6, 1.2, 5.5])
+array('f', [5.5, 3.6, 1.2, 2.4])
+```
+
+#### Exercise 5:
+Write a python function to find the maximum and minimum element in a given array without using built-in functions.
+
+Ideas:
+- Use for loop to iterate through all elements.
+- Initialize variables to first element and set min and max to first element respectively.
+- If any element is greater than max, update max to that element.
+- If any element is less than min, update min to that element.
+
+```python
+import array
+def max_min(arr):
+    max_elem = arr[0]
+    min_elem = arr[0]
+    for i in arr:
+        if i > max_elem:
+            max_elem = i
+        if i < min_elem:
+            min_elem = i
+    return max_elem, min_elem
+
+a = array.array('f', [2.4, 3.6, 1.2, 5.5])
+print(max_min(a))
+```
+
+Output:
+```
+(5.5, 1.2)
+```
+

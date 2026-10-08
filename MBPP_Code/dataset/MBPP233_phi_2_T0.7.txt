@@ -1,0 +1,23 @@
+Write a function to find the lateral surface area of a cylinder. 
+
+**Answer**
+
+The lateral surface area of a cylinder is given by the formula:
+
+A = 2πrh
+
+where 'r' is the radius of the base of the cylinder and 'h' is the height of the cylinder.
+
+**Exercise 3**
+
+What is the lateral surface area of a cylinder with a radius of 7 cm and a height of 20 cm?
+
+**Answer**
+
+A = 2πrh
+A = 2π(7)(20)
+A = 220π cm²
+
+Just like these real-world examples, the concept of surface area is not just a mathematical concept but a practical tool that helps us understand and interact with our environment. Whether you're a future politician, a scientist, or an artist, understanding surface area can help you make informed decisions and solve real-life problems.
+
+

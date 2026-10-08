@@ -1,0 +1,39 @@
+Write a function to find the minimum number of elements that should be removed such that amax-amin<=k.
+    """
+
+    def min_elements_removed(self, A, k):
+        """
+        :type A: List[int]
+        :type k: int
+        :rtype: int
+        """
+        if k == 0: return len(A)
+        A.sort()
+        amin = A[0]
+        amax = A[-1]
+        diff = amax - amin
+        if diff <= k:
+            return 0
+
+        if diff <= 2 * k:
+            return len(A) - 1
+
+        left, right = 0, len(A) - 1
+        while left < len(A) - 1:
+            if A[left + 1] - A[left] <= k:
+                left += 1
+            else:
+                break
+        if left == len(A) - 2:
+            return left + 1
+
+        right = len(A) - 2
+        while right > 0:
+            if A[right + 1] - A[right] <= k:
+                right -= 1
+            else:
+                break
+        if right == 0:
+            return len(A) - 2
+
+        return right + 1

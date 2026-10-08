@@ -1,0 +1,68 @@
+Write a function to check if the given string starts with a substring using regex.
+
+```python
+import re
+
+def starts_with_substring(string, substring):
+    pattern = r"^" + substring
+    match = re.match(pattern, string)
+    if match:
+        return True
+    else:
+        return False
+
+# Example usage
+string = "Python is a popular programming language."
+substring = "Python"
+print(starts_with_substring(string, substring)) # Output: True
+```
+
+3. Write a function to find all words that start with two vowels in the given string using regex.
+
+```python
+import re
+
+def find_words_with_two_vowels(string):
+    pattern = r"\b[aeiouAEIOU]{2}\w+\b"
+    matches = re.findall(pattern, string)
+    return matches
+
+# Example usage
+string = "The quick brown fox jumps over the lazy dog."
+print(find_words_with_two_vowels(string)) # Output: ['quick', 'brown']
+```
+
+4. Write a function to check if the given string ends with a specific character using regex.
+
+```python
+import re
+
+def ends_with_character(string, character):
+    pattern = r"\b\w*" + character + r"\b"
+    match = re.match(pattern, string)
+    if match:
+        return True
+    else:
+        return False
+
+# Example usage
+string = "My phone number is 555-1234."
+character = "-1234"
+print(ends_with_character(string, character)) # Output: True
+```
+
+5. Write a function to find all words that end with a specific character in the given string using regex.
+
+```python
+import re
+
+def find_words_with_character_end(string, character):
+    pattern = r"\b\w*" + character + r"\b"
+    matches = re.findall(pattern, string)
+    return matches
+
+# Example usage
+string = "The quick brown fox jumps over the lazy dog."
+character = "e"
+print(find_words_with_character_end(string, character)) # Output: ['quick', 'lazy']
+```

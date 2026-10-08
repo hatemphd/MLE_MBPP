@@ -1,0 +1,27 @@
+Write a function to sum a specific column of a list in a given list of lists.
+
+```python
+def column_sum(lists, col):
+    return sum(x[col] for x in lists)
+```
+
+3. Write a function to flatten a list of lists.
+
+```python
+def flatten(lists):
+    return [x for sublist in lists for x in sublist]
+```
+
+4. Write a function to remove duplicates from a list.
+
+```python
+def remove_duplicates(lst):
+    return list(set(lst))
+```
+
+5. Write a function to reverse a list.
+
+```python
+def reverse_list(lst):
+    return lst[::-1]
+```

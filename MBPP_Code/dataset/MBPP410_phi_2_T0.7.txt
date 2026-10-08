@@ -1,0 +1,20 @@
+Write a function to find the minimum value in a given heterogeneous list. The function should first convert the list into a set to get unique values. Then, for each value, it should check if it's a number or a list. If it's a number, it should add it to the minimum value. If it's a list, it should add the minimum value of that list to the current minimum value. Finally, it should return the minimum value.
+
+```python
+def find_min(lst):
+    unique_values = set(lst)
+    min_value = float('inf')
+    for value in unique_values:
+        if isinstance(value, (int, float)):
+            min_value = min(min_value, value)
+        elif isinstance(value, list):
+            min_value = min(min_value, find_min(value))
+    return min_value
+
+lst = [5, 3, "hello", 2.5, [1, 2], "world"]
+print(find_min(lst))  # Output: 1
+```
+
+In this solution, the `isinstance()` function is used to check the type of each value. If it's a number or a list, it's added to the minimum value. If it's a list, it's recursively called with the list as an argument.
+
+

@@ -1,0 +1,32 @@
+Write a function to remove specific words from a given list.
+
+Idea: This function will use the remove() method.
+
+```python
+def remove_words(word_list, words_to_remove):
+    for word in words_to_remove:
+        while word in word_list:
+            word_list.remove(word)
+    return word_list
+
+#Test the function
+words = ['programming', 'is', 'fun', 'and', 'rewarding', 'is']
+print(remove_words(words, ['is', 'and']))  # Output: ['programming', 'fun', 'rewarding']
+```
+
+2. Write a function to find and remove the smallest item in a list.
+
+Idea: This function will use the min() and remove() methods.
+
+```python
+def remove_smallest(numbers):
+    smallest = min(numbers)
+    numbers.remove(smallest)
+    return numbers
+
+#Test the function
+numbers = [10, 20, 30, 40, 50]
+print(remove_smallest(numbers))  # Output: [10, 20, 30, 40, 50]
+```
+
+

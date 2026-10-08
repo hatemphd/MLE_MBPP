@@ -1,0 +1,51 @@
+Write a function to count number of lists in a given list of lists and square the count.
+
+```python
+def countAndSquare(lst):
+    count = sum(isinstance(sublist, list) for sublist in lst)
+    return count**2
+
+print(countAndSquare([1, 2, 3, [4, 5], 6]))  # Output: 25
+```
+
+Exercise 2:
+Write a function to flatten a list of lists (i.e., a list containing lists) into a single list.
+
+```python
+def flatten(lst):
+    return [item for sublist in lst for item in (flatten(sublist) if isinstance(sublist, list) else [sublist])]
+
+print(flatten([1, [2, [3, 4, [5, 6]]], 7, [8, 9]]))  # Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+Exercise 3:
+Write a function that takes a list of strings and returns a new list with all strings capitalized.
+
+```python
+def capitalizeLists(lst):
+    return [str.capitalize() if isinstance(str, str) else str for str in lst]
+
+print(capitalizeLists(['hello', ['world'], 'python', [1, 2, 3]]))  # Output: ['Hello', ['World'], 'Python', [1, 2, 3]]
+```
+
+Exercise 4:
+Write a function that takes a list of numbers and returns a new list with only the even numbers.
+
+```python
+def filterEvenNumbers(lst):
+    return [num for num in lst if isinstance(num, int) and num % 2 == 0]
+
+print(filterEvenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9]))  # Output: [2, 4, 6, 8]
+```
+
+Exercise 5:
+Write a function to compute the maximum value of a given list of numbers. If any of the elements in the list are not numbers, return a message indicating that the list contains non-numeric elements.
+
+```python
+def maxNumber(lst):
+    max_num = max(num for num in lst if isinstance(num, (int, float)))
+    return max_num if max_num else 'List contains non-numeric elements'
+
+print(maxNumber([1, 2.5, '3', 4, '5.6']))  # Output: 5.6
+print(maxNumber([1, 2, '3', '4']))  # Output: List contains non-numeric elements
+```

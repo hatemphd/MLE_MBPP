@@ -1,0 +1,18 @@
+Write a function to check the occurrences of records which occur similar times in the given tuples.
+
+```python
+# Solution:
+def check_similar_records(records):
+    """Function to check occurrences of similar records."""
+    for i in range(len(records)-1):
+        if records[i][1] == records[i+1][1]:
+            return True
+    return False
+
+# Testing the function
+print(check_similar_records(records))  # Returns: True
+```
+
+Remember, the strength of Python lies in its simplicity and the power of its libraries. As a DBA, mastering Python can enhance your data handling capabilities significantly.
+
+

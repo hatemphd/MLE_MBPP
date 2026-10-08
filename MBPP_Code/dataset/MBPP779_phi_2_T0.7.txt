@@ -1,0 +1,15 @@
+Write a function to count the number of unique lists within a list.
+
+**Hint:** Use a set to keep track of unique lists.
+
+```python
+def count_unique_lists(lst):
+  unique_lists = set()
+  for i in lst:
+    unique_lists.add(tuple(i))
+  return len(unique_lists)
+
+print(count_unique_lists([[1, 2], [3, 4], [1, 2], [5, 6], [3, 4]])) # Output: 3
+```
+
+

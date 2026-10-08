@@ -1,0 +1,46 @@
+Write a function to find the surface area of a cone.
+
+```python
+import math
+
+def cone_surface_area(radius: float, height: float) -> float:
+    """
+    Given the radius and height of a cone, returns the surface area of the cone.
+    """
+    slant_height = math.sqrt(radius**2 + height**2)
+    base_area = math.pi * radius**2
+    lateral_area = math.pi * radius * slant_height
+    return base_area + lateral_area
+
+print(cone_surface_area(5, 10))
+```
+
+Exercise 4: Write a function to find the volume of a sphere.
+
+```python
+import math
+
+def sphere_volume(radius: float) -> float:
+    """
+    Given the radius of a sphere, returns the volume of the sphere.
+    """
+    return (4/3) * math.pi * radius**3
+
+print(sphere_volume(5))
+```
+
+Exercise 5: Write a function to find the surface area of a pyramid.
+
+```python
+import math
+
+def pyramid_surface_area(base_length: float, base_width: float, height: float) -> float:
+    """
+    Given the base length, base width, and height of a pyramid, returns the surface area of the pyramid.
+    """
+    base_area = base_length * base_width
+    lateral_area = (1/2) * base_length * height + (1/2) * base_width * height
+    return base_area + lateral_area
+
+print(pyramid_surface_area(5, 3, 4))
+```

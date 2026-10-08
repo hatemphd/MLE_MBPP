@@ -1,0 +1,23 @@
+Write a python function to count the number of digits in factorial of a given number.
+
+```python
+def factorial_digits(n):
+    factorial = factorial(n)
+    return len(str(factorial))
+
+# Test
+print("Number of digits in 10! is", factorial_digits(10))  # Output: 3628800
+```
+
+2. Extend the `factorial_digits` function to return the number of trailing zeros in factorial.
+
+```python
+def factorial_trailing_zeros(n):
+    factorial = factorial(n)
+    return str(factorial).count('0')
+
+# Test
+print("Number of trailing zeros in 10! is", factorial_trailing_zeros(10))  # Output: 2
+```
+
+

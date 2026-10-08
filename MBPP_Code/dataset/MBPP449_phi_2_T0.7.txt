@@ -1,0 +1,51 @@
+Write a python function to check whether the triangle is valid or not if 3 points are given.
+
+**Hint:** You can use the formula for the area of a triangle to determine if a triangle is valid.
+
+**Solution:**
+
+```python
+def is_valid_triangle(p1, p2, p3):
+    x1, y1 = p1
+    x2, y2 = p2
+    x3, y3 = p3
+    area = 0.5 * abs(x1*(y2-y3) + x2*(y3-y1) + x3*(y1-y2))
+    return area > 0
+``` 
+
+**Exercise 3:** Write a python function to rotate the image by 90 degrees clockwise.
+
+**Hint:** You need to swap the x and y coordinates and negate the new x coordinate.
+
+**Solution:**
+
+```python
+def rotate_image_90(image):
+    return [[image[j][i] for j in range(len(image))] for i in range(len(image[0])-1, -1, -1)]
+``` 
+
+**Exercise 4:** Write a python function to flip the image vertically.
+
+**Hint:** You need to reverse the order of the rows in the image.
+
+**Solution:**
+
+```python
+def flip_image_vertically(image):
+    return image[::-1]
+``` 
+
+**Exercise 5:** Write a python function to flip the image horizontally.
+
+**Hint:** You need to reverse the order of the elements in each row of the image.
+
+**Solution:**
+
+```python
+def flip_image_horizontally(image):
+    return [row[::-1] for row in image]
+``` 
+
+End of the Chapter 6.
+
+

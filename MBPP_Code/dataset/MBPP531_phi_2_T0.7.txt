@@ -1,0 +1,22 @@
+Write a function to find minimum number of coins that make a given value.
+
+Example:
+
+coins = [1, 2, 5]
+value = 11
+
+Expected Output: 3
+
+
+'''
+
+
+# Solution
+
+def min_coins(coins, value):
+    if value == 0:
+        return 0
+    if value < 0:
+        return float("inf")
+    else:
+        return min(min_coins(coins, value - coin) + 1 for coin in coins)

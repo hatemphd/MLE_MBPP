@@ -1,0 +1,43 @@
+Write a function to drop empty items from a given dictionary.
+
+Hint: Use dictionary comprehension to create a new dictionary without empty items.
+
+Solution:
+```python
+def drop_empty_items(dictionary):
+    return {key: value for key, value in dictionary.items() if value}
+
+print(drop_empty_items({'a': 1, 'b': None, 'c': {}})) # {'a': 1}
+```
+
+**Exercise 4:**
+
+Write a function to remove duplicate items from a given dictionary.
+
+Hint: Convert the dictionary to a list. Then use list comprehension to create a new list with unique items.
+
+Solution:
+```python
+def remove_duplicate_items(dictionary):
+    return {key: value for key, value in set(dictionary.items())}
+
+print(remove_duplicate_items({'a': 1, 'b': 1, 'c': 2, 'd': 2, 'e': 3, 'f': 3})) # {'a': 1, 'b': 1, 'c': 2, 'd': 2, 'e': 3, 'f': 3}
+```
+
+**Exercise 5:**
+
+Write a function to remove items from a dictionary using a list of keys.
+
+Hint: Use a for loop to iterate through the list of keys and use the `del` statement to remove each item from the dictionary.
+
+Solution:
+```python
+def remove_keys(dictionary, keys):
+    for key in keys:
+        del dictionary[key]
+    return dictionary
+
+print(remove_keys({'a': 1, 'b': 2, 'c': 3, 'd': 4}, ['b', 'd'])) # {'a': 1, 'c': 3}
+```
+
+

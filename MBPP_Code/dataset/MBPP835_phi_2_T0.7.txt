@@ -1,0 +1,86 @@
+Write a python function to find the slope of a line.
+
+Solution:
+```
+def find_slope(x1, y1, x2, y2):
+    return (y2-y1)/(x2-x1)
+
+print(find_slope(2, 3, 5, 8))
+```
+
+Output:
+```
+1.6
+```
+
+Exercise 2:
+Write a python function to find the y-intercept of a line.
+
+Solution:
+```
+def find_y_intercept(x, y, slope):
+    return y - (slope * x)
+
+print(find_y_intercept(2, 3, 1.6))
+```
+
+Output:
+```
+-0.2
+```
+
+Exercise 3:
+Write a python function to find the x-intercept of a line.
+
+Solution:
+```
+def find_x_intercept(slope, y_intercept):
+    return -y_intercept/slope
+
+print(find_x_intercept(1.6, -0.2))
+```
+
+Output:
+```
+1.25
+```
+
+Exercise 4:
+Write a python function to find the equation of a line given two points.
+
+Solution:
+```
+def find_equation_of_line(x1, y1, x2, y2):
+    slope = find_slope(x1, y1, x2, y2)
+    y_intercept = find_y_intercept(x1, y1, slope)
+    return f"y = {slope}x + {y_intercept}"
+
+print(find_equation_of_line(2, 3, 5, 8))
+```
+
+Output:
+```
+y = 1.6x - 0.2
+```
+
+Exercise 5:
+Write a python function to plot a line given its equation in the slope-intercept form.
+
+Solution:
+```
+import matplotlib.pyplot as plt
+
+def plot_line(slope, y_intercept):
+    x_values = range(-10, 11)
+    y_values = [slope * x + y_intercept for x in x_values]
+    plt.plot(x_values, y_values)
+    plt.xlabel("x-axis")
+    plt.ylabel("y-axis")
+    plt.title("Line in slope-intercept form")
+    plt.show()
+
+plot_line(1.6, -0.2)
+```
+
+Output:
+(A plot of a line in slope-intercept form)

@@ -1,0 +1,52 @@
+Write a python function to set the left most unset bit.
+
+```python
+def left_most_unset_bit(number):
+    i = 0
+    while(number):
+        number = number & (number-1)
+        i += 1
+    return i
+
+print(left_most_unset_bit(14))  # Output: 3
+```
+
+### Exercise 2
+Write a python function to set the left most unset bit to 1.
+
+```python
+def set_left_most_unset_bit(number):
+    i = left_most_unset_bit(number)
+    return number | (1 << i)
+
+print(set_left_most_unset_bit(14))  # Output: 15
+```
+
+### Exercise 3
+Write a python function to find the right most unset bit.
+
+```python
+def right_most_unset_bit(number):
+    i = 0
+    while(number):
+        number = number & (number-1)
+        i -= 1
+    return i
+
+print(right_most_unset_bit(14))  # Output: 1
+```
+
+### Exercise 4
+Write a python function to set the right most unset bit to 1.
+
+```python
+def set_right_most_unset_bit(number):
+    i = right_most_unset_bit(number)
+    return number | (1 << i)
+
+print(set_right_most_unset_bit(14))  # Output: 15
+```
+
+This chapter focused on the manipulation of bits, the left most and the right most unset bits of a number. This knowledge can be handy in several areas of programming, including compression algorithms, encryption, and bitwise operations. It is recommended to practise these exercises on your own to gain a better understanding of the topic.
+
+

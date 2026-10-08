@@ -1,0 +1,17 @@
+Write a function to compute the sum of digits of each number of a given list.
+
+Hint: Use list comprehension to iterate over the list and the sum function to compute the sum of digits.
+
+Solution:
+
+```python
+def sum_of_digits(numbers):
+    return sum([int(digit) for number in numbers for digit in str(number)])
+
+my_list = [123, 456, 789]
+print(sum_of_digits(my_list))  # Output: 45
+```
+
+Remember that the goal is not just to solve the problem but understand the logic behind the solution. The beauty of Python lies in its expressiveness and readability. Try to come up with different approaches to the exercises. Happy coding!
+
+

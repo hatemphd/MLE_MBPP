@@ -1,0 +1,35 @@
+Write a function to split a string at lowercase letters.
+
+Idea: We can use `isupper()` in combination with a for loop to iterate over the string.
+
+```python
+def split_string(s):
+    result, current = [], ''
+    for char in s:
+        if char.isupper():
+            result.append(current)
+            current = ''
+        current += char
+    result.append(current)
+    return result
+
+print(split_string('ThequickBrownFoxJumpsOverTheLazyDog')) # prints ['The', 'quick', 'Brown', 'Fox', 'Jumps', 'Over', 'The', 'Lazy', 'Dog']
+```
+
+2. Write a function to check if a string is a palindrome, ignoring case.
+
+Idea: We can use `isupper()` to ignore case while comparing characters from both ends.
+
+```python
+def is_palindrome(s):
+    s = s.lower()
+    for i in range(len(s)//2):
+        if s[i] != s[-i - 1]:
+            return False
+    return True
+
+print(is_palindrome('Able Was I ere I saw Elba')) # prints True
+print(is_palindrome('Not a Palindrome')) # prints False
+```
+
+

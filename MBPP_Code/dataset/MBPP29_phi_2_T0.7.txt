@@ -1,0 +1,36 @@
+Write a python function to find the element occurring odd number of times.
+
+```python
+from collections import Counter
+
+def findOddOccurrence(arr):
+    count = Counter(arr)
+    for key, value in count.items():
+        if value % 2:
+            return key
+
+# Test the function
+arr = [3,3,1,1,1,2,2,2,2,2]
+print(findOddOccurrence(arr))  # Output: 3
+```
+
+## Exercise 2:
+
+Write a python function to find the element occurring odd number of times in an array of integers.
+
+```python
+from collections import Counter
+
+def findOddOccurrence(arr):
+    for key, value in Counter(arr).items():
+        if value % 2:
+            return key
+
+# Test the function
+arr = [3,3,1,1,1,2,2,2,2,2]
+print(findOddOccurrence(arr))  # Output: 3
+```
+
+In this chapter, we learned how to find an element that appears an odd number of times in an array using Python. We applied the concepts of arrays, integer array, and the Counter class from Python’s collections module. We also examined the application of loops and conditional statements in Python.
+
+

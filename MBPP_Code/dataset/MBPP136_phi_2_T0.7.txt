@@ -1,0 +1,10 @@
+Write a function to calculate electricity bill.
+    The electricity bill is calculated based on the monthly usage and the rate per unit.
+    Args:
+        monthly_usage: A float representing the monthly electricity usage in kWh.
+        rate_per_unit: A float representing the rate per unit of electricity in USD.
+    Returns:
+        A float representing the total electricity bill for the month.
+    """
+    return monthly_usage * rate_per_unit
+

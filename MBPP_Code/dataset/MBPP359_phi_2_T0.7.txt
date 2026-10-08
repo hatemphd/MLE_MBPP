@@ -1,0 +1,35 @@
+Write a python function to check whether one root of the quadratic equation is twice of the other or not.
+
+```python
+#Solution
+def check_roots(a, b, c):
+    d = (b**2) - (4*a*c)
+    if d<0:
+        return "No real roots"
+    else:
+        root1 = (-b + d**0.5)/(2*a)
+        root2 = (-b - d**0.5)/(2*a)
+        if root1 == 2*root2:
+            return "One root is twice of the other"
+        else:
+            return "No such roots"
+
+print(check_roots(1, 5, 6))
+print(check_roots(1, -5, 6))
+```
+
+- **Exercise 2:**
+Write a python function to construct the quadratic equation given the roots.
+
+```python
+#Solution
+def construct_equation(root1, root2):
+    a = (root1 + root2)
+    b = (root1 - root2)*(-1)
+    c = -(root1*root2)
+    return "Quadratic Equation: 2x^2 + {}x + {}".format(b, c)
+
+print(construct_equation(3, -2))
+```
+
+

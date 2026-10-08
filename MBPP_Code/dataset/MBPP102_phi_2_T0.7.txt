@@ -1,0 +1,43 @@
+Write a function to convert snake case string to camel case string. However, if the input is camel case, it will be converted to snake case.
+
+Example 1:
+
+Input: "thisIsCamelCase"
+Output: "thisIsCamelCase"
+Example 2:
+
+Input: "camelCase"
+Output: "camel_case"
+
+Note: Only the first letter after a space is changed to uppercase.
+"""
+
+def to_camel(s):
+    """
+    :type s: str
+    :rtype: str
+    """
+    if s.isupper():
+        return s.lower()
+    return ''.join(x.capitalize() if x else '_' for x in s.split('_'))
+
+def to_camel_case(s):
+    """
+    :type s: str
+    :rtype: str
+    """
+    return s.replace('_', '') if s.islower() else s.replace('_', '').lower()
+
+def to_camel_case(s):
+    return ''.join(map(str.capitalize, re.split(r'(?=[A-Z])', s)))
+
+def to_camel_case(s):
+    return ''.join(map(str.capitalize, s.split('_'))) if s.islower() else s.lower()
+
+def to_camel(s):
+    return ''.join(x.capitalize() if x else '_' for x in re.split('(?=[A-Z])', s))
+
+def to_camel(s):
+    return ''.join(x.capitalize() if x else '_' for x in re.split('(?=[A-Z])', s)).replace('_', '') if s.islower() else s.lower().replace('_', '')
+
+

@@ -1,0 +1,34 @@
+Write a python function to find the first even number in a given list of numbers.
+
+```python
+def find_first_even_number(numbers):
+    for number in numbers:
+        if number % 2 == 0:
+            return number
+    return None
+```
+
+4. Write a python function to find the highest value in a given list of numbers.
+
+```python
+def find_highest_value(numbers):
+    highest_value = numbers[0]
+    for number in numbers:
+        if number > highest_value:
+            highest_value = number
+    return highest_value
+```
+
+5. Write a python function to find the second smallest number in a given list of numbers.
+
+```python
+def find_second_smallest_number(numbers):
+    smallest_number = min(numbers)
+    second_smallest_number = None
+    for number in numbers:
+        if number != smallest_number:
+            if second_smallest_number is None or number < second_smallest_number:
+                second_smallest_number = number
+    return second_smallest_number
+```
+

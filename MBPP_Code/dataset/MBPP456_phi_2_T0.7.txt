@@ -1,0 +1,66 @@
+Write a function to reverse strings in a given list of string values.
+
+```python
+# Solution
+def reverse_strings(strings):
+    return [s[::-1] for s in strings]
+
+strings = ['Python', 'is', 'fun']
+print(reverse_strings(strings))  # Output: ['nohtyP', 'si', 'nuf']
+```
+
+**Exercise 2:**
+
+Write a function to sort a list of strings in descending order based on their length.
+
+```python
+# Solution
+def sort_strings(strings):
+    return sorted(strings, key=len, reverse=True)
+
+strings = ['Python', 'is', 'fun']
+print(sort_strings(strings))  # Output: ['Python', 'fun', 'is']
+```
+
+**Exercise 3:**
+
+Write a function to split a string into a list of words.
+
+```python
+# Solution
+def split_string(string):
+    return string.split()
+
+string = 'Hello, World!'
+print(split_string(string))  # Output: ['Hello,', 'World!']
+```
+
+**Exercise 4:**
+
+Write a function to convert all strings in a list to lowercase.
+
+```python
+# Solution
+def convert_to_lowercase(strings):
+    return [s.lower() for s in strings]
+
+strings = ['Python', 'is', 'FUN']
+print(convert_to_lowercase(strings))  # Output: ['python', 'is', 'fun']
+```
+
+**Exercise 5:**
+
+Write a function to strip leading and trailing whitespaces from all strings in a list.
+
+```python
+# Solution
+def strip_strings(strings):
+    return [s.strip() for s in strings]
+
+strings = ['  Python   ', '  is  ', ' FUN!   ']
+print(strip_strings(strings))  # Output: ['Python', 'is', 'FUN!']
+```
+
+Remember, practice makes one perfect. So, keep practicing these exercises until you get really comfortable with Python strings. Happy coding!
+
+

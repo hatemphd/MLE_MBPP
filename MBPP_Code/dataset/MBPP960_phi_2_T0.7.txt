@@ -1,0 +1,155 @@
+Write a function to solve tiling problem.
+
+Given an integer m and a list of n integers. The task is to find the minimum number 'x' of the numbers which should be selected from the list such that the sum of the selected numbers is divisible by m.
+
+Note:
+
+n ≤ 10^5
+m ≤ 10^3
+1 ≤ n ≤ m ≤ 10^5
+
+Input Format:
+
+First line contains T (total test cases).
+Each test case consists of two lines: first line contains an integer 'm' and the second line contains 'n' integers separated by a single space.
+
+Output Format:
+
+For each test case, output a single line containing 'x' separated by a single space.
+
+Constraints:
+
+1 ≤ T ≤ 100
+1 ≤ m ≤ 10^3
+1 ≤ n ≤ 10^5
+1 ≤ numbers in the list ≤ 10^5
+
+Sample Input 1:
+
+2
+3 2
+1 2 3
+4 7
+Sample Output 1:
+
+1
+2
+
+Sample Input 2:
+
+1
+2 6
+1 2 3 6
+Sample Output 2:
+
+1
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <math.h>
+#include <limits.h>
+#include <set>
+
+using namespace std;
+
+int main() {
+    int n, m, x;
+    cin >> m;
+    vector<int> arr(m);
+    set <int> s;
+    for(int i = 0; i < m; i++) {
+        cin >> arr[i];
+        s.insert(arr[i]);
+    }
+    for(int i = 0; i < m; i++) {
+        for(int j = 0; j < m; j++) {
+            if(((j / m) + 1) * m - j % m == i) {
+                x = s.size();
+                cout << x << " ";
+                break;
+            }
+        }
+    }
+    return 0;
+}
+
+A:
+
+You can use a bitmask like this :
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <math.h>
+#include <limits.h>
+#include <set>
+
+using namespace std;
+
+int main() {
+    int n, m, x;
+    cin >> m;
+    vector<int> arr(m);
+    set <int> s;
+    for(int i = 0; i < m; i++) {
+        cin >> arr[i];
+        s.insert(arr[i]);
+    }
+    for(int i = 0; i < m; i++) {
+        for(int j = 0; j < m; j++) {
+            int mask = 1 << j;
+            x = s.size();
+            if(((j / m) + 1) * m - j % m == i) {
+                cout << x << " ";
+                break;
+            }
+        }
+    }
+    return 0;
+}
+
+This is an example :
+Input :
+3
+2 3
+1 2 3
+4 7
+Output :
+1 2
+1 1
+1 2
+
+Explanation :
+This is a bit mask, the i-th bit in the mask is set if and only if  the number i is in the set.
+In this example, the mask is :
+1
+10
+100
+
+And the numbers in the set are :
+1
+2
+3
+4
+
+The mask has the i-th bit set if and only if  the numbers in the set sum to i.
+This is because the binary representation of i is :
+i = (i / m) + 1) * m - i % m
+
+So we can get the sum of the numbers in the set by adding the bits that are set.
+
+A:
+
+I can't see how the solution presented can work for all cases.
+Let's start with the simplest case:
+
+m = 1, n = 1
+
+So we are looking for a number that can be formed with only the single number in the list. We can only get that number with the following mask:
+1 << 0
+
+So the answer is exactly one number.
+
+m = 2, n = 1
+
+So we are looking for a number that can be formed with only the single number in the list. As it's a

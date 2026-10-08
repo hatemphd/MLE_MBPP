@@ -1,0 +1,10 @@
+Write a function to remove duplicates from a list of lists.
+
+```python
+def remove_duplicates(lst):
+    unique_lst = list(set([tuple(i) for i in lst]))
+    return [list(i) for i in unique_lst]
+
+print(remove_duplicates([[1, 2], [2, 3], [1, 2], [4, 5]])) # Output: [[1, 2], [2, 3], [4, 5]]
+```
+

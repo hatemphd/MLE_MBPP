@@ -1,0 +1,168 @@
+Write a function to count those characters which have vowels as their neighbors in the given string.
+
+A:
+
+Here is one way to count the number of vowels in a string with the help of regular expressions.
+import re
+
+def vowels_in_string(string):
+    if not string:
+        return 0
+    return len(re.findall("[aeiou]", string.lower()))
+
+# Test
+print(vowels_in_string("Hello World"))  # 3
+print(vowels_in_string("Testing"))     # 2
+print(vowels_in_string(""))             # 0
+
+A:
+
+Here is something different to count number of vowels in a string using a character class:
+def count_vowels(input_string):
+    """
+        Count number of vowels in a string.
+    """
+    vowels = "aeiouAEIOU"
+    count = 0
+    for char in input_string:
+        if char in vowels:
+            count += 1
+    return count
+
+>>> count_vowels('Hello world')
+3
+>>> count_vowels('Testing')
+2
+>>> count_vowels('')
+0
+
+A:
+
+Python 3:
+def countVowels(string):
+    count = 0
+    vowels = "aeiouAEIOU"
+    for char in string:
+        if char in vowels:
+            count += 1
+    return count
+
+A:
+
+Here is another approach:
+def countVowels(string):
+    vowels = 'aeiouAEIOU'
+    return sum([1 for letter in string if letter in vowels])
+
+A:
+
+def vowels_in_string(string):
+    a = 0
+    for i in string:
+        if i in "aeiouAEIOU":
+            a+=1
+    return a
+
+A:
+
+#! /usr/bin/env python3
+
+s = "Hello, World!"
+
+vowels = ['a', 'e', 'i', 'o', 'u']
+
+def count_vowels(string):
+    count = 0
+    for letter in string:
+        if letter in vowels:
+            count += 1
+    return count
+
+print(count_vowels(s))
+
+A:
+
+def count_vowels(a):
+    count = 0
+    vowels = 'aeiou'
+    for i in a:
+        if i in vowels:
+            count += 1
+    
+    return count
+
+A:
+
+def count_vowels(string):
+    count = 0
+    vowels = 'aeiou'
+    for i in string:
+        if i in vowels:
+            count += 1
+    return count
+
+A:
+
+def count_vowels(string):
+    count = 0
+    for i in string:
+        if i in 'aeiouAEIOU':
+            count += 1
+
+    return count
+
+A:
+
+def vowelCount(x):
+    l = 0
+    for i in x:
+        if i in 'aeiouAEIOU':
+            l += 1
+    return l
+
+A:
+
+def count_vowels(string):
+    vowels = 'aeiou'
+    count = 0
+    for i in string:
+        if i in vowels:
+            count += 1
+    return count
+
+string = input("Please enter a string: ")
+print(count_vowels(string))
+
+A:
+
+def count_vowels(string):
+    vowels = 'aeiou'
+    count = 0
+    for i in string:
+        if i.lower() in vowels:
+            count += 1
+    return count
+
+A:
+
+def count_vowels(string):
+    count = 0
+    vowels = 'aeiouAEIOU'
+    for char in string:
+        if char in vowels:
+            count += 1
+    return count
+
+A:
+
+def count_vowels(string):
+    count = 0
+    vowels = 'aeiouAEIOU'
+    for i in string:
+        if i in vowels:
+            count += 1
+    return count
+
+# main program
+string = input("Enter a string: ")
+print(count

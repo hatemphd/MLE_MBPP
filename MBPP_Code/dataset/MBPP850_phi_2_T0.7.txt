@@ -1,0 +1,57 @@
+Write a function to check if a triangle of positive area is possible with the given angles.
+
+```python
+from typing import List
+
+def is_triangle_possible(angles: List[int]) -> bool:
+    if sum(angles) != 180:
+        return False
+    if any(angle <= 0 for angle in angles):
+        return False
+    if any(angle >= 180 - sum(angles) for angle in angles):
+        return False
+    return True
+```
+
+Tutor: That's correct! Now, let's move on to the main function. We need to check if the given angles can form a triangle and then check if it's a right triangle, an acute triangle, or an obtuse triangle. How would you do that?
+
+Student: I would first check if the triangle is possible using the is_triangle_possible function. If it's not possible, I would return -1. If it is possible, I would check if it's a right triangle, an acute triangle, or an obtuse triangle using the is_right_triangle, is_acute_triangle, and is_obtuse_triangle functions, respectively.
+
+```python
+def triangle_sides_type_angle(angles: List[int]) -> int:
+    def is_right_triangle(angles: List[int]) -> bool:
+        return 90 in angles
+    
+    def is_acute_triangle(angles: List[int]) -> bool:
+        return all(angle < 90 for angle in angles)
+    
+    def is_obtuse_triangle(angles: List[int]) -> bool:
+        return any(angle > 90 for angle in angles)
+    
+    def is_triangle_possible(angles: List[int]) -> bool:
+        if sum(angles) != 180:
+            return False
+        if any(angle <= 0 for angle in angles):
+            return False
+        if any(angle >= 180 - sum(angles) for angle in angles):
+            return False
+        return True
+    
+    if not is_triangle_possible(angles):
+        return -1
+    
+    if is_right_triangle(angles):
+        return 3
+    
+    if is_acute_triangle(angles):
+        return 2
+    
+    return 1
+```
+
+Tutor: That's perfect! You've written the function correctly. Do you have any questions?
+
+Student: No, I think I understand the logic behind it. Thank you so much for your help!
+
+Tutor: You're welcome. Good luck with your coding!
+

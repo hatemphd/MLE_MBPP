@@ -1,0 +1,25 @@
+Write a python function to sort a list according to the second element in sublist.
+
+```python
+# your code goes here
+
+def sort_by_second_elem(lst):
+    return sorted(lst, key=lambda x: x[1])
+
+print(sort_by_second_elem([[3, 2], [1, 4], [2, 1], [4, 3]]))
+```
+The code above creates a function that sorts a list according to the second element in each sublist.
+
+**Exercise 3**: Write a python function to sort a list of tuples based on the second element of the tuple.
+
+```python
+# your code goes here
+
+def sort_tuples(lst):
+    return sorted(lst, key=lambda x: x[1])
+
+print(sort_tuples([('c', 3), ('a', 1), ('b', 2)]))
+```
+The code above creates a function that sorts a list of tuples based on the second element in each tuple.
+
+

@@ -1,0 +1,25 @@
+Write a function to check if the two given strings are permutations of each other.
+
+Example:
+
+Input:
+str1 = "anagram"
+str2 = "nagaram"
+Output:
+True
+
+Input:
+str1 = "rat"
+str2 = "car"
+Output:
+False
+"""
+
+# Solution using sets
+def check_permutation(str1, str2):
+    return set(str1) == set(str2)
+
+
+# Solution using Counter
+def check_permutation(str1, str2):
+    return Counter(str1) == Counter(str2)

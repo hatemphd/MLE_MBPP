@@ -1,0 +1,17 @@
+Write a python function to find the maximum volume of a cuboid with given sum of sides.
+
+```python
+def find_max_volume(sides):
+    max_volume = max(sides) ** 3
+    for i in range(len(sides)):
+        for j in range(i+1, len(sides)):
+            for k in range(j+1, len(sides)):
+                volume = sides[i] * sides[j] * sides[k]
+                if volume > max_volume:
+                    max_volume = volume
+    return max_volume
+```
+
+In conclusion, Python provides us with the means to solve complex numerical problems with ease and efficiency. We have seen how to implement a variety of numerical algorithms using Python's constructs, such as functions, loops, and conditionals. Continue practicing these techniques to further enhance your numerical computing skills.
+
+

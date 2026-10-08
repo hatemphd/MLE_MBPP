@@ -1,0 +1,16 @@
+Write a function to check if given tuple is distinct or not.
+
+```python
+# Solution
+def check_distinct(tpl):
+    for index,item in enumerate(tpl):
+        for num in tpl[index+1:]:
+            if item == num:
+                return False
+    return True
+
+print(check_distinct((1,2,3))) #True
+print(check_distinct((1,2,2))) #False
+```
+
+

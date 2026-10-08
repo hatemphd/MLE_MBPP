@@ -1,0 +1,149 @@
+Write a function to check whether it follows the sequence given in the patterns array. If follows the sequence it must be able to print true or false.
+
+Input Format:
+The first line contains the integer 'n'
+The second line contains 'n' space separated integers.
+The third line contains an integer 'm'
+The fourth line contains 'm' space separated integers.
+
+Output Format:
+The first line must contain true or false depending on whether the sequence follows the pattern or not.
+
+Constraints:
+1 ≤ n ≤ 10^5
+1 ≤ m ≤ 10^5
+1 ≤ Ai ≤ 10^5
+1 ≤ Bi ≤ 10^5
+
+Sample Input:
+4
+4 2
+1 2
+2 3
+5 4
+4 2
+2 3
+3 2
+3 2
+
+Sample Output:
+true
+
+Explanation:
+The first sequence is {1,2}
+The second sequence is {2,3}
+The third sequence is {3,2}
+The forth sequence is {2,3}
+The fifth sequence is {3,2}
+The sixth sequence is {3,2}
+The seventh sequence is {2,3}
+The eighth sequence is {2,3}
+So, the required sequence is {1,2} {2,3} {3,2} {2,3}
+The given sequence is following the pattern.
+Sample Input:
+3
+4 2
+4 2
+4 2
+
+Sample Output:
+false
+
+Explanation:
+Given sequence is {4,2} {4,2} {4,2}
+So, the required sequence is {1,2} {2,3} {3,2}
+The given sequence is not following the pattern.
+"""
+
+def checkSequence(arr, n, m):
+    for i in range(n-1):
+        if arr[i] == arr[i+1]:
+            return False
+    return True
+
+n,m = map(int,input().split())
+arr1 = list(map(int,input().split()))
+arr2 = list(map(int,input().split()))
+arr3 = list(map(int,input().split()))
+
+flag = checkSequence(arr1,n,m)
+if flag:
+    print("true")
+else:
+    print("false")
+flag = checkSequence(arr2,n,m)
+if flag:
+    print("true")
+else:
+    print("false")
+flag = checkSequence(arr3,n,m)
+if flag:
+    print("true")
+else:
+    print("false")
+
+
+"""
+Problem-4 : Find the largest product of a contiguous subarray of size k in an array.
+
+Given an array of integers and a number k, find the maximum product of any contiguous subarray of size k.
+
+Sample Input:
+2
+1
+1
+
+Sample Output:
+1
+"""
+
+def largestProduct(arr, k):
+    if k > len(arr):
+        return 0
+    max_product = 1
+    for i in range(len(arr)-k+1):
+        temp = 1
+        for j in range(k):
+            temp *= arr[i+j]
+        if temp > max_product:
+            max_product = temp
+    return max_product
+
+n = int(input())
+arr = list(map(int,input().split()))
+k = int(input())
+
+print(largestProduct(arr, k))
+
+"""
+Problem-5 : Longest common subsequence
+
+Given two DNA strings s and t of lengths m and n respectively, find the longest common subsequence of s and t.
+
+Sample Input:
+3
+AATCGG
+ATCGG
+
+Sample Output:
+ATCGG
+"""
+
+# Dynamic Programming approach
+def lcs(s,t,i,j):
+    if i==0 or j==0:
+        return 0
+    elif s[i-1]==t[j-1]:
+        return 1+lcs(s,t,i-1,j-1)
+    else:
+        return max(lcs(s,t,i-1,j),lcs(s,t,i,j-1))
+
+n,m = map(int,input().split())
+s = input()
+t = input()
+
+print(lcs(s,t,n,m))
+
+"""
+Problem-6 : Longest Common Supersequence
+

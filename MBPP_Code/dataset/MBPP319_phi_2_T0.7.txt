@@ -1,0 +1,14 @@
+Write a function to find all five characters long word in the given string by using regex.
+
+```python
+import re
+
+def find_words(string):
+    return re.findall(r'\b\w{5}\b', string)
+
+print(find_words("The quick brown fox jumps over the lazy dog"))
+```
+Output:
+```
+['quick', 'brown', 'jumps', 'over', 'lazy']
+```

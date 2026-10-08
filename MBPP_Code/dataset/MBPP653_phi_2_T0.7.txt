@@ -1,0 +1,21 @@
+Write a function to group a sequence of key-value pairs into a dictionary of lists using collections module.
+
+```python
+def group_pairs(pairs):
+    return collections.defaultdict(list)
+
+for key, value in pairs:
+    group_pairs[key].append(value)
+
+print(dict(group_pairs))
+```
+
+### Exercise 5
+Write a function to count the frequency of all characters in a string using collections module.
+
+```python
+def count_chars(string):
+    return collections.Counter(string)
+
+print(count_chars('hello world'))
+```

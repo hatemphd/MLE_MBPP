@@ -1,0 +1,66 @@
+Write a function to calculate the discriminant value.
+```python
+# Create a function that calculates the discriminant value.
+def discriminant(a, b, c):
+    return b ** 2 - 4 * a * c
+
+# Test the function
+a = 1
+b = 5
+c = 6
+print(discriminant(a, b, c))
+```
+
+#### Exercise 2
+Write a function to calculate the value of x that satisfies the quadratic equation.
+```python
+# Create a function that calculates the value of x.
+def quadratic_formula(a,b,c):
+    d = b**2 - 4*a*c
+    x1 = (-b + d**(1/2))/(2*a)
+    x2 = (-b - d**(1/2))/(2*a)
+    return x1, x2
+
+# Test the function
+a = 2
+b = 5
+c = 3
+print(quadratic_formula(a,b,c))
+```
+
+#### Exercise 3
+Create a list of quadratic equations with different coefficients. Use list comprehension to calculate the roots of each equation.
+```python
+# Create a list of quadratic equations
+equations = [(1, -3, 2), (2, 4, 6), (1, -2, 1), (4, -5, -3)]
+
+# Use list comprehension to calculate the roots of each equation.
+roots = [quadratic_formula(a,b,c) for (a,b,c) in equations]
+print(roots)
+```
+
+#### Exercise 4
+Create a function that accepts a list of quadratic equations with different coefficients. Use list comprehension to calculate the roots of each equation and store them in a list.
+```python
+# Create a function that accepts a list of quadratic equations.
+def solve_quadratic_equations(equations):
+    roots = [quadratic_formula(a,b,c) for (a,b,c) in equations]
+    return roots
+
+# Test the function
+equations = [(1, -3, 2), (2, 4, 6), (1, -2, 1), (4, -5, -3)]
+print(solve_quadratic_equations(equations))
+```
+
+#### Exercise 5
+Create a function that accepts a list of quadratic equations with different coefficients. Use list comprehension to calculate the roots of each equation if the discriminant is greater than or equal to zero. If the discriminant is less than zero, return "No real roots."
+```python
+# Create a function that accepts a list of quadratic equations.
+def solve_quadratic_equations(equations):
+    roots = [(quadratic_formula(a,b,c)) if discriminant(a,b,c) >= 0 else "No real roots." for (a,b,c) in equations]
+    return roots
+
+# Test the function
+equations = [(1, -3, 2), (2, 4, 6), (1, -2, 1), (4, -5, -3)]
+print(solve_quadratic_equations(equations))
+```

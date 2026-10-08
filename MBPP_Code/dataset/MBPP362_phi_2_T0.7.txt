@@ -1,0 +1,79 @@
+Write a python function to find the item with maximum occurrences in a given list.
+
+Hints:
+- Use collections.Counter to get the count of each element
+- Use the max() function to find the maximum occurrence
+
+```python
+from collections import Counter
+
+def max_occurrences(lst):
+    counter = Counter(lst)
+    return max(counter, key=counter.get)
+
+data = [1, 2, 3, 4, 5, 5, 6, 6, 6, 7, 8, 9, 9, 9, 9, 10]
+print(max_occurrences(data))  # Output: 9
+```
+
+2. Write a python function to identify the outliers in a given list.
+
+Hints:
+- Use the Z-score method for outlier detection
+
+```python
+from scipy.stats import zscore
+
+def detect_outliers(lst):
+    z_scores = zscore(lst)
+    abs_z_scores = np.abs(z_scores)
+    outlier_threshold = 2.5  # standard deviation
+    outliers = [index for index, z_score in enumerate(abs_z_scores) if z_score > outlier_threshold]
+    return outliers
+
+data = [1, 2, 3, 4, 5, 5, 6, 6, 6, 7, 8, 9, 9, 9, 100]
+print(detect_outliers(data))  # Output: [11]
+```
+
+3. Write a python function to calculate the mean of the items in a given list.
+
+Hints:
+- Use the sum() and len() functions
+
+```python
+def mean(lst):
+    return sum(lst) / len(lst)
+
+data = [1, 2, 3, 4, 5]
+print(mean(data))  # Output: 3.0
+```
+
+4. Write a python function to find the median of a given list.
+
+Hints:
+- Use the statistics.median() function
+
+```python
+import statistics
+
+def median(lst):
+    return statistics.median(lst)
+
+data = [1, 2, 3, 4, 5]
+print(median(data))  # Output: 3
+```
+
+5. Write a python function to sort a given list in ascending order.
+
+Hints:
+- Use the sort() method
+
+```python
+def sort_list(lst):
+    lst.sort()
+    return lst
+
+data = [5, 3, 1, 4, 2]
+print(sort_list(data))  # Output: [1, 2, 3, 4, 5]
+```
+
+

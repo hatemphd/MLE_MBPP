@@ -1,0 +1,110 @@
+Write a function to check whether the given string is starting with a vowel or not using regex.
+
+<details>
+<summary>Idea</summary>
+
+Use `re.match` to match the pattern of vowels.
+</details>
+
+```python
+import re
+
+def check_starting_vowel(word):
+    pattern = r'^[aeiou]'
+    if re.match(pattern, word):
+        return True
+    return False
+
+# Test Cases
+print(check_starting_vowel("Apple"))  # True
+print(check_starting_vowel("Banana"))  # False
+```
+
+### Exercise 2
+
+Write a function to replace all occurrences of a pattern in a string with a new string using regex.
+
+<details>
+<summary>Idea</summary>
+
+Use `re.sub` to substitute the pattern with the new string.
+</details>
+
+```python
+import re
+
+def replace_pattern(text, pattern, new_string):
+    return re.sub(pattern, new_string, text)
+
+# Test Cases
+print(replace_pattern("Hello, World!", "o", "X"))  # "HeXXlX, WXrld!"
+print(replace_pattern("The quick brown fox jumps over the lazy dog", "the", "a"))  
+# "A quick brown fox jumps over a lazy dog"
+```
+
+### Exercise 3
+
+Write a function to extract all the email addresses from a string using regex.
+
+<details>
+<summary>Idea</summary>
+
+Use `re.findall` to find all the email addresses in the string.
+</details>
+
+```python
+import re
+
+def extract_emails(text):
+    pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+    return re.findall(pattern, text)
+
+# Test Cases
+print(extract_emails("Please contact us at info@example.com or support@example.com."))  # ['info@example.com', 'support@example.com']
+```
+
+### Exercise 4
+
+Write a function to validate if the given string is a valid passport number using regex. A passport number is considered valid if it contains 16 digits and doesn't start with 0.
+
+<details>
+<summary>Idea</summary>
+
+Use `re.match` to match the pattern of 16 digits.
+</details>
+
+```python
+import re
+
+def validate_passport_number(number):
+    pattern = r'^(\d{16})(?!0\d)'
+    if re.match(pattern, number):
+        return True
+    return False
+
+# Test Cases
+print(validate_passport_number("1234567890123456"))  # True
+print(validate_passport_number("00001234567890123456"))  # False
+```
+
+### Exercise 5
+
+Write a function to extract all the phone numbers from a string using regex. A phone number is considered valid if it contains 10 digits and doesn't start with 0.
+
+<details>
+<summary>Idea</summary>
+
+Use `re.findall` to find all the phone numbers in the string.
+</details>
+
+```python
+import re
+
+def extract_phone_numbers(text):
+    pattern = r'\b\d{10}(?!0\d)'
+    return re.findall(pattern, text)
+
+# Test Cases
+print(extract_phone_numbers("Please contact us at 1234567890 or 9876543210."))  # ['1234567890', '9876543210']
+```
+

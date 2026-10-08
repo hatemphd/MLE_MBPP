@@ -1,0 +1,25 @@
+Write a function to group a sequence of key-value pairs into a dictionary of lists.
+
+```python
+def group_pairs(pairs):
+    groups = {}
+    for pair in pairs:
+        key = pair[0]
+        value = pair[1]
+        if key not in groups:
+            groups[key] = [value]
+        else:
+            groups[key].append(value)
+    return groups
+```
+
+5. Write a function to merge two dictionaries, with the second dictionary overwriting any keys in the first dictionary that have the same value.
+
+```python
+def merge_dicts(dict1, dict2):
+    for key, value in dict2.items():
+        if key in dict1 and dict1[key] != value:
+            raise ValueError(f"Key {key} has conflicting values in both dictionaries")
+        dict1[key] = value
+    return dict1
+```

@@ -1,0 +1,34 @@
+Write a function to find all words starting with 'a' or 'e' in a given string. 
+
+Here's a hint: You can use the `startswith` method in a loop to find words that start with either 'a' or 'e'.
+
+```python
+def find_a_e_words(s):
+    words = s.split(' ')
+    a_e_words = [word for word in words if word.startswith(('a', 'e'))]
+    return a_e_words
+
+s = "apple elephant elephant ant aardvark"
+print(find_a_e_words(s))
+```
+
+2. Count the number of words in a string that start with 'a' or 'e'.
+
+Hint: You can use the `startswith` method in a loop to find words that start with 'a' or 'e' and a counter to keep track of the count.
+
+```python
+def count_a_e_words(s):
+    words = s.split(' ')
+    count = 0
+    for word in words:
+        if word.startswith(('a', 'e')):
+            count += 1
+    return count
+
+s = "apple elephant elephant ant aardvark"
+print(count_a_e_words(s))
+```
+
+By the end of this chapter, you should have a good understanding of how to use the `startswith` method and its applications in Python, particularly in string manipulation tasks. Practice the provided exercises to solidify your understanding.
+
+

@@ -1,0 +1,58 @@
+Write a python function to find the element that appears only once in a sorted array.
+
+```python
+def find_single_item(arr):
+    # Your Code Here
+    return arr[0]
+```
+
+Hint: You can use the two-pointer approach.
+
+Solution:
+
+```python
+def find_single_item(arr):
+    left, right = 0, len(arr) - 1
+    while left < right:
+        mid = (left + right) // 2
+        if mid % 2 == 0 and arr[mid] == arr[mid + 1]:
+            left = mid + 2
+        elif mid % 2 == 1 and arr[mid] == arr[mid - 1]:
+            right = mid - 1
+        else:
+            return arr[mid]
+    return arr[left]
+```
+
+## Exercise 2
+
+Write a python function to find the peak element in a binary tree.
+
+```python
+class Node:
+    def __init__(self, val):
+        self.val = val
+        self.left = None
+        self.right = None
+
+def find_peak(root):
+    # Your Code Here
+    return root.val
+```
+
+Hint: You may use the two-pointer approach.
+
+Solution:
+
+```python
+def find_peak(root):
+    left, right = root, root
+    while left.left and right.right:
+        left = left.left
+        right = right.right
+    return max(root, left, right)
+```
+
+Remember, practice is key to mastering these concepts. Happy coding!
+
+

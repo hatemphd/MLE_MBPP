@@ -1,0 +1,19 @@
+Write a python function to find the sum of hamming distances of all consecutive numbers from o to n. 
+
+Hint: The hamming distance between two numbers is the number of positions at which the corresponding bits are different.
+
+Solution:
+
+```python
+def sum_hamming_distances(n):
+    total_dist = 0
+    for i in range(n):
+        total_dist += hamming_distance(i, i+1)
+    return total_dist
+
+print(sum_hamming_distances(5))  # Output: 6
+```
+
+In this solution, we iterate through the range from 0 to n-1. For each number, we compute its hamming distance with the next number (i+1) and add it to the running total.
+
+

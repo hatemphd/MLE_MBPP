@@ -1,0 +1,52 @@
+Write a python function to count set bits of a given number.
+
+Idea: For each bit position, if the bit is set (i.e., it is 1), increment the count by 1.
+
+```python
+def count_bits(num):
+    count = 0
+    while(num):
+        count += num & 1
+        num >>= 1
+    return count
+
+print(count_bits(11))  # Output: 3
+```
+
+2. Write a python function to find the maximum set bit position in a given number.
+
+Idea: Traverse the number from the least significant bit to the most significant bit. The index of the current bit is the maximum set bit position.
+
+```python
+def find_max_bit(num):
+    max_bit = 0
+    while(num):
+        num &= num - 1
+        max_bit += 1
+    return max_bit - 1
+
+print(find_max_bit(11))  # Output: 4
+```
+
+3. Write a python function to generate a list of all the numbers with the maximum set bit at a specific bit position.
+
+Idea: Use the function to find the maximum set bit position. Then use a loop to generate all numbers with the maximum set bit at that position.
+
+```python
+def find_max_bit(num):
+    max_bit = 0
+    while(num):
+        num &= num - 1
+        max_bit += 1
+    return max_bit - 1
+
+def generate_numbers(max_bit):
+    nums = []
+    for i in range(max_bit + 1):
+        nums.append(i)
+    return nums
+
+print(generate_numbers(find_max_bit(11)))  # Output: [0, 1, 2, 4, 8]
+```
+
+

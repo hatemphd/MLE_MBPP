@@ -1,0 +1,25 @@
+Write a python function to check whether every odd index contains odd numbers of a given list.
+
+*Hint: Use the index slicing technique.*
+
+```python
+def check_odd_index_odd_numbers(sequence):
+    return all(sequence[i]%2 != 0 for i in range(1, len(sequence), 2))
+
+print(check_odd_index_odd_numbers([1,2,3,4,5])) # True
+print(check_odd_index_odd_numbers([1,2,3,4,6])) # False
+```
+
+#### Exercise 5
+Write a python function to check whether the sum of two given lists have an even sum.
+
+*Hint: Use the `sum()` function to find the sum of each list.*
+
+```python
+def even_sum(lst1, lst2):
+    return sum(lst1)%2 == 0 and sum(lst2)%2 == 0
+
+print(even_sum([1,2,3], [4,5,6])) # True
+print(even_sum([1,2,3], [4,5,7])) # False
+```
+

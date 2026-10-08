@@ -1,0 +1,27 @@
+Write a python function to count the number of equal numbers from three given integers.
+def equal_numbers(a, b, c):
+    count = 0
+    if a == b:
+        count += 1
+    if a == c:
+        count += 1
+    if b == c:
+        count += 1
+    return count
+
+# Exercise 4
+def compare_list_lengths(list1, list2):
+    if len(list1) > len(list2):
+        return "List 1 is longer than List 2."
+    elif len(list1) < len(list2):
+        return "List 2 is longer than List 1."
+    else:
+        return "Both lists have the same length."
+
+
+# Exercise 5
+def compare_lists(list1, list2):
+    for i in range(len(list1)):
+        if list1[i] != list2[i]:
+            return "The lists are not equal."
+    return "The lists are equal."

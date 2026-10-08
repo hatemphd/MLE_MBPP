@@ -1,0 +1,10 @@
+Write a python function to get the position of rightmost set bit.
+
+```python
+import math
+
+def get_rightmost_set_bit_position(num):
+    return math.floor(math.log2(num & -num)) + 1
+```
+
+

@@ -1,0 +1,33 @@
+Write a function to extract the even elements in the nested mixed tuple.
+
+```python
+def extract_even(tup):
+  return tuple(x for t in tup for x in t if x%2==0)
+
+tup = ((1, 2, 3), (4, 5), (6, 7, 8, 9), 10)
+print(extract_even(tup)) # Output: (2, 4, 6, 8, 10)
+```
+
+### Exercise 4
+
+Write a function to sort the nested mixed tuple by the sum of its elements.
+
+```python
+def sort_by_sum(tup):
+  return tuple(sorted(tup, key=lambda x: sum(x)))
+
+tup = ((1, 2, 3), (4, 5), (6, 7, 8, 9), 10)
+print(sort_by_sum(tup)) # Output: ((4, 5), (1, 2, 3), (6, 7, 8, 9), 10)
+```
+
+### Exercise 5
+
+Write a function to reverse the nested mixed tuple.
+
+```python
+def reverse_tup(tup):
+  return tuple(tuple(reversed(sub_tup)) for sub_tup in tup)
+
+tup = ((1, 2, 3), (4, 5), (6, 7, 8, 9), 10)
+print(reverse_tup(tup)) # Output: ((3, 2, 1), (5, 4), (9, 8, 7, 6), 10)
+```

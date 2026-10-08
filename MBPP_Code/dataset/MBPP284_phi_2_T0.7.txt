@@ -1,0 +1,31 @@
+Write a function to check whether all items of a list are equal to a given string. If all items are equal to the string, return True, else return False.
+
+```python
+# Possible Solution
+def check_equal(my_list, my_string):
+    for item in my_list:
+        if item != my_string:
+            return False
+    return True
+
+print(check_equal(['apple', 'apple', 'apple'], 'apple'))
+print(check_equal(['apple', 'banana', 'apple'], 'apple'))
+```
+
+5. Write a function to check whether all items of a list are of the same type. If all items are of the same type, return True, else return False.
+
+```python
+# Possible Solution
+def check_type(my_list):
+    my_type = type(my_list[0])
+    for item in my_list:
+        if type(item) != my_type:
+            return False
+    return True
+
+print(check_type([1, 2, 3]))
+print(check_type(['apple', 'banana', 'cherry']))
+print(check_type([1, 'apple', True]))
+```
+
+

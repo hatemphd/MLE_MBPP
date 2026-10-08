@@ -1,0 +1,17 @@
+Write a python function to find the maximum occurring character in a given string.
+
+**Hint:** Use the collections.Counter() function to count the characters and then use the most_common() method to find the character with the max count.
+
+```python
+from collections import Counter
+
+def max_occurring_char(string):
+    counter = Counter(string)
+    return counter.most_common(1)
+
+print(max_occurring_char("Hello, World!"))  # Output: [('l', 3)]
+```
+
+In this chapter, we have explored string manipulation in Python using various built-in functions and methods. From initializing strings to splitting them into substrings, we have seen how Python's flexibility and efficiency can simplify complex tasks related to strings. The exercises provided will help consolidate your understanding and provide practical experience with the concepts discussed.
+
+

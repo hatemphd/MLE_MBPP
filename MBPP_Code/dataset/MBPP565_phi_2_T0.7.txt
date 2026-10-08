@@ -1,0 +1,46 @@
+Write a python function to split a string into characters.
+
+**Hint:** Use the list() function.
+
+```python
+def split_string(s):
+    return list(s)
+
+print(split_string("Hello"))  # Output: ['H', 'e', 'l', 'l', 'o']
+```
+
+**Exercise 3:** Write a python function to check if a string is numeric.
+
+**Hint:** Use the isdigit() function.
+
+```python
+def check_numeric(s):
+    return s.isdigit()
+
+print(check_numeric("123"))  # Output: True
+print(check_numeric("123abc"))  # Output: False
+```
+
+**Exercise 4:** Write a python function to remove all the whitespaces in a string.
+
+**Hint:** Use the replace() function.
+
+```python
+def remove_whitespace(s):
+    return s.replace(" ", "")
+
+print(remove_whitespace(" Hello World "))  # Output: HelloWorld
+```
+
+**Exercise 5:** Write a python function to find the index of a specified character in a string.
+
+**Hint:** Use the find() function.
+
+```python
+def find_char(s, c):
+    return s.find(c)
+
+print(find_char("Hello", "l"))  # Output: 2
+```
+
+

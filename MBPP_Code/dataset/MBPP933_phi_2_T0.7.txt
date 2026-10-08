@@ -1,0 +1,29 @@
+Write a function to convert camel case string to snake case string by using regex.
+
+```python
+import re
+
+def camel_to_snake(s):
+    s = re.sub('([a-z0-9])([A-Z])', r'\1_\2', s)
+    return re.sub('(.)([A-Z][a-z]+)', r'\1_\2', s).lower()
+
+# Example usage
+s = "thisIsCamelCaseString"
+print(camel_to_snake(s))
+# Output: this_is_camel_case_string
+```
+
+5. Write a function to replace all occurrences of a substring in a string with a different substring, ignoring any whitespace or newline characters.
+
+```python
+import re
+
+def replace_all(s, old, new):
+    pattern = re.compile(re.escape(old).replace('\\s', '\\s+').replace('\n', '\\n+'))
+    return re.sub(pattern, new, s)
+
+# Example usage
+s = "This is a string with \n\twithsome\twith white space."
+print(replace_all(s, "some", "new"))
+# Output: This is a string with new with white space.
+```

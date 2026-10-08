@@ -1,0 +1,14 @@
+Write a python function to check whether the elements in a list are same or not.
+
+Idea: You can create a function that takes a list as an input and checks whether all the elements are same by checking if the length of the set of the list is equal to 1.
+
+```python
+def check_same(lst):
+    return len(set(lst)) == 1
+
+# Test
+print(check_same([1, 1, 1]))  # Returns: True
+print(check_same([1, 2, 1]))  # Returns: False
+```
+
+

@@ -1,0 +1,50 @@
+Write a function to remove tuple elements that occur more than once and replace the duplicates with some custom value.
+
+__Idea:__ Use the `count` method to identify duplicates, then use a loop to replace the duplicates with the custom value.
+
+```python
+def remove_duplicates(original_tuple, value):
+    new_tuple = []
+    for item in original_tuple:
+        if original_tuple.count(item) == 1:
+            new_tuple.append(item)
+        else:
+            new_tuple.append(value)
+    return tuple(new_tuple)
+
+original_tuple = (1, 2, 3, 2, 4, 5, 4, 6)
+print(remove_duplicates(original_tuple, 'duplicate')) # Output: (1, 2, 3, 'duplicate', 4, 5, 'duplicate', 6)
+```
+
+### Exercise 4:
+
+Write a function to remove the last tuple element from a tuple.
+
+__Idea:__ Use negative indexing to get the last element, then use tuple unpacking to remove the last element.
+
+```python
+def remove_last_tuple_element(original_tuple):
+    last_element, *_ = original_tuple
+    return original_tuple[:-1]
+
+original_tuple = (1, 2, 3, 4, 5)
+print(remove_last_tuple_element(original_tuple)) # Output: (1, 2, 3, 4)
+```
+
+### Exercise 5:
+
+Write a function to remove the first element of every tuple in a list of tuples.
+
+__Idea:__ Use a loop to iterate over the list of tuples, then use tuple slicing to remove the first element.
+
+```python
+def remove_first_tuple_element(tuples_list):
+    new_list = []
+    for t in tuples_list:
+        new_list.append(t[1:])
+    return new_list
+
+tuples_list = [(1, 2, 3), (4, 5, 6), (7, 8, 9)]
+print(remove_first_tuple_element(tuples_list)) # Output: [(2, 3), (5, 6), (8, 9)]
+```
+

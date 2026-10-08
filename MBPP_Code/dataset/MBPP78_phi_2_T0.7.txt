@@ -1,0 +1,15 @@
+Write a python function to find number of integers with odd number of set bits.
+
+```python
+def oddSetBits(n):
+    count = 0
+    while(n): 
+        if n&1:
+            count += 1
+        n = n>>1
+    return count
+
+print(oddSetBits(9)) # Output: 3
+```
+
+

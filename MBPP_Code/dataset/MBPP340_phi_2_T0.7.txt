@@ -1,0 +1,7 @@
+Write a python function to find the sum of the three lowest positive numbers from a given list of numbers. list_of_numbers = [8, 4, -2, 9, 6, -1, 10, 3, -5] OUTPUT: def sum_of_three_lowest(numbers):
+    numbers.sort()
+    return sum(numbers[:3])
+
+# Driver code
+list_of_numbers = [8, 4, -2, 9, 6, -1, 10, 3, -5]
+print(sum_of_three_lowest(list_of_numbers))

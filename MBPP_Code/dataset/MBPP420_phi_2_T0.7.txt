@@ -1,0 +1,40 @@
+Write a python function to find the cube sum of first n even natural numbers.
+
+```python
+def cube_sum(n):
+    return sum([i**3 for i in range(2, n*2+1, 2)])
+
+print(cube_sum(5)) # Output: 3600
+```
+
+### Exercise 3
+Write a python function to find the sum of squares of first n odd natural numbers.
+
+```python
+def sum_of_squares(n):
+    return sum([i**2 for i in range(1, 2*n, 2)])
+
+print(sum_of_squares(4)) # Output: 30
+```
+
+### Exercise 4
+Write a python function to find the sum of cubes of first n even natural numbers.
+
+```python
+def sum_of_cubes(n):
+    return sum([i**3 for i in range(2, n*2+1, 2)])
+
+print(sum_of_cubes(4)) # Output: 13824
+```
+
+### Exercise 5
+Write a python function to find the sum of cubes of first n even natural numbers using the reduce function.
+
+```python
+from functools import reduce
+
+def sum_of_cubes(n):
+    return reduce(lambda x, y: x+y, [i**3 for i in range(2, n*2+1, 2)])
+
+print(sum_of_cubes(4)) # Output: 13824
+```

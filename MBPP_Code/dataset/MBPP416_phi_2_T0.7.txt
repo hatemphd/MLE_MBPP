@@ -1,0 +1,72 @@
+Write a function to find the maximum sum we can make by dividing number in three parts recursively and summing them up together for the given number. 
+
+```python
+from typing import List
+
+def divide_and_sum(n: int) -> int:
+    pass  # To be implemented
+
+print(divide_and_sum(12))  # Expected output: 15
+```
+
+The base case for this problem would be when the number is less than 2, in which case we would return 0. This is because we cannot divide a number less than 2 into three parts.
+
+```python
+def divide_and_sum(n: int) -> int:
+    if n < 2:
+        return 0
+    pass  # To be implemented
+```
+
+In the recursive case, we will first find the maximum sum of the first part of the number and then find the maximum sum of the second and third parts. We will then add the maximum sum of the first part to the maximum sum of the second and third parts.
+
+```python
+def divide_and_sum(n: int) -> int:
+    if n < 2:
+        return 0
+    return max(n - 1, divide_and_sum(n - 1), divide_and_sum(n - 2)) + 1
+```
+
+## Exercises
+
+1. **Exercise:** Modify the function `divide_and_sum` to not only return the maximum sum but also the three parts from which we get this sum.
+
+   **Hint:** You can use a list to keep track of the three parts.
+
+   **Solution:**
+
+   ```python
+   def divide_and_sum(n: int) -> List[int]:
+       if n < 2:
+           return [0, 0, 0]
+       total = max(n - 1, divide_and_sum(n - 1)[2], divide_and_sum(n - 2)[2]) + 1
+       if total <= n - 1:
+           return [total, n - 1, n - total]
+       else:
+           return [divide_and_sum(n - 1)[2], divide_and_sum(n - 2)[2], n - total]
+   ```
+
+2. **Exercise:** Modify the function `divide_and_sum` to work with a list of numbers. The function should return the maximum sum that can be made by dividing each number in the list into three parts recursively.
+
+   **Hint:** You can use a list comprehension to apply the function to each number in the list.
+
+   **Solution:**
+
+   ```python
+   def divide_and_sum(nums: List[int]) -> int:
+       return max(sum(divide_and_sum(num)[:3]) for num in nums if num > 2)
+   ```
+
+3. **Exercise:** Modify the function `divide_and_sum` to work with a list of numbers where each number represents the number of ways the number can be divided into three parts. The function should return the maximum sum that can be made by dividing each number in the list into three parts recursively.
+
+   **Hint:** You can modify the function to return a tuple with the first element being the maximum sum and the second element being a list of the three parts.
+
+   **Solution:**
+
+   ```python
+   def divide_and_sum(num_list: List[int]) -> Tuple[int, List[int]]:
+       return max((num - 1, list(range(1, num))) for num in num_list if num > 2),
+   ```
+Remember to test your solutions with various inputs to ensure they work as expected.
+
+

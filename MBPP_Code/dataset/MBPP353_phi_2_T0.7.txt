@@ -1,0 +1,38 @@
+Write a function to remove a specified column from a given nested list.
+
+```python
+def remove_column(lst, column_index):
+    return [row[:column_index] + row[column_index+1:] for row in lst]
+
+lst = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+column_index = 1
+
+new_lst = remove_column(lst, column_index)
+print(new_lst)
+```
+
+Output:
+```
+[[1, 3], [4, 6], [7, 9]]
+```
+
+5. Write a function to split a nested list into two smaller nested lists based on a specified value.
+
+```python
+def split_list(lst, value):
+    values_with_value = [sublist for sublist in lst if value in sublist]
+    values_without_value = [sublist for sublist in lst if value not in sublist]
+    return [values_with_value, values_without_value]
+
+lst = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+value = 5
+
+new_lst = split_list(lst, value)
+print(new_lst)
+```
+
+Output:
+```
+[[[4, 5, 6]], [[1, 2, 3], [7, 8, 9]]]
+```
+

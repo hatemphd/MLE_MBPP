@@ -1,0 +1,36 @@
+Write a function to count the same pair in two given lists using map function.
+
+Hints:
+- Use list comprehension to generate a list of tuples.
+- Each tuple should contain each pair.
+- Use map function to count the number of same pairs.
+
+```python
+def count_pairs(list1, list2):
+    return list(map(lambda x: list1.count(x[0])*list2.count(x[1]), zip(list1, list2)))
+
+list1 = [1, 2, 3, 4]
+list2 = [4, 3, 2, 1]
+print(count_pairs(list1, list2))  # Output: [1, 1, 1, 1]
+```
+
+2. Write a function to find the pair with the maximum count in two given lists using map function.
+
+Hints:
+- Use list comprehension to generate a list of tuples.
+- Each tuple should contain each pair.
+- Use map function to calculate the count of each pair.
+- Use the max function to find the pair with the maximum count.
+
+```python
+def max_pair(list1, list2):
+    pairs = [(x, y) for x in list1 for y in list2]
+    counts = list(map(lambda x: pairs.count(x), pairs))
+    return max(set(pairs), key = pairs.count)
+
+list1 = [1, 2, 3, 4, 4]
+list2 = [4, 3, 2, 1, 4]
+print(max_pair(list1, list2))  # Output: (4, 4)
+```
+
+

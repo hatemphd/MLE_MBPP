@@ -1,0 +1,66 @@
+Write a function that matches a string that has an a followed by zero or more b's.
+
+```python
+import re
+
+pattern = 'a+b*'
+string = 'aabbb'
+
+match = re.search(pattern, string)
+
+if match:
+    print('Match found:', match.group())
+else:
+    print('No match found')
+```
+
+Exercise 3:
+Write a function that matches a string that has an a followed by zero or more b's, and at least one c.
+
+```python
+import re
+
+pattern = 'a+b*c?'
+string = 'aabbb'
+
+match = re.search(pattern, string)
+
+if match:
+    print('Match found:', match.group())
+else:
+    print('No match found')
+```
+
+Exercise 4:
+Write a function that matches a string that has an a followed by zero or more b's, and at most one c.
+
+```python
+import re
+
+pattern = 'a+b*c?'
+string = 'aabbb'
+
+match = re.search(pattern, string)
+
+if match:
+    print('Match found:', match.group())
+else:
+    print('No match found')
+```
+
+Exercise 5:
+Write a function that matches a string that has an a followed by zero or more b's, and at least two c's.
+
+```python
+import re
+
+pattern = 'a+b*c{2,}'
+string = 'aabbbcccc'
+
+match = re.search(pattern, string)
+
+if match:
+    print('Match found:', match.group())
+else:
+    print('No match found')
+```

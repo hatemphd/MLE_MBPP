@@ -1,0 +1,24 @@
+Write a function to find the maximum of nth column from the given tuple list.
+
+```python
+# Idea: You can use the max() function to find the maximum value in a list.
+
+def find_max_in_column(tup_list, n):
+    # Your code here
+    pass
+```
+
+Solution:
+
+```python
+def find_max_in_column(tup_list, n):
+    column = [tup[n] for tup in tup_list]
+    return max(column)
+
+tup_list = [(1, 2, 3), (4, 5, 6), (7, 8, 9)]
+print(find_max_in_column(tup_list, 1))  # Output: 8
+```
+
+In the solution, we first create a list of the nth column from each tuple in the tup_list. We then use the max() function to find the maximum value in that list.
+
+

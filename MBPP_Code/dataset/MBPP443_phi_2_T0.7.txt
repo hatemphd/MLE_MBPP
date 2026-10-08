@@ -1,0 +1,25 @@
+Write a python function to find the largest negative number from the given list.
+
+Ideas:
+- Use the `min()` function with an appropriate argument.
+
+```python
+def find_largest_negative(numbers):
+    return max(filter(lambda x: x < 0, numbers), default=0)
+
+print(find_largest_negative([-1, 2, -3, 4, -5]))
+```
+
+5. Write a python function to find the smallest positive number from the given list.
+
+Ideas:
+- Use the `min()` function with an appropriate argument.
+
+```python
+def find_smallest_positive(numbers):
+    return min(filter(lambda x: x > 0, numbers), default=0)
+
+print(find_smallest_positive([-1, 2, -3, 4, -5]))
+```
+
+

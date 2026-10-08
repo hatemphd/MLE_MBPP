@@ -1,0 +1,46 @@
+Write a function to flatten the given tuple matrix into the tuple list with each tuple representing each column.
+
+```python
+def flatten_matrix(matrix):
+    return [element for row in matrix for element in row]
+
+matrix = ((1, 2, 3), (4, 5, 6), (7, 8, 9))
+print(flatten_matrix(matrix))
+```
+
+**Exercise 3 Solution:**
+
+Write a function to find the index of the first occurrence of a given element in a tuple.
+
+```python
+def find_element_index(tuple, element):
+    return tuple.index(element)
+
+tuple_data = (1, 2, 3, 4, 5, 3, 2, 1)
+print(find_element_index(tuple_data, 3))
+```
+
+**Exercise 4 Solution:**
+
+Write a function to sort a tuple of strings in alphabetical order.
+
+```python
+def sort_tuple_strings(tuple_strings):
+    return tuple(sorted(tuple_strings))
+
+tuple_strings = ('dog', 'cat', 'bird', 'fish')
+print(sort_tuple_strings(tuple_strings))
+```
+
+**Exercise 5 Solution:**
+
+Write a function to create a new tuple that contains only the even numbers from an existing tuple.
+
+```python
+def filter_even_numbers(tuple_numbers):
+    return tuple(number for number in tuple_numbers if number % 2 == 0)
+
+tuple_numbers = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+print(filter_even_numbers(tuple_numbers))
+```
+

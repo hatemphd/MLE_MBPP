@@ -1,0 +1,66 @@
+Write a function to replace whitespaces with an underscore and vice versa in a given string by using regex.
+
+Idea: Use re.sub() function to replace whitespaces with '_' and vice versa.
+
+```python
+import re
+
+def swap_spaces(input_string):
+    return re.sub(r"\s", "_", re.sub(r"_", " ", input_string))
+
+print(swap_spaces("Hello World"))
+```
+
+2. Write a function to extract all the words starting with a vowel in a given string by using regex.
+
+Idea: Write a regex that matches any word that starts with a vowel, and use re.findall() function to extract all the matches.
+
+```python
+import re
+
+def extract_vowel_words(input_string):
+    return re.findall(r"\b[aeiouAEIOU]\w+", input_string)
+
+print(extract_vowel_words("The quick brown fox jumps over the lazy dog"))
+```
+
+3. Write a function to extract all the email addresses from a given string by using regex.
+
+Idea: Write a regex that matches any valid email address, and use re.findall() function to extract all the matches.
+
+```python
+import re
+
+def extract_email_addresses(input_string):
+    return re.findall(r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}", input_string)
+
+print(extract_email_addresses("Contact us at john.doe@example.com or jane.doe@example.co.uk"))
+```
+
+4. Write a function to validate a credit card number by using regex.
+
+Idea: Write a regex that matches all the valid credit card number formats, and use re.match() function to validate the given credit card number.
+
+```python
+import re
+
+def validate_credit_card_number(input_string):
+    pattern = r"(?=^(?!0*$)\d{16}$)(?=.*[0-9]\d){2}"
+    return bool(re.match(pattern, input_string))
+
+print(validate_credit_card_number("42424242424242424"))
+```
+
+5. Write a function to extract all the phone numbers from a given string by using regex.
+
+Idea: Write a regex that matches any valid phone number format, and use re.findall() function to extract all the matches.
+
+```python
+import re
+
+def extract_phone_numbers(input_string):
+    return re.findall(r"\d{3}-\d{3}-\d{4}|\(\d{3}\)\s\d{3}-\d{4}", input_string)
+
+print(extract_phone_numbers("Call us at 123-456-7890 or (123) 456-7890"))
+```
+

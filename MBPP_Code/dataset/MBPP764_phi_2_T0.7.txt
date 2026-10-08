@@ -1,0 +1,20 @@
+Write a python function to count numeric values in a given string.
+
+```python
+def count_numeric_values(string):
+    return sum(1 for char in string if char.isdigit())
+
+print(count_numeric_values("Hello, 123 World!"))  # outputs: 3
+```
+
+5. Write a python function that takes two strings and checks if they are anagrams (contain the same characters).
+
+```python
+def are_anagrams(s1, s2):
+    return sorted(s1) == sorted(s2)
+
+print(are_anagrams("listen", "silent"))  # outputs: True
+print(are_anagrams("hello", "world"))  # outputs: False
+```
+
+

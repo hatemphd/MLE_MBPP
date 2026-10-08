@@ -1,0 +1,49 @@
+Write a function to iterate over all pairs of consecutive items in a given list. Consider the list is [1, 2, 3, 4, 5]. Your function should first print (1, 2), then (2, 3), and so on.
+
+```python
+def consecutive_pairs(lst):
+    for i in range(len(lst)-1):
+        print((lst[i], lst[i+1]))
+
+consecutive_pairs([1, 2, 3, 4, 5])
+```
+
+3. Write a function to iterate over a list and return all pairs of elements that sum to a given number. Consider the list is [1, 2, 3, 4, 5] and the given number is 5. Your function should return [(1, 4), (2, 3)].
+
+```python
+def pair_sum(lst, target):
+    pairs = []
+    for i in range(len(lst)):
+        for j in range(i+1, len(lst)):
+            if lst[i] + lst[j] == target:
+                pairs.append((lst[i], lst[j]))
+    return pairs
+
+print(pair_sum([1, 2, 3, 4, 5], 5))
+```
+
+4. Write a function to iterate over a dictionary and print all key-value pairs where the value is a string. Consider the dictionary is {'a': 1, 'b': '2', 'c': 3, 'd': 'four'}. Your function should only print ('b', '2') and ('d', 'four').
+
+```python
+def string_values(dct):
+    for key, value in dct.items():
+        if isinstance(value, str):
+            print((key, value))
+
+string_values({'a': 1, 'b': '2', 'c': 3, 'd': 'four'})
+```
+
+5. Write a function to iterate over a list of strings and return a new list containing only the strings that start with a vowel (a, e, i, o, u). Consider the list is ['apple', 'banana', 'cherry', 'orange', 'pear']. Your function should return ['apple', 'orange'].
+
+```python
+def vowel_strings(lst):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    result = []
+    for s in lst:
+        if s[0].lower() in vowels:
+            result.append(s)
+    return result
+
+print(vowel_strings(['apple', 'banana', 'cherry', 'orange', 'pear']))
+```
+

@@ -1,0 +1,35 @@
+Write a function to locate the right insertion point for a specified value in sorted order.
+
+```python
+def binary_search(sorted_list, target):
+    start = 0
+    end = len(sorted_list) - 1
+    while start <= end:
+        mid = (start + end) // 2
+        if sorted_list[mid] == target:
+            return mid
+        elif sorted_list[mid] < target:
+            start = mid + 1
+        else:
+            end = mid - 1
+    return start
+```
+
+### Exercise 5
+
+Write a function to find the kth largest element in a list using binary search.
+
+```python
+def kth_largest(lst, k):
+    start = 0
+    end = len(lst) - 1
+    while start <= end:
+        pivot = partition(lst, start, end)
+        if pivot == k - 1:
+            return lst[pivot]
+        elif pivot < k - 1:
+            start = pivot + 1
+        else:
+            end = pivot - 1
+    return -1
+```

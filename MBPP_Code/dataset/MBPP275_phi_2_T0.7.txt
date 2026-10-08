@@ -1,0 +1,35 @@
+Write a python function to find the position of the last removed element from the given array.
+
+##### Solution:
+
+```python
+def last_removed_position(arr, val):
+    while len(arr) > 0 and arr[-1] != val:
+        arr.pop()
+    if len(arr) > 0 and arr[-1] == val:
+        arr.pop()
+    return len(arr) - 1
+
+print(last_removed_position(arr, 3))  # output: 2
+```
+
+In the above solution, we use a similar approach to the previous solution, but we check the last element of the list and remove it if it's equal to `val`.
+
+## Exercise 2:
+
+Write a python function to delete all occurrences of a value from an array.
+
+##### Solution:
+
+```python
+def remove_all_occurrences(arr, val):
+    while val in arr:
+        arr.remove(val)
+    return arr
+
+print(remove_all_occurrences(arr, 3))  # output: [1, 2, 4]
+```
+
+In this solution, we keep removing the value from the list until it no longer exists in the list. This is done using a while loop. The `in` keyword is used to check if the value exists in the list.
+
+

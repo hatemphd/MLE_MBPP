@@ -1,0 +1,48 @@
+Write a function to convert the given binary tuple to integer.
+
+Solution:
+```python
+binary_tuple = ('0', '1', '0', '1', '1', '0', '1', '1')
+
+def convert_binary_tuple_to_int(binary_tuple):
+    binary_str = ''.join(binary_tuple)
+    return int(binary_str, 2)
+
+print(convert_binary_tuple_to_int(binary_tuple))
+```
+
+2. Write a function to sort the given tuple of tuples based on the second element of each tuple.
+
+Solution:
+```python
+tuple_of_tuples = (('apple', 10), ('banana', 5), ('cherry', 15))
+
+def sort_tuple_of_tuples(tuple_of_tuples):
+    return sorted(tuple_of_tuples, key=lambda x: x[1])
+
+print(sort_tuple_of_tuples(tuple_of_tuples))
+```
+
+3. Write a function to calculate the mean, median and mode of a given tuple.
+
+Solution:
+```python
+tuple_numbers = (10, 20, 30, 40, 50)
+
+def calculate_mean_median_mode(tuple_numbers):
+    mean = sum(tuple_numbers) / len(tuple_numbers)
+    
+    sorted_tuple = sorted(tuple_numbers)
+    if len(tuple_numbers) % 2 == 0:
+        median = (sorted_tuple[len(tuple_numbers)//2] + sorted_tuple[len(tuple_numbers)//2 - 1]) / 2
+    else:
+        median = sorted_tuple[len(tuple_numbers)//2]
+
+    mode = max(set(tuple_numbers), key = tuple_numbers.count)
+
+    return mean, median, mode
+
+print(calculate_mean_median_mode(tuple_numbers))
+```
+
+

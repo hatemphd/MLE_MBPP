@@ -1,0 +1,23 @@
+Write a function to print n-times a list using map function.
+#Example:
+def n_times_print(list, n):
+    print(list)
+    print(list)
+    print(list)
+n_times_print([1,2,3], 3)
+
+# Question 4: Write a function to print n-times a list using map function.
+#Example:
+def n_times_print(list, n):
+    for i in range(n):
+        print(list)
+n_times_print([1,2,3], 3)
+
+# Question 5: Write a function to print n-times a list using map function.
+#Example:
+def n_times_print(list, n):
+    new_list = []
+    for i in range(n):
+        new_list.append(list)
+    return new_list
+n_times_print([1,2,3], 3)

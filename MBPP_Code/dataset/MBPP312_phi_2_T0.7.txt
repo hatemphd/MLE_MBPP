@@ -1,0 +1,61 @@
+Write a function to find the volume of a cone.
+
+    Hint: Use the formula V = (1/3) * π * r² * h, where r is the radius of the base and h is the height.
+
+    ```python
+    import numpy as np
+
+    def calculate_volume(radius, height):
+        """
+        Function to calculate the volume of a cone.
+        """
+        volume = (1/3) * np.pi * radius**2 * height
+        return volume
+
+    # Test the function
+    radius = 5
+    height = 10
+    volume = calculate_volume(radius, height)
+    print(f'The volume of the cone is {volume} cubic units.')
+    ```
+
+2. Write a function to find the area of a parallelogram.
+
+    Hint: Use the formula A = base * width.
+
+    ```python
+    def calculate_area(base, width):
+        """
+        Function to calculate the area of a parallelogram.
+        """
+        area = base * width
+        return area
+
+    # Test the function
+    base = 5
+    width = 10
+    area = calculate_area(base, width)
+    print(f'The area of the parallelogram is {area} square units.')
+    ```
+
+3. Write a function to find the circumference of a circle.
+
+    Hint: Use the formula C = 2 * π * r, where r is the radius.
+
+    ```python
+    import numpy as np
+
+    def calculate_circumference(radius):
+        """
+        Function to calculate the circumference of a circle.
+        """
+        circumference = 2 * np.pi * radius
+        return circumference
+
+    # Test the function
+    radius = 5
+    circumference = calculate_circumference(radius)
+    print(f'The circumference of the circle is {circumference} units.')
+    ```
+
+

@@ -1,0 +1,27 @@
+Write a function to add two integers. however, if the sum is between the given range it will return 20.
+
+Example 1:
+
+Input: a = 10, b = 15, left = 7, right = 23
+Output: 20
+Example 2:
+
+Input: a = 7, b = 15, left = 7, right = 23
+Output: 20
+"""
+
+
+class Solution:
+    def add(self, a, b, left, right):
+        """
+        :type a: int
+        :type b: int
+        :type left: int
+        :type right: int
+        :rtype: int
+        """
+        r = a + b
+        if left < r < right:
+            return 20
+        else:
+            return r

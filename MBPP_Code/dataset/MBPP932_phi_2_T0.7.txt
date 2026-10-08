@@ -1,0 +1,36 @@
+Write a function to remove duplicate words from a given list of strings.
+
+Hints:
+- You can use a set to remove duplicates.
+- Convert the list to a set, then convert it back to a list.
+
+```python
+def remove_duplicates(string_list):
+    return list(set(string_list))
+
+print(remove_duplicates(["apple", "banana", "apple", "cherry", "banana"]))
+```
+
+#### Exercise 5:
+Write a function to count the frequency of each word in a given list of strings.
+
+Hints:
+- Use a dictionary to store the word frequencies.
+- Iterate over each string, then split it into words.
+
+```python
+def word_count(string_list):
+    count = {}
+    for string in string_list:
+        words = string.split()
+        for word in words:
+            if word in count:
+                count[word] += 1
+            else:
+                count[word] = 1
+    return count
+
+print(word_count(["this is a test", "this is another test", "a third test"]))
+```
+
+

@@ -1,0 +1,57 @@
+Write a function to move all zeroes to the end of the given array.
+
+```python
+def moveZeroes(nums):
+  #Your code here
+
+nums = [0, 1, 0, 3, 12]
+moveZeroes(nums)
+print(nums)  # Output: [1, 3, 12, 0, 0]
+```
+
+## Exercise 2
+
+Write a function that takes a string as input and uses the `lstrip()` method to remove leading whitespaces, then convert the resultant string to an upper case.
+
+```python
+def strip_and_upper(s):
+  #Your code here
+
+s = "   hello world"
+strip_and_upper(s)
+print(s)  # Output: "HELLO WORLD"
+```
+
+## Solutions
+
+## Exercise 1
+
+```python
+def moveZeroes(nums):
+  i, j = 0, len(nums) - 1
+  while i < j:
+    if nums[i] != 0:
+      i += 1
+    elif nums[j] != 0:
+      nums[i], nums[j] = nums[j], nums[i]
+      j -= 1
+    else:
+      j -= 1
+
+nums = [0, 1, 0, 3, 12]
+moveZeroes(nums)
+print(nums)  # Output: [1, 3, 12, 0, 0]
+```
+
+## Exercise 2
+
+```python
+def strip_and_upper(s):
+  return s.lstrip().upper()
+
+s = "   hello world"
+strip_and_upper(s)
+print(s)  # Output: "HELLO WORLD"
+```
+
+

@@ -1,0 +1,24 @@
+Write a function to calculate the value of 'a' to the power 'b'.
+
+Hints:
+- Use the `**` operator to calculate the power.
+
+```python
+# Solution:
+def power(a, b):
+    return a ** b
+```
+
+5. Write a function that takes a list of numbers as input and returns the sum of the squares of those numbers.
+
+Hints:
+- Use a list comprehension to square each number in the list.
+- Use the `sum()` function to calculate the sum.
+
+```python
+# Solution:
+def sum_of_squares(numbers):
+    return sum([number ** 2 for number in numbers])
+```
+
+

@@ -1,0 +1,14 @@
+Write a function to find the item with maximum occurrences in a given list.
+
+```python
+# Your code here
+
+def max_occurrence(lst):
+    return max(set(lst), key=lst.count)
+
+print(max_occurrence(['apple', 'banana', 'apple', 'orange', 'banana', 'banana']))
+```
+
+This function uses the `max()` function with the `key` argument set to the `lst.count` method to find the item with the maximum occurrences.
+
+

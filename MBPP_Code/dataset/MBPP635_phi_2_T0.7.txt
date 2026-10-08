@@ -1,0 +1,48 @@
+Write a function to push all values into a heap and then pop off the smallest values one at a time.
+
+    ```python
+    def heap_push_pop(heap, values):
+        for val in values:
+            heapq.heappush(heap, val)
+        while heap:
+            print(heapq.heappop(heap))
+    
+    heap_push_pop(heap, [3, 1, 4, 1, 5, 9, 2, 6, 5])
+    ```
+
+2. **Exercise:** Compare the runtime of list.sort() and heapq.nlargest().
+
+    ```python
+    import timeit
+
+    large_list = list(range(1, 1000001))
+
+    print(timeit.timeit(lambda: large_list.sort(), number=1000))
+    print(timeit.timeit(lambda: heapq.nlargest(5, large_list), number=1000))
+    ```
+
+3. **Exercise:** Implement a priority queue using heapq that supports the following operations: push, pop, peek, and check if the heap is empty.
+
+    ```python
+    class PriorityQueue:
+        def __init__(self):
+            self.heap = []
+            self.size = 0
+
+        def push(self, item, priority):
+            heapq.heappush(self.heap, (priority, item))
+            self.size += 1
+
+        def pop(self):
+            return heapq.heappop(self.heap)[1]
+
+        def peek(self):
+            return self.heap[0][1] if self.heap else None
+
+        def is_empty(self):
+            return self.size == 0
+    ```
+
+We hope that this chapter has provided you with a deeper understanding of heap operations in Python. The heapq library is a powerful tool that can significantly simplify your code when dealing with priority queue problems.
+
+

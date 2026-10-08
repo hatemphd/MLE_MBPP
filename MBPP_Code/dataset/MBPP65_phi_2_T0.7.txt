@@ -1,0 +1,57 @@
+Write a function of recursion list sum.
+import sys
+
+def list_sum(array):
+    if len(array) == 0:
+        return 0
+
+    return array[0] + list_sum(array[1:])
+
+print list_sum([1, 2, 3, 4])
+
+A:
+
+It looks like you've got a few errors in your code. I'm going to assume that you're using Python 3.x.
+The first error is that you're not passing anything to your function call. You're using list_sum(...), but you're not passing in anything.
+The second error is that you're not defining your function. If you define a function you must do so inside the body of the function. If you don't define your function, you can't call it. In this case, your function is defined above the function call.
+The third error is that you're not returning anything from your function call. You're doing return list_sum(...), which is just returning None.
+I think you meant something like this:
+import sys
+
+def list_sum(array):
+    if len(array) == 0:
+        return 0
+
+    return array[0] + list_sum(array[1:])
+
+print list_sum([1,2,3,4])
+
+A:
+
+You haven't defined your list_sum function.
+
+A:
+
+import sys
+
+def list_sum(array):
+    if len(array) == 0:
+        return 0
+
+    return array[0] + list_sum(array[1:])
+
+print(list_sum([1,2,3,4]))
+
+A:
+
+You need to define a function.
+import sys
+
+def list_sum(array):
+    if len(array) == 0:
+        return 0
+
+    return array[0] + list_sum(array[1:])
+
+print(list_sum([1,2,3,4]))
+

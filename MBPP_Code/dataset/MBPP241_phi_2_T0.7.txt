@@ -1,0 +1,19 @@
+Write a function to generate a 3d array having each element as '*'.
+
+```python
+def generate_3d_array(n):
+    return np.full((n, n, n), '*')
+
+print(generate_3d_array(3))
+```
+
+**Exercise 3:** Write a function to compute the product of elements from two given arrays.
+
+```python
+def compute_product(array1, array2):
+    return np.multiply(array1, array2)
+
+print(compute_product(np.array([1, 2, 3]), np.array([4, 5, 6])))
+```
+
+

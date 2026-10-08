@@ -1,0 +1,24 @@
+Write a python function to check whether the product of digits of a number at even and odd places is equal or not.
+
+__Hint__: Use the modulus operator to get the remainder of division by 2.
+
+__Solution__:
+
+```python
+def product_of_digits(number):
+    even_product = 1
+    odd_product = 1
+    for i, digit in enumerate(str(number)):
+        if i % 2 == 0:
+            even_product *= int(digit)
+        else:
+            odd_product *= int(digit)
+    return even_product == odd_product
+
+print(product_of_digits(3524))    # returns True
+print(product_of_digits(1234))     # returns False
+```
+
+By the end of this chapter, you should be more comfortable with using Python loops, string manipulation, and arithmetic operations to solve complex problems. Continue practicing these concepts to further enhance your skills.
+
+

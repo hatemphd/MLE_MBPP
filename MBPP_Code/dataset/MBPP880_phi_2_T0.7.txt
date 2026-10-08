@@ -1,0 +1,122 @@
+Write a python function to find number of solutions in quadratic equation.
+
+```python
+import cmath
+
+def quadratic_solutions(a, b, c):
+    # Using cmath.sqrt to find the square root of the discriminant
+    discriminant = cmath.sqrt(b**2 - 4*a*c)
+    
+    # The solutions are
+    sol1 = (-b - discriminant) /(2 * a)
+    sol2 = (-b + discriminant) /(2 * a)
+
+    return sol1, sol2
+
+# Testing the function
+a = 1
+b = 5
+c = 6
+print(quadratic_solutions(a, b, c))
+```
+
+This function will output the solutions of the quadratic equation.
+
+#### Exercise 2
+Write a python program to find the roots of a complex number.
+
+```python
+import cmath
+
+def complex_roots(a, b, c):
+    # Using cmath.sqrt to find the square root of the discriminant
+    discriminant = cmath.sqrt(b**2 - 4*a*c)
+    
+    # The solutions are
+    sol1 = (-b - discriminant) /(2 * a)
+    sol2 = (-b + discriminant) /(2 * a)
+
+    return sol1, sol2
+
+# Testing the function
+a = 1
+b = 5
+c = 6
+print(complex_roots(a, b, c))
+```
+
+This function will output the roots of the complex number.
+
+#### Exercise 3
+Write a python function to perform matrix multiplication.
+
+```python
+import cmath
+
+def matrix_multiply(m1, m2):
+    if len(m1[0]) != len(m2):
+        return "Matrix dimensions don't match"
+
+    # Number of rows in m1
+    row_m1 = len(m1)
+    # Number of columns in m1
+    col_m1 = len(m1[0])
+    # Number of rows in m2
+    row_m2 = len(m2)
+    # Number of columns in m2
+    col_m2 = len(m2[0])
+
+    m3 = [[0] * col_m2 for i in range(row_m1)]
+
+    # Multiply m1 with m2 element wise and store the result in m3
+    for i in range(row_m1):
+        for j in range(col_m2):
+            for k in range(col_m1):
+                m3[i][j] += m1[i][k] * m2[k][j]
+
+    return m3
+
+# Testing the function
+m1 = [[1, 2], [3, 4]]
+m2 = [[5, 6], [7, 8]]
+print(matrix_multiply(m1, m2))
+```
+
+This function will perform matrix multiplication.
+
+#### Exercise 4
+Write a python function to find the greatest common divisor of two numbers.
+
+```python
+import cmath
+
+def gcd(a, b):
+    if a == 0:
+        return b
+
+    return gcd(b % a, a)
+
+# Testing the function
+a = 20
+b = 30
+print(gcd(a, b))
+```
+
+This function will find the greatest common divisor of two numbers.
+
+#### Exercise 5
+Write a python program to find the polar coordinates of a complex number.
+
+```python
+import cmath
+
+def polar_coordinates(z):
+    return cmath.polar(z)
+
+# Testing the function
+z = 3 + 4j
+print(polar_coordinates(z))
+```
+
+This function will find the polar coordinates of a complex number.
+

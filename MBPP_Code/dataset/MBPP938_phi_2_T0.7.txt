@@ -1,0 +1,28 @@
+Write a function to find three closest elements from three sorted arrays.
+
+Hints:
+- You can use a priority queue to keep track of the three closest elements.
+- The priority queue should be a tuple, where the first element is the sum of the three elements and the second element is the index of the first array.
+- Use the bisect_left function from the bisect module to efficiently insert elements in the priority queue.
+
+```python
+import bisect
+def three_closest(arr1, arr2, arr3):
+    pq = [(arr1[0] + arr2[0] + arr3[0], 0, 0, 0)]
+    for i, a in enumerate(arr1):
+        for j, b in enumerate(arr2):
+            for k, c in enumerate(arr3):
+                d = a + b + c
+                idx = bisect.bisect_left(pq, (d, i, j, k))
+                if idx < len(pq):
+                    if pq[idx][0] > d:
+                        pq.pop(idx)
+                        bisect.insort_left(pq, (d, i, j, k))
+                else:
+                    pq.append((d, i, j, k))
+    return [pq[i][3] for i in range(3)]
+```
+
+In this solution, we initialize a priority queue with the initial combination of elements from the three arrays. Then, we iteratively insert new combinations into the priority queue using the bisect_left function. The combinations that are closest to the target sum are kept in the priority queue. Finally, we return the indices of the three arrays for the three closest elements.
+
+

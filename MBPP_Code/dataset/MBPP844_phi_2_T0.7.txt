@@ -1,0 +1,32 @@
+Write a python function to find the kth element in an array containing odd elements first and then even elements.
+
+```python
+# Function to find kth element from odd then even array
+def kth_element(arr, k):
+    odd_end = (len(arr) + 1) // 2
+    even_start = odd_end - k
+    
+    # If k is greater than half the length of array
+    if k > odd_end or k < even_start:
+        return -1
+    
+    # Search odd elements
+    odd_start = 0
+    odd_end = odd_start + (k - odd_start - 1) // 2
+    while arr[odd_end] > arr[odd_start]:
+        odd_start += 1
+        odd_end += 1
+    
+    # Search even elements starting from odd_end
+    even_start = odd_end + 1
+    return arr[even_start + k - odd_start - 1]
+
+# Testing the function
+arr = [1, 3, 5, 2, 4, 6, 7]
+k = 4
+print(kth_element(arr, k))  # Output: 4
+```
+
+In this chapter, we learned how to find the kth element in an array using a divide-and-conquer approach. We also learned how to implement this approach in Python using recursive functions and object-oriented programming. Practice the exercises provided to get a better understanding of these concepts.
+
+

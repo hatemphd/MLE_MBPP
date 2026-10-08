@@ -1,0 +1,85 @@
+Write a function to verify validity of a string of parentheses. The string is valid if all open brackets have a corresponding closing bracket and vice versa.
+
+Example: "()()()" is a valid string but "(()" is not valid.
+
+```python
+def isValid(s):
+    stack = []
+    mapping = {")": "(", "]": "[", "}": "{"}
+    for char in s:
+        if char in mapping:
+            top = stack.pop() if stack else '#'
+            if mapping[char] != top:
+                return False
+        else:
+            stack.append(char)
+    return not stack
+
+print(isValid("()()()"))  # True
+print(isValid("(()"))  # False
+```
+
+## Section 5.3: Exercises
+
+### Exercise 1: 
+
+Write a Python program to reverse a string using a stack.
+
+#### Ideas: 
+
+1. Create an empty stack.
+2. Iterate through each character of the string.
+3. If the character is an opening bracket (e.g., '(', '[', '{'), push it to the stack.
+4. If the character is a closing bracket (e.g., ')', ']', '}'), pop an element from the stack.
+5. If the stack is empty when trying to pop an element, return an error.
+6. After the iteration, return the reversed string (which is now the elements in the stack).
+
+#### Solution:
+```python
+def reverse_string(s):
+    stack = []
+    for char in s:
+        if char in "([{":
+            stack.append(char)
+        elif char in ")]}":
+            if not stack:
+                return "Error: Unmatched closing bracket."
+            stack.pop()
+    return "".join(stack)
+
+print(reverse_string("([{}]))"))  # Output: {}))]
+```
+
+### Exercise 2: 
+
+Write a Python program to check whether a given string is a palindrome or not. Palindrome is a string which reads the same backward as forward.
+
+#### Ideas: 
+
+1. Create an empty stack.
+2. Iterate through each character of the string.
+3. If the character is an opening bracket (e.g., '(', '[', '{'), push it to the stack.
+4. If the character is a closing bracket (e.g., ')', ']', '}'), pop an element from the stack.
+5. If the stack is empty when trying to pop an element, return an error.
+6. After the iteration, return True if the stack is empty, otherwise False.
+
+#### Solution:
+```python
+def isPalindrome(s):
+    stack = []
+    for char in s:
+        if char in "([{":
+            stack.append(char)
+        elif char in ")]}":
+            if not stack:
+                return "Error: Unmatched closing bracket."
+            stack.pop()
+    return not stack
+
+print(isPalindrome("racecar"))  # Output: True
+print(isPalindrome("python"))  # Output: False
+```
+
+These exercises will aid in solidifying your understanding of the stack data structure and its applications in Python.
+
+

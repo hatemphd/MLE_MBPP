@@ -1,0 +1,23 @@
+Write a python function to count minimum number of swaps required to convert one binary string to another.
+
+```python
+def minSwaps(a, b):
+    pass
+```
+
+### Solution
+
+```python
+def minSwaps(a, b):
+    m, n = len(a), len(b)
+    positions = {b[i]: i for i in range(n)}
+    for i in range(m):
+        if a[i] != b[i]:
+            b = b[:i] + positions[a[i]] + b[i+1:]
+            positions[a[i]] = i
+    return n - len(set(b))
+```
+
+In this solution, we are mapping each character of the second string to its index. We are then iterating over the first string and replacing the characters that do not match the second string. If a character is replaced, we update its index.
+
+

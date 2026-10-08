@@ -1,0 +1,40 @@
+Write a function to convert the given string of float type into tuple.
+
+```python
+def convert_str_to_tuple(input_string: str) -> tuple:
+    """
+    Converts the input string of float type into tuple.
+    """
+    return tuple(map(float, input_string.split(', ')))
+
+# test the function
+convert_str_to_tuple("1.0, 2.0, 3.0")
+```
+
+4. Write a function to convert the given list of float type into tuple.
+
+```python
+def convert_list_to_tuple(input_list: list) -> tuple:
+    """
+    Converts the input list of float type into tuple.
+    """
+    return tuple(input_list)
+
+# test the function
+convert_list_to_tuple([1.0, 2.0, 3.0])
+```
+
+5. Write a function to convert the given list of tuple into list.
+
+```python
+def convert_tuple_to_list(input_list: list) -> list:
+    """
+    Converts the input list of tuple into list.
+    """
+    return [list(i) for i in input_list]
+
+# test the function
+convert_tuple_to_list([(1.0, 2.0), (3.0, 4.0), (5.0, 6.0)])
+```
+
+

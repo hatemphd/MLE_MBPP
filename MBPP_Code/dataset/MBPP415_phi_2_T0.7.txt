@@ -1,0 +1,15 @@
+Write a python function to find a pair with highest product from a given array of integers.
+
+**Hint:** This is similar to the maximum product problem. A possible approach could be to find the two highest numbers and the two lowest numbers in the array, and then compare their products.
+
+```python
+def max_product(arr):
+    arr.sort()
+    return max(arr[-1] * arr[-2], arr[0] * arr[1])
+
+print(max_product([-10, -10, 5, 2])) # Output: 50
+```
+
+The complexity of these solutions is O(n log n), where n is the number of elements in the array. This is because we are using sorting which takes O(n log n) time.
+
+

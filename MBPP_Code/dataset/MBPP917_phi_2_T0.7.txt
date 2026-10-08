@@ -1,0 +1,43 @@
+Write a function to find the sequences of one upper case letter followed by lower case letters.
+
+```python
+import re
+
+def find_upper_lower(s):
+    return re.findall(r'[A-Z][a-z]', s)
+
+print(find_upper_lower('HelloWorld'))  # Output: ['Hello', 'World']
+```
+
+3. Write a function to replace all occurrences of one specific word in a string with another word.
+
+```python
+def replace_word(s, old_word, new_word):
+    return s.replace(old_word, new_word)
+
+print(replace_word('Hello World', 'World', 'Python'))  # Output: 'Hello Python'
+```
+
+4. Write a function to find the sequences of one digit followed by one or more lower case letters.
+
+```python
+import re
+
+def find_digit_lower(s):
+    return re.findall(r'\d+[a-z]+', s)
+
+print(find_digit_lower('Hello123World'))  # Output: ['123World']
+```
+
+5. Write a function to find the sequences of one lower case letter followed by one or more digits.
+
+```python
+import re
+
+def find_lower_digit(s):
+    return re.findall(r'[a-z]+\d+', s)
+
+print(find_lower_digit('Hello123World'))  # Output: ['123World']
+```
+
+

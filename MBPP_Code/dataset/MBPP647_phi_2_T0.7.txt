@@ -1,0 +1,35 @@
+Write a function to split a string at uppercase letters.
+
+**Hint**: Use `rfind()` to find the index of the first uppercase letter. Then use the `split()` method with the index as the parameter.
+
+```python
+def split_string(string):
+    index = string.rfind('A')
+    return [string[:index], string[index:]]
+
+print(split_string('HelloWorld'))
+```
+
+**Exercise 2**: Write a function to find the last occurrence of a substring before a specified index.
+
+**Hint**: Use `rfind()` with the specified index as the parameter.
+
+```python
+def last_occurrence(string, substring, index):
+    return string.rfind(substring, 0, index)
+
+print(last_occurrence('HelloWorld', 'Wor', 10))
+```
+
+**Exercise 3**: Write a function to remove all trailing and leading white spaces from a string.
+
+**Hint**: Use `rstrip()` to remove trailing white spaces and `lstrip()` to remove leading white spaces.
+
+```python
+def remove_spaces(string):
+    return string.strip()
+
+print(remove_spaces('   HelloWorld   '))
+```
+
+

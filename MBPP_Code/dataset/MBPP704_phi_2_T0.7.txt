@@ -1,0 +1,33 @@
+Write a function to calculate the harmonic sum of n-1.
+
+```python
+def harmonic_sum(n):
+    return sum([1/i for i in range(1, n)])
+```
+
+### Exercise 3:
+Write a function to calculate the harmonic mean of n numbers.
+
+```python
+def harmonic_mean(numbers):
+    return len(numbers) / sum([1/x for x in numbers])
+```
+
+### Exercise 4:
+Write a function to calculate the geometric sum of n-1.
+
+```python
+def geometric_sum(n):
+    return (1 - pow(2, -n)) / (1 - 2**-n)
+```
+
+### Exercise 5:
+Write a function to calculate the geometric mean of n numbers.
+
+```python
+def geometric_mean(numbers):
+    prod = 1
+    for num in numbers:
+        prod *= num
+    return pow(prod, 1/len(numbers))
+```

@@ -1,0 +1,45 @@
+Write a function to search some literals strings in a string by using regex.
+
+Example input:
+
+s = '''
+    Literal strings can be defined as:
+        "string"
+        "string string"
+        "string string string"
+        "string string"
+        ""
+    '''
+
+literals = ['"string"', '"string string"', '"string string string"', '""']
+
+Example output:
+
+['"string"', '"string string"', '"string string string"', '']
+
+"""
+
+import re
+
+def search_literals(s, literals):
+    result = []
+    for lit in literals:
+        regex = re.compile(lit)
+        matches = regex.findall(s)
+        result.extend(matches)
+    return result
+
+s = """
+    Literal strings can be defined as:
+        "string"
+        "string string"
+        "string string string"
+        "string string"
+        ""
+    """
+
+literals = ['"string"', '"string string"', '"string string string"', '""']
+
+print(search_literals(s, literals))
+
+# Output: ['"string"', '"string string"', '"string string string"', '']

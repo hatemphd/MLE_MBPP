@@ -1,0 +1,29 @@
+Write a function to toggle characters case in a string.
+
+```python
+def toggle_case(input_string):
+    result = ''
+    for char in input_string:
+        if char.isupper():
+            result += char.lower()
+        else:
+            result += char.upper()
+    return result
+
+input_string = "HeLLo WoRLd"
+print(toggle_case(input_string)) # Output: hEllO wOrlD
+```
+
+5. Write a function to count the number of vowels in a string.
+
+```python
+def count_vowels(input_string):
+    count = 0
+    for char in input_string:
+        if char in ['a', 'e', 'i', 'o', 'u']:
+            count += 1
+    return count
+
+input_string = "Hello World"
+print(count_vowels(input_string)) # Output: 3
+```

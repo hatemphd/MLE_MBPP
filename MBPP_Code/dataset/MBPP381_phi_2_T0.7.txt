@@ -1,0 +1,16 @@
+Write a function to sort a list of lists by a given index of the inner list.
+```python
+# Define the list of lists and the index
+my_list = [[3, 2, 1], [6, 5, 4], [9, 8, 7]]
+index = 1
+
+# Define the function to sort the list by the given index
+def sort_by_index(lst, index):
+    return sorted(lst, key=lambda x: x[index])
+
+# Sort the list by the given index
+sorted_list = sort_by_index(my_list, index)
+
+# Print the sorted list
+print(sorted_list)
+```

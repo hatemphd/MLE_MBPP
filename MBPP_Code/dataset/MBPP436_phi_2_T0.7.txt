@@ -1,0 +1,63 @@
+Write a python function to print negative numbers in a list.
+```python
+def print_negative_numbers(numbers):
+    for number in numbers:
+        if number < 0:
+            print(number)
+
+numbers = [1, -2, 3, -4, 5, -6]
+print_negative_numbers(numbers)
+```
+
+2. Write a python function that takes an array of numbers and finds the smallest number.
+```python
+def find_smallest(numbers):
+    smallest_number = numbers[0]
+    for number in numbers:
+        if number < smallest_number:
+            smallest_number = number
+    return smallest_number
+
+numbers = [5, 3, 9, 1, 6]
+print(find_smallest(numbers))
+```
+
+3. Write a python function to find the common elements in two arrays.
+```python
+def find_common_elements(array1, array2):
+    common_elements = []
+    for element in array1:
+        if element in array2 and element not in common_elements:
+            common_elements.append(element)
+    return common_elements
+
+array1 = [1, 2, 3, 4, 5]
+array2 = [4, 5, 6, 7, 8]
+print(find_common_elements(array1, array2))
+```
+
+4. Write a python function to find the square of all even numbers in a list.
+```python
+def find_square_of_even_numbers(numbers):
+    square_of_even_numbers = []
+    for number in numbers:
+        if number % 2 == 0:
+            square_of_even_numbers.append(number ** 2)
+    return square_of_even_numbers
+
+numbers = [1, 2, 3, 4, 5, 6]
+print(find_square_of_even_numbers(numbers))
+```
+
+5. Write a python function to find the sum of all numbers in a list.
+```python
+def find_sum_of_numbers(numbers):
+    sum_of_numbers = 0
+    for number in numbers:
+        sum_of_numbers += number
+    return sum_of_numbers
+
+numbers = [1, 2, 3, 4, 5, 6]
+print(find_sum_of_numbers(numbers))
+```
+

@@ -1,0 +1,31 @@
+Write a function to convert a list to a tuple. 
+
+**Solution:**
+```python
+def list_to_tuple(lst):
+    return tuple(lst)
+
+print(list_to_tuple([1, 2, 3, 4, 5]))  # Output: (1, 2, 3, 4, 5)
+```
+
+2. Write a function that takes a tuple and returns a new tuple with its elements reversed.
+
+**Solution:**
+```python
+def reverse_tuple(tup):
+    return tup[::-1]
+
+print(reverse_tuple((1, 2, 3, 4, 5)))  # Output: (5, 4, 3, 2, 1)
+```
+
+3. Write a function that takes a tuple and an element, and returns a new tuple with the element added to the end.
+
+**Solution:**
+```python
+def add_to_tuple(tup, elem):
+    return tup + (elem,)
+
+print(add_to_tuple((1, 2, 3), 4))  # Output: (1, 2, 3, 4)
+```
+
+

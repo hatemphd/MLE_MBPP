@@ -1,0 +1,71 @@
+Write a function to find all words which are at least 4 characters long in a string by using regex.
+
+Idea: You can use the `re.findall()` function with the appropriate regex pattern.
+
+Solution:
+```python
+import re
+def find_long_words(s):
+    return re.findall(r'\b\w{4,}\b', s)
+
+s = "The quick brown fox jumps over the lazy dog"
+print(find_long_words(s))  # Output: ['quick', 'brown', 'jumps']
+```
+
+2. Write a function to extract all email addresses from a string.
+
+Idea: You can use the `re.findall()` function with the appropriate regex pattern.
+
+Solution:
+```python
+import re
+def extract_emails(s):
+    return re.findall(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b', s)
+
+s = "Contact us at info@example.com or support@example.net"
+print(extract_emails(s))  # Output: ['info@example.com', 'support@example.net']
+```
+
+3. Write a function to replace all occurrences of a word in a string with another word.
+
+Idea: You can use the `re.sub()` function along with the `re.escape()` function to escape special characters in the word to be replaced.
+
+Solution:
+```python
+import re
+def replace_word(s, old_word, new_word):
+    return re.sub(re.escape(old_word), new_word, s)
+
+s = "The quick brown fox jumps over the lazy dog"
+print(replace_word(s, "fox", "cat"))  # Output: "The quick brown cat jumps over the lazy dog"
+```
+
+4. Write a function to validate whether a string is a valid URL.
+
+Idea: You can use the `re.match()` function with the appropriate regex pattern.
+
+Solution:
+```python
+import re
+def is_valid_url(s):
+    return bool(re.match(r'^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$', s))
+
+s = "https://www.example.com"
+print(is_valid_url(s))  # Output: True
+```
+
+5. Write a function to extract all numbers from a string.
+
+Idea: You can use the `re.findall()` function with the appropriate regex pattern.
+
+Solution:
+```python
+import re
+def extract_numbers(s):
+    return re.findall(r'\b\d+\b', s)
+
+s = "The price of the product is $29.99 and the weight is 2.5 kg"
+print(extract_numbers(s))  # Output: ['29', '99', '2', '5']
+```
+
+

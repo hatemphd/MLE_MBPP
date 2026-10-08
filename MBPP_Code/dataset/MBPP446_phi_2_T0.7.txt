@@ -1,0 +1,103 @@
+Write a python function to count the occurence of all elements of list in a tuple.
+
+   **Ideas:**
+   - Convert the list into a tuple
+   - Use a for loop to iterate through each element of the tuple
+   - Create a dictionary to store the occurrence of each element
+   
+   **Solution:**
+   
+   ```python
+   def count_occurrence(lst, tup):
+       lst = tuple(lst)
+       occ = {}
+       for i in lst:
+           if i in occ:
+               occ[i] += 1
+           else:
+               occ[i] = 1
+       return occ
+
+   print(count_occurrence([1,2,3,4,5,1,2,3,4,5,5,5,5], (1,2,3,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5)))
+   ```
+
+2. Write a python function to extract all the vowels from a string and store them in a tuple.
+
+   **Ideas:**
+   - Create an empty tuple
+   - Use a for loop to iterate through each character of the string
+   - Check if the character is a vowel
+   - If the character is a vowel, add it to the tuple
+   - Return the tuple
+   
+   **Solution:**
+   
+   ```python
+   def extract_vowels(s):
+       vowels = ('a', 'e', 'i', 'o', 'u')
+       tup = ()
+       for i in s:
+           if i in vowels:
+               tup += (i,)
+       return tup
+
+   print(extract_vowels("hello world"))
+   ```
+
+3. Write a python function to convert a list of tuples into a dictionary.
+
+   **Ideas:**
+   - Create an empty dictionary
+   - Use a for loop to iterate through each tuple in the list
+   - Extract the key and value from the tuple
+   - Add the key-value pair to the dictionary
+   - Return the dictionary
+   
+   **Solution:**
+   
+   ```python
+   def list_to_dict(lst):
+       d = {}
+       for i in lst:
+           key, value = i
+           d[key] = value
+       return d
+
+   print(list_to_dict([(1, 'a'), (2, 'b'), (3, 'c')]))
+   ```
+
+4. Write a python function to find the intersection of two tuples.
+
+   **Ideas:**
+   - Convert the tuples into sets
+   - Use the intersection() method to find the common elements
+   - Convert the result back to a tuple
+   - Return the tuple
+   
+   **Solution:**
+   
+   ```python
+   def intersect_tuples(tup1, tup2):
+       set1 = set(tup1)
+       set2 = set(tup2)
+       return tuple(set1.intersection(set2))
+
+   print(intersect_tuples((1,2,3,4,5), (2,4,6,8,10)))
+   ```
+
+5. Write a python function to remove duplicates from a tuple.
+
+   **Ideas:**
+   - Convert the tuple into a set
+   - Convert the set back to a tuple
+   - Return the tuple
+   
+   **Solution:**
+   
+   ```python
+   def remove_duplicates(tup):
+       return tuple(set(tup))
+
+   print(remove_duplicates((1,2,3,4,5,1,2,3,4,5,5,5,5,5)))
+   ```
+

@@ -1,0 +1,34 @@
+Write a function to extract a specified column from a given nested list. If the column index is out of range, return the column that should be there.
+
+```python
+def extract_column(nested_list, column_index):
+    if len(nested_list[0]) < column_index:
+        return nested_list[column_index]
+    else:
+        return [row[column_index] for row in nested_list]
+
+nested_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print(extract_column(nested_list, 2))  # Output: [3, 6, 9]
+print(extract_column(nested_list, 4))  # Output: [3, 6, 9]
+```
+
+4. Write a function to transpose a given nested list.
+
+```python
+def transpose(nested_list):
+    return [[nested_list[j][i] for j in range(len(nested_list))] for i in range(len(nested_list[0]))]
+
+nested_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print(transpose(nested_list))  # Output: [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+```
+
+5. Write a function that takes two nested lists of the same length and returns a new nested list that contains the sum of the corresponding elements of the input lists.
+
+```python
+def add_lists(nested_list1, nested_list2):
+    return [[nested_list1[i][j] + nested_list2[i][j] for j in range(len(nested_list1[0]))] for i in range(len(nested_list1))]
+
+nested_list1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+nested_list2 = [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+print(add_lists(nested_list1, nested_list2))  # Output: [[10, 10, 10], [10, 10, 10], [10, 10, 10]]
+```

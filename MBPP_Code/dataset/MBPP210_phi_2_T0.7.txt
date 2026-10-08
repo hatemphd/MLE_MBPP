@@ -1,0 +1,52 @@
+Write a function to check that the given string contains only a certain set of characters(in this case a-z, a-z and 0-9) by using regex.
+The string is given as a string.
+If it contains any characters other than the specified characters, return false.
+If it contains only the specified characters, return true.
+
+This is what I have so far, but I am getting an error:
+
+"Cannot find symbol - variable 'class' in file "regexp.class"
+
+My code:
+public static boolean isValid(String s) {
+    String pattern = "[a-zA-Z0-9]+";
+
+    Pattern p = Pattern.compile(pattern);
+    Matcher m = p.matcher(s);
+
+    if (m.matches()) {
+        return true;
+    } else {
+        return false;
+    }
+
+}
+
+A:
+
+You can use ^[a-zA-Z0-9]+$ regex to match the whole string with a-z, A-Z and 0-9.
+See the regex demo
+
+^ - start of string
+[a-zA-Z0-9]+ - 1 or more ASCII letters or digits
+$ - end of string.
+
+Java code:
+public static boolean isValid(String s) {
+    return s.matches("^[a-zA-Z0-9]+$");
+}
+
+A:
+
+You can do a case-insensitive search for all characters which are not in your set, and then check if there is at least one of them.
+public static boolean isValid(String s) {
+    String pattern = "[^a-zA-Z0-9]+";
+    Pattern p = Pattern.compile(pattern, Pattern.CASE_INSENSITIVE);
+    Matcher m = p.matcher(s);
+    if (m.find()) {
+        return false;
+    } else {
+        return true;
+    }
+}
+

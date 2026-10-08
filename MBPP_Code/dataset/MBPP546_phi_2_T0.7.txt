@@ -1,0 +1,49 @@
+Write a function to find the last occurrence of a character in a string.
+
+Hint: Use rfind() method.
+
+```python
+def find_last_occurrence(s, ch):
+    return s.rfind(ch)
+
+print(find_last_occurrence('Hello, world!', 'o'))  # Output: 9
+```
+
+3. Write a Python script to find all occurrences of a character in a string.
+
+Hint: Use rfind() in combination with a while loop.
+
+```python
+def find_all_occurrences(s, ch):
+    start = s.find(ch)
+    while start != -1:
+        print(start)
+        start = s.find(ch, start + 1)
+
+find_all_occurrences('Hello, world!', 'o')  # Output: 4, 7
+```
+
+4. Write a function to remove the last occurrence of a character in a string.
+
+Hint: Use rfind() to find the character's index, then use string slicing to remove it.
+
+```python
+def remove_last_occurrence(s, ch):
+    end = s.rfind(ch)
+    return s[:end] + s[end+1:]
+
+print(remove_last_occurrence('Hello, world!', 'o'))  # Output: Hell, world!
+```
+
+5. Write a function to find the last occurrence of a word in a string.
+
+Hint: Use rfind() in combination with the string method split().
+
+```python
+def find_last_word(s, word):
+    return s.rfind(' '.join(word.split()))
+
+print(find_last_word('Hello, world! Hello, Python!', 'Hello'))  # Output: 15
+```
+
+

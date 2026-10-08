@@ -1,0 +1,31 @@
+Write a python function to find the index of an extra element present in one sorted array.
+
+**Hint:** Use the `bisect_left` function from the `bisect` module to find the index where the extra element would be placed.
+
+```python
+from bisect import bisect_left
+
+def find_extra(arr1, arr2):
+    extra = arr1[-1] - arr1[0] + 1
+    arr1.sort()
+    index = bisect_left(arr1, arr2[0]+1)
+    return arr1.index(arr2[index])
+
+print(find_extra([1, 2, 3, 4, 5, 6, 7, 8, 9], [2, 3, 4, 5, 6, 7, 8, 9, 1]))
+```
+
+**Exercise 2:** Write a python function to find the index of an extra element present in two sorted arrays.
+
+**Hint:** You can follow the same steps as Exercise 1 but using the second array.
+
+```python
+def find_extra_in_two_arrays(arr1, arr2):
+    extra = arr1[-1] - arr1[0] + 1
+    arr1.sort()
+    index = bisect_left(arr1, arr2[0]+1)
+    return arr1.index(arr2[index])
+
+print(find_extra_in_two_arrays([1, 2, 3, 4, 5, 6, 7, 8, 9], [2, 3, 4, 5, 6, 7, 8, 9, 1]))
+```
+
+

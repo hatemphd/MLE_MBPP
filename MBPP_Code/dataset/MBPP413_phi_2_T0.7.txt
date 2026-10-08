@@ -1,0 +1,11 @@
+Write a function to extract the nth element from a given list of tuples.
+
+```python
+data = [(4, 'apple'), (5, 'banana'), (2, 'orange')]
+
+def extract_nth_element(data, n):
+    return [i[n] for i in data]
+
+print(extract_nth_element(data, 1))  # ['apple', 'banana', 'orange']
+```
+

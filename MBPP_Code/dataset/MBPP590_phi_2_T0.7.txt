@@ -1,0 +1,39 @@
+Write a function to convert polar coordinates to rectangular coordinates.
+
+```python
+def polar_to_rect(r, theta):
+    # Solution
+    x = r * np.cos(theta)
+    y = r * np.sin(theta)
+    return x, y
+```
+
+3. Write a function to convert rectangular coordinates to polar coordinates.
+
+```python
+def rect_to_polar(x, y):
+    # Solution
+    r = np.sqrt(x**2 + y**2)
+    theta = np.arctan2(y, x)
+    return r, theta
+```
+
+4. Use a list comprehension to calculate the polar coordinates of all the points in a 2D space defined by a list of x-coordinates and y-coordinates.
+
+```python
+# Solution
+x = [1, 2, 3, 4, 5]
+y = [1, 4, 9, 16, 25]
+
+polar_coordinates = [(r, theta) for r, theta in zip(np.hypot(x, y), np.arctan2(y, x))]
+```
+
+5. Use a list comprehension to calculate the rectangular coordinates of all the points in a 2D space defined by a list of polar coordinates.
+
+```python
+# Solution
+polar_coordinates = [(1.4142135623730951, 0.7853981633974483), (2.8284271247461903, 1.1071487177940904), (4.242640687119285, 2.0943951023931953), (5.656854249492381, 3.141592653589793), (6.123233995736766e-17, 4.71238898038469)]
+
+rectangular_coordinates = [(r*np.cos(theta), r*np.sin(theta)) for r, theta in polar_coordinates]
+```
+

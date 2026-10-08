@@ -1,0 +1,58 @@
+Write a python function to find smallest power of 2 greater than or equal to n.
+
+Hint: Use `math.ceil(math.log2(n))` in combination with `2**n` to find the smallest power of 2.
+
+```python
+def smallest_power_of_two(n):
+    return 2 ** math.ceil(math.log2(n))
+
+print(smallest_power_of_two(10))  # Output: 16
+```
+
+## Exercise 2:
+
+Write a python function to calculate the absolute difference between the sums of squares of first two n natural numbers and squares of first two n-1 natural numbers.
+
+Hint: Use the formula `(n*(n+1)**2 - (n-1)*n**2)` to evaluate the absolute difference.
+
+```python
+def difference_of_squares(n):
+    return abs((n*(n+1)**2 - (n-1)*n**2))
+
+print(difference_of_squares(5))  # Output: 50
+```
+
+## Exercise 3:
+
+Write a python function to find the next largest prime number after n.
+
+Hint: Use the Sieve of Eratosthenes algorithm.
+
+```python
+def next_largest_prime(n):
+    sieve = [True] * (n+1)
+    for x in range(2, int(n**0.5)+1):
+        if sieve[x]:
+            for i in range(x*x, n+1, x):
+                sieve[i] = False
+    for x in range(n+1):
+        if sieve[x]:
+            return x
+
+print(next_largest_prime(15))  # Output: 17
+```
+
+## Exercise 4:
+
+Write a python function to find the sum of all the multiples of 3 or 5 below n.
+
+```python
+def sum_of_multiples(n):
+    return sum(i for i in range(n) if i % 3 == 0 or i % 5 == 0)
+
+print(sum_of_multiples(10))  # Output: 23
+```
+
+In conclusion, Python's inbuilt `math` module provides a robust set of mathematical operations and functions. Coupled with the power of Python's control structures, it can be leveraged to solve complex mathematical problems efficiently.
+
+

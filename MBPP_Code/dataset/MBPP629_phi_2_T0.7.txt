@@ -1,0 +1,30 @@
+Write a python function to find even numbers from a mixed list.
+
+```python
+# Idea: You can use the modulus operator to check if a number is even.
+
+# Solution:
+def find_evens(numbers):
+    return [num for num in numbers if num % 2 == 0]
+
+numbers = [1, 2, 3, 4, 5, 6]
+print(find_evens(numbers)) # Outputs: [2, 4, 6]
+```
+
+5. Write a python function to find the sum of all elements in a list.
+
+```python
+# Idea: You can use a for loop to iterate over all elements and add them up.
+
+# Solution:
+def sum_elements(numbers):
+    total = 0
+    for num in numbers:
+        total += num
+    return total
+
+numbers = [1, 2, 3, 4, 5]
+print(sum_elements(numbers)) # Outputs: 15
+```
+
+

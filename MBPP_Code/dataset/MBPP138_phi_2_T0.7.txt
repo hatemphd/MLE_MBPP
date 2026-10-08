@@ -1,0 +1,49 @@
+Write a python function to check whether the given number can be represented as sum of non-zero powers of 2 or not.
+
+```python
+def is_power_of_two(n):
+    return n > 0 and (n & (n - 1)) == 0
+
+def is_sum_of_non_zero_powers_of_two(n):
+    while n > 0:
+        if is_power_of_two(n):
+            return True
+        n -= 2
+    return False
+```
+
+3. Write a python function to generate all possible subsets of a given set.
+
+```python
+from itertools import combinations
+
+def subsets(set):
+    return [list(subset) for i in range(len(set)+1) for subset in combinations(set, i)]
+
+set1 = {1, 2, 3}
+print(subsets(set1))
+```
+
+4. Write a python function to generate all possible permutations of a given set.
+
+```python
+from itertools import permutations
+
+def permutations(set):
+    return [list(perm) for perm in permutations(set)]
+
+set1 = {1, 2, 3}
+print(permutations(set1))
+```
+
+5. Write a python function to generate all possible combinations of a given set with a given length.
+
+```python
+from itertools import combinations
+
+def combinations_with_length(set, length):
+    return [list(comb) for comb in combinations(set, length)]
+
+set1 = {1, 2, 3, 4, 5}
+print(combinations_with_length(set1, 3))
+```

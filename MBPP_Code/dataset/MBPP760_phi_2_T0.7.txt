@@ -1,0 +1,33 @@
+Write a python function to check whether an array contains only one distinct element or not. If it does, return the element. If it doesn't, return None.
+
+Hint: Use the `unique` function from NumPy to get the unique elements of the array and compare the length of the original array with the length of the unique elements.
+
+Solution:
+
+```python
+def check_unique(arr):
+    unique_elements = np.unique(arr)
+    if len(unique_elements) == 1:
+        return unique_elements[0]
+    else:
+        return None
+
+print(check_unique(np.array([3,3,3,3,3,3])))
+print(check_unique(np.array([3,4,5,6,7,8])))
+```
+
+2. Write a python function to generate a 3D array of size n x n x n, filled with random integers between 1 and 100. Then, calculate the sum of all integers in the array.
+
+Hint: Use the `random.randint` function from NumPy to generate the random integers.
+
+Solution:
+
+```python
+def sum_3d_array(n):
+    arr = np.random.randint(1, 100, size=(n,n,n))
+    return np.sum(arr)
+
+print(sum_3d_array(3))
+```
+
+

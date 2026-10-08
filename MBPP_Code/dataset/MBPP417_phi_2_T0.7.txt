@@ -1,0 +1,14 @@
+Write a function to find common first element in given list of tuple.
+def find_first_common_element(list_of_tuple):
+    common_element = list_of_tuple[0][0]
+    for tuple in list_of_tuple:
+        if tuple[0] != common_element:
+            return None
+    return common_element
+
+print(find_first_common_element([(1, 2), (2, 3), (1, 4)]))
+print(find_first_common_element([(1, 2), (2, 3), (3, 4)]))
+
+Output:
+1
+None

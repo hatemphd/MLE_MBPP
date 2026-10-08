@@ -1,0 +1,26 @@
+Write a function to find uppercase, lowercase, special character and numeric values using regex.
+
+```python
+import re
+
+# Create a list of strings
+strings = ['Hello', 'world!', '123', 'PyThOn', 'is', 'fun', '?']
+
+# Define a function to count the number of uppercase, lowercase, special character and numeric values in a string
+def count_values(string):
+    # Use regex to find uppercase, lowercase, special character and numeric values
+    uppercase_count = len(re.findall('[A-Z]', string))
+    lowercase_count = len(re.findall('[a-z]', string))
+    special_char_count = len(re.findall('[^A-Za-z0-9\s]', string))
+    numeric_count = len(re.findall('\d', string))
+
+    # Return a dictionary with the counts
+    return {'uppercase': uppercase_count, 'lowercase': lowercase_count, 'special_char': special_char_count, 'numeric': numeric_count}
+
+# Use list comprehension to apply the function to all strings in the list
+results = [count_values(string) for string in strings]
+
+# Print the results
+for result in results:
+    print(result)
+```

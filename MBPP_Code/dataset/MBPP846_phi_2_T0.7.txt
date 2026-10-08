@@ -1,0 +1,39 @@
+Write a function to find the minimum number of platforms required for a railway/bus station. The function will take two parameters, times and trains, where times is a list of integers representing the departure times of trains and trains is a list of integers representing the arrival times of trains. You should assume that all trains arrive and depart at the same station.
+
+# Example 1:
+
+# Input: times = [1,2,3,4,5,6,7,8,9], trains = [2,5,7,9,11]
+
+# Output: 2
+
+# Explanation: Only two platforms are needed. The first train departs at time 1, while the second train arrives at time 2. The third train departs from the first platform at time 3, while the fourth train arrives at time 5. The fifth train departs from the first platform at time 7, while the sixth train arrives at time 9. The seventh train departs from the second platform at time 11.
+
+# Example 2:
+
+# Input: times = [1,4,4,4,4], trains = [2,3,3,3,3]
+
+# Output: 2
+
+# Explanation: Only two platforms are needed. The first train departs at time 1, while the second train arrives at time 2. The third train departs from the first platform at time 4, while the fourth train arrives at time 4. The fifth train departs from the first platform at time 4, while the sixth train arrives at time 3.
+
+# Example 3:
+
+# Input: times = [1,4,4,4,4], trains = [1,1,1,1,1]
+
+# Output: 1
+
+# Explanation: Only one platform is needed. All the trains depart and arrive at the same time.
+
+class Solution:
+    def minPlatforms(self, times: List[int], trains: List[int]) -> int:
+        times.sort()
+        trains.sort()
+        res = 0
+        last_platform = 0
+        
+        for time, train in zip(times, trains):
+            if time > train:
+                res += 1
+                last_platform = time
+        res += 1
+        return res if res < last_platform else res - 1

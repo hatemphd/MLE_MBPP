@@ -1,0 +1,22 @@
+Write a function to check whether the given month number contains 28 days or not. For example, '01' contains 28 days.
+
+```python
+def check_days_in_month(month):
+    # Your code here
+    pass
+```
+
+**Hint:** You can use the `monthrange()` function from the `calendar` module.
+
+**Solution:**
+
+```python
+import calendar
+
+def check_days_in_month(month):
+    return calendar.monthrange(2021, int(month))[1]
+```
+
+In this function, we're using the `monthrange()` function to get the number of days in the month.
+
+

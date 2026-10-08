@@ -1,0 +1,84 @@
+Write a function to find out the number of ways of painting the fence such that at most 2 adjacent posts have the same color for the given fence with n posts and k colors.
+
+Example 1:
+    Input: n = 5, k = 2
+    Output: 7
+    Explanation:
+        The following are the possible ways of painting the fence.
+        [1, 2, 1, 2, 1]
+        [2, 1, 2, 1, 2]
+        [2, 1, 1, 2, 2]
+        [1, 2, 2, 1, 1]
+        [1, 1, 1, 1, 2]
+        [1, 1, 2, 1, 1]
+        [2, 2, 1, 1, 1]
+
+Constraints:
+    1 <= n <= 100
+    1 <= k <= 100
+"""
+
+
+class Solution:
+    def numWays(self, n: int, k: int) -> int:
+        # exception case
+        if not isinstance(n, int) or not isinstance(k, int):
+            return 0  # Error input type
+        if n <= 0:
+            return 0  # Error input type
+        if k <= 0:
+            return 0  # Error input type
+        if k == 1:
+            return n  # there is only one way
+        # main method: (dp: dp[i] = the number of ways to paint fence with i posts, at most 2 adjacent posts have the same color)
+        #     dp[i] = sum(dp[i - 1: i - 3:-1]) + dp[i - 2]
+        #     dp[i] = sum(dp[i - 2: i - 4:-1]) + dp[i - 3]
+        #     dp[i] = sum(dp[i - 3: i - 5:-1]) + dp[i - 4]
+        #     dp[i] = sum(dp[i - 4: i - 6:-1]) + dp[i - 5]
+        #     dp[i] = sum(dp[i - 5: i - 7:-1]) + dp[i - 6]
+        return self._numWays(n, k)
+
+    def _numWays(self, n: int, k: int) -> int:
+        assert n >= 3
+
+        dp = [0] * (n + 1)
+        dp[0] = k
+        dp[1] = k
+        dp[2] = k * (k - 1)
+
+        for i in range(3, n + 1):
+            dp[i] = sum(dp[i - 2: i - 4:-1]) + dp[i - 3]
+            dp[i] = sum(dp[i - 3: i - 5:-1]) + dp[i - 4]
+            dp[i] = sum(dp[i - 4: i - 6:-1]) + dp[i - 5]
+            dp[i] = sum(dp[i - 5: i - 7:-1]) + dp[i - 6]
+
+        return dp[n]
+
+
+def main():
+    # Example 1: Output: 7
+    # n = 5
+    # k = 2
+
+    # Example 2: Output: 0
+    n = 1
+    k = 1
+
+    # init instance
+    solution = Solution()
+
+    # run & time
+    start = time.process_time()
+    ans = solution.numWays(n, k)
+    end = time.process_time()
+
+    # show answer
+    print('\nAnswer:')
+    print(ans)
+
+    # show time consumption
+    print('Running Time: %.5f ms' % ((end - start) * 1000))
+
+
+if __name__ == "__main__":
+    sys.exit(main())

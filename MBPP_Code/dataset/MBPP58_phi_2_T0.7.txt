@@ -1,0 +1,42 @@
+Write a python function to check whether the given two integers have opposite sign or not.
+
+Hint: You can use the 'and' and 'not' operators.
+
+Solution:
+```python
+def check_sign(num1, num2):
+    return (num1 < 0 and num2 > 0) or (num1 > 0 and num2 < 0)
+
+print(check_sign(5, -2)) # Output: True
+print(check_sign(-5, -2)) # Output: False
+```
+
+2. Write a Python program to check whether the given two strings are equal or not.
+
+Hint: You can use the '==' operator.
+
+Solution:
+```python
+def check_strings(str1, str2):
+    return str1 == str2
+
+print(check_strings("hello", "hello")) # Output: True
+print(check_strings("hello", "world")) # Output: False
+```
+
+3. Write a Python program to check whether the given list is empty or not.
+
+Hint: You can use the 'not' keyword.
+
+Solution:
+```python
+def check_list(lst):
+    return not bool(lst)
+
+print(check_list([])) # Output: True
+print(check_list([1, 2, 3])) # Output: False
+```
+
+Remember, these are only some of the applications of `not` keyword in Python. You can use it in various other complex scenarios as well.
+
+

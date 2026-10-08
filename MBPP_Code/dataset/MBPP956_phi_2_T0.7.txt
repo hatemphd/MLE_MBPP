@@ -1,0 +1,65 @@
+Write a function to split the given string at uppercase letters by using regex.
+
+```python
+import re
+
+def split_at_uppercase(input_str):
+    split_str = re.split("([A-Z])", input_str)
+    return split_str
+
+input_str = "PythonIsFun"
+print(split_at_uppercase(input_str))  # ['', 'Python', '', 'Is', '', 'Fun']
+```
+
+2. Write a function to remove all leading and trailing whitespaces from a given string using regex.
+
+```python
+import re
+
+def remove_whitespaces(input_str):
+    new_str = re.sub("^\s+|\s+$", "", input_str)
+    return new_str
+
+input_str = "    Python is cool    "
+print(remove_whitespaces(input_str))  # 'Python is cool'
+```
+
+3. Write a function to replace all occurrences of the word "hello" with "hi" in a given string using regex.
+
+```python
+import re
+
+def replace_hello(input_str):
+    new_str = re.sub("hello", "hi", input_str)
+    return new_str
+
+input_str = "Hello, how are you doing today?"
+print(replace_hello(input_str))  # "Hi, how are you doing today?"
+```
+
+4. Write a function to remove all non-alphanumeric characters from a given string using regex.
+
+```python
+import re
+
+def remove_non_alphanumeric(input_str):
+    new_str = re.sub("[^a-zA-Z0-9]", "", input_str)
+    return new_str
+
+input_str = "Hello, how are you doing today?!?"
+print(remove_non_alphanumeric(input_str))  # 'Hellohowareyoutoday'
+```
+
+5. Write a function to extract all the email addresses from a given string using regex.
+
+```python
+import re
+
+def extract_emails(input_str):
+    pattern = "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b"
+    emails = re.findall(pattern, input_str)
+    return emails
+
+input_str = "My email is john.doe@example.com. Please send me an email at jane_doe@example.com."
+print(extract_emails(input_str))  # ['john.doe@example.com', 'jane_doe@example.com']
+```

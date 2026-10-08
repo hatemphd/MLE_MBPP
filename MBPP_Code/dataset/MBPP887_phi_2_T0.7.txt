@@ -1,0 +1,105 @@
+Write a python function to check whether the given number is odd or not using bitwise operator.
+
+```python
+def check_even_odd(num):
+    # Using bitwise and operator to check evenness or oddness of a number
+    if (num & 1) == 0:
+        return "Even"
+    else:
+        return "Odd"
+
+print("Is 15 even or odd? ", check_even_odd(15))
+```
+
+Output:
+```
+Is 15 even or odd?  Odd
+```
+
+Exercise 5:
+Write a python function to check whether the given number is a power of two or not using bitwise operator.
+
+```python
+def is_power_of_two(num):
+    # Using bitwise and operator to check if a number is a power of two
+    if (num & (num-1)) == 0:
+        return True
+    else:
+        return False
+
+print("Is 16 a power of two? ", is_power_of_two(16))
+```
+
+Output:
+```
+Is 16 a power of two?  True
+```
+
+Python Concept: "List Comprehensions"
+
+List comprehensions provide a concise way to create lists based on existing lists. It is a syntactic construct that allows us to create a new list by applying an expression to each element of an existing list.
+
+The general syntax of a list comprehension is as follows:
+
+```python
+new_list = [expression for item in iterable if condition]
+```
+
+Here, `iterable` is the existing list from which we want to create a new list. `expression` is the operation that we want to apply to each element of the existing list. `item` is the element of the existing list that we want to apply the expression to. And `condition` is an optional condition that filters the elements of the existing list.
+
+For example, let's say we have a list of integers, and we want to create a new list containing the squares of all even numbers in the original list. We can use a list comprehension to achieve this as follows:
+
+```python
+original_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+new_list = [num ** 2 for num in original_list if num % 2 == 0]
+print(new_list)
+```
+
+Output:
+```
+[4, 16, 36, 64, 100]
+```
+
+In the above example, we first created an `original_list` with some integers. Then, we used a list comprehension to create a new list `new_list` containing the squares of all even numbers in the `original_list`. We applied the expression `num ** 2` to each element of the `original_list` that satisfies the condition `num % 2 == 0`.
+
+Exercise 6:
+Write a python function to square all the elements of a given list using list comprehension.
+
+```python
+def square_all_elements(lst):
+    # Using list comprehension to square all the elements of a list
+    squared_lst = [num ** 2 for num in lst]
+    return squared_lst
+
+print("Square of [1, 2, 3, 4, 5] is", square_all_elements([1, 2, 3, 4, 5]))
+```
+
+Output:
+```
+Square of [1, 2, 3, 4, 5] is [1, 4, 9, 16, 25]
+```
+
+Exercise 7:
+Write a python function to filter out all the even numbers from a given list using list comprehension.
+
+```python
+def filter_even_numbers(lst):
+    # Using list comprehension to filter out all the even numbers from a list
+    even_lst = [num for num in lst if num % 2 == 0]
+    return even_lst
+
+print("Even numbers in [1, 2, 3, 4, 5] are", filter_even_numbers([1, 2, 3, 4, 5]))
+```
+
+Output:
+```
+Even numbers in [1, 2, 3, 4, 5] are [2, 4]
+```
+
+Exercise 8:
+Write a python function to create a new list containing the first letter of each word in a given string using list comprehension.
+
+```python
+def get_first_letters(s):
+    # Using list comprehension to get the first letter of each word in a string
+    words =

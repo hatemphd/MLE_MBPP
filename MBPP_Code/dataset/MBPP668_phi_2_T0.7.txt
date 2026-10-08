@@ -1,0 +1,21 @@
+Write a python function to replace multiple occurence of character by single. The function should take string and character as input and return the new string. 
+
+```python
+def replace_multi(string, char):
+    # define the new string
+    new_string = ''
+
+    # for each character in the string
+    for char in string:
+        # if character is the specified character
+        if char == char:
+            # add the character to the new string
+            new_string += char
+    
+    # return the new string
+    return new_string
+
+print(replace_multi('Hello World', 'l')) # Heo Word
+```
+
+

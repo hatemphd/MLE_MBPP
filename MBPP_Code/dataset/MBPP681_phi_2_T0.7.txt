@@ -1,0 +1,19 @@
+Write a python function to find the smallest prime divisor of a number.
+
+```python
+from math import sqrt
+
+def smallest_prime_divisor(n):
+    if n < 2:
+        return None
+    for i in range(2, int(sqrt(n)) + 1):
+        if n % i == 0:
+            return i
+    return n
+
+print(smallest_prime_divisor(15))  # Output: 3
+```
+
+In summary, in this chapter, we learned about prime numbers and how to find prime divisors of a number. We used loops and functions to perform these tasks in Python. The exercises provided should help reinforce these concepts.
+
+

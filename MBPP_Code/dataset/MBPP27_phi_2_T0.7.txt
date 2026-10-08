@@ -1,0 +1,56 @@
+Write a python function to remove all digits from a list of strings.
+
+**Hint:** Use list comprehension and the `isdigit()` method.
+
+**Solution:**
+
+```python
+def remove_digits(items):
+    return [item for item in items if not item.isdigit()]
+```
+
+**Exercise 2:** Write a python function to count the number of digits in a string.
+
+**Hint:** Use list comprehension and the `isdigit()` method.
+
+**Solution:**
+
+```python
+def count_digits(string):
+    return len([char for char in string if char.isdigit()])
+```
+
+**Exercise 3:** Write a python function that takes a list of strings and a number. The function should return a new list with all strings that have the given number of digits.
+
+**Hint:** Use the `isdigit()` method in combination with the `len()` function.
+
+**Solution:**
+
+```python
+def filter_by_digits(items, num_digits):
+    return [item for item in items if len([char for char in item if char.isdigit()]) == num_digits]
+```
+
+**Exercise 4:** Write a python function that takes a string and returns True if the string contains any digits, and False otherwise.
+
+**Hint:** Use the `isdigit()` method.
+
+**Solution:**
+
+```python
+def contains_digit(string):
+    return any(char.isdigit() for char in string)
+```
+
+**Exercise 5:** Modify the above function so that it returns True if the string contains any digit, or if the string is empty.
+
+**Hint:** Use the `not` keyword or an if-else statement.
+
+**Solution:**
+
+```python
+def contains_digit_or_empty(string):
+    return string or any(char.isdigit() for char in string)
+```
+
+

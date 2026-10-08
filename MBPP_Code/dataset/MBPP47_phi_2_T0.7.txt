@@ -1,0 +1,51 @@
+Write a python function to find the last digit when factorial of a divides factorial of b.
+
+Hints:
+- Use the inbuilt math.factorial function to find the factorial of a and b.
+- You can use modulo operation to find the last digit.
+
+```python
+import math
+
+def last_digit(a, b):
+    fact_a = math.factorial(a)
+    fact_b = math.factorial(b)
+    return fact_a % 10 % fact_b % 10
+
+print(last_digit(10, 5))  # Output: 0
+```
+
+2. Write a python function to count the number of trailing zeros in the factorial of a number.
+
+Hints:
+- Use the concept of factorial and the last digit.
+- Trailing zeros are a result of the repetition of units digit in the factorial.
+
+```python
+def trailing_zeros(n):
+    count = 0
+    for i in range(1, n + 1):
+        if i % 5 == 0:
+            count += 1
+    return count
+
+print(trailing_zeros(10))  # Output: 2
+```
+
+3. Write a python function to find the total number of trailing zeros in the factorial of a range of numbers.
+
+Hints:
+- Use the concept of factorial and trailing zeros.
+- Trailing zeros are a result of the repetition of units digit in the factorial.
+
+```python
+def trailing_zeros_in_range(start, end):
+    count = 0
+    for i in range(start, end + 1):
+        count += trailing_zeros(i)
+    return count
+
+print(trailing_zeros_in_range(10, 15))  # Output: 5
+```
+
+

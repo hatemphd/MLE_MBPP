@@ -1,0 +1,58 @@
+Write a function to find the element count that occurs before the record in the given tuple.
+```python
+# Given tuple 
+tuple_data = (1, 2, 3, 4, 2, 2, 5, 6, 2)
+```
+
+#### Solution to Exercise 1:
+```python
+# Given tuple
+tuple_data = (1, 2, 3, 4, 2, 2, 5, 6, 2)
+
+# Counting the occurrence of 2
+count = tuple_data.count(2)
+print("2 occurs", count, "times in the tuple")
+
+# Counting the occurrence of 4
+count = tuple_data.count(4)
+print("4 occurs", count, "times in the tuple")
+```
+
+#### Exercise 2:
+Write a function to find the index of the first occurrence of a given element in the given tuple.
+
+```python
+# Given tuple 
+tuple_data = (1, 2, 3, 4, 2, 2, 5, 6, 2)
+
+# Function to find index of first occurrence of 2
+def find_index(tuple_data, element):
+    index = tuple_data.index(element)
+    return index
+
+# Test the function
+index = find_index(tuple_data, 2)
+print("Index of first occurrence of 2:", index)
+```
+
+#### Exercise 3:
+Write a function to find the number of times the element that occurs before the given index appears in the given tuple.
+
+```python
+# Given tuple 
+tuple_data = (1, 2, 3, 4, 2, 2, 5, 6, 2)
+
+# Index to search from
+index = 4
+
+# Function to find element count before index
+def count_before_index(tuple_data, index):
+    count = tuple_data[:index].count(tuple_data[index-1])
+    return count
+
+# Test the function
+count = count_before_index(tuple_data, index)
+print("The element count before index", index, "is:", count)
+```
+
+

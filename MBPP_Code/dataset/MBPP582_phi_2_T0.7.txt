@@ -1,0 +1,18 @@
+Write a function to check if a dictionary is empty or not.
+```python
+def is_empty_dict(my_dict: dict) -> bool:
+    return not bool(my_dict)
+```
+
+5. Write a function that takes a list of dictionaries and returns a dictionary with the count of each unique value in a specified key.
+```python
+def count_values(list_of_dict, key):
+    result = {}
+    for d in list_of_dict:
+        val = d.get(key)
+        if val is not None:
+            if val not in result:
+                result[val] = 0
+            result[val] += 1
+    return result
+```

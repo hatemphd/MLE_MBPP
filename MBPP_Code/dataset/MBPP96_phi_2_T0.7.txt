@@ -1,0 +1,12 @@
+Write a python function to find the number of divisors of a given integer.
+
+Hint: Use the `num_divisors` function from the above example.
+
+```python
+def find_divisors(num):
+    return num_divisors(num)
+
+print(find_divisors(20))  # Outputs: 8
+```
+
+

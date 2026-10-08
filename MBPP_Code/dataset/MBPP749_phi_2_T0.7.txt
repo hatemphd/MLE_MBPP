@@ -1,0 +1,44 @@
+Write a function to sort a given list of strings of numbers numerically.
+
+Solution:
+```python
+# defining a function to sort a list of strings of numbers numerically
+def str_num_sort(list):
+    return sorted(list, key=lambda x: int(x))
+
+# testing the function
+print(str_num_sort(['123', '456', '789']))  # output: ['123', '456', '789']
+```
+
+## Exercise 4:
+Write a function to find the second smallest element in a given list of numbers.
+
+Solution:
+```python
+# defining a function to find the second smallest element in a list
+def second_smallest(list):
+    smallest = min(list)
+    list.remove(smallest)
+    return min(list)
+
+# testing the function
+print(second_smallest([1, 2, 3, 4, 5]))  # output: 2
+```
+
+## Exercise 5:
+Write a function to find the largest palindrome in a given list of numbers.
+
+Solution:
+```python
+# defining a function to find the largest palindrome in a list
+def largest_palindrome(list):
+    palindromes = [num for num in list if str(num) == str(num)[::-1]]
+    if palindromes:
+        return max(palindromes)
+    else:
+        return None
+
+# testing the function
+print(largest_palindrome([123, 121, 345, 678, 765, 789]))  # output: 789
+```
+

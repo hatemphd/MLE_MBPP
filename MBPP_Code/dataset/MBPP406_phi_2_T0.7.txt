@@ -1,0 +1,53 @@
+Write a python function to find the parity of a given number.
+
+```python
+# Answer
+def parity(num):
+    return num%2
+print(parity(5))
+```
+
+3. Write a python function to get the greatest common divisor of two numbers.
+
+```python
+# Answer
+def gcd(a,b):
+    if(b==0):
+        return a
+    else:
+        return gcd(b,a%b)
+print(gcd(54,24))
+```
+
+4. Write a python function to check if a number is prime or not.
+
+```python
+# Answer
+def is_prime(n):
+    if n<=1:
+        return False
+    for i in range(2,int(n**0.5)+1):
+        if n%i==0:
+            return False
+    return True
+print(is_prime(7))
+```
+
+5. Write a python function to perform matrix addition.
+
+```python
+# Answer
+def mat_add(mat1, mat2):
+    res = [[0 for _ in range(len(mat1[0]))] for _ in range(len(mat1))]
+    for i in range(len(mat1)):
+        for j in range(len(mat1[0])):
+            res[i][j] = mat1[i][j] + mat2[i][j]
+    return res
+mat1 = [[1, 2], [3, 4]]
+mat2 = [[5, 6], [7, 8]]
+print(mat_add(mat1, mat2))
+```
+
+In conclusion, understanding and applying arithmetic operators in python can help in solving complex mathematical problems and building powerful algorithms. It is a fundamental concept that needs to be mastered by every programmer.
+
+

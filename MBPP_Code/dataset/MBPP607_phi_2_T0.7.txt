@@ -1,0 +1,74 @@
+Write a function to search a literals string in a string and also find the location within the original string where the pattern occurs by using regex. The function should return the match object.
+'''
+
+import re
+
+def find_literals(literals, s):
+    pattern = '|'.join(literals)
+    match_object = re.search(pattern, s)
+    return match_object
+
+# Example usage
+literals = ["hello", "world"]
+s = "hello world"
+match_object = find_literals(literals, s)
+if match_object:
+    print("Matched literals:", match_object.group())
+    print("Location:", match_object.start())
+else:
+    print("No match found")
+
+'''
+Question 1: How can you use the findall() function to find all occurrences of a pattern in a string?
+'''
+
+# Example usage
+s = "hello world hello again world"
+pattern = "hello"
+matches = re.findall(pattern, s)
+print("Matches:", matches)
+
+'''
+Question 2: How can you use the sub() function to replace all occurrences of a pattern in a string with a given string?
+'''
+
+# Example usage
+s = "hello world hello again world"
+pattern = "hello"
+replacement = "hi"
+new_string = re.sub(pattern, replacement, s)
+print("New string:", new_string)
+
+'''
+Question 3: How can you use the split() function to split a string into a list of substrings based on a given pattern?
+'''
+
+# Example usage
+s = "hello world hello again world"
+pattern = " "
+new_list = re.split(pattern, s)
+print("New list:", new_list)
+
+'''
+Question 4: How can you use the finditer() function to iterate over all matches of a pattern in a string and return an iterator of MatchObjects?
+'''
+
+# Example usage
+s = "hello world hello again world"
+pattern = "hello"
+matches_object = re.finditer(pattern, s)
+for match_object in matches_object:
+    print("Match object:", match_object.group())
+    print("Location:", match_object.start())
+
+'''
+Question 5: How can you use the group() function to extract the matched substring from a MatchObject?
+'''
+
+# Example usage
+s = "hello world hello again world"
+pattern = "hello"
+match_object = re.search(pattern, s)
+if match_object:
+    print("Matched substring:", match_object.group())
+'''

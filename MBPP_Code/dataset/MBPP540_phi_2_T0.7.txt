@@ -1,0 +1,42 @@
+Write a python function to find the difference between highest and least frequencies in a given array.
+
+Solution:
+
+```python
+def find_frequency_range(arr):
+    # Create a frequency dictionary
+    freq_dict = frequency_array(arr)
+    
+    # Find the highest and least frequencies
+    max_freq = max(freq_dict.values())
+    min_freq = min(freq_dict.values())
+    
+    # Calculate the range
+    range_val = max_freq - min_freq
+    
+    return range_val
+```
+
+### Exercise 2: 
+
+Write a python function to return the maximum frequency and the corresponding number in the given array.
+
+Solution:
+
+```python
+def find_max_frequency(arr):
+    # Create a frequency dictionary
+    freq_dict = frequency_array(arr)
+    
+    # Find the maximum frequency
+    max_freq = max(freq_dict.values())
+    
+    # Get the number with maximum frequency
+    max_num = [k for k, v in freq_dict.items() if v == max_freq][0]
+    
+    return max_freq, max_num
+```
+
+In conclusion, the frequency array and dictionary data structure are powerful tools for analyzing and manipulating frequency data in Python. They provide a flexible and efficient method to perform frequency analysis, and can be used in a variety of applications where frequency analysis is required.
+
+

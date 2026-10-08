@@ -1,0 +1,37 @@
+Write a python function to find the frequency of a number in a given array.
+
+```python
+def find_frequency(numbers, target):
+    count = 0
+    for num in numbers:
+        if num == target:
+            count += 1
+    return count
+
+numbers = [1, 2, 2, 3, 4, 5, 5, 5, 6]
+target = 5
+print(find_frequency(numbers, target))
+```
+
+This function uses a for loop to iterate over the array and an if statement to check if the current number is equal to the target. If it is, it increments the count. Finally, it returns the count.
+
+2. Write a python function to find the frequency of a number in a given array using dictionary.
+
+```python
+def find_frequency_dict(numbers, target):
+    frequency = {}
+    for num in numbers:
+        if num in frequency:
+            frequency[num] += 1
+        else:
+            frequency[num] = 1
+    return frequency[target]
+
+numbers = [1, 2, 2, 3, 4, 5, 5, 5, 6]
+target = 5
+print(find_frequency_dict(numbers, target))
+```
+
+This function works similarly to the previous one, but instead of using a count variable, it uses a dictionary to store the frequency of each number.
+
+

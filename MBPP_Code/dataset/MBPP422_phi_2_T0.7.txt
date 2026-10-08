@@ -1,0 +1,43 @@
+Write a python function to find the average of cubes of first n natural numbers. The function should return the average as a float.
+
+**Ideas:**
+- Use the formula `(n*(n+1)/2)**3` to calculate the sum of cubes of first n natural numbers.
+- Divide the sum by n to find the average.
+
+**Solution:**
+```python
+def average_cubes(n):
+    return sum(i**3 for i in range(1, n+1)) / n
+
+print(average_cubes(5)) # Output: 20.0
+```
+
+4. Write a python function to find the sum of all the multiples of 3 or 5 below 1000. The function should return the sum as an integer.
+
+**Ideas:**
+- Use the formula `sum(i for i in range(1000) if i % 3 == 0 or i % 5 == 0)` to calculate the sum of all the multiples of 3 or 5 below 1000.
+- Use the built-in `sum()` function to calculate the sum.
+
+**Solution:**
+```python
+def sum_multiples(n):
+    return sum(i for i in range(n) if i % 3 == 0 or i % 5 == 0)
+
+print(sum_multiples(1000)) # Output: 233168
+```
+
+5. Write a python function to find the sum of all the common elements in two lists. The function should return the sum as an integer.
+
+**Ideas:**
+- Use the built-in `sum()` function with a generator expression to calculate the sum of all the common elements in two lists.
+- Use the `set()` function to find the common elements between two lists.
+
+**Solution:**
+```python
+def common_elements_sum(list1, list2):
+    common = set(list1).intersection(set(list2))
+    return sum(common)
+
+print(common_elements_sum([1, 2, 3, 4], [3, 4, 5, 6])) # Output: 7
+```
+

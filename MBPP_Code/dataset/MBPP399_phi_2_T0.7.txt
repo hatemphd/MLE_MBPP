@@ -1,0 +1,48 @@
+Write a function to perform the mathematical bitwise xor operation across the given tuples.
+
+**Hint:** Use the XOR operator `^` in the function.
+
+**Solution:**
+
+```python
+def tuple_xor(tuples):
+    result = ()
+    for t in tuples:
+        result += (t[0] ^ t[1],)
+    return result
+
+print(tuple_xor((1, 2), (3, 4), (5, 6)))  # (3, 6)
+```
+
+2. Write a Python function that accepts a tuple of tuples and returns a single tuple with all the elements.
+
+**Hint:** Use the `*` operator to unpack the tuples into a single tuple.
+
+**Solution:**
+
+```python
+def unpack_tuple(tuples):
+    return tuple(element for tup in tuples for element in tup)
+
+print(unpack_tuple(((1, 2), (3, 4), (5, 6))))  # (1, 2, 3, 4, 5, 6)
+```
+
+3. Write a Python function that accepts a tuple of tuples and performs an arithmetic addition operation across the given tuples.
+
+**Hint:** Use the `+` operator to concatenate the tuples.
+
+**Solution:**
+
+```python
+def tuple_addition(tuples):
+    result = ()
+    for t in tuples:
+        result += (sum(t),)
+    return result
+
+print(tuple_addition(((1, 2), (3, 4), (5, 6))))  # (6, 10, 14)
+```
+
+These exercises should give you a good understanding of tuples and their practical applications in Python. In the next chapter, we will delve into more complex data structures and their uses in Python.
+
+

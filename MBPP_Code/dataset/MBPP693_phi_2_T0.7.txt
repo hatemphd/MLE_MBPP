@@ -1,0 +1,24 @@
+Write a function to remove multiple spaces in a string by using regex.
+
+```python
+import re
+
+def remove_multiple_spaces(text):
+    return re.sub(' +', ' ', text)
+
+text = "   This   is   a   test.     "
+print(remove_multiple_spaces(text))
+```
+
+Exercise 5:
+Write a function to remove all non-alphanumeric characters in a string by using regex.
+
+```python
+import re
+
+def remove_non_alphanumeric(text):
+    return re.sub('[^a-zA-Z0-9]', '', text)
+
+text = "This is a test! 123"
+print(remove_non_alphanumeric(text))
+```

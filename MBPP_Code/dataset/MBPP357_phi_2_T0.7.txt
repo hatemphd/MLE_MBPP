@@ -1,0 +1,35 @@
+Write a function to find the maximum element of all the given tuple records.
+
+```python
+# Some ideas
+# Use tuple unpacking to get the value of each element and store them in separate variables.
+# Then use max() to get the maximum value.
+
+# Solution
+def max_record(records):
+    max_value = max(rec[1] for rec in records)
+    return max_value
+
+records = (('apple', 2.0), ('banana', 3.0), ('cherry', 1.0))
+max_value = max_record(records)
+print(max_value) # 3.0
+```
+
+5. Write a function to find the minimum element of all the given tuple records.
+
+```python
+# Some ideas
+# Use tuple unpacking to get the value of each element and store them in separate variables.
+# Then use min() to get the minimum value.
+
+# Solution
+def min_record(records):
+    min_value = min(rec[1] for rec in records)
+    return min_value
+
+records = (('apple', 2.0), ('banana', 3.0), ('cherry', 1.0))
+min_value = min_record(records)
+print(min_value) # 1.0
+```
+
+

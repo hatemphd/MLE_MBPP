@@ -1,0 +1,51 @@
+Write a python function to find the sum of repeated elements in a given array.
+
+```python
+def sum_of_repeated_elements(arr):
+    unique_elements = set()
+    repeated_elements = set()
+    for num in arr:
+        if num in unique_elements:
+            repeated_elements.add(num)
+        unique_elements.add(num)
+    return sum(repeated_elements)
+```
+
+Exercise 3: Write a python function to find the sum of repeated elements in a given array.
+
+```python
+def sum_of_repeated_elements(arr):
+    unique_elements = set()
+    repeated_elements = set()
+    for num in arr:
+        if num in unique_elements:
+            repeated_elements.add(num)
+        unique_elements.add(num)
+    return sum(repeated_elements)
+```
+
+Exercise 4: Write a python function to find the sum of repeated elements in a given array.
+
+```python
+def sum_of_repeated_elements(arr):
+    unique_elements = set()
+    repeated_elements = set()
+    for num in arr:
+        if num in unique_elements:
+            repeated_elements.add(num)
+        unique_elements.add(num)
+    return sum(repeated_elements)
+```
+
+Exercise 5: Write a python function to find the sum of repeated elements in a given array.
+
+```python
+def sum_of_repeated_elements(arr):
+    unique_elements = set()
+    repeated_elements = set()
+    for num in arr:
+        if num in unique_elements:
+            repeated_elements.add(num)
+        unique_elements.add(num)
+    return sum(repeated_elements)
+```

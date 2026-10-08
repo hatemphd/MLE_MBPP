@@ -1,0 +1,59 @@
+Write a function to find the lateral surface area of a cube.
+    """
+    side = float(input("Enter the length of a side of the cube: "))
+    lateral_area = 6 * side**2
+    print("The lateral surface area of the cube is", lateral_area)
+
+# Finding the lateral surface area of a cube
+lateral_surface_area_cube()
+
+# 5. Write a function to find the surface area of a pyramid.
+    """
+    Write a function to find the surface area of a pyramid.
+    """
+    base_area = float(input("Enter the area of the base of the pyramid: "))
+    slant_height = float(input("Enter the slant height of the pyramid: "))
+    surface_area = base_area + (0.5 * base_area * slant_height)
+    print("The surface area of the pyramid is", surface_area)
+
+# Finding the surface area of a pyramid
+surface_area_pyramid()
+
+
+"""
+    Python Concept: Lists
+    Lists are a collection of items that can be of different data types. They are ordered, mutable and allow duplicate values.
+    Lists are created using square brackets [] and items are separated by commas.
+"""
+
+# Example of creating a list
+numbers = [1, 2, 3, 4, 5]
+
+# Example of accessing items in a list
+print(numbers[0]) # Output: 1
+
+# Example of modifying items in a list
+numbers[1] = 6
+print(numbers) # Output: [1, 6, 3, 4, 5]
+
+# Example of adding items to a list
+numbers.append(7)
+print(numbers) # Output: [1, 6, 3, 4, 5, 7]
+
+# Example of removing items from a list
+numbers.remove(3)
+print(numbers) # Output: [1, 6, 4, 5, 7]
+
+# Example of list comprehension
+squares = [num**2 for num in numbers]
+print(squares) # Output: [1, 36, 16, 25, 49]
+
+# Example of slicing a list
+print(numbers[1:4]) # Output: [6, 4, 5]
+
+# Example of sorting a list
+numbers.sort()
+print(numbers) # Output: [1, 4, 5, 6, 7]
+
+# Example of counting occurrences of an item in a list
+print(numbers.count(4)) # Output: 1

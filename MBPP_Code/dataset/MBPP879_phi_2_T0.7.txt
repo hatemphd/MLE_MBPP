@@ -1,0 +1,24 @@
+Write a function that matches a string that has an 'a' followed by anything, ending in 'b' by using regex.
+    - Idea: Use `.` to match any character and `$` to match the end of the string.
+    - Solution:
+    ```python
+    import re
+
+    def match_followed_by_b(string):
+        return re.search('.a.*b$', string)
+
+    print(match_followed_by_b('abc'))
+    ```
+
+5. Use regex to find all words that start with the letter 'p' and are followed by any letter.
+    - Idea: Use `\b` to match the start and end of a word and `[^\W\d_]` to match any letter.
+    - Solution:
+    ```python
+    import re
+
+    def find_p_words(string):
+        return re.findall(r'\bp[^\W\d_]*\b', string)
+
+    print(find_p_words('Peter Piper picked a peck of pickled peppers'))
+    ```
+

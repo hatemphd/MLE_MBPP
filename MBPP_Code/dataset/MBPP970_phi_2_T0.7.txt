@@ -1,0 +1,41 @@
+Write a function to find minimum of two numbers.
+```python
+def min(a, b):
+    return a if a < b else b
+
+print(min(3, 5))  # prints: 3
+```
+
+2. Write a function that takes a list of numbers and returns the sum of the list.
+```python
+def sum_list(numbers):
+    return sum(numbers)
+
+print(sum_list([1, 2, 3, 4, 5]))  # prints: 15
+```
+
+3. Write a function that takes a list of strings and returns the longest string in the list.
+```python
+def longest_string(strings):
+    return max(strings, key=len)
+
+print(longest_string(['apple', 'banana', 'cherry']))  # prints: 'banana'
+```
+
+4. Write a function that takes a string and returns the string in reverse order.
+```python
+def reverse_string(s):
+    return s[::-1]
+
+print(reverse_string('python'))  # prints: 'nohtyp'
+```
+
+5. Write a function that takes a list of numbers and returns a new list containing only the even numbers.
+```python
+def filter_even(numbers):
+    return [n for n in numbers if n % 2 == 0]
+
+print(filter_even([1, 2, 3, 4, 5, 6]))  # prints: [2, 4, 6]
+```
+
+

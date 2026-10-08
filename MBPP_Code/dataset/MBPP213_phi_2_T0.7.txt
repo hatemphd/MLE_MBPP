@@ -1,0 +1,54 @@
+Write a function to perform the concatenation of two string tuples.
+
+**Hint:** Use the '+' operator to concatenate tuples.
+
+```python
+def concatenate_tuples(tup1, tup2):
+    return tup1 + tup2
+
+tup1 = ('a', 'b', 'c')
+tup2 = ('d', 'e', 'f')
+print(concatenate_tuples(tup1, tup2))  # ('a', 'b', 'c', 'd', 'e', 'f')
+```
+
+**Exercise 3:** Write a function to split a string into a tuple of words.
+
+**Hint:** Use the `split()` function to split the string into words.
+
+```python
+def string_to_tuple(s):
+    return tuple(s.split())
+
+s = "Hello Python programmers"
+print(string_to_tuple(s))  # ('Hello', 'Python', 'programmers')
+```
+
+**Exercise 4:** Write a function to find the most common word in a tuple of words.
+
+**Hint:** Use the `count()` and `index()` methods of tuples.
+
+```python
+def most_common_word(tup):
+    word_counts = {}
+    for word in tup:
+        word_counts[word] = tup.count(word)
+    return max(word_counts, key=word_counts.get)
+
+tup = ('apple', 'banana', 'apple', 'pear', 'banana', 'banana')
+print(most_common_word(tup))  # 'banana'
+```
+
+**Exercise 5:** Write a function to check if a string exists in a tuple of strings.
+
+**Hint:** Use the `in` keyword to check if an element exists in a tuple.
+
+```python
+def check_string_in_tuple(tup, s):
+    return s in tup
+
+tup = ('apple', 'banana', 'pear')
+s = 'banana'
+print(check_string_in_tuple(tup, s))  # True
+```
+
+

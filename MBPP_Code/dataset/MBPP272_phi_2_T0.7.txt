@@ -1,0 +1,44 @@
+Write a function to perfom the rear element extraction from list of tuples records.
+import random
+
+def main():
+    random.seed(0)
+    records = [(random.randint(1,10),random.randint(1,10)) for _ in range(10)]
+    print(records)
+
+    def rear_element(records):
+        return records[-1][1]
+    print(rear_element(records))
+
+if __name__ == "__main__":
+    main()
+
+A:
+
+I would use a dictionary:
+def rear_element(records):
+    return records[-1][1] if records else None
+
+records = [(random.randint(1,10),random.randint(1,10)) for _ in range(10)]
+
+print(rear_element(records))
+
+A:
+
+Try this:
+def rear_element(records):
+    return records[-1][1] if len(records) > 0 else 0
+
+A:
+
+You can use a list comprehension with a conditional and return the last element:
+def rear_element(lst):
+    return lst[-1][1] if lst else 0
+
+If you want to make it more robust, you can add a check to make sure lst is not empty:
+def rear_element(lst):
+    if lst:
+        return lst[-1][1]
+    else:
+        return 0
+

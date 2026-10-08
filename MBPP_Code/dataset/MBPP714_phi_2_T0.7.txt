@@ -1,0 +1,84 @@
+Write a python function to count the number of distinct power of prime factor of given number.
+
+**Idea**: Utilize the prime factorization concept to find the unique prime factors. Since the power of each prime factor may vary, we can use a Counter object from collections library to count the frequency of each factor.
+
+```python
+from collections import Counter
+
+def distinct_powers(n: int) -> int:
+    factors = Counter()
+    i = 2
+    while i * i <= n:
+        while n % i == 0:
+            factors[i] += 1
+            n //= i
+        i += 1
+    if n > 1:
+        factors[n] += 1
+    return len(factors)
+
+print(distinct_powers(60))  # Output: 4
+```
+
+The function first initializes a Counter object to keep track of the frequency of each prime factor. Then, it iteratively divides n by prime numbers while keeping track of the count of each factor. Finally, it returns the count of distinct prime factors.
+
+## Section X.5: The Greatest Common Divisor (GCD)
+
+The GCD of two or more integers is the largest positive integer that divides each of the integers without a remainder.
+
+**Idea**: We can find the GCD of two numbers by repeatedly dividing the larger number by the smaller one and storing the remainder. The GCD is the divisor that gives a remainder of 0.
+
+```python
+def gcd(a: int, b: int) -> int:
+    if b == 0:
+        return a
+    else:
+        return gcd(b, a % b)
+
+print(gcd(60, 48))  # Output: 12
+```
+
+The function uses the Euclidean algorithm, which is based on the principle that the GCD of two numbers does not change if the larger number is replaced by its difference with the smaller number.
+
+## Exercises
+
+**Exercise 1**: Write a function to count the number of divisors of a given number.
+
+**Idea**: The number of divisors of a positive integer is one more than the number of distinct prime powers that divide it.
+
+```python
+from collections import Counter
+
+def count_divisors(n: int) -> int:
+    factors = Counter()
+    i = 2
+    while i * i <= n:
+        while n % i == 0:
+            factors[i] += 1
+            n //= i
+        i += 1
+    if n > 1:
+        factors[n] += 1
+    return sum(factors.values()) + 1
+
+print(count_divisors(60))  # Output: 8
+```
+
+In this function, we first find the prime factors of the number using the prime factorization method. Then, we count the frequency of each factor and add 1 to get the number of divisors.
+
+**Exercise 2**: Write a function to check if a number is a perfect square.
+
+**Idea**: A number is a perfect square if and only if its square root is an integer.
+
+```python
+import math
+
+def is_perfect_square(n: int) -> bool:
+    return math.isqrt(n) ** 2 == n
+
+print(is_perfect_square(16))  # Output: True
+```
+
+In this function, we use the math.isqrt() function to find the integer square root of the number, and then we check if squaring the integer square root gives the original number.
+
+

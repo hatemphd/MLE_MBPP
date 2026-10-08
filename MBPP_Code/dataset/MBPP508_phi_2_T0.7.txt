@@ -1,0 +1,18 @@
+Write a function to check if the common elements between two given lists are in the same order or not.
+Input: List 1: [a, c, e, g]
+List 2: [b, d, f, h]
+Output: def same_order(l1, l2):
+    same = False
+    i = 0
+    j = 0
+    while i < len(l1) and j < len(l2):
+        if l1[i] == l2[j]:
+            same = True
+            i += 1
+            j += 1
+        else:
+            same = False
+            break
+    return same
+
+print(same_order([a, c, e, g], [b, d, f, h])) # Output: False

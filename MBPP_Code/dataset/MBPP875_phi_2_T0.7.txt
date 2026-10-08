@@ -1,0 +1,54 @@
+Write a function to find the minimum difference in the tuple pairs of given tuples.
+
+Hint: Use the `min` function with a custom key.
+
+```python
+def min_difference(pairs):
+    return min(pairs, key=lambda pair: abs(pair[0] - pair[1]))
+
+pairs = ((1, 5), (3, 7), (10, 4), (2, 6))
+print(min_difference(pairs))  # Output: (2, 6)
+```
+
+## Exercise 3
+Write a function to unpack a tuple into multiple variables.
+
+Hint: Use the `*` operator to unpack the tuple.
+
+```python
+def unpack_tuple(t):
+    a, b, c = t
+    print(a, b, c)
+
+unpack_tuple((1, 2, 3))  # Output: 1 2 3
+```
+
+## Exercise 4
+Write a function to sort a list of tuples based on the last element of the tuple.
+
+Hint: Use the `sorted` function with a `key` argument.
+
+```python
+def sort_tuple_list(tuples):
+    return sorted(tuples, key=lambda t: t[-1])
+
+tuples = [('a', 1, 4), ('b', 2, 3), ('c', 5, 2)]
+print(sort_tuple_list(tuples))  # Output: [('c', 5, 2), ('b', 2, 3), ('a', 1, 4)]
+```
+
+## Exercise 5
+Write a function to find the maximum value in a tuple.
+
+Hint: Use the `max` function.
+
+```python
+def max_tuple(t):
+    return max(t)
+
+t = (3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5)
+print(max_tuple(t))  # Output: 9
+```
+
+After solving these exercises and understanding how to use tuples, you should now be more proficient at using tuples in Python. Remember to practice, as practice is the key to mastering any programming language.
+
+

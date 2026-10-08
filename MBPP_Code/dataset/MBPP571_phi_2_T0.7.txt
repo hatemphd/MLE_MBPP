@@ -1,0 +1,109 @@
+Write a function to find maximum possible sum of disjoint pairs for the given array of integers and a number k.
+
+Example:
+Input: arr = [1,1,2,2,5,6], k = 3
+Output: 10
+Explanation:
+The maximum possible sum of disjoint pairs is 10 (1 + 2 + 5).
+
+## Solution
+
+### Step 1: Defining the problem
+
+First, let's define our problem properly. Given an array of integers, we want to find the maximum possible sum of disjoint pairs. To ensure that the pairs are disjoint, we need to find a way to select pairs such that the difference between the indices of the pairs is greater than or equal to k.
+
+### Step 2: Understanding the problem
+
+In this problem, we need to find pairs of integers in the array such that the difference between the indices of the pairs is greater than or equal to k. To do this, we can sort the array in ascending order and then iterate through the array. At each iteration, we can select the pair of adjacent integers whose difference is at least k. We can keep track of the sum of these pairs as we iterate through the array.
+
+### Step 3: Solving the problem using Python
+
+```python
+def maxDisjointPairs(arr, k):
+    arr.sort()
+    sum = 0
+    n = len(arr)
+    i = 0
+    while i < n and i+k < n:
+        sum += arr[i] + arr[i+k]
+        i += 1
+    return sum
+```
+
+### Step 4: Understanding the code
+
+In the above code, we first sort the array in ascending order using the sort() function. We then initialize a variable sum to 0 and another variable n to the length of the array. We then initialize an index i to 0. We use a while loop to iterate through the array. At each iteration, we add the sum of the current pair of adjacent integers to the variable sum. We then increment the index i by 1. We continue the loop until either i or i+k reaches the end of the array or the current pair of adjacent integers has a difference of at least k.
+
+### Step 5: Testing the code
+
+We can test our code using the following example:
+
+```python
+arr = [1,1,2,2,5,6]
+k = 3
+print(maxDisjointPairs(arr, k)) # Output: 10
+```
+
+The output of the above code is 10, which is the expected output for the given array and k.
+
+## Exercises
+
+### Exercise 1
+
+Write a function to find the minimum possible sum of disjoint pairs for the given array of integers and a number k.
+
+Example:
+Input: arr = [1,1,2,2,5,6], k = 3
+Output: 5
+Explanation:
+The minimum possible sum of disjoint pairs is 5 (1 + 1 + 2).
+
+### Solution
+
+```python
+def minDisjointPairs(arr, k):
+    arr.sort()
+    sum = 0
+    n = len(arr)
+    i = 0
+    while i < n and i+k < n:
+        sum += arr[i] + arr[i+k]
+        i += 1
+    return sum
+```
+
+### Exercise 2
+
+Write a function to find the maximum possible sum of disjoint triplets for the given array of integers and a number k.
+
+Example:
+Input: arr = [1,1,2,2,5,6], k = 3
+Output: 13
+Explanation:
+The maximum possible sum of disjoint triplets is 13 (1 + 2 + 5).
+
+### Solution
+
+```python
+def maxDisjointTriplets(arr, k):
+    arr.sort()
+    sum = 0
+    n = len(arr)
+    i = 0
+    while i < n and i+k < n:
+        sum += arr[i] + arr[i+k] + arr[i+2*k]
+        i += 1
+    return sum
+```
+
+### Exercise 3
+
+Write a function to find the minimum possible sum of disjoint triplets for the given array of integers and a number k.
+
+Example:
+Input: arr = [1,1,2,2,5,6], k = 3
+Output: 5
+Explanation:
+The minimum possible sum of disjoint triplets is 5 (1 + 1 + 2).
+
+### Solution

@@ -1,0 +1,61 @@
+Write a function to caluclate perimeter of a parallelogram.
+
+    Inputs:
+        coords1 = [x1, y1, x2, y2, x3, y3, x4, y4]
+        coords2 = [x1, y1, x2, y2, x3, y3, x4, y4]
+
+    Outputs:
+        int p = perimeter of a parallelogram
+
+    References:
+        - https://www.onlinemathlearning.com/image-files/parallelogram.png
+        - https://www.onlinemathlearning.com/linear-equations/parallelogram-formulas.html
+        - https://www.quora.com/What-is-the-formula-to-find-the-perimeter-of-a-parallelogram
+        - https://www.onlinemathlearning.com/linear-equations/parallelograms-and-trapezoids-formulas.html
+    """
+    x1, y1, x2, y2, x3, y3, x4, y4 = coords1
+    p = 2 * (abs(x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2)) + abs(x3 * (y4 - y2) + x4 * (y2 - y3) + x2 * (y3 - y4)))
+    return p
+
+
+def get_area_of_parallelogram(coords1: List[float], coords2: List[float]) -> float:
+    """
+    Calculate area of parallelogram given two lists of coordinates, where each list has 8 elements.
+
+    Inputs:
+        coords1 = [x1, y1, x2, y2, x3, y3, x4, y4]
+        coords2 = [x1, y1, x2, y2, x3, y3, x4, y4]
+
+    Outputs:
+        float a = area of parallelogram
+
+    References:
+        - https://www.onlinemathlearning.com/image-files/parallelogram.png
+        - https://www.onlinemathlearning.com/linear-equations/parallelogram-formulas.html
+        - https://www.quora.com/What-is-the-formula-to-find-the-perimeter-of-a-parallelogram
+        - https://www.onlinemathlearning.com/linear-equations/parallelograms-and-trapezoids-formulas.html
+    """
+    x1, y1, x2, y2, x3, y3, x4, y4 = coords1
+    p = 2 * (abs(x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2)) + abs(x3 * (y4 - y2) + x4 * (y2 - y3) + x2 * (y3 - y4)))
+    a = (p / 2)
+    return a
+
+
+def get_area_of_trapezium(coords1: List[float], coords2: List[float]) -> float:
+    """
+    Calculate area of trapezium given two lists of coordinates, where each list has 8 elements.
+
+    Inputs:
+        coords1 = [x1, y1, x2, y2, x3, y3, x4, y4]
+        coords2 = [x1, y1, x2, y2, x3, y3, x4, y4]
+
+    Outputs:
+        float a = area of trapezium
+
+    References:
+        - https://www.onlinemathlearning.com/image-files/trapezium.png
+        - https://www.onlinemathlearning.com/linear-equations/trapezium-formulas.html
+        - https://www.quora.com/What-is-the-formula-to-find-the-perimeter-of-a-parallelogram
+        - https://www.onlinemathlearning.com/linear-equations/parallelograms-and-trapezoids-formulas.html
+    """
+    x1, y1, x2, y2, x3, y3,

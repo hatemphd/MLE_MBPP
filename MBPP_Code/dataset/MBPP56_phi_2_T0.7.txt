@@ -1,0 +1,40 @@
+Write a python function to check if a given number is one less than twice its reverse.
+
+```python
+def is_one_less_than_double_reverse(n):
+    reverse = int(str(n)[::-1])
+    return n == 2*reverse - 1
+    
+# Test Cases
+print(is_one_less_than_double_reverse(11)) # True
+print(is_one_less_than_double_reverse(22)) # False
+```
+
+### Exercise 4:
+Write a python function to check if a given number is one less than the cube of its reverse.
+
+```python
+def is_one_less_than_cube_reverse(n):
+    reverse = int(str(n)[::-1])
+    return n == reverse**3 - 1
+    
+# Test Cases
+print(is_one_less_than_cube_reverse(27)) # True
+print(is_one_less_than_cube_reverse(36)) # False
+```
+
+### Exercise 5:
+Write a python function to check if a given number is one less than the product of its digits raised to the power of the number of digits.
+
+```python
+def is_one_less_than_digit_product_power(n):
+    digits = [int(d) for d in str(n)]
+    product = 1
+    for digit in digits:
+        product *= digit
+    return n == product**len(digits) - 1
+    
+# Test Cases
+print(is_one_less_than_digit_product_power(153)) # True
+print(is_one_less_than_digit_product_power(9474)) # False
+```

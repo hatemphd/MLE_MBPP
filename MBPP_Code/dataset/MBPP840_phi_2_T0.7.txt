@@ -1,0 +1,53 @@
+Write a python function to check whether the roots of a quadratic equation are numerically equal but opposite in sign or not.
+
+**Exercise 4:**
+Write a python function that takes the coefficients of a quadratic equation as inputs and returns the discriminant.
+
+**Exercise 5:**
+Write a python function to check whether the given quadratic equation has real roots or not.
+
+```python
+# Exercise 1
+a = input("Enter the coefficient of x^2: ")
+b = input("Enter the coefficient of x: ")
+c = input("Enter the constant term: ")
+discriminant = int(b)**2 - 4*int(a)*int(c)
+if discriminant >= 0:
+    print("The equation has real roots")
+else:
+    print("The equation has complex roots")
+
+# Exercise 2
+a = -3
+b = -4
+c = 4
+discriminant = b**2 - 4*a*c
+x1 = (-b + discriminant**0.5)/(2*a)
+x2 = (-b - discriminant**0.5)/(2*a)
+print("The roots are: ", x1, "and", x2)
+
+# Exercise 3
+def check_roots(a, b, c):
+    discriminant = b**2 - 4*a*c
+    if discriminant > 0:
+        x1 = (-b + discriminant**0.5)/(2*a)
+        x2 = (-b - discriminant**0.5)/(2*a)
+        if x1 == -x2:
+            return True
+    return False
+
+# Exercise 4
+def calculate_discriminant(a, b, c):
+    discriminant = b**2 - 4*a*c
+    return discriminant
+
+# Exercise 5
+def check_real_roots(a, b, c):
+    discriminant = b**2 - 4*a*c
+    if discriminant < 0:
+        return False
+    else:
+        return True
+```
+
+

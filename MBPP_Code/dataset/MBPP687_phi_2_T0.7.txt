@@ -1,0 +1,41 @@
+Write a function to find the greatest common divisor (gcd) of two integers by using recursion. 
+
+```python
+def gcd(a, b):
+    if b == 0:
+        return a
+    else:
+        return gcd(b, a % b)
+```
+
+3. Write a function to check if a string is a palindrome using recursion. 
+
+```python
+def is_palindrome(s):
+    if len(s) <= 1:
+        return True
+    elif s[0] == s[-1]:
+        return is_palindrome(s[1:-1])
+    else:
+        return False
+```
+
+4. Write a function to calculate the sum of the series 1 + 11 + 111 + 1111 + ... using recursion. 
+
+```python
+def sum_series(n):
+    if n == 0:
+        return 0
+    else:
+        return n * (10**n) + sum_series(n-1)
+```
+
+5. Write a function to find the greatest common divisor (gcd) of two integers by using recursion and the Euclidean algorithm. 
+
+```python
+def gcd(a, b):
+    if b == 0:
+        return a
+    else:
+        return gcd(b, a % b)
+```

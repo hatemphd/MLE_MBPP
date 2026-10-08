@@ -1,0 +1,14 @@
+Write a python function to multiply all items in the list.
+
+```python
+def multiply_all(numbers):
+    product = 1
+    for num in numbers:
+        product *= num
+    return product
+
+numbers = [1, 2, 3, 4, 5]
+print(multiply_all(numbers))  # Output: 120
+```
+
+

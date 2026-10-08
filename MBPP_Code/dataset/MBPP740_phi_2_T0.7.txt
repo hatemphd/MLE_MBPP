@@ -1,0 +1,32 @@
+Write a function to convert the given tuple to a key-value dictionary using adjacent elements.
+```python
+t = (1, 2, 3, 4, 5, "a", "b", "c")
+```
+_Hint: Use the zip() function._
+
+Solution:
+```python
+def tuple_to_dict(t):
+    return dict(zip(t[::2], t[1::2]))
+
+t = (1, 2, 3, 4, 5, "a", "b", "c")
+print(tuple_to_dict(t)) # Outputs: {1: 2, 3: 4, 5: 'a', 7: 'b', 9: 'c'}
+```
+    
+3. Create a tuple with mixed data types and convert it to a dictionary where each element in the tuple is a key and its data type is the value.
+```python
+t = (1, "a", True, 3.14, "Python", [1, 2, 3], {"name": "John"})
+```
+_Hint: Use the type() function._
+
+Solution:
+```python
+t = (1, "a", True, 3.14, "Python", [1, 2, 3], {"name": "John"})
+
+def tuple_to_dict(t):
+    return {elem: type(elem) for elem in t}
+
+print(tuple_to_dict(t)) # Outputs: {1: <class 'int'>, 'a': <class 'str'>, True: <class 'bool'>, 3.14: <class 'float'>, 'Python': <class 'str'>, [1, 2, 3]: <class 'list'>, {'name': 'John'}: <class 'dict'>}
+```
+
+

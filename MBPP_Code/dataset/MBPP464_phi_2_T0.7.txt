@@ -1,0 +1,11 @@
+Write a function to check if all values are same in a dictionary.
+
+```python
+def all_same(dictionary):
+    return len(set(dictionary.values())) == 1
+
+print(all_same({"name": "John", "age": 30, "country": "USA"}))  # Returns: True
+print(all_same({"name": "John", "age": 30, "country": "USA", "hobby": "Reading"}))  # Returns: False
+```
+
+

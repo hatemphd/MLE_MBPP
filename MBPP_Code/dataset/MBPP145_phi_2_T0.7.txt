@@ -1,0 +1,27 @@
+Write a python function to find the maximum difference between any two elements in a given array.
+
+**Idea:** Use the built-in Python function `max()` to find the maximum element in the array, then subtract the minimum element from it.
+
+**Solution:**
+
+```python
+def max_difference(arr):
+    return max(arr) - min(arr)
+```
+
+### Exercise 5:
+
+Write a python function to check if a given array is sorted in ascending order.
+
+**Idea:** Use a `for` loop to compare each element with the next one in the array. If an element is greater than the next one, return False. If the loop completes without finding any such pair, return True.
+
+**Solution:**
+
+```python
+def is_sorted(arr):
+    for i in range(len(arr) - 1):
+        if arr[i] > arr[i+1]:
+            return False
+    return True
+```
+

@@ -1,0 +1,72 @@
+Write a function to add the given list to the given tuples.
+
+```python
+def add_to_tuples(lst: list, tuples: list) -> tuple:
+    """
+    Add the given list to the given tuples.
+    
+    :param lst: The list to add to the tuples.
+    :param tuples: The list of tuples to add the list to.
+    :return: The updated list of tuples.
+    """
+    return [t + (lst,) for t in tuples]
+
+
+# Test the function
+print(add_to_tuples([1, 2, 3], [(4, 5), (6, 7)]))  # expected output: [(4, 5, 1, 2, 3), (6, 7, 1, 2, 3)]
+```
+
+#### Exercise 3:
+Write a function to sort the given list of tuples by the second value in each tuple.
+
+```python
+def sort_tuples(tuples: list) -> list:
+    """
+    Sort the given list of tuples by the second value in each tuple.
+    
+    :param tuples: The list of tuples to sort.
+    :return: The sorted list of tuples.
+    """
+    return sorted(tuples, key=lambda x: x[1])
+
+
+# Test the function
+print(sort_tuples([(4, 5), (1, 2), (6, 7)]))  # expected output: [(1, 2), (4, 5), (6, 7)]
+```
+
+#### Exercise 4:
+Write a function to merge the given list of tuples into a single tuple.
+
+```python
+def merge_tuples(tuples: list) -> tuple:
+    """
+    Merge the given list of tuples into a single tuple.
+    
+    :param tuples: The list of tuples to merge.
+    :return: The merged tuple.
+    """
+    return tuple([item for tup in tuples for item in tup])
+
+
+# Test the function
+print(merge_tuples([(1, 2), (3, 4), (5, 6)]))  # expected output: (1, 2, 3, 4, 5, 6)
+```
+
+#### Exercise 5:
+Write a function to remove duplicates from the given list of tuples.
+
+```python
+def remove_duplicates(tuples: list) -> list:
+    """
+    Remove duplicates from the given list of tuples.
+    
+    :param tuples: The list of tuples to remove duplicates from.
+    :return: The list of tuples with duplicates removed.
+    """
+    return [tuple(set(t)) for t in tuples]
+
+
+# Test the function
+print(remove_duplicates([(1, 2), (3, 4), (2, 3), (5, 6)]))  # expected output: [(1, 2), (3, 4), (2, 3), (5, 6)]
+```
+

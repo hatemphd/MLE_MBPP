@@ -1,0 +1,73 @@
+Write a function that matches a string that has an a followed by two to three 'b'.
+
+Think about the rules of the regex and how you can use them to match a string.
+
+Solution:
+```python
+import re
+def match_ab_b_two_three(string):
+    return bool(re.search(r'a[b]{2,3}', string))
+
+print(match_ab_b_two_three('abc')) # returns False
+print(match_ab_b_two_three('abba')) # returns True
+```
+
+Exercise 2: Write a function that replaces all 'a's with 'b's in a string.
+
+Again, think about the rules of the regex and how you can use them to replace parts of a string.
+
+Solution:
+```python
+import re
+def replace_a_with_b(string):
+    return re.sub(r'a', 'b', string)
+
+print(replace_a_with_b('abc')) # returns 'bbc'
+```
+
+Exercise 3: Write a function that checks if a string follows a specific pattern.
+
+Consider what kind of pattern you want to check for, and how you can use regex to check it.
+
+Solution:
+```python
+import re
+def pattern_check(string):
+    return bool(re.match(r'^ab+$', string))
+
+print(pattern_check('abc')) # returns False
+print(pattern_check('abbc')) # returns False
+print(pattern_check('ababab')) # returns True
+```
+
+Exercise 4: Write a function that checks if a string contains only digits.
+
+Think about what kind of string you want to check, and how you can use regex to do it.
+
+Solution:
+```python
+import re
+def contains_only_digits(string):
+    return bool(re.match(r'^\d+$', string))
+
+print(contains_only_digits('123')) # returns True
+print(contains_only_digits('123abc')) # returns False
+```
+
+Exercise 5: Write a function that checks if a string contains only letters.
+
+Think about what kind of string you want to check, and how you can use regex to do it.
+
+Solution:
+```python
+import re
+def contains_only_letters(string):
+    return bool(re.match(r'^[a-zA-Z]+$', string))
+
+print(contains_only_letters('abc')) # returns True
+print(contains_only_letters('123abc')) # returns False
+```
+
+That's all for this chapter! You've learned how to use Python's 're' module to work with regular expressions, and we've practiced what we learned with some exercises. Keep practicing, and you'll become a regex pro in no time!
+
+

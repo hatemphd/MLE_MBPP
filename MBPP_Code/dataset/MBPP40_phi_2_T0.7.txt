@@ -1,0 +1,66 @@
+Write a function to find frequency of the elements in a given list of lists using collections module.
+
+```python
+import collections
+
+def find_frequency(lst):
+    flat_list = [item for sublist in lst for item in sublist]
+    return collections.Counter(flat_list)
+
+input_list = [[1, 2, 3], [2, 3, 4], [3, 4, 5]]
+print(find_frequency(input_list))  # Outputs: Counter({3: 3, 2: 2, 4: 2, 1: 1, 5: 1})
+```
+
+In the above function, we use the Counter method from the collections module to find the frequency of each element in the flattened list.
+
+2. Write a function to flatten a list of tuples using list comprehension.
+
+```python
+def flatten_tuples(lst):
+    return [item for sublist in lst for item in sublist]
+
+input_list = [(1, 2), (3, 4), (5, 6)]
+print(flatten_tuples(input_list))  # Outputs: [1, 2, 3, 4, 5, 6]
+```
+
+In this function, we achieve the flattening effect using list comprehension. We iterate through each tuple in the list and then through each element in the tuple.
+
+3. Write a function to create a list of tuples from two lists using list comprehension.
+
+```python
+def create_tuples(list1, list2):
+    return [(a, b) for a in list1 for b in list2]
+
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+print(create_tuples(list1, list2))  # Outputs: [(1, 4), (1, 5), (1, 6), (2, 4), (2, 5), (2, 6), (3, 4), (3, 5), (3, 6)]
+```
+
+In this function, we create a list of tuples by iterating over each element in list1 and list2 and forming a tuple for each pair of elements.
+
+4. Write a function to find the maximum element in a list of lists using list comprehension.
+
+```python
+def find_max(lst):
+    flat_list = [item for sublist in lst for item in sublist]
+    return max(flat_list)
+
+input_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print(find_max(input_list))  # Outputs: 9
+```
+
+In this function, we again use list comprehension to flatten the list, and then use the max function to find the maximum element.
+
+5. Write a function to flatten a list of dictionaries using list comprehension.
+
+```python
+def flatten_dicts(lst):
+    return [item for sublist in lst for item in sublist.values()]
+
+input_list = [{'a': 1, 'b': 2}, {'c': 3, 'd': 4}, {'e': 5, 'f': 6}]
+print(flatten_dicts(input_list))  # Outputs: [1, 2, 3, 4, 5, 6]
+```
+
+In this function, we use list comprehension to iterate through each dictionary in the list and then through each value in the dictionary. This effectively flattens the list of dictionaries.
+
+

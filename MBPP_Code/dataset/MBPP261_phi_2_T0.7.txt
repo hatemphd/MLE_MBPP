@@ -1,0 +1,19 @@
+Write a function to perform mathematical division operation across the given tuples.
+
+Solution:
+
+```python
+import math
+
+def divide_tuples(tup1, tup2):
+    result = tuple(math.divide(i, j) for i, j in zip(tup1, tup2))
+    return result
+
+tup1 = (1, 2, 3)
+tup2 = (2, 2, 3)
+print(divide_tuples(tup1, tup2))  # Output: (0.5, 1.0, 1.0)
+```
+
+These exercises are designed to help you get a hands-on experience on Python tuples and how they can be used in real-world applications.
+
+

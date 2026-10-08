@@ -1,0 +1,56 @@
+Write a function to find cubes of individual elements in a list using lambda function.
+
+Ideas: Use the map() function along with the lambda function to apply the cube operation to each element.
+
+Solution:
+
+```python
+def cube_list(lst):
+    return list(map(lambda x: x**3, lst))
+
+print(cube_list([1, 2, 3, 4, 5]))
+```
+
+3. Write a function to perform a conditional transformation on a list using lambda function.
+
+Ideas: Use the filter() function along with the lambda function to apply a condition to each element.
+
+Solution:
+
+```python
+def filter_even_numbers(lst):
+    return list(filter(lambda x: x % 2 == 0, lst))
+
+print(filter_even_numbers([1, 2, 3, 4, 5]))
+```
+
+4. Write a function to sort a list of tuples using lambda function.
+
+Ideas: Use the sort() function along with the lambda function to sort the tuples based on a specific element.
+
+Solution:
+
+```python
+def sort_tuples(lst):
+    lst.sort(key = lambda x: x[1])
+    return lst
+
+print(sort_tuples([(1, 'a'), (2, 'b'), (3, 'c')]))
+```
+
+5. Write a function to convert a list of strings to the first character of each string using lambda function.
+
+Ideas: Use the map() function along with the lambda function to extract the first character from each string.
+
+Solution:
+
+```python
+def first_chars(lst):
+    return list(map(lambda x: x[0], lst))
+
+print(first_chars(['hello', 'world']))
+```
+
+By working through these exercises, you will gain a better understanding of how lambda functions can be applied in real-world scenarios as a data scientist.
+
+

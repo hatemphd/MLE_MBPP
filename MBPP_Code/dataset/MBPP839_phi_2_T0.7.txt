@@ -1,0 +1,23 @@
+Write a function to sort the tuples alphabetically by the first item of each tuple.
+
+```python
+# Solution
+def sort_tuples(tuples):
+    return sorted(tuples, key = lambda x: x[0])
+
+print(sort_tuples([('apple', 3), ('banana', 2), ('cherry', 1)]))  #[('apple', 3), ('banana', 2), ('cherry', 1)]
+```
+
+**Exercise 2**
+
+Write a function to filter out tuples where the second item is less than or equal to 2.
+
+```python
+# Solution
+def filter_tuples(tuples):
+    return list(filter(lambda x: x[1] > 2, tuples))
+
+print(filter_tuples([('apple', 3), ('banana', 2), ('cherry', 1)]))  #[('apple', 3)]
+```
+
+

@@ -1,0 +1,43 @@
+Write a function to find out the minimum no of swaps required for bracket balancing in the given string.
+
+Solution:
+We can use the stack data structure for this problem. Iterate through the string and push each opening bracket onto the stack. Whenever we encounter a closing bracket, check if the stack is empty, if it is, we push the closing bracket onto the stack. If the stack is not empty, then it means we have found an unbalanced bracket and we pop the top element from the stack. Then we increment the swap count.
+
+Here is the Python code for the above solution:
+
+def minSwaps(string):
+    stack = []
+    swaps = 0
+    for i in range(len(string)):
+        if string[i] == '(':
+            stack.append(i)
+        elif string[i] == ')':
+            if len(stack) == 0:
+                swaps += 1
+            else:
+                stack.pop()
+    swaps += len(stack)
+    return swaps
+
+Exercise 5:
+Write a function to find out the minimum number of operations required to make a given string a palindrome.
+
+Solution:
+We can use the dynamic programming approach for this problem. We can create a table where each entry represents the minimum number of operations required to make a substring up to that index a palindrome. We can then fill in this table using the recurrence relation, which is:
+
+f(i, j) = min(f(i+1, j-1), f(i+1, j)) + 1
+
+If the characters at index i and j are the same, then f(i, j) remains the same. Otherwise, we take the minimum of f(i+1, j-1) and f(i+1, j) and add 1.
+
+Here is the Python code for the above solution:
+
+def minPalindromeOps(string):
+    n = len(string)
+    table = [[0 for _ in range(n)] for _ in range(n)]
+    for i in range(n-1, -1, -1):
+        for j in range(i, n):
+            if string[i] == string[j]:
+                table[i][j] = table[i+1][j-1]
+            else:
+                table[i][j] = 1 + min(table[i+1][j], table[i][j-1])
+    return table[0][n-1]

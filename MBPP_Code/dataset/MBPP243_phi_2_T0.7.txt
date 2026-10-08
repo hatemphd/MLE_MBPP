@@ -1,0 +1,17 @@
+Write a function to sort the given list based on the occurrence of first element of tuples.
+
+##### Hints:
+- Use the method sort() which sorts the list in-place.
+- You can use a lambda function as the key for the sort() method.
+
+##### Solution:
+```python
+def sort_by_first_element(lst):
+    lst.sort(key=lambda x: x[0])
+    return lst
+
+lst = [(1, 'a'), (2, 'b'), (1, 'c'), (3, 'd')]
+print(sort_by_first_element(lst))
+```
+
+

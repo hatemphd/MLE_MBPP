@@ -1,0 +1,32 @@
+Write a function to count number of unique lists within a list.
+
+Hint: Use Python's `set` for uniqueness and `len` for counting.
+
+```python
+def count_unique_lists(list_of_lists):
+    unique_lists = set(tuple(l) for l in list_of_lists)
+    return len(unique_lists)
+
+print(count_unique_lists(list_of_lists))  # Output: 2
+```
+
+3. Write a function to flatten a list of lists.
+
+Hint: Use Python's recursion for flattening.
+
+```python
+def flatten(list_of_lists):
+    flat_list = []
+    for item in list_of_lists:
+        if isinstance(item, list):
+            flat_list.extend(flatten(item))
+        else:
+            flat_list.append(item)
+    return flat_list
+
+print(flatten(list_of_lists))  # Output: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
+
+In this chapter, we have covered advanced list operations in Python. These operations are crucial for managing and manipulating list data which are common in many data-intensive applications.
+
+

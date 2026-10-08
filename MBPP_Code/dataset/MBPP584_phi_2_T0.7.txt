@@ -1,0 +1,69 @@
+Write a function to find all adverbs and their positions in a given sentence by using regex.
+
+#### Exercise 5
+Write a function to find all words that start with a vowel and their positions in a given sentence by using regex.
+
+#### Exercise 1 Solution:
+```python
+import re
+
+def find_nouns(sentence):
+    noun_regex = r'(NN|NNS|NNP|NNPS)\\b'
+    nouns = re.findall(noun_regex, sentence)
+    return nouns
+
+sentence = "The quick brown fox jumps over the lazy dog"
+print(find_nouns(sentence)) # Output: ['The', 'brown', 'fox', 'jumps', 'dog']
+```
+
+#### Exercise 2 Solution:
+```python
+import re
+
+def find_adjectives(sentence):
+    adjective_regex = r'(JJ|JJR|JJS)\\b'
+    adjectives = re.findall(adjective_regex, sentence)
+    return adjectives
+
+sentence = "The quick brown fox jumps over the lazy dog"
+print(find_adjectives(sentence)) # Output: ['quick', 'brown', 'lazy']
+```
+
+#### Exercise 3 Solution:
+```python
+import re
+
+def find_verbs(sentence):
+    verb_regex = r'(VB|VBD|VBG|VBN|VBP|VBZ)\\b'
+    verbs = re.findall(verb_regex, sentence)
+    return verbs
+
+sentence = "The quick brown fox jumps over the lazy dog"
+print(find_verbs(sentence)) # Output: ['jumps']
+```
+
+#### Exercise 4 Solution:
+```python
+import re
+
+def find_adverbs(sentence):
+    adverb_regex = r'(RB|RBR|RBS)\\b'
+    adverbs = re.findall(adverb_regex, sentence)
+    return adverbs
+
+sentence = "The quick brown fox jumps over the lazy dog. He runs fast."
+print(find_adverbs(sentence)) # Output: ['quick', 'lazy', 'fast']
+```
+
+#### Exercise 5 Solution:
+```python
+import re
+
+def find_vowel_words(sentence):
+    vowel_regex = r'(^[aeiouAEIOU].*$)'
+    vowel_words = re.findall(vowel_regex, sentence)
+    return vowel_words
+
+sentence = "The quick brown fox jumps over the lazy dog"
+print(find_vowel_words(sentence)) # Output: ['quick', 'over']
+```

@@ -1,0 +1,26 @@
+Write a function to iterate over elements repeating each as many times as its count.
+
+```python
+def repeat_elements(lst):
+    return [i for i in lst for _ in range(lst.count(i))]
+
+print(repeat_elements([1, 2, 2, 3, 3, 3]))
+```
+
+This function is a more direct way to solve the problem by using the `count` method.
+
+**Exercise 2**: 
+
+Write a function to check if an array has all unique elements.
+
+```python
+def check_uniqueness(lst):
+    return len(lst) == len(set(lst))
+
+print(check_uniqueness([1, 2, 3, 4, 5]))
+print(check_uniqueness([1, 2, 2, 3, 3, 3]))
+```
+
+This function checks the length of the original list and the set of the list. If they are equal, it means all elements are unique.
+
+

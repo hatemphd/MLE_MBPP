@@ -1,0 +1,39 @@
+Write a function to find the number which occurs for odd number of times in the given array.
+
+**Solution:**
+
+```python
+def find_odd_occurrence(array):
+    frequency = {}
+    for num in array:
+        if num in frequency:
+            frequency[num] += 1
+        else:
+            frequency[num] = 1
+    for num, freq in frequency.items():
+        if freq % 2 != 0:
+            return num
+```
+
+**Exercise 2:** Modify the function to handle the case where more than one number occurs an odd number of times.
+
+**Hint:** You can maintain a list to store all numbers that occur an odd number of times.
+
+**Solution:**
+
+```python
+def find_odd_occurrence(array):
+    frequency = {}
+    for num in array:
+        if num in frequency:
+            frequency[num] += 1
+        else:
+            frequency[num] = 1
+    odd_occurrences = [num for num, freq in frequency.items() if freq % 2 != 0]
+    if len(odd_occurrences) == 1:
+        return odd_occurrences[0]
+    else:
+        return "More than one number occurs an odd number of times."
+```
+
+

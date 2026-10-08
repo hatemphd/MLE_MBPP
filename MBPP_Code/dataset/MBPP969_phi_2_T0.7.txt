@@ -1,0 +1,21 @@
+Write a function to join the tuples if they have similar initial elements.
+
+__Hint:__ Use `startswith` method on tuple elements.
+
+```python
+def join_tuples(tuple_list):
+    result = []
+    for t in tuple_list:
+        if result and result[-1][0].startswith(t[0]):
+            result[-1] = result[-1][0], result[-1][1] + t[1]
+        else:
+            result.append(t)
+    return result
+
+tuple_list = [('apple', 5), ('banana', 7), ('apricot', 2), ('berry', 3), ('cherry', 9)]
+print(join_tuples(tuple_list))
+```
+
+In this exercise, you'll learn how to handle tuples with common elements in a list. The function joins tuples with a common initial element in the list.
+
+

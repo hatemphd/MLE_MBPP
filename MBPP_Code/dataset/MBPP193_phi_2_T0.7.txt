@@ -1,0 +1,50 @@
+Write a function to remove the duplicates from the given tuple.
+
+Hint: You might want to convert the tuple into a set, as sets don't allow duplicates, and then convert it back to a tuple.
+
+```python
+def remove_duplicates(tuple_values):
+    return tuple(set(tuple_values))
+
+tuple_values = ("apple", "banana", "cherry", "apple", "banana")
+print(remove_duplicates(tuple_values))  # Output: ('apple', 'banana', 'cherry')
+```
+
+3. Write a Python program to reverse a tuple.
+
+Hint: Use slicing technique to reverse the tuple.
+
+```python
+def reverse_tuple(tuple_values):
+    return tuple_values[::-1]
+
+tuple_values = (1, 2, 3, 4, 5)
+print(reverse_tuple(tuple_values))  # Output: (5, 4, 3, 2, 1)
+```
+
+4. Write a Python program to concatenate two tuples.
+
+Hint: Use the + operator to concatenate tuples.
+
+```python
+def concatenate_tuples(tuple1, tuple2):
+    return tuple1 + tuple2
+
+tuple1 = ('a', 'b', 'c')
+tuple2 = (1, 2, 3)
+print(concatenate_tuples(tuple1, tuple2))  # Output: ('a', 'b', 'c', 1, 2, 3)
+```
+
+5. Write a Python program to find the maximum and minimum value in a tuple.
+
+Hint: Use max() and min() functions.
+
+```python
+def min_max_tuple(tuple_values):
+    return min(tuple_values), max(tuple_values)
+
+tuple_values = (10, 20, 30, 40, 50)
+print(min_max_tuple(tuple_values))  # Output: (10, 50)
+```
+
+

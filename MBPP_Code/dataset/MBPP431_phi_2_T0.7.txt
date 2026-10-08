@@ -1,0 +1,71 @@
+Write a function that takes two lists and returns true if they have at least one common element.
+
+```python
+def has_common_element(lst1, lst2):
+    """
+    Returns True if lst1 and lst2 have at least one common element.
+
+    Args:
+    - lst1: a list
+    - lst2: a list
+
+    Returns:
+    - a boolean value indicating whether the two lists have at least one common element
+    """
+    for item in lst1:
+        if item in lst2:
+            return True
+    return False
+```
+
+Exercise 3:
+Write a function that takes a list of strings and returns a new list with only the strings that start with a vowel.
+
+```python
+def get_vowel_strings(lst):
+    """
+    Returns a new list with only the strings from lst that start with a vowel.
+
+    Args:
+    - lst: a list of strings
+
+    Returns:
+    - a new list with only the strings from lst that start with a vowel
+    """
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    return [string for string in lst if string[0].lower() in vowels]
+```
+
+Exercise 4:
+Write a function that takes a list of numbers and returns a new list with only the even numbers.
+
+```python
+def get_even_numbers(lst):
+    """
+    Returns a new list with only the even numbers from lst.
+
+    Args:
+    - lst: a list of numbers
+
+    Returns:
+    - a new list with only the even numbers from lst
+    """
+    return [num for num in lst if num % 2 == 0]
+```
+
+Exercise 5:
+Write a function that takes a list of words and returns a dictionary with each word as a key and its length as the value.
+
+```python
+def get_word_lengths(lst):
+    """
+    Returns a dictionary with each word in lst as a key and its length as the value.
+
+    Args:
+    - lst: a list of words
+
+    Returns:
+    - a dictionary with each word in lst as a key and its length as the value
+    """
+    return {word: len(word) for word in lst}
+```

@@ -1,0 +1,27 @@
+Write a function to find numbers divisible by m or n from a list of numbers using lambda function.
+
+Ideas: Use the `filter()` function combined with a lambda function to filter the numbers.
+
+```python
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+m = 2
+n = 3
+
+result = list(filter(lambda x: x % m == 0 or x % n == 0, numbers))
+print(result)  # Output: [2, 3, 4, 6, 8, 9, 10]
+```
+
+5. Write a function to find the squares of numbers divisible by m or n from a list of numbers using lambda function.
+
+Ideas: Use the `map()` function combined with a lambda function to map the squares of the numbers.
+
+```python
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+m = 2
+n = 3
+
+result = list(map(lambda x: x**2, filter(lambda x: x % m == 0 or x % n == 0, numbers)))
+print(result)  # Output: [4, 9, 16, 36, 64, 81, 100]
+```
+
+

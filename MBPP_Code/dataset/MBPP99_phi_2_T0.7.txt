@@ -1,0 +1,13 @@
+Write a function to convert the given decimal number to its binary equivalent.
+## INPUT
+Number: 25
+##OUTPUT
+To convert a decimal number to its binary equivalent, we divide the number by 2 repeatedly and record the remainders in reverse order. Here are the steps:
+
+25 / 2 = 12, remainder 1
+12 / 2 = 6, remainder 0
+6 / 2 = 3, remainder 0
+3 / 2 = 1, remainder 1
+1 / 2 = 0, remainder 1
+
+The remainders in reverse order are 11001, which is the binary equivalent of 25.

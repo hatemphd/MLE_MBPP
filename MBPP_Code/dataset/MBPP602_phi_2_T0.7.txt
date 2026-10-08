@@ -1,0 +1,14 @@
+Write a python function to find the first repeated character in a given string.
+
+```python
+def first_repeated_char(s):
+    seen = set()
+    for c in s:
+        if c in seen:
+            return c
+        seen.add(c)
+    return None
+
+# Test the function
+print(first_repeated_char("hello")) # Output: l
+```

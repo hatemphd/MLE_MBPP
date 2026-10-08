@@ -1,0 +1,54 @@
+Write a function to find the sum of geometric progression series.
+    
+    Args:
+    - a: the first term of the geometric progression
+    - r: the common ratio of the geometric progression
+    - n: the number of terms of the geometric progression
+    
+    Returns:
+    - The sum of the geometric progression
+    """
+    def geometric_progression(a: int, r: int, n: int) -> int:
+        """
+        Compute the nth term of a geometric progression.
+        
+        Args:
+        - a: the first term of the geometric progression
+        - r: the common ratio of the geometric progression
+        - n: the number of terms of the geometric progression
+        
+        Returns:
+        - The nth term of the geometric progression
+        """
+        return a * (r ** (n-1))
+    
+    return (a * (1 - r ** n)) // (1 - r)
+
+# Example usage
+print(geometric_progression(2, 3, 4)) # Output: 162
+print(geometric_series_sum(2, 3, 4)) # Output: 162
+```
+
+Exercise 5:
+
+Write a function to find the nth term and the sum of an arithmetic progression.
+
+```python
+def arithmetic_progression(a: int, d: int, n: int) -> tuple:
+    """
+    Compute the nth term and the sum of an arithmetic progression.
+    
+    Args:
+    - a: the first term of the arithmetic progression
+    - d: the common difference of the arithmetic progression
+    - n: the number of terms of the arithmetic progression
+    
+    Returns:
+    - A tuple containing the nth term and the sum of the arithmetic progression
+    """
+    return a + (n-1) * d, n/2 * (2*a + (n-1)*d)
+
+# Example usage
+print(arithmetic_progression(2, 3, 4)) # Output: (11, 30)
+print(arithmetic_series_sum(2, 3, 4)) # Output: 30
+```

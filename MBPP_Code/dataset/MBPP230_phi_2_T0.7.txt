@@ -1,0 +1,35 @@
+Write a function to replace blank spaces with any character in a string.
+
+Hints:
+- Iterate over the string and use the `replace()` method to replace blank spaces.
+
+Solution:
+
+```python
+def replace_spaces(string, character):
+    return string.replace(' ', character)
+
+print(replace_spaces("Hello world", '-'))
+```
+
+In this solution, we've defined a function that takes two arguments: a string and a character. The function replaces every blank space in the string with the provided character.
+
+2. Write a Python function to format a string with a user-defined number of decimal places.
+
+Hints:
+- Use the `format()` method with the `:.nf` format specifier, where 'n' is the number of decimal places.
+
+Solution:
+
+```python
+def format_decimal(number, decimal_places):
+    return "{:.{}f}".format(number, decimal_places)
+
+print(format_decimal(1234567.8901, 3))
+```
+
+In this solution, we've defined a function that takes two arguments: a number and the number of decimal places. The function formats the number with the provided number of decimal places.
+
+These exercises should help you to better understand the `replace()` method and the `format()` method in Python, and how they can be applied in the context of a project.
+
+

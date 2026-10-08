@@ -1,0 +1,8 @@
+Write a python function to check whether the value exists in a sequence or not. 
+
+```python
+def value_in_sequence(values, value):
+    return value in values
+```
+
+

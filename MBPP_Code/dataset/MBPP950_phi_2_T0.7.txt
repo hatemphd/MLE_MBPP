@@ -1,0 +1,30 @@
+Write a function to display sign of the chinese zodiac for given year.
+    """
+
+    if year % 12 == 0:
+        return "Monkey"
+    
+    return "Dragon" if (year % 12) == 1 else "Snake" if (year % 12) == 2 else "Horse" if (year % 12) == 3 else "Goat" if (year % 12) == 4 else "Rooster" if (year % 12) == 5 else "Dog" if (year % 12) == 6 else "Pig" if (year % 12) == 7 else "Rat" if (year % 12) == 8 else "Ox" if (year % 12) == 9 else "Tiger" if (year % 12) == 10 else "Rabbit" if (year % 12) == 11 else "Dragon"
+
+
+def display_chinese_zodiac():
+    """
+    Display the Chinese zodiac.
+    """
+
+    print("The Chinese zodiac is as follows:")
+
+    for year in range(0, 2020):
+        print("{} is the year of the {}".format(year, sign(year)))
+
+
+def get_chinese_zodiac(year):
+    """
+    Return the Chinese zodiac sign for the given year.
+    """
+
+    return sign(year)
+
+
+if __name__ == "__main__":
+    display_chinese_zodiac()

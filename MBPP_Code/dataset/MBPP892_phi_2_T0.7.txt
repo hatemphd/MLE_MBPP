@@ -1,0 +1,22 @@
+Write a function to remove multiple spaces in a string.
+
+```python
+def remove_multiple_spaces(string):
+    return string.replace('  ', ' ')
+
+# Test
+print(remove_multiple_spaces("  This is a  test  string.  "))  # Output: 'This is a test string.'
+```
+
+### Exercise 5
+
+Write a function to convert all the characters in a string to lowercase.
+
+```python
+def to_lowercase(string):
+    return string.lower()
+
+# Test
+print(to_lowercase("This Is A TEST STRING."))  # Output: 'this is a test string.'
+```
+

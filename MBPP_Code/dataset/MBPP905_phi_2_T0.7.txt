@@ -1,0 +1,30 @@
+Write a python function to find the sum of squares of binomial co-efficients.
+
+**Solution:**
+
+```python
+def sum_of_squares_of_binomial_coefficients(n, k):
+    return sum([combination**2 for combination in binomial_coefficients(n, k)])
+
+print(sum_of_squares_of_binomial_coefficients(5, 2))
+```
+
+**Exercise 2:**
+
+Write a Python function to calculate the nth row of Pascal's triangle.
+
+**Solution:**
+
+```python
+def pascal_row(n):
+    row = [1]
+    for i in range(n):
+        row.append(row[-1] * (n-i) // (i+1))
+    return row
+
+print(pascal_row(6))
+```
+
+The `pascal_row` function uses list comprehension to calculate the elements of the `n`th row of Pascal's triangle. The formula `row[-1] * (n-i) // (i+1)` calculates the value of each element in the row.
+
+

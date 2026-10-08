@@ -1,0 +1,85 @@
+Write a function to check if a string represents an integer or not.
+
+```python
+def is_int_string(string):
+    try:
+        int(string)
+        return True
+    except ValueError:
+        return False
+
+print(is_int_string("123"))  # Returns: True
+print(is_int_string("abc"))  # Returns: False
+```
+
+2. Write a function to check if a string can be converted to a float or not.
+
+```python
+def is_float_string(string):
+    try:
+        float(string)
+        return True
+    except ValueError:
+        return False
+
+print(is_float_string("123.45"))  # Returns: True
+print(is_float_string("abc"))  # Returns: False
+```
+
+3. Update the function from exercise 1 to return a tuple with two values: a boolean indicating if the string represents an integer and a float if it does.
+
+```python
+def check_types(string):
+    try:
+        int(string)
+        return (True, float(string))
+    except ValueError:
+        return (False, None)
+
+print(check_types("123"))  # Returns: (True, 123.0)
+print(check_types("abc"))  # Returns: (False, None)
+```
+
+4. Write a function to check if a string can be converted to an integer or a float or not.
+
+```python
+def check_types(string):
+    try:
+        int(string)
+        return True
+    except ValueError:
+        try:
+            float(string)
+            return True
+        except ValueError:
+            return False
+
+print(check_types("123"))  # Returns: True
+print(check_types("abc"))  # Returns: False
+print(check_types("123.45"))  # Returns: True
+print(check_types("abc.45"))  # Returns: False
+```
+
+5. Update the function from exercise 4 to return a list of the string and the converted types.
+
+```python
+def check_types(string):
+    try:
+        int(string)
+        return [True, int(string)]
+    except ValueError:
+        try:
+            float(string)
+            return [True, float(string)]
+        except ValueError:
+            return [False, [string, None]]
+
+print(check_types("123"))  # Returns: [True, 123]
+print(check_types("abc"))  # Returns: [False, [abc, None]]
+print(check_types("123.45"))  # Returns: [True, 123.45]
+print(check_types("abc.45"))  # Returns: [False, [abc.45, None]]
+```
+
+In this chapter, we have covered the concept of exception handling in Python and how it can be used to validate different types of strings in Python. Try to implement the above examples and exercises to understand these concepts better.
+
+

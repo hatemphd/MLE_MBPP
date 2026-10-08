@@ -1,0 +1,50 @@
+Write a function to filter a dictionary based on values.
+
+```python
+# Solution
+def filter_dict(input_dict, min_value):
+    return {key: value for (key, value) in input_dict.items() if value >= min_value}
+```
+
+2. Write a function to update a dictionary with another dictionary.
+
+```python
+# Solution
+def update_dict(input_dict, update_dict):
+    for key, value in update_dict.items():
+        if key in input_dict:
+            input_dict[key] += value
+        else:
+            input_dict[key] = value
+    return input_dict
+```
+
+3. Write a function to get the maximum value in a dictionary.
+
+```python
+# Solution
+def max_dict_value(input_dict):
+    return max(input_dict.values())
+```
+
+4. Write a function to get the most common value in a dictionary.
+
+```python
+# Solution
+from collections import Counter
+
+def most_common_dict_value(input_dict):
+    return Counter(input_dict.values()).most_common(1)[0][0]
+```
+
+5. Write a function to get the least common value in a dictionary.
+
+```python
+# Solution
+from collections import Counter
+
+def least_common_dict_value(input_dict):
+    return Counter(input_dict.values()).most_common()[-1][0]
+```
+
+

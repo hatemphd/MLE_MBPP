@@ -1,0 +1,86 @@
+Write a function to find average value of the numbers in a given tuple of tuples.
+
+*Hint: You can use list comprehension to flatten the tuples and then use the sum() and len() functions to find the average.*
+
+```python
+def find_average(tup):
+    flat_tup = [num for tup in tup for num in tup]
+    avg = sum(flat_tup) / len(flat_tup)
+    return avg
+
+# Example usage
+tup = ((1, 2, 3), (4, 5), (6, 7, 8, 9))
+print(find_average(tup)) # Output: 5.0
+```
+
+#### Exercise 2
+
+Write a function to find the maximum value of the numbers in a given tuple of tuples.
+
+*Hint: You can use list comprehension to flatten the tuples and then use the max() function to find the maximum value.*
+
+```python
+def find_max(tup):
+    flat_tup = [num for tup in tup for num in tup]
+    max_num = max(flat_tup)
+    return max_num
+
+# Example usage
+tup = ((1, 2, 3), (4, 5), (6, 7, 8, 9))
+print(find_max(tup)) # Output: 9
+```
+
+#### Exercise 3
+
+Write a function to find the minimum value of the numbers in a given tuple of tuples.
+
+*Hint: You can use list comprehension to flatten the tuples and then use the min() function to find the minimum value.*
+
+```python
+def find_min(tup):
+    flat_tup = [num for tup in tup for num in tup]
+    min_num = min(flat_tup)
+    return min_num
+
+# Example usage
+tup = ((1, 2, 3), (4, 5), (6, 7, 8, 9))
+print(find_min(tup)) # Output: 1
+```
+
+#### Exercise 4
+
+Write a function to find the second smallest value of the numbers in a given tuple of tuples.
+
+*Hint: You can use list comprehension to flatten the tuples and then use the sorted() function to sort the list and then return the second element.*
+
+```python
+def find_second_smallest(tup):
+    flat_tup = [num for tup in tup for num in tup]
+    sorted_list = sorted(flat_tup)
+    second_smallest = sorted_list[1]
+    return second_smallest
+
+# Example usage
+tup = ((1, 2, 3), (4, 5), (6, 7, 8, 9))
+print(find_second_smallest(tup)) # Output: 2
+```
+
+#### Exercise 5
+
+Write a function to find the difference between the largest and smallest value of the numbers in a given tuple of tuples.
+
+*Hint: You can use list comprehension to flatten the tuples and then use the max() and min() functions to find the maximum and minimum values and then subtract them.*
+
+```python
+def find_difference(tup):
+    flat_tup = [num for tup in tup for num in tup]
+    max_num = max(flat_tup)
+    min_num = min(flat_tup)
+    diff = max_num - min_num
+    return diff
+
+# Example usage
+tup = ((1, 2, 3), (4, 5), (6, 7, 8, 9))
+print(find_difference(tup)) # Output: 8
+```
+

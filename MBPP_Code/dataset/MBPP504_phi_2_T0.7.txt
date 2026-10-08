@@ -1,0 +1,37 @@
+Write a python function to find the cube sum of first n natural numbers.
+
+'''
+def cubeSum(n):
+    return (n*(n+1)**2)/2
+
+n = int(input("Enter value of n: "))
+print("Cube Sum of first", n, "natural numbers is",cubeSum(n))
+'''
+
+#4. Write a python function to find the sum of all the prime numbers between 1 and n.
+
+'''
+def primeSum(n):
+    sum = 0
+    for i in range(2, n+1):
+        if all(i%j!=0 for j in range(2, int(i**0.5)+1)):
+            sum += i
+    return sum
+
+n = int(input("Enter value of n: "))
+print("Sum of all the prime numbers between 1 and", n, "is",primeSum(n))
+'''
+
+#5. Write a python function to find the sum of all the even numbers between 1 and n.
+
+'''
+def evenSum(n):
+    sum = 0
+    for i in range(1, n+1):
+        if (i%2 == 0):
+            sum += i
+    return sum
+
+n = int(input("Enter value of n: "))
+print("Sum of all the even numbers between 1 and", n, "is",evenSum(n))
+'''

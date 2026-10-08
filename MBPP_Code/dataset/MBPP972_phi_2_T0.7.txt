@@ -1,0 +1,61 @@
+Write a function to concatenate the given two tuples to a nested tuple.
+
+```python
+def concatenate_tuples(tup1,tup2):
+    # Write your code here
+    return tup
+
+# Test
+tup1 = (1, 2, 3)
+tup2 = (4, 5, 6)
+
+print(concatenate_tuples(tup1,tup2))
+# Expected Output: (1, 2, 3, 4, 5, 6)
+```
+
+##### Ideas
+- Use the `+` operator to concatenate the tuples.
+
+##### Solution
+```python
+def concatenate_tuples(tup1,tup2):
+    return tup1 + tup2
+
+# Test
+tup1 = (1, 2, 3)
+tup2 = (4, 5, 6)
+
+print(concatenate_tuples(tup1,tup2))
+# Expected Output: (1, 2, 3, 4, 5, 6)
+```
+
+#### Exercise 5
+Write a function to remove the last tuple from the given tuple of tuples.
+
+```python
+def remove_last_tuple(tup):
+    # Write your code here
+    return tup
+
+# Test
+tup = ((1,2),(3,4),(5,6))
+
+print(remove_last_tuple(tup))
+# Expected Output: ((1,2),(3,4))
+```
+
+##### Ideas
+- Use the `len()` function to find the length of the tuple and use slicing to remove the last tuple.
+
+##### Solution
+```python
+def remove_last_tuple(tup):
+    return tup[:-1]
+
+# Test
+tup = ((1,2),(3,4),(5,6))
+
+print(remove_last_tuple(tup))
+# Expected Output: ((1,2),(3,4))
+```
+

@@ -1,0 +1,73 @@
+Write a function to convert degrees to radians.
+
+```python
+# Solution
+def deg2rad(degrees):
+    return degrees * np.pi / 180.0
+
+# Test
+print(deg2rad(90))
+```
+
+**Exercise 2:**
+
+Write a function to calculate the cosine of an array of angles.
+
+```python
+# Solution
+def cosine(angles):
+    radians = deg2rad(angles)
+    return np.cos(radians)
+
+# Test
+angles = np.array([0, 30, 45, 60, 90])
+print(cosine(angles))
+```
+
+**Exercise 3:**
+
+Write a function to calculate the sine of an array of angles.
+
+```python
+# Solution
+def sine(angles):
+    radians = deg2rad(angles)
+    return np.sin(radians)
+
+# Test
+angles = np.array([0, 30, 45, 60, 90])
+print(sine(angles))
+```
+
+**Exercise 4:**
+
+Write a function to calculate the tangent of an array of angles.
+
+```python
+# Solution
+def tangent(angles):
+    radians = deg2rad(angles)
+    return np.tan(radians)
+
+# Test
+angles = np.array([0, 30, 45, 60, 90])
+print(tangent(angles))
+```
+
+**Exercise 5:**
+
+Write a function to calculate the inverse sine of an array of values.
+
+```python
+# Solution
+def arcsin(values):
+    return np.arcsin(values)
+
+# Test
+values = np.array([-1, 0, 1])
+print(arcsin(values))
+```
+
+These exercises will help you become comfortable with using NumPy ufunc for trigonometric operations and how they can be applied in different fields like Agriculture Science. Stay curious and keep learning!
+
+

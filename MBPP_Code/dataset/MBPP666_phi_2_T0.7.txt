@@ -1,0 +1,64 @@
+Write a function to count occurrence of a character in a string.
+
+```python
+# Solution
+
+def count_char(s, char):
+    return s.count(char)
+
+print(count_char('hello world', 'o'))  # Output: 2
+```
+
+2. Write a function to perform Caesar cipher shift on a string.
+
+```python
+# Solution
+
+def caesar_cipher(s, shift):
+    return ''.join(chr((ord(c) - 97 + shift) % 26 + 97) for c in s)
+
+print(caesar_cipher('hello', 3))  # Output: khoor
+```
+
+3. Write a function to encrypt a string using the columnar transposition cipher.
+
+```python
+# Solution
+
+def columnar_transposition(s, key):
+    s += ' ' * (len(key) - len(s) % len(key))
+    return ''.join(s[i::len(key)] for i in range(len(key)))
+
+print(columnar_transposition('hello world', 5))  # Output: hwolrllod eo
+```
+
+4. Write a function to decrypt a string encrypted with the columnar transposition cipher.
+
+```python
+# Solution
+
+def columnar_transposition_decrypt(cipher, key):
+    return ''.join(cipher[i::len(key)] for i in range(len(key)))
+
+print(columnar_transposition_decrypt('hwolrllod eo', 5))  # Output: hello world
+```
+
+5. Write a function to find the longest common prefix in a list of strings.
+
+```python
+# Solution
+
+def longest_common_prefix(strs):
+    if not strs:
+        return ""
+    for i, c in enumerate(zip(*strs)):
+        if len(set(c)) > 1:
+            return strs[0][:i]
+    return min(strs)
+
+print(longest_common_prefix(['flower', 'flow', 'flight']))  # Output: fl
+```
+
+These exercises help solidify your understanding of the `str` built-in function and how it can be applied in cryptographic scenarios. Happy coding!
+
+

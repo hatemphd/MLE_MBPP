@@ -1,0 +1,3 @@
+Write a function to return true if the given number is even else return false.
+Input: n = 6
+Output: true

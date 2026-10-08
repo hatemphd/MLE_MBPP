@@ -1,0 +1,66 @@
+Write a python function to find the next perfect square greater than a given number.
+
+Some ideas for this exercise:
+- Use the math library's sqrt function.
+- Use the ceil function from the math library to round up the square root to the nearest integer.
+
+```python
+import math
+
+def next_perfect_square(num):
+    return math.ceil(math.sqrt(num))**2
+
+print(next_perfect_square(12)) # Output: 16
+```
+
+2. Write a python function to check if a string is a palindrome or not.
+
+Some ideas for this exercise:
+- Reverse the string and check if it's equal to the original string.
+
+```python
+def is_palindrome(word):
+    return word == word[::-1]
+
+print(is_palindrome('radar')) # Output: True
+```
+
+3. Write a python function to find the greatest common divisor of two numbers.
+
+Some ideas for this exercise:
+- Use the math library's gcd function.
+
+```python
+import math
+
+def gcd(a, b):
+    return math.gcd(a, b)
+
+print(gcd(60, 48)) # Output: 12
+```
+
+4. Write a python function to find the sum of all the elements in a list.
+
+Some ideas for this exercise:
+- Use the sum function.
+
+```python
+def sum_list(numbers):
+    return sum(numbers)
+
+print(sum_list([1, 2, 3, 4, 5])) # Output: 15
+```
+
+5. Write a python function to find the largest number in a list.
+
+Some ideas for this exercise:
+- Use the built-in max function.
+
+```python
+def largest_number(numbers):
+    return max(numbers)
+
+print(largest_number([1, 2, 3, 4, 5])) # Output: 5
+```
+
+

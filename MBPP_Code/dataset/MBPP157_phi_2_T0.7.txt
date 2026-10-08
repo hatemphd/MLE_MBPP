@@ -1,0 +1,46 @@
+Write a function to reflect the run-length encoding from a list.
+
+```python
+from typing import List
+
+def encode_decode(encoded_list: List[int]) -> List[int]:
+    """
+    This function takes in an encoded list of integers and returns the corresponding decoded list.
+    """
+    decoded_list = [encoded_list[i] * encoded_list[i + 1] for i in range(0, len(encoded_list), 2)]
+    return decoded_list
+  
+print(encode_decode([1, 2, 3, 4]))  # Should print [2, 6, 12]
+```
+
+2. Write a function to encode a list using run-length encoding, but instead of using a list of integers, use a list of strings.
+
+```python
+from typing import List
+
+def encode_strings(strings_list: List[str]) -> List[int]:
+    """
+    This function takes in a list of strings and returns the corresponding run-length encoded list.
+    """
+    encoded_list = [len(s) for s in strings_list]
+    return encoded_list
+  
+print(encode_strings(["hello", "world", "python"]))  # Should print [5, 5, 6]
+```
+
+3. Write a function to decode a list of strings encoded using run-length encoding.
+
+```python
+from typing import List
+
+def decode_strings(encoded_list: List[int]) -> List[str]:
+    """
+    This function takes in a list of integers representing run-length encoded strings, and returns the corresponding decoded list.
+    """
+    decoded_list = [encoded_list[i] * " " + strings_list[i + 1] for i in range(0, len(encoded_list), 2)]
+    return decoded_list
+  
+print(decode_strings([5, 5, 6]))  # Should print ["hello", "world", "python"]
+```
+
+

@@ -1,0 +1,42 @@
+Write a function to sort counter by value. If there are multiple values with the same value, keep the order of the keys.
+
+```python
+# Define a Counter
+counter = Counter({'a': 3, 'b': 2, 'c': 3, 'd': 1})
+
+def sort_counter_by_value(counter_obj):
+    # Sort the counter by value and return the dictionary
+    return dict(sorted(counter_obj.items(), key=lambda item: item[1]))
+
+print(sort_counter_by_value(counter))
+```
+
+**Exercise 4:** Define a function to get all the keys in a Counter.
+
+```python
+# Define a Counter
+counter = Counter({'a': 3, 'b': 2, 'c': 3, 'd': 1})
+
+def get_keys(counter_obj):
+    # Return all keys of the counter
+    return counter_obj.keys()
+
+print(get_keys(counter))
+```
+
+**Exercise 5:** Define a function to get all the values in a Counter.
+
+```python
+# Define a Counter
+counter = Counter({'a': 3, 'b': 2, 'c': 3, 'd': 1})
+
+def get_values(counter_obj):
+    # Return all values of the counter
+    return counter_obj.values()
+
+print(get_values(counter))
+```
+
+In conclusion, the `Counter` class from the `collections` module provides a convenient way to count the frequency of elements in an iterable. It is especially useful when dealing with large datasets. By using the functions we have defined in this chapter, we can easily manipulate `Counter` objects to suit our needs.
+
+

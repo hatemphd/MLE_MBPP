@@ -1,0 +1,65 @@
+Write a function to check a decimal with a precision of 2.
+
+```python
+# Idea: Use the round() function to control the number of decimal places.
+
+def check_precision(decimal):
+    return round(decimal, 2) == decimal
+
+print(check_precision(3.14159))  # Returns True
+```
+
+2. Write a function to check a list of decimal numbers with a precision of 2.
+
+```python
+# Idea: Use a for loop to iterate over the list and the check_precision function.
+
+def check_decimal_list(decimal_list):
+    for decimal in decimal_list:
+        print(check_precision(decimal))
+
+check_decimal_list([3.14159, 2.71828, 1.41421])  
+# Returns True, True, True
+```
+
+3. Write a function to check if a list of decimal numbers is sorted in ascending order.
+
+```python
+# Idea: Use a for loop and the sorted() function to compare each pair of numbers.
+
+def check_sorted(decimal_list):
+    return decimal_list == sorted(decimal_list)
+
+print(check_sorted([1.0, 2.0, 3.0]))  # Returns True
+```
+
+4. Write a function to check if a list of decimal numbers is in descending order.
+
+```python
+# Idea: Use a for loop and the sorted() function to compare each pair of numbers.
+
+def check_descending(decimal_list):
+    return decimal_list == sorted(decimal_list, reverse=True)
+
+print(check_descending([3.0, 2.0, 1.0]))  # Returns True
+```
+
+5. Write a function to check if a string is a valid floating point number.
+
+```python
+# Idea: Use the try and except blocks to handle the ValueError.
+
+def is_valid_float(s):
+    try:
+        float(s)
+        return True
+    except ValueError:
+        return False
+
+print(is_valid_float('3.14'))  # Returns True
+print(is_valid_float('3.14a'))  # Returns False
+```
+
+Remember, the best way to learn is by doing, so keep practicing and exploring different ways to use these Python functions in your robotics engineering projects!
+
+

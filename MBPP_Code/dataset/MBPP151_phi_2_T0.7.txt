@@ -1,0 +1,45 @@
+Write a python function to check whether the given number is co-prime or not.
+
+Hint: Two numbers are co-prime if their only common divisor is 1.
+
+Solution:
+
+```python
+def are_coprime(n1, n2):
+    if n1 > n2:
+        greater = n1
+    else:
+        greater = n2
+
+    while greater > 1:
+        if (n1 % greater == 0 and n2 % greater == 0):
+            return False
+        greater -= 1
+
+    return True
+
+print(are_coprime(7, 15))  # returns True
+print(are_coprime(10, 25))  # returns False
+```
+
+### Exercise 2:
+
+Write a python program to calculate the modular inverse of a number.
+
+Hint: Use the Extended Euclidean Algorithm to find the modular inverse.
+
+Solution:
+
+```python
+def find_modular_inverse(a, m):
+    g, x, y = extended_gcd(a, m)
+    if g != 1:
+        return None  # modular inverse does not exist
+    return x % m
+
+print(find_modular_inverse(3, 11))  # returns 4
+```
+
+In this exercise, we have used the extended Euclidean Algorithm to find the modular inverse. The extended Euclidean algorithm is a generalization of the Euclidean algorithm, which is used to find the greatest common divisor of two numbers.
+
+

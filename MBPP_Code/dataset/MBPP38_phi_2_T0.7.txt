@@ -1,0 +1,45 @@
+Write a function to find the division of first even and odd number of a given list.
+
+Ideas: Make use of the `is_even` function and Python's `enumerate` function.
+
+Solution:
+```python
+def divide_first_eve(nums):
+    for i, num in enumerate(nums):
+        if is_even(num):
+            return num / nums[0]
+    return 0
+
+def divide_first_odd(nums):
+    for i, num in enumerate(nums):
+        if not is_even(num):
+            return num / nums[0]
+    return 0
+
+print(divide_first_eve([2, 4, 6, 8, 10]))
+print(divide_first_odd([3, 5, 7, 9, 11]))
+```
+
+2. Write a function that takes a list and returns the indexes of the first even and odd numbers in the list.
+
+Ideas: Use the `is_even` function in a for loop to iterate through the list. Use the `enumerate` function to get the index of each number.
+
+Solution:
+```python
+def find_first_even_odd(nums):
+    first_even_index = None
+    first_odd_index = None
+    for i, num in enumerate(nums):
+        if is_even(num):
+            if first_even_index is None:
+                first_even_index = i
+        else:
+            if first_odd_index is None:
+                first_odd_index = i
+    return first_even_index, first_odd_index
+
+print(find_first_even_odd([2, 4, 6, 8, 10]))
+print(find_first_even_odd([3, 5, 7, 9, 11]))
+```
+
+

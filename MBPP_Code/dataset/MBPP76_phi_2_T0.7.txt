@@ -1,0 +1,10 @@
+Write a python function to count the number of squares in a rectangle.
+def count_squares(length, width):
+    # Write a python code to return the number of squares that can fit in the rectangle
+    # Hint: To count the number of squares, divide the length by the side length of a square
+    # Assume the side length of a square is an integer
+    return length // width
+
+print(count_squares(12, 3)) # 3
+print(count_squares(15, 4)) # 3
+print(count_squares(10, 5)) # 2

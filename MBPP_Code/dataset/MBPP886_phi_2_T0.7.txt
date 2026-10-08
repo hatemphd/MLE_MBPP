@@ -1,0 +1,80 @@
+Write a function to add all the numbers in a list and divide it with the length of the list.
+
+Idea: Use the `sum()` function to add the numbers and `len()` function to calculate the length.
+
+```python
+def avg(numbers):
+    total = sum(numbers)
+    length = len(numbers)
+    return total / length
+
+numbers = [1, 2, 3, 4, 5]
+print(avg(numbers))  # Output: 3.0
+```
+
+**Exercise 2:** Create a Python dictionary to store patient data and then use the `get()` method to retrieve the BMI of the patient.
+
+Idea: Use `get()` method to retrieve the value for the key 'BMI'.
+
+```python
+patient_data = {
+    'name': 'John Doe',
+    'age': 35,
+    'height': 180.0,
+    'weight': 75.0
+}
+
+bmi = patient_data.get('BMI')
+print(bmi)  # Output: None
+```
+
+**Exercise 3:** Write a function to add all the numbers in a list and check if the sum is greater than 100.
+
+Idea: Use `sum()` function to calculate the sum and an `if` condition to check the condition.
+
+```python
+def check_sum(numbers):
+    total = sum(numbers)
+    if total > 100:
+        return True
+    else:
+        return False
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(check_sum(numbers))  # Output: True
+```
+
+**Exercise 4:** Create a Dictionary of patients with their respective blood type and use the `get()` method to retrieve the blood type of a patient. If the blood type does not exist, return 'Unknown'.
+
+Idea: Use `get()` method to retrieve the value for the key 'blood_type'. If the key does not exist, use the default value 'Unknown'.
+
+```python
+patients = {
+    'John Doe': 'Type A',
+    'Jane Smith': 'Type O',
+    'Bob Johnson': 'Type B'
+}
+
+blood_type = patients.get('Alice Brown', 'Unknown')
+print(blood_type)  # Output: Unknown
+```
+
+**Exercise 5:** Write a function to add all the numbers in a list and print 'High Risk' if the sum is more than 200, 'Low Risk' if the sum is less than 150 and 'Medium Risk' otherwise.
+
+Idea: Use `sum()` function to calculate the sum. Use an `if` conditional statement to check the condition.
+
+```python
+def risk_level(numbers):
+    total = sum(numbers)
+    if total > 200:
+        return 'High Risk'
+    elif total < 150:
+        return 'Low Risk'
+    else:
+        return 'Medium Risk'
+
+numbers = [50, 60, 70, 80, 90, 100]
+print(risk_level(numbers))  # Output: High Risk
+```
+
+

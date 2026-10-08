@@ -1,0 +1,25 @@
+Write a python function to check for odd parity of a given number.
+
+Hint: Parity is the property of an integer to be either odd or even. An odd number will have a 1 in the least significant bit of its binary representation, else 0. A number with an odd number of 1s in its binary representation is called odd parity, while one with an even number is even parity.
+
+```python
+def check_parity(n):
+    # Convert number to binary 
+    binary_n = bin(n)
+    # Remove '0b' prefix
+    binary_n = binary_n[2:]
+    # Count number of 1s in binary number
+    count_ones = binary_n.count('1')
+    # Check parity
+    if count_ones % 2 == 0:
+        return "Even parity"
+    else:
+        return "Odd parity"
+        
+print(check_parity(10))  # Output: Even parity
+print(check_parity(15))  # Output: Odd parity
+```
+
+This chapter deep dives into the manipulation of numbers in Python, specifically focusing on finding all numbers with odd parity in a given range. The concepts and examples presented here should provide a strong foundation to handle more complex number-based problems in Python.
+
+

@@ -1,0 +1,38 @@
+Write a function to validate a gregorian date.
+
+Hints: 
+- You can use the `datetime.strptime` function to validate the date format. 
+- The date format for validating Gregorian dates is '%Y-%m-%d'. 
+
+```python
+# Solution
+def validate_gregorian_date(date):
+    try:
+        datetime.strptime(date, '%Y-%m-%d')
+        return True
+    except ValueError:
+        return False
+
+# Test the function
+print(validate_gregorian_date('2022-02-20'))  # Output: True
+print(validate_gregorian_date('2022-02-19'))  # Output: False
+```
+
+2. Write a function that takes as input a date and returns the day of the week as a string.
+
+Hints: 
+- You can use the `strftime` function to format the date. 
+- The day of the week for the first day of a month is the name of the first day of the month.
+
+```python
+# Solution
+def get_day_of_week(date):
+    day_of_week = datetime.strftime(date, '%A')
+    return day_of_week
+
+# Test the function
+date = datetime.datetime(2022, 2, 20)
+print(get_day_of_week(date))  # Output: Friday
+```
+
+

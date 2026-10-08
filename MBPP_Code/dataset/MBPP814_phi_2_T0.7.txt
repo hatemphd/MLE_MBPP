@@ -1,0 +1,11 @@
+Write a function to find the area of a rombus.
+
+```python
+def rombus_area(a, b):
+    area = abs(a * b)
+    return area
+
+print(rambus_area(3, 5))  # Output: 15
+```
+
+

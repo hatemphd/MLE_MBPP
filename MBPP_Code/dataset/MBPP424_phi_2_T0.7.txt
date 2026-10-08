@@ -1,0 +1,88 @@
+Write a function to extract only the rear index element of each string in the given tuple.
+
+_Idea_: Similar to the previous exercise, use a for loop to iterate over the tuple and use string slicing to extract the last character.
+
+_Solution_:
+
+```python
+def extract_rear_index(tpl):
+    rear_index = []
+    for s in tpl:
+        rear_index.append(s[-1])
+    return rear_index
+
+tpl = ("Python", "Java", "C++")
+print(extract_rear_index(tpl))  # Outputs: ['n', 'a', 'k']
+```
+
+**Exercise 2**: Write a function that accepts a tuple of strings and returns a new tuple that contains the length of each string in the original tuple.
+
+_Idea_: Use the len() function in a for loop to calculate the length of each string.
+
+_Solution_:
+
+```python
+def length_of_strings(tpl):
+    lengths = []
+    for s in tpl:
+        lengths.append(len(s))
+    return tuple(lengths)
+
+tpl = ("Python", "Java", "C++")
+print(length_of_strings(tpl))  # Outputs: (6, 4, 3)
+```
+
+**Exercise 3**: Write a function that accepts a tuple of integers and returns a new tuple that contains the square of each integer in the original tuple.
+
+_Idea_: Use a for loop to iterate over the tuple and calculate the square of each integer.
+
+_Solution_:
+
+```python
+def square_of_integers(tpl):
+    squares = []
+    for i in tpl:
+        squares.append(i ** 2)
+    return tuple(squares)
+
+tpl = (1, 2, 3, 4, 5)
+print(square_of_integers(tpl))  # Outputs: (1, 4, 9, 16, 25)
+```
+
+**Exercise 4**: Write a function that accepts a tuple of strings and returns a new tuple that contains only the strings that have more than three characters.
+
+_Idea_: Use a for loop to iterate over the tuple and use the len() function to check the length of each string.
+
+_Solution_:
+
+```python
+def filter_strings(tpl):
+    filtered = []
+    for s in tpl:
+        if len(s) > 3:
+            filtered.append(s)
+    return tuple(filtered)
+
+tpl = ("Python", "Java", "C++", "Javascript", "Ruby")
+print(filter_strings(tpl))  # Outputs: ('Javascript', 'Ruby')
+```
+
+**Exercise 5**: Write a function that accepts a tuple of integers and returns a new tuple that contains only the even numbers from the original tuple.
+
+_Idea_: Use a for loop to iterate over the tuple and use the modulus operator to check if each number is even.
+
+_Solution_:
+
+```python
+def filter_even_numbers(tpl):
+    filtered = []
+    for i in tpl:
+        if i % 2 == 0:
+            filtered.append(i)
+    return tuple(filtered)
+
+tpl = (1, 2, 3, 4, 5, 6)
+print(filter_even_numbers(tpl))  # Outputs: (2, 4, 6)
+```
+
+

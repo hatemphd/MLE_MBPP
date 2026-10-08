@@ -1,0 +1,21 @@
+Write a python function to find the perimeter of a cylinder.
+
+# Solution:
+import math
+
+def cylinder_perimeter(radius, height):
+    return 2 * math.pi * radius + 2 * math.pi * radius * height
+
+# Example usage
+cylinder_perimeter(3, 4) # Output: 37.69911184307752
+
+# Question 5: Write a python function to find the volume of a sphere.
+
+# Solution:
+import math
+
+def sphere_volume(radius):
+    return 4/3 * math.pi * radius**3
+
+# Example usage
+sphere_volume(3) # Output: 113.09733552923254

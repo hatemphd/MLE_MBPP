@@ -1,0 +1,13 @@
+Write a function to find the depth of a dictionary.
+
+```python
+def dict_depth(d):
+    if not d:
+        return 0
+    return 1 + max(dict_depth(v) for v in d.values() if isinstance(v, dict))
+
+x = {'a': {'b': {'c': 1}}}
+print(dict_depth(x))  # Prints: 3
+```
+
+

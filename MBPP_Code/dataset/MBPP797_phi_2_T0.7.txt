@@ -1,0 +1,49 @@
+Write a python function to find the sum of all odd natural numbers within the range l and r.
+
+Hint: Use the modulo operator to check if a number is odd.
+
+```python
+def sum_of_odd_numbers(l, r):
+    sum = 0
+    for i in range(l, r+1):
+        if i % 2 != 0:
+            sum = sum + i
+    return sum
+
+print(sum_of_odd_numbers(1, 10))  # Output: 25
+```
+
+### Exercise 2:
+
+Write a python function to find the product of all even natural numbers within the range l and r.
+
+Hint: Similar to Exercise 1, use the modulo operator to check if a number is even.
+
+```python
+def product_of_even_numbers(l, r):
+    product = 1
+    for i in range(l, r+1):
+        if i % 2 == 0:
+            product = product * i
+    return product
+
+print(product_of_even_numbers(1, 10))  # Output: 3840
+```
+
+### Exercise 3:
+
+Write a python function to find the sum of squares of all natural numbers within the range l and r.
+
+Hint: Use the pow() function to find the square of a number.
+
+```python
+def sum_of_squares(l, r):
+    sum = 0
+    for i in range(l, r+1):
+        sum += pow(i, 2)
+    return sum
+
+print(sum_of_squares(1, 5))  # Output: 55
+```
+
+

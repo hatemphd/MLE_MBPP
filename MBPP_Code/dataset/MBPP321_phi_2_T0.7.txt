@@ -1,0 +1,53 @@
+Write a function to find the demlo number for the given number.
+
+"""
+
+# Time Complexity: O(log(log(N)))
+# Space Complexity: O(1)
+
+# Reference: https://www.geeksforgeeks.org/find-largest-power-of-2-less-or-equal-to-n/
+
+def greatest_power_of_two(n):
+    if n == 0:
+        return 0
+    logN = 0
+    while (n >> logN) != 0:
+        logN += 1
+
+    return 1 << (logN - 1)
+
+# Time Complexity: O(log(log(N)))
+# Space Complexity: O(1)
+
+
+def greatest_power_of_two(n):
+    if n == 0:
+        return 0
+    logN = 0
+    while (n >> logN) != 0:
+        logN += 1
+    return 1 << (logN - 1)
+
+# Time Complexity: O(log(log(N)))
+# Space Complexity: O(1)
+
+import math
+
+def greatest_power_of_two(n):
+    return 2**(int(math.log(n, 2)))
+
+# Time Complexity: O(log(log(N)))
+# Space Complexity: O(1)
+
+# Time Complexity: O(log(log(N)))
+# Space Complexity: O(1)
+
+def greatest_power_of_two(n):
+    if n == 0:
+        return 0
+    while (n > 1):
+        n >>= 1
+    return 1 << (int(math.log(n, 2)))
+
+# Time Complexity: O(log(log(N)))
+# Space Complexity: O(1)

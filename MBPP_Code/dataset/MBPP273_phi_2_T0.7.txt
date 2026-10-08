@@ -1,0 +1,18 @@
+Write a function to substract the contents of one tuple with corresponding index of other tuple.
+
+Hints: 
+- You can use a for loop to iterate over the indices of the two tuples.
+- You will need to access the elements of the tuples using their respective indices.
+
+Solution:
+```python
+def subtract_tuples(tuple1, tuple2):
+    result_tuple = ()
+    for i in range(len(tuple1)):
+        result_tuple += (tuple1[i] - tuple2[i],)
+    return result_tuple
+
+print(subtract_tuples((10, 20, 30), (3, 4, 5)))  # Output: (7, 16, 25)
+```
+
+

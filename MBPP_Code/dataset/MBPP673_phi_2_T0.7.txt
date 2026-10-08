@@ -1,0 +1,13 @@
+Write a python function to convert a list of multiple integers into a single integer.
+```python
+def array_convert(arr):
+    result = 0
+    for num in arr:
+        result = result * 10 + num
+    return result
+
+print(array_convert([1, 2, 3, 4, 5]))  # Output: 12345
+```
+The `array_convert` function uses a loop to convert each integer in the array to a string, then adds the strings together to form a new string. The `int()` function is used to convert the new string back to an integer.
+
+

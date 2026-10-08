@@ -1,0 +1,24 @@
+Write a function to compute the value of ncr mod p. Note that ncr(m,n) = nCm = n! / [m!(n-m)!].
+
+```python
+def ncr(m, n, p):
+    # Your code here
+
+# test your function
+ncr(10, 5, 127) # should return 64
+```
+
+__Hint__: Use the `nCrModP` class we defined earlier.
+
+__Solution__:
+
+```python
+def ncr(m, n, p):
+    return nCrModP(m, n, p)
+
+print(ncr(10, 5, 127)) # should return 64
+```
+
+In summary, this chapter provided a comprehensive introduction to the computation of nCr mod p. It emphasized the importance of object-oriented programming, encapsulation, and exception handling in Python. The exercises provide a practical application of the discussed concepts.
+
+

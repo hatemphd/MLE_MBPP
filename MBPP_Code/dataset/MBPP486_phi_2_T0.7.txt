@@ -1,0 +1,35 @@
+Write a function to compute binomial probability for the given number.
+```python
+def binomial_probability(n, p, x):
+    return factorial(n) / (factorial(x) * factorial(n - x)) * (p**x) * ((1-p)**(n-x))
+
+# test the function
+print(binomial_probability(10, 0.5, 8))  # Output: 0.24609375
+```
+
+3. Write a function to compute the multinomial coefficient for the given parameters.
+```python
+def multinomial_coefficient(n, k):
+    return factorial(n) / ((factorial(k[0]) * factorial(k[1]) * factorial(k[2])))
+
+# test the function
+print(multinomial_coefficient(10, [3, 2, 5]))  # Output: 15504
+```
+
+4. Write a function to compute binomial probability for the given number and list of trials.
+```python
+def binomial_probability(n, p, x):
+    return sum([multinomial_coefficient(n, xi) * (p**xi) * ((1-p)**(n-xi)) for xi in x])
+
+# test the function
+print(binomial_probability(10, 0.5, [3, 2, 5]))  # Output: 0.24609375
+```
+
+5. Write a function to compute the multinomial coefficient for the given parameters using list comprehension.
+```python
+def multinomial_coefficient(n, k):
+    return sum([factorial(n) / (factorial(k[i]) * factorial(n - k[i])) for i in range(len(k))])
+
+# test the function
+print(multinomial_coefficient(10, [3, 2, 5]))  # Output: 15504
+```

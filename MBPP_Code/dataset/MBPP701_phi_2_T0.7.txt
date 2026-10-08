@@ -1,0 +1,13 @@
+Write a function to find the equilibrium index of the given array. The equilibrium index of an array is an index such that the sum of the elements to the left of the index is equal to the sum of the elements to the right of the index. If there is no equilibrium index, return -1.
+Input: [1, 7, 3, 6, 5, 6]
+Output: def find_equilibrium_index(arr):
+    left_sum = 0
+    right_sum = sum(arr)
+    for i in range(len(arr)):
+        right_sum -= arr[i]
+        if left_sum == right_sum:
+            return i
+        left_sum += arr[i]
+    return -1
+
+print(find_equilibrium_index([1, 7, 3, 6, 5, 6])) # 3

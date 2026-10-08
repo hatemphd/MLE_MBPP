@@ -1,0 +1,28 @@
+Write a function to find the peak element in the given array.
+
+Hint: The peak element is the element that is greater than its neighbors.
+
+### Exercise 2
+
+Given an array, write a function to determine if it is a subarray of consecutive integers.
+
+Hint: A subarray of consecutive integers is an array where each element is one greater than the previous element.
+
+### Exercise 3
+
+Given a 2D array, write a function to check if it is a square matrix (i.e., all rows have the same length).
+
+Hint: The length of a row is given by the number of elements in the row.
+
+### Exercise 4
+
+Given a 2D array, write a function to check if it is a valid Sudoku board (i.e., each row, column, and 3x3 sub-grid contains the digits 1 to 9 exactly once).
+
+Hint: A valid Sudoku board requires the use of sets and matrix manipulation.
+
+### Exercise 5
+
+Given a 2D array, write a function to check if it is a magic square (i.e., the sum of the elements in each row, column, and diagonal is the same).
+
+Hint: A magic square has the property that the sum of the elements in each row, column, and diagonal is the same.
+

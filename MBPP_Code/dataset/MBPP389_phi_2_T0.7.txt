@@ -1,0 +1,109 @@
+Write a function to find the n'th lucas number.
+
+Solution:
+'''
+
+class Solution:
+    def lucas(self, n: int) -> int:
+        if n == 0:
+            return 2
+        elif n == 1:
+            return 1
+        
+        lucas_0 = 2
+        lucas_1 = 1
+        
+        for i in range(2, n):
+            lucas_n = lucas_0 + lucas_1
+            lucas_0 = lucas_1
+            lucas_1 = lucas_n
+            
+        return lucas_n
+            
+'''
+
+Question 2: Write a function to find the n'th fibonacci number.
+
+Solution:
+'''
+
+class Solution:
+    def fibonacci(self, n: int) -> int:
+        if n == 0:
+            return 0
+        elif n == 1:
+            return 1
+        
+        fib_0 = 0
+        fib_1 = 1
+        
+        for i in range(2, n):
+            fib_n = fib_0 + fib_1
+            fib_0 = fib_1
+            fib_1 = fib_n
+            
+        return fib_n
+            
+'''
+
+Question 3: Write a function to check if a given number is a prime number.
+
+Solution:
+'''
+
+class Solution:
+    def is_prime(self, num: int) -> bool:
+        if num <= 1:
+            return False
+        
+        for i in range(2, num):
+            if num % i == 0:
+                return False
+                
+        return True
+            
+'''
+
+Question 4: Write a function to find the sum of digits of a given number.
+
+Solution:
+'''
+
+class Solution:
+    def sum_of_digits(self, num: int) -> int:
+        sum = 0
+        
+        while num > 0:
+            digit = num % 10
+            sum += digit
+            num //= 10
+            
+        return sum
+            
+'''
+
+Question 5: Write a function to find the Least Common Multiple (LCM) of two given numbers.
+
+Solution:
+'''
+
+class Solution:
+    def lcm(self, num1: int, num2: int) -> int:
+        if num1 > num2:
+            greater = num1
+        else:
+            greater = num2
+            
+        while True:
+            if greater % num1 == 0 and greater % num2 == 0:
+                lcm = greater
+                break
+            greater += 1
+            
+        return lcm
+            
+'''
+
+Conclusion:
+
+In this blog post, we have explored some basic examples of problem-solving using data structures and algorithms in Python. We have used different data structures such as lists, dictionaries, sets, and tuples and various algorithms such as sorting, searching, and recursion to solve problems. By applying these concepts, we can solve a variety of problems in Python.

@@ -1,0 +1,32 @@
+Write a function to check if the given tuple contains all valid values or not.
+
+```python
+def check_valid_values(tup):
+    for value in tup:
+        if not isinstance(value, (int, float)):
+            return False
+    return True
+
+# Testing the function with an example tuple
+tup = (10, 20, '30.5', 40)
+print(check_valid_values(tup))        # Output: False
+
+tup = (10, 20, 30.5, 40)
+print(check_valid_values(tup))        # Output: True
+```
+
+### Exercise 5
+Write a function to filter out invalid values from a tuple and return a new tuple.
+
+```python
+def filter_invalid_values(tup):
+    return tuple([value for value in tup if isinstance(value, (int, float))])
+
+# Testing the function with an example tuple
+tup = (10, 20, '30.5', 40)
+print(filter_invalid_values(tup))        # Output: (10, 20, 40)
+
+tup = (10, 20, 30.5, '40')
+print(filter_invalid_values(tup))        # Output: (10, 20, 30.5, 40)
+```
+

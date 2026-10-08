@@ -1,0 +1,24 @@
+Write a function to find the nested list elements which are present in another list.
+
+```python
+def find_elements(list1, list2):
+    # Your code here
+
+find_elements([[1, 2], [3, 4]], [1, 2])
+```
+
+Solution:
+
+```python
+def find_elements(list1, list2):
+    result = []
+    # Using list comprehension and nested for loop
+    result = [i for i in list1 if any(j in i for j in list2)]
+    return result
+
+print(find_elements([[1, 2], [3, 4]], [1, 2]))
+```
+
+This solution uses list comprehension and the any() function to find the nested list elements in another list.
+
+

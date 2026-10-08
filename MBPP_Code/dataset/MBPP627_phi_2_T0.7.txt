@@ -1,0 +1,74 @@
+Write a python function to find the smallest missing number from the given array.
+#Array = [1,3,6,4,1,2]
+
+def missing_number(arr):
+    arr.sort()
+    #for i in range(len(arr)):
+    #if arr[i] != i+1:
+    #    print(i+1)
+    #return i+1
+    #print(arr)
+    for i in range(len(arr)-1):
+        if arr[i] != i+1 or arr[i+1] != i+2:
+            return i+1
+    return None
+arr = [1,3,6,4,1,2]
+print(missing_number(arr))
+
+#Expected output: 5
+
+# Solution: The above code finds the smallest missing number in the given array.
+#We first sort the array and then loop through the array to find the first number that is not equal to its index plus one.
+#If such a number is not found, then the missing number is the next integer.
+
+#Q3. Write a python function to find the maximum number of non-repeating numbers from the given array.
+#Array = [1,2,2,3,4,4,5]
+
+def max_non_repeating(arr):
+    arr.sort()
+    max_count = 0
+    for i in range(len(arr)):
+        if arr[i] != arr[i-1]:
+            max_count += 1
+    return max_count
+arr = [1,2,2,3,4,4,5]
+print(max_non_repeating(arr))
+
+#Expected output: 4
+
+# Solution: The above code finds the maximum number of non-repeating numbers in the given array.
+#We first sort the array and then count the number of non-repeating elements.
+#We start counting from the second element and check if it is not equal to the previous element.
+#If it is not equal, then we increase the count by one.
+
+#Q4. Write a python function to find the sum of all the elements in the given array.
+#Array = [1,3,6,4,1,2]
+
+def sum_array(arr):
+    sum = 0
+    for i in arr:
+        sum += i
+    return sum
+arr = [1,3,6,4,1,2]
+print(sum_array(arr))
+
+#Expected output: 17
+
+# Solution: The above code finds the sum of all the elements in the given array.
+#We loop through the array and add each element to the sum.
+
+#Q5. Write a python function to remove the duplicates from the given array and print the array.
+#Array = [1,3,6,4,1,2,3]
+
+def remove_duplicates(arr):
+    arr_set = set(arr)
+    arr_list = list(arr_set)
+    print(arr_list)
+arr = [1,3,6,4,1,2,3]
+remove_duplicates(arr)
+
+#Expected output: [1,2,3,4,6]
+
+# Solution: The above code removes the duplicates from the given array.
+#We first convert the array to a set to remove duplicates.
+#Then we convert the set back to a list and print it.

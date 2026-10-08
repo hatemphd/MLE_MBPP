@@ -1,0 +1,30 @@
+Write a function to check whether a list contains the given sublist or not.
+
+```python
+def contains(arr, sublist):
+    # Your code here
+
+# Example
+print(contains([1, 2, 3, 4, 5], [2, 3]))  # It should print: True
+print(contains([1, 2, 3, 4, 5], [2, 6]))  # It should print: False
+```
+
+**Hint:** Consider iterating over the array and using the `in` operator to check for the sublist.
+
+**Solution:**
+
+```python
+def contains(arr, sublist):
+    for i in range(len(arr) - len(sublist) + 1):
+        if arr[i:i+len(sublist)] == sublist:
+            return True
+    return False
+
+# Example
+print(contains([1, 2, 3, 4, 5], [2, 3]))  # It should print: True
+print(contains([1, 2, 3, 4, 5], [2, 6]))  # It should print: False
+```
+
+In this chapter, you have learned how to find all unique triplets in an array that sum to zero. Practice these exercises to improve your understanding of the concepts.
+
+

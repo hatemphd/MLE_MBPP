@@ -1,0 +1,34 @@
+Write a function to create a list containing the power of said number in bases raised to the corresponding number in the index using map function.
+
+Hints:
+- Use the range function
+- Define a function that takes in two arguments (base and power) and returns the result of the power of base
+- Use the map function to apply the function with the defined values
+- The function should return the list of results
+
+```python
+def power_of_bases(bases, powers):
+  result = list(map(lambda x: x[0]**x[1], zip(bases, powers)))
+  return result
+
+print(power_of_bases(range(1, 5), range(1, 6)))
+# [1, 4, 27, 64, 125]
+```
+
+3. Write a function to find the maximum power of a base in the list of bases using the map function.
+
+Hints:
+- Define a function that takes in a base and return the power of the base in the list of bases
+- Use the max function to find the maximum value in the list of results
+- The function should return the maximum value
+
+```python
+def max_power_of_base(bases):
+  result = list(map(lambda x: x[0]**x[1], zip(bases, range(1, 6))))
+  return max(result)
+
+print(max_power_of_base(range(1, 5)))
+# 125
+```
+
+

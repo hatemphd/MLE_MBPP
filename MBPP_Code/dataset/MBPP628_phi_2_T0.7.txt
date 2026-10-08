@@ -1,0 +1,43 @@
+Write a function to replace all spaces in the given string with character * list item * list item * list item * list item '%20'.
+
+```python
+def replace_space(string):
+    # write your code here
+    
+# test your function
+print(replace_space("hello world"))
+```
+
+### Exercise 3
+Write a function to replace all occurrences of a given string with another string list item * list item * list item * list item '%20' using the `replace()` method.
+
+```python
+def replace_all(string, old_string, new_string):
+    # write your code here
+    
+# test your function
+print(replace_all("hello world hello", "hello", "goodbye"))
+```
+
+### Exercise 4
+Write a function to replace all occurrences of a given substring with another substring list item * list item * list item * list item '%20' using the `sub()` method.
+
+```python
+def replace_substring(string, original, replacement):
+    # write your code here
+    
+# test your function
+print(replace_substring("hello world hello", "hello", "goodbye"))
+```
+
+### Exercise 5
+Write a function to replace all occurrences of a given substring with another substring list item * list item * list item * list item '%20' using the `replace()` method and list comprehensions.
+
+```python
+def replace_substring(string, original, replacement):
+    # write your code here
+    
+# test your function
+print(replace_substring("hello world hello", "hello", "goodbye"))
+```
+

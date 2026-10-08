@@ -1,0 +1,13 @@
+Write a function to find the third side of a right angled triangle.
+```python
+def third_side(a, b):
+    return math.sqrt(a**2 + b**2)
+```
+
+5. Write a function to find the equation of a line given two points.
+```python
+def line_equation(x1, y1, x2, y2):
+    slope = (y2 - y1) / (x2 - x1)
+    b = y1 - slope * x1
+    return f"y = {slope}x + {b}"
+```

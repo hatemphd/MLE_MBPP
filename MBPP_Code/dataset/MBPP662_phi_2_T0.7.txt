@@ -1,0 +1,50 @@
+Write a function to sort a list in a dictionary.
+
+**Idea:**
+- Use the items() method to create a list of key-value pairs.
+- Use the sorted() function to sort the list.
+- Use the itemgetter() function to sort the list based on the values.
+
+```python
+from operator import itemgetter
+
+def sort_dict(d):
+    sorted_list = sorted(d.items(), key=itemgetter(1))
+    return dict(sorted_list)
+
+print(sort_dict({"apple": 5, "banana": 3, "cherry": 10, "orange": 2}))
+# Output: {'orange': 2, 'banana': 3, 'apple': 5, 'cherry': 10}
+```
+
+**Exercise 4:**
+
+Write a function to sort a list of dictionaries by a specific key.
+
+**Idea:**
+- Use the sorted() function and specify the key parameter as the dictionary key.
+
+```python
+def sort_dict_by_key(lst, key):
+    return sorted(lst, key=lambda x: x[key])
+
+print(sort_dict_by_key(
+    [{"name": "John", "age": 30}, {"name": "Mike", "age": 20}, {"name": "Sara", "age": 25}], "age"))
+# Output: [{'name': 'Mike', 'age': 20}, {'name': 'Sara', 'age': 25}, {'name': 'John', 'age': 30}]
+```
+
+**Exercise 5:**
+
+Write a function to sort a list of tuples by the second element in descending order.
+
+**Idea:**
+- Use the sorted() function and specify the key parameter as the second element in the tuple.
+- Use the reverse parameter to sort in descending order.
+
+```python
+def sort_tuple_desc(lst):
+    return sorted(lst, key=lambda x: x[1], reverse=True)
+
+print(sort_tuple_desc([("apple", 5), ("banana", 3), ("cherry", 10), ("orange", 2)]))
+# Output: [('cherry', 10), ('apple', 5), ('banana', 3), ('orange', 2)]
+```
+

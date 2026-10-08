@@ -1,0 +1,76 @@
+Write a function to select the nth items of a list.
+
+**Hint:** You can use list indexing for this.
+
+**Solution:**
+
+```python
+def nth_items(lst, n):
+    return lst[n-1]
+
+print(nth_items(['apple', 'banana', 'cherry', 'date'], 2))  # Output: 'banana'
+```
+
+**Exercise 2:**
+
+Write a function to find the index of the first occurrence of an item in a list.
+
+**Hint:** You can use the `index()` function for this.
+
+**Solution:**
+
+```python
+def find_index(lst, item):
+    return lst.index(item)
+
+print(find_index(['apple', 'banana', 'cherry', 'date'], 'cherry'))  # Output: 2
+```
+
+**Exercise 3:**
+
+Write a function to count the number of occurrences of an item in a list.
+
+**Hint:** You can use the `count()` function for this.
+
+**Solution:**
+
+```python
+def count_occurrences(lst, item):
+    return lst.count(item)
+
+print(count_occurrences(['apple', 'banana', 'cherry', 'date', 'banana'], 'banana'))  # Output: 2
+```
+
+**Exercise 4:**
+
+Write a function to sort a list in ascending order.
+
+**Hint:** You can use the `sort()` function for this.
+
+**Solution:**
+
+```python
+def sort_list(lst):
+    lst.sort()
+    return lst
+
+print(sort_list(['apple', 'banana', 'cherry', 'date']))  # Output: ['apple', 'banana', 'cherry', 'date']
+```
+
+**Exercise 5:**
+
+Write a function to reverse a list.
+
+**Hint:** You can use the `reverse()` function for this.
+
+**Solution:**
+
+```python
+def reverse_list(lst):
+    lst.reverse()
+    return lst
+
+print(reverse_list(['apple', 'banana', 'cherry', 'date']))  # Output: ['date', 'cherry', 'banana', 'apple']
+```
+
+

@@ -1,0 +1,29 @@
+Write a function to flatten the tuple list to a string.
+
+__Hint__: Join the elements of the tuple in the list with a space.
+
+```python
+def flatten_tuple_list(tuples):
+    return ' '.join([''.join(x) for x in tuples])
+
+#Test the function
+tuples = [('a', 'b', 'c'), ('d', 'e'), ('f', 'g', 'h', 'i')]
+print(flatten_tuple_list(tuples))  #Output: adfbe cghi
+```
+
+__Exercise 5__: Write a function to check if the given tuple represents a valid email address.
+
+__Hint__: The email address must have the format username@domain.com and the username and domain should only contain alphanumeric characters and periods.
+
+```python
+def is_valid_email(email):
+    username, _, domain = email.rpartition('@')
+    return username.isalnum() and domain.isalnum() and '.' in domain
+
+#Test the function
+print(is_valid_email('alex@python.com'))  #Output: True
+print(is_valid_email('alex@python.com.'))  #Output: False
+print(is_valid_email('alex.python.com'))  #Output: False
+```
+
+

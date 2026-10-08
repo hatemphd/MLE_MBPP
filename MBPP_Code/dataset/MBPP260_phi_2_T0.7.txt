@@ -1,0 +1,72 @@
+Write a function to find the nth newman–shanks–williams prime number.
+In fact, if you are not given an n, the first newman–shanks–williams prime number should be output.
+
+The newman–shanks–williams algorithm is described in the book "The Algorithm Design Manual".
+The algorithm can be found on internet, but the book is the best place to understand the algorithm.
+The book is:
+
+This algorithm was used in the original version of the Prime Number Theorem.
+"""
+from __future__ import print_function
+
+import random
+
+
+def newman_shanks_williams(n):
+    """
+    This algorithm can be found in "The Algorithm Design Manual", 2nd edition.
+    """
+    a = [0] * n
+    p = [2]
+    b = [0] * (n - len(p))
+    r = [0] * (n - len(p))
+
+    def isprime(x):
+        if x <= 1:
+            return False
+        elif x <= 3:
+            return True
+        elif x % 2 == 0 or x % 3 == 0:
+            return False
+        i = 5
+        while i * i <= x:
+            if x % i == 0 or x % (i + 2) == 0:
+                return False
+            i += 6
+        return True
+
+    def nextprime():
+        while True:
+            x = random.randint(10**6, 10**7)
+            if isprime(x):
+                return x
+
+    def checkprime(prime, b, p, r):
+        for i in range(len(p)):
+            if prime in p[:i]:
+                return False
+            if b[i] == prime:
+                return False
+            if r[i] == prime:
+                return False
+        return True
+
+    for i in range(len(p)):
+        a[i] = nextprime()
+        p.append(a[i])
+        b.append(a[i])
+        r.append(a[i])
+
+    while len(p) < n:
+        x = nextprime()
+        if checkprime(x, b, p, r):
+            p.append(x)
+            b.append(x)
+            r.append(x)
+
+    return p[n - 1]
+
+
+if __name__ == "__main__":
+    for i in range(1, 10001):
+        print("The {}th newman–shanks–williams prime number: {}".format(i, newman_shanks_williams(i)))

@@ -1,0 +1,27 @@
+Write a function to find the largest subset where each pair is divisible.
+
+```python
+def divisible_subset(arr):
+    arr.sort()
+    dp = [[0]*len(arr) for _ in range(len(arr))]
+    for i in range(len(arr)):
+        for j in range(i+1, len(arr)):
+            if arr[j] % arr[i] == 0:
+                dp[i][j] = max(dp[i][j-1], dp[j-1][i]) + 1
+    return max(max(row) for row in dp)
+```
+
+2. Write a function to find the largest subset where each pair is a power of two.
+
+```python
+def power_of_two_subset(arr):
+    arr.sort()
+    dp = [[0]*len(arr) for _ in range(len(arr))]
+    for i in range(len(arr)):
+        for j in range(i+1, len(arr)):
+            if arr[j] & (arr[j] - 1) == 0:
+                dp[i][j] = max(dp[i][j-1], dp[j-1][i]) + 1
+    return max(max(row) for row in dp)
+```
+
+

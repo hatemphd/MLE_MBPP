@@ -1,0 +1,19 @@
+Write a function to perform index wise addition of tuple elements in the given two nested tuples.
+
+Hint: You can flatten the tuples and then perform the addition.
+
+```python
+# Solution
+def nested_tuple_add(tup1, tup2):
+    flat_tup1 = (i for sublist in tup1 for i in sublist)
+    flat_tup2 = (i for sublist in tup2 for i in sublist)
+    return tuple(x + y for x, y in zip(flat_tup1, flat_tup2))
+
+tup1 = ((1, 2, 3), (4, 5, 6))
+tup2 = ((7, 8, 9), (10, 11, 12))
+print(nested_tuple_add(tup1, tup2)) # Output: (8, 10, 12, 14, 16, 18)
+```
+
+These exercises should help you gain a better understanding of tuples, their operations, and their various applications in the field of robotics engineering.
+
+

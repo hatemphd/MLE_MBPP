@@ -1,0 +1,30 @@
+Write a function to assign frequency to each tuple in the given tuple list.
+
+```python
+# Here is a possible solution:
+
+freq_list = [('apple', 'banana', 'pear'), ('banana', 'pear', 'apple'), ('pear', 'apple', 'banana')]
+def assign_freq(freq_list):
+    return [freq_list.count(t) for t in freq_list]
+
+print(assign_freq(freq_list))  # Output: [3, 3, 3]
+```
+
+3. **Exercise 3:** Write a function to print the frequency of each element in a given tuple list.
+
+```python
+# Here is a possible solution:
+
+freq_list = [('apple', 'banana', 'pear'), ('banana', 'pear', 'apple'), ('pear', 'apple', 'banana')]
+def print_freq(freq_list):
+    for t in freq_list:
+        print(f"Frequency of {t}: {freq_list.count(t)}")
+
+print_freq(freq_list)
+# Output: 
+# Frequency of ('apple', 'banana', 'pear'): 3
+# Frequency of ('banana', 'pear', 'apple'): 3
+# Frequency of ('pear', 'apple', 'banana'): 3
+```
+
+

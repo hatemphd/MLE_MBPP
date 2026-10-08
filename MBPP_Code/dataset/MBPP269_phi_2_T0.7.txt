@@ -1,0 +1,42 @@
+Write a function to find the ascii value of a character.
+
+```python
+def ascii_value(char):
+    return ord(char)
+
+print(ascii_value('A'))  # Output: 65
+```
+
+3. Write a function to convert a string to ascii code and back.
+
+```python
+def ascii_to_string(ascii_values):
+    return ''.join([chr(val) for val in ascii_values])
+
+def string_to_ascii(string):
+    return [ord(char) for char in string]
+
+print(ascii_to_string([65, 66, 67]))  # Output: 'ABC'
+print(string_to_ascii('ABC'))  # Output: [65, 66, 67]
+```
+
+4. Write a function to reverse a string.
+
+```python
+def reverse_string(s):
+    return s[::-1]
+
+print(reverse_string('Hello world'))  # Output: 'dlrow olleH'
+```
+
+5. Write a function to check if a string is a palindrome.
+
+```python
+def is_palindrome(s):
+    return s == s[::-1]
+
+print(is_palindrome('racecar'))  # Output: True
+print(is_palindrome('python'))  # Output: False
+```
+
+

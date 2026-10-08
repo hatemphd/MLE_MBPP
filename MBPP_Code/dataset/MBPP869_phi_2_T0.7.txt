@@ -1,0 +1,18 @@
+Write a function to remove sublists from a given list of lists, which are outside a given range.
+
+#### Hints
+You can use list comprehension in combination with the `all` function to check if all the elements in a sublist are within the given range.
+
+#### Solution
+```python
+def remove_outside_range(input_list, min_val, max_val):
+    return [sublist for sublist in input_list if all(min_val <= x <= max_val for x in sublist)]
+
+matrix = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20]]
+print(remove_outside_range(matrix, 5, 15))
+# Output: [[6, 7, 8, 9, 10], [11, 12, 13, 14, 15]]
+```
+
+This exercise and the solutions provided will help you to understand how to manipulate a list of lists, validate and clean the data, and efficiently use Python's built-in functions and comprehensions. Keep practicing to improve your skills.
+
+

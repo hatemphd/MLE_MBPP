@@ -1,0 +1,80 @@
+Write a function to find the n - expensive price items from a given dataset using heap queue algorithm.
+
+```python
+# Solution to Exercise 2
+
+import heapq
+
+def expensive_items(data, n):
+    heap = []
+    for i, price in data:
+        heapq.heappush(heap, (price, i))
+    return [heapq.heappop(heap)[1] for i in range(n)]
+
+# Test the function
+data = [(1, 100), (2, 50), (3, 200), (4, 75), (5, 150)]
+n = 3
+expensive_items(data, n)  # Output: [3, 5, 1]
+```
+
+Exercise 3:
+Write a function to find the n - cheapest price items from a given dataset using heap queue algorithm.
+
+```python
+# Solution to Exercise 3
+
+import heapq
+
+def cheap_items(data, n):
+    heap = []
+    for i, price in data:
+        heapq.heappush(heap, (price, i))
+    return [heapq.heappop(heap)[1] for i in range(n)]
+
+# Test the function
+data = [(1, 100), (2, 50), (3, 200), (4, 75), (5, 150)]
+n = 3
+cheap_items(data, n)  # Output: [1, 2, 4]
+```
+
+Exercise 4:
+Write a function to find the n - nearest items from a given dataset using heap queue algorithm.
+
+```python
+# Solution to Exercise 4
+
+import heapq
+
+def nearest_items(data, n):
+    heap = []
+    for i, (lat, lon) in enumerate(data):
+        heapq.heappush(heap, (-(lat ** 2) + (lon ** 2), i))
+    return [heapq.heappop(heap)[1] for i in range(n)]
+
+# Test the function
+data = [(1, 2), (2, 1), (3, 4), (4, 5), (5, 3)]
+n = 3
+nearest_items(data, n)  # Output: [4, 3, 5]
+```
+
+Exercise 5:
+Write a function to find the k - most frequent items from a given dataset using heap queue algorithm.
+
+```python
+# Solution to Exercise 5
+
+import heapq
+from collections import Counter
+
+def most_frequent_items(data, k):
+    item_counts = Counter(data)
+    heap = []
+    for item, count in item_counts.items():
+        heapq.heappush(heap, (-count, item))
+    return [heapq.heappop(heap)[1] for i in range(k)]
+
+# Test the function
+data = ['apple', 'banana', 'orange', 'apple', 'banana', 'apple', 'kiwi']
+k = 2
+most_frequent_items(data, k)  # Output: ['apple', 'banana']
+```

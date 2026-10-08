@@ -1,0 +1,21 @@
+Write a function to count repeated items of a tuple.
+
+```python
+# Exercise 1
+def count_items_in_tuple(tup, item):
+    return tup.count(item)
+
+print(count_items_in_tuple((1, 2, 2, 3, 3, 3), 2))  # Output: 2
+print(count_items_in_tuple((1, 2, 2, 3, 3, 3), 4))  # Output: 0
+
+# Exercise 2
+def count_items_in_tuple_with_index(tup, item):
+    return [i for i, x in enumerate(tup) if x == item]
+
+print(count_items_in_tuple_with_index((1, 2, 2, 3, 3, 3), 2))  # Output: [1, 2]
+print(count_items_in_tuple_with_index((1, 2, 2, 3, 3, 3), 4))  # Output: []
+```
+
+The `count()` method and list comprehensions are powerful tools in Python, especially when dealing with tuples. They allow you to count the number of occurrences of an item in a tuple and create a new list based on some conditions.
+
+

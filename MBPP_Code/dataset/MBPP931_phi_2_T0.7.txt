@@ -1,0 +1,27 @@
+Write a function to calculate the sum of series 1³+2³+3³+….+n³.
+
+```python
+def sum_cube(n):
+    """
+    Function to calculate the sum of series 1³+2³+3³+….+n³
+    """
+    total = 0
+    for i in range(1, n+1):
+        total += i**3
+    return total
+```
+
+## Exercise 5
+
+Write a function to calculate the sum of series 1⁴+2⁴+3⁴+…+n⁴.
+
+```python
+def sum_fourth(n):
+    """
+    Function to calculate the sum of series 1⁴+2⁴+3⁴+….+n⁴
+    """
+    total = 0
+    for i in range(1, n+1):
+        total += i**4
+    return total
+```

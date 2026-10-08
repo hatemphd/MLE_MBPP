@@ -1,0 +1,79 @@
+Write a function to remove lowercase substrings from a given string. For example, 'abcABC' should return 'ABC'.
+
+#### Ideas for Exercise 2:
+You can use the `isupper()` method in a while loop to remove lowercase substrings.
+
+#### Solution for Exercise 2:
+```python
+def remove_lower_substrings(string):
+    i = 0
+    while i < len(string):
+        if not string[i].isupper():
+            string = string[:i] + string[i+1:]
+        else:
+            i += 1
+    return string
+
+print(remove_lower_substrings("abcABC")) # Output: ABC
+```
+
+#### Exercise 3:
+Given a string, find the substring that has the highest frequency of uppercase characters. For example, 'abCDeF' should return 'CDE'.
+
+#### Ideas for Exercise 3:
+You can use a dictionary to store the frequency of uppercase substrings, and then find the one with the highest frequency.
+
+#### Solution for Exercise 3:
+```python
+def highest_frequency_upper_substring(string):
+    freq = {}
+    for i in range(len(string)):
+        for j in range(i+1, len(string)+1):
+            substring = string[i:j]
+            if substring.isupper():
+                freq[substring] = freq.get(substring, 0) + 1
+    return max(freq, key=freq.get)
+
+print(highest_frequency_upper_substring("abCDeF")) # Output: CDE
+```
+
+#### Exercise 4:
+Given a string, remove all uppercase substrings that are not at the beginning or end of the string. For example, 'aBCDef' should return 'aBd'.
+
+#### Ideas for Exercise 4:
+You can use the `isupper()` method in a for loop to check if a substring is uppercase and is not at the beginning or end of the string.
+
+#### Solution for Exercise 4:
+```python
+def remove_non_beginning_end_upper_substrings(string):
+    i = 0
+    while i < len(string):
+        if i == 0 or i == len(string)-1 or not string[i].isupper():
+            continue
+        string = string[:i] + string[i+1:]
+        i -= 1
+    return string
+
+print(remove_non_beginning_end_upper_substrings("aBCDef")) # Output: aBd
+```
+
+#### Exercise 5:
+Given a string, remove all uppercase substrings that contain at least one lowercase character. For example, 'aBcDeF' should return 'aCDeF'.
+
+#### Ideas for Exercise 5:
+You can use the `isupper()` and `islower()` methods in a for loop to check if a substring is uppercase and contains at least one lowercase character.
+
+#### Solution for Exercise 5:
+```python
+def remove_uppercase_substrings_with_lowercase(string):
+    i = 0
+    while i < len(string):
+        if i == 0 or i == len(string)-1 or string[i].isupper() or string[i-1].islower() or string[i+1].islower():
+            continue
+        string = string[:i] + string[i+1:]
+        i -= 1
+    return string
+
+print(remove_uppercase_substrings_with_lowercase("aBcDeF")) # Output: aCDeF
+```
+

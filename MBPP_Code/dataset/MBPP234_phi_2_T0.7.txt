@@ -1,0 +1,69 @@
+Write a function to find the volume of a cube. The function should take the length of a side of the cube as input and return the volume of the cube.
+
+Solution:
+
+def find_cube_volume(side_length):
+    """
+    This function takes the length of a side of a cube as input and returns the volume of the cube.
+    """
+    # Calculate the volume of the cube
+    cube_volume = side_length ** 3
+    
+    # Return the cube volume
+    return cube_volume
+
+# Call the function
+print(find_cube_volume(2))
+
+Exercise 3: Write a function to find the volume of a pyramid. The function should take the base area of the pyramid and the height of the pyramid as input and return the volume of the pyramid.
+
+Solution:
+
+def find_pyramid_volume(base_area, height):
+    """
+    This function takes the base area and height of a pyramid as input and returns the volume of the pyramid.
+    """
+    # Calculate the volume of the pyramid
+    pyramid_volume = (1/3) * base_area * height
+    
+    # Return the pyramid volume
+    return pyramid_volume
+
+# Call the function
+print(find_pyramid_volume(4, 6))
+
+Exercise 4: Write a function to find the volume of a cylinder. The function should take the radius of the base and the height of the cylinder as input and return the volume of the cylinder.
+
+Solution:
+
+def find_cylinder_volume(radius, height):
+    """
+    This function takes the radius and height of a cylinder as input and returns the volume of the cylinder.
+    """
+    # Calculate the volume of the cylinder
+    cylinder_volume = math.pi * (radius ** 2) * height
+    
+    # Return the cylinder volume
+    return cylinder_volume
+
+# Call the function
+print(find_cylinder_volume(2, 5))
+
+Exercise 5: Write a function to find the volume of a sphere. The function should take the radius of the sphere as input and return the volume of the sphere.
+
+Solution:
+
+def find_sphere_volume(radius):
+    """
+    This function takes the radius of a sphere as input and returns the volume of the sphere.
+    """
+    # Calculate the volume of the sphere
+    sphere_volume = (4/3) * math.pi * (radius ** 3)
+    
+    # Return the sphere volume
+    return sphere_volume
+
+# Call the function
+print(find_sphere_volume(3))
+
+That's all for this lecture. I hope you now understand the formula for calculating the volume of different solids and can apply it in Python using functions.

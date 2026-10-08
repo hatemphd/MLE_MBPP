@@ -1,0 +1,2 @@
+Write a function to find the largest palindromic number in the given array. [100, 101, 102, 103, 104, 105, 106, 107, 108, 109]
+Answer: The largest palindromic number in the array is 100.

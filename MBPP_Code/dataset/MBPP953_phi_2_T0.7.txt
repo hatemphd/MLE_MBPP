@@ -1,0 +1,55 @@
+Write a python function to find the minimun number of subsets with distinct elements.
+
+Hints: 
+- You may use the `combinations` function from the `itertools` module.
+- Use set functions and the `len` function to count the number of subsets.
+
+Solution:
+```python
+def min_num_subsets(arr):
+    from itertools import combinations
+    combinations = list(combinations(arr, len(arr)))
+    return len(combinations)
+
+print(min_num_subsets([1, 2, 3]))  # Output: 4
+```
+
+## Exercise 2:
+
+Write a python function to find the maximum distance between two subsets.
+
+Hints: 
+- You may use the `combinations` function from the `itertools` module.
+- Use set functions and the `len` function to count the number of subsets.
+
+Solution:
+```python
+def max_distance(arr):
+    from itertools import combinations
+    combinations = list(combinations(arr, len(arr)))
+    distances = [abs(len(set(c1)) - len(set(c2))) for c1, c2 in combinations]
+    return max(distances)
+
+print(max_distance([1, 2, 3]))  # Output: 1
+```
+
+## Exercise 3:
+
+Write a python function to find the maximum total distance between any two subsets.
+
+Hints:
+- You may use the `combinations` function from the `itertools` module.
+- Use set functions and the `len` function to count the number of subsets.
+
+Solution:
+```python
+def max_total_distance(arr):
+    from itertools import combinations
+    combinations = list(combinations(arr, len(arr)))
+    distances = [abs(len(set(c1)) - len(set(c2))) * sum(c1) * sum(c2) for c1, c2 in combinations]
+    return max(distances)
+
+print(max_total_distance([1, 2, 3]))  # Output: 30
+```
+
+

@@ -1,0 +1,74 @@
+Write a python function to count number of vowels in the string.
+
+**Hint:** Use a for loop and if statement to check each character.
+
+```python
+def count_vowels(string):
+    count = 0
+    for char in string:
+        if char in 'aeiouAEIOU':
+            count += 1
+    return count
+
+# Test the function
+print(count_vowels('Hello, world!'))
+```
+
+**Exercise 2:** Write a function to reverse a string without using slicing.
+
+**Hint:** You can use a for loop to iterate through the string backwards.
+
+```python
+def reverse_string(string):
+    reversed_string = ''
+    for i in range(len(string) - 1, -1, -1):
+        reversed_string += string[i]
+    return reversed_string
+
+# Test the function
+print(reverse_string('Hello, world!'))
+```
+
+**Exercise 3:** Write a function to check if a string is a palindrome.
+
+**Hint:** Use slicing to create a reversed version of the string, then compare it to the original.
+
+```python
+def is_palindrome(string):
+    return string == string[::-1]
+
+# Test the function
+print(is_palindrome('racecar'))
+print(is_palindrome('hello'))
+```
+
+**Exercise 4:** Write a function to convert a string to all uppercase.
+
+**Hint:** Use the upper() string method.
+
+```python
+def to_uppercase(string):
+    return string.upper()
+
+# Test the function
+print(to_uppercase('hello, world!'))
+```
+
+**Exercise 5:** Write a function to find the longest word in a string.
+
+**Hint:** Use the split() string method to break the string into a list of words, then use a for loop to find the longest word.
+
+```python
+def longest_word(string):
+    words = string.split()
+    longest = ''
+    for word in words:
+        if len(word) > len(longest):
+            longest = word
+    return longest
+
+# Test the function
+print(longest_word('The quick brown fox jumps over the lazy dog'))
+```
+
+

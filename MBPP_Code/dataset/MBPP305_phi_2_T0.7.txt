@@ -1,0 +1,98 @@
+Write a function to match two words from a list of words starting with letter 'p'.
+
+Ideas:
+
+- Use a `for` loop to iterate over the list.
+- Use the `startswith` string method to check if the word starts with 'p'.
+
+```python
+def find_p_words(word_list):
+    result = []
+    for word in word_list:
+        if word.startswith('p'):
+            result.append(word)
+    return result
+
+word_list = ['apple', 'banana', 'pear', 'peach', 'plum', 'apple']
+print(find_p_words(word_list))  # ['pear', 'peach', 'plum']
+```
+
+2. Write a program to find and print the index of the first occurrence of a word starting with 'p' from a given text.
+
+Ideas:
+
+- Use the `find` string method to find the index of the first occurrence of the word.
+
+```python
+def find_p_index(text, word):
+    index = text.find(word)
+    return index
+
+text = "Python is a high-level programming language. It is easy to learn."
+word = "Python"
+print(find_p_index(text, word))  # 0
+```
+
+3. Write a Python function to remove all words from a given text that start with a specific letter.
+
+Ideas:
+
+- Split the text into a list of words.
+- Use a `for` loop to iterate over the list.
+- Use the `startswith` string method to check if the word starts with the specified letter.
+- If it does, remove the word from the list.
+- Join the list of words back into a text.
+
+```python
+def remove_p_words(text, letter):
+    words = text.split()
+    for word in words:
+        if word.startswith(letter):
+            words.remove(word)
+    return ' '.join(words)
+
+text = "Python is a high-level programming language. It is easy to learn."
+letter = "i"
+print(remove_p_words(text, letter))  # "Python is a high-level programming language. to learn."
+```
+
+4. Write a function to find and count the number of words starting with a specific letter from a given text.
+
+Ideas:
+
+- Split the text into a list of words.
+- Use a `for` loop to iterate over the list.
+- Use the `startswith` string method to check if the word starts with the specified letter.
+- If it does, increase the count.
+
+```python
+def count_p_words(text, letter):
+    words = text.split()
+    count = 0
+    for word in words:
+        if word.startswith(letter):
+            count += 1
+    return count
+
+text = "Python is a high-level programming language. It is easy to learn."
+letter = "i"
+print(count_p_words(text, letter))  # 2
+```
+
+5. Write a function to filter a list of words such that each word starts with a specific letter.
+
+Ideas:
+
+- Use the `filter` function with a `lambda` function to filter the list.
+- The `lambda` function should use the `startswith` string method to check if the word starts with the specified letter.
+
+```python
+def filter_p_words(word_list, letter):
+    return list(filter(lambda x: x.startswith(letter), word_list))
+
+word_list = ['apple', 'banana', 'pear', 'peach', 'plum', 'apple']
+letter = "p"
+print(filter_p_words(word_list, letter))  # ['pear', 'peach', 'plum']
+```
+
+

@@ -1,0 +1,36 @@
+Write a function to compute the value of ncr%p. Then, given two integers, n = 5, r = 2 and p = 100, you should output 3 (or 0 if your answer overflows).
+
+In other words, my question is not how to compute nCr%p but how to deal with overflow.
+
+My approach:
+public static int nCr%p(int n, int r, int p) {
+    long ln = Long.valueOf(n);
+    long rn = Long.valueOf(r);
+    long lp = Long.valueOf(p);
+    long res = 1;
+
+    // if p == 2
+    if (lp == 2) {
+        res = (ln - rn + 1) % p;
+        if (res < 0) res += p;
+        return res;
+    }
+    // if p == 3
+    if (lp == 3) {
+        for (int i = r; i < n; ++i) res = (res * i) % p;
+        return res;
+    }
+    // if p == 5
+    if (lp == 5) {
+        // p - 1 = 2^k * 5
+        int k = (int) Math.floor(math.log(p - 1, 2));
+        for (int i = 0; i < k; ++i) {
+            res = ((res * (ln - i)) % p) * pow(i, 2, p) % p;
+        }
+        return res;
+    }
+    else {
+        return -1;
+    }
+}
+

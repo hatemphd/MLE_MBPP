@@ -1,0 +1,9 @@
+Write a function to sort a list of lists by length and value.
+    * Hint: Use the `sort()` method with a lambda function that sorts by length first and then by value.
+
+```python
+def sort_lists(lists):
+    lists.sort(key=lambda x: (len(x), x))
+    return lists
+```
+

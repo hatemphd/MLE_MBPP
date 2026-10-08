@@ -1,0 +1,62 @@
+Write a function to find the top k integers that occur most frequently from given lists of sorted and distinct integers using heap queue algorithm.
+
+```python
+from typing import List
+import heapq
+
+def find_topk(lists: List[List[int]], k: int) -> List[int]:
+    count = {}
+    for lst in lists:
+        for i in set(lst):
+            count[i] = count.get(i, 0) + 1
+
+    heap = []
+    for i, c in count.items():
+        heapq.heappush(heap, (c, i))
+    return [heapq.heappop(heap)[1] for _ in range(k)]
+```
+The `find_topk` function takes a list of sorted and distinct integers and an integer k as input and returns the top k integers that occur most frequently. First, it creates a dictionary of counts for each integer in the lists. Then it uses a heap to efficiently store and retrieve the top k integers with the highest counts.
+
+## Exercise 4
+Write a function to find the kth largest integer from given lists of sorted and distinct integers using merge sort algorithm.
+
+```python
+from typing import List
+
+def find_kth_largest(lists: List[List[int]], k: int) -> int:
+    heap = []
+    n = len(lists)
+    for i in range(n):
+        heapq.heappush(heap, (lists[i][-1], i, len(lists[i])))
+    for _ in range(k - 1):
+        val, i, j = heapq.heappop(heap)
+        if j > 1:
+            heapq.heappush(heap, (lists[i][j - 1], i, j - 1))
+    return heapq.heappop(heap)[0]
+```
+The `find_kth_largest` function takes a list of sorted and distinct integers and an integer k as input and returns the kth largest integer. First, it creates a heap to efficiently store and retrieve the largest k integers. Then it populates the heap with the last element of each list and extracts the kth largest integer by repeatedly popping the smallest element and adding the largest element from the next list if it exists.
+
+## Exercise 5
+Write a function to find the kth smallest integer from given lists of sorted and distinct integers using quick select algorithm.
+
+```python
+from typing import List
+
+def find_kth_smallest(lists: List[List[int]], k: int) -> int:
+    def quick_select(arr: List[int], k: int) -> int:
+        if len(arr) == 1:
+            return arr[0]
+        pivot = arr[0]
+        lows = [x for x in arr[1:] if x < pivot]
+        highs = [x for x in arr[1:] if x >= pivot]
+        if k < len(lows):
+            return quick_select(lows, k)
+        elif k < len(lows) + len(highs):
+            return highs[0]
+        else:
+            return quick_select(highs, k - len(lows) - 1)
+
+    flat_list = [x for lst in lists for x in lst]
+    return quick_select(flat_list, k - 1)
+```
+The `find_kth_smallest` function takes a list of sorted and distinct integers and an integer k as input and returns the kth smallest integer. First, it flattens the list of lists into a single list. Then it uses the quick select algorithm to return the kth smallest integer.

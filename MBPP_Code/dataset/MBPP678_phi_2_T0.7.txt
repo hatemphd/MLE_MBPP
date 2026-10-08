@@ -1,0 +1,42 @@
+Write a python function to remove spaces from a given string.
+
+```python
+def remove_spaces(text):
+    return text.replace(" ", "")
+```
+
+2. Write a python program to convert all the letters in a string to uppercase.
+
+```python
+text = "this is a string"
+uppercase_text = text.upper()
+print(uppercase_text)
+```
+
+3. Write a python function to count the number of occurrences of a given character in a string.
+
+```python
+def count_char(text, char):
+    count = 0
+    for c in text:
+        if c == char:
+            count += 1
+    return count
+```
+
+4. Write a python function to check if a given string is a palindrome or not.
+
+```python
+def is_palindrome(text):
+    return text == text[::-1]
+```
+
+5. Write a python program to reverse a string.
+
+```python
+text = "this is a string"
+reversed_text = text[::-1]
+print(reversed_text)
+```
+
+

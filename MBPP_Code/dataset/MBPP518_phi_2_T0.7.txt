@@ -1,0 +1,33 @@
+Write a function to find the square root of a perfect number.
+
+#### Ideas
+- You can use the same approach as in the Perfect Number problem.
+- However, instead of checking if the number is equal to the sum of its divisors, you check if it's equal to the square of its divisors.
+
+#### Solution
+```python
+def sqrt_perfect_number(n):
+    divisors = [i for i in range(1, n) if n % i == 0]
+    return sum(divisors) == n and sum(divisors) ** 2 == n
+
+print(sqrt_perfect_number(496))  # Output: True
+```
+
+### Exercise 3
+
+Write a function to print out the divisors of a given number.
+
+#### Ideas
+- You can use the same approach as in the Perfect Number problem.
+- However, instead of checking if the number is equal to the sum of its divisors, you print out the divisors.
+
+#### Solution
+```python
+def print_divisors(n):
+    divisors = [i for i in range(1, n+1) if n % i == 0]
+    print(divisors)
+
+print_divisors(12)  # Output: [1, 2, 3, 4, 6, 12]
+```
+
+

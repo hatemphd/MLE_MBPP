@@ -1,0 +1,40 @@
+Write a python function to calculate the product of all the numbers of a given tuple.
+
+```python
+# Given a tuple
+product_tuple = (1, 2, 3, 4, 5)
+
+# Your python function
+def product_tuple(tup):
+    product = 1
+    for i in tup:
+        product *= i
+    return product
+print(product_tuple(product_tuple))
+```
+
+**Exercise 2:** Write a python function to convert a tuple into a string where each element in the tuple is separated by a comma.
+
+```python
+# Given a tuple
+tuple_str = ("I", "am", "learning", "Python")
+
+# Your python function
+def tuple_to_str(tup):
+    return ', '.join(tup)
+print(tuple_to_str(tuple_str))
+```
+
+**Exercise 3:** Write a python function to find the minimum and maximum number in a given tuple.
+
+```python
+# Given a tuple
+tuple_nums = (1, 2, 3, 4, 5)
+
+# Your python function
+def min_max_tuple(tup):
+    return min(tup), max(tup)
+print(min_max_tuple(tuple_nums))
+```
+
+

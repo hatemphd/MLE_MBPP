@@ -1,0 +1,85 @@
+Write a python function to convert octal number to decimal number.
+
+*Hint: You may use the `int()` function with base 8.*
+
+**Solution:**
+
+```python
+def octal_to_decimal(octal):
+    return int(octal, 8)
+
+print(octal_to_decimal('13'))
+# Output: 11
+```
+
+**Exercise 2:** Write a python function to convert octal number to binary number.
+
+*Hint: You may use the `bin()` function.*
+
+**Solution:**
+
+```python
+def octal_to_binary(octal):
+    return bin(int(octal, 8))
+
+print(octal_to_binary('13'))
+# Output: 0b1101
+```
+
+**Exercise 3:** Write a python function to convert octal number to hexadecimal number.
+
+*Hint: You may use the `hex()` function.*
+
+**Solution:**
+
+```python
+def octal_to_hexadecimal(octal):
+    return hex(int(octal, 8))
+
+print(octal_to_hexadecimal('13'))
+# Output: 0xD
+```
+
+**Exercise 4:** Write a python function to convert a list of octal numbers to list of decimal numbers.
+
+*Hint: You may use a for loop with the `int()` function.*
+
+**Solution:**
+
+```python
+def octal_to_decimal_list(octal_list):
+    return [int(x, 8) for x in octal_list]
+
+print(octal_to_decimal_list(['10', '13', '16']))
+# Output: [8, 11, 12]
+```
+
+**Exercise 5:** Write a python function to convert a list of octal numbers to list of binary numbers.
+
+*Hint: You may use a for loop with the `bin()` function.*
+
+**Solution:**
+
+```python
+def octal_to_binary_list(octal_list):
+    return [bin(int(x, 8)) for x in octal_list]
+
+print(octal_to_binary_list(['10', '13', '16']))
+# Output: ['0b1010', '0b1101', '0b10000']
+```
+
+**Exercise 6:** Write a python function to convert a list of octal numbers to list of hexadecimal numbers.
+
+*Hint: You may use a for loop with the `hex()` function.*
+
+**Solution:**
+
+```python
+def octal_to_hexadecimal_list(octal_list):
+    return [hex(int(x, 8)) for x in octal_list]
+
+print(octal_to_hexadecimal_list(['10', '13', '16']))
+# Output: ['0xa', '0xdb', '0xf0']
+```
+
+

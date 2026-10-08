@@ -1,0 +1,66 @@
+Write a function to find the smallest integers from a given list of numbers using heap queue algorithm.
+
+Solution:
+
+import heapq
+
+def find_smallest_nums(nums):
+    return [heapq.heappop(nums) for _ in range(len(nums))]
+
+nums = [5, 3, 8, 4, 2, 1]
+print(find_smallest_nums(nums)) # Output: [1, 2, 3, 4, 5, 8]
+
+Exercise 3:
+Write a function to merge two sorted lists into a single sorted list using heap queue algorithm.
+
+Solution:
+
+import heapq
+
+def merge_sorted_lists(list1, list2):
+    merged = []
+    heapq.heappush(merged, (list1[0], 0, 0))
+    heapq.heappush(merged, (list2[0], len(list2), 0))
+    while merged:
+        val, idx1, idx2 = heapq.heappop(merged)
+        if idx1 < len(list1) - 1:
+            heapq.heappush(merged, (list1[idx1 + 1], idx1 + 1, 0))
+        if idx2 < len(list2) - 1:
+            heapq.heappush(merged, (list2[idx2 + 1], len(list2) - idx2 - 1, 0))
+        merged.append((val, idx1, idx2))
+    return [val for val, _, _ in merged]
+
+list1 = [1, 3, 5, 7]
+list2 = [2, 4, 6, 8]
+print(merge_sorted_lists(list1, list2)) # Output: [1, 2, 3, 4, 5, 6, 7, 8]
+
+Exercise 4:
+Write a function to find the median of a list of numbers using heap queue algorithm.
+
+Solution:
+
+import heapq
+
+def median(nums):
+    n = len(nums)
+    if n % 2 == 0:
+        return (heapq.nsmallest(n // 2, nums)[-1] + heapq.nsmallest(n // 2, nums)[-1]) / 2
+    else:
+        return heapq.nlargest(n // 2 + 1, nums)[-1]
+
+nums = [1, 4, 6, 7, 2, 9, 3]
+print(median(nums)) # Output: 5
+
+Exercise 5:
+Write a function to find the kth largest element in a list of numbers using heap queue algorithm.
+
+Solution:
+
+import heapq
+
+def kth_largest(nums, k):
+    return heapq.nlargest(k, nums)[-1]
+
+nums = [1, 4, 6, 7, 2, 9, 3]
+k = 2
+print(kth_largest(nums, k)) # Output: 6

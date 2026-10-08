@@ -1,0 +1,31 @@
+Write a function that matches a string that has an a followed by zero or one 'b'. For example, it should match 'abbc' and 'abb'. 
+
+Hints:
+- Use the `*` operator to match zero or more occurrences of a substring.
+
+```python
+def pattern_match(s):
+    return re.match(r'a*b', s) is not None
+```
+
+2. Write a function that matches a string that has an a followed by two or three 0s, one 1, and more than two 'b'. For example, it should match 'abbc', 'abbbb', and 'abbbbb', but it should not match 'abb' or 'abbb'.
+
+Hints:
+- The `+` operator can be used to match one or more occurrences of a character.
+
+```python
+def pattern_match_advanced(s):
+    return re.match(r'a*b(0{1,2}1){2,}', s) is not None
+```
+
+3. Write a function that matches a string that has no 0s except for at the end. For example, it should match 'abbc', 'abbb', 'abbbbc', but it should not match 'abb00'.
+
+Hints:
+- Use the `$` anchor to match the end of the string.
+
+```python
+def pattern_match_no_zeros(s):
+    return re.match(r'a*b(0)*$', s) is not None
+```
+
+

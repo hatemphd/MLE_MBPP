@@ -1,0 +1,95 @@
+Write a function to check whether the given month name contains 28 days or not. The output should be:
+    
+```python
+False
+```
+
+Solution:
+
+```python
+def check_days(monthname):
+    daysinmonth = ["January", "March", "May", "July", "August", "October", "December"]
+    if monthname in daysinmonth:
+        return False
+    else:
+        return True
+
+print(check_days('January'))
+
+```
+
+2. Write a function that takes as input the date in the form of (year, month name, day) and returns whether the date exists or not. The output should be:
+
+```python
+False
+```
+
+Solution:
+
+```python
+def date_exists(year: int, month: str, day: int):
+    import calendar
+    try:
+        calendar.monthrange(year, month)
+        return True
+    except ValueError:
+        return False
+
+print(date_exists(2022, 'February', 29))
+```
+
+3. Write a function to check whether the given month is a leap month or not. The output should be:
+
+```python
+False
+```
+
+Solution:
+
+```python
+def check_leap(monthname):
+    if monthname == 'February':
+        return False
+    else:
+        return True
+    
+print(check_leap('February'))
+```
+
+4. Write a function to check whether the given month name contains the word 'Mon' or not. If it does, return the month name with the 'Mon' removed, otherwise return the original month name. The output should be:
+
+```python
+'March'
+```
+
+Solution:
+
+```python
+def check_month_name(monthname):
+    if 'Mon' in monthname:
+        return monthname.replace('Mon', '')
+    else:
+        return monthname
+        
+print(check_month_name('March'))
+```
+
+5. Write a function to check whether the given month name contains the word 'June' or not. If it does, return the month name with the 'June' removed, otherwise return the original month name. The output should be:
+
+```python
+'July'
+```
+
+Solution:
+
+```python
+def check_month_name(monthname):
+    if 'June' in monthname:
+        return monthname.replace('June', '')
+    else:
+        return monthname
+        
+print(check_month_name('July'))
+```
+
+

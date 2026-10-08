@@ -1,0 +1,53 @@
+Write a function to find all adverbs and their positions in a given sentence.
+
+Idea: Use the `re.finditer()` function to find all matches of our regex in the sentence and then extract the adverbs.
+
+```python
+def find_adverbs(sentence):
+    pattern = '\b(\w+ly\b|\b(?:never|hardly|sometimes|rarely|often)ly)\b'
+    matches = re.finditer(pattern, sentence)
+    return [(match.group(1), match.start(), match.end()) for match in matches]
+
+# Testing the function
+print(find_adverbs("The cat is often lazy and rarely playful."))
+```
+
+3. Write a function to replace all adverbs in a sentence with the word 'always'.
+
+Idea: Use the `re.sub()` function to replace all adverbs in the sentence.
+
+```python
+def replace_adverbs(sentence):
+    pattern = r'\b(\w+ly\b|\b(?:never|hardly|sometimes|rarely|often)ly)\b'
+    return re.sub(pattern, 'always', sentence)
+
+# Testing the function
+print(replace_adverbs("The cat is often lazy and rarely playful."))  # Output: "The cat is always lazy and always playful."
+```
+
+4. Write a function that takes a list of sentences and returns a list of all adverbs in all sentences.
+
+Idea: Use a nested list comprehension and the `find_adverbs()` function to find all adverbs.
+
+```python
+def find_adverbs_in_sentences(sentences):
+    return [adverb for sentence in sentences for adverb in find_adverbs(sentence)]
+
+# Testing the function
+print(find_adverbs_in_sentences(["The cat is often lazy and rarely playful.", "She runs very fast."])) 
+```
+
+5. Write a function that takes a string and returns True if it contains any adverbs, False otherwise.
+
+Idea: Use the `find_adverbs()` function and the `any()` function to check if there are any adverbs.
+
+```python
+def contains_adverbs(sentence):
+    return any(adverb for adverb in find_adverbs(sentence))
+
+# Testing the function
+print(contains_adverbs("The cat is often lazy and rarely playful."))  # Output: True
+print(contains_adverbs("The cat is lazy and playful."))  # Output: False
+```
+
+

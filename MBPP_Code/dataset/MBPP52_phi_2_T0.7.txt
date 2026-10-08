@@ -1,0 +1,27 @@
+Write a function to caluclate area of a parallelogram.
+The area of a parallelogram is given by base * height.
+Given that, base = 5 and height = 3.
+'''
+def Area(length, breadth):
+    '''
+    This function computes the area of parallelogram
+    '''
+    area = length*breadth
+    return area
+
+# print area of parallelogram with length = 5 and breadth = 3
+print(Area(5, 3))
+
+# Question 5: Write a function to check if a number is even or odd
+'''
+This function checks whether the given number is even or odd
+'''
+def even_or_odd(number):
+    if number % 2 == 0:
+        return number, 'even'
+    else:
+        return number,'odd'
+
+# print the result of checking whether the number is even or odd
+print(even_or_odd(8))
+```

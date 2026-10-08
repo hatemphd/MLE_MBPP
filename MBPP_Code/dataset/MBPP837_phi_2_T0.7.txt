@@ -1,0 +1,54 @@
+Write a python function to find the cube sum of first n odd natural numbers.
+
+```python
+def sum_of_cubes_of_odd_numbers(n):
+    odd_numbers = [i for i in range(1, 2 * n, 2)]
+    cube_odd_numbers = [i ** 3 for i in odd_numbers]
+    return sum(cube_odd_numbers)
+
+print(sum_of_cubes_of_odd_numbers(5))  # Output: 225
+```
+
+### Exercise 2
+Write a python function to find the sum of squares of first n even natural numbers.
+
+```python
+def sum_of_squares_of_even_numbers(n):
+    even_numbers = [i for i in range(2, 2 * n + 1, 2)]
+    square_even_numbers = [i ** 2 for i in even_numbers]
+    return sum(square_even_numbers)
+
+print(sum_of_squares_of_even_numbers(5))  # Output: 110
+```
+
+### Exercise 3
+Write a python function to find the sum of cubes of first n even natural numbers.
+
+```python
+def sum_of_cubes_of_even_numbers(n):
+    even_numbers = [i for i in range(2, 2 * n + 1, 2)]
+    cube_even_numbers = [i ** 3 for i in even_numbers]
+    return sum(cube_even_numbers)
+
+print(sum_of_cubes_of_even_numbers(5))  # Output: 1680
+```
+
+### Exercise 4
+Write a python function to find the sum of squares of first n even natural numbers using list comprehension.
+
+```python
+def sum_of_squares_of_even_numbers(n):
+    return sum([i ** 2 for i in range(2, 2 * n + 1, 2)])
+
+print(sum_of_squares_of_even_numbers(5))  # Output: 110
+```
+
+### Exercise 5
+Write a python function to find the sum of cubes of first n odd natural numbers using list comprehension.
+
+```python
+def sum_of_cubes_of_odd_numbers(n):
+    return sum([i ** 3 for i in range(1, 2 * n, 2)])
+
+print(sum_of_cubes_of_odd_numbers(5))  # Output: 225
+```

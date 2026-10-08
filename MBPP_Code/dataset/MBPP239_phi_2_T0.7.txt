@@ -1,0 +1,39 @@
+Write a function to find the number of possible sequences of length n such that each of the next element is greater than or equal to twice of the previous element but less than or equal to m.
+
+```python
+# Hint: Use 2 loops and 2 conditions inside the nested loop to solve this problem.
+
+def find_sequences(n, m):
+    count = 0
+    for i in range(1, m+1):
+        for j in range(1, m+1):
+            if i >= 2*j and i <= m:
+                count += 1
+    return count
+
+print(find_sequences(2, 5)) # Output: 6
+```
+
+In this function, we use nested loops to iterate over all possible combinations of i and j. For each combination, we check if i is greater than or equal to twice of j and less than or equal to m. If it is, we increment the count.
+
+**Exercise 2:**
+
+Find the number of possible sequences of length n such that the next element is greater than or equal to the previous element plus a given constant k.
+
+```python
+# Hint: Use 2 loops and a condition inside the nested loop to solve this problem.
+
+def find_sequences(n, k):
+    count = 0
+    for i in range(1, n+1):
+        for j in range(i, n+1):
+            if j >= i + k:
+                count += 1
+    return count
+
+print(find_sequences(2, 2)) # Output: 6
+```
+
+In this function, we use nested loops to iterate over all possible combinations of i and j. For each combination, we check if j is greater than or equal to i plus k. If it is, we increment the count.
+
+

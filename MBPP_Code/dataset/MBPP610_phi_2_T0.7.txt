@@ -1,0 +1,23 @@
+Write a python function to remove the k'th element from a given list.
+
+```python
+def remove_kth_element(my_list, k: int):
+    del my_list[k]
+    
+my_list = [1, 2, 3, 4, 5]
+remove_kth_element(my_list, 2)
+print(my_list)
+```
+
+### Exercise 5
+Write a python function to sort a list in descending order.
+
+```python
+def sort_descending(my_list):
+    my_list.sort(reverse=True)
+    
+my_list = [5, 1, 4, 2, 3]
+sort_descending(my_list)
+print(my_list)
+```
+

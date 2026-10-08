@@ -1,0 +1,42 @@
+Write a function that matches a string that has an a followed by three 'b'.
+
+```python
+import re
+
+def match_a_b(s):
+    pattern = r'a(b{3})'
+    return bool(re.match(pattern, s))
+
+print(match_a_b("abcbbc")) # True
+print(match_a_b("abccba")) # False
+print(match_a_b("abcbca")) # False
+```
+
+4. Write a function that matches a string that has no more than two 'a' and no more than three 'b' in a row.
+
+```python
+import re
+
+def match_aba_b(s):
+    pattern = r'^(?!.*(aa|bb))(?=.*(a.*b.*a|b.*a.*b))'
+    return bool(re.match(pattern, s))
+
+print(match_aba_b("abcbca")) # True
+print(match_aba_b("bacbca")) # False
+print(match_aba_b("aaabbb")) # False
+```
+
+5. Write a function that matches a string that has an even number of 'a' and an odd number of 'b'.
+
+```python
+import re
+
+def match_a_b(s):
+    pattern = r'^(?=.*a.*a)(?=.*b.*b[^b])(?!.*b{2,})[ab]*$'
+    return bool(re.match(pattern, s))
+
+print(match_a_b("abcbca")) # True
+print(match_a_b("bacbca")) # False
+print(match_a_b("aaabbb")) # False
+print(match_a_b("abbb")) # False
+```

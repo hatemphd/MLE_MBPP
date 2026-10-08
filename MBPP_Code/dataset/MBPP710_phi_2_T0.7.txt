@@ -1,0 +1,29 @@
+Write a function to access the initial and last data of the given tuple record.
+
+```python
+# Solution
+def get_initial_last_data(data):
+    return data[0], data[-1]
+
+# Test
+data = ('Alex', 'Software Engineer', 'LinkedIn', 'Software', 'Python', '10/10/2021')
+print(get_initial_last_data(data))  # Output: ('Alex', 'Python')
+```
+
+5. Given a tuple of tuples, write a function to access the third element of each tuple.
+
+```python
+# Solution
+def get_third_element(tuple_of_tuples):
+    return [t[2] for t in tuple_of_tuples]
+
+# Test
+data = (('Alex', 'Software Engineer', 'LinkedIn'), ('Jane', 'Data Analyst', 'Google'), ('Tom', 'Data Scientist', 'Facebook'))
+print(get_third_element(data))  # Output: ['LinkedIn', 'Google', 'Facebook']
+```
+
+---
+
+These exercises aim to strengthen your understanding of accessing tuple elements in Python and how you can apply these skills in real-life scenarios.
+
+

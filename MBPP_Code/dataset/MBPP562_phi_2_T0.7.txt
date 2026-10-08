@@ -1,0 +1,16 @@
+Write a python function to find the maximum length of sublist.
+
+```python
+def max_sublist_length(lists):
+    max_length = 0
+    current_length = 0
+    for sublist in lists:
+        current_length += len(sublist)
+        if current_length > max_length:
+            max_length = current_length
+        if current_length < 0:
+            current_length = 0
+    return max_length
+```
+
+

@@ -1,0 +1,70 @@
+Write a python function to split the array and add the first part to the end.
+
+#### Solution
+```python
+def reverse_array(array):
+    # split the array
+    part1, part2 = np.split(array, [len(array)//2])
+    # reverse part1
+    part1 = part1[::-1]
+    # concatenate part1 and part2
+    reversed_array = np.concatenate((part1, part2))
+    return reversed_array
+
+array = np.array([1, 2, 3, 4, 5, 6])
+print(reverse_array(array)) # Outputs: array([5, 4, 3, 2, 1, 6])
+```
+
+#### Exercise 3
+
+Write a python function to split the array into n equal parts.
+
+#### Solution
+```python
+def split_array(array, n):
+    # Split array into n parts
+    array_split = np.split(array, n)
+    return array_split
+
+array = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+n = 3
+print(split_array(array, n)) # Outputs: [array([1, 2, 3, 4]), array([5, 6, 7]), array([ 8,  9, 10])]
+```
+
+#### Exercise 4
+
+Write a python function to split the array into n equal parts and reverse each part.
+
+#### Solution
+```python
+def split_and_reverse(array, n):
+    # Split array into n parts
+    array_split = np.split(array, n)
+    # Reverse each part
+    array_reverse = [part[::-1] for part in array_split]
+    return array_reverse
+
+array = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+n = 3
+print(split_and_reverse(array, n)) # Outputs: [array([4, 3, 2, 1]), array([7, 6, 5]), array([10, 9, 8])]
+```
+
+#### Exercise 5
+
+Write a python function to split the array into n equal parts and reverse the order of each part.
+
+#### Solution
+```python
+def split_and_reverse_order(array, n):
+    # Split array into n parts
+    array_split = np.split(array, n)
+    # Reverse the order of each part
+    array_reverse_order = [part[::-1] for part in array_split]
+    return array_reverse_order
+
+array = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+n = 3
+print(split_and_reverse_order(array, n)) # Outputs: [array([4, 3, 2, 1]), array([7, 6, 5]), array([10, 9, 8])]
+```
+
+

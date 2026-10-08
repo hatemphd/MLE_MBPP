@@ -1,0 +1,17 @@
+Write a python function to remove odd numbers from a given list.
+```
+def remove_odd_numbers(lst):
+  return [x for x in lst if x%2 == 0]
+```
+
+4. Write a python function to find the sum of the squares of all numbers in a given list.
+```
+def sum_of_squares(lst):
+  return sum([x**2 for x in lst])
+```
+
+5. Write a python function to find the largest number in a given list.
+```
+def largest_number(lst):
+  return max(lst)
+```

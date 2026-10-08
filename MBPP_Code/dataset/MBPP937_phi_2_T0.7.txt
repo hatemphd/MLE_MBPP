@@ -1,0 +1,44 @@
+Write a function to count the most common character in a given string.
+
+```python
+def most_common_char(string):
+    # Your code here
+```
+
+**Hints:**
+- Use the `count()` function to count the occurrence of each character in the string.
+- Keep track of the character with the maximum count.
+
+**Solution:**
+
+```python
+def most_common_char(string):
+    char_counts = [(char, string.count(char)) for char in set(string)]
+    return max(char_counts, key=lambda item: item[1])[0]
+```
+
+#### Exercise 2:
+
+Write a function to check if a list of strings are permutations of the same string.
+
+```python
+def check_permutations(strings):
+    # Your code here
+```
+
+**Hints:**
+- Use the `Counter` class to count the occurrence of each character in one string.
+- Compare the count of each character in each string.
+
+**Solution:**
+
+```python
+def check_permutations(strings):
+    first_string = strings[0]
+    for string in strings[1:]:
+        if Counter(first_string) != Counter(string):
+            return False
+    return True
+```
+
+

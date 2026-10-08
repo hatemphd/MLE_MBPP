@@ -1,0 +1,19 @@
+Write a function to find if there is a triplet in the array whose sum is equal to a given value. The function should return true if such a triplet exists and false otherwise.
+
+This exercise is a bit advanced but can be solved using a similar approach to the first exercise. The only difference is that you need to find three numbers instead of two.
+
+```python
+def three_sum(numbers, target):
+    for i in range(len(numbers) - 2):
+        for j in range(i + 1, len(numbers) - 1):
+            for k in range(j + 1, len(numbers)):
+                if numbers[i] + numbers[j] + numbers[k] == target:
+                    return True
+    return False
+
+print(three_sum([-1, 0, 1, 2, -1, -4], 0))  # Output: True
+```
+
+In this solution, we just added another loop inside the existing two loops, and the function checks if the sum of three numbers equals the target.
+
+

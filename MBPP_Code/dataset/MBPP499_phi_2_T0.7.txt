@@ -1,0 +1,37 @@
+Write a function to find the diameter of a circle. The diameter is the longest chord of the circle.
+
+    Hint: The diameter can be found by calculating the maximum distance between any two points on the circle.
+    
+    Solution:
+    ```python
+    def diameter(circle):
+        return max(circle.distance(other) for other in circle)
+
+    circle = Circle(0, 0, 5)
+    print(diameter(circle))  # Output: 10.0
+    ```
+    
+2. Write a function to find the area of a circle.
+
+    Hint: The area of a circle can be calculated using the formula πr², where r is the radius of the circle.
+
+    Solution:
+    ```python
+    def area(circle):
+        return math.pi * circle.radius ** 2
+
+    circle = Circle(0, 0, 5)
+    print(area(circle))  # Output: 78.53981633974483
+    ```
+3. Write a function that takes a list of circles and returns a new list containing only the circles that have a radius greater than a given value.
+
+    Solution:
+    ```python
+    def circles_greater_than_radius(circles, radius):
+        return [circle for circle in circles if circle.radius > radius]
+
+    circles = [Circle(0, 0, 5), Circle(0, 0, 2), Circle(0, 0, 8)]
+    print(circles_greater_than_radius(circles, 5))  # Output: [Circle(0, 0, 8)]
+    ```
+
+

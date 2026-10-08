@@ -1,0 +1,35 @@
+Write a python function to merge the first and last elements separately in a list of lists.
+
+```python
+def merge_first_last(lists):
+    new_list = []
+    for i in lists:
+        new_list.append(i[0] + i[-1])
+    return new_list
+
+lists = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print(merge_first_last(lists)) # Output: [4, 11, 16]
+```
+
+4. Write a python function to reverse the order of elements in a list of tuples.
+
+```python
+def reverse_tuples(tuples):
+    new_list = []
+    for i in tuples:
+        new_list.append(tuple(reversed(i)))
+    return new_list
+
+tuples = [(1, 2), (3, 4), (5, 6)]
+print(reverse_tuples(tuples)) # Output: [(2, 1), (4, 3), (6, 5)]
+```
+
+5. Write a python function to sort a list of lists based on the sum of the elements in each list.
+
+```python
+def sort_lists(lists):
+    return sorted(lists, key=lambda x: sum(x))
+
+lists = [[1, 2, 3], [4, 5], [6, 7, 8, 9]]
+print(sort_lists(lists)) # Output: [[4, 5], [1, 2, 3], [6, 7, 8, 9]]
+```

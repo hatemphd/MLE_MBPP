@@ -1,0 +1,49 @@
+Write a python function to find the minimum operations required to make two numbers equal.
+
+```python
+def findMinOperations(num1, num2):
+    return abs(num1 - num2)
+
+print(findMinOperations(10, 12))
+```
+
+2. Write a python function to find the minimum operations required to make an array of numbers equal.
+
+```python
+def findMinOperations(array):
+    from functools import reduce
+    return reduce(abs, array)
+
+print(findMinOperations([10, 12, 15]))
+```
+
+3. Write a python function to find the minimum operations required to make a given number equal to the sum of all its digits.
+
+```python
+def findMinOperations(num):
+    return abs(num - sum(int(digit) for digit in str(num)))
+
+print(findMinOperations(123))
+```
+
+4. Write a python function to find the minimum operations required to make a given number equal to the sum of the factorial of its digits.
+
+```python
+def findMinOperations(num):
+    from functools import reduce
+    return abs(num - reduce(lambda x, y: x*y, (int(digit) for digit in str(num))))
+
+print(findMinOperations(123))
+```
+
+5. Write a python function to find the minimum operations required to make a given number equal to the sum of all its divisors.
+
+```python
+def findMinOperations(num):
+    from functools import reduce
+    return abs(num - reduce(lambda x, y: x*y,[i for i in range(1,num+1) if num%i==0]))
+
+print(findMinOperations(12))
+```
+
+

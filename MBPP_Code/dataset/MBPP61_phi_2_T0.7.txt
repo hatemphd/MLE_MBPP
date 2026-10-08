@@ -1,0 +1,40 @@
+Write a python function to count number of substrings with the sum of digits equal to their length.
+
+Hint: You can use the same logic as in the previous problem. Instead of using a loop for `i`, you will use a loop for `j`.
+
+```python
+def count_substrings_with_digits_sum_equal_len(s):
+    length = len(s)
+    count = 0
+    for i in range(1, length):
+        for j in range(length - i + 1):
+            sub_str = s[j:j+i]
+            if sum(int(char) for char in sub_str) == i:
+                count += 1
+    return count
+
+print(count_substrings_with_digits_sum_equal_len("1234"))  # Output: 2
+```
+
+2. Write a python function to count number of substrings with sum of digits equal to their length for all substrings.
+
+Hint: The logic is similar to the previous problem. But instead of returning the count, you will print the substring and its count.
+
+```python
+def count_substrings_with_digits_sum_equal_len(s):
+    length = len(s)
+    for i in range(1, length):
+        for j in range(length - i + 1):
+            sub_str = s[j:j+i]
+            if sum(int(char) for char in sub_str) == i:
+                print(f"Substring: {sub_str}, Count: {count_substrings_with_digits_sum_equal_len(sub_str)}")
+
+count_substrings_with_digits_sum_equal_len("1234")  
+# Output: 
+# Substring: 12, Count: 1
+# Substring: 34, Count: 1
+```
+
+By understanding this problem and its solutions, you should be able to handle more complex problems involving substring manipulation in Python. The knowledge of string manipulation and loops in Python is very crucial for tackling such tasks.
+
+

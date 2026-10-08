@@ -1,0 +1,28 @@
+Write a function to find the longest bitonic subsequence for the given array.
+
+**Solution:**
+
+```python
+def longest_bitonic_subsequence(arr):
+    # Sort the array
+    arr.sort()
+    # Initialize the dp matrix
+    dp = [[0]*len(arr) for _ in range(2)]
+    # Compute dp
+    for i in range(1, len(arr)):
+        for j in range(i):
+            if arr[i] > arr[j]:
+                dp[0][i] = max(dp[0][i], dp[0][j] + 1)
+            if arr[i] < arr[j]:
+                dp[1][i] = max(dp[1][i], dp[1][j] + 1)
+    # Find the maximum value in the dp matrix
+    return max(max(dp[0]), max(dp[1]))
+
+# Testing the function
+arr = [10, 22, 9, 33, 21, 50, 41, 60]
+print(longest_bitonic_subsequence(arr))  # Output: 5
+```
+
+In conclusion, dynamic programming is a powerful tool that can be used to solve a wide range of problems by breaking them down into smaller, more manageable sub-problems. This chapter has introduced the concept of dynamic programming in the context of finding the longest bitonic subsequence. With the help of dynamic programming, we were able to solve this problem efficiently and in O(n^2) time complexity. The understanding of dynamic programming is crucial for anyone who wants to be proficient in computer science and programming.
+
+

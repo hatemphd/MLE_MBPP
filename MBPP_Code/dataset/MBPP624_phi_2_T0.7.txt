@@ -1,0 +1,2 @@
+Write a python function to convert the given string to upper case. string = "hello world" Response: def to_upper(string):
+    return string.upper()

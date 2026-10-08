@@ -1,0 +1,34 @@
+Write a function to extract the frequency of unique tuples in the given list order irrespective.
+
+```python
+# Idea: We can use a similar approach as in the previous exercise to create a frequency dictionary.
+
+def extract_frequency(lst):
+    freq_dict = {}
+    for tup in lst:
+        if tup in freq_dict:
+            freq_dict[tup] += 1
+        else:
+            freq_dict[tup] = 1
+    return freq_dict
+
+# Test the function
+lst = [(1, 2), (3, 4), (1, 2), (5, 6), (3, 4), (1, 2)]
+print(extract_frequency(lst))
+```
+
+2. Create a function to remove tuples from a list that contain duplicate elements.
+
+```python
+# Idea: We can use Python's built-in set data structure to remove duplicates from a tuple and then check if all elements are unique.
+
+def remove_duplicates(lst):
+    filtered_lst = [tup for tup in lst if len(set(tup)) == len(tup)]
+    return filtered_lst
+
+# Test the function
+lst = [(1, 2), (2, 2), (3, 3), (1, 2), (3, 4)]
+print(remove_duplicates(lst))
+```
+
+

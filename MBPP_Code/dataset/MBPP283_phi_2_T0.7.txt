@@ -1,0 +1,53 @@
+Write a python function to check whether the frequency of each digit is less than or equal to the digit itself. If any digit frequency is more than the digit itself, the function should return False, else True.
+
+Ideas:
+- Convert the given number to a string and then iterate over each digit.
+- Keep count of the frequency of each digit in a dictionary.
+- If the count of any digit is greater than the digit itself, return False.
+
+Solution:
+
+```python
+def check_frequency(number):
+    # Converting number to string
+    number_str = str(number)
+    # Initializing dictionary for frequency count of each digit
+    frequency_dict = {}
+    for digit in number_str:
+        if digit not in frequency_dict:
+            frequency_dict[digit] = 0
+        frequency_dict[digit] += 1
+    
+    # Checking if any digit's frequency is greater than the digit itself
+    for digit, freq in frequency_dict.items():
+        if freq > int(digit):
+            return False
+    return True
+
+# Test the function
+print(check_frequency(12321))  # Returns: False
+print(check_frequency(1234))  # Returns: True
+```
+
+## Exercise 2
+Write a python function that checks whether a given number is a palindrome. A number is considered a palindrome if it remains the same when its digits are reversed.
+
+Ideas:
+- Convert the given number to a string and then reverse it.
+- Compare the reversed string with the original string.
+
+Solution:
+
+```python
+def check_palindrome(number):
+    # Converting number to string and reversing it
+    reversed_number_str = str(number)[::-1]
+    # Comparing reversed number string with the original number string
+    return str(number) == reversed_number_str
+
+# Test the function
+print(check_palindrome(12321))  # Returns: True
+print(check_palindrome(12345))  # Returns: False
+```
+
+

@@ -1,0 +1,34 @@
+Write a python function to count the occcurences of an element in a tuple.
+```python
+def count_occurences(tup, ele):
+    return tup.count(ele)
+
+# Test the function
+tup = (1, 2, 3, 2, 4, 5, 2)
+ele = 2
+print(f'Number of occurences of {ele} is: {count_occurences(tup, ele)}')
+```
+
+2. Write a python function to check if an element exists in a tuple.
+```python
+def check_element(tup, ele):
+    return ele in tup
+
+# Test the function
+tup = (1, 2, 3, 2, 4, 5, 2)
+ele = 2
+print(f'{ele} exists in the tuple: {check_element(tup, ele)}')
+```
+
+3. Write a python function to find the minimum and maximum value in a tuple.
+```python
+def min_max(tup):
+    return min(tup), max(tup)
+
+# Test the function
+tup = (1, 2, 3, 2, 4, 5, 2)
+print(f'Minimum value is: {min_max(tup)[0]}')
+print(f'Maximum value is: {min_max(tup)[1]}')
+```
+
+

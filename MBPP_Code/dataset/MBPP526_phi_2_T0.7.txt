@@ -1,0 +1,39 @@
+Write a python function to capitalize first and last letters of each word of a given string.
+
+```python
+def capitalize_words(string):
+    words = string.split()
+    capitalized_words = [word[0].upper() + word[1:-1] + word[-1].upper() for word in words]
+    return ' '.join(capitalized_words)
+
+print(capitalize_words("hello world")) # Output: HeLlO WoRlD
+```
+
+#### Exercise 4:
+Write a python function to convert a given string to a list of tuples with each tuple containing a word from the string and its length.
+
+```python
+def string_to_tuples(string):
+    words = string.split()
+    tuples = [(word, len(word)) for word in words]
+    return tuples
+
+print(string_to_tuples("The cat in the hat")) # Output: [('The', 3), ('cat', 3), ('in', 2), ('the', 3), ('hat', 3)]
+```
+
+#### Exercise 5:
+Write a python function to count the number of times each character appears in a given string.
+
+```python
+def count_characters(string):
+    char_count = {}
+    for char in string:
+        if char in char_count:
+            char_count[char] += 1
+        else:
+            char_count[char] = 1
+    return char_count
+
+print(count_characters("hello world")) # Output: {'h': 1, 'e': 1, 'l': 3, 'o': 2, ' ': 1, 'w': 1, 'r': 1, 'd': 1}
+```
+

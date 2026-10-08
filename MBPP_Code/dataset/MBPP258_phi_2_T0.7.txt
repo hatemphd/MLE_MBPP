@@ -1,0 +1,58 @@
+Write a function to find number of odd elements in the given list using lambda function.
+
+```python
+def count_odd(lst):
+    return sum(1 for x in lst if lambda x: x % 2 == 1)
+
+lst = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(count_odd(lst))  # Output: 5
+```
+
+### Exercise 2:
+
+Write a function to convert a list of strings to uppercase using lambda function.
+
+```python
+def to_uppercase(lst):
+    return list(map(lambda x: x.upper(), lst))
+
+lst = ["apple", "banana", "cherry"]
+print(to_uppercase(lst))  # Output: ['APPLE', 'BANANA', 'CHERRY']
+```
+
+### Exercise 3:
+
+Write a function to find the maximum value in a list of tuples using lambda function.
+
+```python
+def find_max(lst):
+    return max(lst, key=lambda x: x[1])
+
+lst = [(1, 2), (3, 4), (5, 6)]
+print(find_max(lst))  # Output: (5, 6)
+```
+
+### Exercise 4:
+
+Write a function to sort a list of dictionaries by a certain key using lambda function.
+
+```python
+def sort_dicts(lst, key):
+    return sorted(lst, key=lambda x: x[key])
+
+lst = [{"name": "Alice", "age": 25}, {"name": "Bob", "age": 30}, {"name": "Charlie", "age": 20}]
+print(sort_dicts(lst, "age"))  # Output: [{'name': 'Charlie', 'age': 20}, {'name': 'Alice', 'age': 25}, {'name': 'Bob', 'age': 30}]
+```
+
+### Exercise 5:
+
+Write a function to find the sum of squares of even numbers in a list using lambda function.
+
+```python
+def sum_even_squares(lst):
+    return sum(filter(lambda x: x % 2 == 0, lst)) ** 2
+
+lst = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(sum_even_squares(lst))  # Output: 120
+```
+

@@ -1,0 +1,9 @@
+Write a function to perfom the modulo of tuple elements in the given two tuples.
+
+```python
+# Solution
+def modulo_tuple(tuple1, tuple2):
+    return (tuple1[i] % tuple2[i] for i in range(len(tuple1)))
+```
+
+

@@ -1,0 +1,29 @@
+Write a python function to calculate the sum of the numbers in a list between the indices of a specified range. The function should take the list and the range as parameters. 
+
+Example:
+Input: [1, 2, 3, 4, 5], range(1, 3)
+Output: 6
+
+Explanation: The numbers between indices 1 and 2 are 2 and 3, and their sum is 5.
+
+Solution (Python Code):
+
+def sum_range(numbers, range_start, range_end):
+    total = 0
+    for i in range(range_start, range_end + 1):
+        total += numbers[i]
+    return total
+
+# Test the function
+numbers = [1, 2, 3, 4, 5]
+range_start = 1
+range_end = 3
+print(sum_range(numbers, range_start, range_end))
+
+Solution:
+The function `sum_range` takes the list of numbers, `range_start`, and `range_end` as parameters. It initializes a variable `total` to 0, which will store the sum of the numbers in the specified range. Then, it iterates over the range of indices from `range_start` to `range_end + 1` using the `range` function. For each index, it adds the corresponding number from the list to the `total` variable. Finally, the function returns the `total` variable, which represents the sum of the numbers in the specified range.
+
+Follow-up exercises:
+1. How does the `range_end + 1` in the `for` loop ensure that the last number in the range is included in the sum?
+2. What will happen if the `range_start` is greater than `range_end`? How can you modify the function to handle this case?
+3. Can you write a more concise version of the `sum_range` function using list comprehension?

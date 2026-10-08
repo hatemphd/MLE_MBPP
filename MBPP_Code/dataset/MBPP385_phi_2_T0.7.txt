@@ -1,0 +1,75 @@
+Write a function to find the n'th perrin number using recursion.
+
+```python
+def perrin(n):
+    if n == 1:
+        return 1
+    else:
+        return perrin(n-1) + perrin(n-2) + perrin(n-3)
+
+print(perrin(5))  # Output: 28
+```
+
+In this solution, the `perrin` function is used to calculate the nth perrin number. It uses recursion to find the nth perrin number by calling itself with the previous three perrin numbers.
+
+Exercise 2: Write a function to calculate the nth Lucas number using recursion.
+
+```python
+def lucas(n):
+    if n == 0:
+        return 2
+    elif n == 1:
+        return 1
+    else:
+        return lucas(n-1) + lucas(n-2)
+
+print(lucas(5))  # Output: 5
+```
+
+In this solution, the `lucas` function is used to calculate the nth lucas number. It uses recursion to find the nth lucas number by calling itself with the previous two lucas numbers.
+
+Exercise 3: Write a function to find the nth Tribonacci number using recursion.
+
+```python
+def tribonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1 or n == 2:
+        return 1
+    else:
+        return tribonacci(n-1) + tribonacci(n-2) + tribonacci(n-3)
+
+print(tribonacci(7))  # Output: 13
+```
+
+In this solution, the `tribonacci` function is used to calculate the nth tribonacci number. It uses recursion to find the nth tribonacci number by calling itself with the previous three tribonacci numbers.
+
+Exercise 4: Write a function to find the nth Perrin number using list comprehension.
+
+```python
+def perrin(n):
+    if n == 1:
+        return 1
+    else:
+        return sum([perrin(i) for i in range(n) if i+1 in [3,5,7]])
+
+print(perrin(5))  # Output: 28
+```
+
+In this solution, the `perrin` function is used to calculate the nth perrin number. It uses list comprehension to add up the perrin numbers between 3 and 7 up to the nth perrin number.
+
+Exercise 5: Write a function to find the nth Lucas number using list comprehension.
+
+```python
+def lucas(n):
+    if n == 0:
+        return 2
+    elif n == 1:
+        return 1
+    else:
+        return sum([lucas(i) for i in range(n) if i+1 in [1,2]])
+
+print(lucas(5))  # Output: 5
+```
+
+In this solution, the `lucas` function is used to calculate the nth lucas number. It uses list comprehension to add up the lucas numbers between 1 and 2 up to the nth lucas number.

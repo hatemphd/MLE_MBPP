@@ -1,0 +1,40 @@
+Write a function to extract the sum of alternate chains of tuples.
+
+    **Hint**: Use list comprehension to iterate over the list in an alternating fashion and add the tuples.
+    
+    **Solution**:
+    
+    ```python
+    def alternate_chain_sum(chain):
+        return sum([chain[i][1] for i in range(0, len(chain), 2)])
+    
+    print(alternate_chain_sum(chain))  # Outputs: 9
+    ```
+
+2. Generate a list of tuples representing a random chain of length 10 and calculate the sum of its alternate chains.
+
+    **Hint**: Use the `random.choice()` function to generate a list of tuples and the `alternate_chain_sum()` function to calculate the sum.
+    
+    **Solution**:
+    
+    ```python
+    import random
+    
+    chain = [(random.randint(1, 10), random.randint(1, 10)) for _ in range(10)]
+    print(alternate_chain_sum(chain))  # Outputs: varies
+    ```
+
+3. Write a function that takes in a list of tuples and a number `n`, and returns a list of all alternate chains of length `n`.
+
+    **Hint**: Use the `range()` function in the list comprehension to generate the alternate chains.
+    
+    **Solution**:
+    
+    ```python
+    def alternate_chains(chain, n):
+        return [chain[i:i+n:2] for i in range(0, len(chain), 2*n)]
+    
+    print(alternate_chains(chain, 3))  # Outputs: [[(1, 2), (3, 4), (5, 6)], [(7, 8), (9, 10)]]
+    ```
+
+

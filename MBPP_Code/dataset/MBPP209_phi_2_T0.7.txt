@@ -1,0 +1,52 @@
+Write a function to delete the smallest element from the given heap and then insert a new item. 
+    
+```python
+def min_heapify(heap, index):
+    smallest = index
+    left_child = 2 * index + 1
+    right_child = 2 * index + 2
+    
+    if left_child < len(heap) and heap[left_child] < heap[smallest]:
+        smallest = left_child
+    
+    if right_child < len(heap) and heap[right_child] < heap[smallest]:
+        smallest = right_child
+    
+    if smallest != index:
+        heap[index], heap[smallest] = heap[smallest], heap[index]
+        min_heapify(heap, smallest)
+
+def delete_min(heap):
+    if len(heap) == 1:
+        return heap.pop()
+    
+    min_val = heap[0]
+    last_val = heap.pop()
+    
+    if len(heap) > 0:
+        heap[0] = last_val
+        min_heapify(heap, 0)
+        
+    return min_val
+
+def insert(heap, item):
+    heap.append(item)
+    min_heapify(heap, len(heap) - 1)
+```
+
+4. Write a function to find the kth smallest element in a heap. 
+    
+```python
+def kth_smallest(heap, k):
+    if k > len(heap):
+        return None
+    
+    return heap[0]
+```
+
+5. Write a function to return the maximum element in the heap. 
+    
+```python
+def max_heap(heap):
+    return heap[0]
+```

@@ -1,0 +1,45 @@
+Write a function to calculate the number of digits and letters in a string.
+
+Hint: Use `isalpha()` and `isdigit()` functions.
+
+Solution:
+
+```python
+def count_chars(str):
+    count_alpha = sum(1 for char in str if char.isalpha())
+    count_digit = sum(1 for char in str if char.isdigit())
+    return count_alpha, count_digit
+
+print(count_chars("Hello123"))  # Expected Output: (5, 3)
+```
+
+2. Write a function to check if a given string is a palindrome.
+
+Hint: Use `strip()`, `isalpha()` and `lower()` functions.
+
+Solution:
+
+```python
+def is_palindrome(str):
+    str = str.lower().replace(" ", "")  # Remove spaces and convert to lowercase
+    return str == str[::-1]  # Check if string is equal to its reverse
+
+print(is_palindrome("Able was I ere I saw Elba"))  # Expected Output: True
+```
+
+3. Write a function to check if a string contains any special characters (excluding spaces and punctuation).
+
+Hint: Use `isalpha()`, `isdigit()`, and a list of special characters.
+
+Solution:
+
+```python
+def contains_special_chars(str):
+    special_chars = ["@", "#", "$", "%", "^", "&", "*"]
+    return any(char in special_chars for char in str if char not in " .,!?@#$%^&*()")
+
+print(contains_special_chars("Hello world"))  # Expected Output: False
+print(contains_special_chars("Hello@#world"))  # Expected Output: True
+```
+
+

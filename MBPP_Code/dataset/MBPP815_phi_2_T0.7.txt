@@ -1,0 +1,12 @@
+Write a function to sort the given array without using any sorting algorithm. the given array consists of only 0, 1, and 2.
+Input: [2,1,0,2,1,0,2,1,0]
+Output: The given array can be sorted by using a recursive function that swaps the adjacent elements that are not in the correct order.
+
+def sortArray(arr): 
+    if len(arr) == 1: 
+        return arr 
+    if arr[0] == 1 and arr[1] == 0: 
+        arr[0], arr[1] = arr[1], arr[0] 
+    if arr[1] == 2 and arr[2] == 1: 
+        arr[1], arr[2] = arr[2], arr[1] 
+    return [arr[0]] + sortArray(arr[1:])

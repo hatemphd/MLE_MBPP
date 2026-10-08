@@ -1,0 +1,24 @@
+Write a python function to interchange first and last elements in a given list.
+
+Hint: Use list indexing to access the first and last elements.
+
+```python
+def interchange_first_last(lst):
+    lst[0], lst[-1] = lst[-1], lst[0]
+    return lst
+
+print(interchange_first_last([1, 2, 3, 4, 5]))  # Output: [5, 2, 3, 4, 1]
+```
+
+2. Write a python function to find the index of all occurrences of a given element in a list.
+
+Hint: Use list comprehension and the `index` method.
+
+```python
+def find_all_occurrences(lst, element):
+    return [index for index, value in enumerate(lst) if value == element]
+
+print(find_all_occurrences([1, 2, 3, 2, 4, 2], 2))  # Output: [1, 3, 5]
+```
+
+

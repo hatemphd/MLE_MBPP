@@ -1,0 +1,15 @@
+Write a function to choose specified number of colours from three different colours and generate all the combinations with repetitions.
+
+```python
+from itertools import combinations_with_replacement
+
+def generate_colour_combinations(n):
+    colours = ['red', 'blue', 'green']
+    return list(combinations_with_replacement(colours, n))
+
+print(generate_colour_combinations(2))
+```
+
+The above exercises should give you a good understanding of using Python's itertools library to generate combinations with repetitions.
+
+

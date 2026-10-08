@@ -1,0 +1,84 @@
+Write a function to sort dictionary items by tuple product of keys for the given dictionary with tuple keys. 
+
+Hint: Use the sorted() function with a custom key.
+
+```python
+# Solution
+def sort_dict_by_key_product(d):
+    return dict(sorted(d.items(), key=lambda item: item[0]*item[1]))
+
+d = {(1, 2): 3, (2, 3): 4, (3, 4): 5}
+print(sort_dict_by_key_product(d))
+```
+
+In the above solution, we define a function `sort_dict_by_key_product` that takes a dictionary `d` as input. It returns a new dictionary that is sorted by the product of the keys of the items in `d`.
+
+## Exercise 2
+
+Write a function to reverse the order of the keys in the given dictionary.
+
+Hint: Convert keys to a list, reverse the list, and then create a new dictionary.
+
+```python
+# Solution
+def reverse_keys(d):
+    return {k[::-1]: v for k, v in d.items()}
+
+d = {'abc': 'def', 'ghi': 'jkl', 'mno': 'pqr'}
+print(reverse_keys(d))
+```
+
+In the above solution, we define a function `reverse_keys` that takes a dictionary `d` as input. It returns a new dictionary that is the reverse of `d`. The items are created by iterating over `d.items()`.
+
+## Exercise 3
+
+Write a function to find the maximum value in the given dictionary.
+
+Hint: Use the max() function with the dictionary values.
+
+```python
+# Solution
+def find_max_value(d):
+    return max(d.values())
+
+d = {'abc': 3, 'ghi': 4, 'mno': 5}
+print(find_max_value(d))
+```
+
+In the above solution, we define a function `find_max_value` that takes a dictionary `d` as input. It returns the maximum value in `d`.
+
+## Exercise 4
+
+Write a function to remove the smallest value in the given dictionary.
+
+Hint: Use the min() function with the dictionary values, and then use a dictionary comprehension to create a new dictionary without the smallest key-value pair.
+
+```python
+# Solution
+def remove_smallest_value(d):
+    min_value = min(d.values())
+    return {k: v for k, v in d.items() if v != min_value}
+
+d = {'abc': 3, 'ghi': 4, 'mno': 5, 'def': 2}
+print(remove_smallest_value(d))
+```
+
+In the above solution, we define a function `remove_smallest_value` that takes a dictionary `d` as input. It returns a new dictionary that is the same as `d` but without the key-value pair with the smallest value.
+
+## Exercise 5
+
+Write a function to find the keys that have a corresponding value of a given integer in the given dictionary.
+
+Hint: Use a dictionary comprehension with a condition to filter the keys.
+
+```python
+# Solution
+def find_keys_with_value(d, value):
+    return {k for k, v in d.items() if v == value}
+
+d = {'abc': 3, 'ghi': 4, 'mno': 5, 'def': 2, 'jkl': 4}
+print(find_keys_with_value(d, 4))
+```
+
+In the above solution, we define a function `find_keys_with_value` that takes a dictionary `d` and an integer `value` as input. It returns a new set that contains the keys in `d` that have a corresponding value of `value`.
+

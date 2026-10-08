@@ -1,0 +1,65 @@
+Write a function to calculate the perimeter of a regular polygon. The function should take in the number of sides and the length of each side.
+
+```python
+import math
+
+def polygon_perimeter(n, s):
+    return n * s
+
+# Test the function
+print(polygon_perimeter(5, 4)) # Output: 20
+```
+
+Exercise 2:
+Write a function to calculate the area of a regular polygon. The function should take in the number of sides and the length of each side.
+
+```python
+import math
+
+def polygon_area(n, s):
+    return (n * s ** 2) / (4 * math.tan(math.pi / n))
+
+# Test the function
+print(polygon_area(6, 3)) # Output: 34.64101615137755
+```
+
+Exercise 3:
+Write a function to calculate the apothem of a regular polygon. The function should take in the number of sides and the length of each side.
+
+```python
+import math
+
+def polygon_apothem(n, s):
+    return s / (2 * math.tan(math.pi / n))
+
+# Test the function
+print(polygon_apothem(4, 5)) # Output: 2.5
+```
+
+Exercise 4:
+Write a function to calculate the radius of a regular polygon inscribed in a circle. The function should take in the number of sides and the length of each side.
+
+```python
+import math
+
+def polygon_radius(n, s):
+    return s / (2 * math.sin(math.pi / n))
+
+# Test the function
+print(polygon_radius(6, 3)) # Output: 3.0
+```
+
+Exercise 5:
+Write a function to calculate the radius of a regular polygon circumscribed around a circle. The function should take in the number of sides and the length of each side.
+
+```python
+import math
+
+def polygon_circumradius(n, s):
+    return s * math.sin(math.pi / n)
+
+# Test the function
+print(polygon_circumradius(4, 5)) # Output: 5.0
+```
+
+That's it for our lecture on the properties of regular polygons. Remember to practice these concepts and try out the exercises on your own. In the next lecture, we will be discussing the properties of circles and tangents.

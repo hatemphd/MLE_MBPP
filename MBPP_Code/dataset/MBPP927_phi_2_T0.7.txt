@@ -1,0 +1,13 @@
+Write a function to calculate the height of the given binary tree.
+
+    Args:
+    - root: the root node of the binary tree
+
+    Returns:
+    - an integer representing the height of the binary tree
+    """
+    if root is None:
+        return 0
+    else:
+        return 1 + max(calculate_height(root.left), calculate_height(root.right))
+

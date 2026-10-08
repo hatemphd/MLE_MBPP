@@ -1,0 +1,59 @@
+Write a python function to count the number of substrings with same first and last characters.
+
+```python
+def count_substrings(s):
+    count = 0
+    for i in range(len(s)):
+        for j in range(i+1, len(s)+1):
+            if s[i] == s[j-1]:
+                count += 1
+    return count
+
+print(count_substrings("abba")) # Output: 4
+```
+
+2. Write a python function to check if a given string is a palindrome or not.
+
+```python
+def is_palindrome(s):
+    return s == s[::-1]
+
+print(is_palindrome("racecar")) # Output: True
+```
+
+3. Write a python function to remove all the duplicates from a given string.
+
+```python
+def remove_duplicates(s):
+    return "".join(set(s))
+
+print(remove_duplicates("hello world")) # Output: 'dehlorw'
+```
+
+4. Write a python function to find the length of the longest substring without any repeating characters.
+
+```python
+def length_of_longest_substring(s):
+    last_occurrence = {}
+    start = 0
+    max_length = 0
+    for i, char in enumerate(s):
+        if char in last_occurrence and start <= last_occurrence[char]:
+            start = last_occurrence[char] + 1
+        else:
+            max_length = max(max_length, i - start + 1)
+        last_occurrence[char] = i
+    return max_length
+
+print(length_of_longest_substring("abcabcbb")) # Output: 3
+```
+
+5. Write a python function to check if a given string is a pangram or not. A pangram is a sentence that contains every letter of the alphabet at least once.
+
+```python
+def is_pangram(s):
+    alphabet = set("abcdefghijklmnopqrstuvwxyz")
+    return alphabet.issubset(set(s.lower()))
+
+print(is_pangram("The quick brown fox jumps over the lazy dog")) # Output: True
+```

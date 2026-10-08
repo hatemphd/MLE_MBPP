@@ -1,0 +1,53 @@
+Write a function for computing square roots using the babylonian method. The function should take a non-negative float as input and return the square root as a float. Test your function using the `assert` keyword.
+
+```python
+import math
+
+def babylonian_sqrt(x):
+    guess = x / 2
+    while True:
+        new_guess = (guess + x / guess) / 2
+        if abs(new_guess - guess) < 0.0001:
+            return new_guess
+        guess = new_guess
+
+assert babylonian_sqrt(4.0) == 2.0
+assert babylonian_sqrt(2.0) == 1.4142135623730951
+```
+
+Exercise 4:
+Write a function for computing cube roots using the babylonian method. The function should take a non-negative float as input and return the cube root as a float. Test your function using the `assert` keyword.
+
+```python
+import math
+
+def babylonian_cube_root(x):
+    guess = x / 2
+    while True:
+        new_guess = (guess + x / guess**3) / 2
+        if abs(new_guess - guess) < 0.0001:
+            return new_guess
+        guess = new_guess
+
+assert babylonian_cube_root(8.0) == 2.0
+assert babylonian_cube_root(27.0) == 3.0
+```
+
+Exercise 5:
+Write a function for computing square roots using the Babylonian method. The function should take a non-negative float as input and return the square root as a float. Test your function using the `assert` keyword.
+
+```python
+import math
+
+def babylonian_sqrt(x):
+    guess = x / 2
+    while True:
+        new_guess = (guess + x / guess) / 2
+        if abs(new_guess - guess) < 0.0001:
+            return new_guess
+        guess = new_guess
+
+assert babylonian_sqrt(9.0) == 3.0
+assert babylonian_sqrt(16.0) == 4.0
+assert babylonian_sqrt(25.0) == 5.0
+```

@@ -1,0 +1,16 @@
+Write a function to count the number of inversions in the given array. An inversion is a pair of elements (i, j) such that i < j and array[i] > array[j]. 
+Input: arr = [10, 8, 6, 4, 2].
+Output: function countInversions(arr) {
+  let n = arr.length;
+  let count = 0;
+  for (let i = 0; i < n; i++) {
+    for (let j = i + 1; j < n; j++) {
+      if (arr[i] > arr[j]) {
+        count++;
+      }
+    }
+  }
+  return count;
+}
+
+countInversions(arr); // returns 10

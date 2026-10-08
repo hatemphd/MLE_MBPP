@@ -1,0 +1,25 @@
+Write a function to convert radians to degrees.
+
+##### Solution:
+
+```python
+import math
+
+def rad_to_degree(radius):
+    return math.degrees(radius)
+
+print(rad_to_degree(math.pi/2)) # Output: 90.0
+```
+
+### Exercise 5:
+
+Write a function to calculate the average of a list of numbers.
+
+##### Solution:
+
+```python
+def avg(numbers):
+    return sum(numbers) / len(numbers)
+
+print(avg([1, 2, 3, 4, 5])) # Output: 3.0
+```

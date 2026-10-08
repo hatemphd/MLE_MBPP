@@ -1,0 +1,40 @@
+Write a python function to convert a string to a list.
+
+*Hint: Use the `list` function.*
+
+```python
+def str_to_list(input_str):
+    return list(input_str)
+
+print(str_to_list("Hello")) # prints ['H', 'e', 'l', 'l', 'o']
+```
+
+4. Write a python function to convert a list to a string.
+
+*Hint: Use the `join` function.*
+
+```python
+def list_to_str(input_list):
+    return ''.join(input_list)
+
+print(list_to_str(["H", "e", "l", "l", "o"])) # prints 'Hello'
+```
+
+5. Write a python function to calculate the frequency of each character in a string.
+
+*Hint: You can use a dictionary to store the frequencies.*
+
+```python
+def char_frequency(input_str):
+    freq_dict = {}
+    for char in input_str:
+        if char in freq_dict:
+            freq_dict[char] += 1
+        else:
+            freq_dict[char] = 1
+    return freq_dict
+
+print(char_frequency("Hello")) # prints {'H': 1, 'e': 1, 'l': 2, 'o': 1}
+```
+
+

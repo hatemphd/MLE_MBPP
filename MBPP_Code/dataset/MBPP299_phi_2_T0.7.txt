@@ -1,0 +1,44 @@
+Write a function to calculate the maximum aggregate from the list of tuples.
+
+```python
+def get_max_aggregate(p):
+    return max([sum(agg) for agg in p])
+```
+
+**Exercise 2:**
+
+Write a function to calculate the minimum aggregate from the list of tuples.
+
+```python
+def get_min_aggregate(p):
+    return min([sum(agg) for agg in p])
+```
+
+**Exercise 3:**
+
+Write a function to find the index of the tuple with the maximum aggregate.
+
+```python
+def get_index_of_max_aggregate(p):
+    return max([(i, sum(agg)) for i, agg in enumerate(p)])[0]
+```
+
+**Exercise 4:**
+
+Write a function to count the number of tuples with an aggregate greater than a specified threshold.
+
+```python
+def count_above_threshold(p, threshold):
+    return sum([1 for agg in p if sum(agg) > threshold])
+```
+
+**Exercise 5:**
+
+Modify the get_index_of_max_aggregate function to return a list of indices if there are multiple tuples with the maximum aggregate.
+
+```python
+def get_indices_of_max_aggregate(p):
+    return [i for i, agg in enumerate(p) if sum(agg) == max([sum(agg) for agg in p])]
+```
+
+

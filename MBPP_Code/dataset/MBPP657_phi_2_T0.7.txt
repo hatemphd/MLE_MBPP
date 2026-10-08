@@ -1,0 +1,46 @@
+Write a python function to find the first digit in factorial of a given number.
+
+**Hints:**
+- Use `str` to convert the number to a string.
+- Use `isdigit` to check if the string contains digits.
+
+**Solution:**
+
+```python
+def first_digit(n):
+    fact = 1
+    for i in range(1, n+1):
+        fact *= i
+    fact_str = str(fact)
+    if fact_str.isdigit():
+        return int(fact_str[0])
+    else:
+        return None
+
+print(first_digit(5)) # Outputs: 2
+```
+
+**Exercise 2:**
+
+Write a Python program that checks a given number is a palindrome or not.
+
+**Hints:**
+- Use `isdigit` to check if the number is a string.
+- Use slicing to reverse the string.
+- Compare the original and reversed strings.
+
+**Solution:**
+
+```python
+def is_palindrome(n):
+    if not n.isdigit():
+        return False
+    else:
+        num_str = str(n)
+        return num_str == num_str[::-1]
+
+print(is_palindrome(121)) # Outputs: True
+print(is_palindrome(123)) # Outputs: False
+```
+
+

@@ -1,0 +1,61 @@
+Write a python function to remove all occurrences of a character in a given string.
+```python
+"""
+Solution:
+def remove_character(input_string, char_to_remove):
+    # using list comprehension to create new string without the given character
+    return ''.join([c for c in input_string if c != char_to_remove])
+
+# test the function
+input_str = "hello world"
+char_to_remove = "l"
+output_str = remove_character(input_str, char_to_remove)
+print(output_str)  # "heo word"
+"""
+```
+
+### Exercise 4:
+Write a python function to find the first non-repeating character in a given string.
+```python
+"""
+Solution:
+def first_non_repeating_char(input_string):
+    # using list comprehension to create a list of characters that appear only once in the string
+    unique_chars = [c for c in input_string if input_string.count(c) == 1]
+    
+    # if there are no unique characters, return None
+    if not unique_chars:
+        return None
+    
+    # if there is only one unique character, return it
+    if len(unique_chars) == 1:
+        return unique_chars[0]
+    
+    # otherwise, return the first unique character in the string
+    return unique_chars[0]
+
+# test the function
+input_str = "hello world"
+output_char = first_non_repeating_char(input_str)
+print(output_char)  # "h"
+"""
+```
+
+### Exercise 5:
+Write a python function to count the number of occurrences of each character in a given string.
+```python
+"""
+Solution:
+def count_characters(input_string):
+    # using list comprehension to create a list of tuples with character and count
+    char_count = [(c, input_string.count(c)) for c in set(input_string)]
+    
+    # return the list of tuples
+    return char_count
+
+# test the function
+input_str = "hello world"
+output_list = count_characters(input_str)
+print(output_list)  # [('d', 1), ('l', 3), ('h', 1), ('r', 1), ('o', 2), ('e', 1), ('w', 1), (' ', 1)]
+"""
+```

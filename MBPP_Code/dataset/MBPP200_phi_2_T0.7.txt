@@ -1,0 +1,15 @@
+Write a function to find all index positions of the maximum values in a given list.
+
+```python
+def find_max_positions(lst):
+    max_val = max(lst)
+    return [i for i, val in enumerate(lst) if val == max_val]
+
+print(find_max_positions([1, 2, 3, 4, 4, 4]))  # Output: [3, 4, 5]
+```
+
+In this solution, we use list comprehension with enumerate to find all positions in the list where the maximum value occurs.
+
+These exercises and solutions should provide you with a solid foundation for understanding and implementing max functions in Python.
+
+

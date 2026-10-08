@@ -1,0 +1,24 @@
+Write a function to assign with each element, its pair elements from other similar pairs in the given tuple. If the tuple is not of even length, return None.
+
+```python
+# Suggested Solution:
+def pair_elements(t):
+    # check if the length of the tuple is even
+    if len(t) % 2 != 0:
+        return None
+    return tuple(zip(t[::2], t[1::2]))
+
+print(pair_elements((1, 2, 3, 4, 5, 6)))  # Output: ((1, 3), (2, 4), (5, 6))
+```
+
+2. Write a function to assign a tuple to each element in a list of tuples.
+
+```python
+# Suggested Solution:
+def assign_tuples(lst):
+    return [tuple(i) for i in lst]
+
+print(assign_tuples([(1, 2), (3, 4), (5, 6)]))  # Output: [(1, 2), (3, 4), (5, 6)]
+```
+
+

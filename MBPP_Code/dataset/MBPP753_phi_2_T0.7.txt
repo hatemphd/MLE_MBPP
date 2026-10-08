@@ -1,0 +1,44 @@
+Write a function to find minimum k records from tuple list.
+
+Hint: Use the sorted() function and slicing.
+
+```python
+def find_min_k(tuple_list, k):
+    return sorted(tuple_list, key=lambda x: x[1])[:k]
+    
+tuple_list = [('apple', 3), ('banana', 2), ('cherry', 5), ('date', 1)]
+print(find_min_k(tuple_list, 3))  # output: [('date', 1), ('banana', 2), ('apple', 3)]
+```
+
+### Exercise 4
+
+Write a function to merge two list of tuples.
+
+Hint: Use the extend() method.
+
+```python
+def merge_tuples(tuple1, tuple2):
+    tuple1.extend(tuple2)
+    return tuple1
+
+tuple1 = [('apple', 3), ('banana', 2)]
+tuple2 = [('cherry', 5), ('date', 1)]
+print(merge_tuples(tuple1, tuple2))  # output: [('apple', 3), ('banana', 2), ('cherry', 5), ('date', 1)]
+```
+
+### Exercise 5
+
+Write a function to find common elements in two tuple lists.
+
+Hint: Use the set intersection operation.
+
+```python
+def find_common(tuple_list1, tuple_list2):
+    return set(tuple_list1).intersection(tuple_list2)
+
+tuple_list1 = [('apple', 3), ('banana', 2), ('cherry', 5)]
+tuple_list2 = [('cherry', 5), ('date', 1), ('apple', 3)]
+print(find_common(tuple_list1, tuple_list2))  # output: {('cherry', 5), ('apple', 3)}
+```
+
+

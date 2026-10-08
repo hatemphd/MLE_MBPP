@@ -1,0 +1,11 @@
+Write a python function to count the maximum number of equilateral triangles that can be formed within a given equilateral triangle.
+
+```python
+# Solution
+def max_triangles(side_length):
+    return int((side_length ** 2) / (4 * (side_length ** 2)))
+```
+
+In conclusion, equilateral triangles are a fascinating geometric shape. They have unique properties and can be found in many places in our world. By understanding these properties, we can appreciate the beauty and usefulness of this shape.
+
+

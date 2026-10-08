@@ -1,0 +1,107 @@
+Write a function to extract year, month and date from a url by using regex.
+
+    ```python
+    # Define the url
+    url = 'https://www.example.com/news/20211015'
+
+    # Your code here
+    ```
+
+    **Solution:**
+
+    ```python
+    import re
+    import requests
+
+    url = 'https://www.example.com/news/20211015'
+    response = requests.get(url)
+
+    date_pattern = r'(\d{4})-(\d{2})-(\d{2})'
+    match = re.search(date_pattern, response.text)
+
+    if match:
+        year, month, day = match.groups()
+        print(f'Year: {year}, Month: {month}, Day: {day}')
+    else:
+        print('No date found in url.')
+    ```
+
+3. **Exercise:**
+
+    Write a function to extract all the links in a webpage and print them.
+
+    ```python
+    # Define the url
+    url = 'https://www.example.com'
+
+    # Your code here
+    ```
+
+    **Solution:**
+
+    ```python
+    import re
+    import requests
+
+    url = 'https://www.example.com'
+    response = requests.get(url)
+
+    link_pattern = r'<a\s+(?:[^>]*?\s+)?href="([^"]*)"'
+    links = re.findall(link_pattern, response.text)
+
+    for link in links:
+        print(link)
+    ```
+
+4. **Exercise**:
+
+    Write a function to extract all the email addresses from a webpage.
+
+    ```python
+    # Define the url
+    url = 'https://www.example.com'
+
+    # Your code here
+    ```
+
+    **Solution:**
+
+    ```python
+    import re
+    import requests
+
+    url = 'https://www.example.com'
+    response = requests.get(url)
+
+    email_pattern = r'[\w\.-]+@[\w\.-]+'
+    emails = re.findall(email_pattern, response.text)
+
+    for email in emails:
+        print(email)
+    ```
+
+5. **Exercise**:
+
+    Write a function that accepts a URL and returns the status code of the request.
+
+    ```python
+    # Define the url
+    url = 'https://www.example.com'
+
+    # Your code here
+    ```
+
+    **Solution:**
+
+    ```python
+    import requests
+
+    def get_status_code(url):
+        response = requests.get(url)
+        return response.status_code
+
+    url = 'https://www.example.com'
+    print(get_status_code(url))
+    ```
+
+

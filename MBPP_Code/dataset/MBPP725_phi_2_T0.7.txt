@@ -1,0 +1,30 @@
+Write a function to extract values between quotation marks of the given string by using regex.
+
+Solution:
+
+import re
+
+def extract_quoted_values(string):
+    pattern = r'"(.*?)"'
+    return re.findall(pattern, string)
+
+print(extract_quoted_values("The string 'Hello, world!' contains the value "Python" within quotation marks."))
+
+Output:
+['Hello, world!', 'Python']
+
+Exercise 5:
+Write a function to extract all the email addresses from a given string by using regex.
+
+Solution:
+
+import re
+
+def extract_email_addresses(string):
+    pattern = r'(\w+@\w+\.\w+)'
+    return re.findall(pattern, string)
+
+print(extract_email_addresses("Please send your email to john@example.com or jane@example.com."))
+
+Output:
+['john@example.com', 'jane@example.com']

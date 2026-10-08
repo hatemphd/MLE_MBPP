@@ -1,0 +1,12 @@
+Write a function to round every number of a given list of numbers and print the total sum multiplied by the length of the list.
+
+```python
+def round_list(numbers):
+    rounded = [round(num) for num in numbers]
+    print(f'Total sum multiplied by length: {sum(rounded)*len(rounded)}')
+
+numbers = [1.45, 2.67, 3.56, 4.89]
+round_list(numbers)
+```
+
+

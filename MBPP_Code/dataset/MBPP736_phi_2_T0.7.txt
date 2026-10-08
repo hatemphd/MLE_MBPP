@@ -1,0 +1,20 @@
+Write a function to locate the left insertion point for a specified value in sorted order.
+
+**Idea**: The left insertion point is where the new value will be inserted while maintaining the sorted order.
+
+**Solution**:
+
+```python
+def insertion_point(sorted_list, value):
+    """
+    Function to find the left insertion point for a value in sorted order.
+    """
+    for i, num in enumerate(sorted_list):
+        if value < num:
+            return i
+    return len(sorted_list)
+```
+
+In conclusion, this chapter provided a comprehensive guide on creating a binary search tree, inserting values into the tree, and finding the left insertion point. These are fundamental operations that can be extended into more complex tree structures and algorithms. By understanding these concepts, you are taking a significant step towards mastering data structure algorithms.
+
+

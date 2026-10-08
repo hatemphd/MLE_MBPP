@@ -1,0 +1,19 @@
+Write a function to perform chunking of tuples each of size n.
+
+Hints:
+- Use tuple slicing.
+
+Solution:
+
+```python
+def chunk_tuples(tuples, n):
+    return [tuples[i:i+n] for i in range(0, len(tuples), n)]
+
+tuples = ('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k')
+n = 3
+print(chunk_tuples(tuples, n))
+```
+
+By this end of the chapter, you should have a clear understanding of how to manipulate tuples using slicing and how to apply this knowledge in real-world scenarios. Practice more by creating your own examples and solutions to strengthen your understanding.
+
+

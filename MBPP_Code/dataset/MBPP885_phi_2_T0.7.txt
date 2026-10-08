@@ -1,0 +1,38 @@
+Write a python function to check whether the two given strings are isomorphic to each other or not.
+
+# Solution
+def isIsomorphic(str1, str2):
+    # create a dictionary to store the mappings
+    mapping = {}
+
+    # check if the length of both strings are equal
+    if len(str1) != len(str2):
+        return False
+
+    # check if the characters in the strings are unique
+    if len(set(str1)) != len(str1) or len(set(str2)) != len(str2):
+        return False
+
+    # iterate over the characters in the strings
+    for i in range(len(str1)):
+        # check if the character already exists in the mapping
+        if str1[i] in mapping:
+            # if the mapping for the character is not same as the current string
+            if mapping[str1[i]] != str2[i]:
+                return False
+        # else if the character doesn't exist in the mapping
+        else:
+            # add it to the mapping and the current string
+            mapping[str1[i]] = str2[i]
+
+    # return true if all characters have been mapped correctly
+    return True
+
+# Test
+str1 = "egg"
+str2 = "add"
+print(isIsomorphic(str1, str2))
+
+str3 = "foo"
+str4 = "bar"
+print(isIsomorphic(str3, str4))

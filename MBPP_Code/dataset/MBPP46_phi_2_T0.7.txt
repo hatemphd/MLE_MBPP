@@ -1,0 +1,92 @@
+Write a python function to determine whether all the numbers are different from each other are not. The function will take a list of numbers as input and return a boolean value.
+
+The function should be able to handle empty lists, lists with one element, and lists with duplicate values.
+
+```python
+# Exercise 1 Solution
+def check_different_numbers(numbers):
+    if len(numbers) == 0:
+        return True
+    elif len(numbers) == 1:
+        return True
+    else:
+        return len(numbers) == len(set(numbers))
+
+# Testing the function with different inputs
+print(check_different_numbers([]))   # Output: True
+print(check_different_numbers([1]))   # Output: True
+print(check_different_numbers([1, 2, 2, 3, 4]))   # Output: False
+```
+
+2. Write a python function to determine whether all the characters in a string are different from each other are not. The function will take a string as input and return a boolean value.
+
+The function should be able to handle empty strings, strings with one character, and strings with duplicate characters.
+
+```python
+# Exercise 2 Solution
+def check_different_characters(string):
+    if len(string) == 0:
+        return True
+    elif len(string) == 1:
+        return True
+    else:
+        return len(string) == len(set(string))
+
+# Testing the function with different inputs
+print(check_different_characters(""))   # Output: True
+print(check_different_characters("a"))   # Output: True
+print(check_different_characters("abcde"))   # Output: True
+print(check_different_characters("aaaa"))   # Output: False
+```
+
+3. Write a python function to determine whether all the words in a list are different from each other are not. The function will take a list of words as input and return a boolean value.
+
+The function should be able to handle empty lists, lists with one word, and lists with duplicate words.
+
+```python
+# Exercise 3 Solution
+def check_different_words(words):
+    if len(words) == 0:
+        return True
+    elif len(words) == 1:
+        return True
+    else:
+        return len(words) == len(set(words))
+
+# Testing the function with different inputs
+print(check_different_words([]))   # Output: True
+print(check_different_words(["Hello"]))   # Output: True
+print(check_different_words(["Hello", "world"]))   # Output: True
+print(check_different_words(["Hello", "world", "Hello"]))   # Output: False
+```
+
+4. Write a python function to determine whether all the elements in a nested list are different from each other are not. The function will take a nested list as input and return a boolean value.
+
+The function should be able to handle nested lists with different lengths, and lists with duplicate elements.
+
+```python
+# Exercise 4 Solution
+def check_different_elements(nested_list):
+    flattened_list = [item for sublist in nested_list for item in sublist]
+    if len(flattened_list) == 0:
+        return True
+    elif len(flattened_list) == 1:
+        return True
+    else:
+        return len(flattened_list) == len(set(flattened_list))
+
+# Testing the function with different inputs
+print(check_different_elements([]))   # Output: True
+print(check_different_elements([[1], [2], [3]]))   # Output: True
+print(check_different_elements([[1], [2], [2], [3]]))   # Output: False
+print(check_different_elements([[1, 2], [3, 4], [2, 5], [6, 7]]))   # Output: False
+```
+
+5. Write a python function to determine whether all the elements in a dictionary are different from each other are not. The function will take a dictionary as input and return a boolean value.
+
+The function should be able to handle empty dictionaries, dictionaries with one key-value pair, and dictionaries with duplicate values.
+
+```python
+# Exercise 5 Solution
+def check_different_values(dictionary):
+    if len

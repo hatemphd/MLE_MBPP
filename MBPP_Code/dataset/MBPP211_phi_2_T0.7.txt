@@ -1,0 +1,18 @@
+Write a python function to count numbers whose oth and nth bits are set.
+
+```python
+def count_set_bits(n):
+    count = 0
+    while n:
+        if not(n & 1) and n & 2:
+            count += 1
+        n >>= 1
+    return count
+
+print(count_set_bits(10)) # Output: 2
+print(count_set_bits(5)) # Output: 1
+```
+
+This function initializes a count to zero and uses a while loop to check if the least significant bit is set. If it is, it checks if the second least significant bit is also set. If it is, it increments the count. The bitwise AND operation (`n & 2`) checks if the second least significant bit is set. The bitwise shift operation (`n >> 1`) shifts the bits of `n` one place to the right for the next iteration of the loop.
+
+

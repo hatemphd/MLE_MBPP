@@ -1,0 +1,12 @@
+Write a function to convert the given binary number to its decimal equivalent. 101010
+Answer: def bin_to_dec(binary):
+    dec = 0
+    power = 0
+    for bit in binary[::-1]:
+        dec += int(bit) * (2 ** power)
+        power += 1
+    return dec
+
+dec = bin_to_dec('101010')
+print(dec)
+# 42

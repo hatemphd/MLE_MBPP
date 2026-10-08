@@ -1,0 +1,39 @@
+Write a function to remove all tuples with all none values in the given tuple list.
+
+```python
+# Ideas: Use a for loop to iterate over the tuple list, check if all values in each tuple are None, if true, remove the tuple from the list.
+
+def remove_none_tuples(tuple_list):
+    for tup in tuple_list.copy():
+        if all(val is None for val in tup):
+            tuple_list.remove(tup)
+    return tuple_list
+
+tuple_list = [(1, 2, 3), (None, None, None), (4, None, None), (None, None, 5), (6, 7, 8), (None, None, None)]
+print(remove_none_tuples(tuple_list))
+```
+
+2. Write a function to merge all given tuple lists into one.
+
+```python
+# Ideas: Use a while loop to continue merging until there is only one tuple list left.
+
+def merge_tuple_lists(tuple_lists):
+    while len(tuple_lists) > 1:
+        new_list = []
+        for i in range(0, len(tuple_lists), 2):
+            if i+1 < len(tuple_lists):
+                new_list.append(tuple(sum(x) for x in zip(tuple_lists[i], tuple_lists[i+1])))
+            else:
+                new_list.append(tuple_lists[i])
+        tuple_lists = new_list
+    return tuple_lists[0]
+
+tuple_list1 = [(1, 2), (3, 4)]
+tuple_list2 = [(5, 6), (7, 8)]
+tuple_list3 = [(9, 10), (11, 12)]
+tuple_list4 = [(13, 14), (15, 16)]
+print(merge_tuple_lists([tuple_list1, tuple_list2, tuple_list3, tuple_list4]))
+```
+
+

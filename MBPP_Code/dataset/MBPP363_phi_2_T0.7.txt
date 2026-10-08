@@ -1,0 +1,20 @@
+Write a function to add the k elements to each element in the tuple.
+
+Hints:
+- Use a for loop to iterate over the tuple.
+- For each element, create a new tuple that contains the original element and the added elements.
+
+```python
+def add_k_to_tuple(tup, k):
+    new_tuple = []
+    for element in tup:
+        new_tuple.append((element, *[i for i in range(k)]))
+    return tuple(new_tuple)
+
+tup = (1, 2, 3)
+print(add_k_to_tuple(tup, 2))
+
+# Output: ((1, 0, 1), (2, 0, 1), (3, 0, 1))
+```
+
+

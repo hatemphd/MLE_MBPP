@@ -1,0 +1,43 @@
+Write a function to find the nth decagonal number. A decagonal number d_n is defined by the recurrence relation:
+
+d_1 = 1
+d_n = d_{n-1} + 15*(n-1)
+
+Example:
+
+find_nth_decagonal(1) # 1
+find_nth_decagonal(2) # 28
+find_nth_decagonal(10) # 675
+"""
+
+def find_nth_decagonal(n):
+    if n == 1:
+        return 1
+    else:
+        return find_nth_decagonal(n-1) + 15*(n-1)
+
+# solution 2 using list comprehension
+def find_nth_decagonal(n):
+    d = [1] if n == 1 else [find_nth_decagonal(n-1) + 15*(n-1)]*(n-1)
+    return d[-1]
+
+# solution 3 using generator function
+def find_nth_decagonal(n):
+    def decagonal():
+        d = 1
+        for i in range(1, n+1):
+            yield d
+            d += 15*(i-1)
+    return next(decagonal())
+
+# solution 4 using list comprehension and generator function
+def find_nth_decagonal(n):
+    d = [1] if n == 1 else [find_nth_decagonal(n-1) + 15*(n-1)]*(n-1)
+    return next(x for x in d if x == n)
+
+# solution 5 using recursion and list comprehension
+def find_nth_decagonal(n):
+    if n == 1:
+        return 1
+    d = find_nth_decagonal(n-1) + 15*(n-1)
+    return [d] if n == 1 else [find_nth_decagonal(n-1) + 15*(n-1)]*(n-1)

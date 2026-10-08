@@ -1,0 +1,46 @@
+Write a python function to toggle only first and last bits of a given number.
+
+```python
+def toggle_first_and_last(number):
+    # Convert the number to a binary string
+    binary_string = bin(number)[2:]
+    # Calculate the length of the binary string
+    len_string = len(binary_string)
+    # If the length is less than 2, return the number as is
+    if len_string < 2:
+        return number
+    # Toggle the first and last bits
+    binary_string = binary_string[-1] + binary_string[1:-1] + binary_string[0]
+    # Convert the binary string back to a number and return it
+    return int(binary_string, 2)
+
+# Test the function
+print(toggle_first_and_last(10))  # Output: 5
+print(toggle_first_and_last(5))   # Output: 5
+print(toggle_first_and_last(1))   # Output: 1
+```
+
+**Exercise 2:**
+Write a python function to toggle first n bits of a given number.
+
+```python
+def toggle_first_n_bits(number, n):
+    # Convert the number to a binary string
+    binary_string = bin(number)[2:]
+    # Calculate the length of the binary string
+    len_string = len(binary_string)
+    # If the length is less than n+1, return the number as is
+    if len_string < n+1:
+        return number
+    # Toggle the first n bits
+    binary_string = '0'*n + binary_string[n:] + '1'*n
+    # Convert the binary string back to a number and return it
+    return int(binary_string, 2)
+
+# Test the function
+print(toggle_first_n_bits(10, 2))  # Output: 5
+print(toggle_first_n_bits(5, 1))   # Output: 5
+print(toggle_first_n_bits(1, 2))   # Output: 1
+```
+
+

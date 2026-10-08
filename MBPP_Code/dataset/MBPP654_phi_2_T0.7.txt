@@ -1,0 +1,44 @@
+Write a function to find the perimeter of a rectangle.
+```
+def rectangle_perimeter(length, width):
+    perimeter = 2*(length + width)
+    return perimeter
+
+print(rectangle_perimeter(5, 10)) # Output: 30
+```
+
+2. Write a function to find the area of a triangle.
+```
+def triangle_area(base, height):
+    area = 0.5 * base * height
+    return area
+
+print(triangle_area(5, 10)) # Output: 25.0
+```
+
+3. Write a function to find the volume of a sphere.
+```
+def sphere_volume(radius):
+    volume = (4/3) * 3.14 * radius**3
+    return volume
+
+print(sphere_volume(2)) # Output: 33.5333333333333336
+```
+
+4. Write a function to convert Celsius to Fahrenheit.
+```
+def celsius_to_fahrenheit(celsius):
+    fahrenheit = (celsius * 9/5) + 32
+    return fahrenheit
+
+print(celsius_to_fahrenheit(25)) # Output: 77.0
+```
+
+5. Write a function to calculate the hypotenuse of a right triangle given the lengths of the other two sides.
+```
+def hypotenuse(side1, side2):
+    hypotenuse = ((side1**2) + (side2**2))**0.5
+    return hypotenuse
+
+print(hypotenuse(3, 4)) # Output: 5.0
+```

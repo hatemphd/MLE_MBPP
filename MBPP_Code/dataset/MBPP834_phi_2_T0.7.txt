@@ -1,0 +1,32 @@
+Write a function to generate a square matrix filled with elements from 1 to n raised to the power of 2 in spiral order.
+
+```python
+def generate_spiral_square(n):
+    # Your code goes here
+```
+
+Solution:
+
+```python
+def generate_spiral_square(n):
+    matrix = [[0]*n for _ in range(n)]
+    counter = 1
+    for layer in range((n+1)//2):
+        for ptr in range(layer, n-layer):
+            matrix[layer][ptr] = counter
+            counter += 1
+        for ptr in range(layer+1, n-layer):
+            matrix[ptr][n-layer-1] = counter
+            counter += 1
+        for ptr in range(layer+1, n-layer):
+            matrix[n-layer-1][n-ptr-1] = counter
+            counter += 1
+        for ptr in range(layer+1, n-layer-1):
+            matrix[n-ptr-1][layer] = counter
+            counter += 1
+    return matrix
+```
+
+These exercises provide a comprehensive understanding of the spiral order traversal of a matrix. The solutions utilize key Python programming concepts such as list comprehension, loops, and conditionals.
+
+

@@ -1,0 +1,53 @@
+Write a python function to find the first missing positive number.
+
+#### Hint:
+
+You can use the same logic as the previous problem. But this time, instead of returning the index of the missing positive number, you should return the missing number itself.
+
+#### Solution:
+
+```python
+def find_first_missing_positive(arr):
+    first, last = 1, len(arr)
+    while first <= last:
+        mid = (first + last) // 2
+        if count_inversions(arr, 0, mid) > mid - first + 1:
+            last = mid - 1
+        else:
+            first = mid + 1
+    return first
+
+print(find_first_missing_positive([3,4,-1,1])) # Output: 2
+```
+
+### Exercise 2:
+
+Given a 2D array of size m x n, find the number of inversions.
+
+#### Hint:
+
+You can use a similar approach as before, but this time you'll need to implement a 2D array to keep track of the inversions for each cell.
+
+#### Solution:
+
+```python
+def count_inversions_2D(matrix):
+    rows, columns = len(matrix), len(matrix[0])
+    # Initialize a 2D array to keep track of inversions
+    inversions_count = [[0]*columns for _ in range(rows)]
+    for i in range(rows):
+        for j in range(columns):
+            if i > 0 and j > 0:
+                inversions_count[i][j] += inversions_count[i-1][j] + inversions_count[i][j-1] - inversions_count[i-1][j-1] - (matrix[i][j] == matrix[i-1][j-1])
+            elif i > 0:
+                inversions_count[i][j] += inversions_count[i-1][j]
+            elif j > 0:
+                inversions_count[i][j] += inversions_count[i][j-1]
+    return inversions_count[rows-1][columns-1]
+
+print(count_inversions_2D([[1,2,3],[4,5,6],[7,8,9]])) # Output: 0
+```
+
+These exercises will provide you a deeper understanding of the concept of counting inversions and its application in solving more complex problems.
+
+

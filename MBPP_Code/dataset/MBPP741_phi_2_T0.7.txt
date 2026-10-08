@@ -1,0 +1,40 @@
+Write a python function to check whether all the characters are same or not.
+
+- Idea: You can use the set data structure to check whether all the characters are same or not
+- Solution:
+
+```python
+def all_same(string):
+    return len(set(string)) == 1
+
+print(all_same('hello')) #False
+print(all_same('aaaa')) #True
+```
+
+2. Write a python function that takes a string as input and returns the string after moving all the characters from end of the string to front of the string
+
+- Idea: You can use slicing to move all the characters from end of the string to front of the string
+- Solution:
+
+```python
+def move_chars(string):
+    return string[-1] + string[:-1]
+
+print(move_chars('hello')) #'ohell'
+print(move_chars('world')) #'dlrow'
+```
+
+3. Write a python function that takes in a string as input and returns whether the string is Palindrome or not
+
+- Idea: You can use slicing to reverse the string and then use the == operator to compare the two strings
+- Solution:
+
+```python
+def is_palindrome(string):
+    return string == string[::-1]
+
+print(is_palindrome('hello')) #False
+print(is_palindrome('racecar')) #True
+```
+
+

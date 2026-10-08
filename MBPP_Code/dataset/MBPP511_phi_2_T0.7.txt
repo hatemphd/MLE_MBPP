@@ -1,0 +1,37 @@
+Write a python function to find minimum sum of factors of a given number.
+
+Hint: Utilize the factors function to find the factors of a number.
+
+```python
+def min_sum_factors(n):
+    min_sum = float('inf')
+    for i in range(2, n+1):
+        if n % i == 0:
+            min_sum = min(min_sum, sum(factors(i)))
+    return min_sum
+print(min_sum_factors(12))
+```
+
+## Exercise 2:
+
+Write a python function to find the number with the minimum sum of factor.
+
+Hint: Instead of storing the minimum sum, store the number itself.
+
+```python
+def min_sum_factor_num(n):
+    min_num = 0
+    min_sum = float('inf')
+    for i in range(2, n+1):
+        if n % i == 0:
+            sum_i = sum(factors(i))
+            if sum_i < min_sum:
+                min_sum = sum_i
+                min_num = i
+    return min_num
+print(min_sum_factor_num(12))
+```
+
+By the end of this chapter, you should be able to use Python to find the number with the minimum sum of factors up to a specific number. This is a prime example of how Python, when combined with mathematical principles, can be used to solve complex problems efficiently.
+
+

@@ -1,0 +1,26 @@
+Write a function to filter even numbers using lambda function.
+
+Hint: You can use the filter() function with a lambda function that checks if a number is divisible by 2.
+
+```python
+# Solution
+def filter_even_numbers(numbers):
+    return list(filter(lambda x: x % 2 == 0, numbers))
+
+print(filter_even_numbers([1, 2, 3, 4, 5]))  # Output: [2, 4]
+```
+
+2. Write a function to sort a list of tuples by the second element using lambda function.
+
+Hint: You can use the sort() function with a lambda function as the key.
+
+```python
+# Solution
+def sort_tuples(tuples):
+    tuples.sort(key=lambda item: item[1])
+    return tuples
+
+print(sort_tuples([(1, 'c'), (2, 'a'), (3, 'b')]))  # Output: [(2, 'a'), (3, 'b'), (1, 'c')]
+```
+
+

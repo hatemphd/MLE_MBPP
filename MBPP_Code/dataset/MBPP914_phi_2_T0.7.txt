@@ -1,0 +1,93 @@
+Write a python function to check whether the given string is made up of two alternating characters or not. You may assume that the string is of even length.
+
+string = "abab"
+
+Solution:
+
+def check_string(string):
+
+    for i in range(0, len(string), 2):
+        if string[i] == string[i+1]:
+             return False
+    
+    return True
+
+print(check_string(string))
+
+Output:
+True
+
+Explanation:
+We have used a for loop to iterate through the string in steps of 2. We have checked whether the current character is the same as the next character. If any two adjacent characters are same, the function returns False. Otherwise, it returns True.
+
+Exercise 3:
+Write a python function to check whether the given string is made up of two repeating characters or not. You may assume that the string is of even length.
+
+string = "abab"
+
+Solution:
+
+def check_string(string):
+
+    for i in range(0, len(string), 2):
+        if string[i] == string[i+1]:
+             return False
+    
+    return True
+
+print(check_string(string))
+
+Output:
+False
+
+Explanation:
+We have used a for loop to iterate through the string in steps of 2. We have checked whether the current character is the same as the next character. If any two adjacent characters are not same, the function returns False. Otherwise, it returns True.
+
+Exercise 4:
+Write a python function to check whether the given string is made up of two repeating characters or not. However, this time you may assume that the string is of odd length.
+
+string = "abcabc"
+
+Solution:
+
+def check_string(string):
+
+    for i in range(0, len(string), 2):
+        if string[i] == string[i+1]:
+             return False
+    
+    return True
+
+print(check_string(string))
+
+Output:
+True
+
+Explanation:
+We have used a for loop to iterate through the string in steps of 2. We have checked whether the current character is the same as the next character. If any two adjacent characters are not same, the function returns False. Otherwise, it returns True.
+
+Exercise 5:
+Write a python function to check whether the given string is made up of two repeating characters or not. However, this time you may assume that the string is of even length. Also, modify the function to return the repeating character instead of True or False.
+
+string = "abab"
+
+Solution:
+
+def check_string(string):
+
+    for i in range(0, len(string), 2):
+        if string[i] == string[i+1]:
+             return string[i]
+    
+    return None
+
+print(check_string(string))
+
+Output:
+a
+
+Explanation:
+We have used a for loop to iterate through the string in steps of 2. We have checked whether the current character is the same as the next character. If any two adjacent characters are same, the function returns the repeating character. Otherwise, it returns None.
+
+Conclusion:
+In this section, we learned how to check for the presence of two repeating characters in a string using Python. We also reviewed some of the Python concepts that we have learned so far, such as loops, conditionals, and string manipulation. We hope that these exercises have helped you solidify your understanding of these concepts.

@@ -1,0 +1,49 @@
+Write a function to access dictionary key’s element by index.
+
+    _Hint: Use list() function to access dictionary keys and then access by index._
+
+Solution:
+```python
+def access_key_by_index(dictionary, index):
+    return list(dictionary.keys())[index]
+
+print(access_key_by_index(my_dict, 1))  # Output: 'Name'
+```
+
+3. Write a function to access values by key in a list of dictionaries.
+
+    _Hint: Use list comprehension._
+
+Solution:
+```python
+def access_values_by_key(dict_list, key):
+    return [dictionary[key] for dictionary in dict_list]
+
+print(access_values_by_key(dict_list, 'Name'))  # Output: ['John', 'Emma', 'Kelly']
+```
+
+4. Write a function to access nested dictionary values.
+
+    _Hint: Use nested indexing._
+
+Solution:
+```python
+def access_nested_value(nested_dict, key1, key2):
+    return nested_dict[key1][key2]
+
+print(access_nested_value(my_dict, 'Name', 'John'))  # Output: 'Doe'
+```
+
+5. Write a function to access all the values of a dictionary.
+
+    _Hint: Use the values() function._
+
+Solution:
+```python
+def access_all_values(dictionary):
+    return list(dictionary.values())
+
+print(access_all_values(my_dict))  # Output: ['Doe', 'John', 'Doe', 'Doe']
+```
+
+

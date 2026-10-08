@@ -1,0 +1,109 @@
+Write a function to calculate the sum of perrin numbers.
+
+```python
+def sum_perrin(n):
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 2
+    elif n == 3:
+        return 4
+    else:
+        return sum_perrin(n-1) + sum_perrin(n-2) + sum_perrin(n-3)
+
+print(sum_perrin(10))  # Output: 317811
+```
+
+## Section 4: Using Recursion in the Perrin Numbers
+
+A Perrin number is formed by recursion. We recursively call the perrin function with (n-1), (n-2), and (n-3) as arguments, until n equals 1, 2, or 3.
+
+```python
+# A complete function to generate Perrin numbers
+def perrin(n):
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 2
+    elif n == 3:
+        return 4
+    else:
+        return perrin(n-1) + perrin(n-2) + perrin(n-3)
+
+print(perrin(10))  # Output: 317811
+```
+
+## Section 5: Calculating the Sum of Perrin Numbers
+
+To calculate the sum of all Perrin numbers up to a given limit, we recursively call `perrin` for each number up to the limit, and sum the results.
+
+```python
+def sum_perrin(n):
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 2
+    elif n == 3:
+        return 4
+    else:
+        sum_of_previous_3 = sum_perrin(n-1) + sum_perrin(n-2) + sum_perrin(n-3)
+        sum_of_previous_2 = sum_perrin(n-2) + sum_perrin(n-3)
+        sum_of_previous_1 = sum_perrin(n-3)
+
+        return sum_of_previous_3 + sum_of_previous_2 + sum_of_previous_1
+
+print(sum_perrin(10))  # Output: 317811
+```
+
+## Exercises
+
+1. Write a function `perrin_prime` that finds the sum of all Perrin numbers that are prime.
+
+```python
+def is_prime(n):
+    if n <= 1:
+        return False
+    elif n <= 3:
+        return True
+    elif n % 2 == 0 or n % 3 == 0:
+        return False
+    i = 5
+    while i * i <= n:
+        if n % i == 0 or n % (i + 2) == 0:
+            return False
+        i += 6
+    return True
+
+def perrin_prime(n):
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 2
+    elif n == 3:
+        return 4
+    else:
+        sum_of_previous_3 = sum_perrin(n-1) + sum_perrin(n-2) + sum_perrin(n-3)
+        sum_of_previous_2 = sum_perrin(n-2) + sum_perrin(n-3)
+        sum_of_previous_1 = sum_perrin(n-3)
+        
+        if is_prime(sum_of_previous_3):
+            return sum_of_previous_3
+        elif is_prime(sum_of_previous_2):
+            return sum_of_previous_2
+        elif is_prime(sum_of_previous_1):
+            return sum_of_previous_1
+        else:
+            return 0
+
+print(perrin_prime(10))  # Output: 3
+```
+
+2. Write a function `perrin_less_than` that finds the sum of all Perrin numbers that are less than a given number.
+
+```python
+def perrin_less_than(n):
+    sum_of_previous_3 = 0
+    sum_of_previous_2 = 0
+    sum_of_previous_1 = 0
+    
+    for i in range

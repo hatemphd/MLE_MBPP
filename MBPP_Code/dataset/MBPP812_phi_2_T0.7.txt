@@ -1,0 +1,51 @@
+Write a function to abbreviate 'road' as 'rd.' in a given string.
+
+Hint: You can use the replace() method.
+
+```python
+def abbreviate_road(string):
+    return string.replace('road', 'rd.')
+
+print(abbreviate_road('Take the road to the park.'))
+# Output: Take the rd. to the park.
+```
+
+3. Write a function to abbreviate 'street' as 'st.' in a given string.
+
+Hint: Use the replace() method.
+
+```python
+def abbreviate_street(string):
+    return string.replace('street', 'st.')
+
+print(abbreviate_street('Go down the street to the store.'))
+# Output: Go down the st. to the store.
+```
+
+4. Write a function to abbreviate 'avenue' as 'ave.' in a given string.
+
+Hint: Use the replace() method.
+
+```python
+def abbreviate_avenue(string):
+    return string.replace('avenue', 'ave.')
+
+print(abbreviate_avenue('Go down the avenue to the supermarket.'))
+# Output: Go down the ave. to the supermarket.
+```
+
+5. Write a function to abbreviate 'square' as 'sq.' in a given string.
+
+Hint: Use the replace() method.
+
+```python
+def abbreviate_square(string):
+    return string.replace('square', 'sq.')
+
+print(abbreviate_square('Go down the square to the park.'))
+# Output: Go down the sq. to the park.
+```
+
+Well, that's all about Python string methods and their applications for Geospatial Analysts! Practice these exercises to get a good grip on them. Happy coding!
+
+

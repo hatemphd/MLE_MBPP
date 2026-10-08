@@ -1,0 +1,18 @@
+Write a python function to accept the strings which contains all vowels.
+
+_Hints:_
+* Use the `in` keyword in a loop to check if the vowel is present in the string.
+
+_Solution:_
+
+```python
+def vowel_string(s):
+    vowels = "aeiou"
+    for v in vowels:
+        if v in s:
+            print(f"The string contains the vowel {v}")
+            return
+print(vowel_string("apple"))
+```
+
+

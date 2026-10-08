@@ -1,0 +1,59 @@
+Write a function to check if the given tuple contains only k elements.
+
+```python
+def check_tuple(tuple_in, k):
+    if len(tuple_in) == k:
+        return True
+    else:
+        return False
+
+# Test
+print(check_tuple((1, 2, 3), 3))    # True
+print(check_tuple((1, 2, 3), 4))    # False
+```
+
+### Exercise 3
+Create a tuple of your 5 favorite books. Write a function to check if a given book is in the tuple.
+
+```python
+def check_book(tuple_in, book):
+    if book in tuple_in:
+        return True
+    else:
+        return False
+
+# Test
+fav_books = ("To Kill a Mockingbird", "The Great Gatsby", "1984", "The Catcher in the Rye", "Pride and Prejudice")
+print(check_book(fav_books, "The Catcher in the Rye"))    # True
+print(check_book(fav_books, "Harry Potter"))    # False
+```
+
+### Exercise 4
+Create a tuple of your favorite colors. Write a function to check if a given color is in the tuple.
+
+```python
+def check_color(tuple_in, color):
+    if color in tuple_in:
+        return True
+    else:
+        return False
+
+# Test
+fav_colors = ("red", "green", "blue", "yellow", "orange")
+print(check_color(fav_colors, "red"))    # True
+print(check_color(fav_colors, "purple"))    # False
+```
+
+### Exercise 5
+Create a tuple of your favorite animals. Write a function to return a tuple of the animals that start with the letter "a".
+
+```python
+def get_a_animals(tuple_in):
+    a_animals = tuple(filter(lambda x: x.startswith("a"), tuple_in))
+    return a_animals
+
+# Test
+fav_animals = ("ant", "cat", "dog", "aardvark", "elephant")
+print(get_a_animals(fav_animals))    # ("ant", "aardvark")
+```
+

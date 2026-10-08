@@ -1,0 +1,58 @@
+Write a function that matches a string that has an 'a' followed by anything, ending in 'b'.
+```python
+import re
+
+def pattern_match(string):
+    return bool(re.search(r'a.*b$', string))
+
+print(pattern_match('apple'))
+print(pattern_match('abacus'))
+```
+
+### Exercise 2:
+Write a function that matches a string that starts with 'A' and ends with 'Z', but can have any number of characters in between.
+```python
+import re
+
+def pattern_match(string):
+    return bool(re.search(r'^A.*?Z$', string, re.DOTALL))
+
+print(pattern_match('A man in a wheelchair'))
+print(pattern_match('ABCxyzAZ'))
+```
+
+### Exercise 3:
+Write a function that matches a string that has at least one digit and one uppercase letter.
+```python
+import re
+
+def pattern_match(string):
+    return bool(re.search(r'\d.*[A-Z]|[A-Z].*\d', string))
+
+print(pattern_match('JohnDoe123'))
+print(pattern_match('janeDoe'))
+```
+
+### Exercise 4:
+Write a function that matches a string that has 'python' followed by any number of characters, but not 'python3'.
+```python
+import re
+
+def pattern_match(string):
+    return bool(re.search(r'python.*?(?!3)$', string))
+
+print(pattern_match('python'))
+print(pattern_match('python3'))
+```
+
+### Exercise 5:
+Write a function that matches a string that has 'Python' followed by any number of characters, but not 'Python2'.
+```python
+import re
+
+def pattern_match(string):
+    return bool(re.search(r'Python.*?(?<!2)$', string))
+
+print(pattern_match('Python'))
+print(pattern_match('Python2'))
+```

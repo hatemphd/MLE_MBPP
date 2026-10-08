@@ -1,0 +1,73 @@
+Write a python function to find quotient of two numbers.
+
+```python
+def division(num1, num2):
+    try:
+        return num1/num2
+    except ZeroDivisionError:
+        print("Cannot divide by zero. Please enter a non-zero number.")
+
+division(10, 2)
+division(10, 0)
+```
+
+### Exercise 2
+
+Write a python function to convert a decimal to a binary number.
+
+```python
+def decimal_to_binary(decimal):
+    try:
+        return bin(int(decimal))[2:]
+    except ValueError:
+        print("Invalid value. Please enter a decimal number.")
+
+decimal_to_binary(10)
+decimal_to_binary("hello")
+```
+
+### Exercise 3
+
+Write a python function to find the maximum number in a list.
+
+```python
+def maximum(numbers):
+    try:
+        return max(numbers)
+    except ValueError:
+        print("Invalid value. Please enter a list of numbers.")
+
+maximum([1, 2, 3, 4])
+maximum([1, 2, "hello"])
+```
+
+### Exercise 4
+
+Write a python function to find the average of a list of numbers.
+
+```python
+def average(numbers):
+    try:
+        return sum(numbers)/len(numbers)
+    except TypeError:
+        print("Invalid value. Please enter a list of numbers.")
+
+average([1, 2, 3, 4])
+average([1, 2, "hello"])
+```
+
+### Exercise 5
+
+Write a python function to convert a string to an integer.
+
+```python
+def string_to_integer(string):
+    try:
+        return int(string)
+    except ValueError:
+        print("Invalid value. Please enter a valid integer.")
+
+string_to_integer("10")
+string_to_integer("hello")
+```
+

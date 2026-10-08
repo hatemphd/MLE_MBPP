@@ -1,0 +1,57 @@
+Write a function to find the ascii value of total characters in a string.
+
+_Hint: You can use a loop to iterate over the string and use the `ord()` function to find the ascii value of each character._
+
+```python
+def ascii_sum(string):
+    return sum(ord(char) for char in string)
+
+print(ascii_sum("Hello"))
+```
+
+2. Write a function that checks if a string contains any non-ascii character.
+
+_Hint: You can use the `isascii()` function to check if a string contains only ascii characters._
+
+```python
+def contains_non_ascii(string):
+    return not string.isascii()
+
+print(contains_non_ascii("Hello"))
+print(contains_non_ascii("Héllo"))
+```
+
+3. Write a function that converts a string to ascii.
+
+_Hint: You can use the `encode()` method to convert a string to ascii._
+
+```python
+def to_ascii(string):
+    return string.encode('ascii', 'ignore')
+
+print(to_ascii("Héllo"))
+```
+
+4. Write a function that converts an ascii string back to normal.
+
+_Hint: You can use the `decode()` method to convert an ascii string back to normal._
+
+```python
+def from_ascii(string):
+    return string.decode('ascii')
+
+print(from_ascii("Héllo"))
+```
+
+5. Write a function that converts all characters in a string to ascii.
+
+_Hint: You can use the `encode()` method to convert all characters in a string to ascii._
+
+```python
+def to_all_ascii(string):
+    return string.encode('ascii')
+
+print(to_all_ascii("Héllo"))
+```
+
+

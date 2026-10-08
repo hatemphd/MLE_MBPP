@@ -1,0 +1,48 @@
+Write a function to group the 1st elements on the basis of 2nd elements in the given tuple list.
+
+Hints: Use list comprehension to create sublists and the `groupby` functionality of itertools module to group the sublists.
+
+```python
+from itertools import groupby
+from operator import itemgetter
+
+def group_by_second_element(tuple_list):
+    return [[x for x in g] for k, g in groupby(sorted(tuple_list, key=itemgetter(1)), key=itemgetter(1)) if k]
+```
+
+2. Write a function that takes a list of tuples and returns a list of tuples where the elements of each tuple are in alphabetical order.
+
+Hints: Use list comprehension to create new tuples and the `sorted` function to sort the tuple.
+
+```python
+def sort_tuple_elements(tuple_list):
+    return [(sorted(t), t[1]) for t in tuple_list]
+```
+
+3. Write a function that takes a list of tuples as input and returns a dictionary where the keys are the first elements of the tuples and the values are the second elements of the tuples.
+
+Hints: Use a dictionary comprehension to create the dictionary.
+
+```python
+def tuple_to_dict(tuple_list):
+    return {t[0]: t[1] for t in tuple_list}
+```
+
+4. Write a function that takes a list of tuples as input and returns a list of the second elements of the tuples.
+
+Hints: Use list comprehension to create the list.
+
+```python
+def get_second_elements(tuple_list):
+    return [t[1] for t in tuple_list]
+```
+
+5. Write a function that takes two tuples as input and returns a new tuple that contains the elements of both tuples in alternating order.
+
+Hints: Use list comprehension to create a new tuple.
+
+```python
+def alternate_tuple_elements(t1, t2):
+    return tuple([x for pair in zip(t1, t2) for x in pair])
+```
+

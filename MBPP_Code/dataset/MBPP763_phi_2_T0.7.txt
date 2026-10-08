@@ -1,0 +1,49 @@
+Write a python function to find the minimum difference between any two elements in a given array.
+
+Ideas: 
+- You can use the inbuilt Python function `min()` to find the minimum value in the array.
+- Subtract the minimum value from all elements in the array.
+
+```python
+def min_diff(array):
+    min_val = min(array)
+    return min([abs(i - min_val) for i in array])
+
+array = [4, 7, 2, 9, 6]
+print(min_diff(array))  # Output: 1
+```
+
+2. Write a python function to remove all duplicates from a sorted array.
+
+Ideas: 
+- You can use a while loop to keep checking the first element of the array.
+- If the first element is a duplicate of the previous one, remove it.
+
+```python
+def remove_duplicates(array):
+    i = 0
+    while i < len(array) - 1:
+        if array[i] == array[i + 1]:
+            del array[i]
+        else:
+            i += 1
+    return array
+
+array = [1, 2, 2, 3, 3, 3, 4, 5, 5]
+print(remove_duplicates(array))  # Output: [1, 2, 3, 4, 5]
+```
+
+3. Write a python function to reverse a 2D array.
+
+Ideas: 
+- You can use nested list comprehensions to implement this.
+
+```python
+def reverse_2D(array):
+    return [[row[i] for row in array] for i in range(len(array[0]) - 1, -1, -1)]
+
+array = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print(reverse_2D(array))  # Output: [[3, 2, 1], [6, 5, 4], [9, 8, 7]]
+```
+
+

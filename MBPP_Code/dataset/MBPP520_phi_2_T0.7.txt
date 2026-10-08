@@ -1,0 +1,33 @@
+Write a function to find the lcm of the given array elements.
+
+```python
+# Hint:
+# Use np.lcm.reduce() function.
+```
+
+```python
+# Solution:
+def find_lcm(arr):
+    return np.lcm.reduce(arr)
+
+arr = np.array([3, 4, 5, 6])
+print(find_lcm(arr))
+```
+
+4. Given the two arrays `[3, 4, 5]` and `[2, 3, 5]`. Find the least common multiple of the pairs formed by corresponding elements of the two arrays.
+
+```python
+# Hint:
+# Use np.lcm() function.
+```
+
+```python
+# Solution:
+arr1 = np.array([3, 4, 5])
+arr2 = np.array([2, 3, 5])
+lcm_values = np.lcm(arr1, arr2)
+print(lcm_values)
+```
+This should output: `[6 12 5]`.
+
+

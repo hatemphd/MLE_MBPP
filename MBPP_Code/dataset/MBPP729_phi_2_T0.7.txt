@@ -1,0 +1,40 @@
+Write a function to add two lists using map and lambda function.
+   Ideas: Use map to apply lambda function element-wise on the two lists.
+   Solution:
+   ```python
+   def add_lists(list1, list2):
+       return list(map(lambda x, y: x + y, list1, list2))
+   ```
+   
+2. Write a function to find the sum of squares of the elements in a list using map and lambda function.
+   Ideas: Use map to square each element of the list and then sum the results.
+   Solution:
+   ```python
+   def sum_of_squares(lst):
+       return sum(map(lambda x: x**2, lst))
+   ```
+   
+3. Write a function to convert a list of strings to uppercase using map and lambda function.
+   Ideas: Use map to apply the upper() method on each element of the list.
+   Solution:
+   ```python
+   def uppercase_list(lst):
+       return list(map(lambda x: x.upper(), lst))
+   ```
+   
+4. Write a function to concatenate two lists using map and lambda function.
+   Ideas: Use map to apply the + operator to each element of the two lists.
+   Solution:
+   ```python
+   def concat_lists(lst1, lst2):
+       return list(map(lambda x, y: x + y, lst1, lst2))
+   ```
+   
+5. Write a function to find the length of each string in a list using map and lambda function.
+   Ideas: Use map to apply the len() method on each element of the list.
+   Solution:
+   ```python
+   def string_lengths(lst):
+       return list(map(lambda x: len(x), lst))
+   ```
+

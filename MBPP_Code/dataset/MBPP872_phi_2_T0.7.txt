@@ -1,0 +1,51 @@
+Write a function to check if a nested list is a subset of another nested list.
+
+HINT: Use a recursive approach to check if each element of the first list is in the second list.
+
+```python
+def is_subset(nested_list1, nested_list2):
+    if not nested_list1:
+        return True
+    elif not nested_list2:
+        return False
+    else:
+        return nested_list1[0] in nested_list2 and is_subset(nested_list1[1:], nested_list2)
+
+print(is_subset([1, 2, 3], [1, 2, 3, 4, 5]))  # Output: True
+print(is_subset([1, 2, 3], [4, 5, 6]))  # Output: False
+```
+
+2. Write a function to find the intersection of two nested lists.
+
+HINT: Use the set intersection function.
+
+```python
+def intersect_lists(list1, list2):
+    return list(set(list1) & set(list2))
+
+print(intersect_lists([1, 2, 3, 4, 5], [4, 5, 6, 7, 8]))  # Output: [4, 5]
+```
+
+3. Write a function to find the union of two nested lists.
+
+HINT: Use the set union function.
+
+```python
+def union_lists(list1, list2):
+    return list(set(list1) | set(list2))
+
+print(union_lists([1, 2, 3, 4, 5], [4, 5, 6, 7, 8]))  # Output: [1, 2, 3, 4, 5, 6, 7, 8]
+```
+
+4. Write a function to sort a nested list based on the sum of elements in each sublist.
+
+HINT: Use the sorted function and a lambda function to specify the key for sorting.
+
+```python
+def sort_list(nested_list):
+    return sorted(nested_list, key=lambda x: sum(x))
+
+print(sort_list([[2, 2, 3], [1, 5, 4], [0, 0, 9]]))  # Output: [[0, 0, 9], [2, 2, 3], [1, 5, 4]]
+```
+
+

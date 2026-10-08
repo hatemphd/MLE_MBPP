@@ -1,0 +1,118 @@
+Write a function to convert a tuple of string values to a tuple of integer values.
+
+Example:
+
+```python
+def convert_tuple(t):
+    # Your code here
+    pass
+
+t = (1, 2, 3, '4', '5', 6)
+print(convert_tuple(t))  # Expected output: (1, 2, 3, 4, 5, 6)
+```
+
+### Idea
+
+Use list comprehension and the `int()` function to convert string values to integer.
+
+### Solution
+
+```python
+def convert_tuple(t):
+    return tuple([int(x) for x in t])
+
+t = (1, 2, 3, '4', '5', 6)
+print(convert_tuple(t))  # Expected output: (1, 2, 3, 4, 5, 6)
+```
+
+#### Exercise 3
+
+Write a function to find the sum of the first and last element of a tuple.
+
+Example:
+
+```python
+def tuple_sum(t):
+    # Your code here
+    pass
+
+t = (1, 2, 3, 4, 5)
+print(tuple_sum(t))  # Expected output: 6
+```
+
+### Idea
+
+Use tuple indexing to access the first and last element of the tuple and return their sum.
+
+### Solution
+
+```python
+def tuple_sum(t):
+    return t[0] + t[-1]
+
+t = (1, 2, 3, 4, 5)
+print(tuple_sum(t))  # Expected output: 6
+```
+
+#### Exercise 4
+
+Write a function to remove the nth element from a tuple.
+
+Example:
+
+```python
+def remove_element(t, n):
+    # Your code here
+    pass
+
+t = (1, 2, 3, 4, 5)
+n = 2
+print(remove_element(t, n))  # Expected output: (1, 2, 4, 5)
+```
+
+### Idea
+
+Convert the tuple to a list, remove the nth element, and convert it back to a tuple.
+
+### Solution
+
+```python
+def remove_element(t, n):
+    lst = list(t)
+    lst.pop(n)
+    return tuple(lst)
+
+t = (1, 2, 3, 4, 5)
+n = 2
+print(remove_element(t, n))  # Expected output: (1, 2, 4, 5)
+```
+
+#### Exercise 5
+
+Write a function to find the maximum and minimum value in a tuple.
+
+Example:
+
+```python
+def min_max(t):
+    # Your code here
+    pass
+
+t = (1, 2, 3, 4, 5)
+print(min_max(t))  # Expected output: (1, 5)
+```
+
+### Idea
+
+Use the built-in functions `min()` and `max()` to find the minimum and maximum value in the tuple.
+
+### Solution
+
+```python
+def min_max(t):
+    return (min(t), max(t))
+
+t = (1, 2, 3, 4, 5)
+print(min_max(t))  # Expected output: (1, 5)
+```
+

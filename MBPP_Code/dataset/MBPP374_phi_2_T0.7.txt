@@ -1,0 +1,23 @@
+Write a function to print all permutations of a given string including duplicates.
+
+Hints:
+- Use recursion with a for loop.
+- If the string is empty, print it.
+- For a non-empty string, print it, iterate over its characters, and recursively call the function with the remaining string and the new string with the current character removed.
+
+```python
+# Solution
+def print_permutations(s):
+    if len(s) == 0:
+        print(s)
+    else:
+        for i in range(len(s)):
+            print_permutations(s[:i] + s[i+1:]) + s[i]
+
+# Call the function
+print_permutations('abc')
+```
+
+In the next chapter, we will delve into more complex string manipulation problems, such as palindrome detection and string compression using dictionaries.
+
+

@@ -1,0 +1,13 @@
+Write a function to find the perimeter of a pentagon.
+
+``` python
+def perimeter_pentagon(sides):
+    return sum(sides)
+```
+
+5. Write a function to find the area of a hexagon.
+
+``` python
+def area_hexagon(apothem, sides):
+    return 3 * apothem * sides / 2
+```

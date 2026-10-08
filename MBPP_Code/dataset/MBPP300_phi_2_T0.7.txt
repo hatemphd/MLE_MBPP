@@ -1,0 +1,34 @@
+Write a function to find the count of all binary sequences of length 2n such that sum of first n bits is same as sum of last n bits. For example, for n = 2, answer should be 8.
+
+The possible binary sequences of length 2n are:
+00, 01, 10, 11
+
+00 and 11 have sum 0 and 1 respectively, so their count is 2. The other 2 are duplicates, so the total count is 4.
+
+For n = 3, there are 8 possible binary sequences.
+
+For n = 4, there are 16 possible binary sequences.
+
+For n = 5, there are 32 possible binary sequences.
+
+For n = 6, there are 64 possible binary sequences.
+
+So, sum of count for n = 2 to 6 is 2 + 4 + 8 + 16 + 32 + 64 = 122.
+
+class Solution:
+    def countBinarySequences(self, n: int) -> int:
+        if n == 0:
+            return 0
+        if n == 1:
+            return 1
+        
+        dp = [0] * (n + 1)
+        
+        dp[0] = 1
+        dp[1] = 2
+        
+        for i in range(2, n + 1):
+            for j in range(i):
+                dp[i] += dp[j]
+        
+        return dp[n]

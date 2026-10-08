@@ -1,0 +1,47 @@
+Write a function that matches a word containing 'z'.
+   * Hint: Use the `re.findall()` function.
+
+3. Given a string `"Welcome to Python. Python is great."`, write a function to remove the word 'Python' from the string.
+   * Hint: Use the `re.sub()` function.
+
+4. Write a function that replaces all occurrences of 'Python' in a string with 'Java'.
+   * Hint: Use the `re.sub()` function.
+
+5. Given a string `"Python is a high level programming language. It is popular among developers."`, write a function to extract all the words from the string.
+   * Hint: Use the `re.findall()` function.
+
+```python
+# Solution 1
+import re
+
+def extract_numbers(s):
+    return re.findall(r'\d+', s)
+
+print(extract_numbers('The price is $5 and the quantity is 15.'))  # output: ['5', '15']
+
+# Solution 2
+def find_z_words(s):
+    return re.findall(r'\b\w*z\w*\b', s)
+
+print(find_z_words('The zoo is closed on Sundays.'))  # output: ['zoo']
+
+# Solution 3
+def remove_word(s, word):
+    return re.sub(word, '', s)
+
+print(remove_word('Python is great.', 'Python'))  # output: 'is great.'
+
+# Solution 4
+def replace_word(s, old_word, new_word):
+    return re.sub(old_word, new_word, s)
+
+print(replace_word('Python is great.', 'Python', 'Java'))  # output: 'Java is great.'
+
+# Solution 5
+def extract_words(s):
+    return re.findall(r'\b\w+\b', s)
+
+print(extract_words('Python is a high level programming language. It is popular among developers.'))  # output: ['Python', 'is', 'a', 'high', 'level', 'programming', 'language', 'It', 'is', 'popular', 'among', 'developers']
+```
+
+

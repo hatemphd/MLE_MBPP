@@ -1,0 +1,53 @@
+Write a function to find the third angle of a triangle using two angles. The function should take two integer arguments and return an integer.
+
+Solution:
+
+def third_angle(angle_a, angle_b):
+    return 180 - angle_a - angle_b
+
+print(third_angle(30, 60)) # Output: 90
+
+Exercise 3:
+Write a function to calculate the perimeter of a triangle given the lengths of its sides. The function should take three integer arguments and return an integer.
+
+Solution:
+
+def triangle_perimeter(a, b, c):
+    return a + b + c
+
+print(triangle_perimeter(3, 4, 5)) # Output: 12
+
+Exercise 4:
+Write a function to check if a given set of three angles form a valid triangle. The function should take three integer arguments and return a boolean value.
+
+Solution:
+
+def valid_triangle(angle_a, angle_b, angle_c):
+    return angle_a + angle_b + angle_c == 180
+
+print(valid_triangle(60, 60, 60)) # Output: True
+print(valid_triangle(90, 45, 45)) # Output: True
+print(valid_triangle(120, 30, 30)) # Output: True
+print(valid_triangle(70, 100, 60)) # Output: False
+
+Exercise 5:
+Write a function to classify a given set of three angles based on their types (acute, right, or obtuse). The function should take three integer arguments and return a string.
+
+Solution:
+
+def classify_triangle(angle_a, angle_b, angle_c):
+    angles = [angle_a, angle_b, angle_c]
+    angles.sort()
+    if angles[0] + angles[1] <= angles[2]:
+        return "Not a triangle"
+    elif angles[2] < 90:
+        return "Acute triangle"
+    elif angles[2] == 90:
+        return "Right triangle"
+    else:
+        return "Obtuse triangle"
+
+print(classify_triangle(60, 60, 60)) # Output: Acute triangle
+print(classify_triangle(90, 45, 45)) # Output: Right triangle
+print(classify_triangle(120, 30, 30)) # Output: Acute triangle
+print(classify_triangle(70, 100, 60)) # Output: Obtuse triangle

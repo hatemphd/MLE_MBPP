@@ -1,0 +1,51 @@
+Write a python function to find minimum possible value for the given periodic function. 
+
+def periodic_function(x):
+    return np.sin(x)
+
+def min_periodic_function(a, b, c):
+    if a == b:
+        return min(periodic_function(x) for x in np.arange(c,c+2*np.pi,2*np.pi/1000))
+    else:
+        return min(periodic_function(x) for x in np.arange(a,b,2*np.pi/1000))
+
+# Example usage:
+print(min_periodic_function(0, np.pi/2, 1)) # Output: 0.0
+```
+
+### Exercise 4:
+Write a python function to find maximum possible value for the given periodic function.
+
+```python
+def periodic_function(x):
+    return np.sin(x)
+
+def max_periodic_function(a, b, c):
+    if a == b:
+        return max(periodic_function(x) for x in np.arange(c,c+2*np.pi,2*np.pi/1000))
+    else:
+        return max(periodic_function(x) for x in np.arange(a,b,2*np.pi/1000))
+
+# Example usage:
+print(max_periodic_function(0, np.pi/2, 1)) # Output: 1.0
+```
+
+### Exercise 5:
+Write a python function to find minimum and maximum values for the given periodic function.
+
+```python
+def periodic_function(x):
+    return np.sin(x)
+
+def min_max_periodic_function(a, b, c):
+    if a == b:
+        min_value = min(periodic_function(x) for x in np.arange(c,c+2*np.pi,2*np.pi/1000))
+        max_value = max(periodic_function(x) for x in np.arange(c,c+2*np.pi,2*np.pi/1000))
+    else:
+        min_value = min(periodic_function(x) for x in np.arange(a,b,2*np.pi/1000))
+        max_value = max(periodic_function(x) for x in np.arange(a,b,2*np.pi/1000))
+    return min_value, max_value
+
+# Example usage:
+print(min_max_periodic_function(0, np.pi/2, 1)) # Output: (0.0, 1.0)
+```

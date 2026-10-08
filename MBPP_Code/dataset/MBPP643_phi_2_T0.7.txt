@@ -1,0 +1,40 @@
+Write a function that matches a word containing 'z', not at the start or end of the word.
+
+```python
+# The solution might involve using the \b metacharacter to specify word boundaries.
+```
+
+```python
+# Solution
+import re
+
+def match_with_z(word):
+    pattern = r'\b[a-z]*z[a-z]*\b'
+    return bool(re.match(pattern, word))
+
+print(match_with_z('zebra'))  # True
+print(match_with_z('Zebra'))  # False
+print(match_with_z('zoo'))  # False
+```
+
+### Exercise 2:
+Create a function that matches a phone number in the format '(123) 456-7890'.
+
+```python
+# The solution might involve defining a pattern that contains the required format.
+```
+
+```python
+# Solution
+import re
+
+def match_phone_number(phone_number):
+    pattern = r'\(\d{3}\) \d{3}-\d{4}'
+    return bool(re.match(pattern, phone_number))
+
+print(match_phone_number('(123) 456-7890'))  # True
+print(match_phone_number('123 456-7890'))  # False
+print(match_phone_number('123-456-7890'))  # False
+```
+
+

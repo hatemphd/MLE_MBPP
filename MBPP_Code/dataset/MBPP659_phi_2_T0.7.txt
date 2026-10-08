@@ -1,0 +1,38 @@
+Write a python function to print duplicants from a list of integers.
+
+Hints: Use a set to check for duplicates and print those that exist in the list.
+
+```python
+def print_duplicates(nums):
+    seen = set()
+    duplicates = set()
+    for num in nums:
+        if num in seen:
+            duplicates.add(num)
+        seen.add(num)
+    for num in duplicates:
+        print(num)
+
+nums = [1, 2, 2, 3, 4, 5, 5, 5, 6]
+print_duplicates(nums)  # Output: 2, 5
+```
+
+2. Write a python function to find the unique elements in a list.
+
+Hints: Use a set to store the unique elements.
+
+```python
+def find_unique(nums):
+    seen = set()
+    unique = set()
+    for num in nums:
+        if num not in seen:
+            seen.add(num)
+            unique.add(num)
+    return list(unique)
+
+nums = [1, 2, 2, 3, 4, 4, 5, 5, 5, 6]
+print(find_unique(nums))  # Output: [1, 2, 3, 4, 5, 6]
+```
+
+

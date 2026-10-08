@@ -1,0 +1,38 @@
+Write a python function to get the first element of each sublist.
+
+```python
+def get_first_element(lst):
+    return [sublist[0] for sublist in lst]
+
+print(get_first_element(matrix_2D))  # Output: [1, 2, 3, 4, 5, 6]
+```
+
+### Exercise 3
+Write a python function to get the last element of each sublist.
+
+```python
+def get_last_element(lst):
+    return [sublist[-1] for sublist in lst]
+
+print(get_last_element(matrix_2D))  # Output: [7, 8, 9, 10, 11, 12]
+```
+
+### Exercise 4
+Write a python function to get the sum of elements in each sublist.
+
+```python
+def sum_of_elements(lst):
+    return [sum(sublist) for sublist in lst]
+
+print(sum_of_elements(matrix_2D))  # Output: [8, 12, 16, 20, 24, 28]
+```
+
+### Exercise 5
+Write a python function to get the product of elements in each sublist.
+
+```python
+def product_of_elements(lst):
+    return [math.prod(sublist) for sublist in lst]
+
+print(product_of_elements(matrix_2D))  # Output: [28, 192, 720, 1200, 1728, 2520]
+```

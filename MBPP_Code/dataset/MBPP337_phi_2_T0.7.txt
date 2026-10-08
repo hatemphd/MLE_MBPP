@@ -1,0 +1,14 @@
+Write a function that matches a word at the end of a string, with optional punctuation.
+
+```python
+import re
+
+def match_last_word(string, word):
+    pattern = r"\b{}\b.*$".format(re.escape(word))
+    return bool(re.match(pattern, string))
+
+assert match_last_word("Hello, world!", "world!") == True
+assert match_last_word("Hello, world!", "world") == True
+assert match_last_word("Hello, world!", "hello") == False
+assert match_last_word("Hello, world!", "worlds") == False
+```

@@ -1,0 +1,68 @@
+Write a function to create a list of empty dictionaries. For example, if the function is `create_dicts(3)`, it should return `[{}, {}, {}]`.
+
+```python
+# Solution
+def create_dicts(n):
+    return [{} for _ in range(n)]
+
+print(create_dicts(3))
+# Output: [{}, {}, {}]
+```
+
+2. Write a function to replace all occurrences of a key in a list of dictionaries. For example, if the function is `replace_keys(["apple", "banana", "cherry"], "banana", "orange")`, it should return `["apple", "orange", "cherry"]`.
+
+```python
+# Solution
+def replace_keys(lst, old_key, new_key):
+    return [{new_key: value if key != old_key else value for key, value in d.items()} for d in lst]
+
+print(replace_keys(["apple", "banana", "cherry"], "banana", "orange"))
+# Output: [{'orange': 'apple'}, {'orange': 'cherry'}, {'orange': 'cherry'}]
+```
+
+3. Write a function to flatten a list of dictionaries. For example, if the function is `flatten([{"a": 1, "b": 2}, {"c": 3}])`, it should return `[1, 2, 3]`.
+
+```python
+# Solution
+def flatten(lst):
+    return [value for d in lst for key, value in d.items()]
+
+print(flatten([{"a": 1, "b": 2}, {"c": 3}]))
+# Output: [1, 2, 3]
+```
+
+4. Write a function to convert a list of dictionaries to a pandas DataFrame. For example, if the function is `to_dataframe([{"a": 1, "b": 2}, {"c": 3}])`, it should return a DataFrame with columns `"a"`, `"b"`, and `"c"`.
+
+```python
+# Solution
+import pandas as pd
+
+def to_dataframe(lst):
+    df = pd.DataFrame(lst)
+    return df
+
+print(to_dataframe([{"a": 1, "b": 2}, {"c": 3}]))
+# Output:
+#    a  b
+# 0  1  2
+# 1  3  NaN
+```
+
+5. Write a function to concatenate two lists of dictionaries into a single dictionary. For example, if the function is `concatenate([{"name": "Alice", "age": 30}, {"name": "Bob", "age": 40}], [{"city": "New York", "country": "USA"}, {"city": "Paris", "country": "France"}])`, it should return `{"name": "Alice", "age": 30, "city": "New York", "country": "USA", "name": "Bob", "age": 40, "city": "Paris", "country": "France"}`.
+
+```python
+# Solution
+def concatenate(lst1, lst2):
+    result = {}
+    for d1 in lst1:
+        for k, v in d1.items():
+            result[k] = v
+    for d2 in lst2:
+        for k, v in d2.items():
+            result[k] = v
+    return result
+
+print(concatenate([{"name": "Alice", "age": 30}, {"name": "Bob", "age": 40}], [{"city": "New York", "country": "USA"}, {"city": "Paris", "country": "France"}]))
+# Output: {'name': 'Alice', 'age': 30, 'city': 'New York', 'country': 'USA', 'name': 'Bob', 'age': 40, 'city': 'Paris', 'country': 'France'}
+```
+

@@ -1,0 +1,27 @@
+Write a function to find the maximum product subarray of the given array. The array can contain both positive and negative numbers.
+
+Solution:
+
+```python
+
+def maxProductSubarray(arr):
+    maxProduct = minProduct = max_so_far = arr[0]
+    min_so_far = arr[0]
+
+    for i in range(1, len(arr)):
+        temp = max(arr[i], max_so_far * arr[i], min_so_far * arr[i])
+        max_so_far = max(max_so_far, temp)
+        min_so_far = min(min_so_far, temp)
+        maxProduct = max(maxProduct, max_so_far)
+
+    return maxProduct
+
+print(maxProductSubarray([2, 3, -2, -4]))
+
+```
+
+This function works by maintaining two variables: `max_so_far` and `min_so_far`. `max_so_far` is the maximum product of the current subarray ending at the current position, while `min_so_far` is the minimum product of the current subarray ending at the current position.
+
+In each iteration, we calculate `temp` as the maximum of three values: the current element, `max_so_far` multiplied by the current element, and `min_so_far` multiplied by the current element. Then we update `max_so_far` and `min_so_far`, and `maxProduct` accordingly. Finally, we return `maxProduct`, which is the maximum product of the contiguous subarray.
+
+

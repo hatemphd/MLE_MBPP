@@ -1,0 +1,62 @@
+Write a python function to find the difference between sum of even and odd digits.
+
+```python
+def even_odd_difference(num):
+    even_digits = 0
+    odd_digits = 0
+    for digit in str(num):
+        if digit.isdigit():
+            if int(digit) % 2 == 0:
+                even_digits += int(digit)
+            else:
+                odd_digits += int(digit)
+    return abs(even_digits - odd_digits)
+
+print(even_odd_difference(123456))  # Output: 0
+print(even_odd_difference(12345))  # Output: 3
+```
+
+3. Write a python function to find the product of digits.
+
+```python
+def product_of_digits(num):
+    product = 1
+    for digit in str(num):
+        if digit.isdigit():
+            product *= int(digit)
+    return product
+
+print(product_of_digits(123))  # Output: 6
+print(product_of_digits(987654321))  # Output: 362880
+```
+
+4. Write a python function to find the sum of digits in a number.
+
+```python
+def sum_of_digits(num):
+    total = 0
+    for digit in str(num):
+        if digit.isdigit():
+            total += int(digit)
+    return total
+
+print(sum_of_digits(123))  # Output: 6
+print(sum_of_digits(987654321))  # Output: 45
+```
+
+5. Write a python function to find the average of digits in a number.
+
+```python
+def average_of_digits(num):
+    total = 0
+    count = 0
+    for digit in str(num):
+        if digit.isdigit():
+            total += int(digit)
+            count += 1
+    return total / count
+
+print(average_of_digits(123))  # Output: 2.0
+print(average_of_digits(987654321))  # Output: 5.5
+```
+

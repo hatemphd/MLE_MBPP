@@ -1,0 +1,30 @@
+Write a function to check whether the given key is present in the dictionary or not.
+
+Hint: You can use the `in` operator to check for the presence of a key.
+
+Solution:
+
+```python
+def check_key(my_dict, key):
+    return key in my_dict
+
+my_dict = {'name': 'John', 'age': 21, 'city': 'New York'}
+print(check_key(my_dict, 'name'))  # Outputs: True
+print(check_key(my_dict, 'country'))  # Outputs: False
+```
+
+2. Write a function to sort a dictionary by its values.
+
+Hint: You can use the `sorted` function with a lambda to sort the dictionary by its values.
+
+Solution:
+
+```python
+def sort_dict(my_dict):
+    return dict(sorted(my_dict.items(), key=lambda item: item[1]))
+
+my_dict = {'name': 'John', 'age': 21, 'city': 'New York'}
+print(sort_dict(my_dict))  # Outputs: {'age': 21, 'city': 'New York', 'name': 'John'}
+```
+
+

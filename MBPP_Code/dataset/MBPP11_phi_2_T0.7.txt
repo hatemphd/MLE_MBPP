@@ -1,0 +1,11 @@
+Write a python function to remove first and last occurrence of a given character from the string.
+
+```python
+import re
+
+text = 'Hello World!'
+char = 'l'
+
+new_text = re.sub(char, '', text, count=2)
+print(new_text) # Heo Word
+```

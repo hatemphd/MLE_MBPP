@@ -1,0 +1,52 @@
+Write a function to find the perimeter of a square. The function should take one parameter, the side length of the square.
+
+```python
+# Solution
+def perimeter_square(side):
+    return 4*side
+
+# Test the function
+print(perimeter_square(5))  # Output: 20
+```
+
+### Exercise 3
+
+Write a function to find the area of a circle. The function should take one parameter, the radius of the circle.
+
+```python
+# Solution
+import math
+
+def area_circle(radius):
+    return math.pi*radius**2
+
+# Test the function
+print(area_circle(5))  # Output: 78.53981633974483
+```
+
+### Exercise 4
+
+Write a function to find the largest of three numbers. The function should take three parameters, the numbers to compare.
+
+```python
+# Solution
+def largest_number(a,b,c):
+    return max(a,b,c)
+
+# Test the function
+print(largest_number(5,3,9))  # Output: 9
+```
+
+### Exercise 5
+
+Write a function to convert Celsius to Fahrenheit. The function should take one parameter, the temperature in Celsius.
+
+```python
+# Solution
+def celsius_to_fahrenheit(celsius):
+    return (celsius*9/5)+32
+
+# Test the function
+print(celsius_to_fahrenheit(25))  # Output: 77.0
+```
+

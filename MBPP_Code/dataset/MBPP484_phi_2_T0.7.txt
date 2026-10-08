@@ -1,0 +1,40 @@
+Write a function to remove the matching tuples from the given two tuples.
+
+```python
+def find_and_remove_matching_tuples(set_a, set_b):
+    # Write your code here
+    
+set_a = (1, 2, 3, 4)
+set_b = (3, 4, 5, 6)
+
+find_and_remove_matching_tuples(set_a, set_b)
+
+# Expected output: (1, 2, 5, 6)
+```
+
+# Exercise 4
+Write a function to remove the duplicate values of a tuple.
+
+```python
+def remove_duplicates(tuple):
+    # Write your code here
+    
+tuple = (1, 2, 3, 3, 4, 5, 5, 6)
+remove_duplicates(tuple)
+
+# Expected output: (1, 2, 3, 4, 5, 6)
+```
+
+# Exercise 5
+Write a function to remove the last element of a tuple.
+
+```python
+def remove_last_element(tuple):
+    # Write your code here
+    
+tuple = (1, 2, 3, 4, 5)
+remove_last_element(tuple)
+
+# Expected output: (1, 2, 3, 4)
+```
+

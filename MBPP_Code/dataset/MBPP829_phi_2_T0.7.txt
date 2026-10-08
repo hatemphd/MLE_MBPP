@@ -1,0 +1,21 @@
+Write a function to find out the second most repeated (or frequent) string in the given sequence.
+
+**Solution:**
+
+```python
+def frequent_second(sequence):
+    counter = Counter(sequence)
+    # Get the most common elements
+    most_common = counter.most_common()
+    # If there is only one most common element, return None
+    if len(most_common) == 1:
+        return None
+    # If there is more than one most common element, return the second-most common
+    return most_common[1][0]
+
+print(frequent_second(sequence))  # 'b'
+```
+
+These exercises reinforce the use of the `Counter` class from the `collections` library to count the frequency of elements in a sequence, and the `heapq` library to extract the elements with the highest frequency.
+
+

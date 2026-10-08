@@ -1,0 +1,33 @@
+Write a function to find the nth jacobsthal number.
+
+_Hint: This involves a recursive function. The nth jacobsthal number can be calculated as the sum of the (n-1)th and (n-2)th jacobsthal numbers._
+
+```python
+def jacobsthal(n):
+    if n <= 2:
+        return n
+    else:
+        return jacobsthal(n-1) + jacobsthal(n-2)
+
+# Test the function
+print(jacobsthal(5))  # Output: 12
+```
+
+3. Write a function to find the nth tribonacci number modulo 10.
+
+_Hint: This again involves a recursive function. The nth tribonacci number modulo 10 can be calculated using the (n-1)th, (n-2)th, and (n-3)th tribonacci numbers. However, you also need to take modulo 10 at each step._
+
+```python
+def tribonacci_mod10(n):
+    if n <= 2:
+        return n % 10
+    else:
+        return (tribonacci_mod10(n-1) + tribonacci_mod10(n-2) + tribonacci_mod10(n-3)) % 10
+
+# Test the function
+print(tribonacci_mod10(5))  # Output: 2
+```
+
+Solutions to these exercises should give readers a solid understanding of how to use recursion to solve problems related to the Fibonacci sequence and the Tribonacci sequence.
+
+

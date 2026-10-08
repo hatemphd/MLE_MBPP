@@ -1,0 +1,41 @@
+Write a function to get the n largest items from a dataset.
+
+**Hints:**
+- Use `heapq.nlargest()`
+
+**Solution:**
+
+```python
+def get_n_largest(data_list, n):
+    return heapq.nlargest(n, data_list)
+
+print(get_n_largest([1, 3, 5, 7, 9], 3))  # Output: [9, 7, 5]
+```
+
+### Exercise 2
+
+Write a class `PriorityQueue` to implement a priority queue using a min heap.
+
+**Hints:**
+- Use `heapq.heappush()` and `heapq.heappop()`
+
+**Solution:**
+
+```python
+class PriorityQueue:
+    def __init__(self):
+        self.heap = []
+
+    def push(self, item, priority):
+        heapq.heappush(self.heap, (-priority, item))
+
+    def pop(self):
+        return heapq.heappop(self.heap)[1]
+
+pq = PriorityQueue()
+pq.push('item1', 3)
+pq.push('item2', 1)
+print(pq.pop())  # Output: 'item2'
+```
+
+

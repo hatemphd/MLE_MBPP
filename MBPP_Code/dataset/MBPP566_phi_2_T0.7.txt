@@ -1,0 +1,48 @@
+Write a function to get the sum of a non-negative integer.
+
+Hint: Use the `sum` function with your list as the argument.
+
+```python
+def sum_of_digits(num):
+  digits = list(map(int, str(num)))
+  return sum(digits)
+
+print(sum_of_digits(123)) # Output: 6
+```
+
+3. Write a function to get the sum of all even numbers in a list.
+
+Hint: Use list comprehension and the `sum` function.
+
+```python
+def sum_of_even_numbers(numbers):
+  return sum([num for num in numbers if num % 2 == 0])
+
+print(sum_of_even_numbers([1, 2, 3, 4, 5])) # Output: 6
+```
+
+4. Write a function to get the sum of the squares of all numbers in a list.
+
+Hint: Use list comprehension and the `sum` function.
+
+```python
+def sum_of_squares(numbers):
+  return sum([num**2 for num in numbers])
+
+print(sum_of_squares([1, 2, 3, 4, 5])) # Output: 55
+```
+
+5. Write a function that takes a list of numbers as an argument and returns a new list with the numbers in reverse order and each number tripled.
+
+Hint: Use list comprehension.
+
+```python
+def reverse_and_triple(numbers):
+  return [num * 3 for num in reversed(numbers)]
+
+print(reverse_and_triple([1, 2, 3, 4, 5])) # Output: [15, 12, 9, 6, 3]
+```
+
+Congratulations, you've just become a master of using the `sum` function in Python! Keep practicing and applying these concepts in your work as a data scientist.
+
+

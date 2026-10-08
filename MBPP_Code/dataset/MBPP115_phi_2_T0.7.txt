@@ -1,0 +1,66 @@
+Write a function to check whether all dictionaries in a list are empty or not.
+
+**Hints:** We can use a for loop to check each dictionary and return false as soon as we find a non-empty dictionary.
+
+**Solution:**
+
+```python
+def check_empty(lst):
+    for item in lst:
+        if item:
+            return False
+    return True
+```
+
+**Exercise 3:** Write a function that takes a list of dictionaries and removes any dictionaries that have empty values.
+
+**Hints:** We can use a for loop to iterate over the list of dictionaries and the `pop` method to remove any dictionary with an empty value.
+
+**Solution:**
+
+```python
+def remove_empty(lst):
+    for item in lst:
+        for key, value in item.items():
+            if value == "":
+                lst.remove(item)
+    return lst
+```
+
+**Exercise 4:** Write a function that receives a list of dictionaries and returns only the keys of the dictionaries that have non-empty values.
+
+**Hints:** We can use a for loop to iterate over the list of dictionaries and a nested loop to iterate over each dictionary. We can then use the `pop` method to remove empty values and a list comprehension to return only the keys of the dictionaries that have non-empty values.
+
+**Solution:**
+
+```python
+def non_empty_keys(lst):
+    result = []
+    for item in lst:
+        for key in item.keys():
+            if item[key] != "":
+                result.append(key)
+    return result
+```
+
+**Exercise 5:** Write a function that receives a list of dictionaries and finds the key that has the highest value in each dictionary.
+
+**Hints:** We can use a for loop to iterate over the list of dictionaries, a nested loop to iterate over each dictionary and the `pop` method to remove the key with the highest value. We can then use a list comprehension to return only the keys that have the highest value in each dictionary.
+
+**Solution:**
+
+```python
+def highest_value_key(lst):
+    result = []
+    for item in lst:
+        max_key = None
+        max_value = float("-inf")
+        for key, value in item.items():
+            if value > max_value:
+                max_value = value
+                max_key = key
+        result.append(max_key)
+    return result
+```
+
+

@@ -1,0 +1,80 @@
+Write a function to find the gcd of the given array elements. Use the Euclidean algorithm.
+
+**Idea**:
+- Define the function to take an array as input
+- Use a while loop to keep subtracting the smaller element from the larger element until one of the elements is zero. The gcd is the other element.
+- Return the gcd as output.
+
+```python
+def gcd_array(arr):
+    a, b = arr[0], arr[1]
+    while b:
+        a, b = b, a % b
+    return a
+```
+
+**Exercise 2**:
+Write a function to find the gcd of the given array elements. Use the Euclidean algorithm.
+
+**Idea**:
+- Define the function to take an array as input
+- Use a while loop to keep subtracting the smaller element from the larger element until one of the elements is zero. The gcd is the other element.
+- Return the gcd as output.
+
+```python
+def gcd_array(arr):
+    a, b = arr[0], arr[1]
+    while b:
+        a, b = b, a % b
+    return a
+```
+
+**Exercise 3**:
+Write a function to find the gcd of the given array elements. Use the Euclidean algorithm.
+
+**Idea**:
+- Define the function to take an array as input
+- Use a while loop to keep subtracting the smaller element from the larger element until one of the elements is zero. The gcd is the other element.
+- Return the gcd as output.
+
+```python
+def gcd_array(arr):
+    a, b = arr[0], arr[1]
+    while b:
+        a, b = b, a % b
+    return a
+```
+
+**Exercise 4**:
+Write a function to find the gcd of the given array elements. Use the Euclidean algorithm.
+
+**Idea**:
+- Define the function to take an array as input
+- Use a while loop to keep subtracting the smaller element from the larger element until one of the elements is zero. The gcd is the other element.
+- Return the gcd as output.
+
+```python
+def gcd_array(arr):
+    a, b = arr[0], arr[1]
+    while b:
+        a, b = b, a % b
+    return a
+```
+
+**Exercise 5**:
+Write a function to find the gcd of the given array elements. Use the Euclidean algorithm.
+
+**Idea**:
+- Define the function to take an array as input
+- Use a while loop to keep subtracting the smaller element from the larger element until one of the elements is zero. The gcd is the other element.
+- Return the gcd as output.
+
+```python
+def gcd_array(arr):
+    a, b = arr[0], arr[1]
+    while b:
+        a, b = b, a % b
+    return a
+```
+
+

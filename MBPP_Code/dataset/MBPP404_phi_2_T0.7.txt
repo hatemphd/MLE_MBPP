@@ -1,0 +1,71 @@
+Write a python function to find the minimum of two numbers.
+
+Idea:
+- Use the `min()` function.
+
+Solution:
+```python
+def find_min(num1, num2):
+    return min(num1, num2)
+
+print(find_min(5, 10))
+```
+
+2. Write a python function to find the length of the shortest word in a sentence.
+
+Idea:
+- Use the `split()` function to break the sentence into words.
+- Use `min()` function to find the shortest word.
+
+Solution:
+```python
+def find_shortest_word(sentence):
+    words = sentence.split()
+    return min(words, key=len)
+
+print(find_shortest_word("Python is the best language for beginners."))
+```
+
+3. Write a python function to find the smallest of three numbers.
+
+Idea:
+- Use the `min()` function.
+
+Solution:
+```python
+def find_smallest(num1, num2, num3):
+    return min(num1, num2, num3)
+
+print(find_smallest(10, 20, 30))
+```
+
+4. Write a python function to find the earliest date from a list of dates.
+
+Idea:
+- Use the `min()` function with the `datetime` module.
+
+Solution:
+```python
+from datetime import date
+
+def find_earliest_date(dates):
+    return min(dates)
+
+dates = [date(2021, 5, 10), date(2021, 5, 2), date(2021, 5, 15)]
+print(find_earliest_date(dates))
+```
+
+5. Write a python function to find the smallest character in a string.
+
+Idea:
+- Use the `min()` function.
+
+Solution:
+```python
+def find_smallest_char(string):
+    return min(string)
+
+print(find_smallest_char("Python"))
+```
+
+

@@ -1,0 +1,32 @@
+Write a python function to check if roots of a quadratic equation are reciprocal of each other or not.
+
+```python
+def reciprocal_quadratic_roots(a,b,c):
+    roots1 = quadratic_formula(a,b,c)
+    roots2 = quadratic_formula(a,b,c)
+    if roots1[0]*roots2[0] == roots1[1]*roots2[1]:
+        return True
+    else:
+        return False
+
+# Testing the function
+print(reciprocal_quadratic_roots(1,-5,6)) # Output: False
+print(reciprocal_quadratic_roots(1,1,-6)) # Output: True
+```
+
+Exercise 5:
+Write a python function to check if two quadratic equations have the same roots or not.
+
+```python
+def same_roots(f1,f2):
+    roots1 = quadratic_formula(f1[0],f1[1],f1[2])
+    roots2 = quadratic_formula(f2[0],f2[1],f2[2])
+    if roots1[0] == roots2[0] and roots1[1] == roots2[1]:
+        return True
+    else:
+        return False
+
+# Testing the function
+print(same_roots([1,-5,6],[1,1,-6])) # Output: True
+print(same_roots([1,-5,6],[1,1,1])) # Output: False
+```

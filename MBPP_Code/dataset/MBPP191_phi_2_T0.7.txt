@@ -1,0 +1,97 @@
+Write a function to check whether the given month name contains 30 days or not.
+
+Examples:
+```python
+print(is_month_thirty_days('January')) # True
+print(is_month_thirty_days('February')) # False
+```
+
+Hints: 
+1. Use the `str.len()` method to find the length of the month name.
+2. Use an `if` statement to check if the length is 30.
+
+```python
+def is_month_thirty_days(month_name):
+    if len(month_name) == 30:
+        return True
+    else:
+        return False
+```
+
+#### Exercise 3
+Write a function to check whether the given month name is the same as the current month or not.
+
+Examples:
+```python
+from datetime import datetime
+print(is_month_same(datetime.now().strftime('%B'))) # True
+print(is_month_same('February')) # False
+```
+
+Hints: 
+1. Use the `strftime()` method to get the month name.
+2. Use an `if` statement to check if the month name is the same as the current month.
+
+```python
+from datetime import datetime
+
+def is_month_same(month_name):
+    now = datetime.now()
+    current_month = now.strftime('%B')
+    if month_name == current_month:
+        return True
+    else:
+        return False
+```
+
+#### Exercise 4
+Write a function to check whether the given month name is a leap year or not.
+
+Examples:
+```python
+print(is_leap_year('January')) # False
+print(is_leap_year('February')) # True
+```
+
+Hints: 
+1. Use the `str.len()` method to find the length of the month name.
+2. Use an `if` statement to check if the length is between 6 and 11.
+3. Use the `int()` method to convert the month name to an integer.
+4. Use the `%` operator to check if the year is divisible by 4.
+5. Use the `%` operator to check if the year is divisible by 100.
+6. Use the `%` operator to check if the year is divisible by 400.
+
+```python
+def is_leap_year(month_name):
+    if len(month_name) == 6 and int(month_name) == 2:
+        return True
+    elif len(month_name) == 7 and int(month_name) == 4:
+        return True
+    elif len(month_name) == 8 and int(month_name) == 6:
+        return True
+    else:
+        return False
+```
+
+#### Exercise 5
+Write a function to check whether the given year is a leap year or not.
+
+Examples:
+```python
+print(is_leap_year(2022)) # False
+print(is_leap_year(2020)) # True
+```
+
+Hints: 
+1. Use the `%` operator to check if the year is divisible by 4.
+2. Use the `%` operator to check if the year is divisible by 100.
+3. Use the `%` operator to check if the year is divisible by 400.
+
+```python
+def is_leap_year(year):
+    if year % 4 == 0 and (year % 100 != 0 or year % 400 == 0):
+        return True
+    else:
+        return False
+```
+

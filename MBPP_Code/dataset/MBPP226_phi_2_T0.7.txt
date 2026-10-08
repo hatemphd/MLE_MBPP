@@ -1,0 +1,36 @@
+Write a python function to remove the characters which have odd index values of a given string.
+
+# Solution:
+def remove_odd_index(string):
+    return ''.join([string[i] for i in range(len(string)) if i%2==0])
+
+print(remove_odd_index('abcdefg'))
+# Output: aceg
+
+# Question 3: Write a python function to remove the characters which have even index values of a given string.
+
+# Solution:
+def remove_even_index(string):
+    return ''.join([string[i] for i in range(len(string)) if i%2!=0])
+
+print(remove_even_index('abcdefg'))
+# Output: bdf
+
+# Question 4: Write a python function to remove the characters which have index values greater than 3 of a given string.
+
+# Solution:
+def remove_char_index_greater_than_3(string):
+    return string[:3] + string[4:]
+
+print(remove_char_index_greater_than_3('abcdefgh'))
+# Output: abcdef
+
+# Question 5: Write a python function to remove all vowels from a given string.
+
+# Solution:
+def remove_vowels(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    return ''.join([char for char in string if char.lower() not in vowels])
+
+print(remove_vowels('Hello World'))
+# Output: Hll Wrld

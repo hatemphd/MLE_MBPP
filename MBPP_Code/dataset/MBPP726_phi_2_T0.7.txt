@@ -1,0 +1,16 @@
+Write a function to multiply the adjacent elements of the given tuple.
+
+Solution:
+```python
+def multiply_adjacent(tup):
+    product = 1
+    for i in range(len(tup)-1):
+        product *= tup[i] * tup[i+1]
+    return product
+
+print(multiply_adjacent((1, 2, 3, 4, 5)))  # Output: 120
+```
+
+The solution iterates over the tuple using a for loop, multiplying each pair of adjacent elements.
+
+

@@ -1,0 +1,11 @@
+Write a function to split a given list into two parts where the length of the first part of the list is given. The first part of the list must have length at least equal to the given number.
+
+```python
+def split_list(input_list, split_length):
+    # Your code here
+    pass
+
+print(split_list([1, 2, 3, 4, 5, 6, 7, 8, 9], 4))
+```
+
+

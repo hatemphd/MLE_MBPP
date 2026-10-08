@@ -1,0 +1,8 @@
+Write a python function to find the sum of fifth power of first n odd natural numbers.
+
+```python
+def sum_of_fifth_power_of_odd_natural_numbers(n):
+    return sum(i**5 for i in range(1, 2*n, 2))
+
+print(sum_of_fifth_power_of_odd_natural_numbers(5)) # Output: 3550
+```

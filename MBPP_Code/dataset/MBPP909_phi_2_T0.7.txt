@@ -1,0 +1,23 @@
+Write a function to find the previous palindrome of a specified number.
+
+Hints: 
+
+- To find a previous palindrome, you may need to subtract 1 from the given number and check if it is a palindrome.
+- If it is not a palindrome, subtract 1 from it again and check again.
+- Continue this process until you find a palindrome.
+
+Solution:
+
+```python
+def find_previous_palindrome(n):
+    while True:
+        n -= 1
+        if is_palindrome(n):
+            return n
+
+print(find_previous_palindrome(12345))  # Output: 12343
+```
+
+In this solution, we start from the given number and subtract 1. We keep checking if the resulting number is a palindrome. If it is, we return it. If it is not, we continue checking the next number. This process repeats until we find a palindrome.
+
+

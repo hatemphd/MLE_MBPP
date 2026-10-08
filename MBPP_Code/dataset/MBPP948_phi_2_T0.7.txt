@@ -1,0 +1,42 @@
+Write a function to get an item of a tuple.
+
+**Solution**
+
+```python
+def get_item(my_tuple, index):
+    if index < 0 or index >= len(my_tuple):
+        return None
+    return my_tuple[index]
+
+print(get_item(my_tuple, 2))  # Output: (1, 2, 3, 4, 5)
+```
+This function uses the index to access the tuple element.
+
+2. Write a function to count the number of occurrences of an item in a tuple.
+
+**Solution**
+
+```python
+def count_item(my_tuple, item):
+    return my_tuple.count(item)
+
+print(count_item(my_tuple, 2))  # Output: 1
+```
+The count method counts the occurrences of an item in the tuple.
+
+3. Write a function to perform an operation on each element of a tuple.
+
+**Solution**
+
+```python
+def apply_operation(my_tuple, operation):
+    return tuple(operation(item) for item in my_tuple)
+
+def square(n):
+    return n * n
+
+print(apply_operation(my_tuple, square))  # Output: (1, 4, 9, 16, 25)
+```
+This function applies an operation to each element of the tuple using a list comprehension.
+
+

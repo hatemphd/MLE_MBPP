@@ -1,0 +1,48 @@
+Write a function to sort a list in increasing order by the last element in each tuple from a given list of non-empty tuples.
+
+```python
+def sort_list_tuples_by_last(lst):
+    lst.sort(key=lambda x: x[-1])
+    return lst
+
+# Example usage
+lst = [(2, 'b'), (1, 'a'), (3, 'c')]
+print(sort_list_tuples_by_last(lst))  # [(1, 'a'), (2, 'b'), (3, 'c')]
+```
+
+3. Write a function to sort a list of dictionaries by the value of a given key in each dictionary from a given list of dictionaries.
+
+```python
+def sort_list_dictionaries_by_key(lst, key):
+    lst.sort(key=lambda x: x[key])
+    return lst
+
+# Example usage
+lst = [{'name': 'John', 'age': 25}, {'name': 'Jane', 'age': 20}, {'name': 'Jack', 'age': 30}]
+print(sort_list_dictionaries_by_key(lst, 'age'))  # [{'name': 'Jane', 'age': 20}, {'name': 'John', 'age': 25}, {'name': 'Jack', 'age': 30}]
+```
+
+4. Write a function to sort a list of strings by the number of vowels in each string from a given list of strings.
+
+```python
+def sort_list_strings_by_vowels(lst):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    lst.sort(key=lambda x: sum([1 for char in x if char.lower() in vowels]))
+    return lst
+
+# Example usage
+lst = ['apple', 'Banana', 'kiwi', 'orange', 'grapefruit']
+print(sort_list_strings_by_vowels(lst))  # ['kiwi', 'apple', 'Banana', 'orange', 'grapefruit']
+```
+
+5. Write a function to sort a list of tuples by the sum of their elements from a given list of tuples.
+
+```python
+def sort_list_tuples_by_sum(lst):
+    lst.sort(key=lambda x: sum(x))
+    return lst
+
+# Example usage
+lst = [(1, 2), (3, 4), (5, 1)]
+print(sort_list_tuples_by_sum(lst))  # [(5, 1), (1, 2), (3, 4)]
+```

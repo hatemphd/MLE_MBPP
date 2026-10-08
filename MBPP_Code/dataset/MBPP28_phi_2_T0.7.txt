@@ -1,0 +1,38 @@
+Write a python function to find binomial co-efficient.
+
+Hints:
+- The binomial coefficient of n and k is calculated as n! / (k! (n-k)!).
+- You can use a recursive function to calculate factorial.
+
+Solution:
+```python
+def factorial(n):
+    if n == 1:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+def binomial_coefficient(n, k):
+    return factorial(n)//(factorial(k)*factorial(n-k))
+
+print(binomial_coefficient(5, 2))  # Output: 10
+```
+
+2. Write a python function to compute binomial theorem.
+
+Hints:
+- The binomial theorem states that for any numbers a and b, and any integer n, the expansion of (a + b)^n can be expressed in the form of a^n + n*a^(n-1)*b + n*(n-1)/2*a^(n-2)*b^2 + ... + b^n.
+- You can use a for loop to compute the terms.
+
+Solution:
+```python
+def binomial_theorem(a, b, n):
+    result = []
+    for i in range(n+1):
+        result.append(f'{a**i}*{b**(n-i)}')
+    return ' + '.join(result)
+
+print(binomial_theorem(2, 3, 4))  # Output: 1*1 + 2*3 + 3*9 + 4*81 + 81*243
+```
+
+

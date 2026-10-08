@@ -1,0 +1,49 @@
+Write a python function to find the first maximum length of even word.
+
+# Function to return the length of first maximum length of even word in a given sentence 
+def first_max_even_word(sentence):
+    words = sentence.split()
+    even_words = [word for word in words if len(word)%2==0]
+    max_length = max(len(word) for word in even_words)
+    for word in words:
+        if len(word) == max_length:
+            return word
+    return ""
+
+# Test the function
+sentence = "I love coding but sometimes it can get frustrating"
+print(first_max_even_word(sentence)) # Output: frustrating
+```
+
+Exercise 4:
+
+Write a python function to find the length of the shortest word in a given sentence.
+
+# Function to return the length of the shortest word in a given sentence 
+def shortest_word(sentence):
+    words = sentence.split()
+    shortest = min(len(word) for word in words)
+    return shortest
+
+# Test the function
+sentence = "Python is a powerful programming language"
+print(shortest_word(sentence)) # Output: 1
+```
+
+Exercise 5:
+
+Write a python function to find the first maximum length of odd word in a given sentence.
+
+# Function to return the length of first maximum length of odd word in a given sentence 
+def first_max_odd_word(sentence):
+    words = sentence.split()
+    odd_words = [word for word in words if len(word)%2!=0]
+    max_length = max(len(word) for word in odd_words)
+    for word in words:
+        if len(word) == max_length:
+            return word
+    return ""
+
+# Test the function
+sentence = "Python is a powerful programming language"
+print(first_max_odd_word(sentence)) # Output: powerful

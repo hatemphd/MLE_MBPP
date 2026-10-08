@@ -1,0 +1,21 @@
+Write a function to flatten a given nested list structure.
+
+Ideas: Use a recursive function to traverse the list and append each non-nested item to a new list.
+
+```python
+def flatten(lst):
+    flat_lst = []
+    for item in lst:
+        if isinstance(item, list):
+            flat_lst.extend(flatten(item))
+        else:
+            flat_lst.append(item)
+    return flat_lst
+
+nested_lst = [[1, 2, [3, 4]], [5, [6, [7, 8]]]]
+print(flatten(nested_lst))  # Outputs: [1, 2, 3, 4, 5, 6, 7, 8]
+```
+
+This chapter is designed to provide a comprehensive understanding of tree traversal in Python, with a focus on depth-first search. By understanding and being able to implement these techniques, you are well-equipped to handle more complex tree and graph-related problems, and to design efficient algorithms for them.
+
+

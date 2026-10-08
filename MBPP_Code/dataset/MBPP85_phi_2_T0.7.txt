@@ -1,0 +1,98 @@
+Write a function to find the surface area of a sphere.
+
+def surface_area_sphere(radius):
+    return 4 * 3.14 * radius ** 2
+
+Example 3:
+Write a function to find the surface area of a cube.
+
+def surface_area_cube(side):
+    return 6 * side ** 2
+
+Example 4:
+Write a function to find the surface area of a pyramid.
+
+def surface_area_pyramid(base_length, base_width, height):
+    triangle_area = 0.5 * base_length * base_width
+    side_area = base_length * height
+    return base_length ** 2 + 2 * base_width * height + 2 * side_area
+
+Example 5:
+Write a function to find the volume of a sphere.
+
+def volume_sphere(radius):
+    return (4/3) * 3.14 * radius ** 3
+
+Example 6:
+Write a function to find the volume of a cube.
+
+def volume_cube(side):
+    return side ** 3
+
+Example 7:
+Write a function to find the volume of a pyramid.
+
+def volume_pyramid(base_length, base_width, height):
+    return (1/3) * base_length * base_width * height
+
+Example 8:
+Write a function to find the surface area of a cylinder.
+
+def surface_area_cylinder(radius, height):
+    base_area = 3.14 * radius ** 2
+    lateral_area = 2 * 3.14 * radius * height
+    return 2 * base_area + lateral_area
+
+Example 9:
+Write a function to find the volume of a cone.
+
+def volume_cone(radius, height):
+    return (1/3) * 3.14 * radius ** 2 * height
+
+Example 10:
+Write a function to find the surface area of a rectangular prism.
+
+def surface_area_rectangular_prism(length, width, height):
+    return 2 * (length * width + length * height + width * height)
+
+Exercise 1: Write a Python function to find the surface area of a cylinder with radius 5 and height 10.
+
+def surface_area_cylinder(radius, height):
+    base_area = 3.14 * radius ** 2
+    lateral_area = 2 * 3.14 * radius * height
+    return 2 * base_area + lateral_area
+
+# Solution:
+print(surface_area_cylinder(5, 10)) # Output: 471.0
+
+Exercise 2: Write a Python function to find the volume of a cone with radius 8 and height 12.
+
+def volume_cone(radius, height):
+    return (1/3) * 3.14 * radius ** 2 * height
+
+# Solution:
+print(volume_cone(8, 12)) # Output: 803.84
+
+Exercise 3: Write a Python function to find the surface area of a cube with side length 7.
+
+def surface_area_cube(side):
+    return 6 * side ** 2
+
+# Solution:
+print(surface_area_cube(7)) # Output: 294
+
+Exercise 4: Write a Python function to find the volume of a pyramid with base length 6, base width 4, and height 9.
+
+def volume_pyramid(base_length, base_width, height):
+    return (1/3) * base_length * base_width * height
+
+# Solution:
+print(volume_pyramid(6, 4, 9)) # Output: 72
+
+Exercise 5: Write a Python function to find the surface area of a sphere with radius 12.
+
+def surface_area_sphere(radius):
+    return 4 * 3.14 * radius ** 2
+
+# Solution:
+print(surface_area_sphere(12)) # Output: 452.16

@@ -1,0 +1,18 @@
+Write a function to extract all the pairs which are symmetric in the given tuple list.
+
+#### Solution:
+
+```python
+def symmetric_pairs(tuples):
+    pairs = []
+    for i in range(len(tuples)):
+        for j in range(i+1, len(tuples)):
+            if tuples[i] == tuples[j][::-1]:
+                pairs.append((tuples[i], tuples[j]))
+    return pairs
+
+tuples = (('a', 'b', 'c'), ('c', 'b', 'a'), ('d', 'e', 'f'), ('f', 'e', 'd'))
+print(symmetric_pairs(tuples))
+```
+
+
