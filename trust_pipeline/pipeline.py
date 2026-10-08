@@ -240,8 +240,13 @@ def stage_human(cfg, paths, dataset=None):
         keep_existing = False
         if not simulated and os.path.exists(paths.human_review):
             existing = pd.read_csv(paths.human_review)
-            keep_existing = existing["human_trustworthy"].isin(["yes", "no"]).any()
+            keep_existing = not human_review.real_reviews(existing).empty
         if keep_existing:
+            # Re-labelling can change automated labels, so compare reviewers against the current ones.
+            current = dataset.set_index("candidate_id")["label_trustworthy"]
+            existing["label_trustworthy"] = existing["candidate_id"].map(current).fillna(
+                existing["label_trustworthy"]).astype(int)
+            existing.to_csv(paths.human_review, index=False)
             log.info(f"Keeping existing reviews in {paths.human_review}")
         else:
             sample = human_review.build_review_sample(dataset, cfg.human_sample_size, simulated, cfg.seed)

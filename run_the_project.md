@@ -23,21 +23,33 @@ The free local Qwen models can't run on an Intel Mac, so choose one of these:
 
 **Option A, on your Mac:**
 
+Put your API keys in a `.env` file in the project folder. It is git-ignored, and the `trust-*` commands
+load it automatically (a key already exported in the shell takes priority):
+
 ```bash
-export OPENAI_API_KEY=sk-...
-export ANTHROPIC_API_KEY=sk-ant-...
+cp .env.example .env
+# then edit .env:
+#   OPENAI_API_KEY=sk-...
+#   ANTHROPIC_API_KEY=sk-ant-...   (leave empty if you don't have one)
+```
+
+Run with the backends you have keys for (drop `--anthropic` if you only have an OpenAI key):
+
+```bash
 uv run trust-pipeline --no-local-hf --openai --anthropic \
   --num-problems 20 --samples-per-config 5 --output-dir artifacts_pilot
 ```
 
+The first lines of output include `Loaded OPENAI_API_KEY from .env`, confirming the key was found.
+
 **Option B, in Colab:** the notebook does not contain the pipeline code; it imports the `trust_pipeline`
 package, so Colab needs the **whole project folder**, not just the `.ipynb`.
 
-1. On your Mac, zip the project without the large local folders:
+1. On your Mac, zip the project without the large local folders and without your `.env` keys file:
 
    ```bash
    cd /Users/hatem
-   zip -r MLE_NEW.zip MLE_NEW -x "MLE_NEW/.venv/*" "MLE_NEW/artifacts*" "MLE_NEW/.hf_cache_test/*" "MLE_NEW/.cache/*"
+   zip -r MLE_NEW.zip MLE_NEW -x "MLE_NEW/.venv/*" "MLE_NEW/artifacts*" "MLE_NEW/.hf_cache_test/*" "MLE_NEW/.cache/*" "MLE_NEW/.env"
    ```
 
 2. Open Colab and switch the runtime to a GPU (Runtime → Change runtime type).

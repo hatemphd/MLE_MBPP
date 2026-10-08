@@ -48,10 +48,12 @@ To see the results:
 **Option A: on your Mac, with API models**
 
 ```bash
-export OPENAI_API_KEY=sk-...         # and/or
-export ANTHROPIC_API_KEY=sk-ant-...
+cp .env.example .env    # then put your OPENAI_API_KEY and/or ANTHROPIC_API_KEY in .env
 uv run trust-pipeline --no-local-hf --openai --anthropic --num-problems 100 --samples-per-config 5
 ```
+
+`.env` is git-ignored and loaded automatically by the `trust-*` commands. Drop `--anthropic` if you only
+have an OpenAI key.
 
 **Option B: in Colab or on a GPU machine, with the free local Qwen models**
 

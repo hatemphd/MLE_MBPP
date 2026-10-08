@@ -10,6 +10,7 @@ os.environ.setdefault("MPLBACKEND", "Agg")
 import time  # noqa: E402
 
 from . import log, report  # noqa: E402
+from .env import load_dotenv  # noqa: E402
 from .pipeline import (ArtifactPaths, add_common_args, add_verbosity_args, config_from_args,  # noqa: E402
                        log_summary, run_all, stage_features, stage_generate, stage_human,
                        stage_label, stage_prepare, stage_train, verbosity_from_args)
@@ -22,7 +23,10 @@ def _parse(command, description, extra=None, fresh_report=False):
     if extra:
         extra(parser)
     args = parser.parse_args()
+    loaded = load_dotenv()
     cfg = config_from_args(args)
+    if loaded:
+        log.info(f"Loaded {', '.join(loaded)} from .env")
     paths = ArtifactPaths(cfg.output_dir)
     report.begin(paths, cfg, command, args=vars(args), fresh=fresh_report)
     return args, cfg, paths
@@ -112,6 +116,7 @@ Examples:
                         help="other candidate solutions for the same problem (self-consistency)")
     add_verbosity_args(parser)
     args = parser.parse_args()
+    load_dotenv()
     # The JSON result is the output here, so progress messages stay off unless --verbose.
     log.setup_logging(verbosity_from_args(args, default="quiet"))
     if not args.problem_text and args.task_id is None:

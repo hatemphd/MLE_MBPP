@@ -2,6 +2,11 @@
 .venv/
 .venv*/
 
+# Secrets (API keys)
+.env
+.env.*
+!.env.example
+
 # Pipeline outputs
 artifacts*/
 generations.jsonl

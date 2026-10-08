@@ -54,7 +54,9 @@ uv run trust-pipeline --all-problems --samples-per-config 10   # full MBPP
 ```
 
 Add `--openai` / `--anthropic` to include API models (needs `uv sync --extra api` and
-`OPENAI_API_KEY` / `ANTHROPIC_API_KEY`), and `--no-local-hf` to skip the local models. Generations
+`OPENAI_API_KEY` / `ANTHROPIC_API_KEY`), and `--no-local-hf` to skip the local models. Put the keys
+in a git-ignored `.env` file (`cp .env.example .env`); the `trust-*` commands load it automatically, and
+variables already exported in the shell take priority. Generations
 are cached in `artifacts/generations.jsonl`, so interrupted runs resume where they stopped.
 
 **Optional extra: prompt variations.** By default, every model config uses the standard prompt

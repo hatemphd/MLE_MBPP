@@ -8,12 +8,14 @@ notebook fails at the `import trust_pipeline` cell.
 
 ## 1. Zip the project on your Mac
 
-Leave out the large local folders (virtual environment, results, caches):
+Leave out the large local folders (virtual environment, results, caches) and your `.env` keys file:
 
 ```bash
 cd /Users/hatem
-zip -r MLE_NEW.zip MLE_NEW -x "MLE_NEW/.venv/*" "MLE_NEW/artifacts*" "MLE_NEW/.hf_cache_test/*" "MLE_NEW/.cache/*"
+zip -r MLE_NEW.zip MLE_NEW -x "MLE_NEW/.venv/*" "MLE_NEW/artifacts*" "MLE_NEW/.hf_cache_test/*" "MLE_NEW/.cache/*" "MLE_NEW/.env"
 ```
+
+Never put `.env` in the zip: anything uploaded to Colab can end up in shared notebooks or Drive.
 
 ## 2. Set up Colab
 
@@ -72,12 +74,14 @@ Then check:
 ```
 
 - Scale to `--all-problems` once you're confident.
-- To add API models too, set the keys first and add `--openai --anthropic`:
+- To add API models too, add `--openai --anthropic`. Don't upload your `.env`; store the keys in
+  Colab's **Secrets** panel (the key icon on the left, enable notebook access), then load them:
 
   ```python
   import os
-  os.environ["OPENAI_API_KEY"] = "sk-..."
-  os.environ["ANTHROPIC_API_KEY"] = "sk-ant-..."
+  from google.colab import userdata
+  os.environ["OPENAI_API_KEY"] = userdata.get("OPENAI_API_KEY")
+  os.environ["ANTHROPIC_API_KEY"] = userdata.get("ANTHROPIC_API_KEY")   # skip if you don't have one
   ```
 
 - Optional extra: add `--prompt-styles standard,signature_only,step_by_step,constrained,inject_bug` (or

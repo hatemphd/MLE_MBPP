@@ -123,6 +123,51 @@ def strip_comments(code):
     return "\n".join(line for line in lines if line.strip())
 
 
+def _is_main_guard(node):
+    test = node.test
+    return (isinstance(test, ast.Compare) and isinstance(test.left, ast.Name)
+            and test.left.id == "__name__")
+
+
+def _calls_any(node, names):
+    return any(isinstance(n, ast.Call) and isinstance(n.func, ast.Name) and n.func.id in names
+               for n in ast.walk(node))
+
+
+def strip_test_code(code):
+    """Remove the model's own top-level test code (asserts, prints and other bare expressions,
+    `if __name__ == "__main__":` blocks, loops, and assignments that call the candidate's functions)
+    so a wrong self-written example can't crash an otherwise valid solution at import time.
+    Imports, definitions and constant assignments are kept. Returns the input unchanged if it
+    does not parse."""
+    try:
+        tree = parse_quietly(code)
+    except (SyntaxError, ValueError):
+        return code
+    defined = {n.name for n in tree.body
+               if isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef))}
+    drop = set()
+    for node in tree.body:
+        is_test = (
+            isinstance(node, (ast.Assert, ast.Expr, ast.For, ast.AsyncFor, ast.While))
+            or (isinstance(node, ast.If) and _is_main_guard(node))
+            or (isinstance(node, (ast.Assign, ast.AnnAssign, ast.AugAssign)) and _calls_any(node, defined))
+        )
+        if is_test:
+            start = min([node.lineno] + [d.lineno for d in getattr(node, "decorator_list", [])])
+            drop.update(range(start, node.end_lineno + 1))
+    if not drop:
+        return code
+    source = code.splitlines()
+    for start in sorted(drop):
+        i = start - 1
+        while i >= 1 and i not in drop and source[i - 1].strip().startswith("#"):
+            drop.add(i)
+            i -= 1
+    lines = [line for i, line in enumerate(source, 1) if i not in drop]
+    return "\n".join(lines).strip()
+
+
 def _logprob_stats(logprobs):
     vals = [x for x in logprobs if x is not None and math.isfinite(x)]
     if not vals:
@@ -423,8 +468,10 @@ def _generate_llm_candidates(problems, cfg, cache_path):
     log.info(f"Generation finished in {log.format_seconds(time.time() - start_all)}.")
     # Older cache entries lack model/temperature/prompt_style and say provenance `llm`; the
     # (model config, style) they were generated under is known from the key, so fill them in.
+    # Self-written test code is stripped here, so cached samples get it too without regenerating.
     records = [{**r, "model": model_cfg.get("model", ""), "temperature": model_cfg.get("temperature", NAN),
-                "prompt_style": style, "provenance": provenance_for(style)}
+                "prompt_style": style, "provenance": provenance_for(style),
+                "generated_code": strip_test_code(r.get("generated_code") or "")}
                for p in problems for model_cfg, style in jobs
                for r in cache.get((p["task_id"], model_cfg["name"], style), [])[:n]]
     return records, session

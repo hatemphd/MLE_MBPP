@@ -10,6 +10,7 @@ import pandas as pd
 
 REVIEW_COLUMNS = ["candidate_id", "task_id", "model_name", "problem_text", "generated_code",
                   "exec_status", "label_trustworthy"]
+SIMULATED_NOTE = "(simulated -- replace with real reviewer notes)"
 
 
 def stratified_sample(frame, total, keys=("model_name", "exec_status"), min_per_group=3, seed=42):
@@ -39,11 +40,17 @@ def build_review_sample(frame, sample_size, simulated, seed=42):
     if simulated:
         rng = np.random.default_rng(seed)
         out["human_trustworthy"] = [simulate_human_label(r, rng) for _, r in sample.iterrows()]
-        out["human_notes"] = "(simulated -- replace with real reviewer notes)"
+        out["human_notes"] = SIMULATED_NOTE
     else:
         out["human_trustworthy"] = ""
         out["human_notes"] = ""
     return out
+
+
+def real_reviews(frame):
+    """Rows a real reviewer answered: yes/no and not left over from a simulated run."""
+    simulated_rows = frame["human_notes"].fillna("").astype(str).str.startswith(SIMULATED_NOTE)
+    return frame[frame["human_trustworthy"].isin(["yes", "no"]) & ~simulated_rows]
 
 
 def human_agreement(review_csv, simulated):
@@ -51,7 +58,8 @@ def human_agreement(review_csv, simulated):
     from sklearn.metrics import cohen_kappa_score
 
     reviewed = pd.read_csv(review_csv)
-    reviewed = reviewed[reviewed["human_trustworthy"].isin(["yes", "no"])]
+    reviewed = (reviewed[reviewed["human_trustworthy"].isin(["yes", "no"])] if simulated
+                else real_reviews(reviewed))
     if reviewed.empty:
         return None
     human = (reviewed["human_trustworthy"] == "yes").astype(int)
