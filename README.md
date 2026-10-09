@@ -3,6 +3,11 @@
 Predict whether AI-generated code can be trusted and recommend **APPROVED**, **REJECTED** or
 **NEEDS HUMAN REVIEW**.
 
+> **Just cloned the repo? Start with [clone_and_run.md](clone_and_run.md).** It explains how to run
+> the pipeline locally, the notebook locally, and the notebook in Google Colab
+> ([Open in Colab](https://colab.research.google.com/github/hatemphd/MLE_MBPP/blob/main/AI_Code_Trust_Pipeline.ipynb)),
+> all on the saved OpenAI run in `artifacts_pilot_openai/`: no API key, no new OpenAI calls.
+
 - **Labels** come from running each candidate against MBPP's *hidden* tests plus Bandit security
   findings. No AI model judges the code.
 - **Features** only use information available before the hidden tests run: code structure, lint and
@@ -20,7 +25,9 @@ Predict whether AI-generated code can be trusted and recommend **APPROVED**, **R
 | `trust_pipeline/` | All pipeline logic (single source of truth), installed as a package by uv |
 | `trust_pipeline/cli.py` | The `trust-*` commands |
 | `scripts/` | The same commands as plain scripts (`uv run python scripts/<name>.py`) |
-| `AI_Code_Trust_Pipeline.ipynb` | Results walkthrough on the prepared data (`artifacts_pilot_openai`): every stage in under a minute, no API calls || `pyproject.toml`, `uv.lock`, `.python-version` | uv project definition, lockfile, Python 3.12 pin |
+| `AI_Code_Trust_Pipeline.ipynb` | Results walkthrough on the prepared data (`artifacts_pilot_openai`): every stage in under a minute, no API calls |
+| `clone_and_run.md` | How to run after cloning: pipeline, local notebook, Colab |
+| `pyproject.toml`, `uv.lock`, `.python-version` | uv project definition, lockfile, Python 3.12 pin |
 | `requirements.txt` | Exported from `uv.lock` for environments without uv (core + API backends) |
 
 ## Setup (uv)
@@ -128,8 +135,9 @@ uv run jupyter lab
 uv run python -m ipykernel install --user --name mle-trust
 ```
 
-On **Colab**, upload or clone this folder, `%cd` into it, and run the notebook's install cell. It
-installs uv and runs `uv pip install --system -e ".[llm,api]"`, reusing Colab's preinstalled torch.
+On **Colab**, clone the repository into `/content/MLE_NEW`, `%cd` into it and `pip install -e .`
+before running the notebook. Step-by-step instructions (public or private repository, Google Drive):
+[clone_and_run.md, section 4](clone_and_run.md#4-run-the-notebook-in-google-colab).
 
 ## Maintaining dependencies
 
