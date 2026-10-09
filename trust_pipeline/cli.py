@@ -93,6 +93,23 @@ Also refreshes run_report.md and this run's row in runs_history.csv."""
     print(json.dumps(agreement, indent=2) if agreement else "No human labels filled in yet.")
 
 
+def eda():
+    """Exploratory data analysis of a finished run: figures in <output-dir>/figures/eda/ and
+<output-dir>/eda_report.md. Reads existing outputs only; no API calls, does not change the run report.
+
+  uv run trust-eda --output-dir artifacts_pilot_openai
+"""
+    from .eda import run_eda
+
+    parser = argparse.ArgumentParser(prog="trust-eda", description=eda.__doc__,
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--output-dir", default="artifacts")
+    add_verbosity_args(parser)
+    args = parser.parse_args()
+    log.setup_logging(verbosity_from_args(args))
+    run_eda(args.output_dir)
+
+
 def recommend():
     """Score a new candidate with the trained model: APPROVED / REJECTED / NEEDS HUMAN REVIEW.
 

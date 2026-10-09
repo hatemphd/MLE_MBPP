@@ -1,0 +1,1461 @@
+{
+  "manifest": {
+    "run_id": "20261008-001942-774ca5",
+    "started_at": "2026-10-08T00:19:42-04:00",
+    "finished_at": "2026-10-08T08:39:04-04:00",
+    "duration_seconds": 29962.0,
+    "mode": "real",
+    "human_feedback": "real",
+    "output_dir": "/Users/hatem/MLE_NEW/artifacts_pilot_openai",
+    "commands": [
+      {
+        "command": "trust-pipeline",
+        "argv": [
+          "--no-local-hf",
+          "--openai",
+          "--all-problems",
+          "--prompt-styles",
+          "natural",
+          "--samples-per-config",
+          "5",
+          "--human-feedback",
+          "real",
+          "--output-dir",
+          "artifacts_pilot_openai"
+        ],
+        "args": {
+          "output_dir": "artifacts_pilot_openai",
+          "num_problems": null,
+          "all_problems": true,
+          "samples_per_config": 5,
+          "smoke_test": null,
+          "human_feedback": "real",
+          "mutant_augmentation": null,
+          "local_hf": false,
+          "openai": true,
+          "anthropic": null,
+          "target_precision": null,
+          "max_workers": null,
+          "prompt_styles": "natural",
+          "seed": null,
+          "bootstrap_samples": null,
+          "history_file": null,
+          "quiet": false,
+          "verbose": false,
+          "no_plots": false
+        },
+        "at": "2026-10-08T00:19:42-04:00"
+      },
+      {
+        "command": "trust-generate",
+        "argv": [
+          "--output-dir",
+          "artifacts_pilot_openai"
+        ],
+        "args": {
+          "output_dir": "artifacts_pilot_openai",
+          "num_problems": null,
+          "all_problems": false,
+          "samples_per_config": null,
+          "smoke_test": null,
+          "human_feedback": null,
+          "mutant_augmentation": null,
+          "local_hf": null,
+          "openai": null,
+          "anthropic": null,
+          "target_precision": null,
+          "max_workers": null,
+          "prompt_styles": null,
+          "seed": null,
+          "bootstrap_samples": null,
+          "history_file": null,
+          "quiet": false,
+          "verbose": false
+        },
+        "at": "2026-10-08T07:49:08-04:00"
+      },
+      {
+        "command": "trust-label",
+        "argv": [
+          "--output-dir",
+          "artifacts_pilot_openai"
+        ],
+        "args": {
+          "output_dir": "artifacts_pilot_openai",
+          "num_problems": null,
+          "all_problems": false,
+          "samples_per_config": null,
+          "smoke_test": null,
+          "human_feedback": null,
+          "mutant_augmentation": null,
+          "local_hf": null,
+          "openai": null,
+          "anthropic": null,
+          "target_precision": null,
+          "max_workers": null,
+          "prompt_styles": null,
+          "seed": null,
+          "bootstrap_samples": null,
+          "history_file": null,
+          "quiet": false,
+          "verbose": false
+        },
+        "at": "2026-10-08T07:49:16-04:00"
+      },
+      {
+        "command": "trust-label",
+        "argv": [
+          "--output-dir",
+          "artifacts_pilot_openai"
+        ],
+        "args": {
+          "output_dir": "artifacts_pilot_openai",
+          "num_problems": null,
+          "all_problems": false,
+          "samples_per_config": null,
+          "smoke_test": null,
+          "human_feedback": null,
+          "mutant_augmentation": null,
+          "local_hf": null,
+          "openai": null,
+          "anthropic": null,
+          "target_precision": null,
+          "max_workers": null,
+          "prompt_styles": null,
+          "seed": null,
+          "bootstrap_samples": null,
+          "history_file": null,
+          "quiet": false,
+          "verbose": false
+        },
+        "at": "2026-10-08T08:01:30-04:00"
+      },
+      {
+        "command": "trust-features",
+        "argv": [
+          "--output-dir",
+          "artifacts_pilot_openai"
+        ],
+        "args": {
+          "output_dir": "artifacts_pilot_openai",
+          "num_problems": null,
+          "all_problems": false,
+          "samples_per_config": null,
+          "smoke_test": null,
+          "human_feedback": null,
+          "mutant_augmentation": null,
+          "local_hf": null,
+          "openai": null,
+          "anthropic": null,
+          "target_precision": null,
+          "max_workers": null,
+          "prompt_styles": null,
+          "seed": null,
+          "bootstrap_samples": null,
+          "history_file": null,
+          "quiet": false,
+          "verbose": false
+        },
+        "at": "2026-10-08T08:25:26-04:00"
+      },
+      {
+        "command": "trust-train",
+        "argv": [
+          "--output-dir",
+          "artifacts_pilot_openai"
+        ],
+        "args": {
+          "output_dir": "artifacts_pilot_openai",
+          "num_problems": null,
+          "all_problems": false,
+          "samples_per_config": null,
+          "smoke_test": null,
+          "human_feedback": null,
+          "mutant_augmentation": null,
+          "local_hf": null,
+          "openai": null,
+          "anthropic": null,
+          "target_precision": null,
+          "max_workers": null,
+          "prompt_styles": null,
+          "seed": null,
+          "bootstrap_samples": null,
+          "history_file": null,
+          "quiet": false,
+          "verbose": false,
+          "no_plots": false
+        },
+        "at": "2026-10-08T08:28:05-04:00"
+      },
+      {
+        "command": "trust-train",
+        "argv": [
+          "--output-dir",
+          "artifacts_pilot_openai"
+        ],
+        "args": {
+          "output_dir": "artifacts_pilot_openai",
+          "num_problems": null,
+          "all_problems": false,
+          "samples_per_config": null,
+          "smoke_test": null,
+          "human_feedback": null,
+          "mutant_augmentation": null,
+          "local_hf": null,
+          "openai": null,
+          "anthropic": null,
+          "target_precision": null,
+          "max_workers": null,
+          "prompt_styles": null,
+          "seed": null,
+          "bootstrap_samples": null,
+          "history_file": null,
+          "quiet": false,
+          "verbose": false,
+          "no_plots": false
+        },
+        "at": "2026-10-08T08:32:38-04:00"
+      },
+      {
+        "command": "trust-review",
+        "argv": [
+          "--output-dir",
+          "artifacts_pilot_openai"
+        ],
+        "args": {
+          "output_dir": "artifacts_pilot_openai",
+          "num_problems": null,
+          "all_problems": false,
+          "samples_per_config": null,
+          "smoke_test": null,
+          "human_feedback": null,
+          "mutant_augmentation": null,
+          "local_hf": null,
+          "openai": null,
+          "anthropic": null,
+          "target_precision": null,
+          "max_workers": null,
+          "prompt_styles": null,
+          "seed": null,
+          "bootstrap_samples": null,
+          "history_file": null,
+          "quiet": false,
+          "verbose": false
+        },
+        "at": "2026-10-08T20:17:50-04:00"
+      },
+      {
+        "command": "trust-review",
+        "argv": [
+          "--output-dir",
+          "artifacts_pilot_openai"
+        ],
+        "args": {
+          "output_dir": "artifacts_pilot_openai",
+          "num_problems": null,
+          "all_problems": false,
+          "samples_per_config": null,
+          "smoke_test": null,
+          "human_feedback": null,
+          "mutant_augmentation": null,
+          "local_hf": null,
+          "openai": null,
+          "anthropic": null,
+          "target_precision": null,
+          "max_workers": null,
+          "prompt_styles": null,
+          "seed": null,
+          "bootstrap_samples": null,
+          "history_file": null,
+          "quiet": false,
+          "verbose": false
+        },
+        "at": "2026-10-08T20:52:20-04:00"
+      },
+      {
+        "command": "trust-review",
+        "argv": [
+          "--output-dir",
+          "artifacts_pilot_openai"
+        ],
+        "args": {
+          "output_dir": "artifacts_pilot_openai",
+          "num_problems": null,
+          "all_problems": false,
+          "samples_per_config": null,
+          "smoke_test": null,
+          "human_feedback": null,
+          "mutant_augmentation": null,
+          "local_hf": null,
+          "openai": null,
+          "anthropic": null,
+          "target_precision": null,
+          "max_workers": null,
+          "prompt_styles": null,
+          "seed": null,
+          "bootstrap_samples": null,
+          "history_file": null,
+          "quiet": false,
+          "verbose": false
+        },
+        "at": "2026-10-08T20:53:06-04:00"
+      }
+    ],
+    "seed": 42,
+    "config": {
+      "seed": 42,
+      "smoke_test": false,
+      "smoke_mutants_per_problem": 7,
+      "num_problems": null,
+      "samples_per_config": 5,
+      "probes_per_problem": 6,
+      "use_mutant_augmentation": false,
+      "mutants_per_problem": 3,
+      "max_workers": 12,
+      "item_timeout": 3.0,
+      "memory_limit_mb": 1024,
+      "human_added_feedback": false,
+      "human_sample_size": 150,
+      "target_approve_precision": 0.95,
+      "target_reject_precision": 0.95,
+      "min_decision_support": 10,
+      "conformal_alpha": 0.1,
+      "use_local_hf": false,
+      "use_openai": true,
+      "use_anthropic": false,
+      "max_new_tokens": 512,
+      "model_configs": [],
+      "prompt_styles": [
+        "standard",
+        "signature_only",
+        "step_by_step",
+        "constrained"
+      ],
+      "output_dir": "artifacts_pilot_openai",
+      "bootstrap_samples": 1000,
+      "history_file": null
+    },
+    "model_configs": [
+      {
+        "name": "gpt-4o-mini-t0.3",
+        "provider": "openai",
+        "model": "gpt-4o-mini",
+        "temperature": 0.3
+      },
+      {
+        "name": "gpt-4o-mini-t1.0",
+        "provider": "openai",
+        "model": "gpt-4o-mini",
+        "temperature": 1.0
+      }
+    ],
+    "python": "3.12.12",
+    "platform": "macOS-15.7.4-x86_64-i386-64bit",
+    "versions": {
+      "mle-trust-pipeline": "0.1.0",
+      "scikit-learn": "1.9.1",
+      "numpy": "2.5.3",
+      "pandas": "3.0.6",
+      "torch": null,
+      "transformers": null,
+      "datasets": "5.1.0",
+      "openai": "3.24.0",
+      "anthropic": "1.11.0"
+    },
+    "gpu": {
+      "checked": false,
+      "note": "torch not loaded in this run (smoke test or API-only)"
+    },
+    "stage_seconds_total": 1801.07,
+    "history_file": "/Users/hatem/MLE_NEW/runs_history.csv"
+  },
+  "stage_seconds": {
+    "prepare": 17.54,
+    "generate": 4.14,
+    "execute": 1236.41,
+    "static": 101.14,
+    "features": 56.54,
+    "human": 0.1,
+    "train": 162.43,
+    "decide": 222.77
+  },
+  "generation": {
+    "gpt-4o-mini-t0.3": {
+      "model_config": "gpt-4o-mini-t0.3",
+      "prompt_style": "standard",
+      "provenance": "natural",
+      "provider": "openai",
+      "model": "gpt-4o-mini",
+      "temperature": 0.3,
+      "problems": 968,
+      "samples_in_dataset": 4840,
+      "attempts_requested": 4840,
+      "new_samples": 0,
+      "reused_from_cache": 4840,
+      "failed_attempts": 0,
+      "session_seconds": 0.0,
+      "output_tokens_total": 244866.0,
+      "output_tokens_mean": 50.59214876033058,
+      "input_tokens_total": 115334.0,
+      "mean_seconds_per_sample": 0.30613479382735637,
+      "output_tokens_per_second": 165.26102155138184,
+      "timed_samples": 4840
+    },
+    "gpt-4o-mini-t0.3/signature_only": {
+      "model_config": "gpt-4o-mini-t0.3",
+      "prompt_style": "signature_only",
+      "provenance": "natural",
+      "provider": "openai",
+      "model": "gpt-4o-mini",
+      "temperature": 0.3,
+      "problems": 968,
+      "samples_in_dataset": 4840,
+      "attempts_requested": 4840,
+      "new_samples": 0,
+      "reused_from_cache": 4840,
+      "failed_attempts": 0,
+      "session_seconds": 0.0,
+      "output_tokens_total": 271458.0,
+      "output_tokens_mean": 56.086363636363636,
+      "input_tokens_total": 86970.0,
+      "mean_seconds_per_sample": 0.30757583916679887,
+      "output_tokens_per_second": 182.3497053224259,
+      "timed_samples": 4840
+    },
+    "gpt-4o-mini-t0.3/step_by_step": {
+      "model_config": "gpt-4o-mini-t0.3",
+      "prompt_style": "step_by_step",
+      "provenance": "natural",
+      "provider": "openai",
+      "model": "gpt-4o-mini",
+      "temperature": 0.3,
+      "problems": 968,
+      "samples_in_dataset": 4840,
+      "attempts_requested": 4840,
+      "new_samples": 0,
+      "reused_from_cache": 4840,
+      "failed_attempts": 0,
+      "session_seconds": 0.0,
+      "output_tokens_total": 1151437.0,
+      "output_tokens_mean": 237.90020661157024,
+      "input_tokens_total": 128886.0,
+      "mean_seconds_per_sample": 0.8934550400115242,
+      "output_tokens_per_second": 266.2699251307617,
+      "timed_samples": 4840
+    },
+    "gpt-4o-mini-t0.3/constrained": {
+      "model_config": "gpt-4o-mini-t0.3",
+      "prompt_style": "constrained",
+      "provenance": "natural",
+      "provider": "openai",
+      "model": "gpt-4o-mini",
+      "temperature": 0.3,
+      "problems": 968,
+      "samples_in_dataset": 4840,
+      "attempts_requested": 4840,
+      "new_samples": 0,
+      "reused_from_cache": 4840,
+      "failed_attempts": 0,
+      "session_seconds": 0.0,
+      "output_tokens_total": 204313.0,
+      "output_tokens_mean": 42.21342975206612,
+      "input_tokens_total": 146310.0,
+      "mean_seconds_per_sample": 0.2798083623578726,
+      "output_tokens_per_second": 150.8655045058142,
+      "timed_samples": 4840
+    },
+    "gpt-4o-mini-t1.0": {
+      "model_config": "gpt-4o-mini-t1.0",
+      "prompt_style": "standard",
+      "provenance": "natural",
+      "provider": "openai",
+      "model": "gpt-4o-mini",
+      "temperature": 1.0,
+      "problems": 968,
+      "samples_in_dataset": 4840,
+      "attempts_requested": 4840,
+      "new_samples": 0,
+      "reused_from_cache": 4840,
+      "failed_attempts": 0,
+      "session_seconds": 0.0,
+      "output_tokens_total": 247723.0,
+      "output_tokens_mean": 51.18243801652893,
+      "input_tokens_total": 115334.0,
+      "mean_seconds_per_sample": 0.3080166759569783,
+      "output_tokens_per_second": 166.16775003337074,
+      "timed_samples": 4840
+    },
+    "gpt-4o-mini-t1.0/signature_only": {
+      "model_config": "gpt-4o-mini-t1.0",
+      "prompt_style": "signature_only",
+      "provenance": "natural",
+      "provider": "openai",
+      "model": "gpt-4o-mini",
+      "temperature": 1.0,
+      "problems": 968,
+      "samples_in_dataset": 4840,
+      "attempts_requested": 4840,
+      "new_samples": 0,
+      "reused_from_cache": 4840,
+      "failed_attempts": 0,
+      "session_seconds": 0.0,
+      "output_tokens_total": 274703.0,
+      "output_tokens_mean": 56.75681818181818,
+      "input_tokens_total": 86970.0,
+      "mean_seconds_per_sample": 0.3189774108819725,
+      "output_tokens_per_second": 177.93366001964085,
+      "timed_samples": 4840
+    },
+    "gpt-4o-mini-t1.0/step_by_step": {
+      "model_config": "gpt-4o-mini-t1.0",
+      "prompt_style": "step_by_step",
+      "provenance": "natural",
+      "provider": "openai",
+      "model": "gpt-4o-mini",
+      "temperature": 1.0,
+      "problems": 968,
+      "samples_in_dataset": 4840,
+      "attempts_requested": 4840,
+      "new_samples": 0,
+      "reused_from_cache": 4840,
+      "failed_attempts": 0,
+      "session_seconds": 0.0,
+      "output_tokens_total": 1161077.0,
+      "output_tokens_mean": 239.89194214876034,
+      "input_tokens_total": 128886.0,
+      "mean_seconds_per_sample": 0.883115480754001,
+      "output_tokens_per_second": 271.6427776171938,
+      "timed_samples": 4840
+    },
+    "gpt-4o-mini-t1.0/constrained": {
+      "model_config": "gpt-4o-mini-t1.0",
+      "prompt_style": "constrained",
+      "provenance": "natural",
+      "provider": "openai",
+      "model": "gpt-4o-mini",
+      "temperature": 1.0,
+      "problems": 968,
+      "samples_in_dataset": 4840,
+      "attempts_requested": 4840,
+      "new_samples": 0,
+      "reused_from_cache": 4840,
+      "failed_attempts": 0,
+      "session_seconds": 0.0,
+      "output_tokens_total": 203842.0,
+      "output_tokens_mean": 42.11611570247934,
+      "input_tokens_total": 146310.0,
+      "mean_seconds_per_sample": 0.27257880706432436,
+      "output_tokens_per_second": 154.50986874610757,
+      "timed_samples": 4840
+    }
+  },
+  "execution": {
+    "overall": {
+      "rows": 38720,
+      "problems": 968,
+      "outcomes": {
+        "pass": 26720,
+        "wrong_output": 10624,
+        "runtime_error": 1301,
+        "timeout": 39,
+        "syntax_error": 36,
+        "generation_error": 0
+      },
+      "trustworthy_rate": 0.6894369834710744,
+      "visible_pass_rate": 0.7563533057851239,
+      "hidden_pass_rate": 0.6900826446280992,
+      "visible_vs_hidden": {
+        "visible_pass_hidden_pass": 26184,
+        "visible_pass_hidden_fail": 3102,
+        "visible_fail_hidden_pass": 536,
+        "visible_fail_hidden_fail": 8898,
+        "hidden_fail_given_visible_pass": 0.10592091784470395
+      },
+      "static": {
+        "share_with_ruff_issues": 0.24581611570247933,
+        "share_with_undefined_names": 0.0007489669421487604,
+        "share_with_bandit_med_high": 0.0009039256198347108,
+        "mean_ruff_issues": 0.5434659090909091
+      },
+      "pass_at_k_note": "pass@k uses hidden tests and the unbiased estimator over each problem's samples for one (model config, prompt style); in SMOKE_TEST the 'samples' are the reference plus its mutants."
+    },
+    "per_config": {
+      "gpt-4o-mini-t0.3": {
+        "rows": 4840,
+        "problems": 968,
+        "outcomes": {
+          "pass": 3590,
+          "wrong_output": 1203,
+          "runtime_error": 41,
+          "timeout": 1,
+          "syntax_error": 5,
+          "generation_error": 0
+        },
+        "trustworthy_rate": 0.7400826446280991,
+        "visible_pass_rate": 0.8198347107438017,
+        "hidden_pass_rate": 0.7417355371900827,
+        "visible_vs_hidden": {
+          "visible_pass_hidden_pass": 3521,
+          "visible_pass_hidden_fail": 447,
+          "visible_fail_hidden_pass": 69,
+          "visible_fail_hidden_fail": 803,
+          "hidden_fail_given_visible_pass": 0.11265120967741936
+        },
+        "static": {
+          "share_with_ruff_issues": 0.1925619834710744,
+          "share_with_undefined_names": 0.0,
+          "share_with_bandit_med_high": 0.001652892561983471,
+          "mean_ruff_issues": 0.43099173553719006
+        },
+        "model_config": "gpt-4o-mini-t0.3",
+        "prompt_style": "standard",
+        "provenance": "natural",
+        "temperature": 0.3,
+        "pass_at_k": {
+          "pass@1": 0.7417355371900827,
+          "pass@3": 0.7576446280991737,
+          "pass@5": 0.7644628099173554
+        }
+      },
+      "gpt-4o-mini-t0.3/signature_only": {
+        "rows": 4840,
+        "problems": 968,
+        "outcomes": {
+          "pass": 2672,
+          "wrong_output": 1731,
+          "runtime_error": 437,
+          "timeout": 0,
+          "syntax_error": 0,
+          "generation_error": 0
+        },
+        "trustworthy_rate": 0.5510330578512397,
+        "visible_pass_rate": 0.5888429752066116,
+        "hidden_pass_rate": 0.5520661157024793,
+        "visible_vs_hidden": {
+          "visible_pass_hidden_pass": 2627,
+          "visible_pass_hidden_fail": 223,
+          "visible_fail_hidden_pass": 45,
+          "visible_fail_hidden_fail": 1945,
+          "hidden_fail_given_visible_pass": 0.07824561403508772
+        },
+        "static": {
+          "share_with_ruff_issues": 0.24524793388429753,
+          "share_with_undefined_names": 0.0,
+          "share_with_bandit_med_high": 0.0010330578512396695,
+          "mean_ruff_issues": 0.5516528925619835
+        },
+        "model_config": "gpt-4o-mini-t0.3",
+        "prompt_style": "signature_only",
+        "provenance": "natural",
+        "temperature": 0.3,
+        "pass_at_k": {
+          "pass@1": 0.5520661157024793,
+          "pass@3": 0.5714876033057852,
+          "pass@5": 0.5774793388429752
+        }
+      },
+      "gpt-4o-mini-t0.3/step_by_step": {
+        "rows": 4840,
+        "problems": 968,
+        "outcomes": {
+          "pass": 3626,
+          "wrong_output": 1124,
+          "runtime_error": 81,
+          "timeout": 8,
+          "syntax_error": 1,
+          "generation_error": 0
+        },
+        "trustworthy_rate": 0.7491735537190083,
+        "visible_pass_rate": 0.8214876033057851,
+        "hidden_pass_rate": 0.7491735537190083,
+        "visible_vs_hidden": {
+          "visible_pass_hidden_pass": 3558,
+          "visible_pass_hidden_fail": 418,
+          "visible_fail_hidden_pass": 68,
+          "visible_fail_hidden_fail": 796,
+          "hidden_fail_given_visible_pass": 0.10513078470824949
+        },
+        "static": {
+          "share_with_ruff_issues": 0.3822314049586777,
+          "share_with_undefined_names": 0.0008264462809917355,
+          "share_with_bandit_med_high": 0.0,
+          "mean_ruff_issues": 1.040289256198347
+        },
+        "model_config": "gpt-4o-mini-t0.3",
+        "prompt_style": "step_by_step",
+        "provenance": "natural",
+        "temperature": 0.3,
+        "pass_at_k": {
+          "pass@1": 0.7491735537190083,
+          "pass@3": 0.7774793388429753,
+          "pass@5": 0.7892561983471075
+        }
+      },
+      "gpt-4o-mini-t0.3/constrained": {
+        "rows": 4840,
+        "problems": 968,
+        "outcomes": {
+          "pass": 3525,
+          "wrong_output": 1240,
+          "runtime_error": 65,
+          "timeout": 5,
+          "syntax_error": 5,
+          "generation_error": 0
+        },
+        "trustworthy_rate": 0.7283057851239669,
+        "visible_pass_rate": 0.806198347107438,
+        "hidden_pass_rate": 0.7283057851239669,
+        "visible_vs_hidden": {
+          "visible_pass_hidden_pass": 3442,
+          "visible_pass_hidden_fail": 460,
+          "visible_fail_hidden_pass": 83,
+          "visible_fail_hidden_fail": 855,
+          "hidden_fail_given_visible_pass": 0.11788826242952333
+        },
+        "static": {
+          "share_with_ruff_issues": 0.14132231404958678,
+          "share_with_undefined_names": 0.001652892561983471,
+          "share_with_bandit_med_high": 0.0010330578512396695,
+          "mean_ruff_issues": 0.18409090909090908
+        },
+        "model_config": "gpt-4o-mini-t0.3",
+        "prompt_style": "constrained",
+        "provenance": "natural",
+        "temperature": 0.3,
+        "pass_at_k": {
+          "pass@1": 0.7283057851239669,
+          "pass@3": 0.7478305785123966,
+          "pass@5": 0.7551652892561983
+        }
+      },
+      "gpt-4o-mini-t1.0": {
+        "rows": 4840,
+        "problems": 968,
+        "outcomes": {
+          "pass": 3572,
+          "wrong_output": 1194,
+          "runtime_error": 59,
+          "timeout": 6,
+          "syntax_error": 9,
+          "generation_error": 0
+        },
+        "trustworthy_rate": 0.7367768595041322,
+        "visible_pass_rate": 0.8150826446280992,
+        "hidden_pass_rate": 0.7380165289256199,
+        "visible_vs_hidden": {
+          "visible_pass_hidden_pass": 3500,
+          "visible_pass_hidden_fail": 445,
+          "visible_fail_hidden_pass": 72,
+          "visible_fail_hidden_fail": 823,
+          "hidden_fail_given_visible_pass": 0.11280101394169835
+        },
+        "static": {
+          "share_with_ruff_issues": 0.20351239669421486,
+          "share_with_undefined_names": 0.00041322314049586776,
+          "share_with_bandit_med_high": 0.0012396694214876034,
+          "mean_ruff_issues": 0.4297520661157025
+        },
+        "model_config": "gpt-4o-mini-t1.0",
+        "prompt_style": "standard",
+        "provenance": "natural",
+        "temperature": 1.0,
+        "pass_at_k": {
+          "pass@1": 0.7380165289256199,
+          "pass@3": 0.7773760330578512,
+          "pass@5": 0.7923553719008265
+        }
+      },
+      "gpt-4o-mini-t1.0/signature_only": {
+        "rows": 4840,
+        "problems": 968,
+        "outcomes": {
+          "pass": 2654,
+          "wrong_output": 1737,
+          "runtime_error": 439,
+          "timeout": 7,
+          "syntax_error": 3,
+          "generation_error": 0
+        },
+        "trustworthy_rate": 0.5473140495867769,
+        "visible_pass_rate": 0.5840909090909091,
+        "hidden_pass_rate": 0.5483471074380165,
+        "visible_vs_hidden": {
+          "visible_pass_hidden_pass": 2605,
+          "visible_pass_hidden_fail": 222,
+          "visible_fail_hidden_pass": 49,
+          "visible_fail_hidden_fail": 1964,
+          "hidden_fail_given_visible_pass": 0.07852847541563494
+        },
+        "static": {
+          "share_with_ruff_issues": 0.2518595041322314,
+          "share_with_undefined_names": 0.0006198347107438017,
+          "share_with_bandit_med_high": 0.0010330578512396695,
+          "mean_ruff_issues": 0.5338842975206611
+        },
+        "model_config": "gpt-4o-mini-t1.0",
+        "prompt_style": "signature_only",
+        "provenance": "natural",
+        "temperature": 1.0,
+        "pass_at_k": {
+          "pass@1": 0.5483471074380165,
+          "pass@3": 0.5941115702479339,
+          "pass@5": 0.6105371900826446
+        }
+      },
+      "gpt-4o-mini-t1.0/step_by_step": {
+        "rows": 4840,
+        "problems": 968,
+        "outcomes": {
+          "pass": 3586,
+          "wrong_output": 1146,
+          "runtime_error": 98,
+          "timeout": 4,
+          "syntax_error": 6,
+          "generation_error": 0
+        },
+        "trustworthy_rate": 0.740909090909091,
+        "visible_pass_rate": 0.8150826446280992,
+        "hidden_pass_rate": 0.740909090909091,
+        "visible_vs_hidden": {
+          "visible_pass_hidden_pass": 3508,
+          "visible_pass_hidden_fail": 437,
+          "visible_fail_hidden_pass": 78,
+          "visible_fail_hidden_fail": 817,
+          "hidden_fail_given_visible_pass": 0.11077313054499366
+        },
+        "static": {
+          "share_with_ruff_issues": 0.4004132231404959,
+          "share_with_undefined_names": 0.00041322314049586776,
+          "share_with_bandit_med_high": 0.0,
+          "mean_ruff_issues": 0.9787190082644628
+        },
+        "model_config": "gpt-4o-mini-t1.0",
+        "prompt_style": "step_by_step",
+        "provenance": "natural",
+        "temperature": 1.0,
+        "pass_at_k": {
+          "pass@1": 0.7409090909090909,
+          "pass@3": 0.7948347107438017,
+          "pass@5": 0.8109504132231405
+        }
+      },
+      "gpt-4o-mini-t1.0/constrained": {
+        "rows": 4840,
+        "problems": 968,
+        "outcomes": {
+          "pass": 3495,
+          "wrong_output": 1249,
+          "runtime_error": 81,
+          "timeout": 8,
+          "syntax_error": 7,
+          "generation_error": 0
+        },
+        "trustworthy_rate": 0.721900826446281,
+        "visible_pass_rate": 0.800206611570248,
+        "hidden_pass_rate": 0.7221074380165289,
+        "visible_vs_hidden": {
+          "visible_pass_hidden_pass": 3423,
+          "visible_pass_hidden_fail": 450,
+          "visible_fail_hidden_pass": 72,
+          "visible_fail_hidden_fail": 895,
+          "hidden_fail_given_visible_pass": 0.11618900077459333
+        },
+        "static": {
+          "share_with_ruff_issues": 0.1493801652892562,
+          "share_with_undefined_names": 0.002066115702479339,
+          "share_with_bandit_med_high": 0.0012396694214876034,
+          "mean_ruff_issues": 0.19834710743801653
+        },
+        "model_config": "gpt-4o-mini-t1.0",
+        "prompt_style": "constrained",
+        "provenance": "natural",
+        "temperature": 1.0,
+        "pass_at_k": {
+          "pass@1": 0.7221074380165289,
+          "pass@3": 0.7757231404958678,
+          "pass@5": 0.7944214876033058
+        }
+      }
+    },
+    "natural_only": null,
+    "provenance_counts": {
+      "natural": 38720
+    },
+    "failure_modes": {
+      "standard | natural": {
+        "prompt_style": "standard",
+        "provenance": "natural",
+        "rows": 9680,
+        "syntax_error": 14,
+        "runtime_error": 100,
+        "timeout": 7,
+        "wrong_output": 2397,
+        "security_finding": 14,
+        "visible_pass_hidden_fail": 892,
+        "trustworthy": 7148
+      },
+      "signature_only | natural": {
+        "prompt_style": "signature_only",
+        "provenance": "natural",
+        "rows": 9680,
+        "syntax_error": 3,
+        "runtime_error": 876,
+        "timeout": 7,
+        "wrong_output": 3468,
+        "security_finding": 10,
+        "visible_pass_hidden_fail": 445,
+        "trustworthy": 5316
+      },
+      "step_by_step | natural": {
+        "prompt_style": "step_by_step",
+        "provenance": "natural",
+        "rows": 9680,
+        "syntax_error": 7,
+        "runtime_error": 179,
+        "timeout": 12,
+        "wrong_output": 2270,
+        "security_finding": 0,
+        "visible_pass_hidden_fail": 855,
+        "trustworthy": 7212
+      },
+      "constrained | natural": {
+        "prompt_style": "constrained",
+        "provenance": "natural",
+        "rows": 9680,
+        "syntax_error": 12,
+        "runtime_error": 146,
+        "timeout": 13,
+        "wrong_output": 2489,
+        "security_finding": 11,
+        "visible_pass_hidden_fail": 910,
+        "trustworthy": 7019
+      },
+      "all": {
+        "prompt_style": "all",
+        "provenance": "all",
+        "rows": 38720,
+        "syntax_error": 36,
+        "runtime_error": 1301,
+        "timeout": 39,
+        "wrong_output": 10624,
+        "security_finding": 35,
+        "visible_pass_hidden_fail": 3102,
+        "trustworthy": 26695
+      }
+    }
+  },
+  "human_agreement": {
+    "reviewed_rows": 164,
+    "raw_agreement": 0.8841463414634146,
+    "cohen_kappa": 0.7383271750083977,
+    "simulated": false,
+    "confusion": {
+      "auto=0": {
+        "human=0": 44,
+        "human=1": 16
+      },
+      "auto=1": {
+        "human=0": 3,
+        "human=1": 101
+      }
+    }
+  },
+  "dataset": {
+    "total": {
+      "rows": 38720,
+      "problems": 968,
+      "trustworthy": 26695,
+      "trustworthy_rate": 0.6894369834710744,
+      "provenance": {
+        "natural": 38720
+      }
+    },
+    "splits": {
+      "train": {
+        "rows": 23200,
+        "problems": 580,
+        "trustworthy": 16086,
+        "trustworthy_rate": 0.6933620689655172,
+        "provenance": {
+          "natural": 23200
+        }
+      },
+      "calibration": {
+        "rows": 7760,
+        "problems": 194,
+        "trustworthy": 5639,
+        "trustworthy_rate": 0.7266752577319587,
+        "provenance": {
+          "natural": 7760
+        }
+      },
+      "test": {
+        "rows": 7760,
+        "problems": 194,
+        "trustworthy": 4970,
+        "trustworthy_rate": 0.6404639175257731,
+        "provenance": {
+          "natural": 7760
+        }
+      }
+    }
+  },
+  "model_results": {
+    "cv": {
+      "majority": {
+        "cv_roc_auc": 0.5,
+        "cv_roc_auc_std": 0.0,
+        "cv_average_precision": 0.6933620689655171,
+        "cv_average_precision_std": 0.034885684726130003,
+        "cv_f1": 0.818411015173145,
+        "cv_f1_std": 0.024597937054222554,
+        "cv_accuracy": 0.6933620689655171,
+        "cv_accuracy_std": 0.034885684726130003
+      },
+      "visible_test_only": {
+        "cv_roc_auc": 0.8566139862664658,
+        "cv_roc_auc_std": 0.02572966758390585,
+        "cv_average_precision": 0.88787229860503,
+        "cv_average_precision_std": 0.027816517770054502,
+        "cv_f1": 0.9333802751625351,
+        "cv_f1_std": 0.015829413987526155,
+        "cv_accuracy": 0.9034913793103447,
+        "cv_accuracy_std": 0.021191121129953267
+      },
+      "logistic_regression": {
+        "cv_roc_auc": 0.923974888976705,
+        "cv_roc_auc_std": 0.019109221531384588,
+        "cv_average_precision": 0.9450998886293392,
+        "cv_average_precision_std": 0.01608886764203056,
+        "cv_f1": 0.9197593643358927,
+        "cv_f1_std": 0.01222790064282353,
+        "cv_accuracy": 0.8885344827586206,
+        "cv_accuracy_std": 0.015480320059862046
+      },
+      "random_forest": {
+        "cv_roc_auc": 0.9403325550539883,
+        "cv_roc_auc_std": 0.009431722908508477,
+        "cv_average_precision": 0.9634208991441419,
+        "cv_average_precision_std": 0.011873370524339994,
+        "cv_f1": 0.9331291084031147,
+        "cv_f1_std": 0.014506712771140918,
+        "cv_accuracy": 0.9055172413793103,
+        "cv_accuracy_std": 0.018889247109439677
+      },
+      "hist_gradient_boosting": {
+        "cv_roc_auc": 0.9284240596873083,
+        "cv_roc_auc_std": 0.01211830458531092,
+        "cv_average_precision": 0.9560175194225792,
+        "cv_average_precision_std": 0.015057386357323605,
+        "cv_f1": 0.9289738970487003,
+        "cv_f1_std": 0.01629086604672984,
+        "cv_accuracy": 0.8996120689655172,
+        "cv_accuracy_std": 0.02091801063310302
+      }
+    },
+    "selected_model": "random_forest",
+    "calibrated_model": "random_forest (calibrated)",
+    "calibration_method": "isotonic",
+    "baselines": [
+      "majority",
+      "visible_test_only"
+    ],
+    "test": {
+      "majority": {
+        "accuracy": {
+          "value": 0.6404639175257731,
+          "ci95": [
+            0.5832023195876289,
+            0.7028350515463917
+          ]
+        },
+        "precision": {
+          "value": 0.6404639175257731,
+          "ci95": [
+            0.5832023195876289,
+            0.7028350515463917
+          ]
+        },
+        "recall": {
+          "value": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "f1": {
+          "value": 0.7808326787117046,
+          "ci95": [
+            0.7367375359240153,
+            0.8254881186620251
+          ]
+        },
+        "roc_auc": {
+          "value": 0.5,
+          "ci95": [
+            0.5,
+            0.5
+          ]
+        },
+        "pr_auc": {
+          "value": 0.6404639175257731,
+          "ci95": [
+            0.5832023195876289,
+            0.7028350515463917
+          ]
+        },
+        "brier": {
+          "value": 0.23306810229905486,
+          "ci95": [
+            0.2089476792631502,
+            0.25521254439823726
+          ]
+        }
+      },
+      "visible_test_only": {
+        "accuracy": {
+          "value": 0.8862113402061855,
+          "ci95": [
+            0.8479317010309279,
+            0.9224291237113402
+          ]
+        },
+        "precision": {
+          "value": 0.8721544345292297,
+          "ci95": [
+            0.8240133720240728,
+            0.9187814737476606
+          ]
+        },
+        "recall": {
+          "value": 0.9635814889336016,
+          "ci95": [
+            0.9320489016086764,
+            0.9875468496624111
+          ]
+        },
+        "f1": {
+          "value": 0.9155912436669534,
+          "ci95": [
+            0.8852143912254582,
+            0.9443449169380631
+          ]
+        },
+        "roc_auc": {
+          "value": 0.8559842928538977,
+          "ci95": [
+            0.8157354979486989,
+            0.8975852795244157
+          ]
+        },
+        "pr_auc": {
+          "value": 0.8637166108717598,
+          "ci95": [
+            0.8151549179888661,
+            0.9117126561796948
+          ]
+        },
+        "brier": {
+          "value": 0.10073765565018435,
+          "ci95": [
+            0.07117944284771272,
+            0.13090647873123937
+          ]
+        }
+      },
+      "logistic_regression": {
+        "accuracy": {
+          "value": 0.8708762886597938,
+          "ci95": [
+            0.8345296391752578,
+            0.9058021907216495
+          ]
+        },
+        "precision": {
+          "value": 0.8947473139673697,
+          "ci95": [
+            0.8472941462627298,
+            0.9401838659433761
+          ]
+        },
+        "recall": {
+          "value": 0.9048289738430584,
+          "ci95": [
+            0.8680944623825003,
+            0.9374568876253399
+          ]
+        },
+        "f1": {
+          "value": 0.8997599039615847,
+          "ci95": [
+            0.8681559750306206,
+            0.9289959611492887
+          ]
+        },
+        "roc_auc": {
+          "value": 0.9204215976864774,
+          "ci95": [
+            0.8841291493611511,
+            0.9533322740560527
+          ]
+        },
+        "pr_auc": {
+          "value": 0.9415654367329752,
+          "ci95": [
+            0.9094672592011502,
+            0.9699648104084504
+          ]
+        },
+        "brier": {
+          "value": 0.09910536367852507,
+          "ci95": [
+            0.0745990623048741,
+            0.12394311773686188
+          ]
+        }
+      },
+      "random_forest": {
+        "accuracy": {
+          "value": 0.8996134020618557,
+          "ci95": [
+            0.867632087628866,
+            0.931833118556701
+          ]
+        },
+        "precision": {
+          "value": 0.9002865329512894,
+          "ci95": [
+            0.857136985034732,
+            0.9400904185747218
+          ]
+        },
+        "recall": {
+          "value": 0.9482897384305835,
+          "ci95": [
+            0.9194749995409462,
+            0.9725284765446592
+          ]
+        },
+        "f1": {
+          "value": 0.9236648701616854,
+          "ci95": [
+            0.895576548656015,
+            0.94901928474636
+          ]
+        },
+        "roc_auc": {
+          "value": 0.9410330080843483,
+          "ci95": [
+            0.9093745082067177,
+            0.967899821498956
+          ]
+        },
+        "pr_auc": {
+          "value": 0.9562306504991671,
+          "ci95": [
+            0.925787376870782,
+            0.9825315746185784
+          ]
+        },
+        "brier": {
+          "value": 0.08003838775049958,
+          "ci95": [
+            0.05873200723166659,
+            0.10208184007124164
+          ]
+        }
+      },
+      "hist_gradient_boosting": {
+        "accuracy": {
+          "value": 0.897680412371134,
+          "ci95": [
+            0.8640463917525774,
+            0.9287403350515464
+          ]
+        },
+        "precision": {
+          "value": 0.8996937212863706,
+          "ci95": [
+            0.8570252646042579,
+            0.9398437324714386
+          ]
+        },
+        "recall": {
+          "value": 0.9456740442655935,
+          "ci95": [
+            0.9152833206339107,
+            0.9698963106795674
+          ]
+        },
+        "f1": {
+          "value": 0.9221110457131646,
+          "ci95": [
+            0.893451674008007,
+            0.9481546534457137
+          ]
+        },
+        "roc_auc": {
+          "value": 0.9309560589342507,
+          "ci95": [
+            0.896167765149483,
+            0.9610639424967069
+          ]
+        },
+        "pr_auc": {
+          "value": 0.9480849335796977,
+          "ci95": [
+            0.9128680580027979,
+            0.97722114037899
+          ]
+        },
+        "brier": {
+          "value": 0.08544997911666637,
+          "ci95": [
+            0.05778828894947524,
+            0.11464379445380152
+          ]
+        }
+      },
+      "random_forest (calibrated)": {
+        "accuracy": {
+          "value": 0.8979381443298969,
+          "ci95": [
+            0.8640399484536083,
+            0.9299001288659794
+          ]
+        },
+        "precision": {
+          "value": 0.8920795795795796,
+          "ci95": [
+            0.8486354607770591,
+            0.9342658818173841
+          ]
+        },
+        "recall": {
+          "value": 0.956338028169014,
+          "ci95": [
+            0.9288702374477618,
+            0.977474423999588
+          ]
+        },
+        "f1": {
+          "value": 0.9230918624975724,
+          "ci95": [
+            0.8951807659802025,
+            0.9487583936746299
+          ]
+        },
+        "roc_auc": {
+          "value": 0.9409254812026281,
+          "ci95": [
+            0.910115497338061,
+            0.9682126823821222
+          ]
+        },
+        "pr_auc": {
+          "value": 0.956507922378651,
+          "ci95": [
+            0.9274745293703941,
+            0.9820701257082909
+          ]
+        },
+        "brier": {
+          "value": 0.08063538672812051,
+          "ci95": [
+            0.057562217133866674,
+            0.10434260583931408
+          ]
+        }
+      }
+    },
+    "bootstrap": {
+      "resamples": 1000,
+      "unit": "problem (task_id)",
+      "level": 0.95
+    },
+    "thresholds": {
+      "t_low": 0.4727105990110648,
+      "t_high": 0.7887497004358022,
+      "target_approve_precision": 0.95,
+      "target_reject_precision": 0.95,
+      "approve_enabled": true,
+      "reject_enabled": true,
+      "min_decision_support": 10
+    },
+    "decisions": {
+      "threshold_rule": {
+        "approved_share": 0.6038659793814433,
+        "rejected_share": 0.3033505154639175,
+        "review_share": 0.09278350515463918,
+        "approved_precision": 0.9263764404609475,
+        "rejected_precision": 0.9231096006796942,
+        "automated_error_rate": 0.0747159090909091,
+        "untrustworthy_code_approved": 345.0
+      },
+      "conformal": {
+        "approved_share": 0.6573453608247423,
+        "rejected_share": 0.2788659793814433,
+        "review_share": 0.06378865979381443,
+        "approved_precision": 0.9072730837090767,
+        "rejected_precision": 0.9403881700554528,
+        "automated_error_rate": 0.08286304198210599,
+        "untrustworthy_code_approved": 473.0
+      }
+    },
+    "conformal": {
+      "alpha": 0.1,
+      "qhat": 0.33300681580078106,
+      "test_coverage": 0.8586340206185566
+    },
+    "test_by_prompt_style": {
+      "standard": {
+        "rows": 1940,
+        "problems": 194,
+        "trustworthy_rate": 0.6783505154639176,
+        "accuracy": 0.8881443298969072,
+        "precision": 0.8823938761308281,
+        "recall": 0.9635258358662614,
+        "f1": 0.9211768979295314,
+        "roc_auc": 0.9368892964305198,
+        "pr_auc": 0.9654581533273453,
+        "brier": 0.09071336860906112
+      },
+      "signature_only": {
+        "rows": 1940,
+        "problems": 194,
+        "trustworthy_rate": 0.5154639175257731,
+        "accuracy": 0.9432989690721649,
+        "precision": 0.937992125984252,
+        "recall": 0.953,
+        "f1": 0.9454365079365079,
+        "roc_auc": 0.9630968085106383,
+        "pr_auc": 0.959728865775926,
+        "brier": 0.05217572169023649
+      },
+      "step_by_step": {
+        "rows": 1940,
+        "problems": 194,
+        "trustworthy_rate": 0.6969072164948453,
+        "accuracy": 0.8762886597938144,
+        "precision": 0.8877266387726639,
+        "recall": 0.9415680473372781,
+        "f1": 0.9138549892318737,
+        "roc_auc": 0.9157345630559915,
+        "pr_auc": 0.9529452323160897,
+        "brier": 0.09254896946115863
+      },
+      "constrained": {
+        "rows": 1940,
+        "problems": 194,
+        "trustworthy_rate": 0.6711340206185566,
+        "accuracy": 0.884020618556701,
+        "precision": 0.8736988202637057,
+        "recall": 0.966973886328725,
+        "f1": 0.917973022238425,
+        "roc_auc": 0.9319096735670706,
+        "pr_auc": 0.9502242060774573,
+        "brier": 0.0871034871520258
+      }
+    }
+  }
+}

@@ -1,9 +1,130 @@
 # Analysis Report: Agentic Trust for AI-Generated Code
 
-*Status as of 2026-10-08, after the expanded OpenAI pilot (100 MBPP problems, 4,000 candidates).*
+*Sections 1–9 analyse the expanded OpenAI pilot (100 MBPP problems, 4,000 candidates). Section 0 adds
+the full MBPP run and the real human review (8 Oct 2026).*
 
-> Human-review numbers in this report are **simulated** (pipeline demonstration only). All other numbers
-> come from real `gpt-4o-mini` code executed against MBPP's hidden tests.
+> Human-review numbers in sections 1–9 are **simulated** (pipeline demonstration only). Section 0 has the
+> **real** human review. All other numbers come from real `gpt-4o-mini` code executed against MBPP's
+> hidden tests.
+
+## 0. Update: full MBPP run and real human review
+
+Full details and commands are in `run_log.md`; the full report is in
+`artifacts_pilot_openai/run_report.md`.
+
+**Full dataset:** 968 problems, 38,720 candidates, 2 temperatures × 4 prompt styles × 5 samples, about
+$2.40 of OpenAI usage. Results are after the self-written-test fix (section 6.1):
+
+| Item | Value |
+| --- | --- |
+| Trustworthy rate | 68.9% |
+| Silent failures (pass visible test, fail hidden) | **10.6% of visible passes** (5.9% in Pilot 2) |
+| Test ROC AUC, calibrated random forest (194 unseen problems) | **0.941 [0.910, 0.968]** |
+| Test ROC AUC, visible test only | 0.856 |
+| Test F1 / precision / recall | 0.923 / 0.892 / 0.956 |
+| Threshold rule: approve / reject / review | 60.4% / 30.3% / 9.3% |
+| Threshold rule: approval precision | **92.6%** (target 95%) |
+| Conformal: approval precision / review share | 90.7% / 6.4% |
+| `step_by_step` runtime errors, before → after the fix | 776 → 179 |
+
+**Trust model vs. baseline on the 194 held-out test problems:**
+
+| Metric | Trust model, value [95% CI] | Visible-test-only baseline |
+| --- | --- | --- |
+| **AUROC** | **0.941** [0.910, 0.968] | 0.856 |
+| **Precision** | 0.892 [0.849, 0.934] | 0.872 |
+| **Recall** | 0.956 [0.929, 0.977] | 0.964 |
+| **F1** | 0.923 [0.895, 0.949] | 0.916 |
+
+- **Trust model:** the calibrated random forest, which combines the visible test, sibling agreement,
+  model confidence, code structure and lint findings.
+- **95% CI:** the range the score falls in across 1,000 bootstrap re-draws of the test problems.
+  Narrow means reliable.
+- **Baseline:** "trust it if it passes the one example test". This is the rule to beat.
+- Precision, recall and F1 use a 0.5 probability cutoff. AUROC measures ranking across all cutoffs.
+
+**Reading it:** the model's advantage is ranking. Its AUROC of 0.941 is well above the baseline's 0.856,
+which lies outside the model's whole confidence interval. At a single 0.5 cutoff the two look similar:
+precision is a bit higher and recall a bit lower. That ranking is what makes the three-way decision
+work: confident cases are decided automatically, and uncertain ones go to human review. The decision
+rule's own quality (92.6% approval precision) is reported separately above.
+
+**What "trust model vs. visible-test-only" means.** Both answer the same question, "can we trust this
+AI-generated code?":
+
+| | Visible-test-only (baseline) | Trust model (ours) |
+| --- | --- | --- |
+| Signal used | Only whether the code passes the one example test, which the AI model also saw | The example test **plus** sibling agreement, model confidence, code structure and lint or security findings |
+| Output | Yes or no | A trust score from 0 to 1, turned into APPROVED / NEEDS HUMAN REVIEW / REJECTED |
+| Weakness | Approves every silent failure: 10.6% of code that passes the example still fails hidden tests | Still misses some failures (approval precision 92.6% against a 95% target) |
+
+Neither method sees the hidden tests; those are used only to grade the methods. Example: five AI
+attempts at one problem all pass the example test.
+
+- The **baseline** approves all five.
+- The **trust model** checks whether they behave the same on extra inputs. The three that agree get
+  high scores and are approved. The two that disagree get low scores and go to review or are rejected,
+  which catches silent failures the baseline would approve.
+
+In one sentence: *passing the example test is a good first signal, but combining it with agreement
+between independent attempts lets the trust model flag risky code that the example test alone would
+approve.*
+
+**Observations from the exploratory data analysis** (`uv run trust-eda --output-dir
+artifacts_pilot_openai`; figures and tables in `artifacts_pilot_openai/eda_report.md`):
+
+1. **Prompt style matters, temperature barely does.**
+   - Trustworthy rates differ by less than 1 point between temperature 0.3 and 1.0.
+   - Removing the example test (`signature_only`) drops trustworthiness from about 74% to about 55%.
+     It also has the fewest silent failures (8% against 11–12%): without the example, mistakes are more
+     often visible ones.
+2. **Problems are mostly all-or-nothing.**
+   - 388 of 968 problems are always solved and 137 are never solved; 124 are solved 1–50% of the time
+     and 319 are solved 51–99%.
+   - Failures cluster by problem, which is why splits must be by problem.
+3. **Some problems are silent-failure traps.** Tasks 483 and 537, for example, pass the visible test
+   100% of the time but never pass the hidden tests. These are where the visible-test rule is most
+   misleading.
+4. **Failing code is usually completely wrong, not almost right.** Most untrustworthy candidates pass 0%
+   of the hidden tests; a second group passes about half (MBPP usually has two hidden tests).
+5. **Crashes are mostly argument-type mistakes.** `TypeError` dominates hidden-test errors (966
+   candidates), far ahead of `ValueError` (113) and `NameError` (52). This happens when the model
+   guesses the input format, especially in `signature_only`.
+6. **Three signals carry most of the information.** Correlation with the trustworthy label:
+   - `visible_pass`: r = 0.78
+   - `behavior_agreement_visible`: r = 0.72
+   - `behavior_agreement`: r = 0.59
+   
+   Code size, complexity and lint counts are weak (|r| ≤ 0.12). A smaller model built on the strong
+   signals should explain the results almost as well.
+7. **Model confidence is a weak signal for `gpt-4o-mini`.** Token log-probabilities overlap heavily
+   between trustworthy and untrustworthy code. Median mean log-prob is −0.031 for trustworthy code
+   against −0.050 for untrustworthy code, and the correlation with the label is only r ≈ 0.03. The model
+   is often confidently wrong.
+8. **`step_by_step` costs about 5× more tokens** (about 238 against 42–57 output tokens per answer)
+   for roughly the same trustworthiness as `standard`.
+
+**Real human review:** 164 stratified rows, reviewed blind by Hatem.
+
+| Item | Value |
+| --- | --- |
+| Raw agreement with the automated label | **88.4%** |
+| Cohen's kappa | **0.738**, 95% CI [0.62, 0.84]: substantial |
+| Human approved code that fails hidden tests | 16 rows (13 wrong output, 2 timeouts, 1 runtime error) |
+| Human rejected code that passes hidden tests | 3 rows (reviewer's own edge-case checks failed) |
+| Agreement on passing code / wrong-output code | 97.1% / **69.0%** |
+
+**What changed compared with the pilot:**
+
+- With 10× more problems, **silent failures nearly doubled** to 10.6%. The visible-only baseline drops to
+  0.856 ROC AUC, while the trust model holds at 0.941. The gap between them is now clear and outside
+  the confidence intervals.
+- **Thresholds still miss the 95% target** (92.6%), but by less than in the pilot (89.9%). The larger
+  calibration split (194 problems) helped. The remaining gap is the main open technical issue.
+- **The automated labels are validated by humans** (kappa 0.74). Disagreements are lopsided: the
+  reviewer was more lenient than the tests, approving about 1 in 3 wrong-output candidates. That is the
+  core argument for execution-based trust signals instead of review alone. The few strict-human cases
+  point to questionable benchmark tests (label noise).
 
 ## 1. Summary
 

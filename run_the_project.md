@@ -159,8 +159,13 @@ in `runs_history.csv`.
 uv run jupyter lab
 ```
 
-Open `AI_Code_Trust_Pipeline.ipynb`, point it at `artifacts/`, and use it for the plots, tables and
-write-up. Section 15 of the notebook displays the run report.
+Open `AI_Code_Trust_Pipeline.ipynb` and set `ARTIFACTS` to your results folder (default
+`artifacts_pilot_openai`). It loads the saved results and walks through every stage in under a minute,
+with no API calls and no regeneration. Section 9 displays the run report. Retraining is optional
+(`RETRAIN = True`, about 4 minutes).
+
+The notebook doesn't generate data. To generate (for example with Qwen on a Colab GPU), use the
+`trust-pipeline` commands in `run_in_colab.md`.
 
 ## Where to find the numbers for your report
 

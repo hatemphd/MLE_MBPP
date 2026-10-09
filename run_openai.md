@@ -186,7 +186,8 @@ uv run jupyter lab
    | Update kappa after human review | `uv run trust-review --output-dir artifacts_pilot_openai` |
 
    These read the folder's `config.json`, so you don't need to repeat `--openai` or `--prompt-styles`.
-4. **Back up after expensive runs.** `artifacts*` folders are git-ignored, so nothing protects them:
+4. **Back up after expensive runs.** `artifacts*` folders are git-ignored (except the files of
+   `artifacts_pilot_openai` listed in the next section), so nothing else protects them:
 
    ```bash
    cp -r artifacts_pilot_openai ~/Backups/artifacts_pilot_openai_$(date +%Y%m%d)
@@ -196,6 +197,25 @@ uv run jupyter lab
    generation again.
 5. **Renaming the folder is fine** (for example to `artifacts_openai`) as long as no run is in progress
    and you use the new name in every later command. The cache travels with the folder.
+
+### The full run is saved in GitHub
+
+The repository tracks the expensive and the reported files of `artifacts_pilot_openai`:
+`generations.jsonl` (all OpenAI outputs), `problems.json`, `config.json`, `dataset.csv`, the human
+review, metrics, reports and figures. Not tracked: `candidates.csv` and `labeled.csv` (rebuilt in
+about 20 minutes) and `trust_model.joblib` (160 MB, over GitHub's 100 MB file limit).
+
+After cloning, no OpenAI key or API calls are needed:
+
+```bash
+git clone git@github.com:hatemphd/MLE_MBPP.git && cd MLE_MBPP
+uv sync --extra api --extra notebook
+uv run trust-train --output-dir artifacts_pilot_openai     # about 4 minutes; recreates trust_model.joblib
+```
+
+The notebook and reports work straight away; only the scoring demo needs the model. To also rebuild
+`candidates.csv` and `labeled.csv`, run `trust-generate` (reads the cache, prints `0 to generate`),
+`trust-label`, `trust-features` and `trust-train` with `--output-dir artifacts_pilot_openai`.
 
 ### What causes regeneration
 

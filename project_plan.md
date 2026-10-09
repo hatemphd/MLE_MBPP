@@ -10,10 +10,11 @@ Update the run log after every run.
 - The full MBPP dataset is generated with `gpt-4o-mini`: 968 problems, 38,720 attempts, about $2.40 of
   OpenAI cost. It is cached in `artifacts_pilot_openai/generations.jsonl`, so **no more API spending is
   needed**.
-- Two fixes were made after the full run. Their results are not in the report yet:
-  1. Self-written test code (`assert`, `print`, `__main__` blocks) is removed before execution.
-  2. Leftover simulated human labels are no longer counted as real reviews. The full-run kappa of
-     0.868 was simulated and **must not be reported**.
+- **Phase 1 is done:** relabelled and retrained with the self-written-test fix.
+- **Phase 2 is done:** real human review of 164 rows gives kappa **0.738 [0.62, 0.84]** and 88.4%
+  agreement. The old 0.868 was simulated and must not be reported.
+- **Next:** Phase 3 (decision rule) and Phase 5 (write-up). Results are summarised in
+  `analysis_report.md` section 0.
 
 ## 2. Run log
 
@@ -27,11 +28,12 @@ Short version; full commands and results per run are in `run_log.md`.
 | 4 | 8 Oct 00:19 | Full: `--openai --all-problems --prompt-styles natural --human-feedback real` | 968 / 38,720 | 4h 43m | See section 3 (before the fixes) |
 | 5 | 8 Oct 07:49 | `trust-generate` (cache only) | 968 / 38,720 | 4 s | Candidates rebuilt with self-test code removed; 0 API calls |
 | 6 | 8 Oct ~07:50 | `trust-label` | – | – | Stopped by user before saving; nothing lost |
-| 7 | 8 Oct 08:39 | `trust-label`, `trust-features`, `trust-train` (Phase 1) | 968 / 38,720 | ~25 min | Done: `step_by_step` runtime errors 776 → 179; test ROC AUC 0.941; approval precision 92.6%; human review pending |
+| 7 | 8 Oct 08:39 | `trust-label`, `trust-features`, `trust-train` (Phase 1) | 968 / 38,720 | ~25 min | Done: `step_by_step` runtime errors 776 → 179; test ROC AUC 0.941; approval precision 92.6% |
+| 8 | 8 Oct 20:52 | Human review in `human_edit/app.py`, then `trust-review` | 164 rows | ~1.5 h | Kappa 0.738 [0.62, 0.84], agreement 88.4%; human approved 16 failing candidates, rejected 3 passing ones |
 
 All OpenAI runs use the same folder, `artifacts_pilot_openai`, so earlier attempts are reused.
 
-## 3. Full-run results (before the fixes; will be replaced)
+## 3. Full-run results (before the fixes; final numbers are in `run_log.md` sections 4–5)
 
 | Item | Value |
 | --- | --- |
@@ -47,7 +49,7 @@ All OpenAI runs use the same folder, `artifacts_pilot_openai`, so earlier attemp
 
 ## 4. Plan to finish
 
-### Phase 1: relabel and retrain with the fixes (today, ~25 min, $0)
+### Phase 1: relabel and retrain with the fixes (done 8 Oct 08:39)
 
 Run one line at a time from `~/MLE_NEW`:
 
@@ -62,9 +64,13 @@ cp -r artifacts_pilot_openai ~/Backups/artifacts_pilot_openai_final_$(date +%Y%m
 Done when the new `run_report.md` shows far fewer `step_by_step` runtime errors and "no reviews filled
 in" for human review.
 
-### Phase 2: real human review (1–2 hours of team time)
+### Phase 2: real human review (done 8 Oct 20:52; kappa 0.738)
 
-1. Open `artifacts_pilot_openai/human_review_sample.csv` (about 150 rows).
+Full reviewer guide: `human_review_helper.md`.
+
+1. Open the review editor (`human_edit/app.py`):
+   `uv run --with streamlit streamlit run human_edit/app.py`. It edits
+   `artifacts_pilot_openai/human_review_sample.csv` (164 rows) and saves each answer immediately.
 2. For each row, read the problem and the code and write `yes` or `no` in `human_trustworthy`. Do
    **not** look at `label_trustworthy` first. Hiding that column in Excel keeps the review blind.
 3. Best practice: two team members review independently. Their agreement with each other
@@ -97,6 +103,10 @@ The 95% approval-precision target was missed (92.4%). This is the main open tech
 | Bug-injection prompts (`--prompt-styles all`) | Small | ~$0.60 | Tests whether synthetic bugs help |
 
 ### Phase 5: write the report (1–2 days)
+
+EDA figures and tables for the report: `uv run trust-eda --output-dir artifacts_pilot_openai`. This writes
+`artifacts_pilot_openai/eda_report.md` and 8 figures in `artifacts_pilot_openai/figures/eda/`, in about
+5 seconds with no API calls. Rerun it after any retrain.
 
 Suggested structure, with sources:
 

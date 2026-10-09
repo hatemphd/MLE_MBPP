@@ -129,21 +129,62 @@ runs. Ignore it; the relabel itself took about 25 minutes.
 | Threshold rule: approve / review / approval precision | 60.9% / 8.8% / 92.4% | 60.4% / 9.3% / 92.6% |
 | Conformal: approve / review / approval precision | 66.0% / 5.2% / 90.8% | 65.7% / 6.4% / 90.7% |
 | Untrustworthy code approved (threshold rule) | 357 | 345 |
-| Human kappa | 0.868 (invalid, simulated) | Pending real review |
+| Human kappa | 0.868 (invalid, simulated) | **0.738 [0.62, 0.84]**, real, 164 rows (section 5) |
 
 The fix corrected the failure *types* (crashes were really wrong answers) without changing the label
 balance or the model's ranking quality. Top features are unchanged: `visible_pass`, then sibling agreement
 (`behavior_agreement_visible`, `behavior_agreement`).
 
-What to expect: `step_by_step` runtime errors (776 in run 3) should drop sharply, mostly turning into wrong
-output. A few labels flip to trustworthy (4 of 105 in the pilot 2 check).
+In `step_by_step`, passes rose from 7,177 to 7,212: correct code that had been mislabelled as crashing.
+
+## 5. Real human review (done, 8 Oct, finished 20:52)
+
+Hatem reviewed all 164 stratified rows in the review editor (`human_edit/app.py`), blind to the
+automated label. Then:
+
+```bash
+uv run trust-review --output-dir artifacts_pilot_openai
+```
+
+| Item | Value |
+| --- | --- |
+| Reviewed rows | 164 (117 yes, 47 no) |
+| Raw agreement | **88.4%** |
+| Cohen's kappa | **0.738**, 95% CI [0.62, 0.84] (bootstrap over rows): substantial agreement |
+| Automated yes, human yes | 101 |
+| Automated no, human no | 44 |
+| Automated no, human yes | **16** (human approved code that fails hidden tests) |
+| Automated yes, human no | 3 (human rejected code that passes all hidden tests) |
+
+Agreement by execution outcome:
+
+| Outcome | Rows | Agreement |
+| --- | --- | --- |
+| pass | 104 | 97.1% |
+| syntax error | 6 | 100% |
+| runtime error | 6 | 83.3% |
+| timeout | 6 | 66.7% |
+| wrong output | 42 | **69.0%** |
+
+What the disagreements show:
+
+- **Humans are lenient on plausible-looking code.** In 16 of the 19 disagreements, the reviewer approved
+  code that the hidden tests reject. 13 were wrong output and 2 timeouts (for example `is_woodall` on a
+  very large input). Reading code misses about 1 in 3 wrong-output failures. This supports executing
+  hidden tests rather than relying on review alone.
+- **The 3 opposite cases come from the reviewer's own checks.** Each time, a check typed in the editor
+  failed on code that passes MBPP's tests:
+  - task 188: `prod_Square(25)`, where MBPP's tests expect `False` for 25 = 5×5;
+  - task 310, `string_to_tuple`;
+  - task 76, counting squares in a rectangle.
+  These point to weak or unusual benchmark tests and definitions, the same kind of label noise as task
+  704 in Pilot 2.
+- Most disagreements have no note, so they can't all be told apart between "human missed a bug" and
+  "benchmark test is questionable". Pick a few clear examples for the report.
 
 ## Next
 
-1. After run 4: compare its `run_report.md` with run 3 above, then update `analysis_report.md` for the
-   full dataset.
-2. Human review: fill in `human_trustworthy` (yes/no) in the new `human_review_sample.csv`, then
-   `uv run trust-review --output-dir artifacts_pilot_openai`.
-3. Back up the folder: `cp -r artifacts_pilot_openai ~/Backups/artifacts_pilot_openai_$(date +%Y%m%d)`.
-4. Open: approval precision is below 95% with both rules. Options: choose thresholds by cross-validation
+1. Update `analysis_report.md` for the full dataset and the real human review. Done in its section 0.
+2. Back up the folder: `cp -r artifacts_pilot_openai ~/Backups/artifacts_pilot_openai_$(date +%Y%m%d)`.
+3. Open: approval precision is below 95% with both rules. Options: choose thresholds by cross-validation
    across problems, or raise the conformal confidence (smaller α).

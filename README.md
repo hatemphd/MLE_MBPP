@@ -20,8 +20,7 @@ Predict whether AI-generated code can be trusted and recommend **APPROVED**, **R
 | `trust_pipeline/` | All pipeline logic (single source of truth), installed as a package by uv |
 | `trust_pipeline/cli.py` | The `trust-*` commands |
 | `scripts/` | The same commands as plain scripts (`uv run python scripts/<name>.py`) |
-| `AI_Code_Trust_Pipeline.ipynb` | Walk-through notebook that calls the package stage by stage |
-| `pyproject.toml`, `uv.lock`, `.python-version` | uv project definition, lockfile, Python 3.12 pin |
+| `AI_Code_Trust_Pipeline.ipynb` | Results walkthrough on the prepared data (`artifacts_pilot_openai`): every stage in under a minute, no API calls || `pyproject.toml`, `uv.lock`, `.python-version` | uv project definition, lockfile, Python 3.12 pin |
 | `requirements.txt` | Exported from `uv.lock` for environments without uv (core + API backends) |
 
 ## Setup (uv)

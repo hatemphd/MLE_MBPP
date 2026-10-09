@@ -2,6 +2,10 @@
 
 Colab gives you a free GPU, so it can run the local Qwen models that don't work on an Intel Mac.
 
+> **Notebook vs. commands.** In Colab, generate with the `!trust-pipeline ...` commands below.
+> `AI_Code_Trust_Pipeline.ipynb` is a results walkthrough that only reads an existing results folder. It
+> needs no GPU, so run it locally afterwards.
+
 **Important:** the notebook does **not** contain the pipeline code. It imports the `trust_pipeline`
 package, so Colab needs the **whole project folder**, not just the `.ipynb` file. Uploading only the
 notebook fails at the `import trust_pipeline` cell.

@@ -11,6 +11,31 @@
 artifacts*/
 generations.jsonl
 
+# Keep the full OpenAI run in git, so it never has to be regenerated (no API cost):
+#   generations.jsonl = the paid OpenAI answers (cache), dataset.csv = labels + features,
+#   plus the human review, metrics, reports and figures.
+# Left out (rebuilt locally without API calls):
+#   candidates.csv / labeled.csv  (trust-generate + trust-label, ~20 min)
+#   trust_model.joblib            (160 MB, over GitHub's 100 MB limit; trust-train, ~4 min)
+!artifacts_pilot_openai/
+artifacts_pilot_openai/*
+!artifacts_pilot_openai/generations.jsonl
+!artifacts_pilot_openai/problems.json
+!artifacts_pilot_openai/config.json
+!artifacts_pilot_openai/dataset.csv
+!artifacts_pilot_openai/feature_columns.json
+!artifacts_pilot_openai/human_review_sample.csv
+!artifacts_pilot_openai/human_agreement.json
+!artifacts_pilot_openai/metrics.json
+!artifacts_pilot_openai/cv_results.csv
+!artifacts_pilot_openai/model_comparison.csv
+!artifacts_pilot_openai/feature_importance.csv
+!artifacts_pilot_openai/test_predictions.csv
+!artifacts_pilot_openai/run_report.md
+!artifacts_pilot_openai/run_report.json
+!artifacts_pilot_openai/eda_report.md
+!artifacts_pilot_openai/figures/
+
 # Caches
 __pycache__/
 *.py[cod]
@@ -22,3 +47,22 @@ __pycache__/
 *.egg-info/
 build/
 dist/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Review editor (human_edit/app.py): backups and temporary saves
+*.bak
+*.csv.tmp
+.streamlit/secrets.toml
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Local AI-assistant skills and settings
+.agents/
+.claude/

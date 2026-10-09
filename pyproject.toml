@@ -34,6 +34,7 @@ trust-features = "trust_pipeline.cli:build_features"
 trust-train = "trust_pipeline.cli:train"
 trust-review = "trust_pipeline.cli:review_agreement"
 trust-recommend = "trust_pipeline.cli:recommend"
+trust-eda = "trust_pipeline.cli:eda"
 
 [build-system]
 requires = ["uv_build>=0.9,<0.10"]

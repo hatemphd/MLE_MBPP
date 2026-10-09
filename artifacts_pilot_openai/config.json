@@ -1,0 +1,33 @@
+{
+  "seed": 42,
+  "smoke_test": false,
+  "smoke_mutants_per_problem": 7,
+  "num_problems": null,
+  "samples_per_config": 5,
+  "probes_per_problem": 6,
+  "use_mutant_augmentation": false,
+  "mutants_per_problem": 3,
+  "max_workers": 12,
+  "item_timeout": 3.0,
+  "memory_limit_mb": 1024,
+  "human_added_feedback": false,
+  "human_sample_size": 150,
+  "target_approve_precision": 0.95,
+  "target_reject_precision": 0.95,
+  "min_decision_support": 10,
+  "conformal_alpha": 0.1,
+  "use_local_hf": false,
+  "use_openai": true,
+  "use_anthropic": false,
+  "max_new_tokens": 512,
+  "model_configs": [],
+  "prompt_styles": [
+    "standard",
+    "signature_only",
+    "step_by_step",
+    "constrained"
+  ],
+  "output_dir": "artifacts_pilot_openai",
+  "bootstrap_samples": 1000,
+  "history_file": null
+}
