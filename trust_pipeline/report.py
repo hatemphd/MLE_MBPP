@@ -674,18 +674,29 @@ def render_markdown(report):
                                else [v["note"]] + [""] * (len(METRIC_ORDER) - 1))
                             for k, v in bps.items()]), ""]
         th, conf = mr["thresholds"], mr["conformal"]
-        approve = (f"APPROVE if p ≥ {_fmt(th.get('t_high'))}" if th.get("t_high") is not None
+        selection = th.get("selection") or {}
+        how = ("by grouped cross-validation across calibration problems"
+               if selection.get("method") == "grouped_cv"
+               else "on the calibration split pooled together")
+        approve = (f"APPROVE if p ≥ {_fmt(th.get('t_high'))}" if th.get("approve_enabled", th.get("t_high") is not None)
                    else "APPROVE disabled (target precision not reachable with enough calibration support)")
-        reject = (f"REJECT if p ≤ {_fmt(th.get('t_low'))}" if th.get("t_low") is not None
+        reject = (f"REJECT if p ≤ {_fmt(th.get('t_low'))}" if th.get("reject_enabled", th.get("t_low") is not None)
                   else "REJECT disabled (target precision not reachable with enough calibration support)")
         dec = mr["decisions"]
         names = list(dec.keys())
+        held = ""
+        if selection.get("method") == "grouped_cv" and selection.get("approve"):
+            a = selection["approve"]
+            held = (f" At the approve cutoff, every held-out calibration fold cleared the target "
+                    f"(precision {_fmt(a.get('held_out_precision_min'))} to "
+                    f"{_fmt(a.get('held_out_precision_max'))}, "
+                    f"mean {_fmt(a.get('held_out_precision_mean'))}).")
         out += ["## Three-way decisions on the test split", "",
-                f"Threshold rule (chosen on the calibration split, target precision "
-                f"{_fmt(th.get('target_approve_precision'), 2)} / {_fmt(th.get('target_reject_precision'), 2)}): "
-                f"{approve}; {reject}; otherwise NEEDS HUMAN REVIEW. "
-                f"Conformal (alpha {_fmt(conf.get('alpha'), 2)}): qhat {_fmt(conf.get('qhat'))}, test coverage "
-                f"{_fmt(conf.get('test_coverage'))}.", "",
+                (f"Threshold rule (chosen {how}, target precision "
+                 f"{_fmt(th.get('target_approve_precision'), 2)} / {_fmt(th.get('target_reject_precision'), 2)}): "
+                 f"{approve}; {reject}; otherwise NEEDS HUMAN REVIEW.{held} "
+                 f"Conformal (alpha {_fmt(conf.get('alpha'), 2)}): qhat {_fmt(conf.get('qhat'))}, test coverage "
+                 f"{_fmt(conf.get('test_coverage'))}."), "",
                 _table(["Metric"] + names,
                        [[k.replace("_", " ")] + [(_fmt(int(dec[n][k])) if k in COUNT_KEYS and dec[n].get(k) is not None
                                                   else _pct(dec[n].get(k))) for n in names]

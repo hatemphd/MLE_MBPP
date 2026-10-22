@@ -9,6 +9,11 @@ the full MBPP run and the real human review (8 Oct 2026).*
 
 ## 0. Update: full MBPP run and real human review
 
+> **Decision rule, 20 Oct 2026.** The table below is the pooled calibration cutoff (approval
+> precision 92.6%). The deployed cutoff is now chosen by grouped cross-validation and reaches
+> **95.1%** approval precision on the same test problems, with 52.5% approved, 20.7% rejected and
+> 26.8% sent to review. Write-up: `project_report.md`. Details: `project_plan.md` Phase 3.
+
 Full details and commands are in `run_log.md`; the full report is in
 `artifacts_pilot_openai/run_report.md`.
 

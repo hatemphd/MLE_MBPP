@@ -1374,23 +1374,57 @@
       "level": 0.95
     },
     "thresholds": {
-      "t_low": 0.4727105990110648,
-      "t_high": 0.7887497004358022,
+      "t_low": 0.08975770749411476,
+      "t_high": 0.872247683950963,
       "target_approve_precision": 0.95,
       "target_reject_precision": 0.95,
+      "selection": {
+        "method": "grouped_cv",
+        "n_splits": 5,
+        "n_problems": 194,
+        "approve": {
+          "threshold": 0.872247683950963,
+          "held_out_precision_mean": 0.966730813364481,
+          "held_out_precision_min": 0.9507389162561576,
+          "held_out_precision_max": 0.9863013698630136,
+          "folds_used": 5,
+          "support": 4794
+        },
+        "reject": {
+          "threshold": 0.08975770749411476,
+          "held_out_precision_mean": 0.9831295513929164,
+          "held_out_precision_min": 0.9516129032258065,
+          "held_out_precision_max": 1.0,
+          "folds_used": 5,
+          "support": 1319
+        },
+        "pooled": {
+          "t_low": 0.4727105990110648,
+          "t_high": 0.7887497004358022
+        }
+      },
       "approve_enabled": true,
       "reject_enabled": true,
       "min_decision_support": 10
     },
     "decisions": {
       "threshold_rule": {
+        "approved_share": 0.5251288659793815,
+        "rejected_share": 0.20682989690721648,
+        "review_share": 0.2680412371134021,
+        "approved_precision": 0.9506748466257668,
+        "rejected_precision": 0.9582554517133957,
+        "automated_error_rate": 0.047183098591549295,
+        "untrustworthy_code_approved": 201
+      },
+      "pooled_calibration": {
         "approved_share": 0.6038659793814433,
         "rejected_share": 0.3033505154639175,
         "review_share": 0.09278350515463918,
         "approved_precision": 0.9263764404609475,
         "rejected_precision": 0.9231096006796942,
         "automated_error_rate": 0.0747159090909091,
-        "untrustworthy_code_approved": 345.0
+        "untrustworthy_code_approved": 345
       },
       "conformal": {
         "approved_share": 0.6573453608247423,

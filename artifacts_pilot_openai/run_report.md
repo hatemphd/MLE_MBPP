@@ -175,17 +175,17 @@ Threshold 0.5 for accuracy / precision / recall / F1; lower Brier is better.
 
 ## Three-way decisions on the test split
 
-Threshold rule (chosen on the calibration split, target precision 0.95 / 0.95): APPROVE if p ≥ 0.789; REJECT if p ≤ 0.473; otherwise NEEDS HUMAN REVIEW. Conformal (alpha 0.10): qhat 0.333, test coverage 0.859.
+Threshold rule (chosen by grouped cross-validation across calibration problems, target precision 0.95 / 0.95): APPROVE if p ≥ 0.872; REJECT if p ≤ 0.090; otherwise NEEDS HUMAN REVIEW. At the approve cutoff, every held-out calibration fold cleared the target (precision 0.951 to 0.986, mean 0.967). Conformal (alpha 0.10): qhat 0.333, test coverage 0.859.
 
-| Metric | threshold_rule | conformal |
-|---|---|---|
-| approved share | 60.4% | 65.7% |
-| rejected share | 30.3% | 27.9% |
-| review share | 9.3% | 6.4% |
-| approved precision | 92.6% | 90.7% |
-| rejected precision | 92.3% | 94.0% |
-| automated error rate | 7.5% | 8.3% |
-| untrustworthy code approved | 345 | 473 |
+| Metric | threshold_rule | pooled_calibration | conformal |
+|---|---|---|---|
+| approved share | 52.5% | 60.4% | 65.7% |
+| rejected share | 20.7% | 30.3% | 27.9% |
+| review share | 26.8% | 9.3% | 6.4% |
+| approved precision | 95.1% | 92.6% | 90.7% |
+| rejected precision | 95.8% | 92.3% | 94.0% |
+| automated error rate | 4.7% | 7.5% | 8.3% |
+| untrustworthy code approved | 201 | 345 | 473 |
 
 ## Human review agreement
 

@@ -17,8 +17,15 @@ import pandas as pd
 from . import data, features, generation, human_review, log, plots, report, training
 from .config import TRAINING_ONLY_PROVENANCE, Config
 from .execution import Executor
-from .recommendation import (TrustRecommender, choose_thresholds, conformal_coverage,
-                             conformal_decision, conformal_quantile, decision_report, trust_decision)
+from .recommendation import (
+    TrustRecommender,
+    choose_thresholds_grouped_cv,
+    conformal_coverage,
+    conformal_decision,
+    conformal_quantile,
+    decision_report,
+    trust_decision,
+)
 from .static_analysis import RUFF_RULES, add_static_features
 
 LABEL = "label_trustworthy"
@@ -333,27 +340,35 @@ def stage_train(cfg, paths, dataset=None, feature_columns=None, make_plots=True)
     log.info(f"Stage 'train' finished in {log.format_seconds(seconds)}")
     report.record_stage(paths, "train", seconds)
 
-    _banner("decide", "Pick the APPROVE/REJECT thresholds on the calibration split, check them on the "
-                      "test split, and save the model, predictions, metrics and figures.",
+    _banner("decide", "Pick the APPROVE/REJECT thresholds by grouped cross-validation on the calibration "
+                      "problems, check them on the test split, and save the model, predictions, metrics and figures.",
             target_approve_precision=cfg.target_approve_precision,
             target_reject_precision=cfg.target_reject_precision,
             min_decision_support=cfg.min_decision_support, conformal_alpha=cfg.conformal_alpha)
     stage_start = time.time()
     p_calib = trust_model.predict_proba(X_calib)[:, 1]
     p_test = test_proba[calibrated_name]
-    t_low, t_high = choose_thresholds(y_calib, p_calib, cfg.target_approve_precision,
-                                      cfg.target_reject_precision, cfg.min_decision_support)
+    t_low, t_high, threshold_info = choose_thresholds_grouped_cv(
+        y_calib, p_calib, calib["task_id"], cfg.target_approve_precision,
+        cfg.target_reject_precision, cfg.min_decision_support)
+    pooled = threshold_info["pooled"]
+    pooled_decisions = np.array([trust_decision(p, pooled["t_low"], pooled["t_high"]) for p in p_test])
     qhat = conformal_quantile(y_calib, p_calib, cfg.conformal_alpha)
     threshold_decisions = np.array([trust_decision(p, t_low, t_high) for p in p_test])
     conformal_decisions = np.array([conformal_decision(p, qhat) for p in p_test])
     decisions = pd.DataFrame({
         "threshold_rule": decision_report(y_test, threshold_decisions),
+        "pooled_calibration": decision_report(y_test, pooled_decisions),
         "conformal": decision_report(y_test, conformal_decisions),
     })
     coverage = conformal_coverage(y_test, p_test, qhat)
-    log.info("Thresholds: " + (f"REJECT if p <= {t_low:.3f}" if np.isfinite(t_low) else "REJECT disabled") + ", "
+    shown = lambda v: f"{v:.3f}" if np.isfinite(v) else "disabled"
+    log.info("Thresholds (grouped CV on calibration problems): "
+             + (f"REJECT if p <= {t_low:.3f}" if np.isfinite(t_low) else "REJECT disabled") + ", "
              + (f"APPROVE if p >= {t_high:.3f}" if np.isfinite(t_high) else "APPROVE disabled")
              + ", otherwise NEEDS HUMAN REVIEW.")
+    log.info(f"  Pooled calibration cutoffs were {shown(pooled['t_low'])} / {shown(pooled['t_high'])}; "
+             "both rules are scored on the test split below.")
     if not np.isfinite(t_high):
         log.info("  APPROVE is disabled: no threshold reached the target precision with enough "
                  "calibration support (more problems usually fixes this).")
@@ -398,9 +413,11 @@ def stage_train(cfg, paths, dataset=None, feature_columns=None, make_plots=True)
         "selected_model": best_name,
         "calibration_method": calibration_method,
         "test_metrics": comparison.to_dict(orient="index"),
-        "thresholds": {"t_low": t_low, "t_high": t_high,
+        "thresholds": {"t_low": None if not np.isfinite(t_low) else t_low,
+                       "t_high": None if not np.isfinite(t_high) else t_high,
                        "target_approve_precision": cfg.target_approve_precision,
-                       "target_reject_precision": cfg.target_reject_precision},
+                       "target_reject_precision": cfg.target_reject_precision,
+                       "selection": report._clean(threshold_info)},
         "conformal": {"alpha": cfg.conformal_alpha, "qhat": qhat, "test_coverage": coverage},
         "decisions_test": decisions.to_dict(),
     }

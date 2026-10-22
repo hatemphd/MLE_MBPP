@@ -108,9 +108,9 @@ Correlation of each feature with the trustworthy label (top 15 by absolute value
 
 | decision | not trustworthy | trustworthy | total |
 |---|---|---|---|
-| APPROVED | 345 | 4341 | 4686 |
-| NEEDS HUMAN REVIEW | 272 | 448 | 720 |
-| REJECTED | 2173 | 181 | 2354 |
+| APPROVED | 201 | 3874 | 4075 |
+| NEEDS HUMAN REVIEW | 1051 | 1029 | 2080 |
+| REJECTED | 1538 | 67 | 1605 |
 | All | 2790 | 4970 | 7760 |
 
 ![](figures/eda/07_predictions.png)

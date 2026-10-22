@@ -25,6 +25,75 @@ def choose_thresholds(y, p, target_approve, target_reject, min_support=10):
     return float(t_low), float(t_high)
 
 
+def _problem_folds(groups, n_splits):
+    """GroupKFold index pairs, or None when there are fewer than two problem groups."""
+    from sklearn.model_selection import GroupKFold
+
+    groups = np.asarray(groups)
+    n_groups = len(np.unique(groups))
+    n_splits = min(n_splits, n_groups)
+    if n_splits < 2:
+        return None
+    return list(GroupKFold(n_splits=n_splits).split(np.zeros(len(groups)), groups=groups))
+
+
+def _cv_cutoff(y, p, folds, candidates, target, min_support, approve):
+    """Most lenient cutoff whose precision on every held-out problem fold meets `target`.
+
+    Each fold is one group of problems. Folds with fewer than `fold_support` selected rows
+    are skipped, so a handful of rows cannot set the cutoff. Requiring the worst fold, not
+    the average, is what stops one easy group of problems from choosing a cutoff that misses
+    the target on the next group.
+    """
+    fold_support = max(5, min_support // max(len(folds), 1))
+    best, stats = (np.inf if approve else -np.inf), None
+    for t in candidates:
+        precs, support = [], 0
+        for _, held_out in folds:
+            selected = p[held_out] >= t if approve else p[held_out] <= t
+            support += int(selected.sum())
+            if selected.sum() < fold_support:
+                continue
+            hits = y[held_out][selected]
+            precs.append(float(hits.mean() if approve else 1 - hits.mean()))
+        if support < min_support or len(precs) < 2 or float(np.min(precs)) < target:
+            continue
+        best = float(t)
+        stats = {"threshold": best, "held_out_precision_mean": float(np.mean(precs)),
+                 "held_out_precision_min": float(np.min(precs)),
+                 "held_out_precision_max": float(np.max(precs)),
+                 "folds_used": len(precs), "support": support}
+        break
+    return best, stats
+
+
+def choose_thresholds_grouped_cv(y, p, groups, target_approve, target_reject, min_support=10, n_splits=5):
+    """(t_low, t_high, info). Thresholds whose target precision holds on every problem fold.
+
+    The pooled rule takes the most lenient cutoff that hits the target on the calibration
+    rows pooled together. That cutoff can miss the target on a new group of problems: here
+    the calibration average already said 95%, while the worst calibration fold and the test
+    problems were both about 92%. This rule keeps the most lenient cutoff that still hits
+    the target in every held-out fold. With fewer than two groups it falls back to the pooled rule.
+    """
+    y, p = np.asarray(y), np.asarray(p, dtype=float)
+    pooled_low, pooled_high = choose_thresholds(y, p, target_approve, target_reject, min_support)
+    folds = _problem_folds(groups, n_splits)
+    pooled = {"t_low": float(pooled_low), "t_high": float(pooled_high)}
+    if folds is None:
+        return pooled_low, pooled_high, {"method": "pooled", "n_splits": 0, "pooled": pooled,
+                                         "approve": None, "reject": None}
+    candidates = np.unique(p)
+    t_high, approve = _cv_cutoff(y, p, folds, candidates[candidates >= 0.5],
+                                 target_approve, min_support, approve=True)
+    t_low, reject = _cv_cutoff(y, p, folds, candidates[candidates < 0.5][::-1],
+                               target_reject, min_support, approve=False)
+    return float(t_low), float(t_high), {
+        "method": "grouped_cv", "n_splits": len(folds), "n_problems": len(np.unique(groups)),
+        "approve": approve, "reject": reject, "pooled": pooled,
+    }
+
+
 def trust_decision(p, t_low, t_high):
     if p >= t_high:
         return APPROVED

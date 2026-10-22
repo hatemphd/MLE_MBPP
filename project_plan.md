@@ -3,7 +3,7 @@
 Living document: what has been run, where we are, and what is left to finish the project.
 Update the run log after every run.
 
-## 1. Where we are (8 Oct 2026)
+## 1. Where we are (20 Oct 2026)
 
 - The pipeline is complete and tested: data, generation, labelling, features, training, three-way
   decisions, run report.
@@ -13,8 +13,12 @@ Update the run log after every run.
 - **Phase 1 is done:** relabelled and retrained with the self-written-test fix.
 - **Phase 2 is done:** real human review of 164 rows gives kappa **0.738 [0.62, 0.84]** and 88.4%
   agreement. The old 0.868 was simulated and must not be reported.
-- **Next:** Phase 3 (decision rule) and Phase 5 (write-up). Results are summarised in
-  `analysis_report.md` section 0.
+- **Phase 3 is done (20 Oct):** approve and reject cutoffs are chosen so every held-out
+  calibration fold meets 95% precision. On the test problems, approval precision is
+  **95.1%** (was 92.6% with the pooled cutoff), with 52.5% approved, 20.7% rejected and
+  26.8% sent to review. The model was not retrained.
+- **Phase 5 is done:** the write-up is `project_report.md`. `analysis_report.md` section 0
+  is the earlier results memo; its decision numbers are the pooled rule.
 
 ## 2. Run log
 
@@ -81,16 +85,20 @@ Full reviewer guide: `human_review_helper.md`.
 
 Done when `human_agreement.json` says `"simulated": false` with about 150 reviewed rows.
 
-### Phase 3: one improvement to the decision rule (half a day, $0)
+### Phase 3: one improvement to the decision rule (done 20 Oct)
 
-The 95% approval-precision target was missed (92.4%). This is the main open technical problem. Choose
-**one** option:
+The pooled calibration cutoff missed the 95% approval target on test (92.6%). Cutoffs are now chosen
+by grouped cross-validation: the most lenient cutoff that still hits 95% in every held-out fold of
+calibration problems (`choose_thresholds_grouped_cv`). Applied to the saved model, no retrain and no
+API calls.
 
-- **(Recommended)** Choose thresholds by grouped cross-validation instead of a single calibration split,
-  then report the achieved precision on test. Or make the target stricter on calibration (for example
-  97%) and show the trade-off with review share.
-- Report a risk–coverage curve: approval precision versus share approved. It shows the honest trade-off
-  without needing a single "right" threshold.
+| Rule | Approve / reject / review | Approval precision |
+| --- | --- | --- |
+| Pooled calibration (previous) | 60.4% / 30.3% / 9.3% | 92.6% |
+| Grouped CV (deployed) | 52.5% / 20.7% / 26.8% | **95.1%** |
+
+Deployed cutoffs: approve at p ≥ 0.872, reject at p ≤ 0.090. Both rules are in
+`artifacts_pilot_openai/run_report.md`. The risk–coverage curve was already in `figures/`.
 
 ### Phase 4: optional extras (choose at most one or two)
 
@@ -102,11 +110,14 @@ The 95% approval-precision target was missed (92.4%). This is the main open tech
 | Weaker model (Qwen on Colab) | Medium | $0 (GPU time) | More syntax errors, crashes and timeouts |
 | Bug-injection prompts (`--prompt-styles all`) | Small | ~$0.60 | Tests whether synthetic bugs help |
 
-### Phase 5: write the report (1–2 days)
+### Phase 5: write the report (done 20 Oct)
 
-EDA figures and tables for the report: `uv run trust-eda --output-dir artifacts_pilot_openai`. This writes
-`artifacts_pilot_openai/eda_report.md` and 8 figures in `artifacts_pilot_openai/figures/eda/`, in about
-5 seconds with no API calls. Rerun it after any retrain.
+The report is `project_report.md` (problem, data, generation, model, silent failures, the decision
+rule, human validation, limitations, related work).
+
+EDA figures and tables: `uv run trust-eda --output-dir artifacts_pilot_openai`. This writes
+`artifacts_pilot_openai/eda_report.md` and 8 figures in `artifacts_pilot_openai/figures/eda/`.
+Rerun it after a retrain or a decision-rule change. The 20 Oct rerun uses the grouped-CV decisions.
 
 Suggested structure, with sources:
 
