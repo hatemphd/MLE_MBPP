@@ -3,6 +3,10 @@
 Predict whether AI-generated code can be trusted and recommend **APPROVED**, **REJECTED** or
 **NEEDS HUMAN REVIEW**.
 
+> **What we did, in plain language:** [goal_and_approach.md](goal_and_approach.md) (the goal, how the
+> runs built on each other, and what Cohen's kappa means). The full write-up is
+> [project_report.md](project_report.md).
+>
 > **Just cloned the repo? Start with [clone_and_run.md](clone_and_run.md).** It explains how to run
 > the pipeline locally, the notebook locally, and the notebook in Google Colab
 > ([Open in Colab](https://colab.research.google.com/github/hatemphd/MLE_MBPP/blob/main/AI_Code_Trust_Pipeline.ipynb)),

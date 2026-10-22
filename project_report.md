@@ -219,7 +219,8 @@ and precision falls as more of the set is decided automatically.
 
 ## 7. Human validation
 
-The labels are checked by a person. They are not trained on one.
+The labels are checked by a person. They are not trained on one. A plain explanation of
+the goal, the sequence of runs, and Cohen's kappa is in `goal_and_approach.md`.
 
 Hatem reviewed 164 stratified solutions blind, in `human_edit/`, with the code and the
 tests runnable from the page. The automated label was hidden until the row was
