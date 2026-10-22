@@ -4,8 +4,8 @@ Predict whether AI-generated code can be trusted and recommend **APPROVED**, **R
 **NEEDS HUMAN REVIEW**.
 
 > **What we did, in plain language:** [goal_and_approach.md](goal_and_approach.md) (the goal, how the
-> runs built on each other, and what Cohen's kappa means). The full write-up is
-> [project_report.md](project_report.md).
+> runs built on each other, and what Cohen's kappa means). Short answers are in
+> [faq.md](faq.md). The full write-up is [project_report.md](project_report.md).
 >
 > **Just cloned the repo? Start with [clone_and_run.md](clone_and_run.md).** It explains how to run
 > the pipeline locally, the notebook locally, and the notebook in Google Colab
@@ -31,6 +31,7 @@ Predict whether AI-generated code can be trusted and recommend **APPROVED**, **R
 | `scripts/` | The same commands as plain scripts (`uv run python scripts/<name>.py`) |
 | `AI_Code_Trust_Pipeline.ipynb` | Results walkthrough on the prepared data (`artifacts_pilot_openai`): every stage in under a minute, no API calls |
 | `clone_and_run.md` | How to run after cloning: pipeline, local notebook, Colab |
+| `faq.md` | Short answers: train / validate / test, the models we tried, and what the human review was for |
 | `pyproject.toml`, `uv.lock`, `.python-version` | uv project definition, lockfile, Python 3.12 pin |
 | `requirements.txt` | Exported from `uv.lock` for environments without uv (core + API backends) |
 

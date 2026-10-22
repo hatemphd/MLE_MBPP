@@ -2,7 +2,7 @@
 
 A plain account of TrustGate: what we set out to do, how a solution moves through the gate, what temperature means, how the work actually proceeded, and how to read the human-review number.
 
-The full write-up, with tables, is `project_report.md`.
+The full write-up, with tables, is `project_report.md`. Short answers on training, the models we tried, and the human review are in `faq.md`.
 
 ## The goal
 
