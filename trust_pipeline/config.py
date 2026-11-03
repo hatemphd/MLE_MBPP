@@ -15,12 +15,10 @@ def default_model_configs(use_local_hf=True, use_openai=False, use_anthropic=Fal
     configs = []
     if use_local_hf:
         configs += [
-            {"name": "qwen0.5b-t0.3", "provider": "local_hf",
-             "model": "Qwen/Qwen2.5-Coder-0.5B-Instruct", "temperature": 0.3},
-            {"name": "qwen0.5b-t1.0", "provider": "local_hf",
-             "model": "Qwen/Qwen2.5-Coder-0.5B-Instruct", "temperature": 1.0},
-            {"name": "qwen1.5b-t0.6", "provider": "local_hf",
-             "model": "Qwen/Qwen2.5-Coder-1.5B-Instruct", "temperature": 0.6},
+            {"name": "phi4_mini_it", "provider": "local_hf",
+             "model": "../models/phi_4_mini_it", "temperature": 0.8},
+            {"name": "gemma4_12b_it", "provider": "local_hf",
+             "model": "../models/gemma_4_12B_it", "temperature": 0.8},
         ]
     if use_openai:
         configs += [
