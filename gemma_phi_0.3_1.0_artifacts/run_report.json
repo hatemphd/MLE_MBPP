@@ -1,0 +1,464 @@
+{
+  "manifest": {
+    "run_id": "20261111-075050-d4f62a",
+    "started_at": "2026-11-11T07:50:50-05:00",
+    "finished_at": null,
+    "duration_seconds": null,
+    "mode": "real",
+    "human_feedback": "simulated",
+    "output_dir": "/run/media/khan/5TB_HDD/FIT_PhD/CSE_5695_MLE/TermProject/MLE_MBPP/artifacts",
+    "commands": [
+      {
+        "command": "trust-prepare",
+        "argv": [
+          "--num-problems",
+          "200"
+        ],
+        "args": {
+          "output_dir": "artifacts",
+          "num_problems": 200,
+          "all_problems": false,
+          "samples_per_config": null,
+          "smoke_test": null,
+          "human_feedback": null,
+          "mutant_augmentation": null,
+          "local_hf": null,
+          "openai": null,
+          "anthropic": null,
+          "target_precision": null,
+          "max_workers": null,
+          "prompt_styles": null,
+          "seed": null,
+          "bootstrap_samples": null,
+          "history_file": null,
+          "quiet": false,
+          "verbose": false
+        },
+        "at": "2026-11-11T07:50:50-05:00"
+      },
+      {
+        "command": "trust-generate",
+        "argv": [
+          "--samples-per-config",
+          "5"
+        ],
+        "args": {
+          "output_dir": "artifacts",
+          "num_problems": null,
+          "all_problems": false,
+          "samples_per_config": 5,
+          "smoke_test": null,
+          "human_feedback": null,
+          "mutant_augmentation": null,
+          "local_hf": null,
+          "openai": null,
+          "anthropic": null,
+          "target_precision": null,
+          "max_workers": null,
+          "prompt_styles": null,
+          "seed": null,
+          "bootstrap_samples": null,
+          "history_file": null,
+          "quiet": false,
+          "verbose": false
+        },
+        "at": "2026-11-11T07:51:07-05:00"
+      },
+      {
+        "command": "trust-label",
+        "argv": [],
+        "args": {
+          "output_dir": "artifacts",
+          "num_problems": null,
+          "all_problems": false,
+          "samples_per_config": null,
+          "smoke_test": null,
+          "human_feedback": null,
+          "mutant_augmentation": null,
+          "local_hf": null,
+          "openai": null,
+          "anthropic": null,
+          "target_precision": null,
+          "max_workers": null,
+          "prompt_styles": null,
+          "seed": null,
+          "bootstrap_samples": null,
+          "history_file": null,
+          "quiet": false,
+          "verbose": false
+        },
+        "at": "2026-11-11T08:18:37-05:00"
+      },
+      {
+        "command": "trust-features",
+        "argv": [],
+        "args": {
+          "output_dir": "artifacts",
+          "num_problems": null,
+          "all_problems": false,
+          "samples_per_config": null,
+          "smoke_test": null,
+          "human_feedback": null,
+          "mutant_augmentation": null,
+          "local_hf": null,
+          "openai": null,
+          "anthropic": null,
+          "target_precision": null,
+          "max_workers": null,
+          "prompt_styles": null,
+          "seed": null,
+          "bootstrap_samples": null,
+          "history_file": null,
+          "quiet": false,
+          "verbose": false
+        },
+        "at": "2026-11-11T08:22:56-05:00"
+      },
+      {
+        "command": "trust-train",
+        "argv": [],
+        "args": {
+          "output_dir": "artifacts",
+          "num_problems": null,
+          "all_problems": false,
+          "samples_per_config": null,
+          "smoke_test": null,
+          "human_feedback": null,
+          "mutant_augmentation": null,
+          "local_hf": null,
+          "openai": null,
+          "anthropic": null,
+          "target_precision": null,
+          "max_workers": null,
+          "prompt_styles": null,
+          "seed": null,
+          "bootstrap_samples": null,
+          "history_file": null,
+          "quiet": false,
+          "verbose": false,
+          "no_plots": false
+        },
+        "at": "2026-11-11T08:23:09-05:00"
+      }
+    ],
+    "seed": 42,
+    "config": {
+      "seed": 42,
+      "smoke_test": false,
+      "smoke_mutants_per_problem": 7,
+      "num_problems": 200,
+      "samples_per_config": 5,
+      "probes_per_problem": 6,
+      "use_mutant_augmentation": false,
+      "mutants_per_problem": 3,
+      "max_workers": 32,
+      "item_timeout": 3.0,
+      "memory_limit_mb": 1024,
+      "human_added_feedback": true,
+      "human_sample_size": 150,
+      "target_approve_precision": 0.95,
+      "target_reject_precision": 0.95,
+      "min_decision_support": 10,
+      "conformal_alpha": 0.1,
+      "use_local_hf": true,
+      "use_openai": false,
+      "use_anthropic": false,
+      "max_new_tokens": 512,
+      "model_configs": [],
+      "prompt_styles": [
+        "standard"
+      ],
+      "output_dir": "artifacts",
+      "bootstrap_samples": 1000,
+      "history_file": null
+    },
+    "model_configs": [
+      {
+        "name": "phi4_mini_it",
+        "provider": "local_hf",
+        "model": "../models/phi_4_mini_it",
+        "temperature": 0.3
+      },
+      {
+        "name": "phi4_mini_it",
+        "provider": "local_hf",
+        "model": "../models/phi_4_mini_it",
+        "temperature": 1.0
+      },
+      {
+        "name": "gemma4_12b_it",
+        "provider": "local_hf",
+        "model": "../models/gemma_4_12B_it",
+        "temperature": 0.3
+      },
+      {
+        "name": "gemma4_12b_it",
+        "provider": "local_hf",
+        "model": "../models/gemma_4_12B_it",
+        "temperature": 1.0
+      }
+    ],
+    "python": "3.12.15",
+    "platform": "Linux-6.12.0-211.74.1.el10_2.x86_64-x86_64-with-glibc2.39",
+    "versions": {
+      "mle-trust-pipeline": null,
+      "scikit-learn": "1.9.1",
+      "numpy": "2.5.3",
+      "pandas": "3.0.6",
+      "torch": "2.14.1",
+      "transformers": "5.19.0",
+      "datasets": "5.1.0",
+      "openai": "3.24.0",
+      "anthropic": "1.11.0"
+    },
+    "gpu": {
+      "checked": false,
+      "note": "torch not loaded in this run (smoke test or API-only)"
+    }
+  },
+  "stage_seconds": {
+    "prepare": 4.0,
+    "generate": 1547.63,
+    "execute": 33.51,
+    "static": 2.07,
+    "features": 1.68,
+    "human": 0.11
+  },
+  "generation": {
+    "phi4_mini_it": {
+      "model_config": "phi4_mini_it",
+      "prompt_style": "standard",
+      "provenance": "natural",
+      "provider": "local_hf",
+      "model": "../models/phi_4_mini_it",
+      "temperature": 1.0,
+      "problems": 200,
+      "samples_in_dataset": 2000,
+      "attempts_requested": 1000,
+      "new_samples": 0,
+      "reused_from_cache": 1000,
+      "failed_attempts": 0,
+      "session_seconds": 0.0,
+      "output_tokens_total": 107052.0,
+      "output_tokens_mean": 53.526,
+      "input_tokens_total": 47260.0,
+      "mean_seconds_per_sample": 0.2833350949287415,
+      "output_tokens_per_second": 188.91411956383922,
+      "timed_samples": 2000
+    },
+    "gemma4_12b_it": {
+      "model_config": "gemma4_12b_it",
+      "prompt_style": "standard",
+      "provenance": "natural",
+      "provider": "local_hf",
+      "model": "../models/gemma_4_12B_it",
+      "temperature": 1.0,
+      "problems": 200,
+      "samples_in_dataset": 2000,
+      "attempts_requested": 1000,
+      "new_samples": 0,
+      "reused_from_cache": 1000,
+      "failed_attempts": 0,
+      "session_seconds": 0.0,
+      "output_tokens_total": 235848.0,
+      "output_tokens_mean": 117.924,
+      "input_tokens_total": 57030.0,
+      "mean_seconds_per_sample": 1.2640837564468383,
+      "output_tokens_per_second": 93.28812224552887,
+      "timed_samples": 2000
+    }
+  },
+  "execution": {
+    "overall": {
+      "rows": 4000,
+      "problems": 200,
+      "outcomes": {
+        "pass": 2782,
+        "wrong_output": 850,
+        "runtime_error": 284,
+        "timeout": 10,
+        "syntax_error": 74,
+        "generation_error": 0
+      },
+      "trustworthy_rate": 0.6955,
+      "visible_pass_rate": 0.7515,
+      "hidden_pass_rate": 0.6955,
+      "visible_vs_hidden": {
+        "visible_pass_hidden_pass": 2722,
+        "visible_pass_hidden_fail": 284,
+        "visible_fail_hidden_pass": 60,
+        "visible_fail_hidden_fail": 934,
+        "hidden_fail_given_visible_pass": 0.09447771124417831
+      },
+      "static": {
+        "share_with_ruff_issues": 0.3355,
+        "share_with_undefined_names": 0.001,
+        "share_with_bandit_med_high": 0.0,
+        "mean_ruff_issues": 1.0275
+      },
+      "pass_at_k_note": "pass@k uses hidden tests and the unbiased estimator over each problem's samples for one (model config, prompt style); in SMOKE_TEST the 'samples' are the reference plus its mutants."
+    },
+    "per_config": {
+      "phi4_mini_it": {
+        "rows": 2000,
+        "problems": 200,
+        "outcomes": {
+          "pass": 1194,
+          "wrong_output": 556,
+          "runtime_error": 248,
+          "timeout": 2,
+          "syntax_error": 0,
+          "generation_error": 0
+        },
+        "trustworthy_rate": 0.597,
+        "visible_pass_rate": 0.655,
+        "hidden_pass_rate": 0.597,
+        "visible_vs_hidden": {
+          "visible_pass_hidden_pass": 1162,
+          "visible_pass_hidden_fail": 148,
+          "visible_fail_hidden_pass": 32,
+          "visible_fail_hidden_fail": 658,
+          "hidden_fail_given_visible_pass": 0.11297709923664122
+        },
+        "static": {
+          "share_with_ruff_issues": 0.206,
+          "share_with_undefined_names": 0.002,
+          "share_with_bandit_med_high": 0.0,
+          "mean_ruff_issues": 0.373
+        },
+        "model_config": "phi4_mini_it",
+        "prompt_style": "standard",
+        "provenance": "natural",
+        "temperature": null,
+        "pass_at_k": {
+          "pass@1": 0.597,
+          "pass@3": 0.6338333333333334,
+          "pass@5": 0.6466269841269842
+        }
+      },
+      "gemma4_12b_it": {
+        "rows": 2000,
+        "problems": 200,
+        "outcomes": {
+          "pass": 1588,
+          "wrong_output": 294,
+          "runtime_error": 36,
+          "timeout": 8,
+          "syntax_error": 74,
+          "generation_error": 0
+        },
+        "trustworthy_rate": 0.794,
+        "visible_pass_rate": 0.848,
+        "hidden_pass_rate": 0.794,
+        "visible_vs_hidden": {
+          "visible_pass_hidden_pass": 1560,
+          "visible_pass_hidden_fail": 136,
+          "visible_fail_hidden_pass": 28,
+          "visible_fail_hidden_fail": 276,
+          "hidden_fail_given_visible_pass": 0.08018867924528301
+        },
+        "static": {
+          "share_with_ruff_issues": 0.465,
+          "share_with_undefined_names": 0.0,
+          "share_with_bandit_med_high": 0.0,
+          "mean_ruff_issues": 1.682
+        },
+        "model_config": "gemma4_12b_it",
+        "prompt_style": "standard",
+        "provenance": "natural",
+        "temperature": null,
+        "pass_at_k": {
+          "pass@1": 0.794,
+          "pass@3": 0.8076666666666666,
+          "pass@5": 0.8116666666666665
+        }
+      }
+    },
+    "natural_only": null,
+    "provenance_counts": {
+      "natural": 4000
+    },
+    "failure_modes": {
+      "standard | natural": {
+        "prompt_style": "standard",
+        "provenance": "natural",
+        "rows": 4000,
+        "syntax_error": 74,
+        "runtime_error": 284,
+        "timeout": 10,
+        "wrong_output": 850,
+        "security_finding": 0,
+        "visible_pass_hidden_fail": 284,
+        "trustworthy": 2782
+      },
+      "all": {
+        "prompt_style": "all",
+        "provenance": "all",
+        "rows": 4000,
+        "syntax_error": 74,
+        "runtime_error": 284,
+        "timeout": 10,
+        "wrong_output": 850,
+        "security_finding": 0,
+        "visible_pass_hidden_fail": 284,
+        "trustworthy": 2782
+      }
+    }
+  },
+  "human_agreement": {
+    "reviewed_rows": 157,
+    "raw_agreement": 0.9426751592356688,
+    "cohen_kappa": 0.8699733137020337,
+    "simulated": true,
+    "confusion": {
+      "auto=0": {
+        "human=0": 47,
+        "human=1": 5
+      },
+      "auto=1": {
+        "human=0": 4,
+        "human=1": 101
+      }
+    }
+  },
+  "dataset": {
+    "total": {
+      "rows": 4000,
+      "problems": 200,
+      "trustworthy": 2782,
+      "trustworthy_rate": 0.6955,
+      "provenance": {
+        "natural": 4000
+      }
+    },
+    "splits": {
+      "train": {
+        "rows": 2400,
+        "problems": 120,
+        "trustworthy": 1774,
+        "trustworthy_rate": 0.7391666666666666,
+        "provenance": {
+          "natural": 2400
+        }
+      },
+      "calibration": {
+        "rows": 800,
+        "problems": 40,
+        "trustworthy": 538,
+        "trustworthy_rate": 0.6725,
+        "provenance": {
+          "natural": 800
+        }
+      },
+      "test": {
+        "rows": 800,
+        "problems": 40,
+        "trustworthy": 470,
+        "trustworthy_rate": 0.5875,
+        "provenance": {
+          "natural": 800
+        }
+      }
+    }
+  }
+}

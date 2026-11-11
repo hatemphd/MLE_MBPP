@@ -1,0 +1,16 @@
+{
+  "reviewed_rows": 152,
+  "raw_agreement": 0.9539473684210527,
+  "cohen_kappa": 0.8951930654058313,
+  "simulated": true,
+  "confusion": {
+    "auto=0": {
+      "human=0": 46,
+      "human=1": 2
+    },
+    "auto=1": {
+      "human=0": 5,
+      "human=1": 99
+    }
+  }
+}

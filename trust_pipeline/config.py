@@ -16,9 +16,13 @@ def default_model_configs(use_local_hf=True, use_openai=False, use_anthropic=Fal
     if use_local_hf:
         configs += [
             {"name": "phi4_mini_it", "provider": "local_hf",
-             "model": "../models/phi_4_mini_it", "temperature": 0.8},
+             "model": "../models/phi_4_mini_it", "temperature": 0.3},
+            {"name": "phi4_mini_it", "provider": "local_hf",
+             "model": "../models/phi_4_mini_it", "temperature": 1.0},
             {"name": "gemma4_12b_it", "provider": "local_hf",
-             "model": "../models/gemma_4_12B_it", "temperature": 0.8},
+             "model": "../models/gemma_4_12B_it", "temperature": 0.3},
+            {"name": "gemma4_12b_it", "provider": "local_hf",
+             "model": "../models/gemma_4_12B_it", "temperature": 1.0},
         ]
     if use_openai:
         configs += [

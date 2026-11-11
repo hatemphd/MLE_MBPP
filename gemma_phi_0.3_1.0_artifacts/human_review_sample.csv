@@ -1,0 +1,1256 @@
+candidate_id,task_id,model_name,problem_text,generated_code,exec_status,label_trustworthy,human_trustworthy,human_notes
+111::phi4_mini_it::0,111,phi4_mini_it,Write a function to find common elements in given nested lists. * list item * list item * list item * list item,"def common_in_nested_lists(nested_lists):
+    from collections import Counter
+    
+    # Flatten the nested lists into a single list
+    flattened = [item for sublist in nested_lists for item in sublist]
+    
+    # Count the occurrences of each element
+    count = Counter(flattened)
+    
+    # Find elements that are common in all lists
+    common_elements = [item for item, c in count.items() if c == len(nested_lists)]
+    
+    return common_elements",pass,1,yes,(simulated -- replace with real reviewer notes)
+131::phi4_mini_it::1,131,phi4_mini_it,Write a python function to reverse only the vowels of a given string.,"def reverse_vowels(s: str) -> str:
+    vowels = 'aeiouAEIOU'
+    s_list = list(s)
+    i, j = 0, len(s) - 1
+    
+    while i < j:
+        if s_list[i] not in vowels:
+            i += 1
+        elif s_list[j] not in vowels:
+            j -= 1
+        else:
+            s_list[i], s_list[j] = s_list[j], s_list[i]
+            i += 1
+            j -= 1
+            
+    return ''.join(s_list)",pass,1,yes,(simulated -- replace with real reviewer notes)
+150::gemma4_12b_it::4,150,gemma4_12b_it,Write a python function to find whether the given number is present in the infinite sequence or not.,"def does_Contain_B(a, b, c):
+    """"""
+    Determines if a number is present in an infinite sequence.
+    Based on the test case does_Contain_B(1, 7, 3) == True, 
+    the logic implies checking if 'c' is reachable or related 
+    to 'a' and 'b' in a specific sequence (e.g., a + b = c or similar).
+    However, since the sequence isn't explicitly defined, 
+    the standard interpretation for this specific test case 
+    is checking if c is within the range or a linear combination.
+    """"""
+    # The test case (1, 7, 3) returns True.
+    # This suggests a logic where c is checked against a and b.
+    # Common patterns: c < a + b, or c is between a and b, 
+    # or c is a multiple. Given the ""infinite sequence"" context,
+    # it often refers to a sequence like a*n + b or similar.
+    
+    # For the specific test case provided:
+    return (a + b) >= c or (b - a) >= c or c == a or c == b",wrong_output,0,no,(simulated -- replace with real reviewer notes)
+151::phi4_mini_it::1,151,phi4_mini_it,Write a python function to check whether the given number is co-prime or not.,"import math
+
+def is_coprime(a, b):
+    return math.gcd(a, b) == 1",pass,1,yes,(simulated -- replace with real reviewer notes)
+159::phi4_mini_it::3,159,phi4_mini_it,Write a function to print the season for the given month and day.,"def month_season(month, day):
+    seasons = {
+        'winter': ['December', 'January', 'February'],
+        'spring': ['March', 'April', 'May'],
+        'summer': ['June', 'July', 'August'],
+        'fall': ['September', 'October', 'November']
+    }
+    
+    for season, months in seasons.items():
+        if month in months:
+            return season
+    return 'Invalid month'
+
+# Example usage:
+# assert month_season('January', 4) == 'winter'",wrong_output,0,no,(simulated -- replace with real reviewer notes)
+176::phi4_mini_it::0,176,phi4_mini_it,Write a function to find the perimeter of a triangle.,"def perimeter_triangle(a, b, c):
+    return a + b + c",pass,1,yes,(simulated -- replace with real reviewer notes)
+179::phi4_mini_it::3,179,phi4_mini_it,Write a function to find if the given number is a keith number or not.,"def is_num_keith(n):
+    def keith(n):
+        if n == 0:
+            return True
+        if n == 1:
+            return False
+        if n % 2 == 0:
+            return keith(n // 2)
+        else:
+            return keith(3 * n + 1)
+
+    return keith(n)",wrong_output,0,no,(simulated -- replace with real reviewer notes)
+180::gemma4_12b_it::0,180,gemma4_12b_it,Write a function to calculate distance between two points using latitude and longitude.,"import math
+
+def distance_lat_long(lat1, lon1, lat2, lon2):
+    # Radius of the Earth in kilometers
+    R = 6371.0088
+    
+    # Convert degrees to radians
+    phi1 = math.radians(lat1)
+    phi2 = math.radians(lat2)
+    delta_phi = math.radians(lat2 - lat1)
+    delta_lambda = math.radians(lon2 - lon1)
+    
+    # Haversine formula
+    a = math.sin(delta_phi / 2)**2 + \
+        math.cos(phi1) * math.cos(phi2) * \
+        math.sin(delta_lambda / 2)**2
+    
+    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+    
+    return R * c",wrong_output,0,no,(simulated -- replace with real reviewer notes)
+180::phi4_mini_it::1,180,phi4_mini_it,Write a function to calculate distance between two points using latitude and longitude.,"import math
+
+def distance_lat_long(lat1, lon1, lat2, lon2):
+    R = 6371  # Radius of the Earth in kilometers
+    dlat = math.radians(lat2 - lat1)
+    dlon = math.radians(lon2 - lon1)
+    a = (math.sin(dlat / 2) * math.sin(dlat / 2) +
+         math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) *
+         math.sin(dlon / 2) * math.sin(dlon / 2))
+    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+    distance = R * c
+    return distance",wrong_output,0,no,(simulated -- replace with real reviewer notes)
+180::phi4_mini_it::4,180,phi4_mini_it,Write a function to calculate distance between two points using latitude and longitude.,"import math
+
+def distance_lat_long(lat1, lon1, lat2, lon2):
+    R = 6371  # Radius of the Earth in kilometers
+    dlat = math.radians(lat2 - lat1)
+    dlon = math.radians(lon2 - lon1)
+    a = (math.sin(dlat / 2) * math.sin(dlat / 2) +
+         math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) *
+         math.sin(dlon / 2) * math.sin(dlon / 2))
+    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+    return R * c",wrong_output,0,no,(simulated -- replace with real reviewer notes)
+180::phi4_mini_it::4,180,phi4_mini_it,Write a function to calculate distance between two points using latitude and longitude.,"import math
+
+def distance_lat_long(lat1, lon1, lat2, lon2):
+    R = 6371  # Radius of the Earth in kilometers
+    dlat = math.radians(lat2 - lat1)
+    dlon = math.radians(lon2 - lon1)
+    a = (math.sin(dlat / 2) * math.sin(dlat / 2) +
+         math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) *
+         math.sin(dlon / 2) * math.sin(dlon / 2))
+    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+    return R * c",wrong_output,0,no,(simulated -- replace with real reviewer notes)
+187::gemma4_12b_it::1,187,gemma4_12b_it,Write a function to find the longest common subsequence for the given two sequences.,"def longest_common_subsequence(X, Y, m, n):
+    """"""
+    Finds the length of the longest common subsequence of two strings.
+    
+    :param X: First string
+    :param Y: Second string
+    :param m: Length of first string
+    :param n: Length of second string
+    :return: Length of LCS
+    """"""
+    # Create a 2D table to store lengths of longest common subsequences
+    # of substrings.
+    L = [[0] * (n + 1) for _ in range(m + 1)]
+
+    # Build the L table in bottom-up fashion
+    for i in range(m + 1):
+        for j in range(n + 1):
+            if i == 0 or j == 0:
+                L[i][j] = 0
+            elif X[i-1] == Y[j-1]:
+                L[i][j] = L[i-1][j-1] + 1
+            else:
+                L[i][j] = max(L[i-1][j], L[i][j-1])
+
+    return L[m][n]",pass,1,yes,(simulated -- replace with real reviewer notes)
+187::gemma4_12b_it::3,187,gemma4_12b_it,Write a function to find the longest common subsequence for the given two sequences.,"def longest_common_subsequence(X, Y, m, n):
+    """"""
+    Finds the length of the longest common subsequence of two sequences.
+    
+    :param X: First sequence (string/list)
+    :param Y: Second sequence (string/list)
+    :param m: Length of sequence X
+    :param n: Length of sequence Y
+    :return: Length of the longest common subsequence
+    """"""
+    # Create a 2D table to store lengths of LCS of substrings
+    # dp[i][j] contains length of LCS of X[0..i-1] and Y[0..j-1]
+    dp = [[0] * (n + 1) for _ in range(m + 1)]
+
+    # Build the dp table in bottom-up fashion
+    for i in range(1, m + 1):
+        for j in range(1, n + 1):
+            if X[i - 1] == Y[j - 1]:
+                dp[i][j] = dp[i - 1][j - 1] + 1
+            else:
+                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
+
+    return dp[m][n]",pass,1,yes,(simulated -- replace with real reviewer notes)
+187::gemma4_12b_it::4,187,gemma4_12b_it,Write a function to find the longest common subsequence for the given two sequences.,"def longest_common_subsequence(X: str, Y: str, m: int, n: int) -> int:
+    """"""
+    Finds the length of the longest common subsequence of two strings.
+    
+    Args:
+        X: The first sequence.
+        Y: The second sequence.
+        m: Length of sequence X.
+        n: Length of sequence Y.
+        
+    Returns:
+        The length of the longest common subsequence.
+    """"""
+    # Create a 2D table to store lengths of longest common subsequences
+    # of substrings. dp[i][j] contains length of LCS of X[0..i-1] and Y[0..j-1]
+    dp = [[0] * (n + 1) for _ in range(m + 1)]
+
+    # Build the dp table in bottom-up fashion
+    for i in range(1, m + 1):
+        for j in range(1, n + 1):
+            if X[i - 1] == Y[j - 1]:
+                dp[i][j] = dp[i - 1][j - 1] + 1
+            else:
+                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
+
+    return dp[m][n]",pass,1,yes,(simulated -- replace with real reviewer notes)
+191::gemma4_12b_it::0,191,gemma4_12b_it,Write a function to check whether the given month name contains 30 days or not.,"def check_monthnumber(month_name):
+    months_with_30_days = [""April"", ""June"", ""September"", ""November""]
+    return month_name in months_with_30_days",pass,1,yes,(simulated -- replace with real reviewer notes)
+19::gemma4_12b_it::3,19,gemma4_12b_it,Write a function to find whether a given array of integers contains any duplicate element.,"def test_duplicate(nums):
+    return len(nums) != len(set(nums))",pass,1,yes,(simulated -- replace with real reviewer notes)
+19::gemma4_12b_it::4,19,gemma4_12b_it,Write a function to find whether a given array of integers contains any duplicate element.,"def test_duplicate(nums):
+    return len(nums) != len(set(nums))",pass,1,yes,(simulated -- replace with real reviewer notes)
+213::gemma4_12b_it::2,213,gemma4_12b_it,Write a function to perform the concatenation of two string tuples.,"def concatenate_strings(tuple1, tuple2):
+    return tuple(s1 + s2 for s1, s2 in zip(tuple1, tuple2))",pass,1,yes,(simulated -- replace with real reviewer notes)
+213::gemma4_12b_it::2,213,gemma4_12b_it,Write a function to perform the concatenation of two string tuples.,"def concatenate_strings(tuple1, tuple2):
+    return tuple(s1 + s2 for s1, s2 in zip(tuple1, tuple2))",pass,1,yes,(simulated -- replace with real reviewer notes)
+229::gemma4_12b_it::4,229,gemma4_12b_it,Write a function to re-arrange the elements of the given array so that all negative elements appear before positive ones.,"def re_arrange_array(arr, n):
+    negatives = [x for x in arr if x < 0]
+    positives = [x for x in arr if x >= 0]
+    return negatives + positives",pass,1,yes,(simulated -- replace with real reviewer notes)
+231::gemma4_12b_it::0,231,gemma4_12b_it,Write a function to find the maximum sum in the given right triangle of numbers.,"def max_sum(triangle, n):
+    """"""
+    Finds the maximum path sum from top to bottom in a triangle.
+    The path can only move to adjacent numbers in the row below.
+    """"""
+    # Create a copy to avoid modifying the original list
+    dp = [row[:] for row in triangle]
+    
+    # Start from the second to last row and move upwards
+    for i in range(n - 2, -1, -1):
+        for j in range(len(dp[i])):
+            # The max sum at this position is the value itself 
+            # plus the maximum of the two reachable values below it
+            dp[i][j] += max(dp[i + 1][j], dp[i + 1][j + 1])
+            
+    return dp[0][0]",pass,1,yes,(simulated -- replace with real reviewer notes)
+233::gemma4_12b_it::2,233,gemma4_12b_it,Write a function to find the lateral surface area of a cylinder.,"import math
+
+def lateralsuface_cylinder(radius, height):
+    return 2 * math.pi * radius * height",wrong_output,0,no,(simulated -- replace with real reviewer notes)
+233::phi4_mini_it::0,233,phi4_mini_it,Write a function to find the lateral surface area of a cylinder.,"import math
+
+def lateralsuface_cylinder(radius, height):
+    return 2 * math.pi * radius * height",wrong_output,0,no,(simulated -- replace with real reviewer notes)
+234::phi4_mini_it::1,234,phi4_mini_it,Write a function to find the volume of a cube.,"def volume_cube(side_length):
+    return side_length ** 3",pass,1,yes,(simulated -- replace with real reviewer notes)
+243::gemma4_12b_it::3,243,gemma4_12b_it,Write a function to sort the given list based on the occurrence of first element of tuples.,"```python
+from collections import defaultdict
+
+def sort_on_occurence(data):
+    # Group values by the first element of the tuple
+    groups = defaultdict(list)
+    for item in data:
+        groups[item[0]].append(item[1])
+    
+    # Sort the keys (first elements) to ensure consistent order
+    sorted_keys = sorted(groups.keys())
+    
+    result = []
+    for key in sorted_keys:
+        # The problem's expected output format is:
+        # (key, first_value_found, subsequent_values_found, next_key_in_sequence)
+        # However, looking at the specific test case:
+        # [(1, 'Jake'), (2, 'Bob'), (1, 'Cara')] -> [(1, 'Jake', 'Cara', 2), (2, 'Bob', 1)]
+        # This implies a specific grouping logic:
+        # Group 1: key=1, values=['Jake', 'Cara']. Next key is 2.
+        # Group 2: key=2, values=['Bob']. Next key is 1 (wrapping or previous).
+        pass
+
+    # Re-evaluating the specific test case structure:
+    # Input: [(1, 'Jake'), (2, 'Bob'), (1, 'Cara')]
+    # Output: [(1, 'Jake', 'Cara', 2), (2, 'Bob', 1)]
+    # Logic: 
+    # 1. Group by first element: {1: ['Jake', 'Cara'], 2: ['Bob']}
+    # 2. For each key in sorted order:
+    #    - If it's the first key, the result is (key, *values, next_key)
+    #    - If it's the last key, the result is (key, *values, first_key)
+    
+    # Let's refine the logic to match the exact test output:
+    keys = sorted(groups.keys())
+    result = []
+    for i, key in enumerate(keys):
+        values = groups[key]
+        # Determine the ""next"" key for the tuple
+        # If it's the last key in the sorted list, the next is the first key
+        # Otherwise, it's the next",syntax_error,0,no,(simulated -- replace with real reviewer notes)
+258::phi4_mini_it::3,258,phi4_mini_it,Write a function to find number of odd elements in the given list using lambda function.,count_odd = lambda lst: sum(1 for x in lst if x % 2 != 0),pass,1,no,(simulated -- replace with real reviewer notes)
+25::gemma4_12b_it::4,25,gemma4_12b_it,Write a python function to find the product of non-repeated elements in a given array.,"from collections import Counter
+
+def find_Product(arr, n):
+    counts = Counter(arr)
+    product = 1
+    found_unique = False
+    
+    for num in arr:
+        if counts[num] == 1:
+            product *= num
+            found_unique = True
+            
+    return product if found_unique else 0",wrong_output,0,yes,(simulated -- replace with real reviewer notes)
+266::gemma4_12b_it::1,266,gemma4_12b_it,Write a function to find the lateral surface area of a cube.,"def lateralsurface_cube(side_length):
+    """"""
+    Calculates the lateral surface area of a cube.
+    The lateral surface area is the area of the four vertical faces.
+    Formula: 4 * (side_length^2)
+    """"""
+    return 4 * (side_length ** 2)",pass,1,yes,(simulated -- replace with real reviewer notes)
+266::phi4_mini_it::4,266,phi4_mini_it,Write a function to find the lateral surface area of a cube.,"def lateralsurface_cube(side_length):
+    return 4 * side_length * side_length",pass,1,yes,(simulated -- replace with real reviewer notes)
+274::gemma4_12b_it::2,274,gemma4_12b_it,Write a python function to find sum of even index binomial coefficients.,"import math
+
+def even_binomial_Coeff_Sum(n):
+    """"""
+    Finds the sum of even index binomial coefficients for a given n.
+    The sum of even index binomial coefficients (C(n, 0) + C(n, 2) + ...) 
+    is equal to 2^(n-1) for n > 0, and 1 for n = 0.
+    """"""
+    if n == 0:
+        return 1
+    return 2**(n - 1)",pass,1,yes,(simulated -- replace with real reviewer notes)
+27::gemma4_12b_it::0,27,gemma4_12b_it,Write a python function to remove all digits from a list of strings.,"def remove(strings):
+    result = []
+    for s in strings:
+        # Join characters that are not digits
+        cleaned = """".join(char for char in s if not char.isdigit())
+        result.append(cleaned)
+    return result",pass,1,yes,(simulated -- replace with real reviewer notes)
+27::gemma4_12b_it::2,27,gemma4_12b_it,Write a python function to remove all digits from a list of strings.,"def remove(strings):
+    result = []
+    for s in strings:
+        cleaned = """".join(char for char in s if not char.isdigit())
+        result.append(cleaned)
+    return result",pass,1,yes,(simulated -- replace with real reviewer notes)
+29::phi4_mini_it::1,29,phi4_mini_it,Write a python function to find the element occurring odd number of times.,"def get_Odd_Occurrence(arr):
+    result = None
+    for num in set(arr):
+        count = arr.count(num)
+        if count % 2 == 1:
+            if result is not None:
+                return -1  # More than one element found
+            result = num
+    return result",runtime_error,0,no,(simulated -- replace with real reviewer notes)
+29::phi4_mini_it::4,29,phi4_mini_it,Write a python function to find the element occurring odd number of times.,"def get_Odd_Occurrence(arr):
+    result = 0
+    for num in arr:
+        result ^= num
+    return result",runtime_error,0,no,(simulated -- replace with real reviewer notes)
+300::phi4_mini_it::0,300,phi4_mini_it,Write a function to find the count of all binary sequences of length 2n such that sum of first n bits is same as sum of last n bits.,"from math import comb
+
+def count_binary_seq(n):
+    return comb(2*n, n) / (2 ** n)
+
+# Example usage:
+# assert count_binary_seq(1) == 2.0",wrong_output,0,no,(simulated -- replace with real reviewer notes)
+301::phi4_mini_it::2,301,phi4_mini_it,Write a function to find the depth of a dictionary.,"def dict_depth(d, level=1):
+    if isinstance(d, dict):
+        return max((dict_depth(v, level + 1) for v in d.values()), default=level)
+    return level",wrong_output,0,no,(simulated -- replace with real reviewer notes)
+304::gemma4_12b_it::3,304,gemma4_12b_it,Write a python function to find element at a given index after number of rotations.,"```python
+def find_Element(arr, rotations, k, index):
+    """"""
+    Finds the element at a given index after k rotations.
+    
+    Note: The problem description implies a list of rotations, 
+    but the test case structure find_Element([1,2,3,4,5],[[0,2],[0,3]],2,1) 
+    suggests 'rotations' might be a list of operations or a specific 
+    input format. However, based on standard rotation logic where 
+    k is the number of rotations and index is the target:
+    
+    If the test case find_Element([1,2,3,4,5], ..., 2, 1) == 3 
+    means rotating [1,2,3,4,5] twice to the right:
+    Rotation 1: [5,1,2,3,4]
+    Rotation 2: [4,5,1,2,3]
+    Index 1 of [4,5,1,2,3] is 5.
+    
+    If rotating to the left:
+    Rotation 1: [2,3,4,5,1]
+    Rotation 2: [3,4,5,1,2]
+    Index 1 of [3,4,5,1,2] is 4.
+    
+    Wait, if the result is 3:
+    Original: [1,2,3,4,5]
+    Index 1 is 2.
+    If we rotate right by 1: [5,1,2,3,4], index 1 is 1.
+    If we rotate left by 1: [2,3,4,5,1], index 1 is 3.
+    
+    Therefore, the logic is: (index + k) % len(arr) 
+    where k is the number of left rotations.
+    """"""
+    n = len(arr)
+    # The test case find_Element([1,2,3,4,5], ..., 2, 1) == 3
+    # suggests a specific rotation logic. 
+    # Let's calculate: (1 + 2) % 5 = 3. arr[3] is 4.
+    # Let",syntax_error,0,no,(simulated -- replace with real reviewer notes)
+304::phi4_mini_it::3,304,phi4_mini_it,Write a python function to find element at a given index after number of rotations.,"def find_Element(arr, rotations, index):
+    n = len(arr)
+    rotations = rotations % n
+    index = (index + rotations) % n
+    return arr[index]",runtime_error,0,no,(simulated -- replace with real reviewer notes)
+318::gemma4_12b_it::0,318,gemma4_12b_it,Write a python function to find the maximum volume of a cuboid with given sum of sides.,"def max_volume(total_sum):
+    """"""
+    To maximize the volume of a cuboid (V = l * w * h) given a fixed sum of sides (l + w + h = S),
+    the dimensions should be as equal as possible.
+    Since the sides must be integers to satisfy the test case max_volume(8) == 18,
+    we distribute the sum as evenly as possible among three sides.
+    """"""
+    # For sum = 8, sides would be 3, 3, 2. Volume = 3 * 3 * 2 = 18.
+    side1 = total_sum // 3
+    remainder = total_sum % 3
+    
+    side2 = side1 + (1 if remainder >= 1 else 0)
+    side3 = side1 + (1 if remainder == 2 else 0)
+    
+    return side1 * side2 * side3",pass,1,yes,(simulated -- replace with real reviewer notes)
+320::gemma4_12b_it::1,320,gemma4_12b_it,Write a function to calculate the difference between the squared sum of first n natural numbers and the sum of squared first n natural numbers.,"def sum_difference(n: int) -> int:
+    """"""
+    Calculates the difference between the square of the sum of the first n 
+    natural numbers and the sum of the squares of the first n natural numbers.
+    """"""
+    # Formula for sum of first n natural numbers: (n * (n + 1)) / 2
+    sum_of_n = (n * (n + 1)) // 2
+    squared_sum = sum_of_n ** 2
+    
+    # Formula for sum of squares of first n natural numbers: (n * (n + 1) * (2n + 1)) / 6
+    sum_of_squares = (n * (n + 1) * (2 * n + 1)) // 6
+    
+    return squared_sum - sum_of_squares",pass,1,yes,(simulated -- replace with real reviewer notes)
+320::phi4_mini_it::1,320,phi4_mini_it,Write a function to calculate the difference between the squared sum of first n natural numbers and the sum of squared first n natural numbers.,"def sum_difference(n):
+    sum_n = n * (n + 1) // 2
+    sum_squared_n = n * (n + 1) * (2 * n + 1) // 6
+    return sum_n**2 - sum_squared_n",pass,1,yes,(simulated -- replace with real reviewer notes)
+322::gemma4_12b_it::1,322,gemma4_12b_it,Write a function to find all index positions of the minimum values in a given list.,"def position_min(lst):
+    if not lst:
+        return []
+    
+    min_val = min(lst)
+    return [i for i, val in enumerate(lst) if val == min_val]",pass,1,yes,(simulated -- replace with real reviewer notes)
+322::gemma4_12b_it::2,322,gemma4_12b_it,Write a function to find all index positions of the minimum values in a given list.,"def position_min(lst):
+    if not lst:
+        return []
+    
+    min_val = min(lst)
+    return [i for i, val in enumerate(lst) if val == min_val]",pass,1,yes,(simulated -- replace with real reviewer notes)
+327::gemma4_12b_it::2,327,gemma4_12b_it,Write a function to print check if the triangle is isosceles or not.,"def check_isosceles(a, b, c):
+    # First, check if the sides form a valid triangle
+    if (a + b <= c) or (a + c <= b) or (b + c <= a):
+        return False
+    
+    # Check if at least two sides are equal
+    return a == b or b == c or a == c",wrong_output,0,no,(simulated -- replace with real reviewer notes)
+327::gemma4_12b_it::3,327,gemma4_12b_it,Write a function to print check if the triangle is isosceles or not.,"def check_isosceles(a, b, c):
+    # First, check if the sides form a valid triangle
+    if (a + b <= c) or (a + c <= b) or (b + c <= a):
+        return False
+    
+    # Check if at least two sides are equal
+    return a == b or b == c or a == c",wrong_output,0,no,(simulated -- replace with real reviewer notes)
+329::phi4_mini_it::4,329,phi4_mini_it,Write a python function to count negative numbers in a list.,"def neg_count(lst):
+    return sum(1 for num in lst if num < 0)",pass,1,yes,(simulated -- replace with real reviewer notes)
+335::gemma4_12b_it::4,335,gemma4_12b_it,Write a function to find the sum of arithmetic progression.,"def ap_sum(a, l, d):
+    """"""
+    Calculates the sum of an arithmetic progression.
+    
+    :param a: The first term
+    :param l: The last term
+    :param d: The common difference
+    :return: The sum of the arithmetic progression
+    """"""
+    n = ((l - a) // d) + 1
+    return (n * (a + l)) // 2",wrong_output,0,yes,(simulated -- replace with real reviewer notes)
+356::gemma4_12b_it::0,356,gemma4_12b_it,Write a function to find the third angle of a triangle using two angles.,"def find_angle(angle1, angle2):
+    return 180 - (angle1 + angle2)",pass,1,yes,(simulated -- replace with real reviewer notes)
+356::gemma4_12b_it::2,356,gemma4_12b_it,Write a function to find the third angle of a triangle using two angles.,"def find_angle(angle1, angle2):
+    return 180 - (angle1 + angle2)",pass,1,yes,(simulated -- replace with real reviewer notes)
+35::gemma4_12b_it::4,35,gemma4_12b_it,Write a function to find the n-th rectangular number.,"def find_rect_num(n):
+    """"""
+    Finds the n-th rectangular number.
+    A rectangular number is a number of the form n * (n + 1).
+    """"""
+    return n * (n + 1)",pass,1,yes,(simulated -- replace with real reviewer notes)
+35::phi4_mini_it::4,35,phi4_mini_it,Write a function to find the n-th rectangular number.,"def find_rect_num(n):
+    return n * (n + 1) // 2",wrong_output,0,no,(simulated -- replace with real reviewer notes)
+366::phi4_mini_it::2,366,phi4_mini_it,Write a python function to find the largest product of the pair of adjacent elements from a given list of integers.,"def adjacent_num_product(lst):
+    return max(lst[i] * lst[i + 1] for i in range(len(lst) - 1))",pass,1,yes,(simulated -- replace with real reviewer notes)
+371::gemma4_12b_it::0,371,gemma4_12b_it,Write a function to find the smallest missing element in a sorted array.,"def smallest_missing(arr, start, end):
+    """"""
+    Finds the smallest missing element in a sorted array of non-negative integers.
+    The array is assumed to be sorted and contains unique elements.
+    """"""
+    left = start
+    right = end
+
+    while left <= right:
+        mid = (left + right) // 2
+        # If the value at mid is equal to its index, the missing element 
+        # must be to the right.
+        if arr[mid] == mid:
+            left = mid + 1
+        else:
+            # If the value is greater than the index, the missing element
+            # is to the left (or is the current index).
+            right = mid - 1
+            
+    return left",pass,1,yes,(simulated -- replace with real reviewer notes)
+371::gemma4_12b_it::3,371,gemma4_12b_it,Write a function to find the smallest missing element in a sorted array.,"def smallest_missing(arr, start, end):
+    """"""
+    Finds the smallest missing element in a sorted array.
+    Since the array is sorted, we can use binary search logic.
+    """"""
+    low = start
+    high = end
+    
+    while low <= high:
+        mid = (low + high) // 2
+        # If the element at mid is what it should be (index value),
+        # then the gap is to the right.
+        if arr[mid] == mid:
+            low = mid + 1
+        else:
+            high = mid - 1
+            
+    return low",pass,1,yes,(simulated -- replace with real reviewer notes)
+374::gemma4_12b_it::2,374,gemma4_12b_it,Write a function to print all permutations of a given string including duplicates.,"from itertools import permutations
+
+def permute_string(s):
+    perms = [''.join(p) for p in permutations(s)]
+    return perms",wrong_output,0,no,(simulated -- replace with real reviewer notes)
+376::phi4_mini_it::3,376,phi4_mini_it,Write a function to remove tuple elements that occur more than once and replace the duplicates with some custom value.,"def remove_replica(tup, custom_value='MSP'):
+    from collections import Counter
+    
+    count = Counter(tup)
+    return tuple(custom_value if count[x] > 1 else x for x in tup)",wrong_output,0,no,(simulated -- replace with real reviewer notes)
+382::gemma4_12b_it::4,382,gemma4_12b_it,Write a function to find the number of rotations in a circularly sorted array.,"def find_rotation_count(nums):
+    if not nums:
+        return 0
+    
+    low = 0
+    high = len(nums) - 1
+    
+    # If the array is not rotated at all
+    if nums[low] <= nums[high]:
+        return 0
+    
+    while low <= high:
+        mid = (low + high) // 2
+        
+        # Check if mid+1 is the pivot (the smallest element)
+        if mid < len(nums) - 1 and nums[mid] > nums[mid + 1]:
+            return mid + 1
+        
+        # Check if mid is the pivot
+        if mid > 0 and nums[mid] < nums[mid - 1]:
+            return mid
+        
+        # Decide which half to search
+        if nums[mid] >= nums[low]:
+            # Left side is sorted, pivot must be in the right half
+            low = mid + 1
+        else:
+            # Right side is sorted, pivot must be in the left half
+            high = mid - 1
+            
+    return 0",pass,1,yes,(simulated -- replace with real reviewer notes)
+386::gemma4_12b_it::0,386,gemma4_12b_it,Write a function to find out the minimum no of swaps required for bracket balancing in the given string.,"def swap_count(s: str) -> int:
+    imbalance = 0
+    swaps = 0
+    
+    for char in s:
+        if char == '[':
+            imbalance -= 1
+        else:
+            imbalance += 1
+        
+        # If imbalance > 0, it means we have an extra closing bracket
+        # that doesn't have a preceding opening bracket.
+        if imbalance > 0:
+            # We ""virtually"" swap this closing bracket with an opening 
+            # bracket from later in the string.
+            # This reduces the current imbalance and counts as a swap.
+            # Since one swap can fix two imbalances (one extra ']' and one missing '['),
+            # we track the count and adjust the imbalance.
+            swaps += 1
+            imbalance -= 2
+            
+    return swaps",pass,1,yes,(simulated -- replace with real reviewer notes)
+39::phi4_mini_it::1,39,phi4_mini_it,Write a function to check if the letters of a given string can be rearranged so that two characters that are adjacent to each other are different.,"def rearange_string(s):
+    from collections import Counter
+
+    count = Counter(s)
+    max_count = max(count.values())
+    min_count = min(count.values())
+
+    if max_count - min_count > 1:
+        return None
+
+    result = []
+    last_char = None
+    for char in sorted(count.keys()):
+        while count[char] > 0:
+            if last_char is None or char != last_char:
+                result.append(char)
+                last_char = char
+                count[char] -= 1
+
+    return ''.join(result)",timeout,0,no,(simulated -- replace with real reviewer notes)
+39::phi4_mini_it::1,39,phi4_mini_it,Write a function to check if the letters of a given string can be rearranged so that two characters that are adjacent to each other are different.,"def rearange_string(s):
+    from collections import Counter
+
+    count = Counter(s)
+    max_count = max(count.values())
+    min_count = min(count.values())
+
+    if max_count - min_count > 1:
+        return None
+
+    result = []
+    last_char = None
+    for char in sorted(count.keys()):
+        while count[char] > 0:
+            if last_char is None or char != last_char:
+                result.append(char)
+                last_char = char
+                count[char] -= 1
+
+    return ''.join(result)",timeout,0,no,(simulated -- replace with real reviewer notes)
+413::gemma4_12b_it::3,413,gemma4_12b_it,Write a function to extract the nth element from a given list of tuples.,"def extract_nth_element(data, n):
+    return [item[n] for item in data]",pass,1,yes,(simulated -- replace with real reviewer notes)
+421::phi4_mini_it::2,421,phi4_mini_it,Write a function to concatenate each element of tuple by the delimiter.,"def concatenate_tuple(tup, delimiter='-'):
+    return delimiter.join(str(x) for x in tup)",pass,1,yes,(simulated -- replace with real reviewer notes)
+425::phi4_mini_it::3,425,phi4_mini_it,Write a function to count the number of sublists containing a particular element.,"def count_element_in_list(lists, element):
+    count = 0
+    for sublist in lists:
+        if element in sublist:
+            count += 1
+    return count",pass,1,no,(simulated -- replace with real reviewer notes)
+427::gemma4_12b_it::0,427,gemma4_12b_it,Write a function to convert a date of yyyy-mm-dd format to dd-mm-yyyy format by using regex.,"import re
+
+def change_date_format(date_str):
+    return re.sub(r'(\d{4})-(\d{2})-(\d{2})', r'\3-\2-\1', date_str)",pass,1,yes,(simulated -- replace with real reviewer notes)
+427::phi4_mini_it::0,427,phi4_mini_it,Write a function to convert a date of yyyy-mm-dd format to dd-mm-yyyy format by using regex.,"import re
+
+def change_date_format(date_str):
+    match = re.match(r'(\d{4})-(\d{2})-(\d{2})', date_str)
+    if match:
+        year, month, day = match.groups()
+        return f""{day}-{month}-{year}""
+    else:
+        raise ValueError(""Invalid date format"")",pass,1,yes,(simulated -- replace with real reviewer notes)
+427::phi4_mini_it::0,427,phi4_mini_it,Write a function to convert a date of yyyy-mm-dd format to dd-mm-yyyy format by using regex.,"import re
+
+def change_date_format(date_str):
+    match = re.match(r'(\d{4})-(\d{2})-(\d{2})', date_str)
+    if match:
+        year, month, day = match.groups()
+        return f""{day}-{month}-{year}""
+    else:
+        raise ValueError(""Invalid date format"")",pass,1,yes,(simulated -- replace with real reviewer notes)
+429::phi4_mini_it::3,429,phi4_mini_it,Write a function to extract the elementwise and tuples from the given two tuples.,"def and_tuples(tuple1, tuple2):
+    return tuple(a & b for a, b in zip(tuple1, tuple2))",pass,1,yes,(simulated -- replace with real reviewer notes)
+445::gemma4_12b_it::3,445,gemma4_12b_it,Write a function to perform index wise multiplication of tuple elements in the given two tuples.,"def index_multiplication(tuple1, tuple2):
+    result = []
+    for t1, t2 in zip(tuple1, tuple2):
+        multiplied_pair = tuple(a * b for a, b in zip(t1, t2))
+        result.append(multiplied_pair)
+    return tuple(result)",pass,1,yes,(simulated -- replace with real reviewer notes)
+453::gemma4_12b_it::1,453,gemma4_12b_it,Write a python function to find the sum of even factors of a number.,"def sumofFactors(n):
+    total_sum = 0
+    for i in range(1, int(n**0.5) + 1):
+        if n % i == 0:
+            # Check the divisor i
+            if i % 2 == 0:
+                total_sum += i
+            
+            # Check the corresponding divisor n // i
+            other_divisor = n // i
+            if other_divisor != i:
+                if other_divisor % 2 == 0:
+                    total_sum += other_divisor
+    return total_sum",pass,1,yes,(simulated -- replace with real reviewer notes)
+458::gemma4_12b_it::1,458,gemma4_12b_it,Write a function to find the area of a rectangle.,"def rectangle_area(length, width):
+    return length * width",pass,1,yes,(simulated -- replace with real reviewer notes)
+458::phi4_mini_it::4,458,phi4_mini_it,Write a function to find the area of a rectangle.,"def rectangle_area(length, width):
+    return length * width",pass,1,yes,(simulated -- replace with real reviewer notes)
+458::phi4_mini_it::4,458,phi4_mini_it,Write a function to find the area of a rectangle.,"def rectangle_area(length, width):
+    return length * width",pass,1,yes,(simulated -- replace with real reviewer notes)
+459::gemma4_12b_it::3,459,gemma4_12b_it,Write a function to remove uppercase substrings from a given string by using regex.,"import re
+
+def remove_uppercase(input_string):
+    return re.sub(r'[A-Z]', '', input_string)",pass,1,yes,(simulated -- replace with real reviewer notes)
+460::gemma4_12b_it::0,460,gemma4_12b_it,Write a python function to get the first element of each sublist.,"def Extract(list_of_lists):
+    return [sublist[0] for sublist in list_of_lists if sublist]",pass,1,yes,(simulated -- replace with real reviewer notes)
+460::gemma4_12b_it::3,460,gemma4_12b_it,Write a python function to get the first element of each sublist.,"def Extract(list_of_lists):
+    return [sublist[0] for sublist in list_of_lists if sublist]",pass,1,yes,(simulated -- replace with real reviewer notes)
+460::phi4_mini_it::3,460,phi4_mini_it,Write a python function to get the first element of each sublist.,"def Extract(lst):
+    return [sublist[0] for sublist in lst]",pass,1,yes,(simulated -- replace with real reviewer notes)
+477::gemma4_12b_it::3,477,gemma4_12b_it,Write a python function to convert the given string to lower case.,"def is_lower(s: str) -> str:
+    return s.lower()",pass,1,yes,(simulated -- replace with real reviewer notes)
+482::phi4_mini_it::3,482,phi4_mini_it,Write a function to find sequences of one upper case letter followed by lower case letters in the given string by using regex.,"import re
+
+def match(s):
+    return bool(re.search(r'[A-Z][a-z]*', s))",wrong_output,0,no,(simulated -- replace with real reviewer notes)
+485::phi4_mini_it::0,485,phi4_mini_it,Write a function to find the largest palindromic number in the given array.,"def largest_palindrome(arr):
+    def is_palindrome(num):
+        return str(num) == str(num)[::-1]
+
+    largest = -1
+    for num in arr:
+        if is_palindrome(num) and num > largest:
+            largest = num
+    return largest",runtime_error,0,yes,(simulated -- replace with real reviewer notes)
+489::gemma4_12b_it::3,489,gemma4_12b_it,Write a python function to find the frequency of the largest value in a given array.,"def frequency_Of_Largest(arr, n):
+    if not arr:
+        return 0
+    
+    max_val = max(arr)
+    count = 0
+    for num in arr:
+        if num == max_val:
+            count += 1
+    return count",runtime_error,0,no,(simulated -- replace with real reviewer notes)
+498::gemma4_12b_it::4,498,gemma4_12b_it,Write a python function to find gcd of two positive integers.,"def gcd(a: int, b: int) -> int:
+    while b:
+        a, b = b, a % b
+    return a",pass,1,yes,(simulated -- replace with real reviewer notes)
+503::gemma4_12b_it::3,503,gemma4_12b_it,Write a function to add consecutive numbers of a given list.,"def add_consecutive_nums(nums):
+    if not nums:
+        return []
+    
+    result = []
+    for i in range(len(nums) - 1):
+        if nums[i] == nums[i + 1]:
+            result.append(nums[i] + nums[i + 1])
+        else:
+            # This logic handles the specific transformation shown in the test case:
+            # The test case [1, 1, 3, 4, 4, 5, 6, 7] -> [2, 4, 7, 8, 9, 11, 13]
+            # implies that if numbers are consecutive (e.g., 3, 4), 
+            # they are summed (3+4=7). If they are identical (1, 1), they are summed (1+1=2).
+            # If they are not consecutive or identical, the logic follows a sliding window sum.
+            pass
+            
+    # Re-evaluating the pattern:
+    # [1, 1] -> 2
+    # [1, 3] -> ? (No, the result is 2, 4, 7, 8, 9, 11, 13)
+    # Let's look at the indices:
+    # 1+1=2
+    # 1+3=4
+    # 3+4=7
+    # 4+4=8
+    # 4+5=9
+    # 5+6=11
+    # 6+7=13
+    
+    # The pattern is: result[i] = nums[i] + nums[i+1] for i from 0 to len(nums)-2
+    
+    final_result = []
+    for i in range(len(nums) - 1):
+        final_result.append(nums[i] + nums[i+1])
+    return final_result",pass,1,yes,(simulated -- replace with real reviewer notes)
+505::phi4_mini_it::3,505,phi4_mini_it,Write a function to move all zeroes to the end of the given array.,"def re_order(arr):
+    non_zeroes = [x for x in arr if x != 0]
+    zeroes = [x for x in arr if x == 0]
+    return non_zeroes + zeroes",pass,1,yes,(simulated -- replace with real reviewer notes)
+510::phi4_mini_it::3,510,phi4_mini_it,Write a function to find the number of subsequences having product smaller than k for the given non negative array.,"def no_of_subsequences(arr, k):
+    from math import prod
+
+    n = len(arr)
+    count = 0
+
+    for i in range(1 << n):
+        product = 1
+        for j in range(n):
+            if i & (1 << j):
+                product *= arr[j]
+        if product < k:
+            count += 1
+
+    return count",wrong_output,0,no,(simulated -- replace with real reviewer notes)
+512::phi4_mini_it::0,512,phi4_mini_it,Write a function to count the element frequency in the mixed nested tuple.,"def count_element_freq(mixed_tuple):
+    from collections import Counter
+
+    def flatten_tuple(tup):
+        for item in tup:
+            if isinstance(item, tuple):
+                yield from flatten_tuple(item)
+            else:
+                yield item
+
+    flat_list = list(flatten_tuple(mixed_tuple))
+    return dict(Counter(flat_list))",pass,1,yes,(simulated -- replace with real reviewer notes)
+51::phi4_mini_it::0,51,phi4_mini_it,Write a function to print check if the triangle is equilateral or not.,"def check_equilateral(a, b, c):
+    return a == b == c",pass,1,yes,(simulated -- replace with real reviewer notes)
+51::phi4_mini_it::0,51,phi4_mini_it,Write a function to print check if the triangle is equilateral or not.,"def check_equilateral(a, b, c):
+    return a == b == c",pass,1,yes,(simulated -- replace with real reviewer notes)
+539::gemma4_12b_it::2,539,gemma4_12b_it,Write a function to create a list containing the power of said number in bases raised to the corresponding number in the index using map function.,"def basesnum_coresspondingnum(bases, exponents):
+    return list(map(lambda x: x[0] ** x[1], zip(bases, exponents)))",pass,1,yes,(simulated -- replace with real reviewer notes)
+540::phi4_mini_it::2,540,phi4_mini_it,Write a python function to find the difference between highest and least frequencies in a given array.,"def find_Diff(arr):
+    from collections import Counter
+    frequency = Counter(arr)
+    return max(frequency.values()) - min(frequency.values())",runtime_error,0,no,(simulated -- replace with real reviewer notes)
+54::gemma4_12b_it::4,54,gemma4_12b_it,Write a function to sort the given array by using counting sort.,"def counting_sort(arr):
+    if not arr:
+        return []
+    
+    min_val = min(arr)
+    max_val = max(arr)
+    range_of_elements = max_val - min_val + 1
+    
+    count = [0] * range_of_elements
+    output = [0] * len(arr)
+    
+    for num in arr:
+        count[num - min_val] += 1
+        
+    for i in range(1, len(count)):
+        count[i] += count[i - 1]
+        
+    for num in reversed(arr):
+        output[count[num - min_val] - 1] = num
+        count[num - min_val] -= 1
+        
+    return output",pass,1,yes,(simulated -- replace with real reviewer notes)
+54::phi4_mini_it::4,54,phi4_mini_it,Write a function to sort the given array by using counting sort.,"def counting_sort(arr):
+    if not arr:
+        return arr
+
+    max_val = max(arr)
+    min_val = min(arr)
+    range_of_elements = max_val - min_val + 1
+    count = [0] * range_of_elements
+    output = [0] * len(arr)
+
+    for num in arr:
+        count[num - min_val] += 1
+
+    for i in range(1, len(count)):
+        count[i] += count[i - 1]
+
+    for num in reversed(arr):
+        output[count[num - min_val] - 1] = num
+        count[num - min_val] -= 1
+
+    return output",pass,1,yes,(simulated -- replace with real reviewer notes)
+566::gemma4_12b_it::3,566,gemma4_12b_it,Write a function to get the sum of a non-negative integer.,"def sum_digits(n: int) -> int:
+    """"""
+    Returns the sum of the digits of a non-negative integer.
+    """"""
+    return sum(int(digit) for digit in str(n))",pass,1,yes,(simulated -- replace with real reviewer notes)
+566::gemma4_12b_it::4,566,gemma4_12b_it,Write a function to get the sum of a non-negative integer.,"def sum_digits(n: int) -> int:
+    return sum(int(digit) for digit in str(n))",pass,1,yes,(simulated -- replace with real reviewer notes)
+566::phi4_mini_it::1,566,phi4_mini_it,Write a function to get the sum of a non-negative integer.,"def sum_digits(n):
+    return sum(int(digit) for digit in str(n))",pass,1,yes,(simulated -- replace with real reviewer notes)
+566::phi4_mini_it::1,566,phi4_mini_it,Write a function to get the sum of a non-negative integer.,"def sum_digits(n):
+    return sum(int(digit) for digit in str(n))",pass,1,yes,(simulated -- replace with real reviewer notes)
+57::phi4_mini_it::2,57,phi4_mini_it,Write a python function to find the largest number that can be formed with the given digits.,"def find_Max_Num(digits):
+    return int(''.join(sorted(map(str, digits), reverse=True)))",runtime_error,0,no,(simulated -- replace with real reviewer notes)
+589::gemma4_12b_it::0,589,gemma4_12b_it,Write a function to find perfect squares between two given numbers.,"import math
+
+def perfect_squares(start, end):
+    squares = []
+    # Find the first integer whose square is >= start
+    current_root = math.ceil(math.sqrt(start))
+    
+    while True:
+        square = current_root ** 2
+        if square > end:
+            break
+        squares.append(square)
+        current_root += 1
+        
+    return squares",pass,1,yes,(simulated -- replace with real reviewer notes)
+590::gemma4_12b_it::0,590,gemma4_12b_it,Write a function to convert polar coordinates to rectangular coordinates.,"import math
+
+def polar_rect(r, theta):
+    x = r * math.cos(theta)
+    y = r * math.sin(theta)
+    return (x, complex(x, y))",wrong_output,0,no,(simulated -- replace with real reviewer notes)
+608::phi4_mini_it::0,608,phi4_mini_it,Write a python function to find nth bell number.,"def bell_Number(n):
+    bell = [[0 for i in range(n+1)] for j in range(n+1)]
+    bell[0][0] = 1
+
+    for i in range(1, n+1):
+        bell[i][0] = bell[i-1][i-1]
+
+        for j in range(1, i+1):
+            bell[i][j] = bell[i-1][j-1] + bell[i][j-1]
+
+    return bell[n][0]",pass,1,yes,(simulated -- replace with real reviewer notes)
+616::phi4_mini_it::2,616,phi4_mini_it,Write a function to perfom the modulo of tuple elements in the given two tuples.,"def tuple_modulo(t1, t2):
+    return tuple(a % b for a, b in zip(t1, t2))",pass,1,yes,(simulated -- replace with real reviewer notes)
+616::phi4_mini_it::2,616,phi4_mini_it,Write a function to perfom the modulo of tuple elements in the given two tuples.,"def tuple_modulo(t1, t2):
+    return tuple(a % b for a, b in zip(t1, t2))",pass,1,yes,(simulated -- replace with real reviewer notes)
+617::phi4_mini_it::1,617,phi4_mini_it,"Write a function to check for the number of jumps required of given length to reach a point of form (d, 0) from origin in a 2d plane.","import math
+
+def min_Jumps(d, jump_length):
+    if jump_length <= 0:
+        raise ValueError(""Jump length must be positive"")
+    if d < 0:
+        raise ValueError(""Distance must be non-negative"")
+    
+    distance = math.sqrt(d**2)
+    jumps = distance / jump_length
+    return jumps",runtime_error,0,no,(simulated -- replace with real reviewer notes)
+619::phi4_mini_it::1,619,phi4_mini_it,Write a function to move all the numbers in it to the given string.,"import re
+
+def move_num(s: str) -> str:
+    return re.sub(r'\d+', lambda x: x.group().zfill(len(x.group())), s)",wrong_output,0,no,(simulated -- replace with real reviewer notes)
+640::phi4_mini_it::4,640,phi4_mini_it,Write a function to remove the parenthesis area in a string.,"def remove_parenthesis(s):
+    return s.replace(""("", """").replace("")"", """")",runtime_error,0,no,(simulated -- replace with real reviewer notes)
+646::gemma4_12b_it::2,646,gemma4_12b_it,Write a python function to count number of cubes of size k in a cube of size n.,"def No_of_cubes(n, k):
+    """"""
+    Calculates the number of cubes of size k that can fit inside a cube of size n.
+    The formula is (n - k + 1)^3, provided n >= k.
+    """"""
+    if n < k:
+        return 0
+    return (n - k + 1) ** 3",pass,1,yes,(simulated -- replace with real reviewer notes)
+646::phi4_mini_it::1,646,phi4_mini_it,Write a python function to count number of cubes of size k in a cube of size n.,"def No_of_cubes(n, k):
+    if k > n:
+        return 0
+    return ((n - k + 1) ** 3)",pass,1,yes,(simulated -- replace with real reviewer notes)
+649::gemma4_12b_it::4,649,gemma4_12b_it,Write a python function to calculate the sum of the numbers in a list between the indices of a specified range.,"def sum_Range_list(lst, start_index, end_index):
+    """"""
+    Calculates the sum of numbers in a list between the specified indices (inclusive).
+    """"""
+    return sum(lst[start_index : end_index + 1])",pass,1,yes,(simulated -- replace with real reviewer notes)
+654::phi4_mini_it::0,654,phi4_mini_it,Write a function to find the perimeter of a rectangle.,"def rectangle_perimeter(length, width):
+    return 2 * (length + width)",pass,1,yes,(simulated -- replace with real reviewer notes)
+654::phi4_mini_it::3,654,phi4_mini_it,Write a function to find the perimeter of a rectangle.,"def rectangle_perimeter(length, width):
+    return 2 * (length + width)",pass,1,yes,(simulated -- replace with real reviewer notes)
+668::gemma4_12b_it::3,668,gemma4_12b_it,Write a python function to replace multiple occurence of character by single.,"import re
+
+def replace(s, char):
+    return re.sub(f'{re.escape(char)}+', char, s)",pass,1,yes,(simulated -- replace with real reviewer notes)
+668::phi4_mini_it::0,668,phi4_mini_it,Write a python function to replace multiple occurence of character by single.,"def replace(s, char):
+    return char.join(s.split(char))",wrong_output,0,no,(simulated -- replace with real reviewer notes)
+669::phi4_mini_it::2,669,phi4_mini_it,Write a function to check whether the given ip address is valid or not using regex.,"import re
+
+def check_IP(ip):
+    pattern = r'^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
+    return 'Valid IP address' if re.match(pattern, ip) else 'Invalid IP address'",pass,1,yes,(simulated -- replace with real reviewer notes)
+678::phi4_mini_it::4,678,phi4_mini_it,Write a python function to remove spaces from a given string.,"def remove_spaces(s):
+    return s.replace("" "", """")",pass,1,yes,(simulated -- replace with real reviewer notes)
+695::gemma4_12b_it::1,695,gemma4_12b_it,Write a function to check if each element of the second tuple is greater than its corresponding index in the first tuple.,"def check_greater(tuple1, tuple2):
+    return all(val2 > val1 for val1, val2 in zip(tuple1, tuple2))",pass,1,yes,(simulated -- replace with real reviewer notes)
+695::phi4_mini_it::0,695,phi4_mini_it,Write a function to check if each element of the second tuple is greater than its corresponding index in the first tuple.,"def check_greater(tuple1, tuple2):
+    return all(x > i for i, x in enumerate(tuple2))",pass,1,yes,(simulated -- replace with real reviewer notes)
+704::phi4_mini_it::0,704,phi4_mini_it,Write a function to calculate the harmonic sum of n-1.,"def harmonic_sum(n):
+    if n <= 1:
+        return 0
+    return sum(1/i for i in range(1, n))
+
+# Example usage:
+# assert harmonic_sum(10) == 2.9289682539682538",wrong_output,0,no,(simulated -- replace with real reviewer notes)
+705::gemma4_12b_it::4,705,gemma4_12b_it,Write a function to sort a list of lists by length and value.,"def sort_sublists(data):
+    """"""
+    Sorts a list of lists primarily by length and secondarily by the values 
+    within the sublists.
+    """"""
+    return sorted(data, key=lambda x: (len(x), x))",pass,1,no,(simulated -- replace with real reviewer notes)
+705::phi4_mini_it::1,705,phi4_mini_it,Write a function to sort a list of lists by length and value.,"def sort_sublists(lists):
+    return sorted(lists, key=lambda x: (len(x), x))",pass,1,yes,(simulated -- replace with real reviewer notes)
+718::phi4_mini_it::0,718,phi4_mini_it,Write a function to create a list taking alternate elements from another given list.,"def alternate_elements(lst):
+    return [lst[i] for i in range(len(lst)) if i % 2 == 0]",pass,1,yes,(simulated -- replace with real reviewer notes)
+718::phi4_mini_it::2,718,phi4_mini_it,Write a function to create a list taking alternate elements from another given list.,"def alternate_elements(lst):
+    return [lst[i] for i in range(len(lst)) if i % 2 == 0]",pass,1,yes,(simulated -- replace with real reviewer notes)
+728::gemma4_12b_it::2,728,gemma4_12b_it,Write a function to sum elements in two lists.,"def sum_list(list1, list2):
+    return [x + y for x, y in zip(list1, list2)]",pass,1,yes,(simulated -- replace with real reviewer notes)
+728::phi4_mini_it::4,728,phi4_mini_it,Write a function to sum elements in two lists.,"def sum_list(list1, list2):
+    return [x + y for x, y in zip(list1, list2)]",pass,1,yes,(simulated -- replace with real reviewer notes)
+736::gemma4_12b_it::1,736,gemma4_12b_it,Write a function to locate the left insertion point for a specified value in sorted order.,"import bisect
+
+def left_insertion(arr, value):
+    return bisect.bisect_left(arr, value)",pass,1,yes,(simulated -- replace with real reviewer notes)
+746::phi4_mini_it::2,746,phi4_mini_it,Write a function to find area of a sector.,"import math
+
+def sector_area(radius, angle):
+    return (angle / 360) * math.pi * radius ** 2",wrong_output,0,no,(simulated -- replace with real reviewer notes)
+750::phi4_mini_it::3,750,phi4_mini_it,Write a function to add the given tuple to the given list.,"def add_tuple(lst, tpl):
+    return lst + list(tpl)",pass,1,yes,(simulated -- replace with real reviewer notes)
+753::phi4_mini_it::4,753,phi4_mini_it,Write a function to find minimum k records from tuple list.,"def min_k(tuple_list, k):
+    return sorted(tuple_list, key=lambda x: x[1])[:k]",pass,1,yes,(simulated -- replace with real reviewer notes)
+769::gemma4_12b_it::4,769,gemma4_12b_it,Write a python function to get the difference between two lists.,"```python
+def Diff(list1, list2):
+    result = []
+    temp_list2 = list(list2)
+    for item in list1:
+        if item in temp_list2:
+            temp_list2.remove(item)
+        else:
+            result.append(item)
+    
+    # To match the specific order in the test case: [10, 20, 30, 15]
+    # The test implies a specific logic: 
+    # 1. Elements in list1 NOT in list2 are kept in original order.
+    # 2. Elements in list2 NOT in list1 are appended at the end.
+    
+    # Let's re-evaluate the test: 
+    # list1: [10, 15, 20, 25, 30, 35, 40]
+    # list2: [25, 40, 35]
+    # Difference: [10, 20, 30] (from list1) + [15] (Wait, 15 is in list1)
+    
+    # Re-reading the test: Diff([10, 15, 20, 25, 30, 35, 40], [25, 40, 35]) == [10, 20, 30, 15]
+    # This means:
+    # 1. Remove elements of list2 from list1.
+    # 2. The remaining elements are [10, 15, 20, 30].
+    # 3. The test result [10, 20, 30, 15] suggests a specific ordering.
+    # Looking closely: 10, 20, 30 are the ones not in list2. 15 is... also not in list2.
+    # Actually, the test result [10, 20, 30, 15] is just [10, 15, 20, 30] rearranged.
+    # Let's try a symmetric difference logic or a specific subtraction.
+    
+    # Correct logic for the test:",syntax_error,0,no,(simulated -- replace with real reviewer notes)
+769::phi4_mini_it::2,769,phi4_mini_it,Write a python function to get the difference between two lists.,"def Diff(list1, list2):
+    return [item for item in list1 if item not in list2]",wrong_output,0,yes,(simulated -- replace with real reviewer notes)
+771::phi4_mini_it::2,771,phi4_mini_it,Write a function to check if the given expression is balanced or not.,"def check_expression(expression):
+    stack = []
+    brackets = {'(': ')', '[': ']', '{': '}'}
+    
+    for char in expression:
+        if char in brackets:
+            stack.append(char)
+        elif char in brackets.values():
+            if not stack or brackets[stack.pop()] != char:
+                return False
+    return not stack",pass,1,yes,(simulated -- replace with real reviewer notes)
+772::gemma4_12b_it::4,772,gemma4_12b_it,Write a function to remove all the words with k length in the given string.,"def remove_length(s, k):
+    words = s.split()
+    result = [word for word in words if len(word) != k]
+    return ' '.join(result)",pass,1,yes,(simulated -- replace with real reviewer notes)
+780::phi4_mini_it::2,780,phi4_mini_it,Write a function to find the combinations of sums with tuples in the given tuple list.,"from itertools import combinations
+
+def find_combinations(tuples):
+    sums = [sum(t) for t in tuples]
+    result = set()
+    for i in range(1, len(sums) + 1):
+        for combo in combinations(sums, i):
+            result.add(tuple(sorted(combo)))
+    return sorted(result)
+
+# Example usage:
+# assert find_combinations([(2, 4), (6, 7), (5, 1), (6, 10)]) == [(8, 11), (7, 5), (8, 14), (11, 8), (12, 17), (11, 11)]",wrong_output,0,no,(simulated -- replace with real reviewer notes)
+786::gemma4_12b_it::2,786,gemma4_12b_it,Write a function to locate the right insertion point for a specified value in sorted order.,"import bisect
+
+def right_insertion(arr, value):
+    return bisect.bisect_right(arr, value)",pass,1,yes,(simulated -- replace with real reviewer notes)
+80::phi4_mini_it::1,80,phi4_mini_it,Write a function to find the nth tetrahedral number.,"def tetrahedral_number(n):
+    return n * (n + 1) * (n + 2) / 6",pass,1,yes,(simulated -- replace with real reviewer notes)
+816::gemma4_12b_it::0,816,gemma4_12b_it,Write a function to clear the values of the given tuples.,"def clear_tuple(t: tuple) -> tuple:
+    return ()",pass,1,yes,(simulated -- replace with real reviewer notes)
+820::gemma4_12b_it::0,820,gemma4_12b_it,Write a function to check whether the given month number contains 28 days or not.,"def check_monthnum_number(month_num):
+    """"""
+    Checks whether the given month number contains at least 28 days.
+    Since all months in the Gregorian calendar have at least 28 days,
+    this returns True for any valid month number (1-12).
+    """"""
+    if 1 <= month_num <= 12:
+        return True
+    return False",wrong_output,0,no,(simulated -- replace with real reviewer notes)
+820::phi4_mini_it::3,820,phi4_mini_it,Write a function to check whether the given month number contains 28 days or not.,"def check_monthnum_number(month_number):
+    return month_number in [1, 3, 5, 7, 8, 10, 12]",wrong_output,0,no,(simulated -- replace with real reviewer notes)
+820::phi4_mini_it::3,820,phi4_mini_it,Write a function to check whether the given month number contains 28 days or not.,"def check_monthnum_number(month_number):
+    return month_number in [1, 3, 5, 7, 8, 10, 12]",wrong_output,0,no,(simulated -- replace with real reviewer notes)
+859::gemma4_12b_it::2,859,gemma4_12b_it,Write a function to generate all sublists of a given list.,"def sub_lists(lst):
+    result = [[]]
+    for element in lst:
+        result.extend([curr + [element] for curr in result])
+    
+    # The problem requires a specific order: by length, then by appearance.
+    # The standard power set construction above produces a different order.
+    # Let's re-sort to match the exact order in the assertion.
+    result.sort(key=lambda x: (len(x), lst.index(x[0]) if x else -1))
+    
+    # However, the assertion order is specifically:
+    # Length 0: []
+    # Length 1: [10], [20], [30], [40]
+    # Length 2: [10, 20], [10, 30], [10, 40], [20, 30], [20, 40], [30, 40]
+    # Length 3: [10, 20, 30], [10, 20, 40], [10, 30, 40], [20, 30, 40]
+    # Length 4: [10, 20, 30, 40]
+    
+    # Correct approach to match the specific order:
+    final_result = [[]]
+    for r in range(1, len(lst) + 1):
+        import itertools
+        for combo in itertools.combinations(lst, r):
+            final_result.append(list(combo))
+            
+    return final_result",pass,1,yes,(simulated -- replace with real reviewer notes)
+86::gemma4_12b_it::4,86,gemma4_12b_it,Write a function to find nth centered hexagonal number.,"def centered_hexagonal_number(n):
+    """"""
+    Returns the nth centered hexagonal number.
+    The formula for the nth centered hexagonal number is:
+    H(n) = 3n(n - 1) + 1
+    """"""
+    return 3 * n * (n - 1) + 1",pass,1,yes,(simulated -- replace with real reviewer notes)
+872::gemma4_12b_it::0,872,gemma4_12b_it,Write a function to check if a nested list is a subset of another nested list.,"def check_subset(subset, main_list):
+    """"""
+    Checks if all elements of a nested list (subset) are present 
+    in another nested list (main_list).
+    """"""
+    # Convert main_list to a set of tuples for O(1) average lookup.
+    # Tuples are used because lists are not hashable.
+    main_set = set(tuple(item) for item in main_list)
+    
+    for item in subset:
+        if tuple(item) not in main_set:
+            return False
+    return True",runtime_error,0,no,(simulated -- replace with real reviewer notes)
+872::gemma4_12b_it::4,872,gemma4_12b_it,Write a function to check if a nested list is a subset of another nested list.,"def check_subset(subset, main_list):
+    """"""
+    Checks if all elements of a nested list (subset) are present 
+    within another nested list (main_list).
+    """"""
+    # Convert main_list to a set of tuples to allow for O(1) average lookup.
+    # Tuples are used because lists are not hashable.
+    main_set = set(tuple(item) for item in main_list)
+    
+    for item in subset:
+        if tuple(item) not in main_set:
+            return False
+    return True",runtime_error,0,no,(simulated -- replace with real reviewer notes)
+888::phi4_mini_it::2,888,phi4_mini_it,Write a function to substract the elements of the given nested tuples.,"def substract_elements(t1, t2):
+    return tuple(tuple(a - b for a, b in zip(t1_elem, t2_elem)) for t1_elem, t2_elem in zip(t1, t2))",pass,1,no,(simulated -- replace with real reviewer notes)
+890::gemma4_12b_it::4,890,gemma4_12b_it,Write a python function to find the index of an extra element present in one sorted array.,"def find_Extra(arr1, arr2, index_in_arr1):
+    """"""
+    Finds the index of the extra element in arr1 relative to arr2.
+    Given the problem constraints and the test case provided:
+    find_Extra([1,2,3,4], [1,2,3], 3) == 3
+    It implies we are looking for the index in arr1 where the 
+    discrepancy occurs.
+    """"""
+    # Since the arrays are sorted and one has one extra element,
+    # we can use a binary search approach or a simple linear comparison.
+    # Given the specific test case, it returns the index in arr1.
+    
+    # Standard approach for finding the first mismatch in sorted arrays:
+    left = 0
+    right = len(arr2)
+    
+    # However, the test case find_Extra([1,2,3,4],[1,2,3],3) == 3
+    # suggests it wants the index in arr1 where the extra element is located.
+    # If arr1 has 4 elements and arr2 has 3, and they are [1,2,3,4] and [1,2,3],
+    # the extra element is 4 at index 3.
+    
+    # Implementation to satisfy the specific test case:
+    for i in range(len(arr1)):
+        if i >= len(arr2) or arr1[i] != arr2[i]:
+            return i
+    return len(arr1)",pass,1,yes,(simulated -- replace with real reviewer notes)
+898::gemma4_12b_it::0,898,gemma4_12b_it,"Write a function to extract specified number of elements from a given list, which follow each other continuously.","def extract_elements(lst, n):
+    result = []
+    i = 0
+    while i < len(lst):
+        count = 1
+        while i + 1 < len(lst) and lst[i] == lst[i+1]:
+            count += 1
+            i += 1
+        
+        if count == n:
+            result.append(lst[i])
+        
+        i += 1
+    return result",pass,1,yes,(simulated -- replace with real reviewer notes)
+89::gemma4_12b_it::0,89,gemma4_12b_it,Write a function to find the closest smaller number than n.,"def closest_num(n):
+    return n - 1",pass,1,yes,(simulated -- replace with real reviewer notes)
+900::gemma4_12b_it::1,900,gemma4_12b_it,Write a function where a string will start with a specific number.,"import re
+
+def match_num(s):
+    return bool(re.match(r'^\d+', s))",wrong_output,0,no,(simulated -- replace with real reviewer notes)
+900::phi4_mini_it::0,900,phi4_mini_it,Write a function where a string will start with a specific number.,"def match_num(s):
+    return s[0].isdigit()",wrong_output,0,no,(simulated -- replace with real reviewer notes)
+907::gemma4_12b_it::0,907,gemma4_12b_it,Write a function to print the first n lucky numbers.,"def lucky_num(n):
+    lucky_numbers = []
+    current = 1
+    while len(lucky_numbers) < n:
+        # A number is lucky if it is not divisible by any 
+        # of the lucky numbers found so far.
+        is_lucky = True
+        for lucky in lucky_numbers:
+            if current % lucky == 0:
+                is_lucky = False
+                break
+        
+        if is_lucky:
+            lucky_numbers.append(current)
+        
+        current += 1
+        
+    return lucky_numbers",timeout,0,no,(simulated -- replace with real reviewer notes)
+907::gemma4_12b_it::1,907,gemma4_12b_it,Write a function to print the first n lucky numbers.,"def lucky_num(n):
+    lucky_numbers = []
+    current = 1
+    while len(lucky_numbers) < n:
+        # A number is lucky if it is not divisible by any 
+        # of the lucky numbers found so far.
+        is_lucky = True
+        for lucky in lucky_numbers:
+            if current % lucky == 0:
+                is_lucky = False
+                break
+        
+        if is_lucky:
+            lucky_numbers.append(current)
+        current += 1
+    return lucky_numbers",timeout,0,no,(simulated -- replace with real reviewer notes)
+907::gemma4_12b_it::1,907,gemma4_12b_it,Write a function to print the first n lucky numbers.,"def lucky_num(n):
+    lucky_numbers = []
+    current = 1
+    while len(lucky_numbers) < n:
+        # A number is lucky if it is not divisible by any 
+        # of the lucky numbers found so far.
+        is_lucky = True
+        for lucky in lucky_numbers:
+            if current % lucky == 0:
+                is_lucky = False
+                break
+        
+        if is_lucky:
+            lucky_numbers.append(current)
+        current += 1
+    return lucky_numbers",timeout,0,no,(simulated -- replace with real reviewer notes)
+924::gemma4_12b_it::3,924,gemma4_12b_it,Write a function to find maximum of two numbers.,"def max_of_two(a, b):
+    if a > b:
+        return a
+    else:
+        return b",pass,1,yes,(simulated -- replace with real reviewer notes)
+924::phi4_mini_it::3,924,phi4_mini_it,Write a function to find maximum of two numbers.,"def max_of_two(a, b):
+    return a if a > b else b",pass,1,yes,(simulated -- replace with real reviewer notes)
+935::gemma4_12b_it::0,935,gemma4_12b_it,Write a function to calculate the sum of series 1²+2²+3²+….+n².,"def series_sum(n):
+    """"""
+    Calculates the sum of the series 1^2 + 2^2 + 3^2 + ... + n^2.
+    Uses the mathematical formula: n(n + 1)(2n + 1) / 6
+    """"""
+    return n * (n + 1) * (2 * n + 1) // 6",pass,1,yes,(simulated -- replace with real reviewer notes)
+935::phi4_mini_it::4,935,phi4_mini_it,Write a function to calculate the sum of series 1²+2²+3²+….+n².,"def series_sum(n):
+    return sum(i**2 for i in range(1, n+1))",pass,1,yes,(simulated -- replace with real reviewer notes)
+936::phi4_mini_it::3,936,phi4_mini_it,Write a function to re-arrange the given tuples based on the given ordered list.,"def re_arrange_tuples(tuples_list, order):
+    return [tuples_list[i] for i in order]",runtime_error,0,yes,(simulated -- replace with real reviewer notes)
+944::gemma4_12b_it::1,944,gemma4_12b_it,Write a function to separate and print the numbers and their position of a given string.,"import re
+
+def num_position(input_string):
+    matches = list(re.finditer(r'\d+', input_string))
+    if not matches:
+        return 0
+    
+    # The problem asks to return the position (index) of the first number found.
+    # Based on the test case: ""there are 70 flats..."" 
+    # 't' is 0, 'h' is 1, 'e' is 2, 'r' is 3, 'e' is 4, ' ' is 5, 
+    # 'a' is 6, 'r' is 7, 'e' is 8, ' ' is 9, '7' is 10.
+    return matches[0].start()",pass,1,yes,(simulated -- replace with real reviewer notes)
+956::gemma4_12b_it::1,956,gemma4_12b_it,Write a function to split the given string at uppercase letters by using regex.,"import re
+
+def split_list(text):
+    return re.findall(r'[A-Z][^A-Z]*', text)",pass,1,yes,(simulated -- replace with real reviewer notes)
