@@ -58,6 +58,8 @@ htmlcov/
 
 # Decks and slide notes (local / shared outside git)
 slides/
+*.pptx
+*.ppt
 
 # Microsoft Office lock / temp files (open-document owners)
 ~$*
