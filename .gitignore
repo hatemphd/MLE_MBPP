@@ -56,6 +56,14 @@ htmlcov/
 *.csv.tmp
 .streamlit/secrets.toml
 
+# Decks and slide notes (local / shared outside git)
+slides/
+
+# Microsoft Office lock / temp files (open-document owners)
+~$*
+*.tmp
+*.temp
+
 # OS and editor files
 .DS_Store
 Thumbs.db
